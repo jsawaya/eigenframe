@@ -1,6 +1,6 @@
 {
-  "name": "test2-eigenframe.json",
-  "description": "Test EigenScript: JavaScript, PopupTextView, PopupHtmlView",
+  "x-name": "test-EigenScript.json",
+  "x-description": "Test EigenScript",
   "layout": {
     "type": "LinearLayout",
     "scrollable": true,
@@ -10,7 +10,7 @@
     "component-list": [
       {
         "type": "TextView",
-        "text": "Test EigenScript: JavaScript, PopupTextView, PopupHtmlView",
+        "text": "Test EigenScript",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
         "text-size": "20",
@@ -30,7 +30,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test2-eigenframe.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-EigenScript.json"
         }
       },
       {
