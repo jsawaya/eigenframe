@@ -12,7 +12,7 @@
         "layout-height": "wrap_content",
         "text-size": "20",
         "text-color": "#ffffff",
-        "text": "Test for TextView/url",
+        "text": "Test for TextView",
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
