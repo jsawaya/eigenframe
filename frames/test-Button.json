@@ -276,7 +276,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.addShortcut('app1', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/app1.json')",
+            "eigenActivity.addShortcut('app1', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/applications/app1.json')",
             "eigenActivity.finish()",
             "901"
           ]
@@ -293,7 +293,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.addShortcut('app2', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/app2.json')",
+            "eigenActivity.addShortcut('app2', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/applications/app2.json')",
             "eigenActivity.finish()",
             902
           ]
