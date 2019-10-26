@@ -1,0 +1,63 @@
+{
+  "name": "test1a-eigenframe.json",
+  "layout": {
+    "type": "LinearLayout",
+    "orientation": "VERTICAL",
+    "layout-width": "match_parent",
+    "layout-height": "match_parent",
+    "component-list": [
+      {
+        "type": "TextView",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text-size": "20",
+        "text-color": "#ffffff",
+        "text": "Test for TextView/url",
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test1a-eigenframe.json"
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "Source",
+        "text-color": "#ffffff",
+        "background-color": "#22ff0000",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test1a-eigenframe.json"
+        }
+      },
+      {
+        "type": "LinearLayout",
+        "scrollable": true,
+        "orientation": "vertical",
+        "layout-width": "match_parent",
+        "layout-height": "match_parent",
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test1a-eigenframe.json"
+        },
+        "component-list": [
+          {
+            "type": "TextView",
+            "layout-width": "match_parent",
+            "layout-height": "wrap_content",
+            "text-color": "#ffffff",
+            "url" : "http://photopgp.com/site"
+          }
+        ]
+      }
+
+    ]
+  }
+}

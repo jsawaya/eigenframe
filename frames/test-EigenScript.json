@@ -1,0 +1,230 @@
+{
+  "name": "test2-eigenframe.json",
+  "description": "Test EigenScript: JavaScript, PopupTextView, PopupHtmlView",
+  "layout": {
+    "type": "LinearLayout",
+    "scrollable": true,
+    "orientation": "VERTICAL",
+    "layout-width": "match_parent",
+    "layout-height": "wrap_content",
+    "component-list": [
+      {
+        "type": "TextView",
+        "text": "Test EigenScript: JavaScript, PopupTextView, PopupHtmlView",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text-size": "20",
+        "text-color": "#ffffff"
+      },
+      {
+        "type": "Button",
+        "text": "Source",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text-color": "#ffffff",
+        "background-color": "#22ff0000",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test2-eigenframe.json"
+        }
+      },
+      {
+        "type": "HorizontalLine",
+        "size": 1,
+        "color": "#00ff00"
+      },
+      {
+        "type": "Button",
+        "text": [
+          "JavaScript using script-list: ",
+          "x = 8*5; eigenActivity.showToast('var x: '+x); x;"
+        ],
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text-color": "#ffffff",
+        "background-color": "#ff0000",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "x = 8*5",
+            "eigenActivity.showToast('var x: '+x)",
+            "x"
+          ]
+        }
+      },
+      {
+        "type": "Button",
+        "text": "JavaScript using script-list",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text-color": "#ffffff",
+        "background-color": "#11ff0000",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "htmlString = eigenActivity.getString(com.sawaya.R.string.change_log)",
+            "titleString = eigenActivity.getString(com.sawaya.R.string.recent_changes_title)",
+            "java.lang.System.out.println(htmlString)",
+            "java.lang.System.out.println(titleString)",
+            "popupScreen = new com.sawaya.eigenframe.PopupScreen(eigenActivity)",
+            "popupScreen.createPopupTextWindow()",
+            "popupScreen.setPopupTextTitle(titleString)",
+            "popupScreen.setPopupHtml(htmlString, null)",
+            "popupScreen.showPopupTextWindow(eigenActivity.viewPager)"
+          ]
+        }
+      },
+      {
+        "type": "HorizontalLine",
+        "size": 2,
+        "color": "#00ff00"
+      },
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "Popup TextView/text",
+        "text-color": "#ffffff",
+        "background-color": "#22ffff00",
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Popup TextView",
+          "text": "this is a test"
+        }
+      },
+
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "Popup TextView/text-list",
+        "text-color": "#ffffff",
+        "background-color": "#22ffff00",
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Popup TextView",
+          "text-list": [
+            "this is line 1",
+            "this is line 2",
+            "this is line 3"
+          ]
+        }
+      },
+
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "Popup TextView/url",
+        "text-color": "#ffffff",
+        "background-color": "#22ff0000",
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Popup TextView",
+          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/about.html"
+        }
+      },
+
+      {
+        "type": "HorizontalLine",
+        "size": 2,
+        "color": "#00ff00"
+      },
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "Popup HtmlView/html-list",
+        "text-color": "#ffffff",
+        "background-color": "#11ff0000",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "eigen-script": {
+          "type": "PopupHtmlView",
+          "title": "PopupHtmlView/html-list",
+          "html-list": [
+            "9/27/2019 Version 0.1<hr/>",
+            "- Popup dynamic html with access to application-embedded icons [<img src='info.jpg'>]"
+          ]
+        }
+      },
+      {
+        "type": "LinearLayout",
+        "scrollable": true,
+        "orientation": "horizontal",
+        "layout-width": "match_parent",
+        "layout-height": "match_parent",
+        "component-list": [
+          {
+            "type": "Button",
+            "layout-width": "wrap_content",
+            "layout-height": "wrap_content",
+            "text": "About",
+            "text-color": "#ffffff",
+            "background-color": "#000000",
+            "margin": {
+              "left": 4,
+              "top": 4,
+              "right": 4,
+              "bottom": 4
+            },
+            "icon": {
+              "name": "info.jpg",
+              "location": "left"
+            },
+            "eigen-script": {
+              "type": "PopupHtmlView",
+              "title": "PopupHtmlView",
+              "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/about.html"
+            }
+          },
+          {
+            "type": "Button",
+            "layout-width": "wrap_content",
+            "layout-height": "wrap_content",
+            "text": "Recent Changes",
+            "text-color": "#ffffff",
+            "background-color": "#000000",
+            "icon": {
+              "name": "info.jpg",
+              "location": "left"
+            },
+            "eigen-script": {
+              "type": "PopupHtmlView",
+              "title": "PopupHtmlView",
+              "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/recent-changes.html"
+            },
+            "padding": {
+              "left": 4,
+              "top": 4,
+              "right": 4,
+              "bottom": 4
+            },
+            "margin": {
+              "left": 10,
+              "top": 10,
+              "right": 10,
+              "bottom": 10
+            }
+
+          }
+        ]
+      }
+    ]
+  }
+}

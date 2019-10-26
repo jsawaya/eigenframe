@@ -1,0 +1,111 @@
+{
+  "x-name": "test-RadioButton.json",
+  "x-description": "Test RadioButton",
+  "layout": {
+    "type": "LinearLayout",
+    "scrollable": true,
+    "orientation": "vertical",
+    "layout-width": "match_parent",
+    "layout-height": "wrap_content",
+    "component-list": [
+      {
+        "type": "TextView",
+        "layout-width": "MATCH_PARENT",
+        "layout-height": "wrap_content",
+        "text": "Test RadioButton",
+        "text-size": "20",
+        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+        "text-color": "#ffffff",
+        "icon": {
+          "name": "sawaya_eigenframe_icon.png",
+          "location": "top"
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "Source",
+        "text-color": "#ffffff",
+        "background-color": "#22ff0000",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-RadioButton.json"
+        }
+      },
+      {
+        "type": "HorizontalLine",
+        "size": 1,
+        "color": "#00ff00"
+      },
+      {
+        "type": "RadioButton",
+        "id": 500,
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "orientation": "vertical",
+        "background-color": "#ff00ff",
+        "checked-option": 1,
+        "option-list": [
+          "option 0",
+          "option 1",
+          "option 2"
+        ],
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewIdState(500))"
+          ]
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "getViewIdState RadioButton:500",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('getViewState: '+eigenFragment.getViewIdState(500))"
+          ]
+        }
+      },
+      {
+        "type": "RadioButton",
+        "id": 510,
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "orientation": "vertical",
+        "background-color": "#ff00ff",
+        "option-list": [
+          "option 0",
+          "option 1",
+          "option 2",
+          "option 3",
+          "option 4"
+        ]
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "getViewIdState RadioButton:510",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(510))"
+          ]
+        }
+      }
+    ]
+  }
+}

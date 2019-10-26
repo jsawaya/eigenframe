@@ -1,0 +1,110 @@
+{
+  "x-name": "test-Spinner.json",
+  "x-description": "Test Spinner",
+  "layout": {
+    "type": "LinearLayout",
+    "scrollable": true,
+    "orientation": "vertical",
+    "layout-width": "match_parent",
+    "layout-height": "wrap_content",
+    "component-list": [
+      {
+        "type": "TextView",
+        "layout-width": "MATCH_PARENT",
+        "layout-height": "wrap_content",
+        "text": "Test Spinner",
+        "text-size": "20",
+        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+        "text-color": "#ffffff",
+        "icon": {
+          "name": "sawaya_eigenframe_icon.png",
+          "location": "top"
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "Source",
+        "text-color": "#ffffff",
+        "background-color": "#22ff0000",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-Spinner.json"
+        }
+      },
+      {
+        "type": "HorizontalLine",
+        "size": 1,
+        "color": "#00ff00"
+      },
+      {
+        "type": "Spinner",
+        "id": 600,
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "background-color": "#ff00ff",
+        "checked-option": 2,
+        "option-list": [
+          "option 0",
+          "option 1",
+          "option 2"
+        ],
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(600))"
+          ]
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "getViewIdState Spinner:600",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(600))"
+          ]
+        }
+      },
+      {
+        "type": "Spinner",
+        "id": 610,
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "background-color": "#ff00ff",
+        "checked-option": 0,
+        "option-list": [
+          "option 0",
+          "option 1",
+          "option 2",
+          "option 3",
+          "option 4"
+        ]
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "getViewIdState Spinner:610",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(610))"
+          ]
+        }
+      }
+    ]
+  }
+}

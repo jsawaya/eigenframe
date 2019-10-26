@@ -1,0 +1,21 @@
+{
+  "x-name": "app2",
+  "is-secure-window": "true",
+  "request-permissions": [
+    "android.permission.CAMERA",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+    "android.permission.INTERNET"
+  ],
+  "tab-list": [
+    {
+      "name": "PlayList",
+      "type": "EigenFragment",
+      "icon-name": "sawaya_eigenframe_icon.png",
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/playlist.json"
+    },
+    {
+      "name": "empty",
+      "type": "EigenFragment"
+    }
+  ]
+}

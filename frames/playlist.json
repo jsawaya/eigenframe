@@ -1,0 +1,91 @@
+{
+  "x-name": "playlist.json",
+  "layout": {
+    "type": "LinearLayout",
+    "x-scrollable": true,
+    "orientation": "vertical",
+    "gravity": "horizontal",
+    "layout-width": "match_parent",
+    "layout-height": "wrap_content",
+    "component-list": [
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "launch app0",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "padding": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        },
+        "margin": {
+          "left": 10,
+          "top": 10,
+          "right": 10,
+          "bottom": 10
+        },
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app0.json')"
+          ]
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "launch app1",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "padding": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        },
+        "margin": {
+          "left": 10,
+          "top": 10,
+          "right": 10,
+          "bottom": 10
+        },
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app1.json')"
+          ]
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "launch app2",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "padding": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        },
+        "margin": {
+          "left": 10,
+          "top": 10,
+          "right": 10,
+          "bottom": 10
+        },
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app2.json')"
+          ]
+        }
+      }
+    ]
+  }
+}

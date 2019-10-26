@@ -1,0 +1,114 @@
+{
+  "x-name": "test-Switch.json",
+  "x-description": "Test Switch",
+  "layout": {
+    "type": "LinearLayout",
+    "scrollable": true,
+    "orientation": "vertical",
+    "layout-width": "match_parent",
+    "layout-height": "wrap_content",
+    "component-list": [
+      {
+        "type": "TextView",
+        "layout-width": "MATCH_PARENT",
+        "layout-height": "wrap_content",
+        "text": "Test Switch",
+        "text-size": "20",
+        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+        "text-color": "#ffffff",
+        "icon": {
+          "name": "sawaya_eigenframe_icon.png",
+          "location": "top"
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "Source",
+        "text-color": "#ffffff",
+        "background-color": "#22ff0000",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-Switch.json"
+        }
+      },
+      {
+        "type": "HorizontalLine",
+        "size": 1,
+        "color": "#00ff00"
+      },
+      {
+        "type": "Switch",
+        "id": 300,
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "This is Switch:300",
+        "checked": true,
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "padding": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        },
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(300))"
+          ]
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "getViewState of Switch:300",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(300))"
+          ]
+        }
+      },
+      {
+        "type": "Switch",
+        "id": 301,
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "This is Switch:301",
+        "checked": true,
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "margin": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "getViewState of Switch:301",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(301))"
+          ]
+        }
+      }
+    ]
+  }
+}
