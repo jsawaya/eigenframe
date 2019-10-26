@@ -30,7 +30,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('https://github.com/jsawaya/eigenframe/blob/master/applications/app0.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/applications/app0.json')"
           ]
         }
       },
@@ -56,7 +56,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('https://github.com/jsawaya/eigenframe/blob/master/applications/app1.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/applications/app1.json')"
           ]
         }
       },
@@ -82,7 +82,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('https://github.com/jsawaya/eigenframe/blob/master/applications/app2.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/applications/app2.json')"
           ]
         }
       }

@@ -16,7 +16,7 @@
       "name": "PlayList",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/playlist.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/playlist.json"
     },
     {
       "name": "empty",
@@ -26,7 +26,7 @@
       "name": "ImageView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-ImageView.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-ImageView.json"
     },
     {
       "name": "empty",
@@ -36,61 +36,61 @@
       "name": "Button",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-Button.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Button.json"
     },
     {
       "name": "Script",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-EigenScript.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-EigenScript.json"
     },
     {
       "name": "CheckBox",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-CheckBox.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-CheckBox.json"
     },
     {
       "name": "Switch",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-Switch.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Switch.json"
     },
     {
       "name": "ToggleButton",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-ToggleButton.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-ToggleButton.json"
     },
     {
       "name": "RadioButton",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-RadioButton.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-RadioButton.json"
     },
     {
       "name": "Spinner",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-Spinner.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Spinner.json"
     },
     {
       "name": "ListView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-ListView.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-ListView.json"
     },
     {
       "name": "AlertDialog",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-AlertDialog.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-AlertDialog.json"
     },
     {
       "name": "SelectDialog",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-SelectDialog.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-SelectDialog.json"
     },
     {
       "name": "empty",
@@ -100,25 +100,25 @@
       "name": "TextView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-TextView.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-TextView.json"
     },
     {
       "name": "EditText",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-EditText.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-EditText.json"
     },
     {
       "name": "HtmlView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-HtmlView.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-HtmlView.json"
     },
     {
       "name": "WebView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-WebView.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-WebView.json"
     }
   ]
 }

@@ -28,7 +28,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/enframe.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/enframe.json"
         }
       },
 

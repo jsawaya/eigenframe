@@ -16,13 +16,13 @@
       "name": "PlayList",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/playlist.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/playlist.json"
     },
     {
       "name": "ABOUT",
       "type": "EigenFragment",
       "icon-name": "info.png",
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/PhotoPGP-WebView.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/PhotoPGP-WebView.json"
     },
     {
       "name": "SETTINGS",

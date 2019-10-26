@@ -31,7 +31,7 @@
             "eigen-script": {
               "type": "PopupTextView",
               "title": "Source",
-              "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-Button.json"
+              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Button.json"
             }
           },
           {
@@ -67,7 +67,7 @@
       {
         "x-type": "PopupTextView",
         "title": "Source",
-        "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-Button.json"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Button.json"
       },
 
       {
@@ -276,7 +276,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.addShortcut('app1', 'file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app1.json')",
+            "eigenActivity.addShortcut('app1', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/app1.json')",
             "eigenActivity.finish()",
             "901"
           ]
@@ -293,7 +293,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.addShortcut('app2', 'file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app2.json')",
+            "eigenActivity.addShortcut('app2', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/app2.json')",
             "eigenActivity.finish()",
             902
           ]
@@ -321,7 +321,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app1.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/app1.json')"
           ]
         }
       },
@@ -347,7 +347,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app2.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/app2.json')"
           ]
         }
       }

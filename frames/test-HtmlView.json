@@ -28,7 +28,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test1b-eigenframe.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test1b-eigenframe.json"
         }
       },
       {
@@ -57,7 +57,7 @@
             "layout-height": "wrap_content",
             "text-size": "14",
             "text-color": "#ffffff",
-            "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/about.html"
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/about.html"
           }
         ]
       }

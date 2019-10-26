@@ -30,7 +30,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test2-eigenframe.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test2-eigenframe.json"
         }
       },
       {
@@ -134,7 +134,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Popup TextView",
-          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/about.html"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/about.html"
         }
       },
 
@@ -190,7 +190,7 @@
             "eigen-script": {
               "type": "PopupHtmlView",
               "title": "PopupHtmlView",
-              "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/about.html"
+              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/about.html"
             }
           },
           {
@@ -207,7 +207,7 @@
             "eigen-script": {
               "type": "PopupHtmlView",
               "title": "PopupHtmlView",
-              "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/recent-changes.html"
+              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/recent-changes.html"
             },
             "padding": {
               "left": 4,
