@@ -16,7 +16,7 @@
       "name": "PlayList",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/playlist.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/playlist.json"
     },
     {
       "name": "empty",
@@ -26,7 +26,7 @@
       "name": "ImageView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-ImageView.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-ImageView.json"
     },
     {
       "name": "empty",
@@ -36,61 +36,61 @@
       "name": "Button",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-Button.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-Button.json"
     },
     {
       "name": "Script",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-EigenScript.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-EigenScript.json"
     },
     {
       "name": "CheckBox",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-CheckBox.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-CheckBox.json"
     },
     {
       "name": "Switch",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-Switch.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-Switch.json"
     },
     {
       "name": "ToggleButton",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-ToggleButton.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-ToggleButton.json"
     },
     {
       "name": "RadioButton",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-RadioButton.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-RadioButton.json"
     },
     {
       "name": "Spinner",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-Spinner.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-Spinner.json"
     },
     {
       "name": "ListView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-ListView.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-ListView.json"
     },
     {
       "name": "AlertDialog",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-AlertDialog.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-AlertDialog.json"
     },
     {
       "name": "SelectDialog",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-SelectDialog.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-SelectDialog.json"
     },
     {
       "name": "empty",
@@ -100,45 +100,25 @@
       "name": "TextView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-TextView.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-TextView.json"
     },
     {
       "name": "EditText",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-EditText.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-EditText.json"
     },
     {
       "name": "HtmlView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-HtmlView.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-HtmlView.json"
     },
     {
       "name": "WebView",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/test-WebView.json"
-    },
-    {
-      "name": "SETTINGS",
-      "type": "x-SettingsFragment",
-      "icon-name": "settings.jpg"
-    },
-    {
-      "name": "INDEX",
-      "type": "x-IndexFragment",
-      "icon-name": "viewlist.jpg"
-    },
-    {
-      "name": "VIEWER",
-      "type": "x-ViewFragment",
-      "icon-name": "pageview.jpg"
-    },
-    {
-      "name": "CAMERA",
-      "type": "x-PhotoFragment",
-      "icon-name": "add_photo.jpg"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/test-WebView.json"
     }
   ]
 }

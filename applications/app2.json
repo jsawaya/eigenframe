@@ -11,7 +11,7 @@
       "name": "PlayList",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/playlist.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/playlist.json"
     },
     {
       "name": "empty",

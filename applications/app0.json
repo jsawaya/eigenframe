@@ -16,13 +16,13 @@
       "name": "PlayList",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/playlist.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/playlist.json"
     },
     {
       "name": "ABOUT",
       "type": "EigenFragment",
       "icon-name": "info.png",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/PhotoPGP-WebView.json"
+      "url": "https://github.com/jsawaya/eigenframe/blob/master/frames/PhotoPGP-WebView.json"
     },
     {
       "name": "SETTINGS",
