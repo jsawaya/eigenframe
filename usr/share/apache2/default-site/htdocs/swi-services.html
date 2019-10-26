@@ -1,0 +1,66 @@
+
+<html>
+  <head>
+    <style>
+      h1 {
+	  color: navy;
+      }
+      .rTable {
+	  border: 1px solid #999999;
+	  display: block;
+	  width: 100%;
+      }
+      .rTableHeading, .rTableBody, .rTableFoot, .rTableRow {
+	  clear: both;
+      }
+      .rTableHead, .rTableFoot {
+	  background-color: yellow;
+	  font-weight: bold;
+      }
+      .rTableHead, .rTableCell {
+	  #	  border: 1px solid #999999;
+	  float: left;
+	  #height: 18px;
+	  overflow: hidden;
+	  padding: 3px 1.8%;
+	  #	  width: 28%;
+      }
+      .rTableHead, .rTableCell2 {
+	  #	  border: 1px solid #999999;
+	  float: left;
+	  overflow: hidden;
+	  padding: 3px 1.8%;
+	  #	  width: 28%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Termux Apache2 CGI Server</h1>
+
+    <hr/>
+
+    <h2>Prolog (SWI) Services</h2>
+
+    <h4>Searching facts and rules:</h4>
+    <a href="/cgi-bin/swi-test.sh?entity(X),writeln(X),false" > Search entity instances </a><p/>
+    <a href="/cgi-bin/swi-test.sh?parent(cynthia,X),writeln(X),false" > Search children of cynthia </a><p/>
+    <a href="/cgi-bin/swi-test.sh?sibling(monica,X),writeln(X),false" > Search sibling of monica </a><p/>
+    <a href="/cgi-bin/swi-test.sh?sibling(melissa,X),writeln(X),false" > Search sibling of melissa</a><p/>
+
+    <h4>List Handling:</h4>
+    <a href="/cgi-bin/swi-list.sh?sublist([a,b,c,d,e],Y),writeln(Y),false" > Query for sublist instances </a><p/>
+    <a href="/cgi-bin/swi-list.sh?nrev([a,b,c,d,e],Y),writeln(Y)" > List manipulation (reversal) </a><p/>
+
+    <h4>Generate Inferences:</h4>
+    <a href="/cgi-bin/swi-ein-riddle.sh?houses(H),writeln(H)" > Famous Zebra Riddle </a><p/>
+
+    <h4>Efficient Path Search:</h4>
+    <a href="/cgi-bin/swi-routes.sh?route(nottinghill_gate,maida_vale,X)" > Route Planning (sh)</a><p/>
+    <a href="/cgi-bin/swi-routes.rb?route(nottinghill_gate,maida_vale,X)" > Route Planning (rb)</a><p/>
+
+    <h4>Constraint Satisfaction:</h4>
+    <a href="/cgi-bin/swi-sudoku.sh?problem(1,Rows),sudoku(Rows),writeln(Rows)" > Sudoku </a><p/>
+
+
+  </body>
+</html>
