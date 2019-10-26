@@ -1,5 +1,5 @@
 {
-  "name": "test1a-eigenframe.json",
+  "x-name": "test-TextView.json",
   "layout": {
     "type": "LinearLayout",
     "orientation": "VERTICAL",
