@@ -1,5 +1,5 @@
 {
-  "name": "test1b-eigenframe.json",
+  "x-name": "test-HtmlView.json",
   "layout": {
     "type": "LinearLayout",
     "orientation": "VERTICAL",
@@ -28,7 +28,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test1b-eigenframe.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-HtmlView.json"
         }
       },
       {

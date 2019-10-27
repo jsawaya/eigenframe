@@ -1,6 +1,6 @@
 {
-  "name": "test-EditText.json",
-  "description": "Test EditText, CheckBox, Switch, ToggleButton, RadioButton, Spinner",
+  "x-name": "test-EditText.json",
+  "x-description": "Test EditText",
   "layout": {
     "type": "LinearLayout",
     "scrollable": true,

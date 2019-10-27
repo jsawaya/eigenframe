@@ -1,6 +1,6 @@
 {
-  "name": "test-ListView.json",
-  "description": "Test ListView 1",
+  "x-name": "test-ListView.json",
+  "x-description": "Test ListView",
   "layout": {
     "type": "LinearLayout",
     "orientation": "vertical",
