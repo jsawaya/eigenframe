@@ -1,21 +1,10 @@
 #!/usr/bin/sh
 
-echo ps -e
-ps -e
+echo "end all httpd processes"
+killall httpd
 
-echo ls httpd.pid
-ls -la /data/data/com.termux/files/usr/var/run/apache2/httpd.pid
-
-echo cat httpd.pid
-cat /data/data/com.termux/files/usr/var/run/apache2/httpd.pid
-
-echo rm httpd.pid
+echo "remove httpd process id"
 rm /data/data/com.termux/files/usr/var/run/apache2/httpd.pid
 
-#echo stop httpd
-
-echo starting httpd
+echo "start apache2 httpd..."
 httpd&
-
-echo ps -e
-ps -e

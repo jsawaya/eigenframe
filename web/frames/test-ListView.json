@@ -34,7 +34,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-ListView.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ListView.json"
         }
       },
       {

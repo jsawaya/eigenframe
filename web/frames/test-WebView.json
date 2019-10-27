@@ -1,18 +1,18 @@
 {
-  "name": "test1b-eigenframe.json",
+  "x-name": "test-WebView.json",
   "layout": {
     "type": "LinearLayout",
     "orientation": "VERTICAL",
-    "layout-width": "match_parent",
-    "layout-height": "match_parent",
+    "layout-width": "MATCH_PARENT",
+    "layout-height": "MATCH_PARENT",
     "component-list": [
       {
         "type": "TextView",
-        "layout-width": "match_parent",
+        "layout-width": "MATCH_PARENT",
         "layout-height": "wrap_content",
         "text-size": "20",
         "text-color": "#ffffff",
-        "text": "Test for HtmlView"
+        "text": "Test for WebView"
       },
       {
         "type": "Button",
@@ -28,22 +28,10 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test1b-eigenframe.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-WebView.json"
         }
       },
-      {
-        "type": "HtmlView",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text-size": "14",
-        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-        "text-color": "#ffffff",
-        "icon-x": {
-          "name": "info.jpg",
-          "location": "left"
-        },
-        "html": "example-links: <hr/> google.com<p/> https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP <p/>internal-icon: <img src='play.jpg'>"
-      },
+
       {
         "type": "LinearLayout",
         "scrollable": true,
@@ -52,16 +40,19 @@
         "layout-height": "match_parent",
         "component-list": [
           {
-            "type": "HtmlView",
+            "type": "WebView",
             "layout-width": "match_parent",
             "layout-height": "wrap_content",
-            "text-size": "14",
-            "text-color": "#ffffff",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/about.html"
+            "html" : "<html><body><h1>WebView - html specified</h1></body></html>"
+          },
+          {
+            "type": "WebView",
+            "layout-width": "match_parent",
+            "layout-height": "wrap_content",
+            "url" : "http://photopgp.com/site"
           }
         ]
       }
-
     ]
   }
 }

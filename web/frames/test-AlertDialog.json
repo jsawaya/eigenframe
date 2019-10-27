@@ -1,6 +1,6 @@
 {
-  "x-name": "test-SelectDialog.json",
-  "x-description": "Test SelectDialog",
+  "x-name": "test-AlertDialog.json",
+  "x-description": "Test AlertDialog",
   "layout": {
     "type": "LinearLayout",
     "scrollable": true,
@@ -12,7 +12,7 @@
         "type": "TextView",
         "layout-width": "MATCH_PARENT",
         "layout-height": "wrap_content",
-        "text": "Test SelectDialog",
+        "text": "Test AlertDialog",
         "text-size": "20",
         "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
         "text-color": "#ffffff",
@@ -35,7 +35,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-SelectDialog.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-AlertDialog.json"
         }
       },
       {
@@ -47,26 +47,35 @@
         "type": "Button",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "Test SelectDialog",
+        "text": "Test AlertDialog",
         "text-color": "#ffffff",
         "background-color": "#22ff0000",
         "eigen-script": {
-          "type": "SelectDialog",
-          "title": "Test SelectDialog",
+          "type": "AlertDialog",
+          "title": "My AlertDialog",
           "icon": {
             "name": "info.jpg"
           },
-          "checked-option": 1,
-          "option-list": [
-              "option 0",
-              "option 1",
-              "option 2"
-          ],
-          "eigen-script": {
-            "type": "JavaScript",
-            "script-list": [
-              "eigenActivity.showToast('SelectDialog: option-name: '+eigenMap.get('option-name'))"
-            ]
+          "positive": {
+            "option": "YES",
+            "eigen-script": {
+              "type": "JavaScript",
+              "script": "eigenActivity.showToast('AlertDialog says YES')"
+            }
+          },
+          "negative": {
+            "option": "NO",
+            "eigen-script": {
+              "type": "JavaScript",
+              "script": "eigenActivity.showToast('AlertDialog says NO')"
+            }
+          },
+          "neutral": {
+            "option": "UNKNOWN",
+            "eigen-script": {
+              "type": "JavaScript",
+              "script": "eigenActivity.showToast('AlertDialog says UNKNOWN')"
+            }
           }
         }
       }

@@ -1,18 +1,23 @@
 {
-  "x-name": "test-WebView.json",
+  "x-name": "test-TextView.json",
   "layout": {
     "type": "LinearLayout",
     "orientation": "VERTICAL",
-    "layout-width": "MATCH_PARENT",
-    "layout-height": "MATCH_PARENT",
+    "layout-width": "match_parent",
+    "layout-height": "match_parent",
     "component-list": [
       {
         "type": "TextView",
-        "layout-width": "MATCH_PARENT",
+        "layout-width": "match_parent",
         "layout-height": "wrap_content",
         "text-size": "20",
         "text-color": "#ffffff",
-        "text": "Test for WebView"
+        "text": "Test for TextView",
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
+        }
       },
       {
         "type": "Button",
@@ -28,31 +33,31 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-WebView.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
         }
       },
-
       {
         "type": "LinearLayout",
         "scrollable": true,
         "orientation": "vertical",
         "layout-width": "match_parent",
         "layout-height": "match_parent",
+        "eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
+        },
         "component-list": [
           {
-            "type": "WebView",
+            "type": "TextView",
             "layout-width": "match_parent",
             "layout-height": "wrap_content",
-            "html" : "<html><body><h1>WebView - html specified</h1></body></html>"
-          },
-          {
-            "type": "WebView",
-            "layout-width": "match_parent",
-            "layout-height": "wrap_content",
+            "text-color": "#ffffff",
             "url" : "http://photopgp.com/site"
           }
         ]
       }
+
     ]
   }
 }

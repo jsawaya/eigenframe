@@ -1,5 +1,5 @@
 {
-  "x-name": "test-TextView.json",
+  "name": "test1b-eigenframe.json",
   "layout": {
     "type": "LinearLayout",
     "orientation": "VERTICAL",
@@ -12,12 +12,7 @@
         "layout-height": "wrap_content",
         "text-size": "20",
         "text-color": "#ffffff",
-        "text": "Test for TextView",
-        "eigen-script": {
-          "type": "PopupTextView",
-          "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-TextView.json"
-        }
+        "text": "Test for HtmlView"
       },
       {
         "type": "Button",
@@ -33,8 +28,21 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-TextView.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test1b-eigenframe.json"
         }
+      },
+      {
+        "type": "HtmlView",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text-size": "14",
+        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+        "text-color": "#ffffff",
+        "icon-x": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "html": "example-links: <hr/> google.com<p/> https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP <p/>internal-icon: <img src='play.jpg'>"
       },
       {
         "type": "LinearLayout",
@@ -42,18 +50,14 @@
         "orientation": "vertical",
         "layout-width": "match_parent",
         "layout-height": "match_parent",
-        "eigen-script": {
-          "type": "PopupTextView",
-          "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-TextView.json"
-        },
         "component-list": [
           {
-            "type": "TextView",
+            "type": "HtmlView",
             "layout-width": "match_parent",
             "layout-height": "wrap_content",
+            "text-size": "14",
             "text-color": "#ffffff",
-            "url" : "http://photopgp.com/site"
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
           }
         ]
       }

@@ -31,7 +31,7 @@
             "eigen-script": {
               "type": "PopupTextView",
               "title": "Source",
-              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Button.json"
+              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Button.json"
             }
           },
           {
@@ -67,7 +67,7 @@
       {
         "x-type": "PopupTextView",
         "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Button.json"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Button.json"
       },
 
       {
@@ -321,7 +321,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/app1.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/app1.json')"
           ]
         }
       },
@@ -347,7 +347,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/app2.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/app2.json')"
           ]
         }
       }

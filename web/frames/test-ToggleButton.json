@@ -1,6 +1,6 @@
 {
-  "x-name": "test-Spinner.json",
-  "x-description": "Test Spinner",
+  "x-name": "test-ToggleButton.json",
+  "x-description": "Test ToggleButton",
   "layout": {
     "type": "LinearLayout",
     "scrollable": true,
@@ -12,7 +12,7 @@
         "type": "TextView",
         "layout-width": "MATCH_PARENT",
         "layout-height": "wrap_content",
-        "text": "Test Spinner",
+        "text": "Test ToggleButton",
         "text-size": "20",
         "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
         "text-color": "#ffffff",
@@ -35,7 +35,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Spinner.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ToggleButton.json"
         }
       },
       {
@@ -44,21 +44,23 @@
         "color": "#00ff00"
       },
       {
-        "type": "Spinner",
-        "id": 600,
+        "type": "ToggleButton",
+        "id": 400,
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
+        "checked": false,
+        "text-color": "#ffffff",
         "background-color": "#ff00ff",
-        "checked-option": 2,
-        "option-list": [
-          "option 0",
-          "option 1",
-          "option 2"
-        ],
+        "margin-x": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        },
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(600))"
+            "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
           ]
         }
       },
@@ -66,42 +68,42 @@
         "type": "Button",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "getViewIdState Spinner:600",
+        "text": "getViewIdState ToggleButton:400",
         "text-color": "#ffffff",
         "background-color": "#ff00ff",
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(600))"
+            "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
           ]
         }
       },
       {
-        "type": "Spinner",
-        "id": 610,
+        "type": "ToggleButton",
+        "id": 401,
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
+        "checked": false,
+        "text-color": "#ffffff",
         "background-color": "#ff00ff",
-        "checked-option": 0,
-        "option-list": [
-          "option 0",
-          "option 1",
-          "option 2",
-          "option 3",
-          "option 4"
-        ]
+        "margin": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        }
       },
       {
         "type": "Button",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "getViewIdState Spinner:610",
+        "text": "getViewIdState ToggleButton:401",
         "text-color": "#ffffff",
         "background-color": "#ff00ff",
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(610))"
+            "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(401))"
           ]
         }
       }

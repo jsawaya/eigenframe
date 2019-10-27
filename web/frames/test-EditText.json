@@ -1,6 +1,6 @@
 {
-  "x-name": "test-RadioButton.json",
-  "x-description": "Test RadioButton",
+  "name": "test-EditText.json",
+  "description": "Test EditText, CheckBox, Switch, ToggleButton, RadioButton, Spinner",
   "layout": {
     "type": "LinearLayout",
     "scrollable": true,
@@ -12,7 +12,7 @@
         "type": "TextView",
         "layout-width": "MATCH_PARENT",
         "layout-height": "wrap_content",
-        "text": "Test RadioButton",
+        "text": "Test EditText",
         "text-size": "20",
         "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
         "text-color": "#ffffff",
@@ -35,7 +35,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-RadioButton.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EditText.json"
         }
       },
       {
@@ -43,66 +43,86 @@
         "size": 1,
         "color": "#00ff00"
       },
+
       {
-        "type": "RadioButton",
-        "id": 500,
+        "type": "EditText",
+        "id": 100,
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "orientation": "vertical",
-        "background-color": "#ff00ff",
-        "checked-option": 1,
-        "option-list": [
-          "option 0",
-          "option 1",
-          "option 2"
-        ],
-        "eigen-script": {
+        "text": "edit text",
+        "text-color": "#ffffff",
+        "background-color": "#11ff0000",
+        "eigen-script-x": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewIdState(500))"
+            "java.lang.System.out.println('eigenMap: '+eigenMap)",
+            "eigenActivity.showToast('EditText key: '+eigenMap.get('keyCode'))"
           ]
         }
       },
+
       {
         "type": "Button",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "getViewIdState RadioButton:500",
+        "text": "Access EditText",
         "text-color": "#ffffff",
         "background-color": "#ff00ff",
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('getViewState: '+eigenFragment.getViewIdState(500))"
+            "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
           ]
         }
       },
+
       {
-        "type": "RadioButton",
-        "id": 510,
+        "type": "EditText",
+        "id": 101,
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "orientation": "vertical",
-        "background-color": "#ff00ff",
-        "option-list": [
-          "option 0",
-          "option 1",
-          "option 2",
-          "option 3",
-          "option 4"
-        ]
+        "text": "edit text 101",
+        "text-color": "#ffffff",
+        "background-color": "#11ff0000"
       },
+
       {
         "type": "Button",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "getViewIdState RadioButton:510",
+        "text": "Access EditText",
         "text-color": "#ffffff",
         "background-color": "#ff00ff",
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(510))"
+            "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
+          ]
+        }
+      },
+
+
+      {
+        "type": "EditText",
+        "id": 102,
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "edit text 102",
+        "text-color": "#ffffff",
+        "background-color": "#11ff0000"
+      },
+
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "Access EditText",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('eigenFragment.getEditTextValue(102): '+eigenFragment.getEditTextValue(102))"
           ]
         }
       }

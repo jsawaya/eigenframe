@@ -30,7 +30,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-EigenScript.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EigenScript.json"
         }
       },
       {
@@ -134,7 +134,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Popup TextView",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/about.html"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
         }
       },
 
@@ -190,7 +190,7 @@
             "eigen-script": {
               "type": "PopupHtmlView",
               "title": "PopupHtmlView",
-              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/about.html"
+              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
             }
           },
           {
@@ -207,7 +207,7 @@
             "eigen-script": {
               "type": "PopupHtmlView",
               "title": "PopupHtmlView",
-              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/recent-changes.html"
+              "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/recent-changes.html"
             },
             "padding": {
               "left": 4,

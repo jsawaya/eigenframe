@@ -1,6 +1,6 @@
 {
-  "x-name": "test-Switch.json",
-  "x-description": "Test Switch",
+  "x-name": "test-Spinner.json",
+  "x-description": "Test Spinner",
   "layout": {
     "type": "LinearLayout",
     "scrollable": true,
@@ -12,7 +12,7 @@
         "type": "TextView",
         "layout-width": "MATCH_PARENT",
         "layout-height": "wrap_content",
-        "text": "Test Switch",
+        "text": "Test Spinner",
         "text-size": "20",
         "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
         "text-color": "#ffffff",
@@ -35,7 +35,7 @@
         "eigen-script": {
           "type": "PopupTextView",
           "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/frames/test-Switch.json"
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Spinner.json"
         }
       },
       {
@@ -44,24 +44,21 @@
         "color": "#00ff00"
       },
       {
-        "type": "Switch",
-        "id": 300,
+        "type": "Spinner",
+        "id": 600,
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "This is Switch:300",
-        "checked": true,
-        "text-color": "#ffffff",
         "background-color": "#ff00ff",
-        "padding": {
-          "left": 40,
-          "top": 40,
-          "right": 40,
-          "bottom": 40
-        },
+        "checked-option": 2,
+        "option-list": [
+          "option 0",
+          "option 1",
+          "option 2"
+        ],
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(300))"
+            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(600))"
           ]
         }
       },
@@ -69,43 +66,42 @@
         "type": "Button",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "getViewState of Switch:300",
+        "text": "getViewIdState Spinner:600",
         "text-color": "#ffffff",
         "background-color": "#ff00ff",
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(300))"
+            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(600))"
           ]
         }
       },
       {
-        "type": "Switch",
-        "id": 301,
+        "type": "Spinner",
+        "id": 610,
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "This is Switch:301",
-        "checked": true,
-        "text-color": "#ffffff",
         "background-color": "#ff00ff",
-        "margin": {
-          "left": 40,
-          "top": 40,
-          "right": 40,
-          "bottom": 40
-        }
+        "checked-option": 0,
+        "option-list": [
+          "option 0",
+          "option 1",
+          "option 2",
+          "option 3",
+          "option 4"
+        ]
       },
       {
         "type": "Button",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
-        "text": "getViewState of Switch:301",
+        "text": "getViewIdState Spinner:610",
         "text-color": "#ffffff",
         "background-color": "#ff00ff",
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(301))"
+            "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(610))"
           ]
         }
       }
