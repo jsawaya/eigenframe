@@ -276,7 +276,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.addShortcut('app1', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/applications/app1.json')",
+            "eigenActivity.addShortcut('app1', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
             "eigenActivity.finish()",
             "901"
           ]
@@ -293,7 +293,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.addShortcut('app2', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/applications/app2.json')",
+            "eigenActivity.addShortcut('app2', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')",
             "eigenActivity.finish()",
             902
           ]
@@ -321,7 +321,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/app1.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')"
           ]
         }
       },
@@ -347,7 +347,7 @@
         "eigen-script": {
           "type": "JavaScript",
           "script-list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/app2.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')"
           ]
         }
       }
