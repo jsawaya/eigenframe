@@ -1,38 +1,5 @@
-
 <html>
   <head>
-    <style>
-      h1 {
-	  color: navy;
-      }
-      .rTable {
-	  border: 1px solid #999999;
-	  display: block;
-	  width: 100%;
-      }
-      .rTableHeading, .rTableBody, .rTableFoot, .rTableRow {
-	  clear: both;
-      }
-      .rTableHead, .rTableFoot {
-	  background-color: yellow;
-	  font-weight: bold;
-      }
-      .rTableHead, .rTableCell {
-	  #	  border: 1px solid #999999;
-	  float: left;
-	  #height: 18px;
-	  overflow: hidden;
-	  padding: 3px 1.8%;
-	  #	  width: 28%;
-      }
-      .rTableHead, .rTableCell2 {
-	  #	  border: 1px solid #999999;
-	  float: left;
-	  overflow: hidden;
-	  padding: 3px 1.8%;
-	  #	  width: 28%;
-      }
-    </style>
   </head>
   <body>
     <h1>Termux Apache2 CGI Server</h1>
@@ -49,122 +16,12 @@
 
     <hr/>
     <h4>Apache2 HTTP Logs:</h4>
-    <h5>Apache2 HTTP Access Logs:</h5>
     <a href="/cgi-bin/sys-list-access-log.sh" > List Access Log </a><p/>
-    <a href="/cgi-bin/sys-clear-error-log.sh" > Clear Access Log </a><p/>
-    <h5>Apache2 HTTP Error Logs:</h5>
     <a href="/cgi-bin/sys-list-error-log.sh" > List Error Log </a><p/>
-    <a href="/cgi-bin/sys-clear-error-log.sh" > Clear Error Log </a><p/>
 
     <hr/>
     <h4>Ruby Scripts:</h4>
     <a href="/cgi-bin/sys-test.rb?this=isatest" > Ruby list environment variables</a><p/>
-
-    <hr/>
-    <h5>Archive Working Directories:</h5>
-    <div class="rTable"> 
-      <form action="/cgi-bin/sys-archive.rb" method="post" target="_self" >
-	<div class="rTableRow">
-	  <div class="rTableHead">Archive working directories</div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">Path:</div>
-	  <div class="rTableCell">
-	    <input type="text" name="zip_path" size="100"
-		   value="/data/data/com.termux/files/home/storage/shared/Android/data/com.termux/files" />
-	  </div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">Filename:</div>
-	  <div class="rTableCell">
-	    <input type="text" name="zip_name" size="100"
-		   value="backup-public.zip" />
-	  </div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">
-	    <input type="submit" value="enter" />
-	  </div>
-	</div>
-      </form>
-    </div>
-
-
-    <hr/>
-    <h5>Show Zipfile Contents</h5>
-    <div class="rTable"> 
-      <form action="/cgi-bin/sys-zip-contents.rb" method="post" target="_self" >
-	<div class="rTableRow">
-	  <div class="rTableHead">Show Zipfile Contents</div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">Path:</div>
-	  <div class="rTableCell">
-	    <input type="text" name="zip_path" size="100"
-		   value="/data/data/com.termux/files/home/storage/shared/Android/data/com.termux/files" />
-	  </div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">Filename:</div>
-	  <div class="rTableCell">
-	    <input type="text" name="zip_name" size="100"
-		   value="backup-public.zip" />
-	  </div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">Frame:</div>
-	  <div class="rTableCell">
-	    <input type="text" name="frame" size="50"
-		   value="stdout" />
-	  </div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">Format:</div>
-	  <div class="rTableCell">
-	    <select name="format">
-	      <option value="json"> Json </option>
-	      <option value="txt" selected> Text </option>
-	    </select>
-	  </div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">
-	    <input type="submit" value="enter" />
-	  </div>
-	</div>
-      </form>
-    </div>
-
-
-    <hr/>
-    <h5>Restore files from zipfile:</h5>
-
-    <div class="rTable"> 
-      <form action="/cgi-bin/sys-restore.rb" method="post" target="_self" >
-	<div class="rTableRow">
-	  <div class="rTableHead">Restore files from zipfile</div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">Path:</div>
-	  <div class="rTableCell">
-	    <input type="text" name="zip_path" size="100"
-		   value="/data/data/com.termux/files/home/storage/shared/Android/data/com.termux/files" />
-	  </div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">Filename:</div>
-	  <div class="rTableCell">
-	    <input type="text" name="zip_name" size="100"
-		   value="backup-public.zip" />
-	  </div>
-	</div>
-	<div class="rTableRow">
-	  <div class="rTableCell">
-	    <input type="submit" value="enter" />
-	  </div>
-	</div>
-      </form>
-    </div>
 
     <hr/>
 

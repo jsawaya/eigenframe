@@ -85,7 +85,24 @@
             "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')"
           ]
         }
+      },
+      {
+        "type": "EditText",
+        "id": 1100,
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "edit text",
+        "text-color": "#ffffff",
+        "background-color": "#11ff0000",
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "java.lang.System.out.println('eigenMap: '+eigenMap)",
+            "eigenActivity.showToast('EditText key: '+eigenMap.get('keyCode'))"
+          ]
+        }
       }
+	
     ]
   }
 }
