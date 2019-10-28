@@ -94,11 +94,20 @@
         "text": "edit text",
         "text-color": "#ffffff",
         "background-color": "#11ff0000",
+      },
+      {
+        "type": "Button",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text": "http://localhost:8080/frames/playlist.json",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
         "eigen-script": {
           "type": "JavaScript",
-          "script-list": [
-            "java.lang.System.out.println('eigenMap: '+eigenMap)",
-            "eigenActivity.showToast('EditText key: '+eigenMap.get('keyCode'))"
+            "script-list":
+	    [		
+	     "eigenActivity.launch('+eigenFragment.getViewState(1100))+')"
+            "eigenActivity.showToast('url: '+eigenFragment.getViewState(1100))"
           ]
         }
       }
