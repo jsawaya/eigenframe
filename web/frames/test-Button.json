@@ -2,7 +2,7 @@
   "x-name": "test-Button.json",
   "layout": {
     "type": "LinearLayout",
-    "x-scrollable": true,
+    "scrollable": true,
     "orientation": "vertical",
     "gravity": "horizontal",
     "layout-width": "match_parent",
