@@ -181,18 +181,26 @@
         "layout-height": "wrap_content",
         "component-list": [
           {
+            "type": "TextView",
+            "layout-width": "wrap_content",
+            "layout-height": "wrap_content",
+            "text-size": "20",
+            "text-color": "#ffffff",
+            "text": "app-url:"
+          },
+          {
             "type": "EditText",
             "id": 1100,
-            "layout-width": "match_parent",
+            "layout-width": "wrap_content",
             "layout-height": "wrap_content",
-            "layout-weight": 5,
+            "layout-weight": 10,
             "text": "http://localhost:8080/apps/app1.json",
             "text-color": "#ffffff",
             "background-color": "#11ff0000"
           },
           {
             "type": "Button",
-            "layout-width": "match_parent",
+            "layout-width": "wrap_content",
             "layout-height": "wrap_content",
             "layout-weight": 1,
             "text": "launch",
@@ -206,6 +214,58 @@
             }
           }
         ]
+      },
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "orientation:landscape",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "padding": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        },
+        "margin": {
+          "left": 10,
+          "top": 10,
+          "right": 10,
+          "bottom": 10
+        },
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
+          ]
+        }
+      },
+      {
+        "type": "Button",
+        "layout-width": "wrap_content",
+        "layout-height": "wrap_content",
+        "text": "orientation:portrait",
+        "text-color": "#ffffff",
+        "background-color": "#ff00ff",
+        "padding": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        },
+        "margin": {
+          "left": 10,
+          "top": 10,
+          "right": 10,
+          "bottom": 10
+        },
+        "eigen-script": {
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
+          ]
+        }
       }
     ]
   }
