@@ -13,9 +13,8 @@
   "tab-list" :
   [
     {
-      "name": "PlayList",
+      "name": "app1 PlayList\ngithub",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
     },
     {

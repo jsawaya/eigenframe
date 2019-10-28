@@ -8,9 +8,8 @@
   ],
   "tab-list": [
     {
-      "name": "PlayList",
+      "name": "app2 PlayList\nlocalhost",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/playlist.json"
     },
     {
