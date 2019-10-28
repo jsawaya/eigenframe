@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require './ruby-lib/app-lib.rb'
+require './ruby-lib/app-lib'
 
 print_response_header
 
