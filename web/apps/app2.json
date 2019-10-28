@@ -11,11 +11,17 @@
       "name": "PlayList",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/web/master/web/frames/playlist.json"
+      "url": "http://localhost:8080/frames/playlist.json"
     },
     {
       "name": "empty",
       "type": "EigenFragment"
+    },
+    {
+      "name": "Termux\nListView",
+      "type": "EigenFragment",
+      "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home"
     }
+
   ]
 }
