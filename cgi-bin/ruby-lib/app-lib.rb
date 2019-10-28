@@ -53,23 +53,101 @@ def directory_hash()
 end
 
 
-#frame = cgi.params['frame'][0] if cgi.has_key?('frame')
-#puts "frame: #{frame}"
-#format = cgi.params['format'][0] if cgi.has_key?('format')
-#puts "format: #{format}"
-#sys_output_frame_format(h, frame, format)
 def sys_output_frame_format(h, frame, format)
   if frame.empty?
-    p h
+    if format == "txt"
+      puts h
+    elsif format == "json"
+      puts h.to_json
+    else #ruby
+      p h
+    end
     
   else
     if format == "txt"
       puts h["#{frame}"]
-    else #json
+    elsif format == "json"
+      puts h["#{frame}"].to_json
+    else #ruby
       p h["#{frame}"]
     end
 
   end
+end
+
+
+def eigen_listview()
+#  files = Dir.entries "."
+#  pwd = Dir.pwd
+#  subdir = []
+#  files.each {|x| subdir << x if File.directory? x }
+#  files = files - subdir
+  h0 = Hash.new("null")
+  h1 = Hash.new("null")
+  h2 = Hash.new("null")
+  h3 = Hash.new("null")
+  h4 = Hash.new("null")
+  h5 = Hash.new("null")
+  h6 = Hash.new("null")
+  h7 = Hash.new("null")
+  h8 = Hash.new("null")
+  
+  h0["layout"] = h1
+  h1["type"] = "LinearLayout"
+  h1["orientation"] = "vertical"
+  h1["layout-width"] = "match_parent"
+  h1["layout-height"] = "match_parent"
+  h1["component-list"] = [h2,h3,h4,h6]
+
+  h2["type"] = "TextView"
+  h2["layout-width"] = "match_parent"
+  h2["layout-height"] = "wrap_content"
+  h2["text"] = "Directory List"
+  h2["text-size"] = "20"
+  h2["gravity"] = "CENTER_HORIZONTAL, CENTER_VERTICAL"
+  h2["text-color"] = "#ffffff"
+
+  h3["type"] = "HorizontalLine"
+  h3["size"] = 2
+  h3["color"] = "#00ff00"
+
+  h4["type"] = "Button"
+  h4["layout-width"] = "match_parent"
+  h4["layout-height"] = "wrap_content"
+  h4["text"] = "get selected filename"
+  h4["text-color"] = "#ffffff"
+  h4["background-color"] = "#ff00ff"
+  h4["eigen-script"] = h5
+
+  h5["type"] = "JavaScript"
+  h5["script-list"] =
+    ["eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(700))" ]
+  
+  h6["type"] = "ListView"
+  h6["id"] = 700
+  h6["layout-width"] = "match_parent"
+  h6["layout-height"] = "match_parent"
+  h6["background-color"] = "#ff00ff"
+  h6["checked-option"] = 1
+  h6["key-list"] = ["file1.txt", "file2.pdf"]
+
+  h6["eigen-script"] = h7
+
+  h7["type"] = "JavaScript"
+  h7["script-list"] =
+    ["eigenActivity.showToast('selected: '+eigenFragment.getViewIdState(700))" ]
+       
+  h6["eigen-frame"] = h8
+  
+  h8["type"] = "TextView"
+  h8["script-list"] =
+    ["(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')" ]
+  h8["text-size"] = "20"
+  h8["text-color"] = "#ffffff"
+  h8["layout-width"] = "wrap_content"
+  h8["layout-height"] = "wrap_content"
+
+  puts h0.to_json
 end
 
 

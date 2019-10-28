@@ -38,35 +38,6 @@
         }
       },
       {
-        "type": "LinearLayout-1",
-        "id": 910,
-        "scrollable": true,
-        "orientation": "vertical",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "component-list": [
-          {
-            "type": "ImageView",
-            "id": 911,
-            "layout-width": "match_parent",
-            "layout-height": "100",
-            "eigen-script": {
-              "type": "JavaScript",
-              "script": "eigenActivity.showToast('image click')"
-            }
-          },
-          {
-            "type": "TextView",
-            "id": 912,
-            "text": "Test",
-            "text-size": "20",
-            "text-color": "#ffffff",
-            "layout-width": "match_parent",
-            "layout-height": "wrap_content"
-          }
-        ]
-      },
-      {
         "type": "HorizontalLine",
         "size": 2,
         "color": "#00ff00"

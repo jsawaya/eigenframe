@@ -37,6 +37,9 @@
   <body>
     <h1>Termux Apache2 CGI Server</h1>
 
+    <h3>List Error Log </h3>
+    <a href="/cgi-bin/sys-list-error-log.sh" > List Error Log </a><p/>
+    
     <hr/>
 
     <h2>PGP (GnuPG) Services</h2>
@@ -45,7 +48,7 @@
 
     <h3>List Directory - Show filenames and subdirectories</h3>
 
-    <a href="/cgi-bin/sys-list-termux-files.rb?keyfile=/data/data/com.termux/files/home/storage/downloads/termux-files/" > List termux home directory </a><p/>
+    <a href="/cgi-bin/sys-list-termux-files.rb?frame=files&format=txt&keyfile=/data/data/com.termux/files/home" > List termux home directory </a><p/>
 
     <a href="/cgi-bin/sys-list-termux-files.rb?keyfile=/data/data/com.termux/files/home/storage/shared" > List common shared directory </a><p/>
 
@@ -56,6 +59,10 @@
     <a href="/cgi-bin/sys-list-termux-files.rb?keyfile=/data/data/com.termux" > List termux application internal root directory </a><p/>
 
     <hr/>
+
+    <a href="/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home" > Termux home directory listview </a><p/>
+
+	<hr/>
 
     <div class="rTable"> 
       <form action="/cgi-bin/sys-list-termux-files.rb" method="post" target="_self" >
@@ -80,6 +87,7 @@
 	  <div class="rTableCell">Format:</div>
 	  <div class="rTableCell">
 	    <select name="format">
+	      <option value="ruby"> Ruby </option>
 	      <option value="json"> Json </option>
 	      <option value="txt" selected> Text </option>
 	    </select>
@@ -95,10 +103,6 @@
 
     <p/>
 
-    <hr/>
-    <h3>List Error Log </h3>
-    <a href="/cgi-bin/sys-list-error-log.sh" > List Error Log </a><p/>
-    
     <hr/>
     <h3>List PGP Keys </h3>
 
