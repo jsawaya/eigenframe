@@ -2,6 +2,7 @@
 puts "Content-type: text/plain; charset=iso-8859-1", nil
 
 require 'open3'
+require './ruby-lib/app-lib'
 
 def get_file_as_string(filename)
   data = ''

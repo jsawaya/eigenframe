@@ -4,8 +4,7 @@ require 'open3'
 require 'cgi'
 require 'json'
 require 'fileutils'
-
-require './ruby-lib/app-lib.rb'
+require './ruby-lib/app-lib'
 
 print_response_header
 

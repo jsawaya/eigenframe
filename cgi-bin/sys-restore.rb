@@ -1,11 +1,9 @@
 #!/usr/bin/ruby
-#!/usr/bin/ruby -I/data/data/com.termux/files/usr/lib/cgi-bin/ruby-lib
 
 require 'open3'
 require 'cgi'
 require 'json'
-
-require './ruby-lib/app-lib.rb'
+require './ruby-lib/app-lib'
 
 print_response_header
 

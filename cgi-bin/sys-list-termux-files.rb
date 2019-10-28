@@ -1,10 +1,8 @@
-#!/usr/bin/ruby -I/usr/lib/cgi-bin/ruby-lib
-#!/usr/bin/ruby -I/data/data/com.termux/files/usr/lib/cgi-bin/ruby-lib
+#!/usr/bin/ruby
 
 require 'cgi'
 require 'json'
-require 'app-lib'
-#require "/usr/lib/cgi-bin/ruby-lib/app-lib.rb"
+require './ruby-lib/app-lib'
 
 #puts "Content-type: text/plain; charset=iso-8859-1"
 #puts ""
