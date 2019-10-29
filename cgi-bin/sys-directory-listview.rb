@@ -13,7 +13,6 @@ exit 10 if !cgi.has_key?('keyfile')
 keyfile = cgi.params['keyfile'][0]
 Dir.chdir keyfile
 
-#h = directory_hash()
-
-eigen_listview()
+h = directory_hash()
+eigen_listview_files(h)
 

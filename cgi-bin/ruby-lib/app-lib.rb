@@ -76,7 +76,7 @@ def sys_output_frame_format(h, frame, format)
 end
 
 
-def eigen_listview()
+def eigen_listview_files(h)
 #  files = Dir.entries "."
 #  pwd = Dir.pwd
 #  subdir = []
@@ -102,7 +102,7 @@ def eigen_listview()
   h2["type"] = "TextView"
   h2["layout-width"] = "match_parent"
   h2["layout-height"] = "wrap_content"
-  h2["text"] = "Directory List"
+  h2["text"] = "Directory:#{h['directory']}"
   h2["text-size"] = "20"
   h2["gravity"] = "CENTER_HORIZONTAL, CENTER_VERTICAL"
   h2["text-color"] = "#ffffff"
@@ -129,7 +129,7 @@ def eigen_listview()
   h6["layout-height"] = "match_parent"
   h6["background-color"] = "#ff00ff"
   h6["checked-option"] = 1
-  h6["key-list"] = ["file1.txt", "file2.pdf"]
+  h6["key-list"] = h["files"]
 
   h6["eigen-script"] = h7
 
