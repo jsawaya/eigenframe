@@ -77,11 +77,6 @@ end
 
 
 def eigen_listview_files(h)
-#  files = Dir.entries "."
-#  pwd = Dir.pwd
-#  subdir = []
-#  files.each {|x| subdir << x if File.directory? x }
-#  files = files - subdir
   h0 = Hash.new("null")
   h1 = Hash.new("null")
   h2 = Hash.new("null")
@@ -93,6 +88,7 @@ def eigen_listview_files(h)
   h8 = Hash.new("null")
   
   h0["layout"] = h1
+
   h1["type"] = "LinearLayout"
   h1["orientation"] = "vertical"
   h1["layout-width"] = "match_parent"

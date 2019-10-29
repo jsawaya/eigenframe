@@ -13,7 +13,7 @@
   "tab-list" :
   [
     {
-      "name": "app1 PlayList\ngithub",
+      "name": "app1 PlayList\nfrom github",
       "type": "EigenFragment",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
     },

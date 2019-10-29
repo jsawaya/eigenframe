@@ -49,6 +49,7 @@
             "type": "WebView",
             "layout-width": "match_parent",
             "layout-height": "wrap_content",
+            "is-javascript-enabled" : true,
             "url" : "http://photopgp.com/site"
           }
         ]
