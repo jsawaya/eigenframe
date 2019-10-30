@@ -1,131 +1,120 @@
 {
-  "x-name": "test-EditText.json",
-  "x-description": "Test EditText",
-  "layout": {
-    "type": "LinearLayout",
-    "scrollable": true,
-    "orientation": "vertical",
-    "layout-width": "match_parent",
-    "layout-height": "wrap_content",
-    "component-list": [
-      {
-        "type": "TextView",
-        "layout-width": "MATCH_PARENT",
-        "layout-height": "wrap_content",
-        "text": "Test EditText",
-        "text-size": "20",
-        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-        "text-color": "#ffffff",
-        "icon": {
-          "name": "sawaya_eigenframe_icon.png",
-          "location": "top"
-        }
-      },
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Source",
-        "text-color": "#ffffff",
-        "background-color": "#22ff0000",
-        "icon": {
-          "name": "info.jpg",
-          "location": "left"
-        },
-        "eigen-script": {
-          "type": "PopupTextView",
-          "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EditText.json"
-        }
-      },
-      {
-        "type": "HorizontalLine",
-        "size": 1,
-        "color": "#00ff00"
-      },
-
-      {
-        "type": "EditText",
-        "id": 100,
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "edit text",
-        "text-color": "#ffffff",
-        "background-color": "#11ff0000",
-        "eigen-script-x": {
-          "type": "JavaScript",
-          "script-list": [
-            "java.lang.System.out.println('eigenMap: '+eigenMap)",
-            "eigenActivity.showToast('EditText key: '+eigenMap.get('keyCode'))"
-          ]
-        }
-      },
-
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Access EditText",
-        "text-color": "#ffffff",
-        "background-color": "#ff00ff",
-        "eigen-script": {
-          "type": "JavaScript",
-          "script-list": [
-            "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
-          ]
-        }
-      },
-
-      {
-        "type": "EditText",
-        "id": 101,
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "edit text 101",
-        "text-color": "#ffffff",
-        "background-color": "#11ff0000"
-      },
-
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Access EditText",
-        "text-color": "#ffffff",
-        "background-color": "#ff00ff",
-        "eigen-script": {
-          "type": "JavaScript",
-          "script-list": [
-            "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
-          ]
-        }
-      },
-
-
-      {
-        "type": "EditText",
-        "id": 102,
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "edit text 102",
-        "text-color": "#ffffff",
-        "background-color": "#11ff0000"
-      },
-
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Access EditText",
-        "text-color": "#ffffff",
-        "background-color": "#ff00ff",
-        "eigen-script": {
-          "type": "JavaScript",
-          "script-list": [
-            "eigenActivity.showToast('eigenFragment.getEditTextValue(102): '+eigenFragment.getEditTextValue(102))"
-          ]
-        }
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "layout-width": "match_parent",
+  "layout-height": "wrap_content",
+  "component-list": [
+    {
+      "type": "TextView",
+      "layout-width": "MATCH_PARENT",
+      "layout-height": "wrap_content",
+      "text": "Test EditText",
+      "text-size": "20",
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "text-color": "#ffffff",
+      "icon": {
+        "name": "sawaya_eigenframe_icon.png",
+        "location": "top"
       }
-    ]
-  }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Source",
+      "text-color": "#ffffff",
+      "background-color": "#22ff0000",
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "eigen-script": {
+        "type": "PopupTextView",
+        "title": "Source",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EditText.json"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 1,
+      "color": "#00ff00"
+    },
+    {
+      "type": "EditText",
+      "id": 100,
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "edit text",
+      "text-color": "#ffffff",
+      "background-color": "#11ff0000",
+      "eigen-script-x": {
+        "type": "JavaScript",
+        "script-list": [
+          "java.lang.System.out.println('eigenMap: '+eigenMap)",
+          "eigenActivity.showToast('EditText key: '+eigenMap.get('keyCode'))"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Access EditText",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "eigen-script": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
+        ]
+      }
+    },
+    {
+      "type": "EditText",
+      "id": 101,
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "edit text 101",
+      "text-color": "#ffffff",
+      "background-color": "#11ff0000"
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Access EditText",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "eigen-script": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
+        ]
+      }
+    },
+    {
+      "type": "EditText",
+      "id": 102,
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "edit text 102",
+      "text-color": "#ffffff",
+      "background-color": "#11ff0000"
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Access EditText",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "eigen-script": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.showToast('eigenFragment.getEditTextValue(102): '+eigenFragment.getEditTextValue(102))"
+        ]
+      }
+    }
+  ]
 }

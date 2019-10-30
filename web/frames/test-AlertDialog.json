@@ -1,84 +1,80 @@
 {
-  "x-name": "test-AlertDialog.json",
-  "x-description": "Test AlertDialog",
-  "layout": {
-    "type": "LinearLayout",
-    "scrollable": true,
-    "orientation": "vertical",
-    "layout-width": "match_parent",
-    "layout-height": "wrap_content",
-    "component-list": [
-      {
-        "type": "TextView",
-        "layout-width": "MATCH_PARENT",
-        "layout-height": "wrap_content",
-        "text": "Test AlertDialog",
-        "text-size": "20",
-        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-        "text-color": "#ffffff",
-        "icon": {
-          "name": "sawaya_eigenframe_icon.png",
-          "location": "top"
-        }
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "layout-width": "match_parent",
+  "layout-height": "wrap_content",
+  "component-list": [
+    {
+      "type": "TextView",
+      "layout-width": "MATCH_PARENT",
+      "layout-height": "wrap_content",
+      "text": "Test AlertDialog",
+      "text-size": "20",
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "text-color": "#ffffff",
+      "icon": {
+        "name": "sawaya_eigenframe_icon.png",
+        "location": "top"
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Source",
+      "text-color": "#ffffff",
+      "background-color": "#22ff0000",
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
       },
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Source",
-        "text-color": "#ffffff",
-        "background-color": "#22ff0000",
+      "eigen-script": {
+        "type": "PopupTextView",
+        "title": "Source",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-AlertDialog.json"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 1,
+      "color": "#00ff00"
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Test AlertDialog",
+      "text-color": "#ffffff",
+      "background-color": "#22ff0000",
+      "eigen-script": {
+        "type": "AlertDialog",
+        "title": "My AlertDialog",
         "icon": {
-          "name": "info.jpg",
-          "location": "left"
+          "name": "info.jpg"
         },
-        "eigen-script": {
-          "type": "PopupTextView",
-          "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-AlertDialog.json"
-        }
-      },
-      {
-        "type": "HorizontalLine",
-        "size": 1,
-        "color": "#00ff00"
-      },
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Test AlertDialog",
-        "text-color": "#ffffff",
-        "background-color": "#22ff0000",
-        "eigen-script": {
-          "type": "AlertDialog",
-          "title": "My AlertDialog",
-          "icon": {
-            "name": "info.jpg"
-          },
-          "positive": {
-            "option": "YES",
-            "eigen-script": {
-              "type": "JavaScript",
-              "script": "eigenActivity.showToast('AlertDialog says YES')"
-            }
-          },
-          "negative": {
-            "option": "NO",
-            "eigen-script": {
-              "type": "JavaScript",
-              "script": "eigenActivity.showToast('AlertDialog says NO')"
-            }
-          },
-          "neutral": {
-            "option": "UNKNOWN",
-            "eigen-script": {
-              "type": "JavaScript",
-              "script": "eigenActivity.showToast('AlertDialog says UNKNOWN')"
-            }
+        "positive": {
+          "option": "YES",
+          "eigen-script": {
+            "type": "JavaScript",
+            "script": "eigenActivity.showToast('AlertDialog says YES')"
+          }
+        },
+        "negative": {
+          "option": "NO",
+          "eigen-script": {
+            "type": "JavaScript",
+            "script": "eigenActivity.showToast('AlertDialog says NO')"
+          }
+        },
+        "neutral": {
+          "option": "UNKNOWN",
+          "eigen-script": {
+            "type": "JavaScript",
+            "script": "eigenActivity.showToast('AlertDialog says UNKNOWN')"
           }
         }
       }
-    ]
-  }
+    }
+  ]
 }

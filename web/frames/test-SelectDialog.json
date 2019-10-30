@@ -1,75 +1,71 @@
 {
-  "x-name": "test-SelectDialog.json",
-  "x-description": "Test SelectDialog",
-  "layout": {
-    "type": "LinearLayout",
-    "scrollable": true,
-    "orientation": "vertical",
-    "layout-width": "match_parent",
-    "layout-height": "wrap_content",
-    "component-list": [
-      {
-        "type": "TextView",
-        "layout-width": "MATCH_PARENT",
-        "layout-height": "wrap_content",
-        "text": "Test SelectDialog",
-        "text-size": "20",
-        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-        "text-color": "#ffffff",
-        "icon": {
-          "name": "sawaya_eigenframe_icon.png",
-          "location": "top"
-        }
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "layout-width": "match_parent",
+  "layout-height": "wrap_content",
+  "component-list": [
+    {
+      "type": "TextView",
+      "layout-width": "MATCH_PARENT",
+      "layout-height": "wrap_content",
+      "text": "Test SelectDialog",
+      "text-size": "20",
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "text-color": "#ffffff",
+      "icon": {
+        "name": "sawaya_eigenframe_icon.png",
+        "location": "top"
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Source",
+      "text-color": "#ffffff",
+      "background-color": "#22ff0000",
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
       },
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Source",
-        "text-color": "#ffffff",
-        "background-color": "#22ff0000",
+      "eigen-script": {
+        "type": "PopupTextView",
+        "title": "Source",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-SelectDialog.json"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 1,
+      "color": "#00ff00"
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Test SelectDialog",
+      "text-color": "#ffffff",
+      "background-color": "#22ff0000",
+      "eigen-script": {
+        "type": "SelectDialog",
+        "title": "Test SelectDialog",
         "icon": {
-          "name": "info.jpg",
-          "location": "left"
+          "name": "info.jpg"
         },
+        "checked-option": 1,
+        "option-list": [
+          "option 0",
+          "option 1",
+          "option 2"
+        ],
         "eigen-script": {
-          "type": "PopupTextView",
-          "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-SelectDialog.json"
-        }
-      },
-      {
-        "type": "HorizontalLine",
-        "size": 1,
-        "color": "#00ff00"
-      },
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Test SelectDialog",
-        "text-color": "#ffffff",
-        "background-color": "#22ff0000",
-        "eigen-script": {
-          "type": "SelectDialog",
-          "title": "Test SelectDialog",
-          "icon": {
-            "name": "info.jpg"
-          },
-          "checked-option": 1,
-          "option-list": [
-              "option 0",
-              "option 1",
-              "option 2"
-          ],
-          "eigen-script": {
-            "type": "JavaScript",
-            "script-list": [
-              "eigenActivity.showToast('SelectDialog: option-name: '+eigenMap.get('option-name'))"
-            ]
-          }
+          "type": "JavaScript",
+          "script-list": [
+            "eigenActivity.showToast('SelectDialog: option-name: '+eigenMap.get('option-name'))"
+          ]
         }
       }
-    ]
-  }
+    }
+  ]
 }

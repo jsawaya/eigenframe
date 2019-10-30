@@ -1,24 +1,21 @@
 {
-  "x-name": "PhotoPGP-WebView.json",
-  "layout": {
-    "type": "LinearLayout",
-    "scrollable": true,
-    "orientation": "vertical",
-    "layout-width": "match_parent",
-    "layout-height": "match_parent",
-    "component-list": [
-      {
-        "type": "WebView",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "html": "<html><body><h1>PhotoPGP.com</h1></body></html>"
-      },
-      {
-        "type": "WebView",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "url": "http://photopgp.com/site"
-      }
-    ]
-  }
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "layout-width": "match_parent",
+  "layout-height": "match_parent",
+  "component-list": [
+    {
+      "type": "WebView",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "html": "<html><body><h1>PhotoPGP.com</h1></body></html>"
+    },
+    {
+      "type": "WebView",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "url": "http://photopgp.com/site"
+    }
+  ]
 }

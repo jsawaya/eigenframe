@@ -77,7 +77,6 @@ end
 
 
 def eigen_listview_files(h)
-  h0 = Hash.new("null")
   h1 = Hash.new("null")
   h2 = Hash.new("null")
   h3 = Hash.new("null")
@@ -87,8 +86,6 @@ def eigen_listview_files(h)
   h7 = Hash.new("null")
   h8 = Hash.new("null")
   
-  h0["layout"] = h1
-
   h1["type"] = "LinearLayout"
   h1["orientation"] = "vertical"
   h1["layout-width"] = "match_parent"
@@ -143,7 +140,7 @@ def eigen_listview_files(h)
   h8["layout-width"] = "wrap_content"
   h8["layout-height"] = "wrap_content"
 
-  puts h0.to_json
+  puts h1.to_json
 end
 
 

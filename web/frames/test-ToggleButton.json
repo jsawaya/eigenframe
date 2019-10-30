@@ -1,112 +1,108 @@
 {
-  "x-name": "test-ToggleButton.json",
-  "x-description": "Test ToggleButton",
-  "layout": {
-    "type": "LinearLayout",
-    "scrollable": true,
-    "orientation": "vertical",
-    "layout-width": "match_parent",
-    "layout-height": "wrap_content",
-    "component-list": [
-      {
-        "type": "TextView",
-        "layout-width": "MATCH_PARENT",
-        "layout-height": "wrap_content",
-        "text": "Test ToggleButton",
-        "text-size": "20",
-        "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-        "text-color": "#ffffff",
-        "icon": {
-          "name": "sawaya_eigenframe_icon.png",
-          "location": "top"
-        }
-      },
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "Source",
-        "text-color": "#ffffff",
-        "background-color": "#22ff0000",
-        "icon": {
-          "name": "info.jpg",
-          "location": "left"
-        },
-        "eigen-script": {
-          "type": "PopupTextView",
-          "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ToggleButton.json"
-        }
-      },
-      {
-        "type": "HorizontalLine",
-        "size": 1,
-        "color": "#00ff00"
-      },
-      {
-        "type": "ToggleButton",
-        "id": 400,
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "checked": false,
-        "text-color": "#ffffff",
-        "background-color": "#ff00ff",
-        "margin-x": {
-          "left": 40,
-          "top": 40,
-          "right": 40,
-          "bottom": 40
-        },
-        "eigen-script": {
-          "type": "JavaScript",
-          "script-list": [
-            "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
-          ]
-        }
-      },
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "getViewIdState ToggleButton:400",
-        "text-color": "#ffffff",
-        "background-color": "#ff00ff",
-        "eigen-script": {
-          "type": "JavaScript",
-          "script-list": [
-            "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
-          ]
-        }
-      },
-      {
-        "type": "ToggleButton",
-        "id": 401,
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "checked": false,
-        "text-color": "#ffffff",
-        "background-color": "#ff00ff",
-        "margin": {
-          "left": 40,
-          "top": 40,
-          "right": 40,
-          "bottom": 40
-        }
-      },
-      {
-        "type": "Button",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text": "getViewIdState ToggleButton:401",
-        "text-color": "#ffffff",
-        "background-color": "#ff00ff",
-        "eigen-script": {
-          "type": "JavaScript",
-          "script-list": [
-            "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(401))"
-          ]
-        }
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "layout-width": "match_parent",
+  "layout-height": "wrap_content",
+  "component-list": [
+    {
+      "type": "TextView",
+      "layout-width": "MATCH_PARENT",
+      "layout-height": "wrap_content",
+      "text": "Test ToggleButton",
+      "text-size": "20",
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "text-color": "#ffffff",
+      "icon": {
+        "name": "sawaya_eigenframe_icon.png",
+        "location": "top"
       }
-    ]
-  }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Source",
+      "text-color": "#ffffff",
+      "background-color": "#22ff0000",
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "eigen-script": {
+        "type": "PopupTextView",
+        "title": "Source",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ToggleButton.json"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 1,
+      "color": "#00ff00"
+    },
+    {
+      "type": "ToggleButton",
+      "id": 400,
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "checked": false,
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "margin-x": {
+        "left": 40,
+        "top": 40,
+        "right": 40,
+        "bottom": 40
+      },
+      "eigen-script": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "getViewIdState ToggleButton:400",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "eigen-script": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
+        ]
+      }
+    },
+    {
+      "type": "ToggleButton",
+      "id": 401,
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "checked": false,
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "margin": {
+        "left": 40,
+        "top": 40,
+        "right": 40,
+        "bottom": 40
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "getViewIdState ToggleButton:401",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "eigen-script": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(401))"
+        ]
+      }
+    }
+  ]
 }
