@@ -53,27 +53,21 @@
         "icon": {
           "name": "info.jpg"
         },
-        "positive": {
-          "option": "YES",
-          "eigen-script": {
-            "type": "JavaScript",
-            "script": "eigenActivity.showToast('AlertDialog says YES')"
+        "component-list": [
+          {
+            "type": "TextView",
+            "layout-width": "MATCH_PARENT",
+            "layout-height": "wrap_content",
+            "text": "Example PopupScreen",
+            "text-size": "20",
+            "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+            "text-color": "#ffffff",
+            "icon": {
+              "name": "sawaya_eigenframe_icon.png",
+              "location": "top"
+            }
           }
-        },
-        "negative": {
-          "option": "NO",
-          "eigen-script": {
-            "type": "JavaScript",
-            "script": "eigenActivity.showToast('AlertDialog says NO')"
-          }
-        },
-        "neutral": {
-          "option": "UNKNOWN",
-          "eigen-script": {
-            "type": "JavaScript",
-            "script": "eigenActivity.showToast('AlertDialog says UNKNOWN')"
-          }
-        }
+        ]
       }
     }
   ]
