@@ -53,6 +53,7 @@
         "layout-height": "wrap_content",
         "text-size": "20",
         "text-color": "#ffffff",
+        "background-color": "#22ff0000",
         "text": "Test for PopupScreen",
         "icon": {
           "name": "info.jpg",
