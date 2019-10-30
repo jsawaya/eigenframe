@@ -49,10 +49,21 @@
       "background-color": "#22ff0000",
       "eigen-script": {
         "type": "PopupScreen",
-        "title": "My PopupScreen",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text-size": "20",
+        "text-color": "#ffffff",
+        "text": "Test for PopupScreen",
         "icon": {
-          "name": "info.jpg"
+          "name": "info.jpg",
+          "location": "left"
         },
+        "x-eigen-script": {
+          "type": "PopupTextView",
+          "title": "Source",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
+        },
+
         "component-list": [
           {
             "type": "TextView",
