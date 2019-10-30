@@ -21,6 +21,5 @@
       "type": "EigenFragment",
       "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home"
     }
-
   ]
 }
