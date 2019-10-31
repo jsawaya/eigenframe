@@ -1,0 +1,95 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "VERTICAL",
+  "layout-width": "match_parent",
+  "layout-height": "wrap_content",
+  "component-list": [
+    {
+      "type": "TextView",
+      "text": "Test EigenScript",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text-size": "20",
+      "text-color": "#ffffff"
+    },
+    {
+      "type": "Button",
+      "text": "Source",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text-color": "#ffffff",
+      "background-color": "#22ff0000",
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "eigen-script": {
+        "type": "PopupTextView",
+        "title": "Source",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EigenScript.json"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 1,
+      "color": "#00ff00"
+    },
+    {
+      "type": "Button",
+      "text": [
+        "JavaScript using script-list: ",
+        "x = 8*5; eigenActivity.showToast('var x: '+x); x;"
+      ],
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text-color": "#ffffff",
+      "background-color": "#ff0000",
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "eigen-script": {
+        "type": "JavaScript",
+        "script-list": [
+          "x = 8*5",
+          "eigenActivity.showToast('var x: '+x)",
+          "x"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "text": "JavaScript using script-list",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text-color": "#ffffff",
+      "background-color": "#11ff0000",
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "eigen-script": {
+        "type": "JavaScript",
+        "script-list": [
+          "htmlString = eigenActivity.getString(com.sawaya.R.string.change_log)",
+          "titleString = eigenActivity.getString(com.sawaya.R.string.recent_changes_title)",
+          "java.lang.System.out.println(htmlString)",
+          "java.lang.System.out.println(titleString)",
+          "popupScreen = new com.sawaya.eigenframe.PopupScreen(eigenActivity)",
+          "popupScreen.createPopupTextWindow()",
+          "popupScreen.setPopupTextTitle(titleString)",
+          "popupScreen.setPopupHtml(htmlString, null)",
+          "popupScreen.showPopupTextWindow(eigenActivity.viewPager)"
+        ]
+      }
+    },
+    {
+      "name": "PopupScreen",
+      "type": "EigenFragment",
+      "icon-name": "sawaya_eigenframe_icon.png",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
+    }
+
+  ]
+}
