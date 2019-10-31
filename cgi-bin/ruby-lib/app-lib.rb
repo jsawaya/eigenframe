@@ -121,14 +121,6 @@ def eigen_directory_listview(dir_path)
   h9["name"] = "info.jpg"
   h9["location"] = "left"
 
-  h0["type"] = "JavaScript"
-  h0["script-list"] =
-    [
-    "eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(700))"
-    ]
-  "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home"
-
-
   h3["type"] = "HorizontalLine"
   h3["size"] = 2
   h3["color"] = "#00ff00"
