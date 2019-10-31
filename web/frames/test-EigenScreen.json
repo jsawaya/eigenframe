@@ -32,7 +32,7 @@
       "eigen-script": {
         "type": "PopupTextView",
         "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EigenScreen.json"
       }
     },
     {
@@ -48,7 +48,7 @@
       "text-color": "#ffffff",
       "background-color": "#ff0000",
       "eigen-script": {
-        "type": "PopupScreen",
+        "type": "EigenScreen",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
         "text-size": "20",
@@ -65,7 +65,7 @@
             "type": "TextView",
             "layout-width": "MATCH_PARENT",
             "layout-height": "wrap_content",
-            "text": "Example PopupScreen",
+            "text": "Example of component-list(TextView) on EigenScreen",
             "text-size": "20",
             "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
             "text-color": "#ffffff",
@@ -85,7 +85,7 @@
       "text-color": "#ffffff",
       "background-color": "#ff0000",
       "eigen-script": {
-        "type": "PopupScreen",
+        "type": "EigenScreen",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
         "text-size": "20",
