@@ -9,10 +9,11 @@ print_response_header
 cgi = CGI.new
 
 exit 10 if !cgi.has_key?('keyfile')
+dir_path = cgi.params['keyfile'][0]
 
-keyfile = cgi.params['keyfile'][0]
-Dir.chdir keyfile
+eigen_directory_listview(dir_path)
 
-h = directory_hash()
-eigen_listview_files(h)
+#Dir.chdir dirfile
+#h = directory_hash()
+#eigen_listview_files(h)
 

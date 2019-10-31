@@ -38,21 +38,6 @@ def print_response_header
 end
 
 
-def directory_hash()
-  files = Dir.entries "."
-  pwd = Dir.pwd
-  subdir = []
-  files.each {|x| subdir << x if File.directory? x }
-  files = files - subdir
-  h = Hash.new("null")
-  h["type"] = "directory"
-  h["directory"] = pwd
-  h["files"] = files.sort!
-  h["subdir"] = subdir.sort!
-  h
-end
-
-
 def sys_output_frame_format(h, frame, format)
   if frame.empty?
     if format == "txt"
@@ -76,7 +61,26 @@ def sys_output_frame_format(h, frame, format)
 end
 
 
-def eigen_listview_files(h)
+def directory_hash()
+  files = Dir.entries "."
+  pwd = Dir.pwd
+  subdir = []
+  files.each {|x| subdir << x if File.directory? x }
+  files = files - subdir
+  h = Hash.new("null")
+  h["type"] = "directory"
+  h["directory"] = pwd
+  h["files"] = files.sort!
+  h["subdir"] = subdir.sort!
+  h
+end
+
+
+def eigen_directory_listview(dir_path)
+  Dir.chdir dir_path
+  h = directory_hash()
+
+  h0 = Hash.new("null")
   h1 = Hash.new("null")
   h2 = Hash.new("null")
   h3 = Hash.new("null")
@@ -85,20 +89,45 @@ def eigen_listview_files(h)
   h6 = Hash.new("null")
   h7 = Hash.new("null")
   h8 = Hash.new("null")
-  
+  h9 = Hash.new("null")
+
   h1["type"] = "LinearLayout"
   h1["orientation"] = "vertical"
   h1["layout-width"] = "match_parent"
   h1["layout-height"] = "match_parent"
   h1["component-list"] = [h2,h3,h4,h6]
 
-  h2["type"] = "TextView"
+  h2["type"] = "Button"
   h2["layout-width"] = "match_parent"
   h2["layout-height"] = "wrap_content"
   h2["text"] = "Directory:#{h['directory']}"
   h2["text-size"] = "20"
   h2["gravity"] = "CENTER_HORIZONTAL, CENTER_VERTICAL"
   h2["text-color"] = "#ffffff"
+  h2["eigen-script"] = h0
+
+  parent_path = File.expand_path("..", Dir.pwd)
+
+  h0["type"] = "EigenScreen"
+  h0["layout-width"] = "match_parent"
+  h0["layout-height"] = "wrap_content"
+  h0["text"] = "EigenScreen"
+  h0["text-size"] = "20"
+  h0["text-color"] = "#ffffff"
+  h0["background-color"] = "#111111"
+  h0["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}"
+  h0["icon"] = h9
+
+  h9["name"] = "info.jpg"
+  h9["location"] = "left"
+
+  h0["type"] = "JavaScript"
+  h0["script-list"] =
+    [
+    "eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(700))"
+    ]
+  "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home"
+
 
   h3["type"] = "HorizontalLine"
   h3["size"] = 2
