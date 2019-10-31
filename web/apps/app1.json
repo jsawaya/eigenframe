@@ -22,10 +22,10 @@
       "type": "EigenFragment"
     },
     {
-      "name": "PopupScreen",
+      "name": "EigenScreen",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EigenScreen.json"
     },
     {
       "name": "empty",
