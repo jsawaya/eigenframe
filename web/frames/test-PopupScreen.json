@@ -37,7 +37,7 @@
     },
     {
       "type": "HorizontalLine",
-      "size": 1,
+      "size": 2,
       "color": "#00ff00"
     },
     {
@@ -53,7 +53,7 @@
         "layout-height": "wrap_content",
         "text-size": "20",
         "text-color": "#ffffff",
-        "background-color": "#22ff0000",
+        "background-color": "#111111",
         "text": "Test for PopupScreen",
         "icon": {
           "name": "info.jpg",
