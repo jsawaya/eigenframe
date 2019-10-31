@@ -44,9 +44,9 @@
       "type": "Button",
       "layout-width": "match_parent",
       "layout-height": "wrap_content",
-      "text": "Test PopupScreen",
+      "text": "Test EigenScreen",
       "text-color": "#ffffff",
-      "background-color": "#22ff0000",
+      "background-color": "#ff0000",
       "eigen-script": {
         "type": "PopupScreen",
         "layout-width": "match_parent",
@@ -54,17 +54,12 @@
         "text-size": "20",
         "text-color": "#ffffff",
         "background-color": "#111111",
-        "text": "Test for PopupScreen",
+        "text": "EigenScreen",
         "icon": {
           "name": "info.jpg",
           "location": "left"
         },
-        "x-eigen-script": {
-          "type": "PopupTextView",
-          "title": "Source",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
-        },
-
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json",
         "component-list": [
           {
             "type": "TextView",
@@ -79,9 +74,7 @@
               "location": "top"
             }
           }
-        ],
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
-
+        ]
       }
     }
   ]
