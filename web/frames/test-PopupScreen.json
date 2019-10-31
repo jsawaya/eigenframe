@@ -79,7 +79,9 @@
               "location": "top"
             }
           }
-        ]
+        ],
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
+
       }
     }
   ]
