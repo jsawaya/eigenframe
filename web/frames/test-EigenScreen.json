@@ -98,6 +98,28 @@
         },
         "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home"
       }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Test EigenScreen with a localhost url that generates directory ListView",
+      "text-color": "#ffffff",
+      "background-color": "#ff0000",
+      "eigen-script": {
+        "type": "EigenScreen",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text-size": "20",
+        "text-color": "#ffffff",
+        "background-color": "#111111",
+        "text": "EigenScreen",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home/storage"
+      }
     }
 
   ]
