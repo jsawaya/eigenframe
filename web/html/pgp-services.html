@@ -62,7 +62,31 @@
 
     <a href="/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home" > Termux home directory listview </a><p/>
 
-	<hr/>
+    <hr/>
+
+    <div class="rTable"> 
+      <form action="/cgi-bin/sys-directory-listview.rb" method="post" target="_self" >
+	<div class="rTableRow">
+	  <div class="rTableHead">List Files to ListView</div>
+	</div>
+	<div class="rTableRow">
+	  <div class="rTableCell">path:</div>
+	  <div class="rTableCell">
+	    <input type="text" name="keyfile" size="100"
+		   value="/data/data/com.termux/files/home/" />
+	  </div>
+	</div>
+	<div class="rTableRow">
+	  <div class="rTableCell">
+	    <input type="submit" value="enter" />
+	  </div>
+	</div>
+      </form>
+    </div>
+
+    <p/>
+
+    <hr/>
 
     <div class="rTable"> 
       <form action="/cgi-bin/sys-list-termux-files.rb" method="post" target="_self" >
