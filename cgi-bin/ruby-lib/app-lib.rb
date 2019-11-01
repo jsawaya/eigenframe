@@ -116,6 +116,7 @@ def eigen_directory_listview(dir_path)
   h0["text-color"] = "#ffffff"
   h0["background-color"] = "#111111"
   h0["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}"
+
   h0["icon"] = h9
 
   h9["name"] = "info.jpg"
