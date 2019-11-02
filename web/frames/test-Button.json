@@ -14,24 +14,6 @@
       "layout-height": "100",
       "component-list": [
         {
-          "type": "Button",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "1",
-          "text": " ",
-          "text-color": "#ffffff",
-          "background-color": "#00000000",
-          "icon": {
-            "name": "info.jpg",
-            "location": "left"
-          },
-          "eigen-script": {
-            "type": "PopupTextView",
-            "title": "Source",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Button.json"
-          }
-        },
-        {
           "type": "TextView",
           "layout-width": "wrap_content",
           "layout-height": "wrap_content",
@@ -59,11 +41,6 @@
           }
         }
       ]
-    },
-    {
-      "x-type": "PopupTextView",
-      "title": "Source",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Button.json"
     },
     {
       "type": "HorizontalLine",

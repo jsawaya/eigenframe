@@ -13,23 +13,6 @@
       "text": "Test for WebView"
     },
     {
-      "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "Source",
-      "text-color": "#ffffff",
-      "background-color": "#22ff0000",
-      "icon": {
-        "name": "info.jpg",
-        "location": "left"
-      },
-      "eigen-script": {
-        "type": "PopupTextView",
-        "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-WebView.json"
-      }
-    },
-    {
       "type": "LinearLayout",
       "scrollable": true,
       "orientation": "vertical",
@@ -40,7 +23,7 @@
           "type": "WebView",
           "layout-width": "match_parent",
           "layout-height": "wrap_content",
-          "html": "<html><body><h1>WebView - html specified</h1></body></html>"
+          "html": "<html><body><h1>WebView - inline html specified</h1></body></html>"
         },
         {
           "type": "WebView",

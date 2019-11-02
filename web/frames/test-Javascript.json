@@ -14,23 +14,6 @@
       "text-color": "#ffffff"
     },
     {
-      "type": "Button",
-      "text": "Source",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text-color": "#ffffff",
-      "background-color": "#22ff0000",
-      "icon": {
-        "name": "info.jpg",
-        "location": "left"
-      },
-      "eigen-script": {
-        "type": "PopupTextView",
-        "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EigenScript.json"
-      }
-    },
-    {
       "type": "HorizontalLine",
       "size": 1,
       "color": "#00ff00"

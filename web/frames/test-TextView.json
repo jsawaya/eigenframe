@@ -11,28 +11,6 @@
       "text-size": "20",
       "text-color": "#ffffff",
       "text": "Test for TextView",
-      "eigen-script": {
-        "type": "PopupTextView",
-        "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
-      }
-    },
-    {
-      "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "Source",
-      "text-color": "#ffffff",
-      "background-color": "#22ff0000",
-      "icon": {
-        "name": "info.jpg",
-        "location": "left"
-      },
-      "eigen-script": {
-        "type": "PopupTextView",
-        "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
-      }
     },
     {
       "type": "LinearLayout",
@@ -40,11 +18,6 @@
       "orientation": "vertical",
       "layout-width": "match_parent",
       "layout-height": "match_parent",
-      "eigen-script": {
-        "type": "PopupTextView",
-        "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
-      },
       "component-list": [
         {
           "type": "TextView",

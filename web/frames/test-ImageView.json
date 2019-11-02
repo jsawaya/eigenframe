@@ -14,23 +14,6 @@
       "text": "Test ImageView (url -> png)"
     },
     {
-      "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "Source",
-      "text-color": "#ffffff",
-      "background-color": "#22ff0000",
-      "icon": {
-        "name": "sawaya_eigenframe_icon.png",
-        "location": "left"
-      },
-      "eigen-script": {
-        "type": "PopupTextView",
-        "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ImageView.json"
-      }
-    },
-    {
       "type": "HorizontalLine",
       "size": 2,
       "color": "#00ff00"

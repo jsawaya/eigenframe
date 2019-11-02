@@ -19,23 +19,6 @@
       }
     },
     {
-      "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text": "Source",
-      "text-color": "#ffffff",
-      "background-color": "#22ff0000",
-      "icon": {
-        "name": "info.jpg",
-        "location": "left"
-      },
-      "eigen-script": {
-        "type": "PopupTextView",
-        "title": "Source",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-AlertDialog.json"
-      }
-    },
-    {
       "type": "HorizontalLine",
       "size": 1,
       "color": "#00ff00"
