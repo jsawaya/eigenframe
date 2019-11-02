@@ -1,7 +1,5 @@
 {
   "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
   "layout-width": "match_parent",
   "layout-height": "wrap_content",
   "component-list": [
@@ -27,7 +25,7 @@
       "type": "Button",
       "layout-width": "match_parent",
       "layout-height": "wrap_content",
-      "text": "Test EigenScreen with a component-list(TextView) and url(test-TextView)",
+      "text": "Test EigenScreen with a component-list(TextView)",
       "text-color": "#ffffff",
       "background-color": "#ff0000",
       "eigen-script": {
@@ -37,13 +35,12 @@
         "text-size": "20",
         "text-color": "#ffffff",
         "background-color": "#111111",
-        "text": "EigenScreen",
+        "text": "EigenScreen1",
         "icon": {
           "name": "info.jpg",
           "location": "left"
         },
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json",
-        "x-component-list": [
+        "component-list": [
           {
             "type": "TextView",
             "layout-width": "MATCH_PARENT",
@@ -52,8 +49,39 @@
             "text-size": "20",
             "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
             "text-color": "#ffffff"
+          },
+          {
+            "type": "TextView",
+            "layout-width": "MATCH_PARENT",
+            "layout-height": "wrap_content",
+            "text": "text-size:14",
+            "text-size": "14",
+            "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+            "text-color": "#ff00ff"
           }
         ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text": "Test EigenScreen with a url(test-TextView)",
+      "text-color": "#ffffff",
+      "background-color": "#ff0000",
+      "eigen-script": {
+        "type": "EigenScreen",
+        "layout-width": "match_parent",
+        "layout-height": "wrap_content",
+        "text-size": "20",
+        "text-color": "#ffffff",
+        "background-color": "#111111",
+        "text": "EigenScreen1",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
       }
     },
     {
@@ -70,7 +98,7 @@
         "text-size": "20",
         "text-color": "#ffffff",
         "background-color": "#111111",
-        "text": "EigenScreen",
+        "text": "EigenScreen2",
         "icon": {
           "name": "info.jpg",
           "location": "left"
@@ -92,7 +120,7 @@
         "text-size": "20",
         "text-color": "#ffffff",
         "background-color": "#111111",
-        "text": "EigenScreen",
+        "text": "EigenScreen3",
         "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home/storage"
       }
     }
