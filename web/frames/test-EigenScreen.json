@@ -42,7 +42,7 @@
           "name": "info.jpg",
           "location": "left"
         },
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json",
+        "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json",
         "component-list": [
           {
             "type": "TextView",
@@ -51,11 +51,7 @@
             "text": "Example of component-list(TextView) on EigenScreen",
             "text-size": "20",
             "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-            "text-color": "#ffffff",
-            "icon": {
-              "name": "sawaya_eigenframe_icon.png",
-              "location": "top"
-            }
+            "text-color": "#ffffff"
           }
         ]
       }
