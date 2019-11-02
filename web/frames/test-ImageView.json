@@ -34,21 +34,6 @@
     },
     {
       "type": "ImageView",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/res/photopgp.png",
-      "layout-width": "match_parent",
-      "layout-height": "100",
-      "eigen-script": {
-        "type": "JavaScript",
-        "script": "eigenActivity.showToast('image click photopgp')"
-      }
-    },
-    {
-      "type": "HorizontalLine",
-      "size": 2,
-      "color": "#00ff00"
-    },
-    {
-      "type": "ImageView",
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png",
       "layout-width": "match_parent",
       "layout-height": "100",
@@ -65,6 +50,21 @@
     {
       "type": "ImageView",
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/photopgp.png",
+      "layout-width": "match_parent",
+      "layout-height": "100",
+      "eigen-script": {
+        "type": "JavaScript",
+        "script": "eigenActivity.showToast('image click photopgp')"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 2,
+      "color": "#00ff00"
+    },
+    {
+      "type": "ImageView",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/res/photopgp.png",
       "layout-width": "match_parent",
       "layout-height": "100",
       "eigen-script": {
