@@ -42,8 +42,8 @@
           "name": "info.jpg",
           "location": "left"
         },
-        "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json",
-        "component-list": [
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json",
+        "x-component-list": [
           {
             "type": "TextView",
             "layout-width": "MATCH_PARENT",
