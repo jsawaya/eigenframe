@@ -10,7 +10,7 @@
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",
-      "text": "Test for TextView",
+      "text": "Test for TextView"
     },
     {
       "type": "LinearLayout",
