@@ -7,6 +7,29 @@
   "layout-height": "wrap_content",
   "component-list": [
     {
+      "type": "HtmlView",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text-size": "14",
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "text-color": "#ffffff",
+      "icon-x": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "html-list": [
+        "<h1>",
+        "<font color=\"#8aec81\">",
+        "<a href=\\'https://github.com/jsawaya/eigenframe/\\'>",
+        "<img src=\\'ic_launcher.png\\'>",
+        "Visit eigenframe repository on github",
+        "</a>",
+        "</font>",
+        "</h1>",
+        "<h4><font color=\"#8aec81\"><i>The script app</i></font></h4>"
+      ]
+    },
+    {
       "type": "Button",
       "layout-width": "wrap_content",
       "layout-height": "wrap_content",
