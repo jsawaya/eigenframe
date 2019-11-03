@@ -38,7 +38,7 @@
         },
         "positive": {
           "option": "YES",
-          "eigen-script": {
+          "on-click": {
             "type": "JavaScript",
             "script": "eigenActivity.showToast('AlertDialog says YES')"
           }

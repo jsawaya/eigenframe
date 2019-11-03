@@ -112,7 +112,7 @@ def eigen_directory_listview(dir_path)
   parentButton["text-color"] = "#ffffff"
   parentButton["background-color"] = "#000000"
   parentButton["gravity"] = "CENTER_HORIZONTAL, CENTER_VERTICAL"
-  parentButton["eigen-script"] = parentButtonScript
+  parentButton["on-click"] = parentButtonScript
 
   parent_path = File.expand_path("..", Dir.pwd)
 
@@ -138,7 +138,7 @@ def eigen_directory_listview(dir_path)
 #  h4["text"] = "get selected filename"
 #  h4["text-color"] = "#ffffff"
 #  h4["background-color"] = "#000000"
-#  h4["eigen-script"] = h5
+#  h4["on-click"] = h5
 
 #  h5["type"] = "JavaScript"
 #  h5["script-list"] =
@@ -152,7 +152,7 @@ def eigen_directory_listview(dir_path)
   filesListView["background-color"] = "#123456"
   filesListView["checked-option"] = 1
   filesListView["key-list"] = h["files"]
-  filesListView["eigen-script"] = h7
+  filesListView["on-click"] = h7
   filesListView["eigen-frame"] = h8
 
   h7["type"] = "JavaScript"
@@ -192,7 +192,7 @@ def eigen_directory_listview(dir_path)
   subdirButtonScript["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{dir_path}"
   subdirButtonScript["icon"] = infoLeftIcon
 
-  subdirListView["eigen-script"] = subdirButtonScript
+  subdirListView["on-click"] = subdirButtonScript
 
 
   
