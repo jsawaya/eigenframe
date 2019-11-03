@@ -5,7 +5,7 @@
   "component-list": [
     {
       "type": "TextView",
-      "layout-width": "MATCH_PARENT",
+      "layout-width": "match_parent",
       "layout-height": "wrap_content",
       "text": "Test EigenScreen",
       "text-size": "20",
@@ -43,7 +43,7 @@
         "component-list": [
           {
             "type": "TextView",
-            "layout-width": "MATCH_PARENT",
+            "layout-width": "match_parent",
             "layout-height": "wrap_content",
             "text": "Example of component-list(TextView) on EigenScreen",
             "text-size": "20",
@@ -52,7 +52,7 @@
           },
           {
             "type": "TextView",
-            "layout-width": "MATCH_PARENT",
+            "layout-width": "match_parent",
             "layout-height": "wrap_content",
             "text": "text-size:14",
             "text-size": "14",

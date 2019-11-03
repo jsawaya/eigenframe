@@ -11,12 +11,7 @@
       "layout-width": "match_parent",
       "layout-height": "wrap_content",
       "text-size": "14",
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
       "text-color": "#ffffff",
-      "icon-x": {
-        "name": "info.jpg",
-        "location": "left"
-      },
       "html-list": [
         "<h1>",
         "<font color=\"#8aec81\">",

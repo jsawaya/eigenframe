@@ -1,12 +1,12 @@
 {
   "type": "LinearLayout",
-  "orientation": "VERTICAL",
-  "layout-width": "MATCH_PARENT",
-  "layout-height": "MATCH_PARENT",
+  "orientation": "vertical",
+  "layout-width": "match_parent",
+  "layout-height": "match_parent",
   "component-list": [
     {
       "type": "TextView",
-      "layout-width": "MATCH_PARENT",
+      "layout-width": "match_parent",
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",

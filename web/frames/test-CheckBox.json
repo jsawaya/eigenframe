@@ -8,7 +8,7 @@
   "component-list": [
     {
       "type": "TextView",
-      "layout-width": "MATCH_PARENT",
+      "layout-width": "match_parent",
       "layout-height": "wrap_content",
       "text": "Test CheckBox",
       "text-size": "20",

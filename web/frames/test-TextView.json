@@ -1,6 +1,6 @@
 {
   "type": "LinearLayout",
-  "orientation": "VERTICAL",
+  "orientation": "vertical",
   "layout-width": "match_parent",
   "layout-height": "match_parent",
   "component-list": [
