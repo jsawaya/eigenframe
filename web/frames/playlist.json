@@ -10,6 +10,7 @@
       "type": "HtmlView",
       "layout-width": "match_parent",
       "layout-height": "wrap_content",
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
       "text-size": "14",
       "text-color": "#ffffff",
       "html": "example-links: <hr/> google.com<p/> https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP <p/>internal-icon: <img src='play.jpg'>",
