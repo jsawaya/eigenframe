@@ -2,7 +2,7 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "gravity": "horizontal",
+  "gravity": "center_horizontal",
   "layout-width": "match_parent",
   "layout-height": "wrap_content",
   "component-list": [
@@ -108,7 +108,7 @@
           "text": "top",
           "text-size": 20,
           "text-color": "#ffffff",
-          "gravity": "horizontal",
+          "gravity": "center_horizontal",
           "icon": {
             "name": "info.jpg",
             "location": "top"
