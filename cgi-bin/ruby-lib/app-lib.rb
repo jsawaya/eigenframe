@@ -39,11 +39,12 @@ end
 
 
 def sys_output_frame_format(h, frame, format)
-  if frame.empty?
+  if frame == nil || frame.empty?
     if format == "txt"
       puts h
     elsif format == "json"
-      puts h.to_json
+      #puts h.to_json
+      jj h
     else #ruby
       p h
     end
@@ -52,7 +53,8 @@ def sys_output_frame_format(h, frame, format)
     if format == "txt"
       puts h["#{frame}"]
     elsif format == "json"
-      puts h["#{frame}"].to_json
+      #puts h["#{frame}"].to_json
+      jj h["#{frame}"]
     else #ruby
       p h["#{frame}"]
     end
@@ -76,93 +78,149 @@ def directory_hash()
 end
 
 
-def eigen_directory_listview(dir_path)
+def eigen_directory_listview(dir_path) 
   Dir.chdir dir_path
   h = directory_hash()
 
-  h0 = Hash.new("null")
-  h1 = Hash.new("null")
-  h2 = Hash.new("null")
-  h3 = Hash.new("null")
-  h4 = Hash.new("null")
-  h5 = Hash.new("null")
-  h6 = Hash.new("null")
+  # declare frames
+
+  eigenScreenLayout = Hash.new("null")
+  parentButton = Hash.new("null")
+  parentButtonScript = Hash.new("null")
+  infoLeftIcon = Hash.new("null")
+
+  horzLine = Hash.new("null")
+
   h7 = Hash.new("null")
   h8 = Hash.new("null")
-  h9 = Hash.new("null")
+  h17 = Hash.new("null")
+  h18 = Hash.new("null")
 
-  h1["type"] = "LinearLayout"
-  h1["orientation"] = "vertical"
-  h1["layout-width"] = "match_parent"
-  h1["layout-height"] = "match_parent"
-  h1["component-list"] = [h2,h3,h4,h6]
+  filesListView = Hash.new("null")
+  subdirListView = Hash.new("null")
 
-  h2["type"] = "Button"
-  h2["layout-width"] = "match_parent"
-  h2["layout-height"] = "wrap_content"
-  h2["text"] = "Directory:#{h['directory']}"
-  h2["text-size"] = "20"
-  h2["gravity"] = "CENTER_HORIZONTAL, CENTER_VERTICAL"
-  h2["text-color"] = "#ffffff"
-  h2["on-click"] = h0
+  # define frames
+
+  infoLeftIcon["name"] = "info.jpg"
+  infoLeftIcon["location"] = "left"
+
+  parentButton["type"] = "Button"
+  parentButton["layout-width"] = "wrap_content"
+  parentButton["layout-height"] = "wrap_content"
+  parentButton["text"] = "Directory: #{h['directory']}"
+  parentButton["text-size"] = "30"
+  parentButton["text-color"] = "#ffffff"
+  parentButton["background-color"] = "#000000"
+  parentButton["gravity"] = "CENTER_HORIZONTAL, CENTER_VERTICAL"
+  parentButton["eigen-script"] = parentButtonScript
 
   parent_path = File.expand_path("..", Dir.pwd)
 
-  h0["type"] = "EigenScreen"
-  h0["layout-width"] = "match_parent"
-  h0["layout-height"] = "wrap_content"
-  h0["text"] = "EigenScreen"
-  h0["text-size"] = "20"
-  h0["text-color"] = "#ffffff"
-  h0["background-color"] = "#111111"
-  h0["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}"
+  parentButtonScript["type"] = "EigenScreen"
+  parentButtonScript["layout-width"] = "match_parent"
+  parentButtonScript["layout-height"] = "wrap_content"
+  parentButtonScript["text"] = "EigenScreen"
+  parentButtonScript["text-size"] = "30"
+  parentButtonScript["text-color"] = "#ffffff"
+  parentButtonScript["background-color"] = "#111111"
+  parentButtonScript["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}"
+  parentButtonScript["icon"] = infoLeftIcon
 
-  h0["icon"] = h9
 
-  h9["name"] = "info.jpg"
-  h9["location"] = "left"
+  horzLine["type"] = "HorizontalLine"
+  horzLine["size"] = 2
+  horzLine["color"] = "#00ff00"
 
-  h3["type"] = "HorizontalLine"
-  h3["size"] = 2
-  h3["color"] = "#00ff00"
-
-  h4["type"] = "Button"
-  h4["layout-width"] = "match_parent"
-  h4["layout-height"] = "wrap_content"
-  h4["text"] = "get selected filename"
-  h4["text-color"] = "#ffffff"
-  h4["background-color"] = "#ff00ff"
-  h4["on-click"] = h5
-
-  h5["type"] = "JavaScript"
-  h5["script-list"] =
-    ["eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(700))" ]
   
-  h6["type"] = "ListView"
-  h6["id"] = 700
-  h6["layout-width"] = "match_parent"
-  h6["layout-height"] = "match_parent"
-  h6["background-color"] = "#ff00ff"
-  h6["checked-option"] = 1
-  h6["key-list"] = h["files"]
+#  h4["type"] = "Button"
+#  h4["layout-width"] = "match_parent"
+#  h4["layout-height"] = "wrap_content"
+#  h4["text"] = "get selected filename"
+#  h4["text-color"] = "#ffffff"
+#  h4["background-color"] = "#000000"
+#  h4["eigen-script"] = h5
 
-  h6["on-click"] = h7
+#  h5["type"] = "JavaScript"
+#  h5["script-list"] =
+#    ["eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(700))" ]
+
+  
+  filesListView["type"] = "ListView"
+  filesListView["id"] = 700
+  filesListView["layout-width"] = "match_parent"
+  filesListView["layout-height"] = "wrap_content"
+  filesListView["background-color"] = "#123456"
+  filesListView["checked-option"] = 1
+  filesListView["key-list"] = h["files"]
+  filesListView["eigen-script"] = h7
+  filesListView["eigen-frame"] = h8
 
   h7["type"] = "JavaScript"
   h7["script-list"] =
     ["eigenActivity.showToast('selected: '+eigenFragment.getViewIdState(700))" ]
        
-  h6["eigen-frame"] = h8
-  
   h8["type"] = "TextView"
   h8["script-list"] =
     ["(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')" ]
-  h8["text-size"] = "20"
+  h8["text-size"] = "30"
   h8["text-color"] = "#ffffff"
   h8["layout-width"] = "wrap_content"
   h8["layout-height"] = "wrap_content"
 
-  puts h1.to_json
+  
+  subdirListView["type"] = "ListView"
+  subdirListView["id"] = 1700
+  subdirListView["layout-width"] = "match_parent"
+  subdirListView["layout-height"] = "wrap_content"
+  subdirListView["background-color"] = "#000000"
+  subdirListView["checked-option"] = 1
+  subdirListView["key-list"] = h["subdir"]
+  subdirListView["eigen-frame"] = h18
+
+#  h17["type"] = "JavaScript"
+#  h17["script-list"] =
+#    ["eigenActivity.showToast('selected: '+eigenFragment.getViewIdState(1700))" ]
+
+  subdirButtonScript = Hash.new("null")
+  subdirButtonScript["type"] = "EigenScreen"
+  subdirButtonScript["layout-width"] = "match_parent"
+  subdirButtonScript["layout-height"] = "wrap_content"
+  subdirButtonScript["text"] = "EigenScreen"
+  subdirButtonScript["text-size"] = "30"
+  subdirButtonScript["text-color"] = "#ffffff"
+  subdirButtonScript["background-color"] = "#111111"
+  subdirButtonScript["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{dir_path}"
+  subdirButtonScript["icon"] = infoLeftIcon
+
+  subdirListView["eigen-script"] = subdirButtonScript
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  h18["type"] = "TextView"
+  h18["script-list"] =
+    ["(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')" ]
+  h18["text-size"] = "30"
+  h18["text-color"] = "#ffffff"
+  h18["layout-width"] = "wrap_content"
+  h18["layout-height"] = "wrap_content"
+
+  
+  eigenScreenLayout["type"] = "LinearLayout"
+  eigenScreenLayout["orientation"] = "vertical"
+  eigenScreenLayout["layout-width"] = "match_parent"
+  eigenScreenLayout["layout-height"] = "match_parent"
+  eigenScreenLayout["component-list"] = [parentButton,horzLine,filesListView,subdirListView]
+   
+  jj eigenScreenLayout
 end
 
 
@@ -331,8 +389,8 @@ def gpg_decrypt(password, keyfile, outfile)
   stdout.close
   stderr.close
 
-  h.to_json
-  #  puts "hashmap: #{h}"
+  #h.to_json
+  jj h
 
 end
 
@@ -529,7 +587,9 @@ def gpg_sign_detached(keyid, password, in_file)
 
   stdout.close
   stderr.close
-  h.to_json
+
+  #h.to_json
+  jj h
 end
 
 def gpg_verify(keyfile)

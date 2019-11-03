@@ -1,6 +1,9 @@
 
 <html>
   <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
     <style>
       h1 {
 	  color: navy;
@@ -50,9 +53,9 @@
 
     <a href="/cgi-bin/sys-list-termux-files.rb?frame=files&format=txt&keyfile=/data/data/com.termux/files/home" > List termux home directory </a><p/>
 
-    <a href="/cgi-bin/sys-list-termux-files.rb?keyfile=/data/data/com.termux/files/home/storage/shared" > List common shared directory </a><p/>
+    <a href="/cgi-bin/sys-list-termux-files.rb?frame=subdir&format=json&keyfile=/data/data/com.termux/files/home/storage/shared" > List common shared directory </a><p/>
 
-    <a href="/cgi-bin/sys-list-termux-files.rb?keyfile=/data/data/com.termux/files/home/storage/shared/Download" > List shared download directory </a><p/>
+    <a href="/cgi-bin/sys-list-termux-files.rb?frame=files&format=txt&keyfile=/data/data/com.termux/files/home/storage/shared/Download" > List shared download directory </a><p/>
 
     <a href="/cgi-bin/sys-list-termux-files.rb?keyfile=/data/data/com.termux/files/home/storage/shared/Android/data/com.termux/files" > List termux application shared directory </a><p/>
 
@@ -62,7 +65,31 @@
 
     <a href="/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home" > Termux home directory listview </a><p/>
 
-	<hr/>
+    <hr/>
+
+    <div class="rTable"> 
+      <form action="/cgi-bin/sys-directory-listview.rb" method="post" target="_self" >
+	<div class="rTableRow">
+	  <div class="rTableHead">List Files to ListView</div>
+	</div>
+	<div class="rTableRow">
+	  <div class="rTableCell">path:</div>
+	  <div class="rTableCell">
+	    <input type="text" name="keyfile" size="100"
+		   value="/data/data/com.termux/files/home/" />
+	  </div>
+	</div>
+	<div class="rTableRow">
+	  <div class="rTableCell">
+	    <input type="submit" value="enter" />
+	  </div>
+	</div>
+      </form>
+    </div>
+
+    <p/>
+
+    <hr/>
 
     <div class="rTable"> 
       <form action="/cgi-bin/sys-list-termux-files.rb" method="post" target="_self" >
