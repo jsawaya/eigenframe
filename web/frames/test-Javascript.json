@@ -32,7 +32,7 @@
         "name": "info.jpg",
         "location": "left"
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "x = 8*5",
@@ -52,7 +52,7 @@
         "name": "info.jpg",
         "location": "left"
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "htmlString = eigenActivity.getString(com.sawaya.R.string.change_log)",

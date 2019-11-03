@@ -48,7 +48,7 @@
         "right": 10,
         "bottom": 10
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json')"
@@ -74,7 +74,7 @@
         "right": 10,
         "bottom": 10
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')"
@@ -100,7 +100,7 @@
         "right": 10,
         "bottom": 10
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')"
@@ -131,7 +131,7 @@
         "right": 10,
         "bottom": 10
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.launch('http://localhost:8080/apps/app0.json')"
@@ -157,7 +157,7 @@
         "right": 10,
         "bottom": 10
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.launch('http://localhost:8080/apps/app1.json')"
@@ -183,7 +183,7 @@
         "right": 10,
         "bottom": 10
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.launch('http://localhost:8080/apps/app2.json')"
@@ -227,7 +227,7 @@
           "text": "launch",
           "text-color": "#ffffff",
           "background-color": "#ff00ff",
-          "eigen-script": {
+          "on-click": {
             "type": "JavaScript",
             "script-list": [
               "eigenActivity.launch('+eigenFragment.getViewState(1100))+')"
@@ -255,7 +255,7 @@
         "right": 10,
         "bottom": 10
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
@@ -281,7 +281,7 @@
         "right": 10,
         "bottom": 10
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"

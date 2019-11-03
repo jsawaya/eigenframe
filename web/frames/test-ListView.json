@@ -29,7 +29,7 @@
       "text": "ListView getViewIdState(700)",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('ListView getViewIdState: '+eigenFragment.getViewIdState(700))"
@@ -57,7 +57,7 @@
         "test5.zip",
         "test5.pdf"
       ],
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('ListView selected: '+eigenFragment.getViewIdState(700))"

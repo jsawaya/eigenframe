@@ -28,7 +28,7 @@
       "text": "Test EigenScreen with a component-list(TextView)",
       "text-color": "#ffffff",
       "background-color": "#ff0000",
-      "eigen-script": {
+      "on-click": {
         "type": "EigenScreen",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
@@ -69,7 +69,7 @@
       "text": "Test EigenScreen with a url(test-TextView)",
       "text-color": "#ffffff",
       "background-color": "#ff0000",
-      "eigen-script": {
+      "on-click": {
         "type": "EigenScreen",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
@@ -91,7 +91,7 @@
       "text": "Test EigenScreen with a localhost url that generates directory ListView",
       "text-color": "#ffffff",
       "background-color": "#ff0000",
-      "eigen-script": {
+      "on-click": {
         "type": "EigenScreen",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",
@@ -113,7 +113,7 @@
       "text": "Directory ListView - home/storage",
       "text-color": "#ffffff",
       "background-color": "#ff0000",
-      "eigen-script": {
+      "on-click": {
         "type": "EigenScreen",
         "layout-width": "match_parent",
         "layout-height": "wrap_content",

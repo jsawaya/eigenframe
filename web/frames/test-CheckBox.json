@@ -45,7 +45,7 @@
         "right": 40,
         "bottom": 40
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewIdState(200))"
@@ -71,7 +71,7 @@
         "right": 40,
         "bottom": 40
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewIdState(200))"
@@ -119,7 +119,7 @@
         "right": 40,
         "bottom": 40
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('eigenFragment.getViewState(201): '+eigenFragment.getViewIdState(201))"

@@ -30,7 +30,7 @@
       "text": "Test SelectDialog",
       "text-color": "#ffffff",
       "background-color": "#22ff0000",
-      "eigen-script": {
+      "on-click": {
         "type": "SelectDialog",
         "title": "Test SelectDialog",
         "icon": {
@@ -42,7 +42,7 @@
           "option 1",
           "option 2"
         ],
-        "eigen-script": {
+        "on-click": {
           "type": "JavaScript",
           "script-list": [
             "eigenActivity.showToast('SelectDialog: option-name: '+eigenMap.get('option-name'))"

@@ -32,7 +32,7 @@
         "name": "info.jpg",
         "location": "left"
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "x = 8*5",
@@ -52,7 +52,7 @@
         "name": "info.jpg",
         "location": "left"
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "htmlString = eigenActivity.getString(com.sawaya.R.string.change_log)",
@@ -79,7 +79,7 @@
       "text": "Popup TextView/text",
       "text-color": "#ffffff",
       "background-color": "#22ffff00",
-      "eigen-script": {
+      "on-click": {
         "type": "PopupTextView",
         "title": "Popup TextView",
         "text": "this is a test"
@@ -92,7 +92,7 @@
       "text": "Popup TextView/text-list",
       "text-color": "#ffffff",
       "background-color": "#22ffff00",
-      "eigen-script": {
+      "on-click": {
         "type": "PopupTextView",
         "title": "Popup TextView",
         "text-list": [
@@ -109,7 +109,7 @@
       "text": "Popup TextView/url",
       "text-color": "#ffffff",
       "background-color": "#22ff0000",
-      "eigen-script": {
+      "on-click": {
         "type": "PopupTextView",
         "title": "Popup TextView",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
@@ -131,7 +131,7 @@
         "name": "info.jpg",
         "location": "left"
       },
-      "eigen-script": {
+      "on-click": {
         "type": "PopupHtmlView",
         "title": "PopupHtmlView/html-list",
         "html-list": [
@@ -164,7 +164,7 @@
             "name": "info.jpg",
             "location": "left"
           },
-          "eigen-script": {
+          "on-click": {
             "type": "PopupHtmlView",
             "title": "PopupHtmlView",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
@@ -181,7 +181,7 @@
             "name": "info.jpg",
             "location": "left"
           },
-          "eigen-script": {
+          "on-click": {
             "type": "PopupHtmlView",
             "title": "PopupHtmlView",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/recent-changes.html"

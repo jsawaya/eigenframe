@@ -22,7 +22,7 @@
       "type": "ImageView",
       "layout-width": "match_parent",
       "layout-height": "wrap_content",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script": "eigenActivity.showToast('image click default')"
       }
@@ -37,7 +37,7 @@
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png",
       "layout-width": "match_parent",
       "layout-height": "100",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script": "eigenActivity.showToast('image click eigenframe')"
       }
@@ -52,7 +52,7 @@
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/photopgp.png",
       "layout-width": "match_parent",
       "layout-height": "100",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script": "eigenActivity.showToast('image click photopgp')"
       }
@@ -67,7 +67,7 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/res/photopgp.png",
       "layout-width": "match_parent",
       "layout-height": "100",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script": "eigenActivity.showToast('image click photopgp')"
       }

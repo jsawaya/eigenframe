@@ -104,7 +104,7 @@ def eigen_directory_listview(dir_path)
   h2["text-size"] = "20"
   h2["gravity"] = "CENTER_HORIZONTAL, CENTER_VERTICAL"
   h2["text-color"] = "#ffffff"
-  h2["eigen-script"] = h0
+  h2["on-click"] = h0
 
   parent_path = File.expand_path("..", Dir.pwd)
 
@@ -132,7 +132,7 @@ def eigen_directory_listview(dir_path)
   h4["text"] = "get selected filename"
   h4["text-color"] = "#ffffff"
   h4["background-color"] = "#ff00ff"
-  h4["eigen-script"] = h5
+  h4["on-click"] = h5
 
   h5["type"] = "JavaScript"
   h5["script-list"] =
@@ -146,7 +146,7 @@ def eigen_directory_listview(dir_path)
   h6["checked-option"] = 1
   h6["key-list"] = h["files"]
 
-  h6["eigen-script"] = h7
+  h6["on-click"] = h7
 
   h7["type"] = "JavaScript"
   h7["script-list"] =

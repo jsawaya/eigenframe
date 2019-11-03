@@ -37,7 +37,7 @@
         "right": 40,
         "bottom": 40
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
@@ -51,7 +51,7 @@
       "text": "getViewIdState ToggleButton:400",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
@@ -80,7 +80,7 @@
       "text": "getViewIdState ToggleButton:401",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(401))"

@@ -46,7 +46,7 @@
       "text": "Access EditText",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
@@ -69,7 +69,7 @@
       "text": "Access EditText",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
@@ -92,7 +92,7 @@
       "text": "Access EditText",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('eigenFragment.getEditTextValue(102): '+eigenFragment.getEditTextValue(102))"

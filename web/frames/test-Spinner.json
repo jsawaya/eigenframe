@@ -35,7 +35,7 @@
         "option 1",
         "option 2"
       ],
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(600))"
@@ -49,7 +49,7 @@
       "text": "getViewIdState Spinner:600",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(600))"
@@ -78,7 +78,7 @@
       "text": "getViewIdState Spinner:610",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewIdState(610))"

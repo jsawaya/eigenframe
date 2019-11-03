@@ -30,7 +30,7 @@
       "text": "Test AlertDialog",
       "text-color": "#ffffff",
       "background-color": "#22ff0000",
-      "eigen-script": {
+      "on-click": {
         "type": "AlertDialog",
         "title": "My AlertDialog",
         "icon": {
@@ -45,14 +45,14 @@
         },
         "negative": {
           "option": "NO",
-          "eigen-script": {
+          "on-click": {
             "type": "JavaScript",
             "script": "eigenActivity.showToast('AlertDialog says NO')"
           }
         },
         "neutral": {
           "option": "UNKNOWN",
-          "eigen-script": {
+          "on-click": {
             "type": "JavaScript",
             "script": "eigenActivity.showToast('AlertDialog says UNKNOWN')"
           }

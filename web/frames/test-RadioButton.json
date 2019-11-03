@@ -36,7 +36,7 @@
         "option 1",
         "option 2"
       ],
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewIdState(500))"
@@ -50,7 +50,7 @@
       "text": "getViewIdState RadioButton:500",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('getViewState: '+eigenFragment.getViewIdState(500))"
@@ -79,7 +79,7 @@
       "text": "getViewIdState RadioButton:510",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(510))"

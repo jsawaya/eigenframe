@@ -38,7 +38,7 @@
         "right": 40,
         "bottom": 40
       },
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(300))"
@@ -52,7 +52,7 @@
       "text": "getViewState of Switch:300",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(300))"
@@ -82,7 +82,7 @@
       "text": "getViewState of Switch:301",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "eigen-script": {
+      "on-click": {
         "type": "JavaScript",
         "script-list": [
           "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(301))"
