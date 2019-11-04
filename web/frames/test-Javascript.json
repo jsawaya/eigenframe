@@ -36,8 +36,7 @@
         "type": "JavaScript",
         "script-list": [
           "x = 8*5",
-          "eigenActivity.showToast('var x: '+x)",
-          "x"
+          "eigenActivity.showToast('var x: '+x)"
         ]
       }
     },

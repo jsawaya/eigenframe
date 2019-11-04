@@ -65,8 +65,7 @@
       },
       "eigen-frame": {
         "type": "TextView",
-        "text-x": "Test",
-        "script-list": [
+        "text-script-list": [
           "(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')"
         ],
         "text-size": "20",

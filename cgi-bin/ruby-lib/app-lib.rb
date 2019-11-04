@@ -160,7 +160,7 @@ def eigen_directory_listview(dir_path)
     ["eigenActivity.showToast('selected: '+eigenFragment.getViewIdState(700))" ]
        
   h8["type"] = "TextView"
-  h8["script-list"] =
+  h8["text-script-list"] =
     ["(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')" ]
   h8["text-size"] = "30"
   h8["text-color"] = "#ffffff"
@@ -206,7 +206,7 @@ def eigen_directory_listview(dir_path)
   
   
   h18["type"] = "TextView"
-  h18["script-list"] =
+  h18["text-script-list"] =
     ["(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')" ]
   h18["text-size"] = "30"
   h18["text-color"] = "#ffffff"

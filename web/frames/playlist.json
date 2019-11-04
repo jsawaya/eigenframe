@@ -62,7 +62,8 @@
       "on-click": {
         "type": "JavaScript",
         "script-list": [
-          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json')"
+          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json')",
+          "eigenActivity.finish()"
         ]
       }
     },
@@ -88,7 +89,8 @@
       "on-click": {
         "type": "JavaScript",
         "script-list": [
-          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')"
+          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
+          "eigenActivity.finish()"
         ]
       }
     },
@@ -114,7 +116,8 @@
       "on-click": {
         "type": "JavaScript",
         "script-list": [
-          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')"
+          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')",
+          "eigenActivity.finish()"
         ]
       }
     },
@@ -145,7 +148,8 @@
       "on-click": {
         "type": "JavaScript",
         "script-list": [
-          "eigenActivity.launch('http://localhost:8080/apps/app0.json')"
+          "eigenActivity.launch('http://localhost:8080/apps/app0.json')",
+          "eigenActivity.finish()"
         ]
       }
     },
@@ -171,7 +175,8 @@
       "on-click": {
         "type": "JavaScript",
         "script-list": [
-          "eigenActivity.launch('http://localhost:8080/apps/app1.json')"
+          "eigenActivity.launch('http://localhost:8080/apps/app1.json')",
+          "eigenActivity.finish()"
         ]
       }
     },
@@ -197,7 +202,8 @@
       "on-click": {
         "type": "JavaScript",
         "script-list": [
-          "eigenActivity.launch('http://localhost:8080/apps/app2.json')"
+          "eigenActivity.launch('http://localhost:8080/apps/app2.json')",
+          "eigenActivity.finish()"
         ]
       }
     },
@@ -241,7 +247,8 @@
           "on-click": {
             "type": "JavaScript",
             "script-list": [
-              "eigenActivity.launch('+eigenFragment.getViewState(1100))+')"
+              "eigenActivity.launch('+eigenFragment.getViewState(1100))+')",
+              "eigenActivity.finish()"
             ]
           }
         }
