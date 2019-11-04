@@ -210,7 +210,8 @@ def eigen_directory_listview(dirpath)
   subdirListViewOnClickEigenScreen["type"] = "EigenScreen"
   subdirListViewOnClickEigenScreen["layout-width"] = "match_parent"
   subdirListViewOnClickEigenScreen["layout-height"] = "wrap_content"
-  subdirListViewOnClickEigenScreen["text-script"] = "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"
+#  subdirListViewOnClickEigenScreen["icon"] = infoLeftIcon
+#  subdirListViewOnClickEigenScreen["text-script"] = "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"
   subdirListViewOnClickEigenScreen["text-size"] = "30"
   subdirListViewOnClickEigenScreen["text-color"] = "#ffffff"
   subdirListViewOnClickEigenScreen["background-color"] = "#111111"
@@ -218,7 +219,6 @@ def eigen_directory_listview(dirpath)
     [
       "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"
     ]
-  subdirListViewOnClickEigenScreen["icon"] = infoLeftIcon
 
 
   subdirListViewEigenFrame["type"] = "TextView"
