@@ -88,7 +88,7 @@
       "type": "Button",
       "layout-width": "match_parent",
       "layout-height": "wrap_content",
-      "text": "Test EigenScreen with a localhost url that generates directory ListView",
+      "text": "EigenScreen2 calls localhost url to generate directory ListView",
       "text-color": "#ffffff",
       "background-color": "#ff0000",
       "on-click": {

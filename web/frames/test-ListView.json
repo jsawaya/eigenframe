@@ -59,8 +59,22 @@
       ],
       "on-click": {
         "type": "JavaScript",
-        "script-list": [
+        "x-script-list": [
+          "java.lang.System.out.println(3)",
+          "obj = { run: function() { print('hi'); } }",
+          "obj.run()",
+          "r = new java.lang.Runnable(obj)",
+          "t = new java.lang.Thread(r)",
+          "t.start()",
+          "Object x = scope.get('x', scope)",
+          "if (x == Scriptable.NOT_FOUND) {System.out.println('x is not defined.');} else {System.out.println('x = ' + Context.toString(x));}",
+
           "eigenActivity.showToast('ListView selected: '+eigenFragment.getViewIdState(700))"
+        ],
+        "script-list": [
+          "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
+          "var opt = eigenMap.get('option')",
+          "eigenActivity.showToast('ListView selected: '+ pos + ' - ' + opt)"
         ]
       },
       "eigen-frame": {
