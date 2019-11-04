@@ -28,6 +28,12 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EigenScreen.json"
     },
     {
+      "name": "PopupTextView",
+      "type": "EigenFragment",
+      "icon-name": "sawaya_eigenframe_icon.png",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupTextView.json"
+    },
+    {
       "name": "empty",
       "type": "EigenFragment"
     },

@@ -1,0 +1,65 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "layout-width": "match_parent",
+  "layout-height": "wrap_content",
+  "component-list": [
+    {
+      "type": "TextView",
+      "text": "Examples of PopupTextView",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text-size": "20",
+      "text-color": "#ffffff"
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 1,
+      "color": "#00ff00"
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "Popup TextView for a single line of text",
+      "text-color": "#ffffff",
+      "background-color": "#22ffff00",
+      "on-click": {
+        "type": "PopupTextView",
+        "title": "Popup TextView for a single line of text",
+        "text": "this is a test"
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "Popup TextView for a text-list",
+      "text-color": "#ffffff",
+      "background-color": "#22ffff00",
+      "on-click": {
+        "type": "PopupTextView",
+        "title": "Popup TextView for a text-list",
+        "text-list": [
+          "this is line 1",
+          "this is line 2",
+          "this is line 3"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "Popup TextView for the contents of a url request (from github)",
+      "text-color": "#ffffff",
+      "background-color": "#22ff0000",
+      "on-click": {
+        "type": "PopupTextView",
+        "title": "Popup TextView for the contents of a url request (from github)",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
+      }
+    }
+  ]
+}
