@@ -91,11 +91,6 @@ def eigen_directory_listview(dir_path)
 
   horzLine = Hash.new("null")
 
-  h7 = Hash.new("null")
-  h8 = Hash.new("null")
-  h17 = Hash.new("null")
-  h18 = Hash.new("null")
-
   filesListView = Hash.new("null")
   subdirListView = Hash.new("null")
 
@@ -123,7 +118,11 @@ def eigen_directory_listview(dir_path)
   parentButtonScript["text-size"] = "30"
   parentButtonScript["text-color"] = "#ffffff"
   parentButtonScript["background-color"] = "#111111"
-  parentButtonScript["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}"
+  parentButtonScript["url-script-list"] = [
+  "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}",
+  ""
+  ],
+
   parentButtonScript["icon"] = infoLeftIcon
 
 
@@ -132,88 +131,76 @@ def eigen_directory_listview(dir_path)
   horzLine["color"] = "#00ff00"
 
   
-#  h4["type"] = "Button"
-#  h4["layout-width"] = "match_parent"
-#  h4["layout-height"] = "wrap_content"
-#  h4["text"] = "get selected filename"
-#  h4["text-color"] = "#ffffff"
-#  h4["background-color"] = "#000000"
-#  h4["on-click"] = h5
-
-#  h5["type"] = "JavaScript"
-#  h5["script-list"] =
-#    ["eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(700))" ]
-
-  
   filesListView["type"] = "ListView"
   filesListView["id"] = 700
   filesListView["layout-width"] = "match_parent"
   filesListView["layout-height"] = "wrap_content"
   filesListView["background-color"] = "#123456"
-  filesListView["checked-option"] = 1
   filesListView["key-list"] = h["files"]
-  filesListView["on-click"] = h7
-  filesListView["eigen-frame"] = h8
 
-  h7["type"] = "JavaScript"
-  h7["script-list"] =
-    ["eigenActivity.showToast('selected: '+eigenFragment.getViewIdState(700))" ]
-       
-  h8["type"] = "TextView"
-  h8["text-script-list"] =
+  filesListViewOnClickJavaScript = Hash.new("null")
+  filesListViewOnClickJavaScript["type"] = "JavaScript"
+  filesListViewOnClickJavaScript["script-list"] =
+    [
+      "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
+      "var opt = eigenMap.get('option')",
+      "eigenActivity.showToast('ListView selected: '+ pos + ' - ' + opt)"
+    ]
+  filesListView["on-click"] = filesListViewOnClickJavaScript
+
+  filesListViewEigenFrame = Hash.new("null")
+  filesListViewEigenFrame["type"] = "TextView"
+  filesListViewEigenFrame["text-script-list"] =
     ["(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')" ]
-  h8["text-size"] = "30"
-  h8["text-color"] = "#ffffff"
-  h8["layout-width"] = "wrap_content"
-  h8["layout-height"] = "wrap_content"
+  filesListViewEigenFrame["text-size"] = "30"
+  filesListViewEigenFrame["text-color"] = "#ffffff"
+  filesListViewEigenFrame["layout-width"] = "wrap_content"
+  filesListViewEigenFrame["layout-height"] = "wrap_content"
+  filesListView["eigen-frame"] = filesListViewEigenFrame
 
-  
+
   subdirListView["type"] = "ListView"
   subdirListView["id"] = 1700
   subdirListView["layout-width"] = "match_parent"
   subdirListView["layout-height"] = "wrap_content"
   subdirListView["background-color"] = "#000000"
-  subdirListView["checked-option"] = 1
   subdirListView["key-list"] = h["subdir"]
-  subdirListView["eigen-frame"] = h18
 
-#  h17["type"] = "JavaScript"
-#  h17["script-list"] =
-#    ["eigenActivity.showToast('selected: '+eigenFragment.getViewIdState(1700))" ]
-
-  subdirButtonScript = Hash.new("null")
-  subdirButtonScript["type"] = "EigenScreen"
-  subdirButtonScript["layout-width"] = "match_parent"
-  subdirButtonScript["layout-height"] = "wrap_content"
-  subdirButtonScript["text"] = "EigenScreen"
-  subdirButtonScript["text-size"] = "30"
-  subdirButtonScript["text-color"] = "#ffffff"
-  subdirButtonScript["background-color"] = "#111111"
-  subdirButtonScript["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{dir_path}"
-  subdirButtonScript["icon"] = infoLeftIcon
-
-  subdirListView["on-click"] = subdirButtonScript
+  subdirListViewOnClickJavaScript = Hash.new("null")
+  subdirListViewOnClickJavaScript["type"] = "JavaScript"
+  subdirListViewOnClickJavaScript["script-list"] =
+    [
+      "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
+      "var opt = eigenMap.get('option')",
+      "eigenActivity.showToast('ListView selected: '+ pos + ' - ' + opt)"
+    ]
+  subdirListView["on-click"] = subdirListViewOnClickJavaScript
 
 
-  
+#  subdirButtonScript = Hash.new("null")
+#  subdirListView["on-click"] = subdirListViewOnClickJavaScript
+#  subdirButtonScript["type"] = "EigenScreen"
+#  subdirButtonScript["layout-width"] = "match_parent"
+#  subdirButtonScript["layout-height"] = "wrap_content"
+#  subdirButtonScript["text"] = "EigenScreen"
+#  subdirButtonScript["text-size"] = "30"
+#  subdirButtonScript["text-color"] = "#ffffff"
+#  subdirButtonScript["background-color"] = "#111111"
+#  subdirButtonScript["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{dir_path}"
+#  subdirButtonScript["icon"] = infoLeftIcon
 
 
-
-  
-
-
-
-  
-  
-  h18["type"] = "TextView"
-  h18["text-script-list"] =
+  subdirListViewEigenFrame = Hash.new("null")
+  subdirListViewEigenFrame["type"] = "TextView"
+  subdirListViewEigenFrame["text-script-list"] =
     ["(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')" ]
-  h18["text-size"] = "30"
-  h18["text-color"] = "#ffffff"
-  h18["layout-width"] = "wrap_content"
-  h18["layout-height"] = "wrap_content"
+  subdirListViewEigenFrame["text-size"] = "30"
+  subdirListViewEigenFrame["text-color"] = "#ffffff"
+  subdirListViewEigenFrame["layout-width"] = "wrap_content"
+  subdirListViewEigenFrame["layout-height"] = "wrap_content"
+  subdirListView["eigen-frame"] = subdirListViewEigenFrame
 
-  
+
   eigenScreenLayout["type"] = "LinearLayout"
   eigenScreenLayout["orientation"] = "vertical"
   eigenScreenLayout["layout-width"] = "match_parent"
