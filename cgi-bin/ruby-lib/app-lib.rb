@@ -124,7 +124,7 @@ def eigen_directory_listview(dirpath)
   headerTextView["text-size"] = "30"
   headerTextView["text-color"] = "#ffffff"
   headerTextView["text"] = "Directory: #{h['directory']}"
-  headerTextView["padding"] = padding
+#  headerTextView["padding"] = padding
   headerTextView["margin"] = margin
 
 =begin
@@ -195,6 +195,7 @@ def eigen_directory_listview(dirpath)
   subdirListView["layout-height"] = "wrap_content"
   subdirListView["background-color"] = "#000000"
   subdirListView["key-list"] = h["subdir"]
+  subdirListView["on-click"] = subdirListViewOnClickEigenScreen
 
   subdirListViewOnClickJavaScript["type"] = "JavaScript"
   subdirListViewOnClickJavaScript["script-list"] =
@@ -209,7 +210,7 @@ def eigen_directory_listview(dirpath)
   subdirListViewOnClickEigenScreen["type"] = "EigenScreen"
   subdirListViewOnClickEigenScreen["layout-width"] = "match_parent"
   subdirListViewOnClickEigenScreen["layout-height"] = "wrap_content"
-  subdirListViewOnClickEigenScreen["text"] = "subdirListViewOnClickEigenScreen"
+  subdirListViewOnClickEigenScreen["text-script"] = "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"
   subdirListViewOnClickEigenScreen["text-size"] = "30"
   subdirListViewOnClickEigenScreen["text-color"] = "#ffffff"
   subdirListViewOnClickEigenScreen["background-color"] = "#111111"
@@ -218,7 +219,6 @@ def eigen_directory_listview(dirpath)
       "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"
     ]
   subdirListViewOnClickEigenScreen["icon"] = infoLeftIcon
-  subdirListView["on-click"] = subdirListViewOnClickEigenScreen
 
 
   subdirListViewEigenFrame["type"] = "TextView"
@@ -239,7 +239,8 @@ def eigen_directory_listview(dirpath)
   eigenScreenLayout["layout-width"] = "match_parent"
   eigenScreenLayout["layout-height"] = "match_parent"
   eigenScreenLayout["component-list"] = [headerTextView,horzLine,subdirListView,horzLine,filesListView]
-   
+
+
   jj eigenScreenLayout
 end
 
