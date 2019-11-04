@@ -78,27 +78,56 @@ def directory_hash()
 end
 
 
-def eigen_directory_listview(dir_path) 
-  Dir.chdir dir_path
+def eigen_directory_listview(dirpath)
+  Dir.chdir dirpath
   h = directory_hash()
 
   # declare frames
 
-  eigenScreenLayout = Hash.new("null")
-  parentButton = Hash.new("null")
-  parentButtonScript = Hash.new("null")
+  padding = Hash.new("null")
+  margin = Hash.new("null")
   infoLeftIcon = Hash.new("null")
+  headerTextView = Hash.new("null")
 
+#  parentButton = Hash.new("null")
+#  parentButtonScript = Hash.new("null")
+
+  subdirListViewEigenFrame = Hash.new("null")
+  subdirListViewOnClickEigenScreen = Hash.new("null")
+  subdirListViewOnClickJavaScript = Hash.new("null")
+  filesListViewEigenFrame = Hash.new("null")
+  filesListViewOnClickJavaScript = Hash.new("null")
+  eigenScreenLayout = Hash.new("null")
   horzLine = Hash.new("null")
-
   filesListView = Hash.new("null")
   subdirListView = Hash.new("null")
 
   # define frames
 
+  padding["left"] = 40
+  padding["top"] = 40
+  padding["right"] = 40
+  padding["bottom"] = 40
+
+  margin["left"] = 10
+  margin["top"] = 10
+  margin["right"] = 10
+  margin["bottom"] = 10
+
+
   infoLeftIcon["name"] = "info.jpg"
   infoLeftIcon["location"] = "left"
 
+  headerTextView["type"] = "TextView"
+  headerTextView["layout-width"] = "wrap_content"
+  headerTextView["layout-height"] = "wrap_content"
+  headerTextView["text-size"] = "30"
+  headerTextView["text-color"] = "#ffffff"
+  headerTextView["text"] = "Directory: #{h['directory']}"
+  headerTextView["padding"] = padding
+  headerTextView["margin"] = margin
+
+=begin
   parentButton["type"] = "Button"
   parentButton["layout-width"] = "wrap_content"
   parentButton["layout-height"] = "wrap_content"
@@ -118,27 +147,27 @@ def eigen_directory_listview(dir_path)
   parentButtonScript["text-size"] = "30"
   parentButtonScript["text-color"] = "#ffffff"
   parentButtonScript["background-color"] = "#111111"
+  parentButtonScript["icon"] = infoLeftIcon
   parentButtonScript["url-script-list"] =
   [
-    "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}"
+    "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}"
   ],
 
-  parentButtonScript["icon"] = infoLeftIcon
-
+=end
 
   horzLine["type"] = "HorizontalLine"
   horzLine["size"] = 2
   horzLine["color"] = "#00ff00"
 
-  
   filesListView["type"] = "ListView"
   filesListView["id"] = 700
   filesListView["layout-width"] = "match_parent"
   filesListView["layout-height"] = "wrap_content"
   filesListView["background-color"] = "#123456"
   filesListView["key-list"] = h["files"]
+  filesListView["on-click"] = filesListViewOnClickJavaScript
+  filesListView["eigen-frame"] = filesListViewEigenFrame
 
-  filesListViewOnClickJavaScript = Hash.new("null")
   filesListViewOnClickJavaScript["type"] = "JavaScript"
   filesListViewOnClickJavaScript["script-list"] =
     [
@@ -146,9 +175,7 @@ def eigen_directory_listview(dir_path)
       "var opt = eigenMap.get('option')",
       "eigenActivity.showToast('ListView file selected: '+ pos + ' - ' + opt)"
     ]
-  filesListView["on-click"] = filesListViewOnClickJavaScript
 
-  filesListViewEigenFrame = Hash.new("null")
   filesListViewEigenFrame["type"] = "TextView"
   filesListViewEigenFrame["text-script-list"] =
     [
@@ -158,7 +185,8 @@ def eigen_directory_listview(dir_path)
   filesListViewEigenFrame["text-color"] = "#ffffff"
   filesListViewEigenFrame["layout-width"] = "wrap_content"
   filesListViewEigenFrame["layout-height"] = "wrap_content"
-  filesListView["eigen-frame"] = filesListViewEigenFrame
+  filesListViewEigenFrame["padding"] = padding
+  filesListViewEigenFrame["margin"] = margin
 
 
   subdirListView["type"] = "ListView"
@@ -168,7 +196,6 @@ def eigen_directory_listview(dir_path)
   subdirListView["background-color"] = "#000000"
   subdirListView["key-list"] = h["subdir"]
 
-  subdirListViewOnClickJavaScript = Hash.new("null")
   subdirListViewOnClickJavaScript["type"] = "JavaScript"
   subdirListViewOnClickJavaScript["script-list"] =
     [
@@ -179,7 +206,6 @@ def eigen_directory_listview(dir_path)
   #subdirListView["on-click"] = subdirListViewOnClickJavaScript
 
 
-  subdirListViewOnClickEigenScreen = Hash.new("null")
   subdirListViewOnClickEigenScreen["type"] = "EigenScreen"
   subdirListViewOnClickEigenScreen["layout-width"] = "match_parent"
   subdirListViewOnClickEigenScreen["layout-height"] = "wrap_content"
@@ -189,13 +215,12 @@ def eigen_directory_listview(dir_path)
   subdirListViewOnClickEigenScreen["background-color"] = "#111111"
   subdirListViewOnClickEigenScreen["url-script-list"] =
     [
-      "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{dir_path}' + '/'+ eigenMap.get('option')"
+      "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"
     ]
   subdirListViewOnClickEigenScreen["icon"] = infoLeftIcon
   subdirListView["on-click"] = subdirListViewOnClickEigenScreen
 
 
-  subdirListViewEigenFrame = Hash.new("null")
   subdirListViewEigenFrame["type"] = "TextView"
   subdirListViewEigenFrame["text-script-list"] =
     [
@@ -206,13 +231,14 @@ def eigen_directory_listview(dir_path)
   subdirListViewEigenFrame["layout-width"] = "wrap_content"
   subdirListViewEigenFrame["layout-height"] = "wrap_content"
   subdirListView["eigen-frame"] = subdirListViewEigenFrame
+  subdirListViewEigenFrame["background-color"] = "#654321"
 
 
   eigenScreenLayout["type"] = "LinearLayout"
   eigenScreenLayout["orientation"] = "vertical"
   eigenScreenLayout["layout-width"] = "match_parent"
   eigenScreenLayout["layout-height"] = "match_parent"
-  eigenScreenLayout["component-list"] = [parentButton,horzLine,filesListView,subdirListView]
+  eigenScreenLayout["component-list"] = [headerTextView,horzLine,subdirListView,horzLine,filesListView]
    
   jj eigenScreenLayout
 end

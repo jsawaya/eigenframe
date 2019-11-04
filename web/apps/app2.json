@@ -19,7 +19,7 @@
     {
       "name": "Termux\nListView",
       "type": "EigenFragment",
-      "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=/data/data/com.termux/files/home"
+      "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
     },
     {
       "name": "Test\nJavascript",
