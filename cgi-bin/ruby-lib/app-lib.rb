@@ -118,9 +118,9 @@ def eigen_directory_listview(dir_path)
   parentButtonScript["text-size"] = "30"
   parentButtonScript["text-color"] = "#ffffff"
   parentButtonScript["background-color"] = "#111111"
-  parentButtonScript["url-script-list"] = [
-  "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}",
-  ""
+  parentButtonScript["url-script-list"] =
+  [
+    "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{parent_path}"
   ],
 
   parentButtonScript["icon"] = infoLeftIcon
@@ -144,7 +144,7 @@ def eigen_directory_listview(dir_path)
     [
       "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
       "var opt = eigenMap.get('option')",
-      "eigenActivity.showToast('ListView selected: '+ pos + ' - ' + opt)"
+      "eigenActivity.showToast('ListView file selected: '+ pos + ' - ' + opt)"
     ]
   filesListView["on-click"] = filesListViewOnClickJavaScript
 
@@ -174,22 +174,25 @@ def eigen_directory_listview(dir_path)
     [
       "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
       "var opt = eigenMap.get('option')",
-      "eigenActivity.showToast('ListView selected: '+ pos + ' - ' + opt)"
+      "eigenActivity.showToast('ListView subdir selected: '+ pos + ' - ' + opt)"
     ]
-  subdirListView["on-click"] = subdirListViewOnClickJavaScript
+  #subdirListView["on-click"] = subdirListViewOnClickJavaScript
 
 
-#  subdirButtonScript = Hash.new("null")
-#  subdirListView["on-click"] = subdirListViewOnClickJavaScript
-#  subdirButtonScript["type"] = "EigenScreen"
-#  subdirButtonScript["layout-width"] = "match_parent"
-#  subdirButtonScript["layout-height"] = "wrap_content"
-#  subdirButtonScript["text"] = "EigenScreen"
-#  subdirButtonScript["text-size"] = "30"
-#  subdirButtonScript["text-color"] = "#ffffff"
-#  subdirButtonScript["background-color"] = "#111111"
-#  subdirButtonScript["url"] = "http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{dir_path}"
-#  subdirButtonScript["icon"] = infoLeftIcon
+  subdirListViewOnClickEigenScreen = Hash.new("null")
+  subdirListViewOnClickEigenScreen["type"] = "EigenScreen"
+  subdirListViewOnClickEigenScreen["layout-width"] = "match_parent"
+  subdirListViewOnClickEigenScreen["layout-height"] = "wrap_content"
+  subdirListViewOnClickEigenScreen["text"] = "subdirListViewOnClickEigenScreen"
+  subdirListViewOnClickEigenScreen["text-size"] = "30"
+  subdirListViewOnClickEigenScreen["text-color"] = "#ffffff"
+  subdirListViewOnClickEigenScreen["background-color"] = "#111111"
+  subdirListViewOnClickEigenScreen["url-script-list"] =
+    [
+      "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?keyfile=#{dir_path}' + '/'+ eigenMap.get('option')"
+    ]
+  subdirListViewOnClickEigenScreen["icon"] = infoLeftIcon
+  subdirListView["on-click"] = subdirListViewOnClickEigenScreen
 
 
   subdirListViewEigenFrame = Hash.new("null")
