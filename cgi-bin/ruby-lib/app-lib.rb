@@ -151,7 +151,9 @@ def eigen_directory_listview(dir_path)
   filesListViewEigenFrame = Hash.new("null")
   filesListViewEigenFrame["type"] = "TextView"
   filesListViewEigenFrame["text-script-list"] =
-    ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ' -> ' + eigenMap.get('metadata')" ]
+    [
+      "eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ' -> ' + eigenMap.get('metadata')"
+    ]
   filesListViewEigenFrame["text-size"] = "30"
   filesListViewEigenFrame["text-color"] = "#ffffff"
   filesListViewEigenFrame["layout-width"] = "wrap_content"
@@ -193,7 +195,9 @@ def eigen_directory_listview(dir_path)
   subdirListViewEigenFrame = Hash.new("null")
   subdirListViewEigenFrame["type"] = "TextView"
   subdirListViewEigenFrame["text-script-list"] =
-    ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ' - ' + eigenMap.get('metadata')" ]
+    [
+      "eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ' - ' + eigenMap.get('metadata')"
+    ]
   subdirListViewEigenFrame["text-size"] = "30"
   subdirListViewEigenFrame["text-color"] = "#ffffff"
   subdirListViewEigenFrame["layout-width"] = "wrap_content"
