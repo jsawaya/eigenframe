@@ -51,15 +51,25 @@
 
     <h3>List Directory - Show filenames and subdirectories</h3>
 
-    <a href="/cgi-bin/sys-list-termux-files.rb?frame=files&format=txt&keyfile=/data/data/com.termux/files/home" > List termux home directory </a><p/>
+	<a href="/cgi-bin/sys-list-termux-files.rb?format=json&dirpath=/data/data/com.termux/files/home">
+		List contents of termux home directory </a>
+	<p/>
 
-    <a href="/cgi-bin/sys-list-termux-files.rb?frame=subdir&format=json&keyfile=/data/data/com.termux/files/home/storage/shared" > List common shared directory </a><p/>
+	<a href="/cgi-bin/sys-list-termux-files.rb?frame=subdir&format=json&dirpath=/data/data/com.termux/files/home">
+		List common shared directory </a>
+	<p/>
 
-    <a href="/cgi-bin/sys-list-termux-files.rb?frame=files&format=txt&keyfile=/data/data/com.termux/files/home/storage/shared/Download" > List shared download directory </a><p/>
+	<a href="/cgi-bin/sys-list-termux-files.rb?frame=files&format=txt&dirpath=/data/data/com.termux/files/home/storage/shared/Download">
+		List shared download directory </a>
+	<p/>
 
-    <a href="/cgi-bin/sys-list-termux-files.rb?keyfile=/data/data/com.termux/files/home/storage/shared/Android/data/com.termux/files" > List termux application shared directory </a><p/>
+	<a href="/cgi-bin/sys-list-termux-files.rb?dirpath=/data/data/com.termux/files/home/storage/shared/Android/data/com.termux/files">
+		List termux application shared directory </a>
+	<p/>
 
-    <a href="/cgi-bin/sys-list-termux-files.rb?keyfile=/data/data/com.termux" > List termux application internal root directory </a><p/>
+	<a href="/cgi-bin/sys-list-termux-files.rb?dirpath=/data/data/com.termux"> List termux
+		application internal root directory </a>
+	<p/>
 
     <hr/>
 
@@ -101,8 +111,8 @@
 	<div class="rTableRow">
 	  <div class="rTableCell">path:</div>
 	  <div class="rTableCell">
-	    <input type="text" name="keyfile" size="100"
-		   value="/data/data/com.termux/files/home/" />
+		  <input type="text" name="dirpath" size="100"
+				 value="/data/data/com.termux/files/home/" />
 	  </div>
 	</div>
 	<div class="rTableRow">
