@@ -214,7 +214,12 @@ def eigen_directory_listview(dirpath)
 
 ## this frame defines PopupTextView called via on-click in the file ListView
   filesListViewOnClickPopupTextView["type"] = "PopupTextView"
-  filesListViewOnClickPopupTextView["title"] = "PopupTextViewTitle"
+  filesListViewOnClickPopupTextView["title-script-list"] =
+    [
+      "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(title0)",
+      "title0"
+    ]
   filesListViewOnClickPopupTextView["url-script-list"] =
     [
       "var url0 = 'http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
