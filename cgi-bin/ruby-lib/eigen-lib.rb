@@ -206,12 +206,12 @@ def eigen_directory_listview(dirpath)
   vertLine = eigen_vertical_line(2, "#00ff00")
 
   headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirHash['directory']}")
-#  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirpath}")
 
   text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
   itemLayout = eigen_list_view_item_layout(20, "#ffffff", padding, margin, text_script_list)
 
-  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"]
+#  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"]
+  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHash['directory']}' + '/'+ eigenMap.get('option')"]
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
 
   subdirListView = subdir_list_view(dirHash["subdir"], itemLayout, subdirListViewOnClickEigenScreen)
@@ -239,6 +239,9 @@ def eigen_directory_listview(dirpath)
   eigenScreenLayout = eigen_vertical_layout([horzLine,headerTextView,horzLine,layout0,horzLine])
   eigenScreenLayout
 end
+
+
+##==================================================================================================
 
 
 
