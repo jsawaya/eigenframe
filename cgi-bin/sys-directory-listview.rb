@@ -11,5 +11,8 @@ cgi = CGI.new
 
 exit 10 if !cgi.has_key?('dirpath')
 dirpath = cgi.params['dirpath'][0]
-eigen_directory_listview(dirpath)
+
+## this produces json text which is returned by the url request (back to EigenFrame App)
+
+jj eigen_directory_listview(dirpath)
 

@@ -46,6 +46,17 @@ end
 
 
 ##==================================================================================================
+## this defines a vertical line with size/width(integer) and color(string)
+def eigen_vertical_line(size, color)
+  vertLine = Hash.new("null")
+  vertLine["type"] = "VerticalLine"
+  vertLine["size"] = size
+  vertLine["color"] = color
+  vertLine
+end
+
+
+##==================================================================================================
 ## this defines a horizontal line with size/width(integer) and color(string)
 def eigen_text_view(size, color, padding, margin, text)
   headerTextView = Hash.new("null")
@@ -62,6 +73,30 @@ end
 
 
 ##==================================================================================================
+def eigen_horizontal_layout(component_list)
+  horizontalLayout = Hash.new("null")
+  horizontalLayout["type"] = "LinearLayout"
+  horizontalLayout["orientation"] = "horizontal"
+  horizontalLayout["layout-width"] = "match_parent"
+  horizontalLayout["layout-height"] = "match_parent"
+  horizontalLayout["component-list"] = component_list
+  horizontalLayout
+end
+
+
+##==================================================================================================
+def eigen_vertical_layout(component_list)
+  verticalLayout = Hash.new("null")
+  verticalLayout["type"] = "LinearLayout"
+  verticalLayout["orientation"] = "vertical"
+  verticalLayout["layout-width"] = "match_parent"
+  verticalLayout["layout-height"] = "match_parent"
+  verticalLayout["component-list"] = component_list
+  verticalLayout
+end
+
+
+##==================================================================================================
 def eigen_directory_listview(dirpath)
   Dir.chdir dirpath
   h = directory_hash()
@@ -73,16 +108,16 @@ def eigen_directory_listview(dirpath)
   horzLine = eigen_horizontal_line(2, "#00ff00")
 
   headerTextView = eigen_text_view(20, "#ffffff", padding, margin, "Directory: #{h['directory']}")
+
+  subdirListView = Hash.new("null")
   subdirListViewEigenFrame = Hash.new("null")
   subdirListViewOnClickEigenScreen = Hash.new("null")
   subdirListViewOnClickJavaScript = Hash.new("null")
+
+  filesListView = Hash.new("null")
   filesListViewEigenFrame = Hash.new("null")
   filesListViewOnClickJavaScript = Hash.new("null")
   filesListViewOnClickPopupTextView = Hash.new("null")
-  eigenScreenLayout = Hash.new("null")
-  filesListView = Hash.new("null")
-  subdirListView = Hash.new("null")
-
 
 
 ## this frame defines the subdirectory listview
@@ -186,17 +221,11 @@ def eigen_directory_listview(dirpath)
   subdirListView["on-click"] = subdirListViewOnClickJavaScript
 =end
 
+  vertLine = eigen_vertical_line(2, "#00ff00")
+  layout0 = eigen_horizontal_layout([subdirListView,vertLine,filesListView])
 
-## this frame composes the EigenScreen layout
-  eigenScreenLayout["type"] = "LinearLayout"
-  eigenScreenLayout["orientation"] = "vertical"
-  eigenScreenLayout["layout-width"] = "match_parent"
-  eigenScreenLayout["layout-height"] = "match_parent"
-  eigenScreenLayout["component-list"] = [headerTextView,horzLine,subdirListView,horzLine,filesListView]
-
-
-## this produces json text which is returned by the url request (back to EigenFrame App)
-  jj eigenScreenLayout
+  eigenScreenLayout = eigen_vertical_layout([headerTextView,horzLine,layout0])
+  eigenScreenLayout
 end
 
 
