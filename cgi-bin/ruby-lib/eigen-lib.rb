@@ -172,9 +172,6 @@ def subdir_list_view(key_list, itemLayout, subdirListViewOnClickEigenScreen)
   subdirListView["layout-width"] = "match_parent"
   subdirListView["layout-height"] = "wrap_content"
   subdirListView["layout-weight"] = "1"
-#  subdirListView["id"] = 1700
-#  subdirListView["background-color"] = "#223456"
-#  subdirListView["key-list"] = h["subdir"]
   subdirListView["key-list"] = key_list
   subdirListView["eigen-frame"] = itemLayout
   subdirListView["on-click"] = subdirListViewOnClickEigenScreen
@@ -190,8 +187,6 @@ def file_list_view(key_list, itemLayout, filesListViewOnClickPopupTextView)
   filesListView["layout-width"] = "match_parent"
   filesListView["layout-height"] = "wrap_content"
   filesListView["layout-weight"] = "1"
-#  filesListView["id"] = 700
-#  filesListView["background-color"] = "#123456"
   filesListView["key-list"] = key_list
   filesListView["eigen-frame"] = itemLayout
   filesListView["on-click"] = filesListViewOnClickPopupTextView
@@ -210,8 +205,8 @@ def eigen_directory_listview(dirpath)
   horzLine = eigen_horizontal_line(2, "#00ff00")
   vertLine = eigen_vertical_line(2, "#00ff00")
 
-#  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirHash['directory']}")
-  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirpath}")
+  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirHash['directory']}")
+#  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirpath}")
 
   text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
   itemLayout = eigen_list_view_item_layout(20, "#ffffff", padding, margin, text_script_list)
