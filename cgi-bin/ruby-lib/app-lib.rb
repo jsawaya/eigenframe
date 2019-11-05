@@ -63,6 +63,7 @@ def sys_output_frame_format(h, frame, format)
 end
 
 
+##==================================================================================================
 def directory_hash()
   files = Dir.entries "."
   pwd = Dir.pwd
@@ -78,6 +79,7 @@ def directory_hash()
 end
 
 
+##==================================================================================================
 def eigen_directory_listview(dirpath)
   Dir.chdir dirpath
   h = directory_hash()
@@ -92,6 +94,7 @@ def eigen_directory_listview(dirpath)
   subdirListViewOnClickJavaScript = Hash.new("null")
   filesListViewEigenFrame = Hash.new("null")
   filesListViewOnClickJavaScript = Hash.new("null")
+  filesListViewOnClickPopupTextView = Hash.new("null")
   eigenScreenLayout = Hash.new("null")
   horzLine = Hash.new("null")
   filesListView = Hash.new("null")
@@ -181,19 +184,12 @@ def eigen_directory_listview(dirpath)
   filesListView["layout-weight"] = "1"
   filesListView["background-color"] = "#123456"
   filesListView["key-list"] = h["files"]
-  filesListView["on-click"] = filesListViewOnClickJavaScript
   filesListView["eigen-frame"] = filesListViewEigenFrame
+#  filesListView["on-click"] = filesListViewOnClickJavaScript
+  filesListView["on-click"] = filesListViewOnClickPopupTextView
 
 
-## this frame defines javascript called via on-click in the file ListView
-  filesListViewOnClickJavaScript["type"] = "JavaScript"
-  filesListViewOnClickJavaScript["script-list"] =
-    [
-      "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
-      "var opt = eigenMap.get('option')",
-      "eigenActivity.showToast('ListView file selected: '+ pos + ' - ' + opt)"
-    ]
-
+## this frame defines each row of the file list
   filesListViewEigenFrame["type"] = "TextView"
   filesListViewEigenFrame["text-script-list"] =
     [
@@ -207,6 +203,25 @@ def eigen_directory_listview(dirpath)
   filesListViewEigenFrame["margin"] = margin
 
 
+## this frame defines javascript called via on-click in the file ListView
+  filesListViewOnClickJavaScript["type"] = "JavaScript"
+  filesListViewOnClickJavaScript["script-list"] =
+    [
+      "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
+      "var opt = eigenMap.get('option')",
+      "eigenActivity.showToast('ListView file selected: '+ pos + ' - ' + opt)"
+    ]
+
+## this frame defines PopupTextView called via on-click in the file ListView
+  filesListViewOnClickPopupTextView["type"] = "PopupTextView"
+  filesListViewOnClickPopupTextView["title"] = "PopupTextViewTitle"
+  filesListViewOnClickPopupTextView["url-script-list"] =
+    [
+      "var url0 = 'file://#{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(url0)",
+      "url0"
+    ]
+
 =begin
   subdirListViewOnClickJavaScript["type"] = "JavaScript"
   subdirListViewOnClickJavaScript["script-list"] =
@@ -215,7 +230,7 @@ def eigen_directory_listview(dirpath)
       "var opt = eigenMap.get('option')",
       "eigenActivity.showToast('ListView subdir selected: '+ pos + ' - ' + opt)"
     ]
-  #subdirListView["on-click"] = subdirListViewOnClickJavaScript
+  subdirListView["on-click"] = subdirListViewOnClickJavaScript
 =end
 
 
@@ -232,6 +247,7 @@ def eigen_directory_listview(dirpath)
 end
 
 
+##==================================================================================================
 def gpg_list_public_keys()
   h = Hash.new("null")
 
