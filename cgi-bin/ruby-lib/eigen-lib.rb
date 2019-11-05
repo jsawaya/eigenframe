@@ -165,7 +165,7 @@ def javascript(script_list)
 end
 
 
-d## this frame defines the subdir ListView
+## this frame defines the subdir ListView
 def subdir_list_view(key_list, itemLayout, subdirListViewOnClickEigenScreen)
   subdirListView = Hash.new("null")
   subdirListView["type"] = "ListView"
