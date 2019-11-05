@@ -234,9 +234,9 @@ def eigen_directory_listview(dirpath)
 
   filesListView = file_list_view(dirHash["files"], itemLayout, filesListViewOnClickPopupTextView)
 
-  layout0 = eigen_horizontal_layout([subdirListView,vertLine,filesListView])
+  layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
 
-  eigenScreenLayout = eigen_vertical_layout([headerTextView,horzLine,layout0])
+  eigenScreenLayout = eigen_vertical_layout([horzLine,headerTextView,horzLine,layout0,horzLine])
   eigenScreenLayout
 end
 
