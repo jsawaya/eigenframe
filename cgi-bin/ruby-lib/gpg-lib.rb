@@ -1,7 +1,7 @@
 require 'open3'
 require 'cgi'
 require 'json'
-require 'app-lib'
+require './ruby-lib/app-lib'
 
 
 ##==================================================================================================
