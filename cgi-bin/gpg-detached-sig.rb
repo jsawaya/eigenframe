@@ -3,7 +3,7 @@
 require 'open3'
 require 'cgi'
 require 'json'
-require './ruby-lib/app-lib'
+require './ruby-lib/gpg-lib'
 
 print_response_header
 
