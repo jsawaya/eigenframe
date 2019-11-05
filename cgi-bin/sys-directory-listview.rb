@@ -3,6 +3,7 @@
 require 'cgi'
 require 'json'
 require './ruby-lib/app-lib'
+require './ruby-lib/eigen-lib'
 
 print_response_header
 
