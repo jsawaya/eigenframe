@@ -217,7 +217,7 @@ def eigen_directory_listview(dirpath)
   filesListViewOnClickPopupTextView["title"] = "PopupTextViewTitle"
   filesListViewOnClickPopupTextView["url-script-list"] =
     [
-      "var url0 = 'file://#{dirpath}' + '/'+ eigenMap.get('option')",
+      "var url0 = 'file://#{h['directory']}' + '/'+ eigenMap.get('option')",
       "java.lang.System.out.println(url0)",
       "url0"
     ]
