@@ -2,24 +2,24 @@
 
 ##==================================================================================================
 ## define frame for padding
-def eigen_padding(x)
+def eigen_padding(x, y)
   padding = Hash.new("null")
   padding["left"] = x
-  padding["top"] = x
+  padding["top"] = y
   padding["right"] = x
-  padding["bottom"] = x
+  padding["bottom"] = y
   padding
 end
 
 
 ##==================================================================================================
-## define frame for padding
-def eigen_margin(x)
+## define frame for margin
+def eigen_margin(x, y)
   margin = Hash.new("null")
   margin["left"] = x
-  margin["top"] = x
+  margin["top"] = y
   margin["right"] = x
-  margin["bottom"] = x
+  margin["bottom"] = y
   margin
 end
 
@@ -165,8 +165,7 @@ def javascript(script_list)
 end
 
 
-##==================================================================================================
-## this frame defines the subdir ListView
+d## this frame defines the subdir ListView
 def subdir_list_view(key_list, itemLayout, subdirListViewOnClickEigenScreen)
   subdirListView = Hash.new("null")
   subdirListView["type"] = "ListView"
@@ -205,13 +204,14 @@ def eigen_directory_listview(dirpath)
   Dir.chdir dirpath
   dirHash = directory_hash()
 
-  padding = eigen_padding(20)
-  margin = eigen_margin(10)
+  padding = eigen_padding(20, 10)
+  margin = eigen_margin(0, 0)
   infoLeftIcon = eigen_icon("info.jpg", "left")
   horzLine = eigen_horizontal_line(2, "#00ff00")
   vertLine = eigen_vertical_line(2, "#00ff00")
 
-  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirHash['directory']}")
+#  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirHash['directory']}")
+  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirpath}")
 
   text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
   itemLayout = eigen_list_view_item_layout(20, "#ffffff", padding, margin, text_script_list)
@@ -220,7 +220,6 @@ def eigen_directory_listview(dirpath)
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
 
   subdirListView = subdir_list_view(dirHash["subdir"], itemLayout, subdirListViewOnClickEigenScreen)
-
 
   file_item_title_script_list =
     [
