@@ -166,8 +166,8 @@ end
 
 
 ##==================================================================================================
-## this frame subdir_list_view(key_list, itemLayout, subdirListViewOnClickEigenScreen)
-def subdir_list_view(script_list)
+## this frame defines the subdir ListView
+def subdir_list_view(key_list, itemLayout, subdirListViewOnClickEigenScreen)
   subdirListView = Hash.new("null")
   subdirListView["type"] = "ListView"
   subdirListView["layout-width"] = "match_parent"
