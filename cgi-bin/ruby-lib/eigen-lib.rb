@@ -256,7 +256,7 @@ def eigen_directory_listview(dirpath)
 
   fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
-  image_item_url_script_list = ["file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png"]
+  image_item_url_script_list = ["'file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png'"]
   image_view = eigen_image_view(image_item_url_script_list)
   fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
 
