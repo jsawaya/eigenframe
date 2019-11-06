@@ -284,7 +284,8 @@ def eigen_directory_listview(dirpath)
   filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
   fileRowLayout = eigen_horizontal_layout([image_view,filesListViewOnClickPopupTextView])
 
-  filesListView = file_list_view(dirHash["files"], itemLayout, filesListViewOnClickPopupTextView)
+#  filesListView = file_list_view(dirHash["files"], itemLayout, filesListViewOnClickPopupTextView)
+  filesListView = file_list_view(dirHash["files"], itemLayout, fileRowLayout)
 
   layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
 
