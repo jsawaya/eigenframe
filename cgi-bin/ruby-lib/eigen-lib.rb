@@ -195,7 +195,7 @@ end
 
 
 ##==================================================================================================
-def eigen_button(size, color, background_color, gravity, textString, buttonScript)
+def eigen_button(size, color, background_color, textString, buttonScript)
   button = Hash.new("null")
   button["type"] = "Button"
   button["layout-width"] = "wrap_content"
@@ -205,7 +205,7 @@ def eigen_button(size, color, background_color, gravity, textString, buttonScrip
   button["text-size"] = size
   button["text-color"] = color
   button["background-color"] = background_color
-  button["gravity"] = gravity
+#  button["gravity"] = gravity
   button["on-click"] = buttonScript
   button
 end
@@ -231,10 +231,12 @@ def eigen_directory_listview(dirpath)
   url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHash['directory']}' + '/'+ eigenMap.get('option')"]
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
 
-  parent_path = File.expand_path("..", Dir.pwd)
-  url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}'"]
+#  parent_path = File.expand_path("..", Dir.pwd)
+#  url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}'"]
+  url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/..'"]
+
   buttonOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list0)
-  button = eigen_button(30, "#ffffff", "#2222ff", "center", "#{parent_path}", buttonOnClickEigenScreen)
+  button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickEigenScreen)
 
   subdirListView = subdir_list_view(dirHash["subdir"], itemLayout, subdirListViewOnClickEigenScreen)
 
