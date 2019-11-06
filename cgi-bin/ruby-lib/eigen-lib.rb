@@ -234,7 +234,7 @@ def eigen_directory_listview(dirpath)
   parent_path = File.expand_path("..", Dir.pwd)
   url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}'"]
   buttonOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list0)
-  button = eigen_button(30, "#ffffff", "#222222", "#{parent_path}", buttonOnClickEigenScreen)
+  button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickEigenScreen)
 
   subdirListView = subdir_list_view(dirHash["subdir"], itemLayout, subdirListViewOnClickEigenScreen)
 
