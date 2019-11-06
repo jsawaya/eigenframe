@@ -253,7 +253,7 @@ def eigen_directory_listview(dirpath)
       "url0"
     ]
 
-  image_view = eigen_image_view(image_url_script_list0)
+  image_view = eigen_image_view(image_url_script_list)
   fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
 
 
