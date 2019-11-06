@@ -264,7 +264,7 @@ def eigen_directory_listview(dirpath)
 #  image_url_script_list = ["file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png"]
   image_url_script_list =
     [
-      "var url0 = 'http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "var url0 = 'file://#{dirpath}/' + eigenMap.get('option')",
       "java.lang.System.out.println(url0)",
       "url0"
     ]
