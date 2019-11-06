@@ -246,7 +246,9 @@ def eigen_directory_listview(dirpath)
   horzLine = eigen_horizontal_line(2, "#00ff00")
   vertLine = eigen_vertical_line(2, "#00ff00")
 
-  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirHash['directory']}")
+  dirHashDirectory = dirHash['directory']
+
+  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirHashDirectory}")
 
   text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
 
@@ -258,9 +260,9 @@ def eigen_directory_listview(dirpath)
   image_view = eigen_image_view(image_item_url_script_list)
   fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
 
-
 #  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"]
-  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHash['directory']}' + '/'+ eigenMap.get('option')"]
+  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"]
+
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
 
 #  parent_path = File.expand_path("..", Dir.pwd)
