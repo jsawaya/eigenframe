@@ -256,14 +256,15 @@ def eigen_directory_listview(dirpath)
 
   fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
-  image_item_url_script_list = ["'file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png'"]
-  image_view = eigen_image_view(image_item_url_script_list)
-  fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
-
 #  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"]
   url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"]
 
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
+
+#  image_item_url_script_list = ["file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png"]
+  image_view = eigen_image_view(url_script_list)
+  fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
+
 
 #  parent_path = File.expand_path("..", Dir.pwd)
 #  parent_path = "#{dirpath}/.."
