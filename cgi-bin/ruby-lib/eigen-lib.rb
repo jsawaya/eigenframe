@@ -98,7 +98,7 @@ end
 
 ##==================================================================================================
 ## this frame defines each row of the subdirectory list
-def eigen_list_view_item_layout(size, color, padding, margin, text_script_list)
+def eigen_text_view(size, color, padding, margin, text_script_list)
   text_view = Hash.new("null")
   text_view["type"] = "TextView"
   text_view["layout-width"] = "wrap_content"
@@ -249,7 +249,15 @@ def eigen_directory_listview(dirpath)
   headerTextView = eigen_text_view(30, "#ffffff", padding, margin, "List Directory: #{dirHash['directory']}")
 
   text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
-  itemLayout = eigen_list_view_item_layout(20, "#ffffff", padding, margin, text_script_list)
+
+  subdirItemLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
+
+  fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
+
+  image_item_url_script_list = ["file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png"]
+  image_view = eigen_image_view(image_item_url_script_list)
+  fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
+
 
 #  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"]
   url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHash['directory']}' + '/'+ eigenMap.get('option')"]
@@ -264,7 +272,7 @@ def eigen_directory_listview(dirpath)
   buttonOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list0)
   button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickEigenScreen)
 
-  subdirListView = subdir_list_view(dirHash["subdir"], itemLayout, subdirListViewOnClickEigenScreen)
+  subdirListView = subdir_list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickEigenScreen)
 
   file_item_title_script_list =
     [
@@ -280,13 +288,9 @@ def eigen_directory_listview(dirpath)
       "url0"
     ]
 
-  image_item_url_script_list = ["file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png"]
-  image_view = eigen_image_view(image_item_url_script_list)
-  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, image_item_url_script_list)
-  fileRowLayout = eigen_horizontal_layout([image_view,filesListViewOnClickPopupTextView])
+  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
 
-#  filesListView = file_list_view(dirHash["files"], itemLayout, filesListViewOnClickPopupTextView)
-  filesListView = file_list_view(dirHash["files"], itemLayout, fileRowLayout)
+  filesListView = file_list_view(dirHash["files"], fileRowLayout, filesListViewOnClickPopupTextView)
 
   layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
 
