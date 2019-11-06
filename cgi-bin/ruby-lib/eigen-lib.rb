@@ -212,6 +212,13 @@ end
 
 
 ##==================================================================================================
+def parent_path(dirpath)
+  last_slash_index = dirpath.rindex('/')
+  dirpath[0..last_slash_index]
+end
+
+
+##==================================================================================================
 def eigen_directory_listview(dirpath)
   Dir.chdir dirpath
   dirHash = directory_hash()
@@ -232,7 +239,8 @@ def eigen_directory_listview(dirpath)
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
 
 #  parent_path = File.expand_path("..", Dir.pwd)
-  parent_path = "#{dirpath}/.."
+#  parent_path = "#{dirpath}/.."
+  parent_path = parent_path(dirpath)
 
   url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}'"]
 
