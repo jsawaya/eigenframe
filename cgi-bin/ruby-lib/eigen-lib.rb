@@ -99,19 +99,36 @@ end
 ##==================================================================================================
 ## this frame defines each row of the subdirectory list
 def eigen_list_view_item_layout(size, color, padding, margin, text_script_list)
-  subdirListViewEigenFrame = Hash.new("null")
-  subdirListViewEigenFrame["type"] = "TextView"
-  subdirListViewEigenFrame["layout-width"] = "wrap_content"
-  subdirListViewEigenFrame["layout-height"] = "wrap_content"
-  subdirListViewEigenFrame["text-size"] = size
-  subdirListViewEigenFrame["text-color"] = color
-  subdirListViewEigenFrame["padding"] = padding
-  subdirListViewEigenFrame["margin"] = margin
-  subdirListViewEigenFrame["text-script-list"] = text_script_list
+  text_view = Hash.new("null")
+  text_view["type"] = "TextView"
+  text_view["layout-width"] = "wrap_content"
+  text_view["layout-height"] = "wrap_content"
+  text_view["text-size"] = size
+  text_view["text-color"] = color
+  text_view["padding"] = padding
+  text_view["margin"] = margin
+  text_view["text-script-list"] = text_script_list
 #    [
 #      "eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"
 #    ]
-  subdirListViewEigenFrame
+  text_view
+end
+
+
+##==================================================================================================
+## this frame defines each row of the subdirectory list
+def eigen_image_view(url_script_list)
+  image_view = Hash.new("null")
+  image_view["type"] = "ImageView"
+  image_view["layout-width"] = "wrap_content"
+  image_view["layout-height"] = "wrap_content"
+#  image_view["text-size"] = size
+#  image_view["text-color"] = color
+#  image_view["padding"] = padding
+#  image_view["margin"] = margin
+  image_view["url-script-list"] = url_script_list
+#  image_view["on-click"] = on_click_script
+  image_view
 end
 
 
@@ -263,7 +280,9 @@ def eigen_directory_listview(dirpath)
       "url0"
     ]
 
+  image_view = eigen_image_view(file_item_url_script_list)
   filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
+  fileRowLayout = eigen_horizontal_layout([image_view,filesListViewOnClickPopupTextView])
 
   filesListView = file_list_view(dirHash["files"], itemLayout, filesListViewOnClickPopupTextView)
 
