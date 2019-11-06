@@ -248,7 +248,7 @@ def eigen_directory_listview(dirpath)
 #  image_url_script_list = ["file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png"]
   image_url_script_list =
     [
-      "var url0 = 'file://#{dirpath}/' + eigenMap.get('metadata')",
+      "var url0 = 'file://#{dirHashDirectory}/' + eigenMap.get('metadata')",
       "java.lang.System.out.println('imageUrl: '+url0)",
       "url0"
     ]
