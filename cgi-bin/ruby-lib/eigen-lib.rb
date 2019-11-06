@@ -57,22 +57,6 @@ end
 
 
 ##==================================================================================================
-## this defines a horizontal line with size/width(integer) and color(string)
-def eigen_text_view(size, color, padding, margin, text)
-  headerTextView = Hash.new("null")
-  headerTextView["type"] = "TextView"
-  headerTextView["layout-width"] = "wrap_content"
-  headerTextView["layout-height"] = "wrap_content"
-  headerTextView["text-size"] = size
-  headerTextView["text-color"] = color
-  headerTextView["text"] = text
-  headerTextView["padding"] = padding
-  headerTextView["margin"] = margin
-  headerTextView
-end
-
-
-##==================================================================================================
 def eigen_horizontal_layout(component_list)
   horizontalLayout = Hash.new("null")
   horizontalLayout["type"] = "LinearLayout"
@@ -121,7 +105,7 @@ def eigen_image_view(url_script_list)
   image_view = Hash.new("null")
   image_view["type"] = "ImageView"
   image_view["layout-width"] = "wrap_content"
-  image_view["layout-height"] = "wrap_content"
+  image_view["layout-height"] = "100"
 #  image_view["text-size"] = size
 #  image_view["text-color"] = color
 #  image_view["padding"] = padding
