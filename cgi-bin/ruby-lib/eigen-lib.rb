@@ -195,6 +195,23 @@ end
 
 
 ##==================================================================================================
+def eigen_button(size, color, background_color, textString, buttonScript)
+  button = Hash.new("null")
+  button["type"] = "Button"
+  button["layout-width"] = "wrap_content"
+  button["layout-height"] = "wrap_content"
+#  button["text"] = "Directory: #{h['directory']}"
+  button["text"] = textString
+  button["text-size"] = size
+  button["text-color"] = color
+  button["background-color"] = background_color
+#  button["gravity"] = "CENTER_HORIZONTAL, CENTER_VERTICAL"
+  button["on-click"] = buttonScript
+  button
+end
+
+
+##==================================================================================================
 def eigen_directory_listview(dirpath)
   Dir.chdir dirpath
   dirHash = directory_hash()
@@ -213,6 +230,11 @@ def eigen_directory_listview(dirpath)
 #  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"]
   url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHash['directory']}' + '/'+ eigenMap.get('option')"]
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
+
+  parent_path = File.expand_path("..", Dir.pwd)
+  url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}'"]
+  buttonOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list0)
+  button = eigen_button(30, "#ffffff", "#222222", url_script_list0, "#{parent_path}", buttonOnClickEigenScreen)
 
   subdirListView = subdir_list_view(dirHash["subdir"], itemLayout, subdirListViewOnClickEigenScreen)
 
@@ -236,7 +258,7 @@ def eigen_directory_listview(dirpath)
 
   layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
 
-  eigenScreenLayout = eigen_vertical_layout([horzLine,headerTextView,horzLine,layout0,horzLine])
+  eigenScreenLayout = eigen_vertical_layout([horzLine,headerTextView,button,horzLine,layout0,horzLine])
   eigenScreenLayout
 end
 
