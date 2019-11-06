@@ -248,7 +248,7 @@ def eigen_directory_listview(dirpath)
 
   dirHashDirectory = dirHash['directory']
 
-  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, ["List Directory: #{dirHashDirectory}"])
+  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
 
   text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
 
