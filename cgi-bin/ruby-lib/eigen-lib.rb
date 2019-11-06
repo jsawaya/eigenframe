@@ -280,8 +280,9 @@ def eigen_directory_listview(dirpath)
       "url0"
     ]
 
-  image_view = eigen_image_view(file_item_url_script_list)
-  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
+  image_item_url_script_list = ["file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png"]
+  image_view = eigen_image_view(image_item_url_script_list)
+  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, image_item_url_script_list)
   fileRowLayout = eigen_horizontal_layout([image_view,filesListViewOnClickPopupTextView])
 
 #  filesListView = file_list_view(dirHash["files"], itemLayout, filesListViewOnClickPopupTextView)
