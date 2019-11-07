@@ -14,5 +14,5 @@ dirpath = cgi.params['dirpath'][0]
 
 ## this produces json text which is returned by the url request (back to EigenFrame App)
 
-jj eigen_directory_listview(dirpath)
+jj EigenFrame.eigen_directory_listview(dirpath)
 
