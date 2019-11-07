@@ -227,24 +227,46 @@
     },
     {
       "type": "Button",
-      "id": "901",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "create shortcut for app1_localhost.json",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "on-click": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.addShortcut('app1-localhost', 'http://localhost:8080/apps/app1_localhost.json')",
+          "eigenActivity.finish()"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "create shortcut for app2_localhost.json",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "on-click": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.addShortcut('app2-localhost', 'http://localhost:8080/apps/app2_localhost.json')",
+          "eigenActivity.finish()"
+        ]
+      }
+    },
+    {
+      "type": "VerticalLine",
+      "size": 2,
+      "color": "#00ff00"
+    },
+    {
+      "type": "Button",
       "layout-width": "wrap_content",
       "layout-height": "wrap_content",
       "text": "create shortcut for app1.json",
       "text-color": "#ffffff",
       "background-color": "#ff00ff",
-      "padding": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
       "on-click": {
         "type": "JavaScript",
         "script-list": [
@@ -255,7 +277,6 @@
     },
     {
       "type": "Button",
-      "id": "902",
       "layout-width": "wrap_content",
       "layout-height": "wrap_content",
       "text": "create shortcut for app2.json",
@@ -266,112 +287,6 @@
         "script-list": [
           "eigenActivity.addShortcut('app2', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')",
           "eigenActivity.finish()"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "launch app1",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "padding": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on-click": {
-        "type": "JavaScript",
-        "script-list": [
-          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
-          "eigenActivity.finish()"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "launch app2",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "padding": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on-click": {
-        "type": "JavaScript",
-        "script-list": [
-          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')",
-          "eigenActivity.finish()"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "landscape",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "padding": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on-click": {
-        "type": "JavaScript",
-        "script-list": [
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "portrait",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "padding": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on-click": {
-        "type": "JavaScript",
-        "script-list": [
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
         ]
       }
     }

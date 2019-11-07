@@ -1,6 +1,9 @@
 =begin
-
+EigenFrame class produces nested hash objects, that are converted to json by cgi-bin scripts,
+and sent back to the EigenFrame app (or browser that invoked a url request).
+See example: cgi-bin/sys-directory-listview.rb
 =end
+
 
 class EigenFrame
 
@@ -29,7 +32,7 @@ end
 
 
 ##==================================================================================================
-## this defines an icon - internal resource ImageGetter registered name, and location (top,left...)
+## define frame for an icon - internal resource ImageGetter registered name, and location (top,left...)
 def eigen_icon(name, location)
   infoLeftIcon = Hash.new("null")
   infoLeftIcon["name"] = name
@@ -39,7 +42,7 @@ end
 
 
 ##==================================================================================================
-## this defines a horizontal line with size/width(integer) and color(string)
+## define frame for a horizontal line with size/width(integer) and color(string)
 def eigen_horizontal_line(size, color)
   horzLine = Hash.new("null")
   horzLine["type"] = "HorizontalLine"
@@ -50,7 +53,7 @@ end
 
 
 ##==================================================================================================
-## this defines a vertical line with size/width(integer) and color(string)
+## define frame for a vertical line with size/width(integer) and color(string)
 def eigen_vertical_line(size, color)
   vertLine = Hash.new("null")
   vertLine["type"] = "VerticalLine"
@@ -123,19 +126,19 @@ end
 ##==================================================================================================
 ## this frame defines how to launch next EigenScreen
 def launch_eigen_screen(size, color, background_color, url_script_list)
-  subdirListViewOnClickEigenScreen = Hash.new("null")
-  subdirListViewOnClickEigenScreen["type"] = "EigenScreen"
-  subdirListViewOnClickEigenScreen["layout-width"] = "match_parent"
-  subdirListViewOnClickEigenScreen["layout-height"] = "wrap_content"
-  subdirListViewOnClickEigenScreen["text"] = "EigenFrame"
-  subdirListViewOnClickEigenScreen["text-size"] = size
-  subdirListViewOnClickEigenScreen["text-color"] = color
-  subdirListViewOnClickEigenScreen["background-color"] = background_color
-  subdirListViewOnClickEigenScreen["url-script-list"] = url_script_list
+  eigenScreen = Hash.new("null")
+  eigenScreen["type"] = "EigenScreen"
+  eigenScreen["layout-width"] = "match_parent"
+  eigenScreen["layout-height"] = "wrap_content"
+  eigenScreen["text"] = "EigenFrame"
+  eigenScreen["text-size"] = size
+  eigenScreen["text-color"] = color
+  eigenScreen["background-color"] = background_color
+  eigenScreen["url-script-list"] = url_script_list
 #    [
 #      "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"
 #    ]
-  subdirListViewOnClickEigenScreen
+  eigenScreen
 end
 
 
@@ -171,7 +174,7 @@ end
 
 
 ## this frame defines the subdir ListView
-def subdir_list_view(key_list, itemLayout, subdirListViewOnClickEigenScreen)
+def subdir_list_view(key_list, itemLayout, eigenScript)
   subdirListView = Hash.new("null")
   subdirListView["type"] = "ListView"
   subdirListView["layout-width"] = "match_parent"
@@ -179,7 +182,7 @@ def subdir_list_view(key_list, itemLayout, subdirListViewOnClickEigenScreen)
   subdirListView["layout-weight"] = "1"
   subdirListView["key-list"] = key_list
   subdirListView["eigen-frame"] = itemLayout
-  subdirListView["on-click"] = subdirListViewOnClickEigenScreen
+  subdirListView["on-click"] = eigenScript
   subdirListView
 end
 
