@@ -64,7 +64,7 @@ end
 
 
 ##==================================================================================================
-def eigen_horizontal_layout(component_list)
+def eigen_horizontal_layout(component_list, layout_width, layout_height)
   horizontalLayout = Hash.new("null")
   horizontalLayout["type"] = "LinearLayout"
   horizontalLayout["orientation"] = "horizontal"
@@ -72,6 +72,18 @@ def eigen_horizontal_layout(component_list)
   horizontalLayout["layout-height"] = "match_parent"
   horizontalLayout["component-list"] = component_list
   horizontalLayout
+end
+
+
+##==================================================================================================
+def eigen_horizontal_layout(component_list)
+  horizontalLayout = Hash.new("null")
+  horizontalLayout["type"] = "LinearLayout"
+  horizontalLayout["orientation"] = "horizontal"
+  horizontalLayout["layout-width"] = "match_parent"
+  horizontalLayout["layout-height"] = "match_parent"
+  horizontalLayout["component-list"] = component_list
+  eigen_horizontal_layout(component_list, "match_parent", "match_parent")
 end
 
 
@@ -247,7 +259,6 @@ def eigen_directory_listview(dirpath)
 
   fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
-#  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"]
   url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"]
 
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
