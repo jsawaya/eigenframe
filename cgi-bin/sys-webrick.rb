@@ -31,19 +31,32 @@ end
 
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
-        puts "request:"
-        p request
+#        puts "request:"
+#        p request
 
         if request.path == "/exit"
             server.shutdown
 
-        elsif request.path == "/dir"
+        elsif request.path == "/listdir"
+            puts "called /listdir"
+
+            dirpath = request.query["dirpath"]
+            puts "dirpath:"
+            p dirpath
+
             response.status = 200
             response.content_type = "text/plain"
 
-            dirpath = "/data/data/com.termux/files/home"
+            if dirpath.empty?
+                dirpath = "/data/data/com.termux/files/home"
+            end
+
             eigenframe = EigenFrame.new()
-            response.body = eigenframe.eigen_directory_listview(dirpath).to_s
+            result = jj eigenframe.eigen_directory_listview(dirpath)
+            puts "result:"
+            p result
+            response.body = result.to_s + "\n"
+
 
         elsif request.query["a"] && request.query["b"]
             a = request.query["a"]
