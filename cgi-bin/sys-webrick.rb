@@ -35,7 +35,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
 #        p request
 
         if request.path == "/exit"
-            server.shutdown
+            @server.shutdown
             exit 10
 
         elsif request.path == "/listdir"
