@@ -64,12 +64,12 @@ end
 
 
 ##==================================================================================================
-def eigen_horizontal_layout(component_list, layout_width, layout_height)
+def eigen_horizontal_layout3(component_list, layout_width, layout_height)
   horizontalLayout = Hash.new("null")
   horizontalLayout["type"] = "LinearLayout"
   horizontalLayout["orientation"] = "horizontal"
-  horizontalLayout["layout-width"] = "match_parent"
-  horizontalLayout["layout-height"] = "match_parent"
+  horizontalLayout["layout-width"] = layout_width
+  horizontalLayout["layout-height"] = layout_height
   horizontalLayout["component-list"] = component_list
   horizontalLayout
 end
@@ -83,7 +83,7 @@ def eigen_horizontal_layout(component_list)
   horizontalLayout["layout-width"] = "match_parent"
   horizontalLayout["layout-height"] = "match_parent"
   horizontalLayout["component-list"] = component_list
-  eigen_horizontal_layout(component_list, "match_parent", "match_parent")
+  eigen_horizontal_layout3(component_list, "match_parent", "match_parent")
 end
 
 
