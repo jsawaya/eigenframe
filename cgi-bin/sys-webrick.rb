@@ -28,6 +28,10 @@ end
 
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
+        if request.path == "exit" do
+            server.shutdown
+        end
+
         if request.query["a"] && request.query["b"]
             a = request.query["a"]
             b = request.query["b"]
