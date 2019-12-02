@@ -38,10 +38,9 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             server.shutdown
 
         elsif request.path == "/dir"
-
             dirpath = "/data/data/com.termux/files/home"
             eigenframe = EigenFrame.new()
-            response.body = jj eigenframe.eigen_directory_listview(dirpath)
+            response.body = eigenframe.eigen_directory_listview(dirpath).to_s
             response.status = 200
 
         elsif request.query["a"] && request.query["b"]
@@ -61,6 +60,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             end
             
             response.body = result.to_s + "\n"
+
         else
             response.status = 200
             response.body = "You did not provide the correct parameters"
