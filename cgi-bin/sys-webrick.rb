@@ -31,10 +31,13 @@ end
 
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
-        if request.path == "exit"
+        puts "request:"
+        p request
+
+        if request.path == "/exit"
             server.shutdown
 
-        elsif request.path == "dir"
+        elsif request.path == "/dir"
 
             dirpath = "/data/data/com.termux/files/home"
             eigenframe = EigenFrame.new()
