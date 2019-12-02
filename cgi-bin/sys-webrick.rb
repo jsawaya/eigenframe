@@ -36,6 +36,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
 
         if request.path == "/exit"
             server.shutdown
+            exit 10
 
         elsif request.path == "/listdir"
             puts "called /listdir"
@@ -52,10 +53,10 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             end
 
             eigenframe = EigenFrame.new()
-            result = eigenframe.eigen_directory_listview(dirpath).to_json
-            puts "result:"
-            p result
-            response.body = result.to_s + "\n"
+            result_json = eigenframe.eigen_directory_listview(dirpath).to_json
+#            puts "result_json:"
+#            p result_json
+            response.body = result_json.to_s + "\n"
 
 
         elsif request.query["a"] && request.query["b"]
