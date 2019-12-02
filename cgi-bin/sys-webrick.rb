@@ -52,7 +52,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             end
 
             eigenframe = EigenFrame.new()
-            result = jj eigenframe.eigen_directory_listview(dirpath)
+            result = eigenframe.eigen_directory_listview(dirpath).to_json
             puts "result:"
             p result
             response.body = result.to_s + "\n"
