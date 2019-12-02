@@ -38,18 +38,20 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             server.shutdown
 
         elsif request.path == "/dir"
+            response.status = 200
+            response.content_type = "text/plain"
+
             dirpath = "/data/data/com.termux/files/home"
             eigenframe = EigenFrame.new()
             response.body = eigenframe.eigen_directory_listview(dirpath).to_s
-            response.status = 200
 
         elsif request.query["a"] && request.query["b"]
             a = request.query["a"]
             b = request.query["b"]
             response.status = 200
             response.content_type = "text/plain"
-            result = nil
 
+            result = nil
             case request.path
                 when "/add"
                     result = MyNormalClass.add(a, b)
