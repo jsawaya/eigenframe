@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 
 require "webrick"
+require 'json'
+require './ruby-lib/app-lib'
+require './ruby-lib/eigen-lib'
 
 =begin
     WEBrick is a Ruby library that makes it easy to build an HTTP server with Ruby.
@@ -28,11 +31,17 @@ end
 
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
-        if request.path == "exit" do
+        if request.path == "exit"
             server.shutdown
-        end
 
-        if request.query["a"] && request.query["b"]
+        elsif request.path == "dir"
+
+            dirpath = "/data/data/com.termux/files/home"
+            eigenframe = EigenFrame.new()
+            response.body = jj eigenframe.eigen_directory_listview(dirpath)
+            response.status = 200
+
+        elsif request.query["a"] && request.query["b"]
             a = request.query["a"]
             b = request.query["b"]
             response.status = 200
