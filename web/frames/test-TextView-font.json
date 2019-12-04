@@ -29,42 +29,6 @@
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",
-      "font": "font/Bitstream-Vera-Sans-Mono/VeraMono.ttf",
-      "text": "font/Bitstream-Vera-Sans-Mono/VeraMono.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff",
-      "font": "font/Bitstream-Vera-Sans-Mono/VeraMono-Bold.ttf",
-      "text": "font/Bitstream-Vera-Sans-Mono/VeraMono-Bold.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff",
-      "font": "font/Bitstream-Vera-Sans-Mono/VeraMono-Bold-Italic.ttf",
-      "text": "font/Bitstream-Vera-Sans-Mono/VeraMono-Bold-Italic.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff",
-      "font": "font/Bitstream-Vera-Sans-Mono/VeraMono-Italic.ttf",
-      "text": "font/Bitstream-Vera-Sans-Mono/VeraMono-Italic.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff",
       "font": "font/droid-sans/DroidSans.ttf",
       "text": "font/droid-sans/DroidSans.ttf"
     },
@@ -236,8 +200,8 @@
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",
-      "font": "font/Lane/LANENAR.ttf",
-      "text": "font/Lane/LANENAR.ttf"
+      "font": "font/Lane/LANENAR_.ttf",
+      "text": "font/Lane/LANENAR_.ttf"
     },
     {
       "type": "TextView",
@@ -254,8 +218,8 @@
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",
-      "font": "font/Lane/LANEUP.ttf",
-      "text": "font/Lane/LANEUP.ttf"
+      "font": "font/Lane/LANEUP__.ttf",
+      "text": "font/Lane/LANEUP__.ttf"
     },
     {
       "type": "TextView",
