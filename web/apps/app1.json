@@ -118,6 +118,12 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"
     },
     {
+      "name": "TextView-font",
+      "type": "EigenFragment",
+      "icon-name": "sawaya_eigenframe_icon.png",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView-font.json"
+    },
+    {
       "name": "EditText",
       "type": "EigenFragment",
       "icon-name": "sawaya_eigenframe_icon.png",
