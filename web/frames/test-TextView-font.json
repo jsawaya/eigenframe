@@ -1,6 +1,7 @@
 {
   "type": "LinearLayout",
   "orientation": "vertical",
+  "scrollable": true,
   "layout-width": "match_parent",
   "layout-height": "match_parent",
   "component-list": [
