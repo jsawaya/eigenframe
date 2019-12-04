@@ -29,8 +29,8 @@
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",
-      "font": "font/Bitstream-Vera-SansMono/VeraMono.ttf",
-      "text": "font/Bitstream-Vera-SansMono/VeraMono.ttf"
+      "font": "font/Bitstream-Vera-Sans-Mono/VeraMono.ttf",
+      "text": "font/Bitstream-Vera-Sans-Mono/VeraMono.ttf"
     },
     {
       "type": "TextView",
@@ -38,8 +38,8 @@
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",
-      "font": "font/Bitstream-Vera-SansMono/VeraMono-Bold.ttf",
-      "text": "font/Bitstream-Vera-SansMono/VeraMono-Bold.ttf"
+      "font": "font/Bitstream-Vera-Sans-Mono/VeraMono-Bold.ttf",
+      "text": "font/Bitstream-Vera-Sans-Mono/VeraMono-Bold.ttf"
     },
     {
       "type": "TextView",
@@ -47,8 +47,8 @@
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",
-      "font": "font/Bitstream-Vera-SansMono/VeraMono-Bold-Italic.ttf",
-      "text": "font/Bitstream-Vera-SansMono/VeraMono-Bold-Italic.ttf"
+      "font": "font/Bitstream-Vera-Sans-Mono/VeraMono-Bold-Italic.ttf",
+      "text": "font/Bitstream-Vera-Sans-Mono/VeraMono-Bold-Italic.ttf"
     },
     {
       "type": "TextView",
@@ -56,8 +56,8 @@
       "layout-height": "wrap_content",
       "text-size": "20",
       "text-color": "#ffffff",
-      "font": "font/Bitstream-Vera-SansMono/VeraMono-Italic.ttf",
-      "text": "font/Bitstream-Vera-SansMono/VeraMono-Italic.ttf"
+      "font": "font/Bitstream-Vera-Sans-Mono/VeraMono-Italic.ttf",
+      "text": "font/Bitstream-Vera-Sans-Mono/VeraMono-Italic.ttf"
     },
     {
       "type": "TextView",
