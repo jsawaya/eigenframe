@@ -24,7 +24,7 @@
       "layout-height": "wrap_content",
       "text": "Popup TextView for a single line of text",
       "text-color": "#ffffff",
-      "background-color": "#22ffff00",
+      "background-color": "#123456",
       "on-click": {
         "type": "PopupTextView",
         "title": "Popup TextView for a single line of text",
@@ -60,6 +60,88 @@
         "title": "Popup TextView for the contents of a url request (from github)",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
       }
+    },
+    {
+      "type": "TextView",
+      "text": "Examples of PopupTextView",
+      "layout-width": "match_parent",
+      "layout-height": "wrap_content",
+      "text-size": "20",
+      "text-color": "#ffffff"
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 1,
+      "color": "#00ff00"
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "font/gnu-free-font/FreeMono.ttf",
+      "text-color": "#ffffff",
+      "background-color": "#123456",
+      "on-click": {
+        "type": "PopupTextView",
+        "title": "font/gnu-free-font/FreeMono.ttf",
+        "font": "font/gnu-free-font/FreeMono.ttf",
+        "ssh-list": [
+          "ps -e",
+          "ls -la"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text-color": "#ffffff",
+      "background-color": "#123456",
+      "on-click": {
+        "type": "PopupTextView",
+        "title": "font/droid-sans-mono/DroidSansMono.ttf",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh-list": [
+          "ps -e",
+          "ls -la"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "font/liberation-mono/LiberationMono-Regular.ttf",
+      "text-color": "#ffffff",
+      "background-color": "#123456",
+      "on-click": {
+        "type": "PopupTextView",
+        "title": "font/liberation-mono/LiberationMono-Regular.ttf",
+        "font": "font/liberation-mono/LiberationMono-Regular.ttf",
+        "ssh-list": [
+          "ps -e",
+          "ls -la"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "font/space-mono/SpaceMono-Regular.ttf",
+      "text-color": "#ffffff",
+      "background-color": "#123456",
+      "on-click": {
+        "type": "PopupTextView",
+        "title": "font/space-mono/SpaceMono-Regular.ttf",
+        "font": "font/space-mono/SpaceMono-Regular.ttf",
+        "ssh-list": [
+          "ps -e",
+          "ls -la"
+        ]
+      }
     }
+
   ]
 }
