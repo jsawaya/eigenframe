@@ -1,0 +1,97 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout-width": "match_parent",
+  "layout-height": "wrap_content",
+  "component-list": [
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "launch photo app example",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on-click": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.launch('http://localhost:8080/frames/app0_localhost.json')",
+          "eigenActivity.finish()"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "launch gallery of examples",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on-click": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.launch('http://localhost:8080/frames/app1_localhost.json')",
+          "eigenActivity.finish()"
+        ]
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#00ff00"
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "orientation:landscape",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on-click": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout-width": "wrap_content",
+      "layout-height": "wrap_content",
+      "text": "orientation:portrait",
+      "text-color": "#ffffff",
+      "background-color": "#ff00ff",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on-click": {
+        "type": "JavaScript",
+        "script-list": [
+          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
+        ]
+      }
+    }
+  ]
+}

@@ -8,7 +8,7 @@
   ],
   "tab-list": [
     {
-      "name": "app1 PlayList\nfrom github",
+      "name": "app1 PlayList\nfrom localhost",
       "type": "EigenFragment",
       "url": "http://localhost:8080/frames/playlist.json"
     },
