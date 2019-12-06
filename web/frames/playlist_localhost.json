@@ -7,51 +7,25 @@
   "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "Button",
+      "type": "TextView",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "launch photo app example",
-      "text-color": "#ffffff",
-      "background_color": "#ff00ff",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.launch('http://localhost:8080/frames/app0_localhost.json')",
-          "eigenActivity.finish()"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "launch gallery of examples",
-      "text-color": "#ffffff",
-      "background_color": "#ff00ff",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.launch('http://localhost:8080/frames/app1_localhost.json')",
-          "eigenActivity.finish()"
-        ]
-      }
+      "text_color": "#8aec81",
+      "text_size": "24",
+      "text": "EigenFrame launch playlist from web-server (localhost:8080)"
     },
     {
       "type": "HorizontalLine",
       "size": 3,
-      "color": "#00ff00"
+      "color": "#666666"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Set Screen Orientation:"
     },
     {
       "type": "Button",
@@ -59,7 +33,7 @@
       "layout_height": "wrap_content",
       "text": "orientation:landscape",
       "text-color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#123456",
       "margin": {
         "left": 10,
         "top": 10,
@@ -79,7 +53,7 @@
       "layout_height": "wrap_content",
       "text": "orientation:portrait",
       "text-color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#123456",
       "margin": {
         "left": 10,
         "top": 10,
