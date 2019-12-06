@@ -41,10 +41,17 @@ def eigen_directory_listview(dirpath)
 
   subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickEigenScreen)
 
+  #image_url_script_list =
+  #  [
+  #    "var url0 = 'file://#{dirHashDirectory}/' + eigenMap.get('metadata')",
+  #    "java.lang.System.out.println('imageUrl: '+url0)",
+  #    "url0"
+  #  ]
+
   image_url_script_list =
     [
-      "var url0 = 'file://#{dirHashDirectory}/' + eigenMap.get('metadata')",
-      "java.lang.System.out.println('imageUrl: '+url0)",
+      "var url0 = 'http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(url0)",
       "url0"
     ]
 
