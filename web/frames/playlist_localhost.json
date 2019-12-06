@@ -31,7 +31,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "orientation:landscape",
+      "text": "landscape",
       "text-color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -51,7 +51,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "orientation:portrait",
+      "text": "portrait",
       "text-color": "#ffffff",
       "background_color": "#123456",
       "margin": {
