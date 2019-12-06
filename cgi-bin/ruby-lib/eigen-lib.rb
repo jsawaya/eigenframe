@@ -52,8 +52,8 @@ def eigen_directory_listview(dirpath)
 
   fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
-  #fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
-  fileRowLayout = fileItemTextView
+  fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
+  #fileRowLayout = fileItemTextView
 
   file_item_title_script_list =
     [
