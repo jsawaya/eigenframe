@@ -32,7 +32,7 @@
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text": "landscape",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
         "left": 10,
@@ -52,7 +52,7 @@
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text": "portrait",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
         "left": 10,
