@@ -1,24 +1,24 @@
 {
   "type": "LinearLayout",
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "match_parent",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "match_parent",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "20",
+      "text_color": "#ffffff",
       "text": "Test for HtmlView"
     },
     {
       "type": "HtmlView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "14",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "14",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "icon-x": {
         "name": "info.jpg",
         "location": "left"
@@ -29,15 +29,15 @@
       "type": "LinearLayout",
       "scrollable": true,
       "orientation": "vertical",
-      "layout-width": "match_parent",
-      "layout-height": "match_parent",
-      "component-list": [
+      "layout_width": "match_parent",
+      "layout_height": "match_parent",
+      "component_list": [
         {
           "type": "HtmlView",
-          "layout-width": "match_parent",
-          "layout-height": "wrap_content",
-          "text-size": "14",
-          "text-color": "#ffffff",
+          "layout_width": "match_parent",
+          "layout_height": "wrap_content",
+          "text_size": "14",
+          "text_color": "#ffffff",
           "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
         }
       ]

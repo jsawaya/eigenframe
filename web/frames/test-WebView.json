@@ -1,35 +1,35 @@
 {
   "type": "LinearLayout",
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "match_parent",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "match_parent",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "20",
+      "text_color": "#ffffff",
       "text": "Test for WebView"
     },
     {
       "type": "LinearLayout",
       "scrollable": true,
       "orientation": "vertical",
-      "layout-width": "match_parent",
-      "layout-height": "match_parent",
-      "component-list": [
+      "layout_width": "match_parent",
+      "layout_height": "match_parent",
+      "component_list": [
         {
           "type": "WebView",
-          "layout-width": "match_parent",
-          "layout-height": "wrap_content",
+          "layout_width": "match_parent",
+          "layout_height": "wrap_content",
           "html": "<html><body><h1>WebView - inline html specified</h1></body></html>"
         },
         {
           "type": "WebView",
-          "layout-width": "match_parent",
-          "layout-height": "wrap_content",
-          "is-javascript-enabled": true,
+          "layout_width": "match_parent",
+          "layout_height": "wrap_content",
+          "is_javascript_enabled": true,
           "url": "http://photopgp.com/site"
         }
       ]

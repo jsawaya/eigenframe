@@ -3,18 +3,18 @@
   "scrollable": true,
   "orientation": "vertical",
   "gravity": "center_horizontal",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "HtmlView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-size": "14",
-      "text-color": "#ffffff",
+      "text_size": "14",
+      "text_color": "#ffffff",
       "html": "example-links: <hr/> google.com<p/> https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP <p/>internal-icon: <img src='play.jpg'>",
-      "x-html-list": [
+      "x_html_list": [
         "<h1>",
         "<font color=\"#8aec81\">",
         "<a href=\\'https://github.com/jsawaya/eigenframe/\\'>",
@@ -28,25 +28,21 @@
     },
     {
       "type": "HtmlView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "14",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "14",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
-      "icon-x": {
-        "name": "info.jpg",
-        "location": "left"
-      },
+      "text_color": "#ffffff",
       "html": "example-links: <hr/> google.com<p/> https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP <p/>internal-icon: <img src='play.jpg'>"
     },
 
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "launch https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
@@ -59,9 +55,9 @@
         "right": 10,
         "bottom": 10
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json')",
           "eigenActivity.finish()"
         ]
@@ -69,11 +65,11 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "launch https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
@@ -86,9 +82,9 @@
         "right": 10,
         "bottom": 10
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
           "eigenActivity.finish()"
         ]
@@ -96,11 +92,11 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "launch https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
@@ -113,9 +109,9 @@
         "right": 10,
         "bottom": 10
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')",
           "eigenActivity.finish()"
         ]
@@ -128,11 +124,11 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "launch http://localhost:8080/apps/app0.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
@@ -145,9 +141,9 @@
         "right": 10,
         "bottom": 10
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.launch('http://localhost:8080/apps/app0.json')",
           "eigenActivity.finish()"
         ]
@@ -155,11 +151,11 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "launch http://localhost:8080/apps/app1.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
@@ -172,9 +168,9 @@
         "right": 10,
         "bottom": 10
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.launch('http://localhost:8080/apps/app1.json')",
           "eigenActivity.finish()"
         ]
@@ -182,11 +178,11 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "launch http://localhost:8080/apps/app2.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
@@ -199,9 +195,9 @@
         "right": 10,
         "bottom": 10
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.launch('http://localhost:8080/apps/app2.json')",
           "eigenActivity.finish()"
         ]
@@ -215,38 +211,38 @@
     {
       "type": "LinearLayout",
       "orientation": "horizontal",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "component-list": [
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "component_list": [
         {
           "type": "TextView",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "text-size": "20",
-          "text-color": "#ffffff",
-          "text": "app-url:"
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "text_size": "20",
+          "text_color": "#ffffff",
+          "text": "app_url:"
         },
         {
           "type": "EditText",
           "id": 1100,
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": 10,
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": 10,
           "text": "http://localhost:8080/apps/app1.json",
-          "text-color": "#ffffff",
-          "background-color": "#11ff0000"
+          "text_color": "#ffffff",
+          "background_color": "#11ff0000"
         },
         {
           "type": "Button",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": 1,
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": 1,
           "text": "launch",
-          "text-color": "#ffffff",
-          "background-color": "#ff00ff",
-          "on-click": {
+          "text_color": "#ffffff",
+          "background_color": "#ff00ff",
+          "on_click": {
             "type": "JavaScript",
-            "script-list": [
+            "script_list": [
               "eigenActivity.launch('+eigenFragment.getViewState(1100))+')",
               "eigenActivity.finish()"
             ]
@@ -256,11 +252,11 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "orientation:landscape",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
@@ -273,20 +269,20 @@
         "right": 10,
         "bottom": 10
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
         ]
       }
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "orientation:portrait",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
@@ -299,9 +295,9 @@
         "right": 10,
         "bottom": 10
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
         ]
       }

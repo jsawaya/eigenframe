@@ -1,16 +1,13 @@
 {
-  "x-name": "app1",
-
-  "is-secure-window": "true",
-
-  "request-permissions":
+  "x_name": "app1",
+  "is_secure_window": "true",
+  "request_permissions":
   [
     "android.permission.CAMERA",
     "android.permission.WRITE_EXTERNAL_STORAGE",
     "android.permission.INTERNET"
   ],
-
-  "tab-list" :
+  "tab_list":
   [
     {
       "name": "App0 PlayList\nfrom github",
@@ -20,28 +17,28 @@
     {
       "name": "ABOUT",
       "type": "EigenFragment",
-      "icon-name": "info.png",
+      "icon_name": "info.png",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/PhotoPGP-WebView.json"
     },
     {
       "name": "SETTINGS",
       "type": "SettingsFragment",
-      "icon-name": "settings.jpg"
+      "icon_name": "settings.jpg"
     },
     {
       "name": "INDEX",
       "type": "IndexFragment",
-      "icon-name": "viewlist.jpg"
+      "icon_name": "viewlist.jpg"
     },
     {
       "name": "VIEWER",
       "type": "ViewFragment",
-      "icon-name": "pageview.jpg"
+      "icon_name": "pageview.jpg"
     },
     {
       "name": "CAMERA",
       "type": "PhotoFragment",
-      "icon-name": "add_photo.jpg"
+      "icon_name": "add_photo.jpg"
     }
   ]
 }

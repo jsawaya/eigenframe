@@ -3,17 +3,17 @@
   "scrollable": true,
   "orientation": "vertical",
   "gravity": "center_horizontal",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test CheckBox",
-      "text-size": "20",
+      "text_size": "20",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "icon": {
         "name": "sawaya_eigenframe_icon.png",
         "location": "top"
@@ -27,12 +27,12 @@
     {
       "type": "CheckBox",
       "id": 200,
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "This is CheckBox:200",
       "checked": true,
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 20,
         "top": 20,
@@ -45,20 +45,20 @@
         "right": 40,
         "bottom": 40
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewIdState(200))"
         ]
       }
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "getViewState of CheckBox:200",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 20,
         "top": 20,
@@ -71,9 +71,9 @@
         "right": 40,
         "bottom": 40
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewIdState(200))"
         ]
       }
@@ -81,12 +81,12 @@
     {
       "type": "CheckBox",
       "id": 201,
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "This is CheckBox:201",
       "checked": true,
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 20,
         "top": 20,
@@ -102,11 +102,11 @@
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "getViewState of CheckBox:201",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 20,
         "top": 20,
@@ -119,9 +119,9 @@
         "right": 40,
         "bottom": 40
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('eigenFragment.getViewState(201): '+eigenFragment.getViewIdState(201))"
         ]
       }

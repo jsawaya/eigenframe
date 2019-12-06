@@ -2,16 +2,16 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
       "text": "Test EigenScript",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff"
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "20",
+      "text_color": "#ffffff"
     },
     {
       "type": "HorizontalLine",
@@ -21,20 +21,20 @@
     {
       "type": "Button",
       "text": [
-        "JavaScript using script-list: ",
+        "JavaScript using script_list: ",
         "x = 8*5; eigenActivity.showToast('var x: '+x); x;"
       ],
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text-color": "#ffffff",
-      "background-color": "#ff0000",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#ff0000",
       "icon": {
         "name": "info.jpg",
         "location": "left"
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "x = 8*5",
           "eigenActivity.showToast('var x: '+x)"
         ]
@@ -42,18 +42,18 @@
     },
     {
       "type": "Button",
-      "text": "JavaScript using script-list",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text-color": "#ffffff",
-      "background-color": "#11ff0000",
+      "text": "JavaScript using script_list",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
       "icon": {
         "name": "info.jpg",
         "location": "left"
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "htmlString = eigenActivity.getString(com.sawaya.R.string.change_log)",
           "titleString = eigenActivity.getString(com.sawaya.R.string.recent_changes_title)",
           "java.lang.System.out.println(htmlString)",
@@ -69,7 +69,7 @@
     {
       "name": "PopupScreen",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
     }
 

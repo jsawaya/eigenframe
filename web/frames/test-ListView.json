@@ -1,17 +1,17 @@
 {
   "type": "LinearLayout",
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "match_parent",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "match_parent",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test ListView",
-      "text-size": "20",
+      "text_size": "20",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "icon": {
         "name": "sawaya_eigenframe_icon.png",
         "location": "top"
@@ -24,14 +24,14 @@
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "ListView getViewIdState(700)",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('ListView getViewIdState: '+eigenFragment.getViewIdState(700))"
         ]
       }
@@ -39,11 +39,11 @@
     {
       "type": "ListView",
       "id": 700,
-      "layout-width": "match_parent",
-      "layout-height": "match_parent",
-      "background-color": "#ff00ff",
-      "checked-option": 1,
-      "key-list": [
+      "layout_width": "match_parent",
+      "layout_height": "match_parent",
+      "background_color": "#ff00ff",
+      "checked_option": 1,
+      "key_list": [
         "test1.txt.asc",
         "test1.json",
         "test1.zip",
@@ -57,9 +57,9 @@
         "test5.zip",
         "test5.pdf"
       ],
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "x-script-list": [
+        "x-script_list": [
           "java.lang.System.out.println(3)",
           "obj = { run: function() { print('hi'); } }",
           "obj.run()",
@@ -71,21 +71,21 @@
 
           "eigenActivity.showToast('ListView selected: '+eigenFragment.getViewIdState(700))"
         ],
-        "script-list": [
+        "script_list": [
           "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
           "var opt = eigenMap.get('option')",
           "eigenActivity.showToast('ListView selected: '+ pos + ' - ' + opt)"
         ]
       },
-      "eigen-frame": {
+      "eigen_frame": {
         "type": "TextView",
-        "text-script-list": [
+        "text_script_list": [
           "(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')"
         ],
-        "text-size": "20",
-        "text-color": "#ffffff",
-        "layout-width": "wrap_content",
-        "layout-height": "wrap_content"
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "layout_width": "wrap_content",
+        "layout_height": "wrap_content"
       }
     }
   ]

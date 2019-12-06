@@ -2,16 +2,16 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
       "text": "Test EigenScript",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff"
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "20",
+      "text_color": "#ffffff"
     },
     {
       "type": "HorizontalLine",
@@ -21,20 +21,20 @@
     {
       "type": "Button",
       "text": [
-        "JavaScript using script-list: ",
+        "JavaScript using script_list: ",
         "x = 8*5; eigenActivity.showToast('var x: '+x); x;"
       ],
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text-color": "#ffffff",
-      "background-color": "#ff0000",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#ff0000",
       "icon": {
         "name": "info.jpg",
         "location": "left"
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "x = 8*5",
           "eigenActivity.showToast('var x: '+x)",
           "x"
@@ -43,18 +43,18 @@
     },
     {
       "type": "Button",
-      "text": "JavaScript using script-list",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text-color": "#ffffff",
-      "background-color": "#11ff0000",
+      "text": "JavaScript using script_list",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
       "icon": {
         "name": "info.jpg",
         "location": "left"
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "htmlString = eigenActivity.getString(com.sawaya.R.string.change_log)",
           "titleString = eigenActivity.getString(com.sawaya.R.string.recent_changes_title)",
           "java.lang.System.out.println(htmlString)",
@@ -74,12 +74,12 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "Popup TextView/text",
-      "text-color": "#ffffff",
-      "background-color": "#22ffff00",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#22ffff00",
+      "on_click": {
         "type": "PopupTextView",
         "title": "Popup TextView",
         "text": "this is a test"
@@ -87,15 +87,15 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "Popup TextView/text-list",
-      "text-color": "#ffffff",
-      "background-color": "#22ffff00",
-      "on-click": {
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Popup TextView/text_list",
+      "text_color": "#ffffff",
+      "background_color": "#22ffff00",
+      "on_click": {
         "type": "PopupTextView",
         "title": "Popup TextView",
-        "text-list": [
+        "text_list": [
           "this is line 1",
           "this is line 2",
           "this is line 3"
@@ -104,12 +104,12 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "Popup TextView/url",
-      "text-color": "#ffffff",
-      "background-color": "#22ff0000",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#22ff0000",
+      "on_click": {
         "type": "PopupTextView",
         "title": "Popup TextView",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
@@ -122,19 +122,19 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "Popup HtmlView/html-list",
-      "text-color": "#ffffff",
-      "background-color": "#11ff0000",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Popup HtmlView/html_list",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
       "icon": {
         "name": "info.jpg",
         "location": "left"
       },
-      "on-click": {
+      "on_click": {
         "type": "PopupHtmlView",
-        "title": "PopupHtmlView/html-list",
-        "html-list": [
+        "title": "PopupHtmlView/html_list",
+        "html_list": [
           "9/27/2019 Version 0.1<hr/>",
           "- Popup dynamic html with access to application-embedded icons [<img src='info.jpg'>]"
         ]
@@ -144,16 +144,16 @@
       "type": "LinearLayout",
       "scrollable": true,
       "orientation": "horizontal",
-      "layout-width": "match_parent",
-      "layout-height": "match_parent",
-      "component-list": [
+      "layout_width": "match_parent",
+      "layout_height": "match_parent",
+      "component_list": [
         {
           "type": "Button",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
           "text": "About",
-          "text-color": "#ffffff",
-          "background-color": "#000000",
+          "text_color": "#ffffff",
+          "background_color": "#000000",
           "margin": {
             "left": 4,
             "top": 4,
@@ -164,7 +164,7 @@
             "name": "info.jpg",
             "location": "left"
           },
-          "on-click": {
+          "on_click": {
             "type": "PopupHtmlView",
             "title": "PopupHtmlView",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
@@ -172,16 +172,16 @@
         },
         {
           "type": "Button",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
           "text": "Recent Changes",
-          "text-color": "#ffffff",
-          "background-color": "#000000",
+          "text_color": "#ffffff",
+          "background_color": "#000000",
           "icon": {
             "name": "info.jpg",
             "location": "left"
           },
-          "on-click": {
+          "on_click": {
             "type": "PopupHtmlView",
             "title": "PopupHtmlView",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/recent-changes.html"

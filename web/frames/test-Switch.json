@@ -2,17 +2,17 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test Switch",
-      "text-size": "20",
+      "text_size": "20",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "icon": {
         "name": "sawaya_eigenframe_icon.png",
         "location": "top"
@@ -26,35 +26,35 @@
     {
       "type": "Switch",
       "id": 300,
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "This is Switch:300",
       "checked": true,
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "padding": {
         "left": 40,
         "top": 40,
         "right": 40,
         "bottom": 40
       },
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(300))"
         ]
       }
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "getViewState of Switch:300",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(300))"
         ]
       }
@@ -62,12 +62,12 @@
     {
       "type": "Switch",
       "id": 301,
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "This is Switch:301",
       "checked": true,
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
       "margin": {
         "left": 40,
         "top": 40,
@@ -77,14 +77,14 @@
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "getViewState of Switch:301",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewIdState(301))"
         ]
       }

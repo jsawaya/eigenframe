@@ -2,17 +2,17 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test RadioButton",
-      "text-size": "20",
+      "text_size": "20",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "icon": {
         "name": "sawaya_eigenframe_icon.png",
         "location": "top"
@@ -26,33 +26,33 @@
     {
       "type": "RadioButton",
       "id": 500,
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "orientation": "vertical",
-      "background-color": "#ff00ff",
-      "checked-option": 1,
-      "option-list": [
+      "background_color": "#ff00ff",
+      "checked_option": 1,
+      "option_list": [
         "option 0",
         "option 1",
         "option 2"
       ],
-      "on-click": {
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewIdState(500))"
         ]
       }
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "getViewIdState RadioButton:500",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('getViewState: '+eigenFragment.getViewIdState(500))"
         ]
       }
@@ -60,11 +60,11 @@
     {
       "type": "RadioButton",
       "id": 510,
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "orientation": "vertical",
-      "background-color": "#ff00ff",
-      "option-list": [
+      "background_color": "#ff00ff",
+      "option_list": [
         "option 0",
         "option 1",
         "option 2",
@@ -74,14 +74,14 @@
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "getViewIdState RadioButton:510",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(510))"
         ]
       }

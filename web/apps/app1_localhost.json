@@ -1,12 +1,12 @@
 {
-  "x-name": "app1",
-  "is-secure-window": "true",
-  "request-permissions": [
+  "x_name": "app1",
+  "is_secure_window": "true",
+  "request_permissions": [
     "android.permission.CAMERA",
     "android.permission.WRITE_EXTERNAL_STORAGE",
     "android.permission.INTERNET"
   ],
-  "tab-list": [
+  "tab_list": [
     {
       "name": "app1 PlayList\nfrom localhost",
       "type": "EigenFragment",
@@ -19,13 +19,13 @@
     {
       "name": "EigenScreen",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-EigenScreen.json"
     },
     {
       "name": "PopupTextView",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-PopupTextView.json"
     },
     {
@@ -35,7 +35,7 @@
     {
       "name": "ImageView",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-ImageView.json"
     },
     {
@@ -45,61 +45,61 @@
     {
       "name": "Button",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-Button.json"
     },
     {
       "name": "Script",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-EigenScript.json"
     },
     {
       "name": "CheckBox",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-CheckBox.json"
     },
     {
       "name": "Switch",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-Switch.json"
     },
     {
       "name": "ToggleButton",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-ToggleButton.json"
     },
     {
       "name": "RadioButton",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-RadioButton.json"
     },
     {
       "name": "Spinner",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-Spinner.json"
     },
     {
       "name": "ListView",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-ListView.json"
     },
     {
       "name": "AlertDialog",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-AlertDialog.json"
     },
     {
       "name": "SelectDialog",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-SelectDialog.json"
     },
     {
@@ -109,31 +109,31 @@
     {
       "name": "TextView",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-TextView.json"
     },
     {
-      "name": "TextView-font",
+      "name": "TextView_font",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-TextView-font.json"
     },
     {
       "name": "EditText",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-EditText.json"
     },
     {
       "name": "HtmlView",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-HtmlView.json"
     },
     {
       "name": "WebView",
       "type": "EigenFragment",
-      "icon-name": "sawaya_eigenframe_icon.png",
+      "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-WebView.json"
     }
   ]

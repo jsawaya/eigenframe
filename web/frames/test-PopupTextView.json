@@ -2,16 +2,16 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
       "text": "Examples of PopupTextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff"
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "20",
+      "text_color": "#ffffff"
     },
     {
       "type": "HorizontalLine",
@@ -20,12 +20,12 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "Popup TextView for a single line of text",
-      "text-color": "#ffffff",
-      "background-color": "#123456",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
         "type": "PopupTextView",
         "title": "Popup TextView for a single line of text",
         "text": "this is a test"
@@ -33,15 +33,15 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text": "Popup TextView for a text-list",
-      "text-color": "#ffffff",
-      "background-color": "#22ffff00",
-      "on-click": {
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Popup TextView for a text_list",
+      "text_color": "#ffffff",
+      "background_color": "#22ffff00",
+      "on_click": {
         "type": "PopupTextView",
-        "title": "Popup TextView for a text-list",
-        "text-list": [
+        "title": "Popup TextView for a text_list",
+        "text_list": [
           "this is line 1",
           "this is line 2",
           "this is line 3"
@@ -50,12 +50,12 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "Popup TextView for the contents of a url request (from github)",
-      "text-color": "#ffffff",
-      "background-color": "#22ff0000",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#22ff0000",
+      "on_click": {
         "type": "PopupTextView",
         "title": "Popup TextView for the contents of a url request (from github)",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
@@ -64,10 +64,10 @@
     {
       "type": "TextView",
       "text": "Examples of PopupTextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff"
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "20",
+      "text_color": "#ffffff"
     },
     {
       "type": "HorizontalLine",
@@ -76,16 +76,16 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "font/gnu-free-font/FreeMono.ttf",
-      "text-color": "#ffffff",
-      "background-color": "#123456",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
         "type": "PopupTextView",
         "title": "font/gnu-free-font/FreeMono.ttf",
         "font": "font/gnu-free-font/FreeMono.ttf",
-        "ssh-list": [
+        "ssh_list": [
           "ps -e",
           "ls -la"
         ]
@@ -93,16 +93,16 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text-color": "#ffffff",
-      "background-color": "#123456",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
         "type": "PopupTextView",
         "title": "font/droid-sans-mono/DroidSansMono.ttf",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh-list": [
+        "ssh_list": [
           "ps -e",
           "ls -la"
         ]
@@ -110,16 +110,16 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "font/liberation-mono/LiberationMono-Regular.ttf",
-      "text-color": "#ffffff",
-      "background-color": "#123456",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
         "type": "PopupTextView",
         "title": "font/liberation-mono/LiberationMono-Regular.ttf",
         "font": "font/liberation-mono/LiberationMono-Regular.ttf",
-        "ssh-list": [
+        "ssh_list": [
           "ps -e",
           "ls -la"
         ]
@@ -127,16 +127,16 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "font/space-mono/SpaceMono-Regular.ttf",
-      "text-color": "#ffffff",
-      "background-color": "#123456",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
         "type": "PopupTextView",
         "title": "font/space-mono/SpaceMono-Regular.ttf",
         "font": "font/space-mono/SpaceMono-Regular.ttf",
-        "ssh-list": [
+        "ssh_list": [
           "ps -e",
           "ls -la"
         ]

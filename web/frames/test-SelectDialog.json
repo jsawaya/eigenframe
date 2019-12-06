@@ -2,17 +2,17 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test SelectDialog",
-      "text-size": "20",
+      "text_size": "20",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "icon": {
         "name": "sawaya_eigenframe_icon.png",
         "location": "top"
@@ -25,27 +25,27 @@
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test SelectDialog",
-      "text-color": "#ffffff",
-      "background-color": "#22ff0000",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#22ff0000",
+      "on_click": {
         "type": "SelectDialog",
         "title": "Test SelectDialog",
         "icon": {
           "name": "info.jpg"
         },
-        "checked-option": 1,
-        "option-list": [
+        "checked_option": 1,
+        "option_list": [
           "option 0",
           "option 1",
           "option 2"
         ],
-        "on-click": {
+        "on_click": {
           "type": "JavaScript",
-          "script-list": [
-            "eigenActivity.showToast('SelectDialog: option-name: '+eigenMap.get('option-name'))"
+          "script_list": [
+            "eigenActivity.showToast('SelectDialog: option_name: '+eigenMap.get('option_name'))"
           ]
         }
       }

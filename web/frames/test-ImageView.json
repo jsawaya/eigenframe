@@ -2,15 +2,15 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text-size": "20",
-      "text-color": "#ffffff",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "20",
+      "text_color": "#ffffff",
       "text": "Test ImageView (url -> png)"
     },
     {
@@ -20,9 +20,9 @@
     },
     {
       "type": "ImageView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "on-click": {
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "on_click": {
         "type": "JavaScript",
         "script": "eigenActivity.showToast('image click default')"
       }
@@ -35,9 +35,9 @@
     {
       "type": "ImageView",
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png",
-      "layout-width": "match_parent",
-      "layout-height": "100",
-      "on-click": {
+      "layout_width": "match_parent",
+      "layout_height": "100",
+      "on_click": {
         "type": "JavaScript",
         "script": "eigenActivity.showToast('image click eigenframe')"
       }
@@ -50,9 +50,9 @@
     {
       "type": "ImageView",
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/photopgp.png",
-      "layout-width": "match_parent",
-      "layout-height": "100",
-      "on-click": {
+      "layout_width": "match_parent",
+      "layout_height": "100",
+      "on_click": {
         "type": "JavaScript",
         "script": "eigenActivity.showToast('image click photopgp')"
       }
@@ -65,9 +65,9 @@
     {
       "type": "ImageView",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/res/photopgp.png",
-      "layout-width": "match_parent",
-      "layout-height": "100",
-      "on-click": {
+      "layout_width": "match_parent",
+      "layout_height": "100",
+      "on_click": {
         "type": "JavaScript",
         "script": "eigenActivity.showToast('image click photopgp')"
       }

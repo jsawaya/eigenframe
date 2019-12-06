@@ -3,39 +3,39 @@
   "scrollable": true,
   "orientation": "vertical",
   "gravity": "center_horizontal",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "LinearLayout",
       "orientation": "horizontal",
       "gravity": "center",
-      "layout-width": "match_parent",
-      "layout-height": "100",
-      "component-list": [
+      "layout_width": "match_parent",
+      "layout_height": "100",
+      "component_list": [
         {
           "type": "TextView",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "10",
-          "text-size": "20",
-          "text-color": "#ffffff",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": "10",
+          "text_size": "20",
+          "text_color": "#ffffff",
           "text": "Test TextView and Buttons with Icons"
         },
         {
           "type": "Button",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "1",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": "1",
           "text": " ",
-          "background-color": "#00000000",
+          "background_color": "#00000000",
           "icon": {
             "name": "close.jpg",
             "location": "right"
           },
-          "on-click": {
+          "on_click": {
             "type": "JavaScript",
-            "script-list": [
+            "script_list": [
               "eigenActivity.finish()"
             ]
           }
@@ -49,14 +49,14 @@
     },
     {
       "type": "TextView",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
-      "text-list": [
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_list": [
         "No Icon",
         "attached"
       ],
-      "text-size": 20,
-      "text-color": "#ffffff",
+      "text_size": 20,
+      "text_color": "#ffffff",
       "padding": {
         "left": 40,
         "top": 41,
@@ -73,9 +73,9 @@
       "type": "LinearLayout",
       "scrollable": true,
       "orientation": "horizontal",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "component-list": [
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "component_list": [
         {
           "type": "VerticalLine",
           "size": 2,
@@ -83,12 +83,12 @@
         },
         {
           "type": "TextView",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "1",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": "1",
           "text": "left",
-          "text-size": 20,
-          "text-color": "#ffffff",
+          "text_size": 20,
+          "text_color": "#ffffff",
           "gravity": "left",
           "icon": {
             "name": "info.jpg",
@@ -102,12 +102,12 @@
         },
         {
           "type": "TextView",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "1",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": "1",
           "text": "top",
-          "text-size": 20,
-          "text-color": "#ffffff",
+          "text_size": 20,
+          "text_color": "#ffffff",
           "gravity": "center_horizontal",
           "icon": {
             "name": "info.jpg",
@@ -121,12 +121,12 @@
         },
         {
           "type": "TextView",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "1",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": "1",
           "text": "right",
-          "text-size": 20,
-          "text-color": "#ffffff",
+          "text_size": 20,
+          "text_color": "#ffffff",
           "gravity": "right",
           "icon": {
             "name": "info.jpg",
@@ -149,9 +149,9 @@
       "type": "LinearLayout",
       "scrollable": true,
       "orientation": "horizontal",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "component-list": [
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "component_list": [
         {
           "type": "VerticalLine",
           "size": 2,
@@ -159,17 +159,17 @@
         },
         {
           "type": "Button",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "1",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": "1",
           "text": "left",
-          "text-color": "#ffffff",
-          "background-color": "#00ffff",
+          "text_color": "#ffffff",
+          "background_color": "#00ffff",
           "icon": {
             "name": "info.jpg",
             "location": "left"
           },
-          "on-click": {
+          "on_click": {
             "type": "JavaScript",
             "script": "eigenActivity.showToast('value: '+1)"
           }
@@ -181,17 +181,17 @@
         },
         {
           "type": "Button",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "1",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": "1",
           "text": "top",
-          "text-color": "#ffffff",
-          "background-color": "#0f0f0f",
+          "text_color": "#ffffff",
+          "background_color": "#0f0f0f",
           "icon": {
             "name": "info.jpg",
             "location": "top"
           },
-          "on-click": {
+          "on_click": {
             "type": "JavaScript",
             "script": "eigenActivity.showToast('value: '+2)"
           }
@@ -203,17 +203,17 @@
         },
         {
           "type": "Button",
-          "layout-width": "wrap_content",
-          "layout-height": "wrap_content",
-          "layout-weight": "1",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "layout_weight": "1",
           "text": "right",
-          "text-color": "#ffffff",
-          "background-color": "#ff00ff",
+          "text_color": "#ffffff",
+          "background_color": "#ff00ff",
           "icon": {
             "name": "info.jpg",
             "location": "right"
           },
-          "on-click": {
+          "on_click": {
             "type": "JavaScript",
             "script": "eigenActivity.showToast('value: '+3)"
           }
@@ -227,14 +227,14 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "create shortcut for app1_localhost.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.addShortcut('app1-localhost', 'http://localhost:8080/apps/app1_localhost.json')",
           "eigenActivity.finish()"
         ]
@@ -242,14 +242,14 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "create shortcut for app2_localhost.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.addShortcut('app2-localhost', 'http://localhost:8080/apps/app2_localhost.json')",
           "eigenActivity.finish()"
         ]
@@ -262,14 +262,14 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "create shortcut for app1.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.addShortcut('app1', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
           "eigenActivity.finish()"
         ]
@@ -277,14 +277,14 @@
     },
     {
       "type": "Button",
-      "layout-width": "wrap_content",
-      "layout-height": "wrap_content",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "create shortcut for app2.json",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.addShortcut('app2', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app2.json')",
           "eigenActivity.finish()"
         ]

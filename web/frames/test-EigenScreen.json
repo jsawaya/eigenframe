@@ -1,16 +1,16 @@
 {
   "type": "LinearLayout",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test EigenScreen",
-      "text-size": "20",
+      "text_size": "20",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "icon": {
         "name": "sawaya_eigenframe_icon.png",
         "location": "top"
@@ -23,59 +23,59 @@
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text": "Test EigenScreen with a component-list(TextView)",
-      "text-color": "#ffffff",
-      "background-color": "#ff0000",
-      "on-click": {
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Test EigenScreen with a component_list(TextView)",
+      "text_color": "#ffffff",
+      "background_color": "#ff0000",
+      "on_click": {
         "type": "EigenScreen",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text-size": "20",
-        "text-color": "#ffffff",
-        "background-color": "#111111",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
         "text": "EigenScreen1",
         "icon": {
           "name": "info.jpg",
           "location": "left"
         },
-        "component-list": [
+        "component_list": [
           {
             "type": "TextView",
-            "layout-width": "match_parent",
-            "layout-height": "wrap_content",
-            "text": "Example of component-list(TextView) on EigenScreen",
-            "text-size": "20",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text": "Example of component_list(TextView) on EigenScreen",
+            "text_size": "20",
             "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-            "text-color": "#ffffff"
+            "text_color": "#ffffff"
           },
           {
             "type": "TextView",
-            "layout-width": "match_parent",
-            "layout-height": "wrap_content",
-            "text": "text-size:14",
-            "text-size": "14",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text": "text_size:14",
+            "text_size": "14",
             "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-            "text-color": "#ff00ff"
+            "text_color": "#ff00ff"
           }
         ]
       }
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test EigenScreen with a url(test-TextView)",
-      "text-color": "#ffffff",
-      "background-color": "#ff0000",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff0000",
+      "on_click": {
         "type": "EigenScreen",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text-size": "20",
-        "text-color": "#ffffff",
-        "background-color": "#111111",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
         "text": "EigenScreen1",
         "icon": {
           "name": "info.jpg",
@@ -86,18 +86,18 @@
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "EigenScreen generates a directory ListView by calling a localhost url...",
-      "text-color": "#ffffff",
-      "background-color": "#ff0000",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff0000",
+      "on_click": {
         "type": "EigenScreen",
-        "layout-width": "match_parent",
-        "layout-height": "wrap_content",
-        "text-size": "20",
-        "text-color": "#ffffff",
-        "background-color": "#111111",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
         "text": "EigenFrame",
         "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
       }

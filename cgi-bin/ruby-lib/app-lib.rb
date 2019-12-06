@@ -128,10 +128,10 @@ def zip_contents(zipfile)
   h["filenames"] = keys
 
   stat = File.stat(zipfile)
-  h["file-size"] = stat.size
-  h["file-created"] = stat.ctime
+  h["file_size"] = stat.size
+  h["file_created"] = stat.ctime
 
-  h["time-now"] = Time.now
+  h["time_now"] = Time.now
   
   h
 

@@ -2,17 +2,17 @@
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
-  "layout-width": "match_parent",
-  "layout-height": "wrap_content",
-  "component-list": [
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Test EditText",
-      "text-size": "20",
+      "text_size": "20",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text-color": "#ffffff",
+      "text_color": "#ffffff",
       "icon": {
         "name": "sawaya_eigenframe_icon.png",
         "location": "top"
@@ -26,14 +26,14 @@
     {
       "type": "EditText",
       "id": 100,
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "edit text",
-      "text-color": "#ffffff",
-      "background-color": "#11ff0000",
-      "eigen-script-x": {
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
+      "eigen_script_x": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "java.lang.System.out.println('eigenMap: '+eigenMap)",
           "eigenActivity.showToast('EditText key: '+eigenMap.get('keyCode'))"
         ]
@@ -41,14 +41,14 @@
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Access EditText",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
         ]
       }
@@ -56,22 +56,22 @@
     {
       "type": "EditText",
       "id": 101,
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "edit text 101",
-      "text-color": "#ffffff",
-      "background-color": "#11ff0000"
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000"
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Access EditText",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
         ]
       }
@@ -79,22 +79,22 @@
     {
       "type": "EditText",
       "id": 102,
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "edit text 102",
-      "text-color": "#ffffff",
-      "background-color": "#11ff0000"
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000"
     },
     {
       "type": "Button",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Access EditText",
-      "text-color": "#ffffff",
-      "background-color": "#ff00ff",
-      "on-click": {
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "on_click": {
         "type": "JavaScript",
-        "script-list": [
+        "script_list": [
           "eigenActivity.showToast('eigenFragment.getEditTextValue(102): '+eigenFragment.getEditTextValue(102))"
         ]
       }
