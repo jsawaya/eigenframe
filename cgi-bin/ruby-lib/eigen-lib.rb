@@ -41,14 +41,14 @@ def eigen_directory_listview(dirpath)
 
   subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickEigenScreen)
 
-#  image_url_script_list =
-#    [
-#      "var url0 = 'file://#{dirHashDirectory}/' + eigenMap.get('metadata')",
-#      "java.lang.System.out.println('imageUrl: '+url0)",
-#      "url0"
-#    ]
+  image_url_script_list =
+    [
+      "var url0 = 'file://#{dirHashDirectory}/' + eigenMap.get('metadata')",
+      "java.lang.System.out.println('imageUrl: '+url0)",
+      "url0"
+    ]
 
-  #image_view = eigen_image_view(image_url_script_list)
+  image_view = eigen_image_view(image_url_script_list)
 
   fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
@@ -179,9 +179,14 @@ end
 def eigen_image_view(url_script_list)
   {
     type: "ImageView",
-    layout_width: "wrap_content",
+    url_script_list: url_script_list,
+    layout_width: "100",
     layout_height: "100",
-    url_script_list: url_script_list
+    on_click:
+      {
+        type: "JavaScript",
+        script: "eigenActivity.showToast('image clicked')"
+      }
   }
 end
 
