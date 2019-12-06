@@ -12,8 +12,8 @@ def eigen_directory_listview(dirpath)
   Dir.chdir dirpath
   dirHash = directory_hash()
 
-  padding = eigen_padding(20, 10)
-  margin = eigen_margin(0, 0)
+  padding = eigen_padding(5, 5)
+  margin = eigen_margin(10, 10)
   infoLeftIcon = eigen_icon("info.jpg", "left")
   horzLine = eigen_horizontal_line(2, "#00ff00")
   vertLine = eigen_vertical_line(2, "#00ff00")
@@ -26,23 +26,9 @@ def eigen_directory_listview(dirpath)
 
   subdirItemLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
-  fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
-
   url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"]
 
   subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
-
-  image_url_script_list0 = ["'file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png'"]
-  image_url_script_list =
-    [
-      "var url0 = 'file://#{dirHashDirectory}/' + eigenMap.get('metadata')",
-      "java.lang.System.out.println('imageUrl: '+url0)",
-      "url0"
-    ]
-
-  image_view = eigen_image_view(image_url_script_list)
-  fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
-
 
 #  parent_path = File.expand_path("..", Dir.pwd)
 #  parent_path = "#{dirpath}/.."
@@ -51,9 +37,23 @@ def eigen_directory_listview(dirpath)
   url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}'"]
 
   buttonOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list0)
-  button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickEigenScreen)
+  get_parent_directory_button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickEigenScreen)
 
   subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickEigenScreen)
+
+#  image_url_script_list =
+#    [
+#      "var url0 = 'file://#{dirHashDirectory}/' + eigenMap.get('metadata')",
+#      "java.lang.System.out.println('imageUrl: '+url0)",
+#      "url0"
+#    ]
+
+  #image_view = eigen_image_view(image_url_script_list)
+
+  fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
+
+  #fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
+  fileRowLayout = fileItemTextView
 
   file_item_title_script_list =
     [
@@ -70,12 +70,11 @@ def eigen_directory_listview(dirpath)
     ]
 
   filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
-
   filesListView = list_view(dirHash["files"], fileRowLayout, filesListViewOnClickPopupTextView)
 
   layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
 
-  eigenScreenLayout = eigen_vertical_layout([horzLine,headerTextView,button,horzLine,layout0,horzLine])
+  eigenScreenLayout = eigen_vertical_layout([headerTextView,get_parent_directory_button,horzLine,layout0])
   eigenScreenLayout
 end
 
