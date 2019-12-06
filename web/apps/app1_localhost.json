@@ -10,7 +10,7 @@
     {
       "name": "app1 PlayList\nfrom localhost",
       "type": "EigenFragment",
-      "url": "http://localhost:8080/frames/playlist.json"
+      "url": "http://localhost:8080/frames/playlist_localhost.json"
     },
     {
       "name": "empty",
