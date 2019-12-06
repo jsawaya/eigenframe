@@ -10,196 +10,159 @@ class EigenFrame
 ##==================================================================================================
 ## define frame for padding
 def eigen_padding(x, y)
-  padding = Hash.new("null")
-  padding["left"] = x
-  padding["top"] = y
-  padding["right"] = x
-  padding["bottom"] = y
-  padding
+  {
+    left: x,
+    top: y,
+    right: x,
+    bottom: y
+  }
 end
 
 
 ##==================================================================================================
 ## define frame for margin
 def eigen_margin(x, y)
-  margin = Hash.new("null")
-  margin["left"] = x
-  margin["top"] = y
-  margin["right"] = x
-  margin["bottom"] = y
-  margin
+  {
+    left: x,
+    top: y,
+    right: x,
+    bottom: y
+  }
 end
 
 
 ##==================================================================================================
 ## define frame for an icon - internal resource ImageGetter registered name, and location (top,left...)
 def eigen_icon(name, location)
-  infoLeftIcon = Hash.new("null")
-  infoLeftIcon["name"] = name
-  infoLeftIcon["location"] = location
-  infoLeftIcon
+  {
+    name: name,
+    location: location
+  }
 end
 
 
 ##==================================================================================================
 ## define frame for a horizontal line with size/width(integer) and color(string)
 def eigen_horizontal_line(size, color)
-  horzLine = Hash.new("null")
-  horzLine["type"] = "HorizontalLine"
-  horzLine["size"] = size
-  horzLine["color"] = color
-  horzLine
+  {
+    type: "HorizontalLine",
+    size: size,
+    color: color
+  }
 end
 
 
 ##==================================================================================================
 ## define frame for a vertical line with size/width(integer) and color(string)
 def eigen_vertical_line(size, color)
-  vertLine = Hash.new("null")
-  vertLine["type"] = "VerticalLine"
-  vertLine["size"] = size
-  vertLine["color"] = color
-  vertLine
+  {
+    type: "VerticalLine",
+    size: size,
+    color: color
+  }
 end
 
 
 ##==================================================================================================
-def eigen_horizontal_layout3(component_list, layout_width, layout_height)
-  horizontalLayout = Hash.new("null")
-  horizontalLayout["type"] = "LinearLayout"
-  horizontalLayout["orientation"] = "horizontal"
-  horizontalLayout["layout-width"] = layout_width
-  horizontalLayout["layout-height"] = layout_height
-  horizontalLayout["component-list"] = component_list
-  horizontalLayout
+def eigen_layout(component_list, orientation, layout_width, layout_height)
+  {
+    type: "LinearLayout",
+    component_list: component_list,
+    orientation: orientation,
+    layout_width: layout_width,
+    layout_height: layout_height
+  }
 end
 
 
-##==================================================================================================
+##=================================================================================================
 def eigen_horizontal_layout(component_list)
-  horizontalLayout = Hash.new("null")
-  horizontalLayout["type"] = "LinearLayout"
-  horizontalLayout["orientation"] = "horizontal"
-  horizontalLayout["layout-width"] = "match_parent"
-  horizontalLayout["layout-height"] = "match_parent"
-  horizontalLayout["component-list"] = component_list
-  eigen_horizontal_layout3(component_list, "match_parent", "match_parent")
+  eigen_layout(component_list, "horizontal", "match_parent", "match_parent")
 end
 
 
-##==================================================================================================
+##=================================================================================================
 def eigen_vertical_layout(component_list)
-  verticalLayout = Hash.new("null")
-  verticalLayout["type"] = "LinearLayout"
-  verticalLayout["orientation"] = "vertical"
-  verticalLayout["layout-width"] = "match_parent"
-  verticalLayout["layout-height"] = "match_parent"
-  verticalLayout["component-list"] = component_list
-  verticalLayout
+  eigen_layout(component_list, "vertical", "match_parent", "match_parent")
 end
 
 
-##==================================================================================================
+##=================================================================================================
 ## this frame defines each row of the subdirectory list
-def eigen_text_view(size, color, padding, margin, text_script_list)
-  text_view = Hash.new("null")
-  text_view["type"] = "TextView"
-  text_view["layout-width"] = "wrap_content"
-  text_view["layout-height"] = "wrap_content"
-  text_view["text-size"] = size
-  text_view["text-color"] = color
-  text_view["padding"] = padding
-  text_view["margin"] = margin
-  text_view["text-script-list"] = text_script_list
-#    [
-#      "eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"
-#    ]
-  text_view
+def eigen_text_view(text_size, text_color, padding, margin, text_script_list)
+  {
+    type: "TextView",
+    layout_width: layout_width,
+    layout_height: layout_height,
+    text_size: text_size,
+    text_color: text_color,
+    padding: padding,
+    margin: margin,
+    text_script_list: text_script_list
+  }
 end
 
 
 ##==================================================================================================
 ## this frame defines each row of the subdirectory list
 def eigen_image_view(url_script_list)
-  image_view = Hash.new("null")
-  image_view["type"] = "ImageView"
-  image_view["layout-width"] = "wrap_content"
-  image_view["layout-height"] = "100"
-#  image_view["text-size"] = size
-#  image_view["text-color"] = color
-#  image_view["padding"] = padding
-#  image_view["margin"] = margin
-  image_view["url-script-list"] = url_script_list
-#  image_view["on-click"] = on_click_script
-  image_view
+  {
+    type: "ImageView",
+    layout_width: "wrap_content",
+    layout_height: "100",
+    url_script_list: url_script_list
+  }
 end
 
 
 ##==================================================================================================
 ## this frame defines how to launch next EigenScreen
-def launch_eigen_screen(size, color, background_color, url_script_list)
-  eigenScreen = Hash.new("null")
-  eigenScreen["type"] = "EigenScreen"
-  eigenScreen["layout-width"] = "match_parent"
-  eigenScreen["layout-height"] = "wrap_content"
-  eigenScreen["text"] = "EigenFrame"
-  eigenScreen["text-size"] = size
-  eigenScreen["text-color"] = color
-  eigenScreen["background-color"] = background_color
-  eigenScreen["url-script-list"] = url_script_list
-#    [
-#      "'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirpath}' + '/'+ eigenMap.get('option')"
-#    ]
-  eigenScreen
+def launch_eigen_screen(text_size, text_color, background_color, url_script_list)
+  {
+    type: "EigenScreen",
+    layout_width: "match_parent",
+    layout_height: "wrap_content",
+    text: "EigenScreen",
+    text_size: text_size,
+    text_color: text_color,
+    background_color: background_color,
+    url_script_list: url_script_list
+  }
 end
 
 
-##==================================================================================================
 ## this frame defines PopupTextView called via on-click in the file ListView
 def popup_text_view(title_script_list, url_script_list)
-  filesListViewOnClickPopupTextView = Hash.new("null")
-  filesListViewOnClickPopupTextView["type"] = "PopupTextView"
-  filesListViewOnClickPopupTextView["title-script-list"] = title_script_list
-  filesListViewOnClickPopupTextView["url-script-list"] = url_script_list
-  filesListViewOnClickPopupTextView
+  {
+    type: "PopupTextView",
+    title_script_list: title_script_list,
+    url_script_list: url_script_list
+  }
 end
 
 
-##==================================================================================================
-## this frame defines javascript called via on-click in the file ListView
-=begin
-  script_list =
-    [
-      "var pos = eigenFragment.getMapValueInteger(eigenMap, 'position', 0)",
-      "var opt = eigenMap.get('option')",
-      "eigenActivity.showToast('ListView subdir selected: '+ pos + ' - ' + opt)"
-    ]
-
-  #filesListView["on-click"] = javascript(script_list)
-=end
 def javascript(script_list)
-  filesListViewOnClickJavaScript = Hash.new("null")
-  filesListViewOnClickJavaScript["type"] = "JavaScript"
-  filesListViewOnClickJavaScript["script-list"] = script_list
-  filesListViewOnClickJavaScript
+  {
+    type: "ListView",
+    script_list: script_list
+  }
 end
 
 
 ## this frame defines the subdir ListView
 def subdir_list_view(key_list, itemLayout, eigenScript)
-  subdirListView = Hash.new("null")
-  subdirListView["type"] = "ListView"
-  subdirListView["layout-width"] = "match_parent"
-  subdirListView["layout-height"] = "wrap_content"
-  subdirListView["layout-weight"] = "1"
-  subdirListView["key-list"] = key_list
-  subdirListView["eigen-frame"] = itemLayout
-  subdirListView["on-click"] = eigenScript
-  subdirListView
+  {
+    type: "ListView",
+    key_list: key_list,
+    eigen_frame: itemLayout,
+    on_click: eigenScript,
+    layout_width: "match_parent",
+    layout_height: "wrap_content",
+    layout_weight: "1"
+  }
 end
 
 
-##==================================================================================================
 ## this frame defines the file ListView
 def file_list_view(key_list, itemLayout, filesListViewOnClickPopupTextView)
   filesListView = Hash.new("null")
