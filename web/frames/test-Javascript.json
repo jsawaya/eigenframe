@@ -65,12 +65,6 @@
           "popupScreen.showPopupTextWindow(eigenActivity.viewPager)"
         ]
       }
-    },
-    {
-      "name": "PopupScreen",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
     }
 
   ]

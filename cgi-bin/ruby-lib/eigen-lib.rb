@@ -28,7 +28,7 @@ def eigen_directory_listview(dirpath)
 
   url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"]
 
-  subdirListViewOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list)
+  subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", url_script_list)
 
 #  parent_path = File.expand_path("..", Dir.pwd)
 #  parent_path = "#{dirpath}/.."
@@ -36,10 +36,10 @@ def eigen_directory_listview(dirpath)
 
   url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}'"]
 
-  buttonOnClickEigenScreen = launch_eigen_screen(20, "#ffffff", "#222222", url_script_list0)
-  get_parent_directory_button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickEigenScreen)
+  buttonOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", url_script_list0)
+  get_parent_directory_button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickPopupScreen)
 
-  subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickEigenScreen)
+  subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickPopupScreen)
 
   image_url_script_list =
     [
@@ -74,8 +74,7 @@ def eigen_directory_listview(dirpath)
 
   layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
 
-  eigenScreenLayout = eigen_vertical_layout([headerTextView,get_parent_directory_button,horzLine,layout0])
-  eigenScreenLayout
+  eigen_vertical_layout([headerTextView,get_parent_directory_button,horzLine,layout0])
 end
 
 ##==================================================================================================
@@ -192,13 +191,13 @@ end
 
 
 ##==================================================================================================
-## this frame defines how to launch next EigenScreen
-def launch_eigen_screen(text_size, text_color, background_color, url_script_list)
+## this frame defines how to launch a PopupScreen
+def launch_PopupScreen(text_size, text_color, background_color, url_script_list)
   {
-    type: "EigenScreen",
+    type: "PopupScreen",
     layout_width: "match_parent",
     layout_height: "wrap_content",
-    text: "EigenScreen",
+    text: "PopupScreen",
     text_size: text_size,
     text_color: text_color,
     background_color: background_color,

@@ -19,10 +19,10 @@
       "type": "EigenFragment"
     },
     {
-      "name": "EigenScreen",
+      "name": "PopupScreen",
       "type": "EigenFragment",
       "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EigenScreen.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
     },
     {
       "name": "PopupTextView",
@@ -31,8 +31,10 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupTextView.json"
     },
     {
-      "name": "empty",
-      "type": "EigenFragment"
+      "name": "PopupHtmlView",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupHtmlView.json"
     },
     {
       "name": "ImageView",
@@ -41,20 +43,10 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ImageView.json"
     },
     {
-      "name": "empty",
-      "type": "EigenFragment"
-    },
-    {
       "name": "Button",
       "type": "EigenFragment",
       "icon_name": "sawaya_eigenframe_icon.png",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Button.json"
-    },
-    {
-      "name": "Script",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EigenScript.json"
     },
     {
       "name": "CheckBox",
@@ -103,10 +95,6 @@
       "type": "EigenFragment",
       "icon_name": "sawaya_eigenframe_icon.png",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-SelectDialog.json"
-    },
-    {
-      "name": "empty",
-      "type": "EigenFragment"
     },
     {
       "name": "TextView",
