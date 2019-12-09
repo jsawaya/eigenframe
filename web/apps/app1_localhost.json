@@ -8,87 +8,13 @@
   ],
   "tab_list": [
     {
-      "name": "app1 PlayList\nfrom localhost",
+      "name": "app1 PlayList\nfrom github",
       "type": "EigenFragment",
-      "url": "http://localhost:8080/frames/playlist_localhost.json"
+      "url": "http://localhost:8080/frames/playlist.json"
     },
     {
       "name": "empty",
       "type": "EigenFragment"
-    },
-    {
-      "name": "PopupScreen",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-PopupScreen.json"
-    },
-    {
-      "name": "PopupTextView",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-PopupTextView.json"
-    },
-    {
-      "name": "empty",
-      "type": "EigenFragment"
-    },
-    {
-      "name": "ImageView",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-ImageView.json"
-    },
-    {
-      "name": "empty",
-      "type": "EigenFragment"
-    },
-    {
-      "name": "Button",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-Button.json"
-    },
-    {
-      "name": "PopupHtmlView",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-PopupHtmlView.json"
-    },
-    {
-      "name": "CheckBox",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-CheckBox.json"
-    },
-    {
-      "name": "Switch",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-Switch.json"
-    },
-    {
-      "name": "ToggleButton",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-ToggleButton.json"
-    },
-    {
-      "name": "RadioButton",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-RadioButton.json"
-    },
-    {
-      "name": "Spinner",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-Spinner.json"
-    },
-    {
-      "name": "ListView",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-ListView.json"
     },
     {
       "name": "AlertDialog",
@@ -97,14 +23,22 @@
       "url": "http://localhost:8080/frames/test-AlertDialog.json"
     },
     {
-      "name": "SelectDialog",
+      "name": "Button",
       "type": "EigenFragment",
       "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-SelectDialog.json"
+      "url": "http://localhost:8080/frames/test-Button.json"
     },
     {
-      "name": "empty",
-      "type": "EigenFragment"
+      "name": "CheckBox",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-CheckBox.json"
+    },
+    {
+      "name": "EditText",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-EditText.json"
     },
     {
       "name": "TextView",
@@ -119,16 +53,76 @@
       "url": "http://localhost:8080/frames/test-TextView-font.json"
     },
     {
-      "name": "EditText",
-      "type": "EigenFragment",
-      "icon_name": "sawaya_eigenframe_icon.png",
-      "url": "http://localhost:8080/frames/test-EditText.json"
-    },
-    {
       "name": "HtmlView",
       "type": "EigenFragment",
       "icon_name": "sawaya_eigenframe_icon.png",
       "url": "http://localhost:8080/frames/test-HtmlView.json"
+    },
+    {
+      "name": "ImageView",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-ImageView.json"
+    },
+    {
+      "name": "JavaScript",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-Javascript.json"
+    },
+    {
+      "name": "ListView",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-ListView.json"
+    },
+    {
+      "name": "PopupHtmlView",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-PopupHtmlView.json"
+    },
+    {
+      "name": "PopupTextView",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-PopupTextView.json"
+    },
+    {
+      "name": "PopupScreen",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-PopupScreen.json"
+    },
+    {
+      "name": "RadioButton",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-RadioButton.json"
+    },
+    {
+      "name": "SelectDialog",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-SelectDialog.json"
+    },
+    {
+      "name": "Spinner",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-Spinner.json"
+    },
+    {
+      "name": "Switch",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-Switch.json"
+    },
+    {
+      "name": "ToggleButton",
+      "type": "EigenFragment",
+      "icon_name": "sawaya_eigenframe_icon.png",
+      "url": "http://localhost:8080/frames/test-ToggleButton.json"
     },
     {
       "name": "WebView",
