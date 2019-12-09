@@ -58,11 +58,11 @@
           "titleString = eigenActivity.getString(com.sawaya.R.string.recent_changes_title)",
           "java.lang.System.out.println(htmlString)",
           "java.lang.System.out.println(titleString)",
-          "popupScreen = new com.sawaya.eigenframe.PopupScreen(eigenActivity)",
-          "popupScreen.createPopupTextWindow()",
-          "popupScreen.setPopupTextTitle(titleString)",
-          "popupScreen.setPopupHtml(htmlString, null)",
-          "popupScreen.showPopupTextWindow(eigenActivity.viewPager)"
+          "popupTextWindow = new com.sawaya.eigenframe.PopupTextView(eigenActivity)",
+          "popupTextWindow.createPopupTextWindow()",
+          "popupTextWindow.setPopupTextTitle(titleString)",
+          "popupTextWindow.setPopupHtml(htmlString, null)",
+          "popupTextWindow.showPopupTextWindow(eigenActivity.viewPager)"
         ]
       }
     }
