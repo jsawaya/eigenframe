@@ -1,4 +1,7 @@
 #!/usr/bin/sh
+echo git log --branches --not --remotes:
+git log --branches --not --remotes
+
 echo git status:
 git status
 

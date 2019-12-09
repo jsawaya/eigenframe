@@ -1,9 +1,7 @@
 require 'open3'
-require 'cgi'
 require 'json'
 
 
-##==================================================================================================
 def gpg_list_public_keys()
   h = Hash.new("null")
 
@@ -38,7 +36,6 @@ def gpg_list_public_keys()
 end
 
 
-##==================================================================================================
 def gpg_list_private_keys()
   h = Hash.new("null")
 
@@ -74,7 +71,6 @@ def gpg_list_private_keys()
 end
 
 
-##==================================================================================================
 def gpg_list_packets_hash(keyfile)
   h = Hash.new("null")
   h["type"] = "gpg-list-packets"
@@ -133,7 +129,6 @@ def gpg_list_packets_hash(keyfile)
 end
 
 
-##==================================================================================================
 def gpg_decrypt(password, keyfile, outfile)
   #  puts "gpg_decrypt running..."
   h = Hash.new("null")
@@ -178,7 +173,6 @@ def gpg_decrypt(password, keyfile, outfile)
 end
 
 
-##==================================================================================================
 def gpg_import_private_key(keyfile, password)
   puts "calling gpg_import_private_key..."
 
@@ -213,7 +207,6 @@ def gpg_import_private_key(keyfile, password)
 end
 
 
-##==================================================================================================
 def gpg_import_public_key(keyfile)
   puts "calling gpg_import_public_key..."
 
@@ -243,7 +236,6 @@ def gpg_import_public_key(keyfile)
 end
 
 
-##==================================================================================================
 def gpg_export_public_key(keyid)
   h = Hash.new("null")
 
@@ -269,7 +261,6 @@ def gpg_export_public_key(keyid)
 end
 
 
-##==================================================================================================
 def gpg_export_private_key(keyid, password)
   h = Hash.new("null")
 
@@ -297,13 +288,15 @@ def gpg_export_private_key(keyid, password)
 end
 
 
-##==================================================================================================
-# encrypt unsigned, with default output name
+#" --recipient "
+def array_to_string(prefix, keyfile)
+  recipients = ""
+  keyid.each {|x| recipients << "#{prefix}#{x}" }
+end
+
+
+## encrypt unsigned, with default output name
 def gpg_encrypt(keyid, in_file, format)
-  h = Hash.new("null")
-  h["type"] = "gpg-encrypt"
-  h["recipients"] = keyid
-  h["input-filename"] = in_file
 
   if (format == "asc")
     isarmor = "-a"
@@ -313,100 +306,82 @@ def gpg_encrypt(keyid, in_file, format)
     output_filename = "#{in_file}.pgp"
   end
 
-  h["output-filename"] = output_filename
   File.delete output_filename if File.exists? output_filename
 
-  gpg = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/"
+  recipients = array_to_string(" --recipient ", recipients)
 
-  recipients = ""
-  keyid.each {|x| recipients << " --recipient #{x}" }
-
-  cmd = "#{gpg} #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
-  h["command"] = cmd
-
-  puts cmd
+  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/" #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
 
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
-  h["exit_code"] = exit_code
 
   stdout_stringarray = get_io_as_array(stdout)
-  h["stdout"] = stdout_stringarray
-
   stderr_stringarray = get_io_as_array(stderr)
-  h["stderr"] = stderr_stringarray
 
   stdout.close
   stderr.close
 
-  h
+  {
+    type: "gpg_encrypt",
+    recipients: keyid,
+    input_filename: in_file,
+    output_filename: output_filename,
+    command: cmd,
+    exit_code: exit_code,
+    stdout: stdout_stringarray,
+    stderr: stderr_stringarray
+  }
+  
 end
 
 
-##==================================================================================================
 def gpg_sign_detached(keyid, password, in_file)
-  puts "keyid:"
-  p keyid
-
-  puts "password:"
-  p password
-
-  puts "in_file:"
-  p in_file
-
-  gpg = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/"
-  gpg_sec = "#{gpg} --pinentry-mode loopback --batch --yes --passphrase-fd 0"
-
-  cmd = "#{gpg_sec} --local-user #{keyid} --detach-sig #{in_file}"
+  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/ --pinentry-mode loopback --batch --yes --passphrase-fd 0 --local-user #{keyid} --detach-sig #{in_file}"
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
   stdin.puts password
 
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
-  h["exit_code"] = exit_code
 
   stdout_stringarray = get_io_as_array(stdout)
-  h["stdout"] = stdout_stringarray
-
   stderr_stringarray = get_io_as_array(stderr)
-  h["status"] = stderr_stringarray
 
   stdout.close
   stderr.close
 
-  #h.to_json
-  jj h
+  {
+    command: cmd,
+    exit_code: exit_code,
+    stdout: stdout_stringarray,
+    status: stderr_stringarray
+  }
 end
 
 
-##==================================================================================================
 def gpg_verify(keyfile)
-  h = Hash.new("null")
 
-  gpg = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/"
+  filepaths = array_to_string(" ", keyfile)
 
-  filepaths = ""
-  keyfile.each {|x| filepaths << " #{x}" }
-
-  cmd = "#{gpg} --verify #{filepaths}"
+  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/  --verify #{filepaths}"
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
 
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
-  h["exit_code"] = exit_code
 
   stdout_stringarray = get_io_as_array(stdout)
-  h["stdout"] = stdout_stringarray
-
   stderr_stringarray = get_io_as_array(stderr)
-  h["status"] = stderr_stringarray
 
   stdout.close
   stderr.close
 
-  h
+  {
+    command: cmd,
+    exit_code: exit_code,
+    stdout: stdout_stringarray,
+    status: stderr_stringarray
+  }
 end

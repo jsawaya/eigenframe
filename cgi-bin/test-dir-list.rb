@@ -1,10 +1,14 @@
-require 'cgi'
 require 'json'
 require './ruby-lib/app-lib'
 require './ruby-lib/eigen-lib'
 
-dirpath = "/data/data/com.termux/files/home"
+# first arg is the path, default is home dir
+if ARGV.length == 0
+  dirpath = "/data/data/com.termux/files/home"
+else
+  dirpath = ARGV[0]
+end
 
 eigenframe = EigenFrame.new()
-jj eigenframe.eigen_directory_listview(dirpath)
+p eigenframe.eigen_directory_listview(dirpath).to_json.to_s
 
