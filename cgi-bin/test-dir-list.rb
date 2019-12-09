@@ -10,5 +10,5 @@ else
 end
 
 result = EigenFrame.new().eigen_directory_listview(dirpath).to_json.to_s
-p result
+puts result
 
