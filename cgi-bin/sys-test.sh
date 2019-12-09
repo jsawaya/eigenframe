@@ -1,11 +1,18 @@
-#!/bin/sh
 #!/usr/bin/sh
+#!/bin/sh
+
+## /usr/bin is the termux default path for shell
+## /bin/sh is a more standard linux path for shell
+## you can enable the /bin/sh path with following:
+## $ cd /data/data/com.termux/files
+## $ ln -s usr/bin  .
+
 set -f
 
 echo "Content-type: text/plain; charset=iso-8859-1"
 echo
 
-echo CGI/1.0 test scriptx:
+echo CGI/1.0 test script:
 echo
 
 echo argc is $#. argv is "$*".
