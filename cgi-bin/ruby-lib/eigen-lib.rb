@@ -1,5 +1,5 @@
 =begin
-EigenFrame class produces nested hash objects, that are converted to json by cgi-bin scripts,
+EigenFrame class produces nested hash objects, that are converted to json by caller (cgi-bin) scripts,
 and sent back to the EigenFrame app (or browser that invoked a url request).
 See example: cgi-bin/sys-directory-listview.rb
 =end
@@ -40,13 +40,6 @@ def eigen_directory_listview(dirpath)
   get_parent_directory_button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickEigenScreen)
 
   subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickEigenScreen)
-
-  #image_url_script_list =
-  #  [
-  #    "var url0 = 'file://#{dirHashDirectory}/' + eigenMap.get('metadata')",
-  #    "java.lang.System.out.println('imageUrl: '+url0)",
-  #    "url0"
-  #  ]
 
   image_url_script_list =
     [

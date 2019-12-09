@@ -9,6 +9,6 @@ else
   dirpath = ARGV[0]
 end
 
-eigenframe = EigenFrame.new()
-p eigenframe.eigen_directory_listview(dirpath).to_json.to_s
+result = EigenFrame.new().eigen_directory_listview(dirpath).to_json.to_s
+p result
 
