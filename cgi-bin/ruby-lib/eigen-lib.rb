@@ -225,11 +225,11 @@ end
 
 
 ## this frame defines the subdir ListView
-def list_view(key_list, itemLayout, eigenScript)
+def list_view(key_list, item_layout, eigenScript)
   {
     type: "ListView",
     key_list: key_list,
-    eigen_frame: itemLayout,
+    item_layout: item_layout,
     on_click: eigenScript,
     layout_width: "match_parent",
     layout_height: "wrap_content",
