@@ -45,19 +45,20 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   #list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
   #list_contents_url = "http://localhost:1234/list_contents"
-  image_url_script_list =
-    [
-      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('metadata')",
-      "java.lang.System.out.println(url0)",
-      "url0"
-    ]
 
-  image_view = eigen_image_view(image_url_script_list)
+  #image_url_script_list =
+  #  [
+  #    "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('metadata')",
+  #    "java.lang.System.out.println(url0)",
+  #    "url0"
+  #  ]
+
+  #image_view = eigen_image_view(image_url_script_list)
 
   fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
-  fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
-  #fileRowLayout = fileItemTextView
+  #fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
+  fileRowLayout = fileItemTextView
 
   file_item_title_script_list =
     [
