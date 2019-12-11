@@ -8,7 +8,7 @@ See example: cgi-bin/sys-directory-listview.rb
 class EigenFrame
 
 ##==================================================================================================
-def eigen_directory_listview(dirpath)
+def eigen_directory_listview(dirpath, url_host)
   Dir.chdir dirpath
   dirHash = directory_hash()
 
@@ -26,9 +26,11 @@ def eigen_directory_listview(dirpath)
 
   subdirItemLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
-  url_script_list = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"]
+  #url_host = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
+  #url_host = "http://localhost:1234/listdir
+  subdir_url_script = "'#{url_host}?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"
 
-  subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", url_script_list)
+  subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
 #  parent_path = File.expand_path("..", Dir.pwd)
 #  parent_path = "#{dirpath}/.."

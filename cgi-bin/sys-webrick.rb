@@ -53,9 +53,9 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             end
 
             eigenframe = EigenFrame.new()
-            result_json = eigenframe.eigen_directory_listview(dirpath).to_json
-#            puts "result_json:"
-#            p result_json
+
+            url_host = "http://localhost:1234/listdir"
+            result_json = eigenframe.eigen_directory_listview(dirpath, url_host).to_json
             response.body = result_json.to_s + "\n"
 
 

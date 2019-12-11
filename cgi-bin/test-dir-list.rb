@@ -9,6 +9,7 @@ else
   dirpath = ARGV[0]
 end
 
-result = EigenFrame.new().eigen_directory_listview(dirpath).to_json.to_s
+url_host = "http://localhost:1234/listdir"
+result = EigenFrame.new().eigen_directory_listview(dirpath, url_host).to_json.to_s
 puts result
 
