@@ -20,7 +20,7 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   dirHashDirectory = dirHash['directory']
 
-  headerTextView = eigen_text_view(30, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
+  headerTextView = eigen_text_view(24, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
 
   text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
 
@@ -34,12 +34,12 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
 #  parent_path = File.expand_path("..", Dir.pwd)
 #  parent_path = "#{dirpath}/.."
-  parent_path = parent_path(dirpath)
+#  parent_path = parent_path(dirpath)
 
-  url_script_list0 = ["'#{listdir_url}?dirpath=#{parent_path}'"]
+#  url_script_list0 = ["'#{listdir_url}?dirpath=#{parent_path}'"]
 
-  buttonOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", url_script_list0)
-  get_parent_directory_button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickPopupScreen)
+#  buttonOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", url_script_list0)
+#  get_parent_directory_button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickPopupScreen)
 
   subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickPopupScreen)
 
@@ -79,7 +79,8 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
 
-  eigen_vertical_layout([headerTextView,get_parent_directory_button,horzLine,layout0])
+#  eigen_vertical_layout([headerTextView,get_parent_directory_button,horzLine,layout0])
+  eigen_vertical_layout([headerTextView,horzLine,layout0])
 end
 
 ##==================================================================================================
