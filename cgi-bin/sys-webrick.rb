@@ -2,8 +2,8 @@
 
 require "webrick"
 require 'json'
-require './ruby-lib/app-lib'
-require './ruby-lib/eigen-lib'
+require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/app-lib'
+require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/eigen-lib'
 
 =begin
     WEBrick is a Ruby library that makes it easy to build an HTTP server with Ruby.
