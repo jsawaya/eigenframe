@@ -31,8 +31,6 @@ end
 
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
-#        puts "request:"
-#        p request
 
         if request.path == "/exit"
             @server.shutdown
@@ -54,10 +52,22 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
 
             eigenframe = EigenFrame.new()
 
-            url_host = "http://localhost:1234/listdir"
-            result_json = eigenframe.eigen_directory_listview(dirpath, url_host).to_json
+            listdir_url = "http://localhost:1234/listdir"
+            list_contents_url = "http://localhost:1234/list_contents"
+            result_json = eigenframe.eigen_directory_listview(dirpath, listdir_url, list_contents_url).to_json
             response.body = result_json.to_s + "\n"
 
+        elsif request.path == "/list_contents"
+
+            filepath = request.query["filepath"]
+            puts "filepath:"
+            p filepath
+
+            filetype = request.query["filetype"]
+
+            response.status = 200
+            response.content_type = "text/plain"
+            response.body = get_file_as_string(filepath)
 
         elsif request.query["a"] && request.query["b"]
             a = request.query["a"]

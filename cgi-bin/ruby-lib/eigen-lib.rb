@@ -8,7 +8,7 @@ See example: cgi-bin/sys-directory-listview.rb
 class EigenFrame
 
 ##==================================================================================================
-def eigen_directory_listview(dirpath, url_host)
+def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
   Dir.chdir dirpath
   dirHash = directory_hash()
 
@@ -26,9 +26,9 @@ def eigen_directory_listview(dirpath, url_host)
 
   subdirItemLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
-  #url_host = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
-  #url_host = "http://localhost:1234/listdir
-  subdir_url_script = "'#{url_host}?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"
+  #listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
+  #listdir_url = "http://localhost:1234/listdir"
+  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"
 
   subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
@@ -36,16 +36,18 @@ def eigen_directory_listview(dirpath, url_host)
 #  parent_path = "#{dirpath}/.."
   parent_path = parent_path(dirpath)
 
-  url_script_list0 = ["'http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=#{parent_path}'"]
+  url_script_list0 = ["'#{listdir_url}?dirpath=#{parent_path}'"]
 
   buttonOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", url_script_list0)
   get_parent_directory_button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickPopupScreen)
 
   subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickPopupScreen)
 
+  #list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
+  #list_contents_url = "http://localhost:1234/list_contents"
   image_url_script_list =
     [
-      "var url0 = 'http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb?filepath=#{dirpath}' + '/'+ eigenMap.get('metadata')",
+      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('metadata')",
       "java.lang.System.out.println(url0)",
       "url0"
     ]
@@ -66,7 +68,7 @@ def eigen_directory_listview(dirpath, url_host)
 
   file_item_url_script_list =
     [
-      "var url0 = 'http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
       "java.lang.System.out.println(url0)",
       "url0"
     ]
