@@ -30,7 +30,15 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
   #listdir_url = "http://localhost:1234/listdir"
   subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"
 
-  subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
+  #subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
+
+  subdir_ssh_list =
+  [
+    "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+    "ruby test-dir-list.rb /data/data/com.termux/files/home"
+  ]
+
+  subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", subdir_ssh_list)
 
 #  parent_path = File.expand_path("..", Dir.pwd)
 #  parent_path = "#{dirpath}/.."
@@ -196,8 +204,7 @@ def eigen_image_view(url_script_list)
 end
 
 
-##==================================================================================================
-## this frame defines how to launch a PopupScreen
+## this frame defines how to launch a PopupScreen using a url_script_list
 def launch_PopupScreen(text_size, text_color, background_color, url_script_list)
   {
     type: "PopupScreen",
@@ -208,6 +215,39 @@ def launch_PopupScreen(text_size, text_color, background_color, url_script_list)
     text_color: text_color,
     background_color: background_color,
     url_script_list: url_script_list
+  }
+end
+
+## this frame defines how to launch a PopupScreen using a ssh_list
+def launch_PopupScreen_SecureShell(text_size, text_color, background_color, ssh_list)
+  {
+     type: "PopupScreen",
+     layout_width: "match_parent",
+     layout_height: "wrap_content",
+     text_size: "20",
+     text_color: "#ffffff",
+     background_color: "#111111",
+     text: "File system explorer",
+     icon: {
+          name: "info.jpg",
+          location: "left"
+        },
+        component_list: [
+          {
+            type: "TextView",
+            layout_width: "match_parent",
+            layout_height: "wrap_content",
+            text: "SecureShell calls ruby to generate the following components:",
+            text_size: "20",
+            gravity: "CENTER_HORIZONTAL, CENTER_VERTICAL",
+            text_color: "#ffffff"
+          },
+          {
+            type: "SecureShell",
+            is_eigen_response: true,
+            ssh_list: ssh_list
+          }
+        ]
   }
 end
 
