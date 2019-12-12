@@ -8,7 +8,7 @@ See example: cgi-bin/sys-directory-listview.rb
 class EigenFrame
 
 def eigen_directory_listview_http_cgi(dirpath)
-  dirHash = directory_hash(dirpath)
+  dirHash = set_directory_hash(dirpath)
   dirHashDirectory = dirHash['directory']
 
   listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
@@ -38,7 +38,7 @@ end
 
 
 def eigen_directory_listview_http_ruby(dirpath)
-  dirHash = directory_hash(dirpath)
+  dirHash = set_directory_hash(dirpath)
   dirHashDirectory = dirHash['directory']
 
   listdir_url = "http://localhost:1234/listdir"
@@ -68,7 +68,7 @@ end
 
 
 def eigen_directory_listview_ssh(dirpath)
-  dirHash = directory_hash(dirpath)
+  dirHash = set_directory_hash(dirpath)
   dirHashDirectory = dirHash['directory']
 
   subdir_ssh_script = "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby test-dir-list.rb #{dirHashDirectory}/' + eigenMap.get('option')"

@@ -70,7 +70,7 @@ end
 
 
 ## get directory_hash for specified dirpath
-def directory_hash(dirpath)
+def set_directory_hash(dirpath)
   Dir.chdir dirpath
   directory_hash()
 end
