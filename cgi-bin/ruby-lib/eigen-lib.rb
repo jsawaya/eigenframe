@@ -34,8 +34,7 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   subdir_ssh_script_list =
   [
-    "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin'",
-    "'ruby test-dir-list.rb #{dirHashDirectory}/' + eigenMap.get('option')"
+    "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby test-dir-list.rb #{dirHashDirectory}/' + eigenMap.get('option')"
   ]
 
   subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", subdir_ssh_script_list)
