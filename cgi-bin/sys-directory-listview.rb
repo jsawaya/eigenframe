@@ -19,5 +19,4 @@ eigenframe = EigenFrame.new()
 listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
 list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
 
-jj eigenframe.eigen_directory_listview(dirpath, listdir_url, list_contents_url)
-
+puts eigenframe.eigen_directory_listview(dirpath, listdir_url, list_contents_url).to_json.to_s
