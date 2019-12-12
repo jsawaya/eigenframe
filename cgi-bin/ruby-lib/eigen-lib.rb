@@ -28,17 +28,17 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   #listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
   #listdir_url = "http://localhost:1234/listdir"
-  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}' + '/'+ eigenMap.get('option')"
+  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenMap.get('option')"
 
   #subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
-  subdir_ssh_list =
+  subdir_ssh_script_list =
   [
-    "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-    "ruby test-dir-list.rb /data/data/com.termux/files/home"
+    "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin'",
+    "'ruby test-dir-list.rb #{dirHashDirectory}/' + eigenMap.get('option')"
   ]
 
-  subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", subdir_ssh_list)
+  subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", subdir_ssh_script_list)
 
 #  parent_path = File.expand_path("..", Dir.pwd)
 #  parent_path = "#{dirpath}/.."
@@ -56,7 +56,7 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   #image_url_script_list =
   #  [
-  #    "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('metadata')",
+  #    "var url0 = '#{list_contents_url}?filepath=#{dirpath}/' + eigenMap.get('metadata')",
   #    "java.lang.System.out.println(url0)",
   #    "url0"
   #  ]
@@ -218,8 +218,8 @@ def launch_PopupScreen(text_size, text_color, background_color, url_script_list)
   }
 end
 
-## this frame defines how to launch a PopupScreen using a ssh_list
-def launch_PopupScreen_SecureShell(text_size, text_color, background_color, ssh_list)
+## this frame defines how to launch a PopupScreen using a ssh_script_list
+def launch_PopupScreen_SecureShell(text_size, text_color, background_color, ssh_script_list)
   {
      type: "PopupScreen",
      layout_width: "match_parent",
@@ -245,7 +245,7 @@ def launch_PopupScreen_SecureShell(text_size, text_color, background_color, ssh_
           {
             type: "SecureShell",
             is_eigen_response: true,
-            ssh_list: ssh_list
+            ssh_script_list: ssh_script_list
           }
         ]
   }
