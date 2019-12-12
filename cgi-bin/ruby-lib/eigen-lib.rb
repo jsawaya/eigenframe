@@ -97,9 +97,6 @@ end
 
 ## new
 def directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewOnClickPopupTextView)
-  Dir.chdir dirpath
-  dirHash = directory_hash()
-
   padding = eigen_padding(5, 5)
   margin = eigen_margin(10, 10)
   infoLeftIcon = eigen_icon("info.jpg", "left")
