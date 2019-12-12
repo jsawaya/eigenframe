@@ -69,7 +69,14 @@ def sys_output_frame_format(h, frame, format)
 end
 
 
-##==================================================================================================
+## get directory_hash for specified dirpath
+def directory_hash(dirpath)
+  Dir.chdir dirpath
+  directory_hash()
+end
+
+
+## get directory_hash for unspecified current directory
 def directory_hash()
   files = Dir.entries "."
   pwd = Dir.pwd

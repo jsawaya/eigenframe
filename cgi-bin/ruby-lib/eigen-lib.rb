@@ -7,6 +7,126 @@ See example: cgi-bin/sys-directory-listview.rb
 
 class EigenFrame
 
+def eigen_directory_listview_http_cgi(dirpath)
+  dirHash = directory_hash(dirpath)
+  dirHashDirectory = dirHash['directory']
+
+  listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
+  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenMap.get('option')"
+  subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
+
+  list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
+
+  file_item_title_script_list =
+    [
+      "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(title0)",
+      "title0"
+    ]
+
+  file_item_url_script_list =
+    [
+      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(url0)",
+      "url0"
+    ]
+
+  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
+
+  directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewOnClickPopupTextView)
+end
+
+
+def eigen_directory_listview_http_ruby(dirpath)
+  dirHash = directory_hash(dirpath)
+  dirHashDirectory = dirHash['directory']
+
+  listdir_url = "http://localhost:1234/listdir"
+  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenMap.get('option')"
+  subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
+
+  list_contents_url = "http://localhost:1234/list_contents"
+
+  file_item_title_script_list =
+    [
+      "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(title0)",
+      "title0"
+    ]
+
+  file_item_url_script_list =
+    [
+      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(url0)",
+      "url0"
+    ]
+
+  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
+
+  directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewOnClickPopupTextView)
+end
+
+
+def eigen_directory_listview_ssh(dirpath)
+  dirHash = directory_hash(dirpath)
+  dirHashDirectory = dirHash['directory']
+
+  subdir_ssh_script = "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby test-dir-list.rb #{dirHashDirectory}/' + eigenMap.get('option')"
+  subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", [subdir_ssh_script])
+
+  file_item_title_script_list =
+    [
+      "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(title0)",
+      "title0"
+    ]
+
+
+  file_item_ssh_script_list =
+    [
+      "var filepath0 = '#{dirpath}/' + eigenMap.get('option')",
+      "java.lang.System.out.println(filepath0)",
+      "'puts get_file_as_string(' + filepath0 + ')'"
+    ]
+
+  filesListViewOnClickPopupTextView = popup_textview_from_ssh_script(file_item_title_script_list, file_item_ssh_script_list)
+
+  directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewOnClickPopupTextView)
+end
+
+
+## new
+def directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewOnClickPopupTextView)
+  Dir.chdir dirpath
+  dirHash = directory_hash()
+
+  padding = eigen_padding(5, 5)
+  margin = eigen_margin(10, 10)
+  infoLeftIcon = eigen_icon("info.jpg", "left")
+  horzLine = eigen_horizontal_line(2, "#00ff00")
+  vertLine = eigen_vertical_line(2, "#00ff00")
+
+  dirHashDirectory = dirHash['directory']
+
+  headerTextView = eigen_text_view(24, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
+
+  text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
+
+  subdirRowLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
+
+  subdirListView = list_view(dirHash["subdir"], subdirRowLayout, subdirListViewOnClickPopupScreen)
+
+  fileRowLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
+
+  filesListView = list_view(dirHash["files"], fileRowLayout, filesListViewOnClickPopupTextView)
+
+  layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
+
+  eigen_vertical_layout([headerTextView,horzLine,layout0])
+end
+
+
+
 ##==================================================================================================
 def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
   Dir.chdir dirpath
