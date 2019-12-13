@@ -15,14 +15,14 @@ def eigen_directory_listview_http_cgi(dirpath)
   subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenMap.get('option')"
   subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
-  list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
-
   file_item_title_script_list =
     [
       "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
       "java.lang.System.out.println(title0)",
       "title0"
     ]
+
+  list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
 
   file_item_url_script_list =
     [
@@ -45,8 +45,6 @@ def eigen_directory_listview_http_ruby(dirpath)
   subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenMap.get('option')"
   subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
-  list_contents_url = "http://localhost:1234/list_contents"
-
   file_item_title_script_list =
     [
       "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
@@ -54,6 +52,7 @@ def eigen_directory_listview_http_ruby(dirpath)
       "title0"
     ]
 
+  list_contents_url = "http://localhost:1234/list_contents"
   file_item_url_script_list =
     [
       "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
@@ -82,26 +81,26 @@ def eigen_directory_listview_ssh(dirpath)
     ]
 
 
-#  file_item_ssh_script_list =
-#    [
-#      "var filepath0 = '#{dirpath}/' + eigenMap.get('option')",
-#      "java.lang.System.out.println(filepath0)",
-#      "'puts get_file_as_string(' + filepath0 + ')'"
-#    ]
-
-#  filesListViewOnClickPopupTextView = popup_textview_from_ssh_script(file_item_title_script_list, file_item_ssh_script_list)
-
-
-  list_contents_url = "http://localhost:1234/list_contents"
-
-  file_item_url_script_list =
+  file_item_ssh_script_list =
     [
-      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
-      "java.lang.System.out.println(url0)",
-      "url0"
+      "var filepath0 = '#{dirpath}/' + eigenMap.get('option')",
+      "java.lang.System.out.println(filepath0)",
+      "'puts get_file_as_string(' + filepath0 + ')'"
     ]
 
-  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
+  filesListViewOnClickPopupTextView = popup_text_view_ssh_script_list(file_item_title_script_list, file_item_ssh_script_list)
+
+
+#  list_contents_url = "http://localhost:1234/list_contents"
+
+#  file_item_url_script_list =
+#    [
+#      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+#      "java.lang.System.out.println(url0)",
+#      "url0"
+#    ]
+
+#  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
 
   directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewOnClickPopupTextView)
 end
@@ -385,10 +384,21 @@ def popup_text_view(title_script_list, url_script_list)
   {
     type: "PopupTextView",
     title_script_list: title_script_list,
+    font: "font/space-mono/SpaceMono-Regular.ttf",
     url_script_list: url_script_list
   }
 end
 
+
+## this frame defines PopupTextView called via on_click in the file ListView
+def popup_text_view_ssh_script_list(title_script_list, ssh_script_list)
+  {
+    type: "PopupTextView",
+    title_script_list: title_script_list,
+    font: "font/space-mono/SpaceMono-Regular.ttf",
+    ssh_script_list: ssh_script_list
+  }
+end
 
 def javascript(script_list)
   {
