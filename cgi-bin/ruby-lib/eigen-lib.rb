@@ -82,14 +82,24 @@ def eigen_directory_listview_ssh(dirpath)
     ]
 
 
-  file_item_ssh_script_list =
+#  file_item_ssh_script_list =
+#    [
+#      "var filepath0 = '#{dirpath}/' + eigenMap.get('option')",
+#      "java.lang.System.out.println(filepath0)",
+#      "'puts get_file_as_string(' + filepath0 + ')'"
+#    ]
+
+#  filesListViewOnClickPopupTextView = popup_textview_from_ssh_script(file_item_title_script_list, file_item_ssh_script_list)
+
+
+  file_item_url_script_list =
     [
-      "var filepath0 = '#{dirpath}/' + eigenMap.get('option')",
-      "java.lang.System.out.println(filepath0)",
-      "'puts get_file_as_string(' + filepath0 + ')'"
+      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "java.lang.System.out.println(url0)",
+      "url0"
     ]
 
-  filesListViewOnClickPopupTextView = popup_textview_from_ssh_script(file_item_title_script_list, file_item_ssh_script_list)
+  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
 
   directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewOnClickPopupTextView)
 end
