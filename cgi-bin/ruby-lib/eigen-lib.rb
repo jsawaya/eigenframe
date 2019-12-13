@@ -92,6 +92,8 @@ def eigen_directory_listview_ssh(dirpath)
 #  filesListViewOnClickPopupTextView = popup_textview_from_ssh_script(file_item_title_script_list, file_item_ssh_script_list)
 
 
+  list_contents_url = "http://localhost:1234/list_contents"
+
   file_item_url_script_list =
     [
       "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
