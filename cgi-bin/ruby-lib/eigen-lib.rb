@@ -84,8 +84,9 @@ def eigen_directory_listview_ssh(dirpath)
   file_item_ssh_script_list =
     [
       "var filepath0 = '#{dirpath}/' + eigenMap.get('option')",
-      "java.lang.System.out.println(filepath0)",
-      "'puts get_file_as_string(' + filepath0 + ')'"
+      "java.lang.System.out.println('js filepath0: '+filepath0)",
+      "var ssh_cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents(' + filepath0 + ')'"
+      "ssh_cmd"
     ]
 
   filesListViewOnClickPopupTextView = popup_text_view_ssh_script_list(file_item_title_script_list, file_item_ssh_script_list)
