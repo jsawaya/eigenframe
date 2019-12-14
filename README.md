@@ -3,11 +3,6 @@
 * Open frames via url request 
 * Open frames via ssh request
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
 ```json
 {
   "type": "LinearLayout",
@@ -17,23 +12,10 @@ alert(s);
   "layout_width": "match_parent",
   "layout_height": "wrap_content",
   "component_list": [
-    {
-      "type": "HtmlView",
-      \...
-    }
-  ]
-}
 ```
+Here you have all the components of this LinearLayout...
+```json
 
-```javascript
-{
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
-  "component_list": [
     {
       "type": "HtmlView",
       "layout_width": "match_parent",
