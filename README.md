@@ -1,12 +1,44 @@
 # EigenFrame
 ## to build dynamic systems for Android
 
-EigenFrame is like a web client, it starts with a url request, but instead of getting a simple web page, EigenFrame gets specifications to dynamically build a custom application, layout user interface dialogs, control access to camera and sensors, and integrate many other programmable features. Way more than just a browser window, it provides several programmable scripting interfaces, including an embedded javascript interpreter, and a secure shell (ssh) client to call application services (like: bash, ruby, python, prolog, gpg, etc.)
+EigenFrame is like a web client, it starts with a url request, but instead of getting a simple web page, 
+EigenFrame gets specifications to dynamically build a custom application, layout user interface dialogs, 
+control access to camera and sensors, and integrate many other programmable features. 
 
+Way more than just a browser window, it provides several programmable scripting interfaces, 
+including an embedded javascript interpreter, and a secure shell (ssh) client to call application services 
+(like: bash, ruby, python, prolog, gpg, etc.)
 
 * Open frames via url request 
 * Open frames via ssh request
 
+
+The home-url is defined in this eigenframe shared directory file:
+> file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/home-url.txt
+
+This home-url file contains the following default app-url:
+> file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json
+
+As a simple example, app.json contains the following:
+```json
+{
+  "is_secure_window": "true",
+  "request_permissions": [
+    "android.permission.CAMERA",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+    "android.permission.INTERNET"
+  ],
+  "tab_list": [
+    {
+      "icon_name": "ic_launcher.png",
+      "type": "EigenFragment",
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/playlist.json"
+    }
+  ]
+}
+
+```
+For example an app-spec might start with a vertical scrollable LinearLayout 
 ```json
 {
   "type": "LinearLayout",
@@ -17,7 +49,7 @@ EigenFrame is like a web client, it starts with a url request, but instead of ge
   "layout_height": "wrap_content",
   "component_list": [
 ```
-Here you have all the components of this LinearLayout...
+Next are the components of this LinearLayout 
 ```json
 
     {
