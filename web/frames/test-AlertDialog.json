@@ -11,7 +11,7 @@
       "layout_height": "wrap_content",
       "text": "Test AlertDialog",
       "text_size": "20",
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "gravity": "center",
       "text_color": "#ffffff",
       "icon": {
         "name": "sawaya_eigenframe_icon.png",
