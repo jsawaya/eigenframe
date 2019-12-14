@@ -1,4 +1,8 @@
-# eigenframe
+# EigenFrame
+## to build dynamic systems for Android
+
+EigenFrame is like a web client, it starts with a url request, but instead of getting a simple web page, EigenFrame gets specifications to dynamically build a custom application, layout user interface dialogs, control access to camera and sensors, and integrate many other programmable features. Way more than just a browser window, it provides several programmable scripting interfaces, including an embedded javascript interpreter, and a secure shell (ssh) client to call application services (like: bash, ruby, python, prolog, gpg, etc.)
+
 
 * Open frames via url request 
 * Open frames via ssh request
