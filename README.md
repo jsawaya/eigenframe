@@ -77,4 +77,30 @@ Here are the types of component specifications:
 
 Component type | Description | Examples
 -------------- | ----------- | --------  
-EigenFragment  | Found only in app-level tab_list specifications | [Examples](./web/apps)
+EigenFragment  | inline component that represents a tab, found only in app-level tab_list specifications | [examples](./web/apps)
+LinearLayout  | inline component that is a collection of other components | [examples](./web/frames)
+RelativeLayout | not implemented yet |
+ConstraintLayout | not implemented yet |
+TextView  | inline component that shows plain text | [examples](./web/frames), 
+HtmlView  | inline component that shows html, icons, and simple web-links | [examples](./web/frames), 
+ImageView  | inline component that shows images and icons | [examples](./web/frames), 
+WebView  | inline component that shows web page - javascript capable  | [examples](./web/frames), 
+HorizontalLine | inline component that shows a horizontal line (like <hr/> html) to separate components in a vertical LinearLayout |  
+VerticalLine | inline component that shows a vertical line to separate components in a horizontal LinearLayout |  
+EditText | inline component that represents a string value, shows an editable text area |
+ListView | inline component that represents a collection of selectable options, with dynamic row layout |
+Button  | inline component that shows plain text and has an "on_click" callback attribute  | [examples](./web/frames), 
+RadioButton | inline component that represents a selection index, shows as a multiple-choice option-list | 
+CheckBox | inline component that represents a integer value [0, 1], shows as a small box with or without a check mark |  
+Switch | inline component that represents a integer value [0, 1], shows as a small switch [off, on] |  
+ToggleButton | inline component that represents a integer value [0, 1], shows as bi-modal button label |  
+Spinner | inline component that represents a selection index, shows as a popup multiple-choice option-list |   
+SelectDialog | dynamic component that represents a selection index, shows as a multiple-choice option-list | 
+AlertDialog | dynamic component creates a popup option-list and has an "on_click" callback attribute  | [examples](./web/frames), 
+PopupHtmlView | dynamic component that shows a small transient html window | 
+PopupTextView | dynamic component that shows a small transient text window | 
+PopupScreen | dynamic component that shows a fullscreen window, and represents a collection of components | 
+JavaScript | dynamic component calls embedded javascript  | [examples](./web/frames), 
+SecureShell | dynamic component represents ssh commands |
+UrlRequest | dynamic component represents url request - not fully tested |
+Variable | not implemented yet |
