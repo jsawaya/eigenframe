@@ -1,17 +1,33 @@
 # EigenFrame
-## to build dynamic systems for Android
+## Platform for dynamic systems on Android
 
-EigenFrame is like a web client, it starts with a url request, but instead of getting a simple web page, 
-EigenFrame gets specifications to dynamically build a custom application, layout user interface dialogs, 
-control access to camera and sensors, and integrate many other programmable features. 
+EigenFrame is similar to a web-browser in that it starts with a url request.  
 
-Way more than just a browser window, it provides several programmable scripting interfaces, 
-including an embedded javascript interpreter, and a secure shell (ssh) client to call application services 
-(like: bash, ruby, python, prolog, gpg, etc.)
+Instead of getting a simple web page, EigenFrame gets the specifications to dynamically build a custom application
+including Android user-interface components and provides access to available camera hardware and device sensors.  
 
-* Open frames via url request 
-* Open frames via ssh request
+EigenFrame is openly programmable. 
 
+More than just a web-browser, EigenFrame enables programmable scripting interfaces including
+an embedded javascript interpreter with access to internal Android classes, methods and properties.  
+
+In contrast, web-browsers have very limited scripting access to the host mobile device, from inside a browser window.  
+
+EigenFrame includes a secure-shell client capability to interface with a local Termux app (with openssh)
+to run your application scripts (bash, git, ruby, perl, python, prolog, gpg ...) to implement dynamic systems.
+
+With EigenFrame you can also use cloud-based micro-services through asynchronous url/ssh requests to generate
+dynamic EigenFrame screen components with secure system integration for a truly extensible architecture.
+
+## Initial app-url request
+
+EigenFrame starts with a url request to retrieve the application-level security specifications, 
+permissions and tab-fragments.
+
+There are 3 ways to perform the initial app-url request:
+* launch the EigenFrame app with a default home-url
+* use an EigenFrame short-cut (which contains the app-url)
+* use one EigenFrame app to launch another EigenFrame app (and another). 
 
 The home-url is defined in this eigenframe shared directory file:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/home-url.txt
@@ -36,8 +52,9 @@ As a simple example, app.json contains the following:
     }
   ]
 }
-
 ```
+
+
 For example an app-spec might start with a vertical scrollable LinearLayout 
 ```json
 {
