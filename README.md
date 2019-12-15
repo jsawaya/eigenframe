@@ -14,28 +14,30 @@ an embedded javascript interpreter with access to internal Android classes, meth
 In contrast, web-browsers have very limited scripting access to the host mobile device, from inside a browser window.  
 
 EigenFrame includes a secure-shell client capability to interface with a local Termux app (with openssh)
-to run your application scripts (bash, git, ruby, perl, python, prolog, gpg ...) to implement dynamic systems.
+to run your own application scripts (bash, git, ruby, perl, python, prolog, gpg ...).
 
-With EigenFrame you can also use cloud-based micro-services through asynchronous url/ssh requests to generate
-dynamic EigenFrame screen components with secure system integration for a truly extensible architecture.
+You can also use cloud-based micro-services through asynchronous url/ssh requests to generate
+dynamic EigenFrame screen components for secure system integration and a truly extensible architecture.
+
+EigenFrame specifications are represented in JSON format.
 
 ## Initial app-url request
 
 EigenFrame starts with a url request to retrieve the application-level security specifications, 
-permissions and tab-fragments.
+permissions and tab-fragments.  
 
 There are 3 ways to perform the initial app-url request:
 * launch the EigenFrame app with a default home-url
 * use an EigenFrame short-cut (which contains the app-url)
-* use one EigenFrame app to launch another EigenFrame app (and another). 
+* use one EigenFrame app to launch another EigenFrame app (and then another)
 
 The home-url is defined in this eigenframe shared directory file:
-> file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/home-url.txt
+> /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/home-url.txt
 
 This home-url file contains the following default app-url:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json
 
-As a simple example, app.json contains the following:
+As a simple example, this app-url returns the following specifications:
 ```json
 {
   "is_secure_window": "true",
@@ -53,9 +55,24 @@ As a simple example, app.json contains the following:
   ]
 }
 ```
+Android activities are typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
 
+Tabs are an easy way to select which fragments are currently active, although your app designs may 
+choose to hide this particular feature by using EigenScreen specifications.
 
-For example an app-spec might start with a vertical scrollable LinearLayout 
+The tab_list can define any number of fragments that load as you select them.  
+
+Tabs can either be selected with the user interface, or programmatically selected.
+
+Tabs can have a "name" attribute and/or an "icon_name" attribute to define the tab label.  
+
+Tabs of "type": "EigenFragment" have the "url" attribute to load components dynamically. 
+
+## Example EigenFragment (playlist.json)
+
+A fragment can layout components below the tab selection area, or create new screens.
+
+In this example we create a vertical scrollable LinearLayout 
 ```json
 {
   "type": "LinearLayout",
@@ -66,9 +83,8 @@ For example an app-spec might start with a vertical scrollable LinearLayout
   "layout_height": "wrap_content",
   "component_list": [
 ```
-Next are the components of this LinearLayout 
+define an "HtmlView" component that shows the EigenFrame logo and header 
 ```json
-
     {
       "type": "HtmlView",
       "layout_width": "match_parent",
@@ -83,11 +99,17 @@ Next are the components of this LinearLayout
         "<h4><i>Visit https://github.com/jsawaya/eigenframe repository for more info </i></h4>"
       ]
     },
+```
+define an "HorizontalLine" component
+```json
     {
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
     },
+```
+define an "TextView" component
+```json
     {
       "type": "TextView",
       "layout_width": "wrap_content",
@@ -97,6 +119,9 @@ Next are the components of this LinearLayout
       "text": "Set Screen Orientation:",
       "gravity": "left"
     },
+```
+define an "Switch" component
+```json
     {
       "type": "Switch",
       "id": 321,
@@ -120,6 +145,9 @@ Next are the components of this LinearLayout
         ]
       }
     },
+```
+define a horizontal LinearLayout
+```json
     {
       "type": "LinearLayout",
       "orientation": "horizontal",
@@ -127,6 +155,9 @@ Next are the components of this LinearLayout
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "component_list": [
+```
+that contains a few buttons
+```json
         {
           "type": "Button",
           "layout_width": "wrap_content",
