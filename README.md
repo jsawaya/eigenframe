@@ -58,7 +58,7 @@ As a simple example, this app-url returns the following specifications:
 Android activities are typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
 
 Tabs are an easy way to select which fragments are currently active, although your app designs may 
-choose to hide this particular feature by using EigenScreen specifications.
+choose to hide this particular feature by using PopupScreen components.
 
 The tab_list can define any number of fragments that load as you select them.  
 
@@ -77,30 +77,32 @@ Here are the types of component specifications:
 
 Component type | Description | Examples
 -------------- | ----------- | --------  
-EigenFragment  | inline component that represents a tab, found only in app-level tab_list specifications | [examples](./web/apps)
-LinearLayout  | inline component that is a collection of other components | [examples](./web/frames)
+EigenFrame  | component that represents a top-level application specification | [examples](./web/apps)
+EigenFragment  | component that represents each tab/fragment in an application | [examples](./web/apps)
+PopupScreen | component that represents a collection of components as a fullscreen window | 
+[LinearLayout](./web/docs/LinearLayout.md)  | sequence of components arranged vertically or horizontally | [examples](./web/frames)
 RelativeLayout | not implemented yet |
 ConstraintLayout | not implemented yet |
-TextView  | inline component that shows plain text | [examples](./web/frames), 
-HtmlView  | inline component that shows html, icons, and simple web-links | [examples](./web/frames), 
-ImageView  | inline component that shows images and icons | [examples](./web/frames), 
-WebView  | inline component that shows web page - javascript capable  | [examples](./web/frames), 
-HorizontalLine | inline component that shows a horizontal line (like <hr/> html) to separate components in a vertical LinearLayout |  
-VerticalLine | inline component that shows a vertical line to separate components in a horizontal LinearLayout |  
-EditText | inline component that represents a string value, shows an editable text area |
-ListView | inline component that represents a collection of selectable options, with dynamic row layout |
-Button  | inline component that shows plain text and has an "on_click" callback attribute  | [examples](./web/frames), 
-RadioButton | inline component that represents a selection index, shows as a multiple-choice option-list | 
-CheckBox | inline component that represents a integer value [0, 1], shows as a small box with or without a check mark |  
-Switch | inline component that represents a integer value [0, 1], shows as a small switch [off, on] |  
-ToggleButton | inline component that represents a integer value [0, 1], shows as bi-modal button label |  
-Spinner | inline component that represents a selection index, shows as a popup multiple-choice option-list |   
-SelectDialog | dynamic component that represents a selection index, shows as a multiple-choice option-list | 
-AlertDialog | dynamic component creates a popup option-list and has an "on_click" callback attribute  | [examples](./web/frames), 
-PopupHtmlView | dynamic component that shows a small transient html window | 
-PopupTextView | dynamic component that shows a small transient text window | 
-PopupScreen | dynamic component that shows a fullscreen window, and represents a collection of components | 
-JavaScript | dynamic component calls embedded javascript  | [examples](./web/frames), 
-SecureShell | dynamic component represents ssh commands |
-UrlRequest | dynamic component represents url request - not fully tested |
-Variable | not implemented yet |
+TextView  | component shows plain text | [examples](./web/frames), 
+HtmlView  | component shows simple html, internal-icons, and simple web-links | [examples](./web/frames), 
+ImageView  | component shows images and external-icons | [examples](./web/frames), 
+WebView  | component shows elaborate html, and url web-page  - javascript capable  | [examples](./web/frames), 
+HorizontalLine | component that shows a horizontal line <hr/> to separate components in vertical LinearLayout |  
+VerticalLine | component that shows a vertical line to separate components in horizontal LinearLayout |  
+EditText | component that represents a string value, shows an editable text area |
+Button  | component that shows plain text and has an "on_click" callback attribute  | [examples](./web/frames), 
+ToggleButton | component that represents a integer value [0, 1], shows as bi-modal button label |  
+CheckBox | component that represents a small box with or without a check mark, with integer value [0, 1] |  
+Switch | component that represents a  small switch [off, on] with integer value [0, 1] |  
+RadioButton | component that represents a multiple-choice option-list, and a selected index | 
+Spinner | component that represents a popup multiple-choice option-list, and a selection index |   
+ListView | component that represents a multiple-choice option-list, with a row layout and a selected index |
+SelectDialog | component that represents a popup multiple-choice option-list selection index| 
+AlertDialog | component represents a popup multiple-choice option-list | [examples](./web/frames), 
+
+PopupHtmlView | component that shows a small transient popup html window | 
+PopupTextView | component that shows a small transient popup text window | 
+JavaScript | component calls embedded javascript  | [examples](./web/frames), 
+SecureShell | component represents ssh commands |
+UrlRequest | component represents url request - not fully tested |
+Variable | component, not implemented yet |
