@@ -77,32 +77,31 @@ Here are the types of component specifications:
 
 Component type | Description | Examples
 -------------- | ----------- | --------  
-EigenFrame  | component that represents a top-level application specification | [examples](./web/apps)
-EigenFragment  | component that represents each tab/fragment in an application | [examples](./web/apps)
-PopupScreen | component that represents a collection of components as a fullscreen window | 
-[LinearLayout](./web/docs/LinearLayout.md)  | sequence of components arranged vertically or horizontally | [examples](./web/frames)
-RelativeLayout | not implemented yet |
-ConstraintLayout | not implemented yet |
-TextView  | component shows plain text | [examples](./web/frames), 
-HtmlView  | component shows simple html, internal-icons, and simple web-links | [examples](./web/frames), 
-ImageView  | component shows images and external-icons | [examples](./web/frames), 
-WebView  | component shows elaborate html, and url web-page  - javascript capable  | [examples](./web/frames), 
-HorizontalLine | component that shows a horizontal line <hr/> to separate components in vertical LinearLayout |  
-VerticalLine | component that shows a vertical line to separate components in horizontal LinearLayout |  
-EditText | component that represents a string value, shows an editable text area |
-Button  | component that shows plain text and has an "on_click" callback attribute  | [examples](./web/frames), 
-ToggleButton | component that represents a integer value [0, 1], shows as bi-modal button label |  
-CheckBox | component that represents a small box with or without a check mark, with integer value [0, 1] |  
-Switch | component that represents a  small switch [off, on] with integer value [0, 1] |  
-RadioButton | component that represents a multiple-choice option-list, and a selected index | 
-Spinner | component that represents a popup multiple-choice option-list, and a selection index |   
-ListView | component that represents a multiple-choice option-list, with a row layout and a selected index |
-SelectDialog | component that represents a popup multiple-choice option-list selection index| 
-AlertDialog | component represents a popup multiple-choice option-list | [examples](./web/frames), 
-
-PopupHtmlView | component that shows a small transient popup html window | 
-PopupTextView | component that shows a small transient popup text window | 
-JavaScript | component calls embedded javascript  | [examples](./web/frames), 
-SecureShell | component represents ssh commands |
-UrlRequest | component represents url request - not fully tested |
-Variable | component, not implemented yet |
+[EigenFrame](./web/docs/EigenFrame.md)  | represents a top-level application specification | [examples](./web/apps/app1.json)
+[EigenFragment](./web/docs/EigenFragment.md)  | represents each tab/fragment in an application | [examples](./web/apps/app1.json)
+[PopupScreen](./web/docs/PopupScreen.md) | represents a collection of components in a fullscreen window | [example](./web/frames/test-PopupScreen.json) 
+[LinearLayout](./web/docs/LinearLayout.md)  | sequence of components arranged vertically or horizontally | [example](./web/frames/playlist.json) 
+[RelativeLayout] | not implemented yet |
+[ConstraintLayout] | not implemented yet |
+[TextView](./web/docs/TextView.md)  | component shows plain text | [example](./web/frames/test-TextView.json) 
+[HtmlView](./web/docs/HtmlView.md)  | component shows simple html, internal-icons, and simple web-links | [example](./web/frames/test-HtmlView.json) 
+[ImageView](./web/docs/ImageView.md)  | component shows images and external-icons | [example](./web/frames/test-ImageView.json) 
+[WebView](./web/docs/WebView.md)  | component shows elaborate html, and url web-page  - javascript capable  | [example](./web/frames/test-WebView.json) 
+[HorizontalLine](./web/docs/HorizontalLine.md) | component that shows a horizontal line <hr/> to separate components in vertical LinearLayout | [example](./web/frames/playlist.json) 
+[VerticalLine](./web/docs/VerticalLine.md) | component that shows a vertical line to separate components in horizontal LinearLayout |  
+[EditText](./web/docs/EditText.md) | component that represents a string value, shows an editable text area | [example](./web/frames/test-EditText.json) 
+[Button](./web/docs/Button.md)  | component that shows plain text and has an "on_click" callback attribute  | [example](./web/frames/test-Button.json) 
+[ToggleButton](./web/docs/ToggleButton.md) | component that represents a integer value [0, 1], shows as bi-modal button label |  [example](./web/frames/test-ToggleButton.json) 
+[CheckBox](./web/docs/CheckBox.md) | component that represents a small box with or without a check mark, with integer value [0, 1] |  [example](./web/frames/test-CheckBox.json) 
+[Switch](./web/docs/Switch.md) | component that represents a  small switch [off, on] with integer value [0, 1] |  [example](./web/frames/test-Switch.json) 
+[RadioButton](./web/docs/RadioButton.md) | component that represents a multiple-choice option-list, and a selected index | [example](./web/frames/test-RadioButton.json) 
+[Spinner](./web/docs/Spinner.md) | component that represents a popup multiple-choice option-list, and a selection index |   [example](./web/frames/test-Spinner.json) 
+[ListView](./web/docs/ListView.md) | component that represents a multiple-choice option-list, with a row layout and a selected index | [example](./web/frames/test-ListView.json) 
+[SelectDialog](./web/docs/SelectDialog.md) | component that represents a popup multiple-choice option-list selection index| [example](./web/frames/test-SelectDialog.json) 
+[AlertDialog](./web/docs/AlertDialog.md) | component represents a popup multiple-choice option-list | [example](./web/frames/test-AlertDialog.json) 
+[PopupTextView](./web/docs/PopupTextView.md) | component that shows a small transient popup text window | [example](./web/frames/test-PopupTextView.json) 
+[PopupHtmlView](./web/docs/PopupHtmlView.md) | component that shows a small transient popup html window | [example](./web/frames/test-PopupHtmlView.json) 
+[JavaScript](./web/docs/JavaScript.md) | component calls embedded javascript  | [example](./web/frames/test-Javascript.json) 
+[SecureShell](./web/docs/SecureShell.md) | component represents ssh commands | [example](./cgi-bin/ruby-lib/eigen-lib.rb) 
+[UrlRequest](./web/docs/UrlRequest.md) | component represents url request - not fully tested |
+[Variable] | not implemented yet |

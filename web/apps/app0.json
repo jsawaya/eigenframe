@@ -1,4 +1,5 @@
 {
+  "type": "EigenFrame",
   "is_secure_window": "true",
   "request_permissions":
   [
