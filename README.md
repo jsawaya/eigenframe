@@ -11,19 +11,19 @@ to integrate *your own* application scripts, in whatever language/tool you choos
 In contrast, web-browsers only have limited scripting access to the host mobile device, from inside a browser window.  
 
 EigenFrame provides asynchronous url/ssh requests, so you can use cloud-based services, or local Termux services 
-(like: Apache2/CGI, or Ruby Webrick) to generate dynamic EigenFrame components - this repository includes examples. 
+(like: Apache2/CGI, or Ruby Webrick) to generate dynamic EigenFrame components - the github repository includes examples. 
  
 EigenFrame - a truly extensible architecture for dynamic system integration.
 
-## Initial app-url request
+## EigenFrame url-request
 
-EigenFrame starts with a url request to retrieve the application-level security specifications, 
+EigenFrame starts with a url-request to retrieve the application-level security specifications, 
 permissions and tab-fragments.  
 
-There are 3 ways to perform the initial app-url request:
+There are 3 ways to perform the initial url request:
 * launch the EigenFrame app with a default home-url
-* use an EigenFrame short-cut (which contains the app-url)
-* use one EigenFrame app to launch another EigenFrame app (and then another)
+* use an EigenFrame short-cut (which contains an EigenFrame url)
+* an EigenFrame app can be designed launch another completely different EigenFrame app (and then another)
 
 The home-url is defined in this eigenframe shared directory file:
 > /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/home-url.txt
@@ -31,9 +31,10 @@ The home-url is defined in this eigenframe shared directory file:
 This home-url file contains the following default app-url:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json
 
-As a simple example, this app-url returns the following specifications:
+As a simple example, this url returns the following EigenFrame specifications:
 ```json
 {
+  "type": "EigenFrame",
   "is_secure_window": "true",
   "request_permissions": [
     "android.permission.CAMERA",
@@ -49,6 +50,8 @@ As a simple example, this app-url returns the following specifications:
   ]
 }
 ```
+
+
 Android activities are typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
 
 Tabs are an easy way to select which fragments are currently active, although your app designs may 
