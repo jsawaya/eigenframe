@@ -1,3 +1,5 @@
+![eigenframe](../res/icon/eigenframe.png "eigenframe")
+
 # EigenFrame
 ## Platform for dynamic systems on Android
 
