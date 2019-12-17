@@ -20,10 +20,10 @@ EigenFrame - a truly extensible architecture for dynamic system integration.
 EigenFrame starts with a url-request to retrieve the application-level security specifications, 
 permissions and tab-fragments.  
 
-There are 3 ways to perform the initial url request:
+There are 3 ways to perform the initial EigenFrame url-request:
 * launch the EigenFrame app with a default home-url
 * use an EigenFrame short-cut (which contains an EigenFrame url)
-* an EigenFrame app can be designed launch another completely different EigenFrame app (and then another)
+* an EigenFrame app can be designed launch the url of another completely different EigenFrame app.
 
 The home-url is defined in this eigenframe shared directory file:
 > /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/home-url.txt
