@@ -1,4 +1,4 @@
-![eigenframe](../res/icon/eigenframe.png "eigenframe")
+![Alt](https://raw.githubusercontent.com/jsawaya/eigenframe/master/res/icon/eigenframe.png "eigenframe")
 
 # EigenFrame
 ## Platform for dynamic systems on Android
