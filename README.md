@@ -1,25 +1,19 @@
 # ![Alt](web/res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame
 ## Platform for dynamic systems on Android
 
-EigenFrame is similar to a web-browser in that it starts with a url request.  
+EigenFrame starts with a url request, but instead of getting a simple web page, 
+EigenFrame parses specifications (represented in JSON format) to dynamically build an openly programmable application that 
+includes Android user-interface components, and provides access to available camera hardware and device sensors.  
 
-Instead of getting a simple web page, EigenFrame gets the specifications to dynamically build a custom application
-including Android user-interface components and provides access to available camera hardware and device sensors.  
+More than just a web-browser, EigenFrame has an embedded javascript interpreter with access to internal Android classes,
+methods and properties, and a secure-shell client capability to interface with a local Termux app (with openssh)
+to integrate *your own* application scripts, in whatever language/tool you choose (bash, git, ruby, perl, python, prolog, gpg ...).
+In contrast, web-browsers only have limited scripting access to the host mobile device, from inside a browser window.  
 
-EigenFrame is openly programmable. 
-
-More than just a web-browser, EigenFrame enables programmable scripting interfaces including
-an embedded javascript interpreter with access to internal Android classes, methods and properties.  
-
-In contrast, web-browsers have very limited scripting access to the host mobile device, from inside a browser window.  
-
-EigenFrame includes a secure-shell client capability to interface with a local Termux app (with openssh)
-to run your own application scripts (bash, git, ruby, perl, python, prolog, gpg ...).
-
-You can also use cloud-based micro-services through asynchronous url/ssh requests to generate
-dynamic EigenFrame screen components for secure system integration and a truly extensible architecture.
-
-EigenFrame specifications are represented in JSON format.
+EigenFrame provides asynchronous url/ssh requests, so you can use cloud-based services, or local Termux services 
+(like: Apache2/CGI, or Ruby Webrick) to generate dynamic EigenFrame components - this repository includes examples. 
+ 
+EigenFrame - a truly extensible architecture for dynamic system integration.
 
 ## Initial app-url request
 
