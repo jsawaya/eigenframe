@@ -1,7 +1,4 @@
-
-![Alt](web/res/eigenframe.png "eigenframe")
-
-# EigenFrame
+# ![Alt](web/res/icon/ic_launcher.png "eigenframe") EigenFrame
 ## Platform for dynamic systems on Android
 
 EigenFrame is similar to a web-browser in that it starts with a url request.  
@@ -108,3 +105,7 @@ Component type | Description | Examples
 [SecureShell](./web/docs/SecureShell.md) | component represents ssh commands | [example](./cgi-bin/ruby-lib/eigen-lib.rb) 
 [UrlRequest](./web/docs/UrlRequest.md) | component represents url request - not fully tested |
 [Variable] | not implemented yet |
+
+
+![Alt](web/res/eigenframe.png "eigenframe")
+
