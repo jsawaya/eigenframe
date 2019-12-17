@@ -1,4 +1,4 @@
-# ![Alt](web/res/icon/ic_launcher.png "eigenframe") EigenFrame
+# ![Alt](web/res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame
 ## Platform for dynamic systems on Android
 
 EigenFrame is similar to a web-browser in that it starts with a url request.  
