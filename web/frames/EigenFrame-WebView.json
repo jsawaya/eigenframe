@@ -6,10 +6,18 @@
   "layout_height": "match_parent",
   "component_list": [
     {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "20",
+      "text_color": "#ffffff",
+      "text": "GITHUB Repository - jsawaya/eigenframe"
+    },
+    {
       "type": "WebView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "url": "https://github.com/jsawaya/eigenframe/README.md"
+      "url": "https://github.com/jsawaya/eigenframe"
     }
   ]
 }
