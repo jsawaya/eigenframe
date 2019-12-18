@@ -1,0 +1,15 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "layout_width": "match_parent",
+  "layout_height": "match_parent",
+  "component_list": [
+    {
+      "type": "WebView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "url": "https://github.com/jsawaya/eigenframe#-eigenframe"
+    }
+  ]
+}

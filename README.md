@@ -31,7 +31,7 @@ The home-url is defined in this eigenframe shared directory file:
 This home-url file contains the following default app-url:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json
 
-As a simple example, this url returns the following EigenFrame specifications:
+As a simple example, this url returns the following EigenFrame specification:
 ```json
 {
   "type": "EigenFrame",
@@ -43,9 +43,14 @@ As a simple example, this url returns the following EigenFrame specifications:
   ],
   "tab_list": [
     {
-      "icon_name": "ic_launcher.png",
+      "icon_name": "ic_launcher_round.",
       "type": "EigenFragment",
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/playlist.json"
+    },
+    {
+      "name": "PlayList\nfrom github",
+      "type": "EigenFragment",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
     }
   ]
 }
