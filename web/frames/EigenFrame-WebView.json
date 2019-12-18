@@ -9,7 +9,8 @@
       "type": "WebView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "url": "https://github.com/jsawaya/eigenframe#-eigenframe"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/README.md",
+      "x-url": "https://github.com/jsawaya/eigenframe"
     }
   ]
 }
