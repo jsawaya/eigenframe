@@ -1,9 +1,9 @@
+# ![Alt](web/res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame Icon Support
 
+Component types that support icon: {"Button" | "TextView" | "AlertDialog" | "SelectDialog" | "PopupScreen"}
+TextView and Button also supports icon location: {"left" | "right" | "top" | "bottom"}
 
-![eigenframe](../res/icon/eigenframe.png "eigenframe")
-
-Icon support in eigen components
-
+For example:
 ```json
 {
    "type": "Button",
@@ -14,10 +14,6 @@ Icon support in eigen components
    }
 }
 ```
-
-"type": {"Button" | "TextView" "AlertDialog" | "SelectDialog" | "PopupScreen"}
-
-"location" : {"left" | "right" | "top" | "bottom"}
 
 icon name | image
 --------- | ----- 
