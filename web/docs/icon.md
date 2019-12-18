@@ -2,9 +2,22 @@
 
 ![eigenframe](../res/icon/eigenframe.png "eigenframe")
 
+Icon support in Eigen components
 
-"And here's to you, <span style="background-color:green">Mrs. Robinson</span>, Jesus loves you more than you will know."
+```json
+{
+   "type": "Button",
 
+   "icon": {
+      "name": "info.",
+      "location": "left"
+   }
+}
+```
+
+"type": {"Button" | "TextView" "AlertDialog" | "SelectDialog" | "PopupScreen"}
+
+"location" : {"left" | "right" | "top" | "bottom"}
 
 icon name | image
 --------- | ----- 
