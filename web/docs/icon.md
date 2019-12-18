@@ -2,7 +2,7 @@
 
 ![eigenframe](../res/icon/eigenframe.png "eigenframe")
 
-Icon support in Eigen components
+Icon support in eigen components
 
 ```json
 {
