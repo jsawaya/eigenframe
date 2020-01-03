@@ -8,7 +8,7 @@
   ],
   "tab_list": [
     {
-      "name": "App0 PlayList\nfrom github",
+      "name": "PhotoPGP PlayList\nfor LOCALHOST",
       "type": "EigenFragment",
       "url": "http://localhost:8080/frames/playlist.json"
     },
