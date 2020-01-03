@@ -318,10 +318,7 @@
         "type": "PopupTextView",
         "title": "Is ruby webrick process running?",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo Is ruby webrick process running?",
-          "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
-        ]
+        "ssh": "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
       }
     }
   ]
