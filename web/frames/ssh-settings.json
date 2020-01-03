@@ -231,6 +231,10 @@
       "text": "Termux Package Update",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_file_download_white_24dp.png",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -256,7 +260,7 @@
       "background_color": "#123456",
       "icon": {
         "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
-        "location": "right"
+        "location": "top"
       },
       "margin": {
         "left": 10,
@@ -302,7 +306,7 @@
       "background_color": "#123456",
       "icon": {
         "name": "info.",
-        "location": "right"
+        "location": "top"
       },
       "margin": {
         "left": 10,
