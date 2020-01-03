@@ -25,11 +25,11 @@
     },
     {
       "type": "Button",
-      "layout_width": "match_parent",
+      "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text": "SSH User-id",
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#123456",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -56,11 +56,11 @@
     },
     {
       "type": "Button",
-      "layout_width": "match_parent",
+      "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text": "SSH Passphrase",
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#123456",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -88,11 +88,11 @@
     },
     {
       "type": "Button",
-      "layout_width": "match_parent",
+      "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text": "SSH Host(name/ip)",
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#123456",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -120,11 +120,11 @@
     },
     {
       "type": "Button",
-      "layout_width": "match_parent",
+      "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text": "SSH Port",
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#123456",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -144,16 +144,16 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Install and configure services using SecureShell"
+      "text": "Test SecureShell Connection"
     },
     {
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Test connection",
+      "text": "Test SecureShell Connection",
       "text_color": "#ffffff",
       "background_color": "#123456",
-      "margin": {
+      "x-margin": {
         "left": 10,
         "top": 10,
         "right": 10,
@@ -161,13 +161,13 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "Use ssh to access Termux services and filesystem",
+        "title": "Test SecureShell Connection",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "ssh_list": [
-          "echo Termux User-id:",
+          "echo SecureShell User-id:",
           "whoami",
           "echo ",
-          "echo List of files in Termux home directory:",
+          "echo List of files in home directory:",
           "ls -la"
         ]
       }

@@ -1,0 +1,157 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Screen Orientation Settings:",
+      "gravity": "left"
+    },
+    {
+      "type": "Switch",
+      "id": 321,
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Automatic Orientation",
+      "gravity": "center",
+      "checked": false,
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.enableOrientationEventListener(eigenFragment.getViewIdState(321) != 0)"
+        ]
+      }
+    },
+    {
+      "type": "JavaScript",
+      "script_list": [
+        "eigenFragment.setViewIdState(321, 0)",
+        "eigenActivity.enableOrientationEventListener(false)"
+      ]
+    },
+    {
+      "type": "LinearLayout",
+      "orientation": "horizontal",
+      "gravity": "center_horizontal",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "component_list": [
+        {
+          "type": "Button",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "text": "landscape",
+          "text_color": "#ffffff",
+          "background_color": "#123456",
+          "margin": {
+            "left": 10,
+            "top": 10,
+            "right": 10,
+            "bottom": 10
+          },
+          "on_click": {
+            "type": "JavaScript",
+            "script_list": [
+              "eigenFragment.setViewIdState(321, 0)",
+              "eigenActivity.enableOrientationEventListener(false)",
+              "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
+            ]
+          }
+        },
+        {
+          "type": "Button",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "text": "portrait",
+          "text_color": "#ffffff",
+          "background_color": "#123456",
+          "margin": {
+            "left": 10,
+            "top": 10,
+            "right": 10,
+            "bottom": 10
+          },
+          "on_click": {
+            "type": "JavaScript",
+            "script_list": [
+              "eigenFragment.setViewIdState(321, 0)",
+              "eigenActivity.enableOrientationEventListener(false)",
+              "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "LinearLayout",
+      "orientation": "horizontal",
+      "gravity": "center_horizontal",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "component_list": [
+        {
+          "type": "Button",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "text": "landscape-reverse",
+          "text_color": "#ffffff",
+          "background_color": "#123456",
+          "margin": {
+            "left": 10,
+            "top": 10,
+            "right": 10,
+            "bottom": 10
+          },
+          "on_click": {
+            "type": "JavaScript",
+            "script_list": [
+              "eigenFragment.setViewIdState(321, 0)",
+              "eigenActivity.enableOrientationEventListener(false)",
+              "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE)"
+            ]
+          }
+        },
+        {
+          "type": "Button",
+          "layout_width": "wrap_content",
+          "layout_height": "wrap_content",
+          "text": "portrait-reverse",
+          "text_color": "#ffffff",
+          "background_color": "#123456",
+          "margin": {
+            "left": 10,
+            "top": 10,
+            "right": 10,
+            "bottom": 10
+          },
+          "on_click": {
+            "type": "JavaScript",
+            "script_list": [
+              "eigenFragment.setViewIdState(321, 0)",
+              "eigenActivity.enableOrientationEventListener(false)",
+              "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT)"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+
+

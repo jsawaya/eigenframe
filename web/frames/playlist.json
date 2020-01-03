@@ -7,12 +7,18 @@
   "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "wrap_content",
+      "type": "HtmlView",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text_color": "#8aec81",
-      "text_size": "24",
-      "text": "EigenFrame launch playlist from web-server (Github)"
+      "x_gravity": "center_horizontal",
+      "gravity": "center",
+      "x_text_size": "14",
+      "text_color": "#ffffff",
+      "html_list": [
+        "<img src='ic_launcher.png'>",
+        "<h1><font color=\"#8aec81\">EigenFrame: Platform for dynamic systems on Android</font></h1>",
+        "<h4><i>For more info visit:</i></h4> https://github.com/jsawaya/eigenframe"
+      ]
     },
     {
       "type": "HorizontalLine",
@@ -21,17 +27,78 @@
     },
     {
       "type": "TextView",
-      "layout_width": "wrap_content",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
+      "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Set Screen Orientation:"
+      "text": "Settings"
     },
     {
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "landscape",
+      "text": "SecureShell Settings",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "SecureShell Settings",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/ssh-settings.json",
+        "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Orientation Settings",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Orientation Settings",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/orientation-settings.json",
+        "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Launch apps directly from the local Android filesystem"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "launch this initial application (again),\nthen press back-button to exit",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -43,7 +110,41 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
+          "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json')"
+        ]
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Launch apps from an internet/cloud server (github):"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Gallery of examples",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')"
         ]
       }
     },
@@ -51,7 +152,22 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "portrait",
+      "text": "Create shortcut for - Gallery of examples",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.addShortcut('gallery-app', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
+          "eigenActivity.finish()"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Photo application demo",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -63,9 +179,370 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
+          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json')"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Create shortcut for - Photo application demo",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.addShortcut('photo-app-demo', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json')",
+          "eigenActivity.finish()"
+        ]
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Launch apps from Apache2 HTTP service (CGI):"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Gallery of examples",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.launch('http://localhost:8080/apps/app1_localhost.json')"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "show apache2 error log",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "http://localhost:8080/cgi-bin/sys-list-error-log.sh",
+        "url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "test httpd service response",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home",
+        "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "File System Explorer\n(Dynamic Application Demo)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "EigenFrame",
+        "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Launch apps from a Ruby HTTP service:"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "test ruby webrick service response",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "http://localhost:1234/listdir?dirpath=/data/data/com.termux/files/home",
+        "url": "http://localhost:1234/listdir?dirpath=/data/data/com.termux/files/home"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "File System Explorer\n(Dynamic Application Demo)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Ruby http server (webrick):",
+        "url": "http://localhost:1234/listdir?dirpath=/data/data/com.termux/files/home"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Launch apps from SecureShell:"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "File System Explorer\n(Dynamic Application Demo)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "File system explorer",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text": "SecureShell calls ruby to generate the following components:",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff"
+          },
+          {
+            "type": "SecureShell",
+            "is_eigen_response": true,
+            "ssh_list": [
+              "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+              "ruby test-dir-list.rb /data/data/com.termux/files/home"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Install and configure services using SecureShell"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Access Termux app services",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Use ssh to access Termux services and filesystem",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo List of processes:",
+          "ps -e",
+          "echo ",
+          "echo List of files in Termux home directory:",
+          "ls -la"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Termux Package Update",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Termux Package Update",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo Package update:",
+          "echo y | pkg update"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Pull github updates",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_arrow_back_white_24dp.png",
+        "location": "left"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "git checkout master, pull, checkout test, merge, status",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "cd /data/data/com.termux/files/home/git-repos/eigenframe",
+          "echo current working directory:",
+          "pwd",
+          "echo ",
+          "echo git status:",
+          "git status",
+          "echo ",
+          "echo git checkout master:",
+          "git checkout master",
+          "echo ",
+          "echo git pull:",
+          "git pull",
+          "echo ",
+          "echo git checkout test:",
+          "git checkout test",
+          "echo ",
+          "echo git merge master:",
+          "git merge master",
+          "echo ",
+          "echo git status:",
+          "git status"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Check if ruby webrick process is currently running",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "info.",
+        "location": "right"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Use ssh to access Termux services",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo Webrick?",
+          "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
         ]
       }
     }
   ]
 }
+
+
