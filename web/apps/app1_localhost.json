@@ -8,10 +8,6 @@
   ],
   "tab_list": [
     {
-      "icon_name": "ic_launcher_round.",
-      "name": "Gallery"
-    },
-    {
       "name": "Gallery PlayList\nfor LOCALHOST",
       "type": "EigenFragment",
       "url": "http://localhost:8080/frames/playlist.json"
