@@ -301,6 +301,35 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
+      "text": "Start Ruby Webrick",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "start ruby webrick",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/",
+          "echo current working directory:",
+          "pwd",
+          "echo ",
+          "echo status:",
+          "echo ",
+          "echo start ruby webrick:",
+          "ruby sys-webrick.rb &"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "Check if ruby webrick process is currently running",
       "text_color": "#ffffff",
       "background_color": "#123456",
