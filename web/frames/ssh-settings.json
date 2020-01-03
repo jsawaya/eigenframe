@@ -314,16 +314,7 @@
         "type": "PopupTextView",
         "title": "start ruby webrick",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/",
-          "echo current working directory:",
-          "pwd",
-          "echo ",
-          "echo status:",
-          "echo ",
-          "echo start ruby webrick:",
-          "ruby sys-webrick.rb &"
-        ]
+        "ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb &"
       }
     },
     {
