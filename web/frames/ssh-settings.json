@@ -164,11 +164,159 @@
         "title": "Test SecureShell Connection",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "ssh_list": [
-          "echo SecureShell User-id:",
-          "whoami",
-          "echo ",
+          "echo User:",
+          "whoami"
+        ]
+      }
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Install and configure services using SecureShell"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "List processes (ps -elf)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "List Processes",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo List of processes:",
+          "ps -elf"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "List HOME Directory",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "List HOME Directory",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
           "echo List of files in home directory:",
           "ls -la"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Termux Package Update",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Termux Package Update",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo Package update:",
+          "echo y | pkg update"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Pull GITHUB updates",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
+        "location": "right"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "git checkout master, pull, checkout test, merge, status",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "cd /data/data/com.termux/files/home/git-repos/eigenframe",
+          "echo current working directory:",
+          "pwd",
+          "echo ",
+          "echo git status:",
+          "git status",
+          "echo ",
+          "echo git checkout master:",
+          "git checkout master",
+          "echo ",
+          "echo git pull:",
+          "git pull",
+          "echo ",
+          "echo git checkout test:",
+          "git checkout test",
+          "echo ",
+          "echo git merge master:",
+          "git merge master",
+          "echo ",
+          "echo git status:",
+          "git status"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Check if ruby webrick process is currently running",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "info.",
+        "location": "right"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Is ruby webrick process running?",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo Is ruby webrick process running?",
+          "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
         ]
       }
     }
