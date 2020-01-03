@@ -12,7 +12,7 @@
       "name": "Gallery"
     },
     {
-      "name": "Gallery PlayList\nfrom localhost",
+      "name": "Gallery PlayList\nfor LOCALHOST",
       "type": "EigenFragment",
       "url": "http://localhost:8080/frames/playlist.json"
     },

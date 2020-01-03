@@ -12,7 +12,7 @@
       "name": "Gallery"
     },
     {
-      "name": "PlayList\nfrom GITHUB",
+      "name": "Gallery PlayList\nfor GITHUB",
       "type": "EigenFragment",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
     },
