@@ -53,8 +53,7 @@
           "name": "info.jpg",
           "location": "left"
         },
-        "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/ssh-settings.json",
-        "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
       }
     },
     {
@@ -76,8 +75,7 @@
           "name": "info.jpg",
           "location": "left"
         },
-        "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/orientation-settings.json",
-        "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json"
       }
     },
     {
