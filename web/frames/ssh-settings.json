@@ -245,10 +245,7 @@
         "type": "PopupTextView",
         "title": "Termux Package Update",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo Package update:",
-          "echo y | pkg update"
-        ]
+        "ssh": "echo y | pkg update"
       }
     },
     {
