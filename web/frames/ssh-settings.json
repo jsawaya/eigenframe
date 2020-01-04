@@ -349,8 +349,10 @@
         "type": "PopupTextView",
         "title": "stop ruby process",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "timeout": 10,
-        "ssh": "pkill ruby"
+        "ssh_list": [
+          "pkill ruby",
+          "ps -e"
+          ]
       }
     },
     {
