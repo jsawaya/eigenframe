@@ -182,6 +182,26 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
+      "text": "List processes (ps -e)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "List Processes (ps -e)",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh":  "ps -e"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "List processes (ps -elf)",
       "text_color": "#ffffff",
       "background_color": "#123456",
@@ -193,12 +213,9 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "List Processes",
+        "title": "List Processes (ps -elf)",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo List of processes:",
-          "ps -elf"
-        ]
+        "ssh": "ps -elf"
       }
     },
     {
@@ -313,6 +330,27 @@
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "timeout": 10,
         "ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb &"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Stop Ruby Process",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "stop ruby process",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "timeout": 10,
+        "ssh": "pkill ruby"
       }
     },
     {
