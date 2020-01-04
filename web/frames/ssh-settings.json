@@ -328,7 +328,7 @@
         "type": "PopupTextView",
         "title": "start ruby webrick",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "timeout": 1000,
+        "abort": 2000,
         "ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb &"
       }
     },
