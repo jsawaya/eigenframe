@@ -222,6 +222,31 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
+      "text": "List Process Commands (ps -eo cmd)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "info.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "List Process Commands (ps -eo cmd)",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "ps -eo cmd",
+        "x-ssh": "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "List HOME Directory",
       "text_color": "#ffffff",
       "background_color": "#123456",
@@ -353,31 +378,6 @@
           "pkill ruby",
           "ps -e"
           ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Check if ruby webrick process is currently running",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "info.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Is ruby webrick process running?",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "x-ssh": "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'",
-        "ssh": "ps -eo cmd"
       }
     }
   ]
