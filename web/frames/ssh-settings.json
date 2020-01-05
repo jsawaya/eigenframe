@@ -24,20 +24,6 @@
       "background_color": "#000000"
     },
     {
-      "type": "x-Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "SSH User-id",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('SSH User-id: '+eigenFragment.getEditTextValue(88800))"
-        ]
-      }
-    },
-    {
       "type": "TextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
@@ -47,26 +33,12 @@
       "text": "SSH Passphrase:"
     },
     {
-      "type": "EditText",
+      "type": "EditTextPass",
       "id": 88801,
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
       "background_color": "#000000"
-    },
-    {
-      "type": "x-Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "SSH Passphrase",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('SSH Passphrase: '+eigenFragment.getEditTextValue(88801))"
-        ]
-      }
     },
     {
       "type": "TextView",
@@ -87,20 +59,6 @@
       "background_color": "#000000"
     },
     {
-      "type": "x-Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "SSH Host(name/ip)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('SSH Host: '+eigenFragment.getEditTextValue(88802))"
-        ]
-      }
-    },
-    {
       "type": "TextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
@@ -117,20 +75,6 @@
       "text": "8022",
       "text_color": "#ffffff",
       "background_color": "#000000"
-    },
-    {
-      "type": "x-Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "SSH Port",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('SSH Port: '+eigenFragment.getEditTextValue(88803))"
-        ]
-      }
     },
     {
       "type": "HorizontalLine",
@@ -164,7 +108,7 @@
         "title": "Test SecureShell Connection",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "ssh_list": [
-          "echo User:",
+          "echo whoami:",
           "whoami"
         ]
       }
@@ -176,7 +120,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Install and configure services using SecureShell"
+      "text": "Remote Service Administration"
     },
     {
       "type": "Button",
