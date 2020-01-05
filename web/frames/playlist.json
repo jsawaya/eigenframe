@@ -160,7 +160,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Launch apps from an internet/cloud server (github):"
+      "text": "Launch apps from internet/cloud server (GITHUB):"
     },
     {
       "type": "Button",

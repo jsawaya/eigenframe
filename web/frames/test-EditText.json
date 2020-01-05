@@ -30,14 +30,7 @@
       "layout_height": "wrap_content",
       "text": "edit text",
       "text_color": "#ffffff",
-      "background_color": "#11ff0000",
-      "eigen_script_x": {
-        "type": "JavaScript",
-        "script_list": [
-          "java.lang.System.out.println('eigenMap: '+eigenMap)",
-          "eigenActivity.showToast('EditText key: '+eigenMap.get('keyCode'))"
-        ]
-      }
+      "background_color": "#11ff0000"
     },
     {
       "type": "Button",
