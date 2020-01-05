@@ -1,0 +1,243 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Host Administration"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "The host running a SecureShell daemon (sshd) can be a localhost Termux session,",
+        "or a separate network host (IP or DNS name)"
+        ]
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "List processes (ps -e)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "info.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "List Processes (ps -e)",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh":  "ps -e"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "List processes (ps -elf)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "info.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "List processes (ps -elf)",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "ps -elf"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "List processes (ps -eo cmd)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "info.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "List processes (ps -eo cmd)",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "ps -eo cmd",
+        "x-ssh": "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "List HOME Directory",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "List HOME Directory",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo List of files in home directory:",
+          "ls -la"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Termux Package Update",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_file_download_white_24dp.png",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Termux Package Update",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "echo y | pkg update"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Pull GITHUB updates",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "git checkout master, pull, checkout test, merge, status",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "cd /data/data/com.termux/files/home/git-repos/eigenframe",
+          "echo current working directory:",
+          "pwd",
+          "echo ",
+          "echo git status:",
+          "git status",
+          "echo ",
+          "echo git checkout master:",
+          "git checkout master",
+          "echo ",
+          "echo git pull:",
+          "git pull",
+          "echo ",
+          "echo git checkout test:",
+          "git checkout test",
+          "echo ",
+          "echo git merge master:",
+          "git merge master",
+          "echo ",
+          "echo git status:",
+          "git status"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Start Ruby Webrick",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "start ruby webrick",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "abort": 2000,
+        "ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb &"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Stop Ruby Process",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "stop ruby process",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "pkill ruby",
+          "ps -e"
+          ]
+      }
+    }
+  ]
+}
+
+

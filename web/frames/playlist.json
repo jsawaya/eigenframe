@@ -51,9 +51,31 @@
         "text": "SecureShell Settings",
         "icon": {
           "name": "info.jpg",
-          "location": "left"
+          "location": "top"
         },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "SecureShell Host Administration",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "SecureShell Host Administration",
+        "icon": {
+          "name": "info.jpg",
+          "location": "top"
+        },
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
       }
     },
     {
@@ -406,137 +428,6 @@
               "ruby test-dir-list.rb /data/data/com.termux/files/home"
             ]
           }
-        ]
-      }
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Install and configure services using SecureShell"
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Access Termux app services",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Use ssh to access Termux services and filesystem",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo List of processes:",
-          "ps -e",
-          "echo ",
-          "echo List of files in Termux home directory:",
-          "ls -la"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Termux Package Update",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Termux Package Update",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo Package update:",
-          "echo y | pkg update"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Pull github updates",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_arrow_back_white_24dp.png",
-        "location": "left"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "git checkout master, pull, checkout test, merge, status",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "cd /data/data/com.termux/files/home/git-repos/eigenframe",
-          "echo current working directory:",
-          "pwd",
-          "echo ",
-          "echo git status:",
-          "git status",
-          "echo ",
-          "echo git checkout master:",
-          "git checkout master",
-          "echo ",
-          "echo git pull:",
-          "git pull",
-          "echo ",
-          "echo git checkout test:",
-          "git checkout test",
-          "echo ",
-          "echo git merge master:",
-          "git merge master",
-          "echo ",
-          "echo git status:",
-          "git status"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Check if ruby webrick process is currently running",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "info.",
-        "location": "right"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Use ssh to access Termux services",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo Webrick?",
-          "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
         ]
       }
     }
