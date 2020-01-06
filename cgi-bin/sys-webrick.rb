@@ -53,7 +53,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             response.status = 200
             response.content_type = "text/plain"
 
-            if dirpath.empty?
+            if dirpath == nil || dirpath.empty?
                 dirpath = "/data/data/com.termux/files/home"
             end
 
