@@ -12,7 +12,5 @@ end
 #listdir_url = "http://localhost:1234/listdir"
 #list_contents_url = "http://localhost:1234/list_contents"
 
-result = EigenFrame.new().eigen_directory_listview_ssh(dirpath).to_json.to_s
-
-puts result
+puts eigenframe.eigen_directory_listview_http_cgi(dirpath).to_json.to_s
 
