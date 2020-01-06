@@ -43,6 +43,22 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             response.content_type = "text/plain"
             response.body = "Hello World\n"
 
+        elsif request.path == "/directory"
+            puts "called /directory"
+
+            dirpath = request.query["dirpath"]
+            puts "dirpath:"
+            p dirpath
+
+            response.status = 200
+            response.content_type = "text/plain"
+
+            if dirpath.empty?
+                dirpath = "/data/data/com.termux/files/home"
+            end
+
+            response.body = EigenFrame.new().eigen_directory_listview_ssh(dirpath).to_json.to_s
+
         elsif request.path == "/listdir"
             puts "called /listdir"
 
