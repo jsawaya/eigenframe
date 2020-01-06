@@ -43,20 +43,6 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             response.content_type = "text/plain"
             response.body = "Hello World\n"
 
-        elsif request.path == "/directory"
-            puts "called /directory"
-
-            response.status = 200
-            response.content_type = "text/plain"
-
-            dirpath = request.query["dirpath"]
-            if dirpath == nil || dirpath.empty?
-                dirpath = "/data/data/com.termux/files/home"
-            end
-
-            #response.body = dirpath
-            response.body = EigenFrame.new().eigen_directory_listview_ssh(dirpath).to_json.to_s
-
         elsif request.path == "/listdir"
             puts "called /listdir"
 
@@ -71,7 +57,12 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
                 dirpath = "/data/data/com.termux/files/home"
             end
 
-             result_json = EigenFrame.new().eigen_directory_listview_http_ruby(dirpath).to_json
+            eigenframe = EigenFrame.new()
+
+            listdir_url = "http://localhost:1234/listdir"
+            list_contents_url = "http://localhost:1234/list_contents"
+            result_json = eigenframe.eigen_directory_listview(dirpath, listdir_url, list_contents_url).to_json
+#             result_json = eigenframe.eigen_directory_listview_http_ruby(dirpath).to_json
              response.body = result_json.to_s + "\n"
 
         elsif request.path == "/list_contents"
