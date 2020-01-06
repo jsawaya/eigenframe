@@ -36,6 +36,13 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             @server.shutdown
             exit 10
 
+        elsif request.path == "/test"
+            puts "called /test"
+
+            response.status = 200
+            response.content_type = "text/plain"
+            response.body = "Hello World\n"
+
         elsif request.path == "/listdir"
             puts "called /listdir"
 
