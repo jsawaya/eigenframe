@@ -49,9 +49,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             response.status = 200
             response.content_type = "text/plain"
 
-            response.body = "Hello World\n"
-
-            response.body = dirpath = request.query["dirpath"]
+            dirpath = request.query["dirpath"]
             if dirpath == nil || dirpath.empty?
                 dirpath = "/data/data/com.termux/files/home"
             end
@@ -74,11 +72,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
                 dirpath = "/data/data/com.termux/files/home"
             end
 
-            eigenframe = EigenFrame.new()
-
-            listdir_url = "http://localhost:1234/listdir"
-            list_contents_url = "http://localhost:1234/list_contents"
-             result_json = eigenframe.eigen_directory_listview_http_ruby(dirpath).to_json
+             result_json = EigenFrame.new().eigen_directory_listview_http_ruby(dirpath).to_json
              response.body = result_json.to_s + "\n"
 
         elsif request.path == "/list_contents"
