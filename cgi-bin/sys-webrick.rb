@@ -46,16 +46,16 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
         elsif request.path == "/directory"
             puts "called /directory"
 
-            dirpath = request.query["dirpath"]
-            puts "dirpath:"
-            p dirpath
+#            dirpath = request.query["dirpath"]
+#            puts "dirpath:"
+#            p dirpath
 
             response.status = 200
             response.content_type = "text/plain"
 
-            if dirpath == nil || dirpath.empty?
-                dirpath = "/data/data/com.termux/files/home"
-            end
+#            if dirpath == nil || dirpath.empty?
+#                dirpath = "/data/data/com.termux/files/home"
+#            end
 
             response.body = "Hello World\n"
 #            response.body = EigenFrame.new().eigen_directory_listview_http_cgi(dirpath).to_json.to_s
