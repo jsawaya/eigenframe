@@ -9,8 +9,5 @@ else
   dirpath = ARGV[0]
 end
 
-#listdir_url = "http://localhost:1234/listdir"
-#list_contents_url = "http://localhost:1234/list_contents"
-
-puts eigenframe.eigen_directory_listview_ssh(dirpath).to_json.to_s
+puts EigenFrame.new().eigen_directory_listview_ssh(dirpath).to_json.to_s
 
