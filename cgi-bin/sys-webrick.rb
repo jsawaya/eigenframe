@@ -55,7 +55,7 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             end
 
             #response.body = dirpath
-            response.body = EigenFrame.new().eigen_directory_listview_http_ruby(dirpath).to_json.to_s
+            response.body = EigenFrame.new().eigen_directory_listview_ssh(dirpath).to_json.to_s
 
         elsif request.path == "/listdir"
             puts "called /listdir"
