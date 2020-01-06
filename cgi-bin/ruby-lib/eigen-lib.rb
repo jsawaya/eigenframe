@@ -70,7 +70,7 @@ def eigen_directory_listview_ssh(dirpath)
   dirHash = set_directory_hash(dirpath)
   dirHashDirectory = dirHash['directory']
 
-  subdir_ssh_script = "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby test-dir-list.rb #{dirHashDirectory}/' + eigenMap.get('option')"
+  subdir_ssh_script = "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-directory-listview.rb #{dirHashDirectory}/' + eigenMap.get('option')"
   subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", [subdir_ssh_script])
 
   file_item_title_script_list =
@@ -164,7 +164,7 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   subdir_ssh_script_list =
   [
-    "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby test-dir-list.rb #{dirHashDirectory}/' + eigenMap.get('option')"
+    "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-directory-listview.rb #{dirHashDirectory}/' + eigenMap.get('option')"
   ]
 
   subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", subdir_ssh_script_list)
