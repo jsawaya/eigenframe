@@ -15,14 +15,19 @@ require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/
     shuts the server down if the process is interrupted (often done with Ctrl+C).
 =end
 
-#logger1 = Logger.new('ruby-webrick.log', 'daily')
-#logger1.level = :debug
-#logger1.debug("startup")
-
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
-        @logger.info(request.to_s)
-        @logger.info(response.to_s)
+
+        puts ""
+        puts "Request:"
+        p request
+
+        puts ""
+        puts "Response:"
+        p response
+
+#        @logger.info(request.to_s)
+#        @logger.info(response.to_s)
 
         if request.path == "/exit"
             @server.shutdown
@@ -58,8 +63,6 @@ server.mount "/", MyServlet
 
 trap("INT") {
     server.shutdown
-#    logger1.debug("shutdown")
-#    logger1.close
 }
 
 server.start
