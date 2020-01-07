@@ -340,13 +340,13 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Launch apps from a Ruby HTTP service:"
+      "text": "Integrate application services (e.g. ruby webrick)"
     },
     {
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "test ruby webrick service response",
+      "text": "Start ruby webrick application service",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -357,8 +357,10 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "http://localhost:1234/listdir?dirpath=/data/data/com.termux/files/home",
-        "url": "http://localhost:1234/listdir?dirpath=/data/data/com.termux/files/home"
+        "title": "start ruby webrick",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "abort": 2000,
+        "ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb &"
       }
     },
     {
@@ -384,7 +386,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Exit ruby webrick service",
+      "text": "Use url to stop ruby process",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -395,7 +397,7 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "http://localhost:1234/exit",
+        "title": "use url to stop ruby process",
         "url": "http://localhost:1234/exit"
       }
     },
@@ -403,7 +405,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "File System Explorer\n(Dynamic Application Demo)",
+      "text": "Use ssh to stop ruby process",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -413,14 +415,13 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "20",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "text": "Ruby http server (webrick):",
-        "url": "http://localhost:1234/listdir?dirpath=/data/data/com.termux/files/home"
+        "type": "PopupTextView",
+        "title": "use ssh to stop ruby process",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "pkill ruby",
+          "ps -eo cmd"
+        ]
       }
     },
     {

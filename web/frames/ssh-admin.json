@@ -192,50 +192,6 @@
           "git status"
         ]
       }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Start Ruby Webrick",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "start ruby webrick",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "abort": 2000,
-        "ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb &"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Stop Ruby Process",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "stop ruby process",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "pkill ruby",
-          "ps -e"
-          ]
-      }
     }
   ]
 }
