@@ -63,6 +63,6 @@ trap("INT") {
     logger.close
 }
 
-logger = new Logger('ruby-webrick.log', 'daily')
+logger = Logger.new('ruby-webrick.log', 'daily')
 
 server.start
