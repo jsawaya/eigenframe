@@ -34,7 +34,7 @@
         "type": "AlertDialog",
         "title": "My AlertDialog",
         "icon": {
-          "name": "info.jpg"
+          "name": "info."
         },
         "positive": {
           "option": "YES",
