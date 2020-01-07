@@ -166,7 +166,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Gallery of examples",
+      "text": "Gallery examples",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -186,22 +186,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Create shortcut for - Gallery of examples",
-      "text_color": "#ffffff",
-      "background_color": "#654321",
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.addShortcut('gallery-app', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
-          "eigenActivity.finish()"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Photo application demo",
+      "text": "PhotoPGP demo",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -221,7 +206,22 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Create shortcut for - Photo application demo",
+      "text": "Create shortcut for - Gallery examples",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.addShortcut('gallery-app', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
+          "eigenActivity.finish()"
+        ]
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Create shortcut for - PhotoPGP demo",
       "text_color": "#ffffff",
       "background_color": "#654321",
       "on_click": {
@@ -250,7 +250,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Gallery of examples",
+      "text": "Gallery examples",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
