@@ -33,8 +33,8 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             #response['Cache-Control'] = "No-Cache, No-Store"
             response.status = 200
             response.content_type = "text/plain"
-            response.body = "Hello World"
-            #response.body = "Hello World: #{Time.now.strftime('%Y-%m-%d %H:%M:%S')}"
+            #response.body = "Hello World"
+            response.body = "Hello World: #{Time.now.strftime('%Y-%m-%d %H:%M:%S')}"
 
         elsif request.path == "/list_contents"
 
