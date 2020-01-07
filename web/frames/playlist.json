@@ -373,7 +373,7 @@
     },
 
     {
-      "type": "UrlRequest",
+      "type": "x-UrlRequest",
       "is_eigen_response": true,
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/Button-PopupScreen-DirectoryListView.json"
     },

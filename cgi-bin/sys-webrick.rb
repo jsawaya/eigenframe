@@ -17,6 +17,12 @@ require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
 
+        puts "request:"
+        p request
+
+        puts "response:"
+        p response
+
         if request.path == "/exit"
             @server.shutdown
             exit 10
@@ -24,9 +30,10 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
         elsif request.path == "/test"
             puts "called /test"
 
+            response['Cache-Control'] = "No-Cache, No-Store"
             response.status = 200
             response.content_type = "text/plain"
-            response.body = "Hello World"
+            response.body = "Hello World: "+Time.now.strftime '%Y-%m-%d %H:%M:%S'
 
         elsif request.path == "/list_contents"
 
