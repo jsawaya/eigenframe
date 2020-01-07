@@ -14,7 +14,7 @@
       "gravity": "center",
       "text_color": "#ffffff",
       "icon": {
-        "name": "sawaya_eigenframe_icon.png",
+        "name": "ic_launcher_round.",
         "location": "top"
       }
     },
