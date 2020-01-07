@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'Logger'
+require 'logger'
 require 'webrick'
 require 'json'
 require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/app-lib'
