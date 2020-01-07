@@ -488,7 +488,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "File System Explorer\n(Dynamic Application Demo)",
+      "text": "File System Explorer\nusing UrlRequest",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
