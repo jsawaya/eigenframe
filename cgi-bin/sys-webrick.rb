@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require "webrick"
+require 'Logger'
+require 'webrick'
 require 'json'
 require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/app-lib'
 require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/eigen-lib'
@@ -16,6 +17,8 @@ require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/
 
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
+        logger.debug(request)
+        logger.debug(response)
 
 #        puts "request:"
 #        p request
@@ -28,12 +31,10 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             exit 10
 
         elsif request.path == "/test"
- #           puts "called /test"
 
             #response['Cache-Control'] = "No-Cache, No-Store"
             response.status = 200
             response.content_type = "text/plain"
-            #response.body = "Hello World"
             response.body = "Hello World: #{Time.now.strftime('%Y-%m-%d %H:%M:%S')}"
 
         elsif request.path == "/list_contents"
@@ -59,6 +60,9 @@ server.mount "/", MyServlet
 
 trap("INT") {
     server.shutdown
+    logger.close
 }
+
+logger = new Logger('ruby-webrick.log', 'daily')
 
 server.start
