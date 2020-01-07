@@ -17,18 +17,18 @@ require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
 
-        puts "request:"
-        p request
+#        puts "request:"
+#        p request
 
-        puts "response:"
-        p response
+#        puts "response:"
+#        p response
 
         if request.path == "/exit"
             @server.shutdown
             exit 10
 
         elsif request.path == "/test"
-            puts "called /test"
+ #           puts "called /test"
 
             #response['Cache-Control'] = "No-Cache, No-Store"
             response.status = 200
