@@ -1,0 +1,24 @@
+{
+  "type": "Button",
+  "layout_width": "wrap_content",
+  "layout_height": "wrap_content",
+  "text": "File System Explorer\n(Dynamic Application Demo)",
+  "text_color": "#ffffff",
+  "background_color": "#123456",
+  "margin": {
+    "left": 10,
+    "top": 10,
+    "right": 10,
+    "bottom": 10
+  },
+  "on_click": {
+    "type": "PopupScreen",
+    "layout_width": "match_parent",
+    "layout_height": "wrap_content",
+    "text_size": "20",
+    "text_color": "#ffffff",
+    "background_color": "#111111",
+    "text": "EigenFrame",
+    "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
+  }
+}
