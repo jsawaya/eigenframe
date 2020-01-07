@@ -147,6 +147,57 @@
         "ssh": "echo y | pkg update"
       }
     },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Show ruby webrick log",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Show ruby webrick log",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh-list": [
+          "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+          "ruby list-termux-file-contents.rb ./ruby-webrick.log"
+        ]
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Show ruby webrick output",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Show ruby webrick output",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh-list": [
+          "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+          "ruby list-termux-file-contents.rb ./ruby-webrick.txt"
+        ]
+      }
+    },
+
+
     {
       "type": "Button",
       "layout_width": "wrap_content",
