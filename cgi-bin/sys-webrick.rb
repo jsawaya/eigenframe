@@ -16,7 +16,8 @@ require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/
 =end
 
 logger1 = Logger.new('ruby-webrick.log', 'daily')
-logger1.level = :info
+logger1.level = :debug
+logger1.debug("startup")
 
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
@@ -57,6 +58,7 @@ server.mount "/", MyServlet
 
 trap("INT") {
     server.shutdown
+    logger1.debug("shutdown")
     logger1.close
 }
 
