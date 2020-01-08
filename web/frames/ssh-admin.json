@@ -23,111 +23,14 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "The host running a SecureShell daemon (sshd) can be a localhost Termux session,",
-        "or a separate network host (IP or DNS name)"
+        "You must first run the sshd command in the localhost Termux session (or other network host), in order to use SecureShell."
         ]
     },
     {
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "List processes (ps -e)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "info.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "List Processes (ps -e)",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh":  "ps -e"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "List processes (ps -elf)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "info.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "List processes (ps -elf)",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "ps -elf"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "List processes (ps -eo cmd)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "info.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "List processes (ps -eo cmd)",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "ps -eo cmd",
-        "x-ssh": "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "List HOME Directory",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "List HOME Directory",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo List of files in home directory:",
-          "ls -la"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Termux Package Update",
+      "text": "Termux Package Update...",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -148,14 +51,17 @@
       }
     },
 
-
     {
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Show ruby webrick log",
+      "text": "Clone GITHUB eigenframe repository",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -164,33 +70,33 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "Show ruby webrick log",
+        "title": "git clone eigenframe checkout test, status",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents.rb ./ruby-webrick.log"
+        "ssh_list": [
+          "cd /data/data/com.termux/files/home",
+          "echo current working directory",
+          "pwd",
+          "echo ",
+          "echo mkdir git-repos",
+          "mkdir git-repos",
+          "echo ",
+          "echo cd git-repos",
+          "cd git-repos",
+          "echo ",
+          "echo git clone https://github.com/jsawaya/eigenframe",
+          "git clone https://github.com/jsawaya/eigenframe",
+          "echo ",
+          "echo cd eigenframe",
+          "cd eigenframe",
+          "echo ",
+          "echo git checkout -b test",
+          "git checkout -b test",
+          "echo ",
+          "echo git status:",
+          "git status"
+        ]
       }
     },
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Show ruby webrick output",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Show ruby webrick output",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents.rb ./ruby-webrick.err"
-      }
-    },
-
 
     {
       "type": "Button",

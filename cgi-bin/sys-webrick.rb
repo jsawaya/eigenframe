@@ -18,13 +18,13 @@ require '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/ruby-lib/
 class MyServlet < WEBrick::HTTPServlet::AbstractServlet
     def do_GET (request, response)
 
-        puts ""
-        puts "Request:"
-        p request
+#        puts ""
+#        puts "Request:"
+#        p request
 
-        puts ""
-        puts "Response:"
-        p response
+#        puts ""
+#        puts "Response:"
+#        p response
 
 #        @logger.info(request.to_s)
 #        @logger.info(response.to_s)
@@ -43,7 +43,6 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
         elsif request.path == "/list_contents"
 
             filepath = request.query["filepath"]
-
             #filetype = request.query["filetype"]
 
             response.status = 200

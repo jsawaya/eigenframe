@@ -1,0 +1,169 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Ruby Admin"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Start ruby webrick service",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Start ruby webrick",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "abort": 2000,
+        "ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb > ruby-webrick.out 2> ruby-webrick.log &"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Confirm ruby webrick process",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "info.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Confirm ruby webrick process",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Test ruby webrick service",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "http://localhost:1234/test",
+        "url": "http://localhost:1234/test"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Show ruby webrick log",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Show ruby webrick log",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents.rb ./ruby-webrick.log"
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Show ruby webrick output",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Show ruby webrick output",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents.rb ./ruby-webrick.err"
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Use url to stop ruby process",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "use url to stop ruby process",
+        "url": "http://localhost:1234/exit"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Use ssh to stop ruby process",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "use ssh to stop ruby process",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "pkill ruby",
+          "ps -eo cmd"
+        ]
+      }
+    }
+  ]
+}
+
+

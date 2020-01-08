@@ -96,7 +96,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "SecureShell Host Administration",
+      "text": "Host Administration",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "on_click": {
@@ -106,12 +106,56 @@
         "text_size": "20",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "SecureShell Host Administration",
+        "text": "Host Administration",
         "icon": {
           "name": "info.jpg",
           "location": "top"
         },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Host Processes",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Host Processes",
+        "icon": {
+          "name": "info.jpg",
+          "location": "top"
+        },
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-proc.json"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Ruby Admin",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Ruby Admin",
+        "icon": {
+          "name": "info.jpg",
+          "location": "top"
+        },
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
       }
     },
     {
@@ -391,88 +435,6 @@
       "text_color": "#8aec81",
       "text_size": "22",
       "text": "Integrate application services (e.g. ruby webrick)"
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Start ruby webrick application service",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "start ruby webrick",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "abort": 2000,
-        "ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb &"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Test ruby webrick service",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "http://localhost:1234/test",
-        "url": "http://localhost:1234/test"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Use url to stop ruby process",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "use url to stop ruby process",
-        "url": "http://localhost:1234/exit"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Use ssh to stop ruby process",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "use ssh to stop ruby process",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "pkill ruby",
-          "ps -eo cmd"
-        ]
-      }
     },
     {
       "type": "HorizontalLine",
