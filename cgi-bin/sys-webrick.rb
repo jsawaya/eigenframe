@@ -40,6 +40,9 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             response.content_type = "text/plain"
             response.body = "Hello World: #{Time.now.strftime('%Y-%m-%d %H:%M:%S')}"
 
+            @logger.info(response.body)
+            p response.body
+
         elsif request.path == "/list_contents"
 
             filepath = request.query["filepath"]
