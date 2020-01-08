@@ -125,6 +125,27 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
+      "text": "Test Sftp",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Test",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp": "pwd"
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "Use url to stop ruby process",
       "text_color": "#ffffff",
       "background_color": "#123456",

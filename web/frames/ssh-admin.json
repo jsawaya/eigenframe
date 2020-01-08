@@ -55,6 +55,34 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
+      "text": "Install GIT",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "pkg install git",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo pkg install git",
+          "pkg install git",
+          "echo ",
+          "echo git status:",
+          "git status"
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "Clone GITHUB eigenframe repository",
       "text_color": "#ffffff",
       "background_color": "#123456",
