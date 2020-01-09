@@ -138,7 +138,7 @@
         "type": "PopupTextView",
         "title": "Test",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp-list": [
+        "sftp_list": [
           "version",
           "pwd",
           "ls"
