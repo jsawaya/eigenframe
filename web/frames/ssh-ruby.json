@@ -139,6 +139,12 @@
         "title": "Test",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "sftp_list": [
+          "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+          "lls /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+          "get git-repos/eigenframe/README.md",
+          "put git-repos/eigenframe/README.md .."
+        ],
+        "x-sftp_list": [
           "version",
           "pwd",
           "cd git-repos/eigenframe",
