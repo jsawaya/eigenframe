@@ -141,6 +141,8 @@
         "sftp_list": [
           "version",
           "pwd",
+          "cd git-repos",
+          "cd eigenframe",
           "ls"
         ]
       }
