@@ -143,7 +143,8 @@
           "pwd",
           "cd git-repos",
           "cd eigenframe",
-          "ls"
+          "ls",
+          "get README.md ."
         ]
       }
     },
