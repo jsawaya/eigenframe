@@ -144,8 +144,8 @@
           "cd git-repos",
           "cd eigenframe",
           "ls",
-          "get README.md /storage/emulated/0/Android/data/com.termux/files",
-          "lls /storage/emulated/0/Android/data/com.termux/files"
+          "get README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+          "lls /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
         ]
       }
     },
