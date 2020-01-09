@@ -146,7 +146,7 @@
           "get README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
           "lls /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
           "get README.md",
-          "put README.md"
+          "put README.md .."
         ]
       }
     },
