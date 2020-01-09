@@ -141,13 +141,12 @@
         "sftp_list": [
           "version",
           "pwd",
-          "cd git-repos",
-          "cd eigenframe",
+          "cd git-repos/eigenframe",
           "ls",
           "get README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
           "lls /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-          "get README.md /storage/emulated/0/Download",
-          "lls /storage/emulated/0/Download"
+          "get README.md",
+          "put README.md"
         ]
       }
     },
