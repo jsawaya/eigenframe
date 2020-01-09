@@ -143,6 +143,8 @@
           "lls /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
           "get git-repos/eigenframe/README.md",
           "put README.md git-repos/temp1",
+          "put README.md git-repos",
+          "put README.md .",
           "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos/temp2"
         ],
         "x-sftp_list": [
