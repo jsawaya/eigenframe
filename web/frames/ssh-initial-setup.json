@@ -1,0 +1,212 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Initial Setup"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "You must first run the sshd command in the localhost Termux session (or other network host), in order to use SecureShell."
+        ]
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Termux Package Update...",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_file_download_white_24dp.png",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Termux Package Update",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "echo y | pkg update"
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Install GIT",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "pkg install git",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "echo pkg install git",
+          "pkg install git",
+          "echo ",
+          "echo git status:",
+          "git status"
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Make git-repos folder in home directory",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Make 'git-repos' folder in Termux home directory",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "cd /data/data/com.termux/files/home",
+          "echo mkdir git-repos",
+          "mkdir git-repos",
+          "cd git-repos",
+          "echo ",
+          "echo current working directory:",
+          "pwd",
+          "echo ",
+          "echo contents:",
+          "ls -ls"
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Clone GITHUB eigenframe repository",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "git clone eigenframe checkout test, status",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "cd /data/data/com.termux/files/home",
+          "echo current working directory",
+          "pwd",
+          "echo ",
+          "echo mkdir git-repos",
+          "mkdir git-repos",
+          "echo ",
+          "echo cd git-repos",
+          "cd git-repos",
+          "echo ",
+          "echo git clone https://github.com/jsawaya/eigenframe",
+          "git clone https://github.com/jsawaya/eigenframe",
+          "echo ",
+          "echo cd eigenframe",
+          "cd eigenframe",
+          "echo ",
+          "echo git checkout -b test",
+          "git checkout -b test",
+          "echo ",
+          "echo git status:",
+          "git status"
+        ]
+      }
+    },
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "PopupScreen/TextView ssh - make git-repos directory",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "PopupScreen/TextView ssh - make git-repos directory",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "font": "font/droid-sans-mono/DroidSansMono.ttf",
+            "ssh_list": [
+              "cd /data/data/com.termux/files/home",
+              "echo mkdir git-repos",
+              "mkdir git-repos",
+              "cd git-repos",
+              "echo ",
+              "echo current working directory:",
+              "pwd",
+              "echo ",
+              "echo contents:",
+              "ls -ls"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+
+
