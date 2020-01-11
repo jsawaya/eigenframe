@@ -103,7 +103,8 @@
     },
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Test SecureShell Connection",
       "text_color": "#ffffff",
@@ -126,7 +127,8 @@
     },
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "PopupScreen with TextView async call to ssh whoami",
       "text_color": "#ffffff",
