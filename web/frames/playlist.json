@@ -527,15 +527,6 @@
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Integrate application services (e.g. ruby webrick)"
     }
   ]
 }
