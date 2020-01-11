@@ -128,7 +128,27 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "sftp version",
+      "text": "PopupTextView async call to sftp version",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "x-margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "PopupTextView async call to sftp version",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp": "version"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "PopupScreen with TextView async call to sftp version",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -144,7 +164,7 @@
         "text_size": "20",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "sftp version",
+        "text": "PopupScreen with TextView async call to sftp version",
         "icon": {
           "name": "info.jpg",
           "location": "left"
@@ -154,10 +174,10 @@
             "type": "TextView",
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
-            "sftp": "version",
             "text_size": "20",
             "gravity": "center",
-            "text_color": "#ffffff"
+            "text_color": "#ffffff",
+            "sftp": "version"
           }
         ]
       }
