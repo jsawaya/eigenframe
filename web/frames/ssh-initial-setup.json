@@ -13,7 +13,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Initial Setup"
+      "text": "Termux Initial Setup"
     },
     {
       "type": "TextView",
@@ -23,9 +23,47 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "You must first run the sshd command in the localhost Termux session (or other network host), in order to use SecureShell."
-        ]
+        "1. You must first install Termux app.",
+        "2. Open Termux app console, type the following:",
+        "3. Type the following to update/upgrade any installed packages:",
+        "   $ pkg upgrade",
+        "4. Type this to enable Termux to access shared file storage:",
+        "   $ termux-setup-storage",
+        "5. Install openssh package (mandatory):",
+        "   $ pkg install openssh",
+        "6. Define your secure-shell password (and remember it):",
+        "   $ passwd",
+        "7. Start the secure-shell daemon process:",
+        "   $ sshd",
+        "8. Verify that you can login to secure-ftp, type:",
+        "   $ sftp -P 8022 localhost",
+        "   Connected to localhost.",
+        "   sftp> quit",
+        "9. You are now ready to click on EigenFrame [SecureShell Settings]"
+        ],
+      "x-text_list": [
+        "2a.  $ pkg install gnupg",
+        "2a.  $ pkg install apache2",
+        "2a.  $ pkg install swi-prolog",
+        "2a.  $ pkg install curl",
+        "2a.  $ pkg install emacs",
+        "2a.  $ pkg install ruby",
+        "2a.  $ pkg install git",
+        "2a.  $ ps -e",
+        "2a.  $ copy http conf",
+        "2a.  $ start httpd",
+        "2a.  $ git add *",
+        "2a.  $ git commit -a -m 'testing' ",
+        "2a.  $ git config --global user.email '#{email}' ",
+        "2a.  $ git config --global user.name '#{name}' ",
+        "2a.  $ git push origin test",
+        "2a.  $ git status",
+        "2a.  $ ssh -p 8022 localhost",
+        "2a.  $ sftp -P 8022 localhost",
+      ]
     },
+
+
     {
       "type": "Button",
       "layout_width": "wrap_content",
@@ -51,11 +89,13 @@
       }
     },
 
+
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Install GIT",
+      "text": "PopupScreen/TextView ssh - install git package",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -65,99 +105,34 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupTextView",
-        "title": "pkg install git",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo pkg install git",
-          "pkg install git",
-          "echo ",
-          "echo git status:",
-          "git status"
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "PopupScreen/TextView ssh - install git package",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "font": "font/droid-sans-mono/DroidSansMono.ttf",
+            "ssh_list": [
+              "echo pkg install git",
+              "pkg install git",
+              "echo ",
+              "echo git status:",
+              "git status"
+            ]
+          }
         ]
       }
     },
 
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Make git-repos folder in home directory",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Make 'git-repos' folder in Termux home directory",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "cd /data/data/com.termux/files/home",
-          "echo mkdir git-repos",
-          "mkdir git-repos",
-          "cd git-repos",
-          "echo ",
-          "echo current working directory:",
-          "pwd",
-          "echo ",
-          "echo contents:",
-          "ls -ls"
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Clone GITHUB eigenframe repository",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "git clone eigenframe checkout test, status",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "cd /data/data/com.termux/files/home",
-          "echo current working directory",
-          "pwd",
-          "echo ",
-          "echo mkdir git-repos",
-          "mkdir git-repos",
-          "echo ",
-          "echo cd git-repos",
-          "cd git-repos",
-          "echo ",
-          "echo git clone https://github.com/jsawaya/eigenframe",
-          "git clone https://github.com/jsawaya/eigenframe",
-          "echo ",
-          "echo cd eigenframe",
-          "cd eigenframe",
-          "echo ",
-          "echo git checkout -b test",
-          "git checkout -b test",
-          "echo ",
-          "echo git status:",
-          "git status"
-        ]
-      }
-    },
 
     {
       "type": "Button",
@@ -205,7 +180,59 @@
           }
         ]
       }
+    },
+
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "PopupScreen/TextView ssh - clone eigenframe, checkout test branch",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "PopupScreen/TextView ssh - clone eigenframe, checkout test branch",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "font": "font/droid-sans-mono/DroidSansMono.ttf",
+            "ssh_list": [
+              "echo git clone https://github.com/jsawaya/eigenframe",
+              "git clone https://github.com/jsawaya/eigenframe",
+              "echo ",
+              "echo cd eigenframe",
+              "cd eigenframe",
+              "echo ",
+              "echo git checkout -b test",
+              "git checkout -b test",
+              "echo ",
+              "echo git status:",
+              "git status"
+            ]
+          }
+        ]
+      }
     }
+
+
   ]
 }
 
