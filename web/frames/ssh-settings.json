@@ -20,6 +20,7 @@
       "id": 88800,
       "max_length": 40,
       "x-filter": "label",
+      "filter": "no-whitespace",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
@@ -41,7 +42,8 @@
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
-      "background_color": "#000000"
+      "background_color": "#000000",
+      "text": "password"
     },
     {
       "type": "TextView",
@@ -56,6 +58,7 @@
       "type": "EditText",
       "id": 88802,
       "max_length": 40,
+      "filter": "no-whitespace",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "localhost",
