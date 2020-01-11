@@ -106,7 +106,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Test SecureShell Connection",
+      "text": "PopupTextView async call to ssh whoami",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "x-margin": {
@@ -117,7 +117,7 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "Test SecureShell Connection",
+        "title": "PopupTextView async call to ssh whoami",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "ssh_list": [
           "echo whoami:",
@@ -159,7 +159,10 @@
             "text_size": "20",
             "gravity": "center",
             "text_color": "#ffffff",
-            "ssh": "whoami"
+            "ssh_list": [
+              "echo whoami:",
+              "whoami"
+            ]
           }
         ]
       }
