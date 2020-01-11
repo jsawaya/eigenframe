@@ -109,7 +109,7 @@
       "text": "PopupTextView async call to ssh whoami",
       "text_color": "#ffffff",
       "background_color": "#123456",
-      "x-margin": {
+      "margin": {
         "left": 10,
         "top": 10,
         "right": 10,

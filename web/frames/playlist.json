@@ -155,35 +155,6 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Gallery of sftp examples",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "20",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "text": "Gallery of sftp examples",
-        "icon": {
-          "name": "info.jpg",
-          "location": "left"
-        },
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/gallery-sftp.json"
-      }
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "text": "Gallery of ssh examples",
       "text_color": "#ffffff",
       "background_color": "#123456",
@@ -206,6 +177,35 @@
           "location": "left"
         },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/gallery-ssh.json"
+      }
+    },
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Gallery of sftp examples",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Gallery of sftp examples",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/gallery-sftp.json"
       }
     },
     {

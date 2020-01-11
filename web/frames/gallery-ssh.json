@@ -22,12 +22,13 @@
     },
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "PopupTextView async call to ssh whoami",
       "text_color": "#ffffff",
       "background_color": "#123456",
-      "x-margin": {
+      "margin": {
         "left": 10,
         "top": 10,
         "right": 10,
@@ -42,7 +43,8 @@
     },
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "PopupScreen with TextView async call to ssh whoami",
       "text_color": "#ffffff",
@@ -94,6 +96,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "File System Explorer\n(Dynamic Application Demo)",
