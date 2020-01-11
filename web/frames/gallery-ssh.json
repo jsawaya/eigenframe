@@ -1,0 +1,144 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Gallery of ssh examples"
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "PopupTextView async call to ssh whoami",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "x-margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "PopupTextView async call to ssh whoami",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp": "whoami"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "PopupScreen with TextView async call to ssh whoami",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "PopupScreen with TextView async call to ssh whoami",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "ssh": "whoami"
+          }
+        ]
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Launch apps from SecureShell:"
+    },
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "File System Explorer\n(Dynamic Application Demo)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "File system explorer",
+        "icon": {
+          "name": "info.jpg",
+          "location": "left"
+        },
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text": "SecureShell calls ruby to generate the following components:",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff"
+          },
+          {
+            "type": "SecureShell",
+            "is_eigen_response": true,
+            "ssh_list": [
+              "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+              "ruby ssh-directory-listview.rb /data/data/com.termux/files/home"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+
+
