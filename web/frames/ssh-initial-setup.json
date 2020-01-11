@@ -64,12 +64,50 @@
       ]
     },
 
-
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Termux Package Update...",
+      "text": "SecureShell Settings",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "SecureShell Settings",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+      }
+    },
+
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "10. Click [Termux Pakage Upgrade]  This may take a little while to complete..."
+      ]
+    },
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Termux Package Upgrage",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -84,19 +122,31 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "Termux Package Update",
+        "title": "Termux Package Upgrade",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "echo y | pkg update"
+        "ssh": "echo y | pkg upgrade"
       }
     },
 
 
     {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "11. Click [Install git package]  ..."
+      ]
+    },
+    {
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "PopupScreen/TextView ssh - install git package",
+      "text": "Install git package",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -136,11 +186,23 @@
 
 
     {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "12. Click [Make git-repos directory]  ..."
+      ]
+    },
+    {
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "PopupScreen/TextView ssh - make git-repos directory",
+      "text": "Make git-repos directory",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -185,11 +247,23 @@
 
 
     {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "13. Click [Clone eigenframe github repository]  ..."
+      ]
+    },
+    {
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "PopupScreen/TextView ssh - clone eigenframe, checkout test branch",
+      "text": "Clone eigenframe github repository, and checkout test branch",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -231,9 +305,20 @@
           }
         ]
       }
+    },
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "14.  You now ready for [Host Administration]."
+      ]
     }
-
-
   ]
 }
 
