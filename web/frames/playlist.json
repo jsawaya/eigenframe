@@ -32,7 +32,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "EigenFrame Administration"
+      "text": "EigenFrame Administration:"
     },
     {
       "type": "Button",
@@ -65,11 +65,18 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "SecureShell Settings",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
@@ -87,11 +94,18 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Host Administration",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
@@ -109,11 +123,18 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Host Processes",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
@@ -131,11 +152,18 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Gallery of sftp examples",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
@@ -153,11 +181,18 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Gallery of ssh examples",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
@@ -175,11 +210,18 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Ruby Admin",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
@@ -211,6 +253,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "launch this initial application (again),\nthen press back-button to exit",
@@ -245,6 +288,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Gallery examples",
@@ -265,6 +309,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "PhotoPGP demo",
@@ -285,11 +330,18 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Create shortcut for - Gallery examples",
       "text_color": "#ffffff",
       "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -300,11 +352,18 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Create shortcut for - PhotoPGP demo",
       "text_color": "#ffffff",
       "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -329,6 +388,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Gallery examples",
@@ -349,6 +409,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "show apache2 error log",
@@ -368,6 +429,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "test httpd service response",
@@ -387,6 +449,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "File System Explorer\n(Dynamic Application Demo)",
@@ -411,6 +474,7 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "File System Explorer\nusing UrlRequest",
