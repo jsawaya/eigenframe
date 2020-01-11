@@ -348,7 +348,7 @@
         "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
       }
     },
-        {
+    {
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
