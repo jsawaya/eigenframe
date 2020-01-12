@@ -23,12 +23,15 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "You must first run the sshd command in the localhost Termux session (or other network host), in order to use SecureShell."
+        "Prerequisites: You must have sshd running on Termux (or other network host), in order to use ssh."
         ]
     },
+
+
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Termux Package Update...",
       "text_color": "#ffffff",
@@ -44,36 +47,24 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupTextView",
-        "title": "Termux Package Update",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "echo y | pkg update"
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Install GIT",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "pkg install git",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo pkg install git",
-          "pkg install git",
-          "echo ",
-          "echo git status:",
-          "git status"
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Termux Package Update...",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "font": "font/droid-sans-mono/DroidSansMono.ttf",
+            "ssh": "echo y | pkg update"
+          }
         ]
       }
     },
@@ -81,9 +72,10 @@
 
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Clone GITHUB eigenframe repository",
+      "text": "Git checkout master, pull, checkout test, merge, status",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -97,81 +89,51 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupTextView",
-        "title": "git clone eigenframe checkout test, status",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "cd /data/data/com.termux/files/home",
-          "echo current working directory",
-          "pwd",
-          "echo ",
-          "echo mkdir git-repos",
-          "mkdir git-repos",
-          "echo ",
-          "echo cd git-repos",
-          "cd git-repos",
-          "echo ",
-          "echo git clone https://github.com/jsawaya/eigenframe",
-          "git clone https://github.com/jsawaya/eigenframe",
-          "echo ",
-          "echo cd eigenframe",
-          "cd eigenframe",
-          "echo ",
-          "echo git checkout -b test",
-          "git checkout -b test",
-          "echo ",
-          "echo git status:",
-          "git status"
-        ]
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Pull GITHUB updates",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "git checkout master, pull, checkout test, merge, status",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "cd /data/data/com.termux/files/home/git-repos/eigenframe",
-          "echo current working directory:",
-          "pwd",
-          "echo ",
-          "echo git status:",
-          "git status",
-          "echo ",
-          "echo git checkout master:",
-          "git checkout master",
-          "echo ",
-          "echo git pull:",
-          "git pull",
-          "echo ",
-          "echo git checkout test:",
-          "git checkout test",
-          "echo ",
-          "echo git merge master:",
-          "git merge master",
-          "echo ",
-          "echo git status:",
-          "git status"
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Git checkout master, pull, checkout test, merge, status",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "font": "font/droid-sans-mono/DroidSansMono.ttf",
+            "ssh_list": [
+              "cd ~/git-repos/eigenframe",
+              "echo current working directory:",
+              "pwd",
+              "echo ",
+              "echo git status:",
+              "git status",
+              "echo ",
+              "echo git checkout master:",
+              "git checkout master",
+              "echo ",
+              "echo git pull:",
+              "git pull",
+              "echo ",
+              "echo git checkout test:",
+              "git checkout test",
+              "echo ",
+              "echo git merge master:",
+              "git merge master",
+              "echo ",
+              "echo git status:",
+              "git status"
+            ]
+          }
         ]
       }
     }
+
+
   ]
 }
 

@@ -24,15 +24,15 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "1. You must first install Termux app.",
-        "2. Open Termux app console, type the following:",
+        "1. You must first install the Termux app.",
+        "2. Open Termux app console",
         "3. Type the following to update/upgrade any installed packages:",
         "   $ pkg upgrade",
-        "4. Type this to enable Termux to access shared file storage:",
+        "4. Enable Termux access to shared file storage (recommended):",
         "   $ termux-setup-storage",
-        "5. Install openssh package (mandatory):",
+        "5. Install openssh (open secure-shell) package:",
         "   $ pkg install openssh",
-        "6. Define your secure-shell password (and remember it):",
+        "6. Create ssh password (you will re-enter this password in [SecureShell Settings]):",
         "   $ passwd",
         "7. Start the secure-shell daemon process:",
         "   $ sshd",
@@ -40,7 +40,7 @@
         "   $ sftp -P 8022 localhost",
         "   Connected to localhost.",
         "   sftp> quit",
-        "9. You are now ready to click on EigenFrame [SecureShell Settings]"
+        "9. Click [SecureShell Settings], to re-enter ssh password and test ssh connection"
         ],
       "x-text_list": [
         "2a.  $ pkg install gnupg",
@@ -60,7 +60,7 @@
         "2a.  $ git push origin test",
         "2a.  $ git status",
         "2a.  $ ssh -p 8022 localhost",
-        "2a.  $ sftp -P 8022 localhost",
+        "2a.  $ sftp -P 8022 localhost"
       ]
     },
 
@@ -100,14 +100,15 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "10. Click [Termux Pakage Upgrade]  This may take a little while to complete..."
+        "10. Click [Termux Package Upgrade]  This may take a while to complete..."
       ]
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Termux Package Upgrage",
+      "text": "Termux Package Upgrade",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -121,10 +122,25 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupTextView",
-        "title": "Termux Package Upgrade",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "echo y | pkg upgrade"
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Termux Package Upgrade",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "font": "font/droid-sans-mono/DroidSansMono.ttf",
+            "ssh": "echo y | pkg upgrade"
+          }
+        ]
       }
     },
 
@@ -162,7 +178,7 @@
         "text_size": "20",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "PopupScreen/TextView ssh - install git package",
+        "text": "Install git package",
         "component_list": [
           {
             "type": "TextView",
@@ -174,10 +190,7 @@
             "font": "font/droid-sans-mono/DroidSansMono.ttf",
             "ssh_list": [
               "echo pkg install git",
-              "pkg install git",
-              "echo ",
-              "echo git status:",
-              "git status"
+              "pkg install git"
             ]
           }
         ]
@@ -194,7 +207,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "12. Click [Make git-repos directory]  ..."
+        "12. Click [Make '~/git-repos' directory] to create a place for local eigenframe git repository"
       ]
     },
     {
@@ -218,7 +231,7 @@
         "text_size": "20",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "PopupScreen/TextView ssh - make git-repos directory",
+        "text": "Make '~/git-repos' directory",
         "component_list": [
           {
             "type": "TextView",
@@ -229,16 +242,11 @@
             "text_color": "#ffffff",
             "font": "font/droid-sans-mono/DroidSansMono.ttf",
             "ssh_list": [
-              "cd /data/data/com.termux/files/home",
+              "cd ~",
               "echo mkdir git-repos",
               "mkdir git-repos",
               "cd git-repos",
-              "echo ",
-              "echo current working directory:",
-              "pwd",
-              "echo ",
-              "echo contents:",
-              "ls -ls"
+              "pwd"
             ]
           }
         ]
@@ -263,9 +271,13 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Clone eigenframe github repository, and checkout test branch",
+      "text": "Clone eigenframe github repository\n(and checkout test branch)",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -279,7 +291,7 @@
         "text_size": "20",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "PopupScreen/TextView ssh - clone eigenframe, checkout test branch",
+        "text": "Clone eigenframe github repository, and checkout test branch",
         "component_list": [
           {
             "type": "TextView",
@@ -290,6 +302,7 @@
             "text_color": "#ffffff",
             "font": "font/droid-sans-mono/DroidSansMono.ttf",
             "ssh_list": [
+              "cd ~/git-repos",
               "echo git clone https://github.com/jsawaya/eigenframe",
               "git clone https://github.com/jsawaya/eigenframe",
               "echo ",
@@ -305,20 +318,8 @@
           }
         ]
       }
-    },
-
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "14.  You now ready for [Host Administration]."
-      ]
     }
+
   ]
 }
 

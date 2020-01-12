@@ -106,7 +106,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "PopupTextView async call to ssh whoami",
+      "text": "Query Termux user-id",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -117,53 +117,11 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "PopupTextView async call to ssh whoami",
+        "title": "Query Termux user-id",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "ssh_list": [
           "echo whoami:",
           "whoami"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "PopupScreen with TextView async call to ssh whoami",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "20",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "text": "PopupScreen with TextView async call to ssh whoami",
-        "icon": {
-          "name": "info.jpg",
-          "location": "left"
-        },
-        "component_list": [
-          {
-            "type": "TextView",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "text_size": "20",
-            "gravity": "center",
-            "text_color": "#ffffff",
-            "ssh_list": [
-              "echo whoami:",
-              "whoami"
-            ]
-          }
         ]
       }
     }

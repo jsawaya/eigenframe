@@ -13,35 +13,13 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Host Processes"
+      "text": "List Host Processes"
     },
+
     {
       "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "List processes (ps -e)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "info.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "List Processes (ps -e)",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh":  "ps -e"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "List process details (ps -elf)",
       "text_color": "#ffffff",
@@ -57,15 +35,32 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupTextView",
-        "title": "List process details (ps -elf)",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "ps -elf"
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "List process details (ps -elf)",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "font": "font/droid-sans-mono/DroidSansMono.ttf",
+            "ssh": "ps -elf"
+          }
+        ]
       }
     },
+
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "List process commands only (ps -eo cmd)",
       "text_color": "#ffffff",
@@ -81,13 +76,28 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupTextView",
-        "title": "List processes (ps -eo cmd)",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "ps -eo cmd",
-        "x-ssh": "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'"
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "List process commands only (ps -eo cmd)",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text_size": "20",
+            "gravity": "center",
+            "text_color": "#ffffff",
+            "font": "font/droid-sans-mono/DroidSansMono.ttf",
+            "ssh": "ps -eo cmd"
+          }
+        ]
       }
     }
+
   ]
 }
 
