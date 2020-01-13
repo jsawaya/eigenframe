@@ -10,7 +10,7 @@
       "text": "Examples of PopupTextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text_size": "20",
+      "text_size": "14",
       "text_color": "#ffffff"
     },
     {
@@ -66,7 +66,7 @@
       "text": "Examples of PopupTextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text_size": "20",
+      "text_size": "14",
       "text_color": "#ffffff"
     },
     {

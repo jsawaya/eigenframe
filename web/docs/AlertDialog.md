@@ -22,7 +22,7 @@ Example AlertDialog as Button on_click action
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Test AlertDialog",
-      "text_size": "20",
+      "text_size": "14",
       "gravity": "center",
       "text_color": "#ffffff",
       "icon": {

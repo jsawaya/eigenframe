@@ -16,15 +16,17 @@
       "text_color": "#ffffff",
       "html_list": [
         "<img src='ic_launcher.png'>",
-        "<h1><font color=\"#8aec81\">EigenFrame: Platform for dynamic systems on Android</font></h1>",
-        "<h4><i>For more info visit:</i></h4> https://github.com/jsawaya/eigenframe"
+        "<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
+        "<h3><font color=\"#8aec81\">framework for generating Android apps</font></h3>"
       ]
     },
+
     {
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
     },
+
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -32,8 +34,9 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "EigenFrame Administration:"
+      "text": "Settings:"
     },
+
     {
       "type": "Button",
       "gravity": "center",
@@ -52,7 +55,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Screen Orientation",
@@ -62,6 +65,22 @@
         },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json"
       }
+    },
+
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Administration:"
     },
 
     {
@@ -82,7 +101,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Termux Initial Setup",
@@ -109,7 +128,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "SecureShell Settings",
@@ -136,7 +155,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Host Administration",
@@ -165,7 +184,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Host Processes",
@@ -194,7 +213,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Gallery of ssh examples",
@@ -223,7 +242,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Gallery of sftp examples",
@@ -252,10 +271,10 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Ruby Admin",
+        "text": "Ruby Administration",
         "icon": {
           "name": "info.jpg",
           "location": "top"
@@ -491,7 +510,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "EigenFrame",
@@ -516,7 +535,7 @@
         "type": "PopupScreen",
         "layout_width": "match_parent",
         "layout_height": "wrap_content",
-        "text_size": "20",
+        "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Test UrlRequest",
@@ -530,7 +549,7 @@
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
             "text": "UrlRequest generates the following components:",
-            "text_size": "20",
+            "text_size": "14",
             "gravity": "center",
             "text_color": "#ffffff"
           },

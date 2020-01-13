@@ -11,7 +11,7 @@
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "Test CheckBox",
-      "text_size": "20",
+      "text_size": "14",
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
       "text_color": "#ffffff",
       "icon": {
