@@ -28,7 +28,7 @@
       "layout_height": "wrap_content",
       "text": "ListView getViewIdState(700)",
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#654321",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -41,7 +41,7 @@
       "id": 700,
       "layout_width": "match_parent",
       "layout_height": "match_parent",
-      "background_color": "#ff00ff",
+      "background_color": "#123456",
       "checked_option": 1,
       "key_list": [
         "test1.txt.asc",
@@ -68,7 +68,7 @@
       "item_layout": {
         "type": "TextView",
         "text_script_list": [
-          "(eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + 1) + ' - ' + eigenMap.get('metadata')"
+          "eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ' - ' + eigenMap.get('metadata')"
         ],
         "text_size": "20",
         "text_color": "#ffffff",
