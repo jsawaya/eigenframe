@@ -1,0 +1,315 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Apache2 Administration"
+    },
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Install apache2 package",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Install apache2 package (and curl)",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "echo pkg install apache2",
+                  "pkg install apache2",
+
+                  "echo ",
+                  "echo backup apache2 config file",
+                  "cp ~/../usr/etc/apache2/httpd.conf ~/original-httpd.conf.backup",
+
+                  "echo ",
+                  "echo pkg install curl",
+                  "pkg install curl"
+
+                ]
+              }
+
+
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Import eigenframe apache2 configuration and cgi scripts",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Import eigenframe apache2 configuration and cgi scripts",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "echo ",
+                  "echo install apache2 configuration from eigenframe/etc-apache2/httpd.conf",
+                  "cp ~/git-repos/eigenframe/etc-apache2/httpd.conf /data/data/com.termux/files/usr/etc/apache2",
+
+                  "echo ",
+                  "echo enable execution of cgi-bin directory files",
+                  "chmod 755 /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/*"
+                ]
+              }
+
+
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Start apache2 cgi web-service",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Start apache2 cgi web-service",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "echo starting apache2 cgi web-server ...",
+                  "httpd",
+
+                  "echo ",
+                  "echo ready to test - click [Test apache2 cgi web-server]"
+                ]
+              },
+              {
+                "type": "Button",
+                "layout_width": "wrap_content",
+                "layout_height": "wrap_content",
+                "text": "Test apache2 cgi web-server",
+                "text_color": "#ffffff",
+                "background_color": "#123456",
+                "margin": {
+                  "left": 4,
+                  "top": 4,
+                  "right": 4,
+                  "bottom": 4
+                },
+                "icon": {
+                  "name": "info.jpg",
+                  "location": "left"
+                },
+                "on_click": {
+                  "type": "PopupTextView",
+                  "title": "Test apache2 cgi web-server",
+                  "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Confirm apache2 http processes",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "info.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Confirm apache2 http process",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh": "ps -eo cmd | grep -n 'http' | grep -v 'grep'"
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Test apache2 cgi web-server",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Test apache2 cgi web-server",
+        "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "show apache2 error log",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "http://localhost:8080/cgi-bin/sys-list-error-log.sh",
+        "url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Use ssh to stop apache2 httpd processes",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "use ssh to stop apache httpd process",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_list": [
+          "killall httpd",
+          "ps -eo cmd"
+        ]
+      }
+    }
+
+  ]
+}
+
+
