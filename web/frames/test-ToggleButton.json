@@ -60,7 +60,7 @@
     },
     {
       "type": "ToggleButton",
-      "id": 401,
+      "id": 4099,
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "checked": false,
@@ -77,13 +77,13 @@
       "type": "Button",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "getViewIdState ToggleButton:401",
+      "text": "getViewIdState ToggleButton:4099",
       "text_color": "#ffffff",
       "background_color": "#ff00ff",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(401))"
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(4099))"
         ]
       }
     }
