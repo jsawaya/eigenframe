@@ -131,14 +131,24 @@
         "text": "Termux Package Upgrade",
         "component_list": [
           {
-            "type": "TextView",
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
-            "text_size": "20",
-            "gravity": "center",
-            "text_color": "#ffffff",
-            "font": "font/droid-sans-mono/DroidSansMono.ttf",
-            "ssh": "echo y | pkg upgrade"
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh": "echo y | pkg upgrade"
+              }
+            ]
           }
         ]
       }
@@ -181,16 +191,26 @@
         "text": "Install git package",
         "component_list": [
           {
-            "type": "TextView",
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
-            "text_size": "20",
-            "gravity": "center",
-            "text_color": "#ffffff",
-            "font": "font/droid-sans-mono/DroidSansMono.ttf",
-            "ssh_list": [
-              "echo pkg install git",
-              "pkg install git"
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "echo pkg install git",
+                  "pkg install git"
+                ]
+              }
             ]
           }
         ]
@@ -234,19 +254,29 @@
         "text": "Make '~/git-repos' directory",
         "component_list": [
           {
-            "type": "TextView",
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
-            "text_size": "20",
-            "gravity": "center",
-            "text_color": "#ffffff",
-            "font": "font/droid-sans-mono/DroidSansMono.ttf",
-            "ssh_list": [
-              "cd ~",
-              "echo mkdir git-repos",
-              "mkdir git-repos",
-              "cd git-repos",
-              "pwd"
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "cd ~",
+                  "echo mkdir git-repos",
+                  "mkdir git-repos",
+                  "cd git-repos",
+                  "pwd"
+                ]
+              }
             ]
           }
         ]
@@ -294,26 +324,36 @@
         "text": "Clone eigenframe github repository, and checkout test branch",
         "component_list": [
           {
-            "type": "TextView",
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
-            "text_size": "20",
-            "gravity": "center",
-            "text_color": "#ffffff",
-            "font": "font/droid-sans-mono/DroidSansMono.ttf",
-            "ssh_list": [
-              "cd ~/git-repos",
-              "echo git clone https://github.com/jsawaya/eigenframe",
-              "git clone https://github.com/jsawaya/eigenframe",
-              "echo ",
-              "echo cd eigenframe",
-              "cd eigenframe",
-              "echo ",
-              "echo git checkout -b test",
-              "git checkout -b test",
-              "echo ",
-              "echo git status:",
-              "git status"
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "cd ~/git-repos",
+                  "echo git clone https://github.com/jsawaya/eigenframe",
+                  "git clone https://github.com/jsawaya/eigenframe",
+                  "echo ",
+                  "echo cd eigenframe",
+                  "cd eigenframe",
+                  "echo ",
+                  "echo git checkout -b test",
+                  "git checkout -b test",
+                  "echo ",
+                  "echo git status:",
+                  "git status"
+                ]
+              }
             ]
           }
         ]

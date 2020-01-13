@@ -69,13 +69,23 @@
         },
         "component_list": [
           {
-            "type": "TextView",
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
-            "text_size": "20",
-            "gravity": "center",
-            "text_color": "#ffffff",
-            "ssh": "whoami"
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "ssh": "whoami"
+              }
+            ]
           }
         ]
       }

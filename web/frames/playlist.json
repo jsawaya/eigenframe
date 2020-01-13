@@ -535,9 +535,19 @@
             "text_color": "#ffffff"
           },
           {
-            "type": "UrlRequest",
-            "is_eigen_response": true,
-            "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "UrlRequest",
+                "is_eigen_response": true,
+                "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
+              }
+            ]
           }
         ]
       }

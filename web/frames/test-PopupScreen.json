@@ -42,22 +42,32 @@
         },
         "component_list": [
           {
-            "type": "TextView",
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
-            "text": "Example of component_list(TextView) on PopupScreen",
-            "text_size": "20",
-            "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-            "text_color": "#ffffff"
-          },
-          {
-            "type": "TextView",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "text": "text_size:14",
-            "text_size": "14",
-            "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-            "text_color": "#ff00ff"
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text": "Example of component_list(TextView) on PopupScreen",
+                "text_size": "20",
+                "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+                "text_color": "#ffffff"
+              },
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text": "text_size:14",
+                "text_size": "14",
+                "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+                "text_color": "#ff00ff"
+              }
+            ]
           }
         ]
       }
