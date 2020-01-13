@@ -41,27 +41,7 @@
         "   Connected to localhost.",
         "   sftp> quit",
         "9. Click [SecureShell Settings], to re-enter ssh password and test ssh connection"
-        ],
-      "x-text_list": [
-        "2a.  $ pkg install gnupg",
-        "2a.  $ pkg install apache2",
-        "2a.  $ pkg install swi-prolog",
-        "2a.  $ pkg install curl",
-        "2a.  $ pkg install emacs",
-        "2a.  $ pkg install ruby",
-        "2a.  $ pkg install git",
-        "2a.  $ ps -e",
-        "2a.  $ copy http conf",
-        "2a.  $ start httpd",
-        "2a.  $ git add *",
-        "2a.  $ git commit -a -m 'testing' ",
-        "2a.  $ git config --global user.email '#{email}' ",
-        "2a.  $ git config --global user.name '#{name}' ",
-        "2a.  $ git push origin test",
-        "2a.  $ git status",
-        "2a.  $ ssh -p 8022 localhost",
-        "2a.  $ sftp -P 8022 localhost"
-      ]
+        ]
     },
 
     {
@@ -358,9 +338,310 @@
           }
         ]
       }
+    },
+
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "14. Click [Install apache2 package]  ..."
+      ]
+    },
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Install apache2 package",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Install apache2 package",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "echo pkg install apache2",
+                  "pkg install apache2",
+
+                  "echo ",
+                  "echo pkg install apache2",
+                  "pkg install curl",
+
+                  "echo ",
+                  "echo backup old apache2 configuation - todo: add if not exists",
+                  "cp ~/../usr/etc/apache2/httpd.conf ~/original-httpd.conf.backup",
+
+                  "echo ",
+                  "echo install apache2 configuration from eigenframe/etc-apache2/httpd.conf",
+                  "cp ~/git-repos/eigenframe/etc-apache2/httpd.conf /data/data/com.termux/files/usr/etc/apache2",
+
+                  "echo ",
+                  "echo enable execution of cgi-bin directory files",
+                  "chmod 755 /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/*",
+
+                  "echo ",
+                  "echo starting apache2 cgi web-server ...",
+                  "httpd",
+
+                  "echo ",
+                  "echo ready to test - click [Test apache2 cgi web-server]"
+                ]
+              },
+              {
+                "type": "Button",
+                "layout_width": "wrap_content",
+                "layout_height": "wrap_content",
+                "text": "Test apache2 cgi web-server",
+                "text_color": "#ffffff",
+                "background_color": "#000000",
+                "margin": {
+                  "left": 4,
+                  "top": 4,
+                  "right": 4,
+                  "bottom": 4
+                },
+                "icon": {
+                  "name": "info.jpg",
+                  "location": "left"
+                },
+                "on_click": {
+                  "type": "PopupTextView",
+                  "title": "Test apache2 cgi web-server",
+                  "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "99. Click [Install ruby package]  ..."
+      ]
+    },
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Install ruby package",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Install ruby package",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "echo pkg install ruby",
+                  "pkg install ruby"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "99. Click [Install gnupg package] - only if you want to add signing/verification or encryption/decryption to your app"
+      ]
+    },
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Install gnupg package (optional)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Install gnupg package",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "echo pkg install gnupg",
+                  "pkg install gnupg"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "99. Click [Install swi-prolog package] - only if you want to add an inference engine to your app"
+      ]
+    },
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Install swi-prolog package (optional)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "20",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Install swi-prolog package",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "20",
+                "gravity": "center",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "echo pkg install swi-prolog",
+                  "pkg install swi-prolog"
+                ]
+              }
+            ]
+          }
+        ]
+      }
     }
+
 
   ]
 }
+
 
 

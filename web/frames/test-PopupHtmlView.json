@@ -39,56 +39,56 @@
       }
     },
     {
-          "type": "Button",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "text": "PopupHtmlView with url request: About",
-          "text_color": "#ffffff",
-          "background_color": "#000000",
-          "margin": {
-            "left": 4,
-            "top": 4,
-            "right": 4,
-            "bottom": 4
-          },
-          "icon": {
-            "name": "info.jpg",
-            "location": "left"
-          },
-          "on_click": {
-            "type": "PopupHtmlView",
-            "title": "PopupHtmlView",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
-          }
-        },
-        {
-          "type": "Button",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "text": "PopupHtmlView with url request: Recent Changes",
-          "text_color": "#ffffff",
-          "background_color": "#000000",
-          "icon": {
-            "name": "info.jpg",
-            "location": "left"
-          },
-          "on_click": {
-            "type": "PopupHtmlView",
-            "title": "PopupHtmlView",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/recent-changes.html"
-          },
-          "padding": {
-            "left": 4,
-            "top": 4,
-            "right": 4,
-            "bottom": 4
-          },
-          "margin": {
-            "left": 10,
-            "top": 10,
-            "right": 10,
-            "bottom": 10
-          }
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "PopupHtmlView with url request: About",
+      "text_color": "#ffffff",
+      "background_color": "#000000",
+      "margin": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "PopupHtmlView",
+        "title": "PopupHtmlView",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "PopupHtmlView with url request: Recent Changes",
+      "text_color": "#ffffff",
+      "background_color": "#000000",
+      "icon": {
+        "name": "info.jpg",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "PopupHtmlView",
+        "title": "PopupHtmlView",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/recent-changes.html"
+      },
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      }
     }
   ]
 }
