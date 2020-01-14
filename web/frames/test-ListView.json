@@ -72,16 +72,6 @@
         "layout_height": "wrap_content",
         "component_list": [
           {
-            "type": "TextView",
-            "text_script_list": [
-              "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')"
-            ],
-            "text_size": "28",
-            "text_color": "#ffffff",
-            "layout_width": "wrap_content",
-            "layout_height": "wrap_content"
-          },
-          {
             "type": "CheckBox",
             "x-id": 200,
             "layout_width": "wrap_content",
@@ -107,7 +97,8 @@
             "on_click": {
               "type": "JavaScript",
               "script_list": [
-                "eigenActivity.showToast('click')"
+                "var v = eigenFragment.getOptionString('metadata', '')",
+                "eigenActivity.showToast(v)"
               ]
             }
           }
