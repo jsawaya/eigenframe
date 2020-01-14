@@ -104,7 +104,8 @@
             "on_click": {
               "type": "JavaScript",
               "script_list": [
-                "eigenActivity.showToast('click')"
+                "var str = eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')",
+                "eigenActivity.showToast(str)"
               ]
             }
           }
