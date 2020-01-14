@@ -68,29 +68,6 @@
           "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
         ]
       }
-    },
-    {
-      "type": "EditText",
-      "id": 102,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "edit text 102",
-      "text_color": "#ffffff",
-      "background_color": "#11ff0000"
-    },
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Access EditText",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('eigenFragment.getEditTextValue(102): '+eigenFragment.getEditTextValue(102))"
-        ]
-      }
     }
   ]
 }

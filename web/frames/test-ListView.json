@@ -61,14 +61,14 @@
         "type": "JavaScript",
         "script_list": [
           "var pos = eigenFragment.getOptionInteger('position', 0)",
-          "var opt = eigenFragment.getOptionString('option')",
+          "var opt = eigenFragment.getOptionString('option', '')",
           "eigenActivity.showToast('ListView selected: '+ pos + ' - ' + opt)"
         ]
       },
       "item_layout": {
         "type": "TextView",
         "text_script_list": [
-          "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata')"
+          "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')"
         ],
         "text_size": "28",
         "text_color": "#ffffff",
