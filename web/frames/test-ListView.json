@@ -66,14 +66,49 @@
         ]
       },
       "item_layout": {
-        "type": "TextView",
-        "text_script_list": [
-          "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')"
-        ],
-        "text_size": "28",
-        "text_color": "#ffffff",
+        "type": "LinearLayout",
+        "orientation": "horizontal",
         "layout_width": "wrap_content",
-        "layout_height": "wrap_content"
+        "layout_height": "wrap_content",
+        "component_list": [
+          {
+            "type": "TextView",
+            "text_script_list": [
+              "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')"
+            ],
+            "text_size": "28",
+            "text_color": "#ffffff",
+            "layout_width": "wrap_content",
+            "layout_height": "wrap_content"
+          },
+          {
+            "type": "CheckBox",
+            "x-id": 200,
+            "layout_width": "wrap_content",
+            "layout_height": "wrap_content",
+            "checked": false,
+            "text_color": "#ffffff",
+            "background_color": "#123456",
+            "padding": {
+              "left": 20,
+              "top": 20,
+              "right": 20,
+              "bottom": 20
+            },
+            "margin": {
+              "left": 40,
+              "top": 40,
+              "right": 40,
+              "bottom": 40
+            },
+            "on_click": {
+              "type": "JavaScript",
+              "script_list": [
+                "eigenActivity.showToast('click')"
+              ]
+            }
+          }
+        ]
       }
     }
   ]
