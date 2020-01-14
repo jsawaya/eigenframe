@@ -87,6 +87,9 @@
             "layout_width": "wrap_content",
             "layout_height": "wrap_content",
             "checked": false,
+            "text_script_list": [
+              "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')"
+            ],
             "text_color": "#ffffff",
             "background_color": "#123456",
             "padding": {
@@ -104,8 +107,7 @@
             "on_click": {
               "type": "JavaScript",
               "script_list": [
-                "var str = eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')",
-                "eigenActivity.showToast(str)"
+                "eigenActivity.showToast('click')"
               ]
             }
           }
