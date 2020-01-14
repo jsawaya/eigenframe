@@ -12,12 +12,12 @@ def eigen_directory_listview_http_cgi(dirpath)
   dirHashDirectory = dirHash['directory']
 
   listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
-  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenMap.get('option')"
+  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenFragment.getOptionString('option')"
   subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
   file_item_title_script_list =
     [
-      "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
+      "var title0 = 'File:  #{dirpath}' + '/'+ eigenFragment.getOptionString('option')",
       "java.lang.System.out.println(title0)",
       "title0"
     ]
@@ -27,7 +27,7 @@ def eigen_directory_listview_http_cgi(dirpath)
 
   file_item_url_script_list =
     [
-      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenFragment.getOptionString('option')",
       "java.lang.System.out.println(url0)",
       "url0"
     ]
@@ -43,12 +43,12 @@ def eigen_directory_listview_http_ruby(dirpath)
   dirHashDirectory = dirHash['directory']
 
   listdir_url = "http://localhost:1234/listdir"
-  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenMap.get('option')"
+  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenFragment.getOptionString('option')"
   subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
   file_item_title_script_list =
     [
-      "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
+      "var title0 = 'File:  #{dirpath}' + '/'+ eigenFragment.getOptionString('option')",
       "java.lang.System.out.println(title0)",
       "title0"
     ]
@@ -56,7 +56,7 @@ def eigen_directory_listview_http_ruby(dirpath)
   list_contents_url = "http://localhost:1234/list_contents"
   file_item_url_script_list =
     [
-      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenFragment.getOptionString('option')",
       "java.lang.System.out.println(url0)",
       "url0"
     ]
@@ -71,12 +71,12 @@ def eigen_directory_listview_ssh(dirpath)
   dirHash = set_directory_hash(dirpath)
   dirHashDirectory = dirHash['directory']
 
-  subdir_ssh_script = "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-directory-listview.rb #{dirHashDirectory}/' + eigenMap.get('option')"
+  subdir_ssh_script = "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-directory-listview.rb #{dirHashDirectory}/' + eigenFragment.getOptionString('option')"
   subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", [subdir_ssh_script])
 
   file_item_title_script_list =
     [
-      "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
+      "var title0 = 'File:  #{dirpath}' + '/'+ eigenFragment.getOptionString('option')",
       "java.lang.System.out.println(title0)",
       "title0"
     ]
@@ -84,7 +84,7 @@ def eigen_directory_listview_ssh(dirpath)
 
   file_item_ssh_script_list =
     [
-      "var filepath0 = '#{dirpath}/' + eigenMap.get('option')",
+      "var filepath0 = '#{dirpath}/' + eigenFragment.getOptionString('option')",
       "java.lang.System.out.println('js filepath0: '+filepath0)",
       "var ssh_cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents.rb ' + filepath0",
       "java.lang.System.out.println('js ssh_cmd: '+ssh_cmd)",
@@ -98,7 +98,7 @@ def eigen_directory_listview_ssh(dirpath)
 
 #  file_item_url_script_list =
 #    [
-#      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+#      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenFragment.getOptionString('option')",
 #      "java.lang.System.out.println(url0)",
 #      "url0"
 #    ]
@@ -121,7 +121,7 @@ def directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewO
 
   headerTextView = eigen_text_view(24, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
 
-  text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
+  text_script_list = ["eigenFragment.getOptionInteger('position', 0) + ': ' + eigenFragment.getOptionString('metadata')"]
 
   subdirRowLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
@@ -153,19 +153,19 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   headerTextView = eigen_text_view(24, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
 
-  text_script_list = ["eigenFragment.getMapValueInteger(eigenMap, 'position', 0) + ': ' + eigenMap.get('metadata')"]
+  text_script_list = ["eigenFragment.getOptionInteger('position', 0) + ': ' + eigenFragment.getOptionString('metadata')"]
 
   subdirItemLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
   #listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
   #listdir_url = "http://localhost:1234/listdir"
-  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenMap.get('option')"
+  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenFragment.getOptionString('option')"
 
   #subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
   subdir_ssh_script_list =
   [
-    "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-directory-listview.rb #{dirHashDirectory}/' + eigenMap.get('option')"
+    "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-directory-listview.rb #{dirHashDirectory}/' + eigenFragment.getOptionString('option')"
   ]
 
   subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", subdir_ssh_script_list)
@@ -186,7 +186,7 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   #image_url_script_list =
   #  [
-  #    "var url0 = '#{list_contents_url}?filepath=#{dirpath}/' + eigenMap.get('metadata')",
+  #    "var url0 = '#{list_contents_url}?filepath=#{dirpath}/' + eigenFragment.getOptionString('metadata')",
   #    "java.lang.System.out.println(url0)",
   #    "url0"
   #  ]
@@ -200,14 +200,14 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   file_item_title_script_list =
     [
-      "var title0 = 'File:  #{dirpath}' + '/'+ eigenMap.get('option')",
+      "var title0 = 'File:  #{dirpath}' + '/'+ eigenFragment.getOptionString('option')",
       "java.lang.System.out.println(title0)",
       "title0"
     ]
 
   file_item_url_script_list =
     [
-      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenMap.get('option')",
+      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenFragment.getOptionString('option')",
       "java.lang.System.out.println(url0)",
       "url0"
     ]
