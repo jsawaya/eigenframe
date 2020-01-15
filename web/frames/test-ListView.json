@@ -76,7 +76,7 @@
             "layout_width": "wrap_content",
             "layout_height": "wrap_content",
             "text_script_list": [
-              "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')"
+              "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('option', '')"
             ],
             "text_color": "#ffffff",
             "background_color": "#123456",
@@ -91,14 +91,6 @@
               "top": 40,
               "right": 40,
               "bottom": 40
-            },
-            "on_click": {
-              "type": "JavaScript",
-              "script_list": [
-                "var pos = eigenFragment.getOptionInteger('position', 0)",
-                "var met = eigenFragment.getOptionString('metadata', '')",
-                "eigenActivity.showToast('ListView textview selected: '+ pos + ' - ' + met)"
-              ]
             }
           }
         ]
@@ -108,7 +100,7 @@
       "type": "Comment",
       "script_list": [
         "var pos = eigenFragment.getOptionInteger('position', 0)",
-        "var met = eigenFragment.getOptionString('metadata', '')",
+        "var met = eigenFragment.getOptionString('option', '')",
         "var v0 = eigenFragment.getViewState()",
         "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + met +'checkbox selected: '+v0)"
       ]

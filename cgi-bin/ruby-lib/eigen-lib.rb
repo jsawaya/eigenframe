@@ -121,7 +121,7 @@ def directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewO
 
   headerTextView = eigen_text_view(24, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
 
-  text_script_list = ["eigenFragment.getOptionInteger('position', 0) + ': ' + eigenFragment.getOptionString('metadata', '')"]
+  text_script_list = ["eigenFragment.getOptionInteger('position', 0) + ': ' + eigenFragment.getOptionString('option', '')"]
 
   subdirRowLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
@@ -153,7 +153,7 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   headerTextView = eigen_text_view(24, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
 
-  text_script_list = ["eigenFragment.getOptionInteger('position', 0) + ': ' + eigenFragment.getOptionString('metadata', '')"]
+  text_script_list = ["eigenFragment.getOptionInteger('position', 0) + ': ' + eigenFragment.getOptionString('option', '')"]
 
   subdirItemLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
 
@@ -186,7 +186,7 @@ def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
 
   #image_url_script_list =
   #  [
-  #    "var url0 = '#{list_contents_url}?filepath=#{dirpath}/' + eigenFragment.getOptionString('metadata', '')",
+  #    "var url0 = '#{list_contents_url}?filepath=#{dirpath}/' + eigenFragment.getOptionString('option', '')",
   #    "java.lang.System.out.println(url0)",
   #    "url0"
   #  ]
