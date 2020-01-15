@@ -72,11 +72,9 @@
         "layout_height": "wrap_content",
         "component_list": [
           {
-            "type": "CheckBox",
-            "x-id": 200,
+            "type": "Button",
             "layout_width": "wrap_content",
             "layout_height": "wrap_content",
-            "checked": false,
             "text_script_list": [
               "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('metadata', '')"
             ],
@@ -98,14 +96,23 @@
               "type": "JavaScript",
               "script_list": [
                 "var pos = eigenFragment.getOptionInteger('position', 0)",
-                "var opt = eigenFragment.getOptionString('option', '')",
                 "var met = eigenFragment.getOptionString('metadata', '')",
-                "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt+ ' : ' + met +'checkbox selected: '+v0)"
+                "eigenActivity.showToast('ListView button selected: '+ pos + ' - ' + met)"
               ]
             }
           }
         ]
       }
+    },
+    {
+      "type": "Comment",
+      "script_list": [
+        "var pos = eigenFragment.getOptionInteger('position', 0)",
+        "var met = eigenFragment.getOptionString('metadata', '')",
+        "var v0 = eigenFragment.getViewState()",
+        "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + met +'checkbox selected: '+v0)"
+      ]
     }
+
   ]
 }
