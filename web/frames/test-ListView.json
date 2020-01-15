@@ -43,7 +43,7 @@
       "layout_height": "match_parent",
       "background_color": "#123456",
       "checked_option": 1,
-      "key_list": [
+      "option_list": [
         "test1.txt.asc",
         "test1.json",
         "test1.zip",
@@ -62,7 +62,7 @@
         "script_list": [
           "var pos = eigenFragment.getOptionInteger('position', 0)",
           "var opt = eigenFragment.getOptionString('option', '')",
-          "eigenActivity.showToast('ListView selected: '+ pos + ' - ' + opt)"
+          "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)"
         ]
       },
       "item_layout": {
@@ -97,9 +97,10 @@
             "on_click": {
               "type": "JavaScript",
               "script_list": [
-                "var v0 = eigenFragment.getViewState()",
-                "var v = eigenFragment.getOptionString('metadata', '')",
-                "eigenActivity.showToast(v0)"
+                "var pos = eigenFragment.getOptionInteger('position', 0)",
+                "var opt = eigenFragment.getOptionString('option', '')",
+                "var met = eigenFragment.getOptionString('metadata', '')",
+                "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt+ ' : ' + met +'checkbox selected: '+v0)"
               ]
             }
           }
