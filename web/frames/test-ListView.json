@@ -97,8 +97,9 @@
             "on_click": {
               "type": "JavaScript",
               "script_list": [
+                "var v0 = eigenFragment.getViewState()",
                 "var v = eigenFragment.getOptionString('metadata', '')",
-                "eigenActivity.showToast(v)"
+                "eigenActivity.showToast(v0)"
               ]
             }
           }
