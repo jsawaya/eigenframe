@@ -91,6 +91,14 @@
               "top": 40,
               "right": 40,
               "bottom": 40
+            },
+            "on_click": {
+              "type": "JavaScript",
+              "script_list": [
+                "var pos = eigenFragment.getOptionInteger('position', 0)",
+                "var opt = eigenFragment.getOptionString('option', '')",
+                "eigenActivity.showToast('ListView text selected: '+ pos + ' - ' + opt)"
+              ]
             }
           }
         ]
