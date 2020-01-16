@@ -52,6 +52,19 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
             response.content_type = "text/plain"
             response.body = get_file_as_string(filepath)
 
+        elsif request.path == "/directory"
+            @logger.info("/directory")
+
+            response.status = 200
+            response.content_type = "text/plain"
+
+            dirpath = request.query["dirpath"]
+            @logger.info(dirpath)
+
+            #response.body = dirpath
+            response.body = EigenFrame.new().eigen_directory_listview_ssh(dirpath).to_json.to_s
+
+
         else
             response.status = 200
             response.body = "You did not provide the correct parameters"

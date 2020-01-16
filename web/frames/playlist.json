@@ -10,7 +10,6 @@
       "type": "HtmlView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "x_gravity": "center_horizontal",
       "gravity": "center",
       "x_text_size": "14",
       "text_color": "#ffffff",
@@ -59,10 +58,6 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Screen Orientation",
-        "icon": {
-          "name": "info.jpg",
-          "location": "left"
-        },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json"
       }
     },
@@ -159,10 +154,6 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Host Administration",
-        "icon": {
-          "name": "info.jpg",
-          "location": "top"
-        },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
       }
     },
@@ -188,10 +179,6 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Host Processes",
-        "icon": {
-          "name": "info.jpg",
-          "location": "top"
-        },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-proc.json"
       }
     },
@@ -217,10 +204,6 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Gallery of ssh examples",
-        "icon": {
-          "name": "info.jpg",
-          "location": "left"
-        },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/gallery-ssh.json"
       }
     },
@@ -246,10 +229,6 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Gallery of sftp examples",
-        "icon": {
-          "name": "info.jpg",
-          "location": "left"
-        },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/gallery-sftp.json"
       }
     },
@@ -512,10 +491,6 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Test UrlRequest",
-        "icon": {
-          "name": "info.jpg",
-          "location": "left"
-        },
         "component_list": [
 
           {
