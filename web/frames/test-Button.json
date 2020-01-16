@@ -9,7 +9,7 @@
     {
       "type": "LinearLayout",
       "orientation": "horizontal",
-      "gravity": "center",
+      "gravity": "center_vertical",
       "layout_width": "match_parent",
       "layout_height": "100",
       "component_list": [
@@ -73,6 +73,7 @@
       "type": "LinearLayout",
       "scrollable": true,
       "orientation": "horizontal",
+      "gravity": "center_vertical",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "component_list": [
@@ -149,6 +150,7 @@
       "type": "LinearLayout",
       "scrollable": true,
       "orientation": "horizontal",
+      "gravity": "center_vertical",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "component_list": [

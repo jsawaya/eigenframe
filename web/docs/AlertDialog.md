@@ -14,6 +14,7 @@ Example AlertDialog as Button on_click action
   "type": "LinearLayout",
   "scrollable": true,
   "orientation": "vertical",
+  "gravity": "center_horizontal",
   "layout_width": "match_parent",
   "layout_height": "wrap_content",
   "component_list": [

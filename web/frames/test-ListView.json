@@ -1,6 +1,7 @@
 {
   "type": "LinearLayout",
   "orientation": "vertical",
+  "gravity": "center_horizontal",
   "layout_width": "match_parent",
   "layout_height": "match_parent",
   "component_list": [
@@ -68,6 +69,7 @@
       "item_layout": {
         "type": "LinearLayout",
         "orientation": "horizontal",
+        "gravity": "center_vertical",
         "layout_width": "wrap_content",
         "layout_height": "wrap_content",
         "component_list": [
