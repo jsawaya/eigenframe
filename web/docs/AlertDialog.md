@@ -24,7 +24,7 @@ Example AlertDialog as Button on_click action
       "layout_height": "wrap_content",
       "text": "Test AlertDialog",
       "text_size": "14",
-      "gravity": "center",
+      "gravity": "left",
       "text_color": "#ffffff",
       "icon": {
         "name": "ic_launcher_round.",

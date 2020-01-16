@@ -52,7 +52,7 @@
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
                 "text_size": "14",
-                "gravity": "center",
+                "gravity": "left",
                 "text_color": "#ffffff",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
                 "ssh_list": [
@@ -114,7 +114,7 @@
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
                 "text_size": "14",
-                "gravity": "center",
+                "gravity": "left",
                 "text_color": "#ffffff",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
                 "ssh_list": [
@@ -172,7 +172,7 @@
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
                 "text_size": "14",
-                "gravity": "center",
+                "gravity": "left",
                 "text_color": "#ffffff",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
                 "ssh_list": [

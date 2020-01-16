@@ -525,7 +525,7 @@
             "layout_height": "wrap_content",
             "text": "UrlRequest generates the following components:",
             "text_size": "14",
-            "gravity": "center",
+            "gravity": "left",
             "text_color": "#ffffff"
           },
 
