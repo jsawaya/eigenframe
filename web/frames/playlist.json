@@ -83,7 +83,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Termux Initial Setup",
+      "text": "Initial Setup of Termux Host",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -99,11 +99,10 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Termux Initial Setup",
+        "text": "Initial Setup of Termux Host",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
       }
     },
-
 
     {
       "type": "Button",
@@ -128,6 +127,33 @@
         "background_color": "#111111",
         "text": "SecureShell Settings",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Remote Package Install",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Remote Package Install",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-package-install.json"
       }
     },
 
