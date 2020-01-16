@@ -23,7 +23,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "Prerequisites: You must have sshd running on Termux (or other network host), in order to use ssh."
+        "You must have sshd already running on Termux (or other network host), in order to use ssh."
         ]
     },
 
@@ -85,7 +85,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Git checkout master, pull, checkout test, merge, status",
+      "text": "Update local git-repos/eigenframe directory (pull)",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -105,7 +105,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Git checkout master, pull, checkout test, merge, status",
+        "text": "Update local git-repos/eigenframe directory (pull)",
         "component_list": [
           {
             "type": "LinearLayout",
