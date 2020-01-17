@@ -170,7 +170,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "ls ~/git-repos",
+      "text": "dir-json ~",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -186,7 +186,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "ls ~/git-repos",
+        "title": "dir-json ~",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -204,8 +204,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "sftp_list": [
-                  "cd ~/git-repos",
-                  "dir-json"
+                  "dir-json ~"
                 ]
               }
             ]
@@ -219,7 +218,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "ls ~/git-repos",
+      "text": "dir-json /data/data/com.termux/files/usr/etc/apache2",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -235,7 +234,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "ls ~/git-repos",
+        "title": "dir-json /data/data/com.termux/files/usr/etc/apache2",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -267,7 +266,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "ls ~/git-repos",
+      "text": "dir-json /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -283,7 +282,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "ls ~/git-repos",
+        "title": "dir-json /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
         "component_list": [
           {
             "type": "LinearLayout",

@@ -179,7 +179,7 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Gallery of ssh examples",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/gallery-ssh.json"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-gallery.json"
       }
     },
     {
@@ -204,7 +204,7 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Gallery of sftp examples",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/gallery-sftp.json"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
       }
     },
 
