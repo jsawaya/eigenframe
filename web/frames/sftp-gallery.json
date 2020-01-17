@@ -28,7 +28,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "PopupTextView async call to sftp version",
+      "text": "sftp version",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "x-margin": {
@@ -39,7 +39,7 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "PopupTextView async call to sftp version",
+        "title": "sftp version",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "sftp": "version"
       }
@@ -50,7 +50,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "pwd",
+      "text": "sftp pwd",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -61,11 +61,9 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "pwd",
+        "title": "sftp pwd",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_list": [
-          "pwd"
-        ]
+        "sftp": "pwd"
       }
     },
 
@@ -111,9 +109,7 @@
         "type": "PopupTextView",
         "title": "get git-repos/eigenframe/README.md",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_list": [
-          "get git-repos/eigenframe/README.md"
-        ]
+        "sftp": "get git-repos/eigenframe/README.md"
       }
     },
 
@@ -135,9 +131,7 @@
         "type": "PopupTextView",
         "title": "put README.md .",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_list": [
-          "put README.md ."
-        ]
+        "sftp": "put README.md ."
       }
     },
 
@@ -159,9 +153,7 @@
         "type": "PopupTextView",
         "title": "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_list": [
-          "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos"
-        ]
+        "sftp": "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos"
       }
     },
 
@@ -203,9 +195,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp_list": [
-                  "dir-json"
-                ]
+                "sftp": "dir-json"
               }
             ]
           }
@@ -251,9 +241,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp_list": [
-                  "dir-json /data/data/com.termux/files/usr/etc/apache2"
-                ]
+                "sftp": "dir-json /data/data/com.termux/files/usr/etc/apache2"
               }
             ]
           }
@@ -299,9 +287,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp_list": [
-                  "dir-json /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
-                ]
+                "sftp": "dir-json /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
               }
             ]
           }
@@ -347,9 +333,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp_list": [
-                  "realpath ~"
-                ]
+                "sftp": "realpath ~"
               }
             ]
           }
@@ -395,9 +379,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp_list": [
-                  "realpath .."
-                ]
+                "sftp": "realpath .."
               }
             ]
           }
