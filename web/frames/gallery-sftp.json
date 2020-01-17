@@ -170,7 +170,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "title": "ls ~/git-repos",
+      "text": "ls ~/git-repos",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -219,7 +219,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "title": "ls ~/git-repos",
+      "text": "ls ~/git-repos",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -267,7 +267,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "title": "ls ~/git-repos",
+      "text": "ls ~/git-repos",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {

@@ -106,7 +106,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "title": "PopupTextView - whoami",
+      "text": "PopupTextView - whoami",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
