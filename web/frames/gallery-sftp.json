@@ -87,7 +87,152 @@
           }
         ]
       }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "pwd",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "pwd",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_list": [
+          "pwd"
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_list": [
+          "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "get git-repos/eigenframe/README.md",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "get git-repos/eigenframe/README.md",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_list": [
+          "get git-repos/eigenframe/README.md"
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "put README.md .",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "put README.md .",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_list": [
+          "put README.md ."
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_list": [
+          "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos"
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "ls ~/git-repos",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "ls ~/git-repos",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_list": [
+          "ls ~/git-repos"
+        ]
+      }
     }
+
   ]
 }
 

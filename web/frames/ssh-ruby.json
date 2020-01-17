@@ -177,7 +177,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Test Sftp",
+      "text": "Use url to exit webrick process",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -188,38 +188,7 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "Test",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_list": [
-          "version",
-          "pwd",
-          "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-          "lls /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-          "get git-repos/eigenframe/README.md",
-          "put README.md .",
-          "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos",
-          "cd git-repos",
-          "ls"
-        ]
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Use url to stop ruby process",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "use url to stop ruby process",
+        "title": "Use url to exit webrick process",
         "url": "http://localhost:1234/exit"
       }
     },
@@ -227,7 +196,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Use ssh to stop ruby process",
+      "text": "Use ssh to stop any ruby process",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -238,7 +207,7 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "use ssh to stop ruby process",
+        "title": "use ssh to stop any ruby process",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "ssh_list": [
           "pkill ruby",

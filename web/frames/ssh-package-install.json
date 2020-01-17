@@ -456,10 +456,6 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Ruby Administration",
-        "icon": {
-          "name": "info.jpg",
-          "location": "top"
-        },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
       }
     },
