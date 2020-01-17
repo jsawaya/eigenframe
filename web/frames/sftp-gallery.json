@@ -170,7 +170,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "dir-json ~",
+      "text": "dir-json",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -186,7 +186,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "dir-json ~",
+        "title": "dir-json",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -204,7 +204,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "sftp_list": [
-                  "dir-json ~"
+                  "dir-json"
                 ]
               }
             ]
