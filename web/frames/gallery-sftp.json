@@ -228,7 +228,8 @@
         "title": "ls ~/git-repos",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "sftp_list": [
-          "ls ~/git-repos"
+          "cd ~/git-repos",
+          "ls"
         ]
       }
     }
