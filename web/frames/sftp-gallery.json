@@ -118,6 +118,30 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
+      "text": "test-1: get git-repos/eigenframe/README.md",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "SecureFtp",
+        "sftp": "get git-repos/eigenframe/README.md",
+        "on_complete" : {
+          "type": "ToastMessage",
+          "message": "completed: get git-repos/eigenframe/README.md"
+        }
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
       "text": "put README.md .",
       "text_color": "#ffffff",
       "background_color": "#123456",
