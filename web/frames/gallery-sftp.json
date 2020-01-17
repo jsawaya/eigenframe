@@ -205,7 +205,7 @@
                 "text_color": "#ffffff",
                 "sftp_list": [
                   "cd ~/git-repos",
-                  "ls ."
+                  "dir-json"
                 ]
               }
             ]
@@ -253,7 +253,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "sftp_list": [
-                  "ls /data/data/com.termux/files/usr/etc/apache2"
+                  "dir-json /data/data/com.termux/files/usr/etc/apache2"
                 ]
               }
             ]
@@ -301,7 +301,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "sftp_list": [
-                  "ls /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+                  "dir-json /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
                 ]
               }
             ]
