@@ -162,7 +162,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "dir-json",
+      "text": "directory",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -178,7 +178,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "dir-json",
+        "title": "directory",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -195,7 +195,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp": "dir-json"
+                "sftp": "directory"
               }
             ]
           }
@@ -208,7 +208,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "dir-json /data/data/com.termux/files/usr/etc/apache2",
+      "text": "directory /data/data/com.termux/files/usr/etc/apache2",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -224,7 +224,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "dir-json /data/data/com.termux/files/usr/etc/apache2",
+        "title": "directory /data/data/com.termux/files/usr/etc/apache2",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -241,7 +241,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp": "dir-json /data/data/com.termux/files/usr/etc/apache2"
+                "sftp": "directory /data/data/com.termux/files/usr/etc/apache2"
               }
             ]
           }
@@ -254,7 +254,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "dir-json /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+      "text": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -270,7 +270,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "dir-json /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+        "title": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -287,7 +287,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp": "dir-json /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+                "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
               }
             ]
           }
