@@ -370,7 +370,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "directory_local .",
+      "text": "directory_local /data/user/0/com.sawaya.eigenframe.full",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -386,7 +386,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "directory_local .",
+        "title": "directory_local /data/user/0/com.sawaya.eigenframe.full",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -403,7 +403,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp": "directory_local ."
+                "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full"
               }
             ]
           }
