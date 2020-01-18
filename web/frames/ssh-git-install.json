@@ -31,7 +31,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "11. Click [Install git package]  ..."
+        "Click [Install git package]  ..."
       ]
     },
     {
@@ -85,6 +85,11 @@
 
 
     {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
       "type": "TextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
@@ -93,7 +98,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "12. Click [Make '~/git-repos' directory] to create a place for local eigenframe git repository"
+        "Click [Make '~/git-repos' directory] to create a place for local eigenframe git repository"
       ]
     },
     {
@@ -150,6 +155,11 @@
 
 
     {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
       "type": "TextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
@@ -158,7 +168,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "13. Click [Clone eigenframe github repository]  ..."
+        "Click [Clone eigenframe github repository]  ..."
       ]
     },
     {
@@ -229,6 +239,18 @@
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "Click [Termux Host Administration] to update and maintain Termux host environment"
+      ]
     },
     {
       "type": "Button",

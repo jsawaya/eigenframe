@@ -70,7 +70,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "10. Click [Termux Package Upgrade]  This may take a while to complete..."
+        "Click [Termux Package Upgrade]  This may take a while to complete..."
       ]
     },
     {
@@ -131,6 +131,18 @@
       "color": "#666666"
     },
     {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "Click [Install GIT eigenframe branch] to install git, and download local eigenframe branch"
+      ]
+    },
+    {
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
@@ -170,7 +182,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "99. Click [Apache Administration] to install and setup web-server on Termux host..."
+        "Click [Apache Administration] to install and setup web-server on Termux host..."
       ]
     },
     {
@@ -212,7 +224,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "99. Click [Ruby Administration]  ..."
+        "Click [Ruby Administration] - required for [File System Explorer] example"
       ]
     },
     {
@@ -256,7 +268,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "99. Click [Install gnupg package] - only if you want to add signing/verification or encryption/decryption to your app"
+        "Click [Install gnupg package] - only if you want to add signing/verification or encryption/decryption to your app"
       ]
     },
     {
@@ -323,7 +335,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "99. Click [Install swi-prolog package] - only if you want to add an inference engine to your app"
+        "Click [Install swi-prolog package] - only if you want to add an inference engine to your app"
       ]
     },
     {
