@@ -83,7 +83,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Initial Setup of Termux Host",
+      "text": "Setup Instructions for Termux",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -99,7 +99,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Initial Setup of Termux Host",
+        "text": "Setup Instructions for Termux",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
       }
     },
@@ -110,7 +110,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Remote Package Install",
+      "text": "Termux Package Installation",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -126,7 +126,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Remote Package Install",
+        "text": "Termux Package Installation",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-package-install.json"
       }
     },
@@ -162,7 +162,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Gallery of ssh examples",
+      "text": "SecureShell Gallery",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -178,7 +178,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Gallery of ssh examples",
+        "text": "SecureShell Gallery",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-gallery.json"
       }
     },
@@ -187,7 +187,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Gallery of sftp examples",
+      "text": "SecureFtp Gallery",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -203,7 +203,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Gallery of sftp examples",
+        "text": "SecureFtp Gallery",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
       }
     },
