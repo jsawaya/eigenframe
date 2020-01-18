@@ -22,9 +22,7 @@
       "gravity": "left",
       "text_color": "#ffffff",
       "text_size": "14",
-      "text_list": [
-        "You must have sshd already running on Termux (or other network host), in order to use ssh."
-        ]
+      "text": "You must have sshd already running on the host (Termux), in order to use ssh."
     },
 
 

@@ -74,7 +74,7 @@
         "layout_height": "wrap_content",
         "component_list": [
           {
-            "type": "TextView",
+            "type": "Button",
             "layout_width": "wrap_content",
             "layout_height": "wrap_content",
             "text_script_list": [
@@ -99,7 +99,7 @@
               "script_list": [
                 "var pos = eigenFragment.getOptionInteger('position', 0)",
                 "var opt = eigenFragment.getOptionString('option', '')",
-                "eigenActivity.showToast('ListView text selected: '+ pos + ' - ' + opt)"
+                "eigenActivity.showToast('Button selected: '+ pos + ' - ' + opt)"
               ]
             }
           }
