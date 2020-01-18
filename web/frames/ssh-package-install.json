@@ -4,9 +4,20 @@
   "orientation": "vertical",
   "gravity": "center_horizontal",
   "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
 
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "Verify your [SecureShell Settings], and that your host is running sshd."
+      ]
+    },
     {
       "type": "Button",
       "gravity": "center",
@@ -35,6 +46,11 @@
 
 
     {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+    {
       "type": "TextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
@@ -45,6 +61,11 @@
     },
 
 
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -57,7 +78,6 @@
         "10. Click [Termux Package Upgrade]  This may take a while to complete..."
       ]
     },
-
     {
       "type": "Button",
       "gravity": "center",
@@ -111,23 +131,16 @@
 
 
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "11. Click [Install git package]  ..."
-      ]
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
     },
     {
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Install git package",
+      "text": "Install GIT eigenframe branch",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -143,190 +156,17 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Install git package",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "echo pkg install git",
-                  "pkg install git"
-                ]
-              }
-            ]
-          }
-        ]
+        "text": "Install GIT eigenframe branch",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-install.json"
       }
     },
 
 
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "12. Click [Make '~/git-repos' directory] to create a place for local eigenframe git repository"
-      ]
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
     },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Make git-repos directory",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "text": "Make '~/git-repos' directory",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "cd ~",
-                  "echo mkdir git-repos",
-                  "mkdir git-repos",
-                  "cd git-repos",
-                  "pwd"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "13. Click [Clone eigenframe github repository]  ..."
-      ]
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Clone eigenframe github repository\n(and checkout test branch)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "text": "Clone eigenframe github repository, and checkout test branch",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "cd ~/git-repos",
-                  "echo git clone https://github.com/jsawaya/eigenframe",
-                  "git clone https://github.com/jsawaya/eigenframe",
-                  "echo ",
-                  "echo cd eigenframe",
-                  "cd eigenframe",
-                  "echo ",
-                  "echo git checkout -b test",
-                  "git checkout -b test",
-                  "echo ",
-                  "echo git status:",
-                  "git status"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "14. Click [Install apache2 package]  ..."
-      ]
-    },
-
-
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -363,6 +203,11 @@
     },
 
 
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -402,6 +247,11 @@
     },
 
 
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -464,6 +314,11 @@
     },
 
 
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
     {
       "type": "TextView",
       "layout_width": "match_parent",
