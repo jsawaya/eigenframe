@@ -212,7 +212,7 @@
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
-      "text": "Edit Host File",
+      "text": "Remote Host - Edit File",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -227,7 +227,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Edit Host File",
+        "text": "Remote Host - Edit File",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
       }
     },
