@@ -71,14 +71,16 @@
       "type": "Button",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Build sftp command",
+      "text": "execute sftp get command",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "on_click": {
-        "type": "PopupTextView",
-        "title": "sftp version",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp-script": "'version '"
+        "type": "SecureFtp",
+        "sftp_script": "'get ' + eigenFragment.getViewState(999001)",
+        "on_complete": {
+          "type": "ToastMessage",
+          "message_script": "'completed: sftp get ' + eigenFragment.getViewState(999001)"
+        }
       }
     },
 
