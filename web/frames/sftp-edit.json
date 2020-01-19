@@ -565,7 +565,7 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "directory_local /data/user/0/com.sawaya.eigenframe.full/files/termux-cache",
+      "text": "directory_local /data/user/0/com.sawaya.eigenframe.full/files",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -598,7 +598,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full/files/termux-files"
+                "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full/files"
               }
             ]
           }
