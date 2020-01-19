@@ -12,9 +12,8 @@
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text_list": ["enter remote file path into EditText variable - click button, use sftp to get the given file path into the local cache",
+      "text_color": "#ffffff",
+      "text_list": ["Enter remote file path into EditText variable - click button, use sftp to get the given file path into the local cache",
         " - on_complete, read local file url into EditText, use sftp to get the file in local cache - on_complete"
       ]
     },
@@ -33,7 +32,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Remote Host File Path (relative to sftp home):"
+      "text": "Remote Host File Path: \n(relative to sftp home directory)"
     },
     {
       "type": "EditText",
@@ -44,7 +43,13 @@
       "layout_height": "wrap_content",
       "text": "git-repos/eigenframe/",
       "text_color": "#ffffff",
-      "background_color": "#000000"
+      "background_color": "#000000",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      }
     },
 
     {
