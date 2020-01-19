@@ -69,6 +69,16 @@
           "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
         ]
       }
+    },
+
+    {
+      "type": "EditText",
+      "id": 10100,
+      "layout_width": "match_parent",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
     }
+
   ]
 }
