@@ -228,7 +228,7 @@
         "text_color": "#ffffff",
         "background_color": "#111111",
         "text": "Edit Host File",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-edit.json"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
       }
     },
 
