@@ -164,7 +164,16 @@
             "layout_height": "wrap_content",
             "component_list": [
               {
-                "type": "EditView",
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "gravity": "left",
+                "text_color": "#8aec81",
+                "text_size": "22",
+                "text_script": "'file:///data/user/0/com.sawaya.eigenframe.full/files/'+eigenFragment.getViewState(999001)"
+              },
+              {
+                "type": "x-EditView",
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
                 "text_size": "14",
