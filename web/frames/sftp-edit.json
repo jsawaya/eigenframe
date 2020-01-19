@@ -32,7 +32,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Remote Host File Path: \n(relative to sftp home directory)"
+      "text": "Enter Remote Host File Path: \n(relative to sftp home directory)"
     },
     {
       "type": "EditText",
@@ -170,7 +170,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "url_script": "'file://'+"
+                "url_script": "'file:///data/user/0/com.sawaya.eigenframe.full/files/'+eigenFragment.getViewState(999001)"
               }
             ]
           }
