@@ -219,7 +219,7 @@
         "left": 10,
         "top": 10,
         "right": 10,
-        "bottom": 10S
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
