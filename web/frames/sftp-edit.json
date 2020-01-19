@@ -7,60 +7,18 @@
   "layout_height": "wrap_content",
   "component_list": [
     {
+      "x-comment": "Quick overview",
       "type": "TextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text-list": ["enter remote file path into EditText variable - click button, use sftp to get the given file path into the local cache",
+      "text_list": ["enter remote file path into EditText variable - click button, use sftp to get the given file path into the local cache",
         " - on_complete, read local file url into EditText, use sftp to get the file in local cache - on_complete"
       ]
     },
 
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "text": "edit local-cache file",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "edit local-cache file",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "EditView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "url_script": "'file://'+"
-              }
-            ]
-          }
-        ]
-      }
-    },
 
     {
       "type": "HorizontalLine",
@@ -75,7 +33,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "File Path:"
+      "text": "Remote Host File Path (relative to sftp home):"
     },
     {
       "type": "EditText",
@@ -126,6 +84,102 @@
         }
       }
     },
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "Show EigenFrame Private Files",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "Show EigenFrame Private Files",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full/files"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "text": "edit local-cache file",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "edit local-cache file",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "EditView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "url_script": "'file://'+"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+
 
     {
       "type": "Button",
@@ -553,52 +607,6 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full/files/file-cache"
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "directory_local /data/user/0/com.sawaya.eigenframe.full/files",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "directory_local",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full/files"
               }
             ]
           }
