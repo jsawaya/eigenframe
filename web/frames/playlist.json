@@ -209,6 +209,33 @@
     },
 
     {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "text": "Edit Host File",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10S
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Edit Host File",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-edit.json"
+      }
+    },
+
+
+
+
+    {
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
