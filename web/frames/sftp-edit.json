@@ -78,9 +78,7 @@
         "type": "PopupTextView",
         "title": "sftp version",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp-script-list": [
-          "'get ' + eigenFragment.getViewState(999001)"
-        ]
+        "sftp-script": "'version '"
       }
     },
 
