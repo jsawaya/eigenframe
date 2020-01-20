@@ -134,8 +134,17 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Edit local-cache file",
+        "title_script": "'Edit Remote Host File: '+eigenFragment.getViewState(999001)",
         "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "gravity": "left",
+            "text_color": "#8aec81",
+            "text_size": "22",
+            "text_script": "'Remote Host File: '+eigenFragment.getViewState(999001)"
+          },
           {
             "type": "LinearLayout",
             "scrollable": true,
@@ -144,15 +153,6 @@
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
             "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "gravity": "left",
-                "text_color": "#8aec81",
-                "text_size": "22",
-                "text_script": "'Remote Host File: '+eigenFragment.getViewState(999001)"
-              },
               {
                 "type": "EditText",
                 "url": "file:///data/user/0/com.sawaya.eigenframe.full/files/EditText.txt",
@@ -166,6 +166,34 @@
 
               }
             ]
+          },
+          {
+            "type": "Button",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text": "test sftp put command",
+            "text_color": "#ffffff",
+            "background_color": "#123456",
+            "on_click": {
+              "type": "ToastMessage",
+              "message_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)"
+            }
+          },
+          {
+            "type": "Button",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "text": "execute sftp put command",
+            "text_color": "#ffffff",
+            "background_color": "#123456",
+            "on_click": {
+              "type": "SecureFtp",
+              "sftp_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)",
+              "on_complete": {
+                "type": "ToastMessage",
+                "message_script": "'completed: put EditText.txt ' + eigenFragment.getViewState(999001)"
+              }
+            }
           }
         ]
       }
