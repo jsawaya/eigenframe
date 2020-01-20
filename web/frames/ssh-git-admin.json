@@ -117,7 +117,7 @@
         "type": "PopupTextView",
         "title": "Compare RemoteFile to github master",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_script": "'git diff master:' + eigenFragment.getViewState(991002) + ' -- ' + eigenFragment.getViewState(991002) "
+        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.getViewState(991002) + ' -- ' + eigenFragment.getViewState(991002) "
       }
     },
 
