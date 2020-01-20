@@ -184,7 +184,7 @@
                   "type": "PopupTextView",
                   "title": "Save EditText to RemoteFile",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "sftp_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)"
+                  "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)"
                 }
               },
               {
@@ -200,26 +200,6 @@
             ]
           }
         ]
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "execute sftp put command",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Save EditText to RemoteFile",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
       }
     },
 
