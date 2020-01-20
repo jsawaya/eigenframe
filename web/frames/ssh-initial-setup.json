@@ -65,7 +65,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "SecureShell Settings",
+        "title": "SecureShell Settings",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
       }
     }

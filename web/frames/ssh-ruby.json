@@ -37,7 +37,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Install ruby package",
+        "title": "Install ruby package",
         "component_list": [
           {
             "type": "LinearLayout",

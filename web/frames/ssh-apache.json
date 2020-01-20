@@ -37,7 +37,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Install apache2 package (and curl)",
+        "title": "Install apache2 package (and curl)",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -99,7 +99,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Import eigenframe apache2 configuration and cgi scripts",
+        "title": "Import eigenframe apache2 configuration and cgi scripts",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -157,7 +157,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Start apache2 cgi web-service",
+        "title": "Start apache2 cgi web-service",
         "component_list": [
           {
             "type": "LinearLayout",

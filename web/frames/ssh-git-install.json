@@ -55,7 +55,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Install git package",
+        "title": "Install git package",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -122,7 +122,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Make '~/git-repos' directory",
+        "title": "Make '~/git-repos' directory",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -196,7 +196,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Clone eigenframe github repository, and checkout test branch",
+        "title": "Clone eigenframe github repository, and checkout test branch",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -273,7 +273,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Termux Host Administration",
+        "title": "Termux Host Administration",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
       }
     }

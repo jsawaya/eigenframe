@@ -50,7 +50,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "SecureShell Settings",
+        "title": "SecureShell Settings",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
       }
     },
@@ -98,7 +98,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Termux Package Upgrade",
+        "title": "Termux Package Upgrade",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -163,7 +163,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Install GIT eigenframe branch",
+        "title": "Install GIT eigenframe branch",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-install.json"
       }
     },
@@ -204,7 +204,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Apache Administration",
+        "title": "Apache Administration",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
       }
     },
@@ -292,7 +292,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Install gnupg package",
+        "title": "Install gnupg package",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -359,7 +359,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Install swi-prolog package",
+        "title": "Install swi-prolog package",
         "component_list": [
           {
             "type": "LinearLayout",

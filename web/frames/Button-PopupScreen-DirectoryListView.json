@@ -18,7 +18,7 @@
     "text_size": "14",
     "text_color": "#ffffff",
     "background_color": "#111111",
-    "text": "EigenFrame",
+    "title": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home",
     "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
   }
 }

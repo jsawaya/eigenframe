@@ -52,7 +52,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "File system explorer",
+        "title": "File system explorer",
         "icon": {
           "name": "info.jpg",
           "location": "left"

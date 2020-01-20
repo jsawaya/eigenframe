@@ -51,7 +51,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Termux Package Update...",
+        "title": "Termux Package Update...",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -103,7 +103,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "Update local git-repos/eigenframe directory (pull)",
+        "title": "Update local git-repos/eigenframe directory (pull)",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -194,7 +194,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "List process details",
+        "title": "List process details",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -245,7 +245,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "List process commands only",
+        "title": "List process commands only",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -326,7 +326,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "PopupScreen - whoami",
+        "title": "PopupScreen - whoami",
         "icon": {
           "name": "info.jpg",
           "location": "left"

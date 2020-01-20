@@ -38,7 +38,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "PopupScreen with a component_list(TextView)",
+        "title": "PopupScreen with a component_list(TextView)",
         "icon": {
           "name": "info.jpg",
           "location": "left"
@@ -89,7 +89,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "PopupScreen",
+        "title": "PopupScreen",
         "icon": {
           "name": "info.jpg",
           "location": "left"
@@ -111,7 +111,7 @@
         "text_size": "20",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "text": "EigenFrame",
+        "title": "EigenFrame",
         "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
       }
     }
