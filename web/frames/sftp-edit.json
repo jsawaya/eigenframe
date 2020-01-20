@@ -147,6 +147,20 @@
             "layout_height": "wrap_content",
             "component_list": [
               {
+                "type": "Button",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text": "Save EditText to RemoteFile",
+                "text_color": "#ffffff",
+                "background_color": "#123456",
+                "on_click": {
+                  "type": "PopupTextView",
+                  "title": "Save EditText to RemoteFile",
+                  "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                  "sftp_script": "'put /data/user/0/com.sawaya.eigenframe.full/files/EditText.txt ' + eigenFragment.getViewState(999001)"
+                }
+              },
+              {
                 "type": "EditText",
                 "url": "file:///data/user/0/com.sawaya.eigenframe.full/files/EditText.txt",
                 "id": 999000,
@@ -157,20 +171,6 @@
                 "background_color": "#000000"
               }
             ]
-          },
-          {
-            "type": "Button",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "text": "Save EditText to RemoteFile",
-            "text_color": "#ffffff",
-            "background_color": "#123456",
-            "on_click": {
-              "type": "PopupTextView",
-              "title": "Save EditText to RemoteFile",
-              "font": "font/droid-sans-mono/DroidSansMono.ttf",
-              "sftp_script": "'put /data/user/0/com.sawaya.eigenframe.full/files/EditText.txt ' + eigenFragment.getViewState(999001)"
-            }
           }
         ]
       }
