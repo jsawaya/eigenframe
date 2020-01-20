@@ -110,7 +110,7 @@
       "type": "Button",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Compare RemoteFile to github master",
+      "text": "Compare RemoteFile to github mast",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "on_click": {
@@ -118,6 +118,47 @@
         "title": "Compare RemoteFile to github master",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.getViewState(991002) + ' -- ' + eigenFragment.getViewState(991002) "
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "Compare RemoteFile to github master",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "Compare RemoteFile to github master",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "gravity": "left",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "text_color": "#ffffff",
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.getViewState(991002) + ' -- ' + eigenFragment.getViewState(991002) "
+              }
+            ]
+          }
+        ]
       }
     },
 
