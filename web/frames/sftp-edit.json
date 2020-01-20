@@ -166,40 +166,42 @@
 
               }
             ]
-          },
-          {
-            "type": "Button",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "text": "test sftp put command",
-            "text_color": "#ffffff",
-            "background_color": "#123456",
-            "on_click": {
-              "type": "ToastMessage",
-              "message_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)"
-            }
-          },
-          {
-            "type": "Button",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "text": "execute sftp put command",
-            "text_color": "#ffffff",
-            "background_color": "#123456",
-            "on_click": {
-              "type": "SecureFtp",
-              "sftp_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)",
-              "on_complete": {
-                "type": "ToastMessage",
-                "message_script": "'completed: put EditText.txt ' + eigenFragment.getViewState(999001)"
-              }
-            }
           }
         ]
       }
     },
 
 
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "test sftp put command",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "ToastMessage",
+        "message_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)"
+      }
+    },
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "execute sftp put command",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "SecureFtp",
+        "sftp_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)",
+        "on_complete": {
+          "type": "ToastMessage",
+          "message_script": "'completed: put EditText.txt ' + eigenFragment.getViewState(999001)"
+        }
+      }
+    },
+
+    
     {
       "type": "HorizontalLine",
       "size": 3,
