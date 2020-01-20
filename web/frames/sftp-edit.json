@@ -4,13 +4,11 @@
   "orientation": "vertical",
   "gravity": "center_horizontal",
   "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
 
     {
       "type": "TextView",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
@@ -23,7 +21,6 @@
       "max_length": 200,
       "is_single_line": true,
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "text": "git-repos/eigenframe/",
       "text_color": "#ffffff",
       "background_color": "#000000",
@@ -44,7 +41,6 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "text": "Access file path",
       "text_color": "#ffffff",
       "background_color": "#123456",
@@ -53,30 +49,61 @@
         "script_list": [
           "eigenActivity.showToast('eigenFragment.getViewState(999001): '+eigenFragment.getViewState(999001) )"
         ]
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       }
     },
 
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "text": "execute sftp get command",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "on_click": {
         "type": "SecureFtp",
-        "sftp_script": "'get ' + eigenFragment.getViewState(999001)",
+        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'",
         "on_complete": {
           "type": "ToastMessage",
           "message_script": "'completed: sftp get ' + eigenFragment.getViewState(999001)"
         }
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       }
     },
 
     {
       "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Get RemoteFile to EditText",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Get RemoteFile to EditText",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
       "text": "Show EigenFrame Private Files",
       "text_color": "#ffffff",
       "background_color": "#123456",
@@ -120,7 +147,7 @@
 
     {
       "type": "Button",
-      "layout_width": "wrap_content",
+      "layout_width": "match_parent",
       "text": "edit local-cache file",
       "text_color": "#ffffff",
       "background_color": "#123456",
@@ -157,7 +184,7 @@
                   "type": "PopupTextView",
                   "title": "Save EditText to RemoteFile",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "sftp_script": "'put /data/user/0/com.sawaya.eigenframe.full/files/EditText.txt ' + eigenFragment.getViewState(999001)"
+                  "sftp_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)"
                 }
               },
               {
@@ -179,17 +206,20 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "text": "execute sftp put command",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "on_click": {
-        "type": "SecureFtp",
-        "sftp_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)",
-        "on_complete": {
-          "type": "ToastMessage",
-          "message_script": "'completed: put EditText.txt ' + eigenFragment.getViewState(999001)"
-        }
+        "type": "PopupTextView",
+        "title": "Save EditText to RemoteFile",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_script": "'put EditText.txt ' + eigenFragment.getViewState(999001)"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       }
     },
 
@@ -206,10 +236,15 @@
       "text": "execute git restore command",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
-        "layout_height": "wrap_content",
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
@@ -241,10 +276,15 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "text": "execute git restore command",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
