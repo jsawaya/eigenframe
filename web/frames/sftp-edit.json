@@ -218,7 +218,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "ssh_script": "'git restore ' + eigenFragment.getViewState(999001)"
+                "ssh_script": "'cd git-repos/eigenframe; git restore ' + eigenFragment.getViewState(999001)"
               }
             ]
           }
