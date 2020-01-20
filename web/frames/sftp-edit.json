@@ -32,13 +32,11 @@
         "bottom": 10
       }
     },
-
     {
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
     },
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -53,7 +51,6 @@
         ]
       }
     },
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -70,7 +67,6 @@
         }
       }
     },
-
     {
       "type": "Button",
       "layout_width": "wrap_content",
@@ -115,7 +111,6 @@
         ]
       }
     },
-
     {
       "type": "Button",
       "layout_width": "wrap_content",
@@ -163,15 +158,12 @@
                 "text_color": "#ffffff",
                 "x-text_size": "14",
                 "background_color": "#000000"
-
               }
             ]
           }
         ]
       }
     },
-
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -189,13 +181,50 @@
       }
     },
 
-
     {
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
-    }
+    },
 
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "execute git restore command",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "git restore",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "ssh_script": "'git restore ' + eigenFragment.getViewState(999001)"
+              }
+            ]
+          }
+        ]
+      }
+    }
   ]
 }
 
