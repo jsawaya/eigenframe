@@ -154,7 +154,7 @@
                 "text_script": "'Remote Host File: '+eigenFragment.getViewState(999001)"
               },
               {
-                "type": "EditText",
+                "type": "TextView",
                 "url": "file:///data/user/0/com.sawaya.eigenframe.full/files/EditText.txt",
                 "id": 999000,
                 "max_length": 200,
@@ -164,13 +164,7 @@
                 "layout_height": "wrap_content",
                 "text_color": "#ffffff",
                 "text_size": "14",
-                "background_color": "#000000",
-                "margin": {
-                  "left": 10,
-                  "top": 10,
-                  "right": 10,
-                  "bottom": 10
-                }
+                "background_color": "#000000"
 
               }
             ]
