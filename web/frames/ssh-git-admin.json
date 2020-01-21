@@ -539,7 +539,12 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "x-ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; echo ' + eigenFragment.getViewState(991003) + ' | git push origin test'",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; echo ' + eigenFragment.getViewState(991003) + '\n' + eigenFragment.getViewState(991004)"
+                "x-ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; echo ' + eigenFragment.getViewState(991003) + '\n' + eigenFragment.getViewState(991004)",
+                "ssh_script_list": [
+                  "var x = eigenFragment.getViewState(991003) + '\n' + eigenFragment.getViewState(991004)",
+                  "java.lang.System.out.println('x: '+x)",
+                  "'cd ' + eigenFragment.getViewState(991001) + '; echo \"' + x + '\"' "
+                ]
               }
             ]
           }
