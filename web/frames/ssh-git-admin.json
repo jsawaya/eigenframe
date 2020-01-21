@@ -539,8 +539,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "ssh_script_list": [
-                  "var x = eigenFragment.getViewState(991003) + \"\n\" + eigenFragment.getViewState(991004)",
-                  "'echo '+x"
+                  "'cat ' + eigenFragment.getViewState(991003) +' ' +eigenFragment.getViewState(991004)"
                 ]
               }
             ]
