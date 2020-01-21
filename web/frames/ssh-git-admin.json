@@ -12,6 +12,31 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
+      "text": "Remote host home directory:"
+    },
+
+    {
+      "type": "TextView",
+      "id": 991000,
+      "layout_width": "match_parent",
+      "sftp": "pwd",
+      "text_color": "#ffffff",
+      "gravity": "left",
+      "background_color": "#000000",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      }
+    },
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
       "text": "Remote host git-repository path: \n(relative to sftp home directory)"
     },
 
@@ -70,7 +95,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "git push origin test",
+      "text": "git status",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "gravity": "center",
@@ -87,7 +112,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "git push origin test",
+        "title": "git status",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -247,7 +272,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "git push origin test",
+      "text": "git commit -a m 'testing'",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "gravity": "center",
@@ -264,7 +289,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "git push origin test",
+        "title": "git commit -a m 'testing'",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -337,7 +362,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "git push origin test",
+      "text": "git config ",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "gravity": "center",
@@ -354,7 +379,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "git push origin test",
+        "title": "git config",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -419,7 +444,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp-script": "'directory ~/' + eigenFragment.getViewState(991001)"
+                "sftp-script": "'directory ' + eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)"
               }
             ]
           }
