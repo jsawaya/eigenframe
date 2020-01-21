@@ -280,6 +280,52 @@
       }
     },
 
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "git commit -a m 'testing'",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "gravity": "center",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "git commit -a m 'testing'",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git commit -a -m \"testing\"'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
     {
       "type": "HorizontalLine",
       "size": 3,
@@ -410,48 +456,49 @@
     },
 
     {
-      "type": "Button",
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+
+    {
+      "type": "TextView",
       "layout_width": "match_parent",
-      "text": "git commit -a m 'testing'",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "GITHUB user"
+    },
+
+    {
+      "type": "EditText",
+      "id": 991003,
+      "max_length": 200,
+      "is_single_line": true,
+      "layout_width": "match_parent",
       "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git commit -a m 'testing'",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git commit -a -m \"testing\"'"
-              }
-            ]
-          }
-        ]
-      }
+      "text_size": "20",
+      "gravity": "left",
+      "background_color": "#000000",
+    },
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "GITHUB password"
+    },
+
+    {
+      "type": "EditText",
+      "id": 991004,
+      "is_password": true,
+      "layout_width": "match_parent",
+      "text_color": "#ffffff",
+      "background_color": "#000000",
+      "text": "password"
     },
 
     {
@@ -491,7 +538,8 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git push origin test'"
+                "x-ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; echo ' + eigenFragment.getViewState(991003) + ' | git push origin test'",
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; echo ' + eigenFragment.getViewState(991003) + '\n' + eigenFragment.getViewState(991004)"
               }
             ]
           }
