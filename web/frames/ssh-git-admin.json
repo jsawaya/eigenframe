@@ -7,6 +7,87 @@
   "component_list": [
 
     {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "pull github master, merge to test branch in git-repos/eigenframe",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "pull github master, merge to test branch in git-repos/eigenframe",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "cd ~/git-repos/eigenframe",
+                  "echo current working directory:",
+                  "pwd",
+                  "echo ",
+                  "echo git status:",
+                  "git status",
+                  "echo ",
+                  "echo git checkout master:",
+                  "git checkout master",
+                  "echo ",
+                  "echo git pull:",
+                  "git pull",
+                  "echo ",
+                  "echo git checkout test:",
+                  "git checkout test",
+                  "echo ",
+                  "echo git merge master:",
+                  "git merge master",
+                  "echo ",
+                  "echo git status:",
+                  "git status"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+
+
+    {
       "type": "TextView",
       "layout_width": "match_parent",
       "gravity": "left",
