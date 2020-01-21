@@ -12,7 +12,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Enter remote host git-repository path: \n(relative to sftp home directory)"
+      "text": "Remote host git-repository path: \n(relative to sftp home directory)"
     },
 
     {
@@ -23,6 +23,7 @@
       "layout_width": "match_parent",
       "text": "git-repos/eigenframe",
       "text_color": "#ffffff",
+      "gravity": "left",
       "background_color": "#000000",
       "margin": {
         "left": 10,
@@ -38,7 +39,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Enter git-file Path: \n(relative to git-repository path)"
+      "text": "Enter git-file path: \n(relative to git-repository path)"
     },
 
     {
@@ -49,6 +50,7 @@
       "layout_width": "match_parent",
       "text": "web/frames/playlist.json",
       "text_color": "#ffffff",
+      "gravity": "left",
       "background_color": "#000000",
       "margin": {
         "left": 10,
@@ -68,9 +70,10 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Show remote host git repo",
+      "text": "git push origin test",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "gravity": "center",
       "margin": {
         "left": 10,
         "top": 10,
@@ -80,10 +83,11 @@
       "on_click": {
         "type": "PopupScreen",
         "layout_width": "match_parent",
+        "layout_height": "wrap_content",
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Show remote host git repo",
+        "title": "git push origin test",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -91,14 +95,16 @@
             "orientation": "vertical",
             "gravity": "center_horizontal",
             "layout_width": "match_parent",
+            "layout_height": "wrap_content",
             "component_list": [
               {
                 "type": "TextView",
                 "layout_width": "match_parent",
+                "layout_height": "wrap_content",
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp-script": "'directory ' + eigenFragment.getViewState(991001)"
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git status'"
               }
             ]
           }
@@ -109,24 +115,10 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Compare RemoteFile to github mast",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Compare RemoteFile to github master",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.getViewState(991002) + ' -- ' + eigenFragment.getViewState(991002) "
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
       "text": "Compare RemoteFile to github master",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "gravity": "center",
       "margin": {
         "left": 10,
         "top": 10,
@@ -163,17 +155,12 @@
     },
 
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
-    },
-
-    {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "git restore",
+      "text": "git restore (revert to master)",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "gravity": "center",
       "margin": {
         "left": 10,
         "top": 10,
@@ -210,9 +197,250 @@
           }
         ]
       }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "git add *",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "gravity": "center",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "git add *",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git add *'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "git push origin test",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "gravity": "center",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "git push origin test",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git commit -a -m \"testing\"'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "git push origin test",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "gravity": "center",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "git push origin test",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git push origin test'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "git push origin test",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "gravity": "center",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "git push origin test",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git config --global user.email \"john.sawaya@gmail.com\" ; git config --global user.name \"jsawaya\" '"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "Show remote host git repo",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "gravity": "center",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "Show remote host git repo",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "sftp-script": "'directory ~/' + eigenFragment.getViewState(991001)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "Quick check",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "gravity": "center",
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Quick check",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; ls "
+      }
     }
-
-
   ]
 }
 
