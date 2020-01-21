@@ -44,6 +44,10 @@
       "text": "Screen Orientation",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "rotate_90.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -86,6 +90,10 @@
       "text": "Setup Instructions for Termux",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "playlist_check.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -113,6 +121,10 @@
       "text": "Termux Package Installation",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "archive.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -140,6 +152,10 @@
       "text": "Termux Host Administration",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "settings_app.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -157,6 +173,37 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
       }
     },
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "GIT Repository Administration",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "cloud_download.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "GIT Repository Administration",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
+      }
+    },
+
     {
       "type": "Button",
       "gravity": "center",
@@ -165,6 +212,10 @@
       "text": "SecureShell Gallery",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "play.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -190,6 +241,10 @@
       "text": "SecureFtp Gallery",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "import_export.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -215,6 +270,10 @@
       "text": "Remote Host - Edit File",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "edit.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -258,6 +317,10 @@
       "text": "launch this initial application (again),\nthen press back-button to exit",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "open_browser.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -293,6 +356,10 @@
       "text": "Gallery examples",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "open_browser.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -314,6 +381,10 @@
       "text": "PhotoPGP demo",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "open_browser.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -393,6 +464,10 @@
       "text": "Gallery examples",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "open_browser.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -414,6 +489,10 @@
       "text": "show apache2 error log",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "open_browser.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
