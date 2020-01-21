@@ -539,7 +539,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "ssh_script_list": [
-                  "'echo ' + eigenFragment.getViewState(991003) + ' > t ; echo ' + eigenFragment.getViewState(991004) + ' >> t ; cat t ' "
+                  "'echo ' + eigenFragment.getViewState(991003) + ' > t ; echo ' + eigenFragment.getViewState(991004) + ' >> t ; cat t | git push origin test' "
                 ]
               }
             ]
