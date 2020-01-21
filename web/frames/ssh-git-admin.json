@@ -447,7 +447,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git restore' + eigenFragment.getViewState(991002) "
+                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git restore ' + eigenFragment.getViewState(991002) "
               }
             ]
           }
