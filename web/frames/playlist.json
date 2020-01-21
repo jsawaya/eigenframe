@@ -14,9 +14,9 @@
       "x_text_size": "14",
       "text_color": "#ffffff",
       "html_list": [
-        "<img src='ic_launcher.png'>",
+        "<img src='ic_launcher.'>",
         "<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
-        "<h3><font color=\"#8aec81\">framework for generating Android apps</font></h3>"
+        "<h3><font color=\"#8aec81\">Framework to generate Android apps</font></h3>"
       ]
     },
 
