@@ -137,7 +137,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh": "cat ' + eigenFragment.getViewState(999001)"
+                "ssh-script": "'cat ' + eigenFragment.getViewState(999001)"
               }
             ]
           }
