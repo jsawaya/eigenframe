@@ -544,7 +544,7 @@
 
                 "script_list": [
                   "var x = eigenFragment.getViewState(991003) + '\n' + eigenFragment.getViewState(991004)",
-                  "java.lang.System.out.println('x: '+x)"
+                  "x"
                 ]
               }
             ]
