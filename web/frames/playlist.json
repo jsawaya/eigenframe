@@ -165,6 +165,32 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
+      "text": "SecureShell Settings",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "SecureShell Settings",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+      }
+    },
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
       "text": "Termux Host Administration",
       "text_color": "#ffffff",
       "background_color": "#123456",
@@ -224,6 +250,35 @@
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
+      "text": "Edit Remote Host File",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "edit.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "Edit Remote Host File",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "SecureShell Gallery",
       "text_color": "#ffffff",
@@ -278,35 +333,6 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
       }
     },
-
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "text": "Remote Host - Edit File",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "edit.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Remote Host - Edit File",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
-      }
-    },
-
 
 
 

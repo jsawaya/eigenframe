@@ -41,56 +41,14 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Access file path",
+      "text": "Confirm Remote Host File Path",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('eigenFragment.getViewState(999001): '+eigenFragment.getViewState(999001) )"
+          "eigenActivity.showToast('Path: '+eigenFragment.getViewState(999001) )"
         ]
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "execute sftp get command",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "SecureFtp",
-        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'",
-        "on_complete": {
-          "type": "ToastMessage",
-          "message_script": "'completed: sftp get ' + eigenFragment.getViewState(999001)"
-        }
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "Get RemoteFile to EditText",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Get RemoteFile to EditText",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'"
       },
       "margin": {
         "left": 10,
@@ -149,99 +107,27 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Show EditText Contents",
+      "text": "Get RemoteFile to EditText - PopupTextView",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "on_click": {
+        "type": "PopupTextView",
+        "title": "Get RemoteFile to EditText",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'"
+      },
       "margin": {
         "left": 10,
         "top": 10,
         "right": 10,
         "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Show EditText Contents",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') "
-              }
-            ]
-          }
-        ]
       }
     },
-
 
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Show EditText Contents - Text",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Show EditText Contents - Text",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "text_script": "''+eigenFragment.getCacheFileContents('EditText.txt')"
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "Get RemoteFile to EditText",
+      "text": "Get RemoteFile to EditText - PopupScreen",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -287,7 +173,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Show EigenFrame Private Files",
+      "text": "Show EditText Contents - via url",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -303,7 +189,99 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Show EigenFrame Private Files",
+        "title": "Show EditText Contents",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') "
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "Show EditText Contents - via text_script",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "Show EditText Contents - Text",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "text_script": "''+eigenFragment.getCacheFileContents('EditText.txt')"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "Show EigenFrame Private Directory",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "Show EigenFrame Private Directory",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -331,7 +309,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "edit local-cache file",
+      "text": "EditText CacheFile",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -346,7 +324,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title_script": "'RemoteFile: '+eigenFragment.getViewState(999001)",
+        "title_script": "'Edit RemoteFile: '+eigenFragment.getViewState(999001)",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -360,7 +338,7 @@
                 "type": "Button",
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
-                "text": "Clear EditText:999000",
+                "text": "Cancel Edits - Clear EditText:999000",
                 "text_color": "#ffffff",
                 "background_color": "#123456",
                 "on_click": {
@@ -393,7 +371,7 @@
                 "background_color": "#123456",
                 "on_click": {
                   "type": "PopupTextView",
-                  "title": "Save EditText to RemoteFile",
+                  "title": "Save Edits to RemoteFile",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
                   "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)"
                 }
@@ -412,117 +390,7 @@
           }
         ]
       }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Compare RemoteFile to github master",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Compare RemoteFile to github master",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_script": "'git diff master:' + eigenFragment.getViewState(999001) + ' -- ' + eigenFragment.getViewState(999001) "
-      }
-    },
-
-    {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "execute git restore command",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "remove ",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp_script": "'rm ' + eigenFragment.getViewState(999001)"
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "execute git restore command",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git restore",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd git-repos/eigenframe; git restore ~/' + eigenFragment.getViewState(999001)"
-              }
-            ]
-          }
-        ]
-      }
     }
-
 
   ]
 }
