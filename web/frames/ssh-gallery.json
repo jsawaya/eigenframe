@@ -54,7 +54,7 @@
         "background_color": "#111111",
         "title": "File system explorer",
         "icon": {
-          "name": "info.jpg",
+          "name": "info.",
           "location": "left"
         },
         "component_list": [

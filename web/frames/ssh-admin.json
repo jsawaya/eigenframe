@@ -35,7 +35,7 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_file_download_white_24dp.png",
+        "name": "file_download.",
         "location": "top"
       },
       "margin": {
@@ -235,7 +235,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "PopupScreen - whoami",
+      "text": "linux whoami command",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -251,9 +251,9 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "PopupScreen - whoami",
+        "title": "linux whoami command",
         "icon": {
-          "name": "info.jpg",
+          "name": "info.",
           "location": "left"
         },
         "component_list": [

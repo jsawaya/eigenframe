@@ -40,7 +40,7 @@
         "background_color": "#111111",
         "title": "PopupScreen with a component_list(TextView)",
         "icon": {
-          "name": "info.jpg",
+          "name": "info.",
           "location": "left"
         },
         "component_list": [
@@ -91,7 +91,7 @@
         "background_color": "#111111",
         "title": "PopupScreen",
         "icon": {
-          "name": "info.jpg",
+          "name": "info.",
           "location": "left"
         },
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json"

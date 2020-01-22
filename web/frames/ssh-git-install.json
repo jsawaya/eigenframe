@@ -180,7 +180,7 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/icon/white/ic_cloud_download_white_24dp.png",
+        "name": "cloud_download.",
         "location": "top"
       },
       "margin": {

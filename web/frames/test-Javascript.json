@@ -30,7 +30,7 @@
       "text_color": "#ffffff",
       "background_color": "#ff0000",
       "icon": {
-        "name": "info.jpg",
+        "name": "info.",
         "location": "left"
       },
       "on_click": {
@@ -49,7 +49,7 @@
       "text_color": "#ffffff",
       "background_color": "#11ff0000",
       "icon": {
-        "name": "info.jpg",
+        "name": "info.",
         "location": "left"
       },
       "on_click": {

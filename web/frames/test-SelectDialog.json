@@ -35,7 +35,7 @@
         "type": "SelectDialog",
         "title": "Test SelectDialog",
         "icon": {
-          "name": "info.jpg"
+          "name": "info."
         },
         "checked_option": 1,
         "option_list": [

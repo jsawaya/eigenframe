@@ -334,6 +334,70 @@
       }
     },
 
+    {
+      "type": "ImageView",
+      "url": "https://httpd.apache.org/images/apache_feather_bullet.gif",
+      "layout_width": "match_parent",
+      "layout_height": "100"
+    },
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "text": "Apache Administration",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "apache_logo.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "Apache Administration",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
+      }
+    },
+
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Ruby Administration",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "ruby_logo.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "text": "Ruby Administration",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
+      }
+    },
 
 
     {

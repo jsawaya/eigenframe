@@ -27,7 +27,7 @@
       "text_color": "#ffffff",
       "background_color": "#11ff0000",
       "icon": {
-        "name": "info.jpg",
+        "name": "info.",
         "location": "left"
       },
       "on_click": {
@@ -53,7 +53,7 @@
         "bottom": 4
       },
       "icon": {
-        "name": "info.jpg",
+        "name": "info.",
         "location": "left"
       },
       "on_click": {
@@ -70,7 +70,7 @@
       "text_color": "#ffffff",
       "background_color": "#000000",
       "icon": {
-        "name": "info.jpg",
+        "name": "info.",
         "location": "left"
       },
       "on_click": {
