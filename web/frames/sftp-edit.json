@@ -107,27 +107,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Get RemoteFile to EditText - PopupTextView",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Get RemoteFile to EditText",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "Get RemoteFile to EditText - PopupScreen",
+      "text": "Get RemoteFile to EditText",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -173,7 +153,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Show EditText Contents - via url",
+      "text": "Show EditText Contents",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -217,7 +197,7 @@
 
 
     {
-      "type": "Button",
+      "type": "x-Button",
       "layout_width": "match_parent",
       "text": "Show EditText Contents - via text_script",
       "text_color": "#ffffff",
@@ -355,8 +335,7 @@
                   "type": "JavaScript",
                   "script_list": [
                     "var x = eigenFragment.clearCacheFile('EditText:999000')",
-                    "eigenActivity.showToast('cache: '+x)",
-                    "eigenActivity.onBackPressed()"
+                    "eigenActivity.showToast('Cache: '+x)"
                   ]
                 }
               },
