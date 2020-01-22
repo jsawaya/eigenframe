@@ -147,7 +147,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Install GIT eigenframe branch",
+      "text": "GIT Installation",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -163,93 +163,8 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Install GIT eigenframe branch",
+        "title": "GIT Installation",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-install.json"
-      }
-    },
-
-
-    {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "Click [Apache Administration] to install and setup web-server on Termux host..."
-      ]
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "text": "Apache Administration",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Apache Administration",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
-      }
-    },
-
-
-    {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "Click [Ruby Administration] - required for [File System Explorer] example"
-      ]
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Ruby Administration",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "text": "Ruby Administration",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
       }
     },
 

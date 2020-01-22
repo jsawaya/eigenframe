@@ -168,6 +168,10 @@
       "text": "SecureShell Settings",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "settings.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,

@@ -508,6 +508,10 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "gravity": "center",
+      "icon": {
+        "name": "cloud_upload.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -539,7 +543,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "ssh_script_list": [
-                  "'echo ' + eigenFragment.getViewState(991003) + ' > t ; echo ' + eigenFragment.getViewState(991004) + ' >> t ; cat t | git push origin test' "
+                  "'cd ' + eigenFragment.getViewState(991001) + '; echo ' + eigenFragment.getViewState(991003) + ' > t ; echo ' + eigenFragment.getViewState(991004) + ' >> t ; cat t | git push origin test' "
                 ]
               }
             ]
@@ -591,28 +595,8 @@
           }
         ]
       }
-    },
-
-    {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "Quick check",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Quick check",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; ls "
-      }
     }
+
   ]
 }
 

@@ -338,28 +338,18 @@
                 "type": "Button",
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
-                "text": "Cancel Edits - Clear EditText:999000",
+                "text": "Cancel Edits",
                 "text_color": "#ffffff",
                 "background_color": "#123456",
+                "icon": {
+                  "name": "cancel.",
+                  "location": "top"
+                },
                 "on_click": {
                   "type": "PopupTextView",
                   "title": "Clear EditText:999000",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "text_script": "'' + eigenFragment.clearCacheFile('EditText:999000')"
-                }
-              },
-              {
-                "type": "Button",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text": "Clear EditText.txt",
-                "text_color": "#ffffff",
-                "background_color": "#123456",
-                "on_click": {
-                  "type": "PopupTextView",
-                  "title": "Clear EditText.txt",
-                  "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "text_script": "'' + eigenFragment.clearCacheFile('EditText.txt')"
+                  "text_script": "'' + eigenFragment.clearCacheFile('EditText:999000'); eigenActivity.onBackPressed()"
                 }
               },
               {
@@ -369,6 +359,10 @@
                 "text": "Save EditText to RemoteFile",
                 "text_color": "#ffffff",
                 "background_color": "#123456",
+                "icon": {
+                  "name": "file_upload.",
+                  "location": "top"
+                },
                 "on_click": {
                   "type": "PopupTextView",
                   "title": "Save Edits to RemoteFile",
