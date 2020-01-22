@@ -342,7 +342,7 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
-        "name": "httpd_logo_wide.",
+        "name": "apache_logo.",
         "location": "top"
       },
       "margin": {
