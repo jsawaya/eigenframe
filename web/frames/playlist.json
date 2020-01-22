@@ -342,7 +342,7 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
-        "name": "httpd_logo_wide_new.",
+        "name": "httpd_logo_wide.",
         "location": "top"
       },
       "margin": {
