@@ -367,7 +367,7 @@
                   "type": "PopupTextView",
                   "title": "Clear EditText:999000",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "text_script": "'' + eigenFragment.clearCache('EditText:999000')"
+                  "text_script": "'' + eigenFragment.clearCacheFile('EditText:999000')"
                 }
               },
               {
@@ -381,7 +381,7 @@
                   "type": "PopupTextView",
                   "title": "Clear EditText.txt",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "text_script": "'' + eigenFragment.clearCache('EditText.txt')"
+                  "text_script": "'' + eigenFragment.clearCacheFile('EditText.txt')"
                 }
               },
               {
