@@ -229,7 +229,7 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "text_script": "eigenFragment.getCacheFileContents('EditText.txt')"
+                "text_script": "''+eigenFragment.getCacheFileContents('EditText.txt')"
               }
             ]
           }
