@@ -215,8 +215,8 @@
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
                 "ssh_list": [
                   "cd ~/git-repos",
-                  "echo git clone https://github.com/jsawaya/eigenframe",
-                  "git clone https://github.com/jsawaya/eigenframe",
+                  "echo git clone https://github.com/jsawaya/eigenframe.git",
+                  "git clone https://github.com/jsawaya/eigenframe.git",
                   "echo ",
                   "echo cd eigenframe",
                   "cd eigenframe",
@@ -225,16 +225,32 @@
                   "git checkout -b test",
                   "echo ",
                   "echo git status:",
-                  "git status"
+                  "git status",
+                  "echo git remote -v:",
+                  "git remote -v"
                 ]
               }
             ]
           }
         ]
       }
+    },
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "left",
+      "font": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "text_list": [
+        "Initial github setup in Termux:",
+        " cd git-repos/eigenframe",
+        " git config credential.helper store",
+        " git push origin http://github.com/jsawaya/eigenframe.git",
+        " git push origin test"
+      ]
     }
-
-
   ]
 }
 
