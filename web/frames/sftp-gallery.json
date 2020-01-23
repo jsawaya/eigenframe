@@ -547,9 +547,53 @@
           }
         ]
       }
+    },
+
+
+    {
+      "type": "Button",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text": "list files .",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "list files .",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "layout_height": "wrap_content",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "layout_height": "wrap_content",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "sftp": "list files ."
+              }
+            ]
+          }
+        ]
+      }
     }
-
-
 
   ]
 }
