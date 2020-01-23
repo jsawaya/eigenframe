@@ -1,0 +1,107 @@
+{
+  "type": "LinearLayout",
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "match_parent",
+  "component_list": [
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "Test ListView",
+      "text_size": "22",
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "text_color": "#ffffff",
+      "icon": {
+        "name": "ic_launcher_round.",
+        "location": "top"
+      }
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 2,
+      "color": "#00ff00"
+    },
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "ListView getViewIdState(700)",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.showToast('ListView getViewIdState: '+eigenFragment.getViewIdState(700))"
+        ]
+      }
+    },
+    {
+      "type": "ListView",
+      "id": 700,
+      "layout_width": "match_parent",
+      "layout_height": "match_parent",
+      "background_color": "#123456",
+      "checked_option": 1,
+      "sftp_option_list": "list files .",
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "var pos = eigenFragment.getOptionInteger('position', 0)",
+          "var opt = eigenFragment.getOptionString('option', '')",
+          "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)"
+        ]
+      },
+      "item_layout": {
+        "type": "LinearLayout",
+        "orientation": "horizontal",
+        "gravity": "center_vertical",
+        "layout_width": "wrap_content",
+        "layout_height": "wrap_content",
+        "component_list": [
+          {
+            "type": "Button",
+            "layout_width": "wrap_content",
+            "layout_height": "wrap_content",
+            "text_script_list": [
+              "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('option', '')"
+            ],
+            "text_color": "#ffffff",
+            "background_color": "#123456",
+            "padding": {
+              "left": 20,
+              "top": 20,
+              "right": 20,
+              "bottom": 20
+            },
+            "margin": {
+              "left": 40,
+              "top": 40,
+              "right": 40,
+              "bottom": 40
+            },
+            "on_click": {
+              "type": "JavaScript",
+              "script_list": [
+                "var pos = eigenFragment.getOptionInteger('position', 0)",
+                "var opt = eigenFragment.getOptionString('option', '')",
+                "eigenActivity.showToast('Button selected: '+ pos + ' - ' + opt)"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Comment",
+      "script_list": [
+        "var pos = eigenFragment.getOptionInteger('position', 0)",
+        "var met = eigenFragment.getOptionString('option', '')",
+        "var v0 = eigenFragment.getViewState()",
+        "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + met +'checkbox selected: '+v0)"
+      ]
+    }
+
+  ]
+}
