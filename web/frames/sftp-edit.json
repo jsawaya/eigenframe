@@ -12,7 +12,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Enter Remote File: \n(relative to sftp home directory)"
+      "text": "Enter remote file: \n(relative to sftp home directory)"
     },
 
     {
@@ -41,7 +41,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Show RemoteFile Contents",
+      "text": "Show remote file contents",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -57,7 +57,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Show RemoteFile Contents",
+        "title": "Show remote file contents",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -87,7 +87,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Get RemoteFile to EditText",
+      "text": "Get remote file to local cache",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -103,7 +103,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Get RemoteFile to EditText",
+        "title": "Get remote file to local cache",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -133,7 +133,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Show EditText Contents",
+      "text": "Show local cache",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -149,7 +149,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Show EditText Contents",
+        "title": "Show local cache",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -177,55 +177,9 @@
 
 
     {
-      "type": "x-Button",
-      "layout_width": "match_parent",
-      "text": "Show EditText Contents - via text_script",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Show EditText Contents - Text",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "text_script": "''+eigenFragment.getCacheFileContents('EditText.txt')"
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "EditText CacheFile",
+      "text": "Edit cache file",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -240,7 +194,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title_script": "'Edit RemoteFile: '+eigenFragment.getViewState(999001)",
+        "title_script": "'Edit remote file: '+eigenFragment.getViewState(999001)",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -253,7 +207,7 @@
               {
                 "type": "Button",
                 "layout_width": "match_parent",
-                "text": "Cancel Edits",
+                "text": "Cancel Edits, Clear Cache",
                 "text_color": "#ffffff",
                 "gravity": "center_horizontal",
                 "background_color": "#123456",
@@ -271,14 +225,15 @@
                   "type": "JavaScript",
                   "script_list": [
                     "var x = eigenFragment.clearCacheFile('EditText:999000')",
-                    "eigenActivity.showToast('Cache: '+x)"
+                    "eigenActivity.showToast('Cache: '+x)",
+                    "eigenActivity.finish()"
                   ]
                 }
               },
               {
                 "type": "Button",
                 "layout_width": "match_parent",
-                "text": "Save EditText to RemoteFile",
+                "text": "Save Edits to Remote File",
                 "text_color": "#ffffff",
                 "gravity": "center_horizontal",
                 "background_color": "#123456",
@@ -294,7 +249,7 @@
                 },
                 "on_click": {
                   "type": "PopupTextView",
-                  "title": "Save Edits to RemoteFile",
+                  "title": "Save Edits to Remote File",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
                   "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)"
                 }
