@@ -225,7 +225,8 @@
                   "type": "JavaScript",
                   "script_list": [
                     "var x = eigenFragment.clearCacheFile('EditText:999000')",
-                    "eigenActivity.showToast('Cache: '+x+ ':' + eigenFragment.getViewParent())"
+                    "eigenActivity.showToast('Cache: ' + x )",
+                    "eigenFragment.closePopupWindow()"
                   ]
                 }
               },
