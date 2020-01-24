@@ -273,7 +273,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Edit Remote File (in Termux)",
+        "title": "Edit Remote File (from Termux)",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
       }
     },
