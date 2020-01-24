@@ -5,6 +5,7 @@
   "layout_width": "match_parent",
   "layout_height": "match_parent",
   "component_list": [
+
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -18,11 +19,13 @@
         "location": "top"
       }
     },
+
     {
       "type": "HorizontalLine",
       "size": 2,
       "color": "#00ff00"
     },
+
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -37,9 +40,9 @@
         ]
       }
     },
+
     {
       "type": "ListView",
-      "id": 700,
       "layout_width": "match_parent",
       "layout_height": "match_parent",
       "background_color": "#123456",
@@ -92,16 +95,8 @@
           }
         ]
       }
-    },
-    {
-      "type": "Comment",
-      "script_list": [
-        "var pos = eigenFragment.getOptionInteger('position', 0)",
-        "var met = eigenFragment.getOptionString('option', '')",
-        "var v0 = eigenFragment.getViewState()",
-        "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + met +'checkbox selected: '+v0)"
-      ]
     }
+
 
   ]
 }
