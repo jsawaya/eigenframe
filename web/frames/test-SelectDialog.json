@@ -46,7 +46,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.showToast('SelectDialog: option_name: '+eigenFragment.getOptionString('option_name', ''))"
+            "eigenActivity.showToast('SelectDialog: option: '+eigenFragment.getOptionLabel() + ', position: '+eigenFragment.getOptionPosition()"
           ]
         }
       }
