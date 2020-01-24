@@ -24,23 +24,23 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "1. You must first install Termux app from Google PlayStore.",
-        "2. Open the Termux app terminal console",
-        "3. Type the following to upgrade/update installed packages:",
+        "1. Install Termux from Google PlayStore",
+        "2. Open Termux app terminal console",
+        "3. At $ prompt, type the following:",
         "   $ pkg upgrade",
-        "4. Enable Termux to access shared file storage (recommended):",
+        "4. Enable Termux to share storage:",
         "   $ termux-setup-storage",
-        "5. Install openssh (open secure-shell) package:",
+        "5. Install openssh (open secure-shell):",
         "   $ pkg install openssh",
         "6. Create a new ssh password (you will re-enter this password in [SecureShell Settings]):",
         "   $ passwd",
-        "7. Start the secure-shell daemon process:",
+        "7. Start the secure-shell process:",
         "   $ sshd",
-        "8. Verify that you can login to secure-ftp, type:",
+        "8. Verify you can login to secure-ftp:",
         "   $ sftp -P 8022 localhost",
         "   Connected to localhost.",
         "   sftp> quit",
-        "9. Click [SecureShell Settings], enter your new ssh password and test the ssh connection"
+        "9. Click [SecureShell Settings], enter your new ssh password, and test your ssh connection"
         ]
     },
 

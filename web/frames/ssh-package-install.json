@@ -26,7 +26,7 @@
       "text_color": "#ffffff",
       "text_size": "14",
       "text_list": [
-        "Verify your [SecureShell Settings], and that your host is running sshd."
+        "Check your [SecureShell Settings], which verifies Termux is running sshd."
       ]
     },
     {
