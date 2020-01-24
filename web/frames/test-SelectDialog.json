@@ -38,6 +38,7 @@
           "name": "info."
         },
         "checked_option": 1,
+        "x-note": "SelectDialog does not yet support state (SelectDialog:id cache)",
         "option_list": [
           "option 0",
           "option 1",
