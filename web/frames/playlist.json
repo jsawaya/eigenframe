@@ -195,7 +195,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Termux Host Administration",
+      "text": "Termux Administration",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -225,7 +225,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "GIT Repository Administration",
+      "text": "GIT Administration",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -254,7 +254,7 @@
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
-      "text": "Edit Remote File (in Termux/git branch)",
+      "text": "Edit Remote File (in Termux)",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -273,7 +273,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Edit Remote File",
+        "title": "Edit Remote File (in Termux)",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
       }
     },

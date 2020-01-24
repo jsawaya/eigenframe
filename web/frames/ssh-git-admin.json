@@ -93,7 +93,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Remote host sftp home directory:"
+      "text": "Termux/sftp home directory:"
     },
 
     {
@@ -119,7 +119,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Remote host git-repository home: \n(relative to sftp home directory)"
+      "text": "git working directory: \n(relative to sftp home directory)"
     },
 
     {
@@ -151,7 +151,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "remote host git repository directory",
+      "text": "Show git working directory",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "gravity": "center",
@@ -339,7 +339,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Remote host git-file path: \n(relative to git-repository home)"
+      "text": "git file-path: \n(relative to git working directory)"
     },
 
     {
@@ -462,46 +462,6 @@
     },
 
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "GITHUB user"
-    },
-
-    {
-      "type": "EditText",
-      "id": 991003,
-      "max_length": 200,
-      "is_single_line": true,
-      "layout_width": "match_parent",
-      "text_color": "#ffffff",
-      "text_size": "20",
-      "gravity": "left",
-      "background_color": "#000000"
-    },
-
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "GITHUB password"
-    },
-
-    {
-      "type": "EditText",
-      "id": 991004,
-      "is_password": true,
-      "layout_width": "match_parent",
-      "text_color": "#ffffff",
-      "background_color": "#000000",
-      "text": "password"
-    },
-
-    {
       "type": "Button",
       "layout_width": "match_parent",
       "text": "git push origin test",
@@ -543,53 +503,8 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "ssh_script_list": [
-                  "'cd ' + eigenFragment.getViewState(991001) + '; echo ' + eigenFragment.getViewState(991003) + ' > t ; echo ' + eigenFragment.getViewState(991004) + ' >> t ; cat t | git push origin test' "
+                  "'cd ' + eigenFragment.getViewState(991001) + '; git push origin test' "
                 ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "git config ",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git config",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git config --global user.email \"john.sawaya@gmail.com\" ; git config --global user.name \"jsawaya\" '"
               }
             ]
           }
