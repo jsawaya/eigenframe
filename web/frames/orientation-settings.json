@@ -134,7 +134,6 @@
     },
     {
       "type": "Switch",
-      "id": 321,
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text": "Automatic Orientation",
@@ -151,7 +150,7 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.enableOrientationEventListener(eigenFragment.getViewIdState(321) == 1)"
+          "eigenActivity.enableOrientationEventListener(eigenFragment.getViewState() == 1)"
         ]
       }
     }

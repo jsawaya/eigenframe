@@ -254,7 +254,7 @@
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
-      "text": "Edit Remote File (in Termux)",
+      "text": "Edit Remote File (from Termux)",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
