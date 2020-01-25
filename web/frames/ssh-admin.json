@@ -51,7 +51,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Termux Package Update...",
+        "title": "Termux Package Upgrade",
         "component_list": [
           {
             "type": "LinearLayout",
