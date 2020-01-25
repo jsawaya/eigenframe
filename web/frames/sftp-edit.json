@@ -41,7 +41,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Show remote file contents",
+      "text": "Show remote file",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -57,7 +57,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Show remote file contents",
+        "title": "Show remote file",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -179,7 +179,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "Edit cache file",
+      "text": "Edit local cache",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -194,7 +194,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title_script": "'Edit remote file: '+eigenFragment.getViewState(999001)",
+        "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -227,8 +227,10 @@
                   "on_complete" : {
                     "type": "JavaScript",
                     "script_list": [
-                      "var x = eigenFragment.clearCacheFile('EditText.txt')",
-                      "eigenActivity.showToast('File Cache: ' + x )",
+                      "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+                      "eigenActivity.showToast('Edit Cache: ' + x1 )",
+                      "var x2 = eigenFragment.clearCacheFile('EditText.txt')",
+                      "eigenActivity.showToast('File Cache: ' + x2 )",
                       "eigenFragment.closePopupWindow()"
                     ]
                   }
@@ -255,8 +257,8 @@
                 "on_click": {
                   "type": "JavaScript",
                   "script_list": [
-                    "var x = eigenFragment.clearCacheFile('EditText:999000')",
-                    "eigenActivity.showToast('Edit Cache: ' + x )",
+                    "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+                    "eigenActivity.showToast('Edit Cache: ' + x1 )",
                     "eigenFragment.closePopupWindow()"
                   ]
                 }
