@@ -207,7 +207,32 @@
               {
                 "type": "Button",
                 "layout_width": "match_parent",
-                "text": "Cancel Edits, Clear Cache",
+                "text": "Save Edits to Remote File",
+                "text_color": "#ffffff",
+                "gravity": "center_horizontal",
+                "background_color": "#123456",
+                "icon": {
+                  "name": "save.",
+                  "location": "top"
+                },
+                "margin": {
+                  "left": 10,
+                  "top": 10,
+                  "right": 10,
+                  "bottom": 10
+                },
+                "on_click": {
+                  "type": "PopupTextView",
+                  "title": "Save Edits to Remote File",
+                  "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                  "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)"
+                }
+              },
+
+              {
+                "type": "Button",
+                "layout_width": "match_parent",
+                "text": "Clear Cache",
                 "text_color": "#ffffff",
                 "gravity": "center_horizontal",
                 "background_color": "#123456",
@@ -230,30 +255,7 @@
                   ]
                 }
               },
-              {
-                "type": "Button",
-                "layout_width": "match_parent",
-                "text": "Save Edits to Remote File",
-                "text_color": "#ffffff",
-                "gravity": "center_horizontal",
-                "background_color": "#123456",
-                "icon": {
-                  "name": "file_upload.",
-                  "location": "top"
-                },
-                "margin": {
-                  "left": 10,
-                  "top": 10,
-                  "right": 10,
-                  "bottom": 10
-                },
-                "on_click": {
-                  "type": "PopupTextView",
-                  "title": "Save Edits to Remote File",
-                  "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)"
-                }
-              },
+
               {
                 "type": "EditText",
                 "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') ",

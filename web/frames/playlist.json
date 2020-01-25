@@ -224,6 +224,34 @@
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
+      "text": "Edit Remote File (from Termux)",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "edit.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "Edit Remote File (from Termux)",
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
+      }
+    },
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "text": "GIT Administration",
       "text_color": "#ffffff",
@@ -247,34 +275,6 @@
         "background_color": "#111111",
         "title": "GIT Administration",
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
-      }
-    },
-
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "text": "Edit Remote File (from Termux)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "edit.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Edit Remote File (from Termux)",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
       }
     },
 
