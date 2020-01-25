@@ -119,10 +119,7 @@
         "type": "PopupTextView",
         "title": "whoami",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo whoami:",
-          "whoami"
-        ]
+        "ssh": "whoami"
       }
     },
     {
@@ -143,10 +140,7 @@
         "type": "PopupTextView",
         "title": "pwd",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh_list": [
-          "echo pwd:",
-          "pwd"
-        ]
+        "ssh":  "pwd"
       }
     }
 
