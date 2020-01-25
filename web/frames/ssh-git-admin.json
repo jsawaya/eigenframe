@@ -379,13 +379,14 @@
 
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "match_parent",
-      "text": "git push origin master",
+      "layout_height": "wrap_content",
+      "text": "EigenFrame Github Repository",
       "text_color": "#ffffff",
       "background_color": "#123456",
-      "gravity": "center",
       "icon": {
-        "name": "cloud_upload.",
+        "name": "import_export.",
         "location": "top"
       },
       "margin": {
@@ -401,7 +402,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "git push origin master",
+        "title": "EigenFrame Github Repository",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -412,15 +413,11 @@
             "layout_height": "wrap_content",
             "component_list": [
               {
-                "type": "TextView",
+                "type": "WebView",
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script_list": [
-                  "'cd ' + eigenFragment.getViewState(991001) + '; git push origin master' "
-                ]
+                "is_javascript_enabled": true,
+                "url": "https://github.com/jsawaya/eigenframe"
               }
             ]
           }
@@ -561,55 +558,8 @@
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
-    },
-
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "EigenFrame Github Repository",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "import_export.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "EigenFrame Github Repository",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "WebView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "is_javascript_enabled": true,
-                "url": "https://github.com/jsawaya/eigenframe"
-              }
-            ]
-          }
-        ]
-      }
     }
+
   ]
 }
 
