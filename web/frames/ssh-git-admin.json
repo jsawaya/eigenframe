@@ -561,9 +561,34 @@
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
+    },
+
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "EigenFrame Repository Administration",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "icon": {
+        "name": "import_export.",
+        "location": "top"
+      },
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "WebView",
+        "layout_width": "match_parent",
+        "layout_height": "match_parent",
+        "is_javascript_enabled": true,
+        "url": "https://github.com/jsawaya/eigenframe"
+      }
     }
-
-
   ]
 }
 
