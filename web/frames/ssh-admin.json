@@ -15,17 +15,7 @@
       "text_size": "22",
       "text": "Termux Host Administration"
     },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text": "You must have sshd already running on the host (Termux), in order to use ssh."
-    },
-
-
+    
     {
       "type": "Button",
       "gravity": "center",
@@ -51,7 +41,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "Termux Package Update...",
+        "title": "Termux Package Upgrade",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -204,7 +194,7 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
-      "text": "Examples"
+      "text": "Linux Commands"
     },
 
     {
