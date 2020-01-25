@@ -222,17 +222,23 @@
                   "bottom": 10
                 },
                 "on_click": {
-                  "type": "PopupTextView",
-                  "title": "Save Edits to Remote File",
-                  "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)"
+                  "type": "SecureFtp",
+                  "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
+                  "on_complete" : {
+                    "type": "JavaScript",
+                    "script_list": [
+                      "var x = eigenFragment.clearCacheFile('EditText.txt')",
+                      "eigenActivity.showToast('File Cache: ' + x )",
+                      "eigenFragment.closePopupWindow()"
+                    ]
+                  }
                 }
               },
 
               {
                 "type": "Button",
                 "layout_width": "match_parent",
-                "text": "Clear Cache",
+                "text": "Cancel Local Edits",
                 "text_color": "#ffffff",
                 "gravity": "center_horizontal",
                 "background_color": "#123456",
@@ -250,7 +256,7 @@
                   "type": "JavaScript",
                   "script_list": [
                     "var x = eigenFragment.clearCacheFile('EditText:999000')",
-                    "eigenActivity.showToast('Cache: ' + x )",
+                    "eigenActivity.showToast('Edit Cache: ' + x )",
                     "eigenFragment.closePopupWindow()"
                   ]
                 }
