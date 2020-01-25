@@ -31,7 +31,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "Termux Package Update...",
+      "text": "Termux Package Upgrade",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -65,7 +65,7 @@
                 "type": "TextView",
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
-                "text_size": "14",
+                "text_size": "10",
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
@@ -212,7 +212,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "PopupTextView - whoami",
+      "text": "whoami",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -223,7 +223,7 @@
       },
       "on_click": {
         "type": "PopupTextView",
-        "title": "PopupTextView - whoami",
+        "title": "whoami",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "ssh": "whoami"
       }
@@ -235,7 +235,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "linux whoami command",
+      "text": "Display Filesystem",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -251,7 +251,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title": "linux whoami command",
+        "title": "df",
         "icon": {
           "name": "info.",
           "location": "left"
@@ -269,10 +269,10 @@
                 "type": "TextView",
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
-                "text_size": "14",
+                "text_size": "10",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "ssh": "whoami"
+                "ssh": "df"
               }
             ]
           }
