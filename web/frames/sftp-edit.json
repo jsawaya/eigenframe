@@ -5,7 +5,6 @@
   "gravity": "center_horizontal",
   "layout_width": "match_parent",
   "component_list": [
-
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -14,7 +13,6 @@
       "text_size": "22",
       "text": "Enter remote file: \n(relative to sftp home directory)"
     },
-
     {
       "type": "EditText",
       "id": 999001,
@@ -31,13 +29,11 @@
         "bottom": 10
       }
     },
-
     {
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
     },
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -82,8 +78,6 @@
         ]
       }
     },
-
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -128,8 +122,6 @@
         ]
       }
     },
-
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -174,8 +166,6 @@
         ]
       }
     },
-
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -222,21 +212,31 @@
                   "bottom": 10
                 },
                 "on_click": {
-                  "type": "SecureFtp",
-                  "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
-                  "on_complete" : {
-                    "type": "JavaScript",
-                    "script_list": [
-                      "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-                      "eigenActivity.showToast('Edit Cache: ' + x1 )",
-                      "var x2 = eigenFragment.clearCacheFile('EditText.txt')",
-                      "eigenActivity.showToast('File Cache: ' + x2 )",
-                      "eigenFragment.closePopupWindow()"
-                    ]
-                  }
+                  "type": "ScriptList",
+                  "component_list": [
+                    {
+                      "type": "SecureFtp",
+                      "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
+                      "on_complete": {
+                        "type": "JavaScript",
+                        "script_list": [
+                          "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+                          "eigenActivity.showToast('Edit Cache: ' + x1 )",
+                          "var x2 = eigenFragment.clearCacheFile('EditText.txt')",
+                          "eigenActivity.showToast('File Cache: ' + x2 )",
+                          "eigenFragment.closePopupWindow()"
+                        ]
+                      }
+                    },
+                    {
+                      "type": "JavaScript",
+                      "script_list": [
+                        "eigenFragment.closePopupWindow()"
+                      ]
+                    }
+                  ]
                 }
               },
-
               {
                 "type": "Button",
                 "layout_width": "match_parent",
@@ -263,7 +263,6 @@
                   ]
                 }
               },
-
               {
                 "type": "EditText",
                 "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') ",
@@ -279,7 +278,6 @@
         ]
       }
     }
-
   ]
 }
 
