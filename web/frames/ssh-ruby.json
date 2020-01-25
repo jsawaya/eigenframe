@@ -24,6 +24,10 @@
       "text": "Install ruby package",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "archive.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -84,6 +88,10 @@
       "text": "File System Explorer",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "open_browser.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -193,6 +201,10 @@
       "text": "Test ruby webrick service",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "open_browser.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
