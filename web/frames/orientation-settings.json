@@ -7,12 +7,6 @@
   "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "JavaScript",
-      "script_list": [
-        "eigenActivity.enableOrientationEventListener(false)"
-      ]
-    },
-    {
       "type": "TextView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
@@ -23,12 +17,16 @@
     },
     {
       "type": "Button",
-      "gravity": "center",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "landscape",
+      "text": "Automatic orientation based on sensors",
+      "gravity": "center",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "rotate_90.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -38,8 +36,7 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.enableOrientationEventListener(false)",
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
+          "eigenActivity.enableOrientationEventListener(true)"
         ]
       }
     },
@@ -48,9 +45,13 @@
       "gravity": "center",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "portrait",
+      "text": "Portrait Orientation",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "arrow_up.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -70,9 +71,13 @@
       "gravity": "center",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "landscape-reverse",
+      "text": "Landscape Orientation",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "arrow_forward.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -83,7 +88,7 @@
         "type": "JavaScript",
         "script_list": [
           "eigenActivity.enableOrientationEventListener(false)",
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE)"
+          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
         ]
       }
     },
@@ -92,9 +97,13 @@
       "gravity": "center",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "portrait-reverse",
+      "text": "Reverse-Portrait Orientation",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "arrow_down.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -111,12 +120,16 @@
     },
     {
       "type": "Button",
+      "gravity": "center",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "Automatic Orientation",
-      "gravity": "center",
+      "text": "Reverse-Landscape Orientation",
       "text_color": "#ffffff",
       "background_color": "#123456",
+      "icon": {
+        "name": "arrow_back.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -126,7 +139,8 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.enableOrientationEventListener(true)"
+          "eigenActivity.enableOrientationEventListener(false)",
+          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE)"
         ]
       }
     }
