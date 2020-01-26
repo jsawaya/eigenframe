@@ -166,6 +166,7 @@
         ]
       }
     },
+
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -194,6 +195,7 @@
             "layout_width": "match_parent",
             "layout_height": "wrap_content",
             "component_list": [
+
               {
                 "type": "Button",
                 "layout_width": "match_parent",
@@ -237,6 +239,7 @@
                   ]
                 }
               },
+
               {
                 "type": "Button",
                 "layout_width": "match_parent",
@@ -263,6 +266,7 @@
                   ]
                 }
               },
+
               {
                 "type": "EditText",
                 "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') ",
