@@ -41,7 +41,7 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(400))"
         ]
       }
     },
@@ -49,13 +49,13 @@
       "type": "Button",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "getViewIdState ToggleButton:400",
+      "text": "getViewState ToggleButton:400",
       "text_color": "#ffffff",
       "background_color": "#ff00ff",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(400))"
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(400))"
         ]
       }
     },
@@ -78,13 +78,13 @@
       "type": "Button",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "getViewIdState ToggleButton:4099",
+      "text": "getViewState ToggleButton:4099",
       "text_color": "#ffffff",
       "background_color": "#ff00ff",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewIdState(4099))"
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(4099))"
         ]
       }
     }

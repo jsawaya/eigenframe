@@ -36,8 +36,8 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "var pos = eigenFragment.getOptionInteger('position', 0)",
-          "var opt = eigenFragment.getOptionString('option', '')",
+          "var pos = eigenFragment.getOptionPosition()",
+          "var opt = eigenFragment.getOptionLabel()",
           "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)"
         ]
       },
@@ -53,7 +53,7 @@
             "layout_width": "wrap_content",
             "layout_height": "wrap_content",
             "text_script_list": [
-              "eigenFragment.getOptionInteger('position', 0) + ' - ' + eigenFragment.getOptionString('option', '')"
+              "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
             ],
             "text_color": "#ffffff",
             "background_color": "#123456",
@@ -72,9 +72,9 @@
             "on_click": {
               "type": "JavaScript",
               "script_list": [
-                "var pos = eigenFragment.getOptionInteger('position', 0)",
-                "var opt = eigenFragment.getOptionString('option', '')",
-                "eigenActivity.showToast('Button selected: '+ pos + ' - ' + opt)"
+                "var pos = eigenFragment.getOptionPosition()",
+                "var opt = eigenFragment.getOptionLabel()",
+                "eigenActivity.showToast('Button selected: '+ pos + ': ' + opt)"
               ]
             }
           }

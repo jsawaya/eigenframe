@@ -40,7 +40,7 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewIdState(500))"
+          "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500))"
         ]
       }
     },
@@ -48,13 +48,13 @@
       "type": "Button",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "getViewIdState RadioButton:500",
+      "text": "getViewState RadioButton:500",
       "text_color": "#ffffff",
       "background_color": "#ff00ff",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewIdState(500))"
+          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(500))"
         ]
       }
     },
@@ -77,13 +77,13 @@
       "type": "Button",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "getViewIdState RadioButton:510",
+      "text": "getViewState RadioButton:510",
       "text_color": "#ffffff",
       "background_color": "#ff00ff",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('getViewIdState: '+eigenFragment.getViewIdState(510))"
+          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(510))"
         ]
       }
     }
