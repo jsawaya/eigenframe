@@ -102,66 +102,56 @@
       }
     },
     {
-      "type": "LinearLayout",
-      "scrollable": true,
-      "orientation": "vertical",
-      "gravity": "center_horizontal",
+      "type": "ListView",
       "layout_width": "match_parent",
       "layout_height": "match_parent",
-      "component_list": [
-        {
-          "type": "ListView",
-          "layout_width": "match_parent",
-          "layout_height": "match_parent",
-          "background_color": "#123456",
-          "sftp_script": "'list subdir '+eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)",
-          "on_click": {
-            "type": "JavaScript",
-            "script_list": [
-              "var pos = eigenFragment.getOptionPosition()",
-              "var opt = eigenFragment.getOptionLabel()",
-              "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)"
-            ]
-          },
-          "item_layout": {
-            "type": "LinearLayout",
-            "orientation": "horizontal",
-            "layout_width": "wrap_content",
-            "layout_height": "wrap_content",
-            "gravity": "center_vertical",
-            "component_list": [
-              {
-                "type": "Button",
-                "text_script_list": [
-                  "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
-                ],
-                "text_color": "#ffffff",
-                "background_color": "#123456",
-                "padding": {
-                  "left": 20,
-                  "top": 20,
-                  "right": 20,
-                  "bottom": 20
-                },
-                "margin": {
-                  "left": 40,
-                  "top": 40,
-                  "right": 40,
-                  "bottom": 40
-                },
-                "on_click": {
-                  "type": "JavaScript",
-                  "script_list": [
-                    "var pos = eigenFragment.getOptionPosition()",
-                    "var opt = eigenFragment.getOptionLabel()",
-                    "eigenActivity.showToast('Button selected: '+ pos + ': ' + opt)"
-                  ]
-                }
-              }
-            ]
+      "background_color": "#123456",
+      "sftp_script": "'list subdir '+eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)",
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "var pos = eigenFragment.getOptionPosition()",
+          "var opt = eigenFragment.getOptionLabel()",
+          "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)"
+        ]
+      },
+      "item_layout": {
+        "type": "LinearLayout",
+        "orientation": "horizontal",
+        "layout_width": "wrap_content",
+        "layout_height": "wrap_content",
+        "gravity": "center_vertical",
+        "component_list": [
+          {
+            "type": "Button",
+            "text_script_list": [
+              "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
+            ],
+            "text_color": "#ffffff",
+            "background_color": "#123456",
+            "padding": {
+              "left": 20,
+              "top": 20,
+              "right": 20,
+              "bottom": 20
+            },
+            "margin": {
+              "left": 40,
+              "top": 40,
+              "right": 40,
+              "bottom": 40
+            },
+            "on_click": {
+              "type": "JavaScript",
+              "script_list": [
+                "var pos = eigenFragment.getOptionPosition()",
+                "var opt = eigenFragment.getOptionLabel()",
+                "eigenActivity.showToast('Button selected: '+ pos + ': ' + opt)"
+              ]
+            }
           }
-        }
-      ]
+        ]
+      }
     }
   ]
 }
