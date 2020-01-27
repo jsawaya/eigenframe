@@ -9,30 +9,110 @@
     {
       "type": "TextView",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Test ListView",
+      "gravity": "left",
+      "text_color": "#8aec81",
       "text_size": "22",
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "text": "Termux/sftp home directory:"
+    },
+
+    {
+      "type": "TextView",
+      "id": 991000,
+      "layout_width": "match_parent",
+      "sftp": "pwd",
       "text_color": "#ffffff",
-      "icon": {
-        "name": "ic_launcher_round.",
-        "location": "top"
+      "text_size": "20",
+      "gravity": "left",
+      "background_color": "#000000",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      }
+    },
+
+    {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "git working directory: \n(relative to sftp home directory)"
+    },
+
+    {
+      "type": "EditText",
+      "id": 991001,
+      "max_length": 200,
+      "is_single_line": true,
+      "layout_width": "match_parent",
+      "text": "git-repos/eigenframe",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "gravity": "left",
+      "background_color": "#000000",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       }
     },
 
     {
       "type": "HorizontalLine",
-      "size": 2,
-      "color": "#00ff00"
+      "size": 3,
+      "color": "#666666"
+    },
+
+    {
+      "type": "Button",
+      "layout_width": "match_parent",
+      "text": "Show git working directory",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "gravity": "center",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title_script": "'directory ' + eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)",
+        "component_list": [
+          {
+            "type": "LinearLayout",
+            "scrollable": true,
+            "orientation": "vertical",
+            "gravity": "center_horizontal",
+            "layout_width": "match_parent",
+            "component_list": [
+              {
+                "type": "TextView",
+                "layout_width": "match_parent",
+                "text_size": "14",
+                "gravity": "left",
+                "text_color": "#ffffff",
+                "sftp_script": "'directory ' + eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)"
+              }
+            ]
+          }
+        ]
+      }
     },
 
     {
       "type": "ListView",
       "layout_width": "match_parent",
-      "layout_height": "match_parent",
       "background_color": "#123456",
-      "checked_option": 1,
-      "option_sftp": "list files .",
+      "sftp_script": "'list files '+eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -45,13 +125,9 @@
         "type": "LinearLayout",
         "orientation": "horizontal",
         "gravity": "center_vertical",
-        "layout_width": "wrap_content",
-        "layout_height": "wrap_content",
         "component_list": [
           {
             "type": "Button",
-            "layout_width": "wrap_content",
-            "layout_height": "wrap_content",
             "text_script_list": [
               "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
             ],
