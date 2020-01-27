@@ -139,6 +139,7 @@
               {
                 "type": "ListView",
                 "layout_width": "match_parent",
+                "layout_height": "match_parent",
                 "background_color": "#123456",
                 "sftp_script": "'list subdir '+eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)",
                 "on_click": {
