@@ -148,7 +148,9 @@
                   "script_list": [
                     "var pos = eigenFragment.getOptionPosition()",
                     "var opt = eigenFragment.getOptionLabel()",
-                    "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)"
+                    "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
+                    "eigenFragment.setViewState(991001, eigenFragment.concatPaths(eigenFragment.getViewState(991001), opt))",
+                    "eigenFragment.closePopupWindow()"
                   ]
                 },
                 "item_layout": {
