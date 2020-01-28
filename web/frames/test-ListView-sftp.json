@@ -137,19 +137,44 @@
             "layout_width": "match_parent",
             "layout_height": "match_parent",
             "component_list": [
+
+              {
+                "type": "Button",
+                "layout_width": "match_parent",
+                "text": "Parent Directory",
+                "text_color": "#ffffff",
+                "background_color": "#123456",
+                "gravity": "center",
+                "margin": {
+                  "left": 10,
+                  "top": 10,
+                  "right": 10,
+                  "bottom": 10
+                },
+                "on_click":
+                {
+                  "type": "JavaScript",
+                  "script_list": [
+                    "eigenFragment.parentPath(991001)",
+                    "eigenFragment.closePopupWindow()"
+                  ]
+                }
+              },
+
               {
                 "type": "ListView",
                 "layout_width": "match_parent",
                 "layout_height": "match_parent",
                 "background_color": "#123456",
                 "sftp_script": "'list subdir '+eigenFragment.concatPaths(991000, 991001)",
-                "on_click": {
+                "on_click":
+                {
                   "type": "JavaScript",
                   "script_list": [
                     "var pos = eigenFragment.getOptionPosition()",
                     "var opt = eigenFragment.getOptionLabel()",
                     "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
-                    "eigenFragment.setViewState(991001, eigenFragment.concatPaths(eigenFragment.getViewState(991001), opt))",
+                    "eigenFragment.appendPath(991001, opt)",
                     "eigenFragment.closePopupWindow()"
                   ]
                 },
