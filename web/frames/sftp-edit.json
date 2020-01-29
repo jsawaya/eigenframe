@@ -214,7 +214,7 @@
                   "bottom": 10
                 },
                 "on_click": {
-                  "type": "ScriptList",
+                  "type": "ActionList",
                   "component_list": [
                     {
                       "type": "SecureFtp",

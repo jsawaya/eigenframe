@@ -111,7 +111,7 @@
     {
       "type": "Button",
       "layout_width": "match_parent",
-      "text": "ListView",
+      "text": "Select directory",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "gravity": "center",
@@ -123,6 +123,7 @@
       },
       "on_click": {
         "type": "PopupScreen",
+        "id": 111000,
         "layout_width": "match_parent",
         "layout_height": "match_parent",
         "text_size": "14",
@@ -167,15 +168,23 @@
                 "layout_height": "match_parent",
                 "background_color": "#123456",
                 "sftp_script": "'list subdir '+eigenFragment.concatPaths(991000, 991001)",
-                "on_click":
-                {
-                  "type": "JavaScript",
-                  "script_list": [
-                    "var pos = eigenFragment.getOptionPosition()",
-                    "var opt = eigenFragment.getOptionLabel()",
-                    "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
-                    "eigenFragment.appendPath(991001, opt)",
-                    "eigenFragment.closePopupWindow()"
+                "on_click": {
+                  "type": "ActionList",
+                  "component_list": [
+                    {
+                      "type": "JavaScript",
+                      "script_list": [
+                        "var pos = eigenFragment.getOptionPosition()",
+                        "var opt = eigenFragment.getOptionLabel()",
+                        "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
+                        "eigenFragment.appendPath(991001, opt)",
+                        "eigenFragment.closePopupWindow()"
+                      ]
+                    },
+                    {
+                      "type": "Clone",
+                      "ref_id": 111000
+                    }
                   ]
                 },
                 "item_layout": {
