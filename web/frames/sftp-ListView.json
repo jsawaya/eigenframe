@@ -35,7 +35,6 @@
 
         {
           "type": "ListView",
-          "id": 111000,
           "layout_width": "match_parent",
           "layout_height": "match_parent",
           "layout_weight": "1",
@@ -82,8 +81,7 @@
         },
 
         {
-          "type": "ListView",
-          "id": 112000,
+          "type": "x-ListView",
           "layout_width": "match_parent",
           "layout_height": "match_parent",
           "layout_weight": "1",
