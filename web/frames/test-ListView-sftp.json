@@ -116,7 +116,6 @@
       },
       "on_click": {
         "type": "PopupScreen",
-        "eid": 111000,
         "layout_width": "match_parent",
         "layout_height": "match_parent",
         "text_size": "14",
@@ -167,19 +166,26 @@
                 },
                 "on_click":
                 {
-                  "type": "ActionList",
-                  "component_list": [
-                    {
-                      "type": "JavaScript",
-                      "script_list": [
-                        "eigenActivity.showToast('test: '+eigenView)"
-                      ]
-                    }
-                  ]
+                  "type": "SecureFtp",
+                  "id": 110000,
+                  "sftp_script": "'list files '+eigenFragment.concatPaths(991000, 991001)",
+                  "on_complete":
+                  {
+                    "type": "ActionList",
+                    "component_list": [
+                      {
+                        "type": "JavaScript",
+                        "script_list": [
+                          "eigenActivity.showToast('test: '+eigenView)"
+                        ]
+                      }
+                    ]
+                  }
                 }
               },
               {
                 "type": "ListView",
+                "id": 111000,
                 "layout_width": "match_parent",
                 "layout_height": "match_parent",
                 "background_color": "#123456",
