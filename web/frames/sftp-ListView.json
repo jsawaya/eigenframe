@@ -68,6 +68,22 @@
               "top": 40,
               "right": 40,
               "bottom": 40
+            },
+            "on_click":
+            {
+              "type": "ActionList",
+              "component_list": [
+                {
+                  "type": "JavaScript",
+                  "script_list": [
+                    "var pos = eigenFragment.getOptionPosition()",
+                    "var opt = eigenFragment.getOptionLabel()",
+                    "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
+                    "eigenFragment.appendPath(991001, opt)",
+                    "eigenFragment.closePopupWindow()"
+                  ]
+                }
+              ]
             }
           }
         ]
