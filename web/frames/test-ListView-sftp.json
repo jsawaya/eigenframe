@@ -5,7 +5,6 @@
   "layout_width": "match_parent",
   "layout_height": "match_parent",
   "component_list": [
-
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -14,7 +13,6 @@
       "text_size": "22",
       "text": "Termux/sftp home directory:"
     },
-
     {
       "type": "TextView",
       "id": 991000,
@@ -31,7 +29,6 @@
         "bottom": 10
       }
     },
-
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -40,7 +37,6 @@
       "text_size": "22",
       "text": "git working directory: \n(relative to sftp home directory)"
     },
-
     {
       "type": "EditText",
       "id": 991001,
@@ -59,13 +55,11 @@
         "bottom": 10
       }
     },
-
     {
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
     },
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -107,7 +101,6 @@
         ]
       }
     },
-
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -138,7 +131,6 @@
             "layout_width": "match_parent",
             "layout_height": "match_parent",
             "component_list": [
-
               {
                 "type": "Button",
                 "layout_width": "match_parent",
@@ -152,8 +144,7 @@
                   "right": 10,
                   "bottom": 10
                 },
-                "on_click":
-                {
+                "on_click": {
                   "type": "JavaScript",
                   "script_list": [
                     "eigenFragment.parentPath(991001)",
@@ -161,7 +152,6 @@
                   ]
                 }
               },
-
               {
                 "type": "ListView",
                 "layout_width": "match_parent",
@@ -230,7 +220,5 @@
         ]
       }
     }
-
-
   ]
 }
