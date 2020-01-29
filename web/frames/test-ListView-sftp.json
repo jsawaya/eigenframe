@@ -127,8 +127,8 @@
             "type": "LinearLayout",
             "orientation": "vertical",
             "gravity": "center_horizontal",
-            "layout_width": "wrap_content",
-            "layout_height": "wrap_content",
+            "layout_width": "match_parent",
+            "layout_height": "match_parent",
             "component_list": [
               {
                 "type": "Button",
@@ -195,8 +195,8 @@
                   {
                     "type": "ListView",
                     "id": 111000,
-                    "layout_width": "wrap_content",
-                    "layout_height": "wrap_content",
+                    "layout_width": "match_parent",
+                    "layout_height": "match_parent",
                     "background_color": "#123456",
                     "sftp_script": "'list subdir '+eigenFragment.concatPaths(991000, 991001)",
                     "on_click":
