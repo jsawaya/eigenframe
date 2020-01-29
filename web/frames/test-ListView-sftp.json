@@ -153,12 +153,39 @@
                 }
               },
               {
+                "type": "Button",
+                "layout_width": "match_parent",
+                "text": "Test",
+                "text_color": "#ffffff",
+                "background_color": "#123456",
+                "gravity": "center",
+                "margin": {
+                  "left": 10,
+                  "top": 10,
+                  "right": 10,
+                  "bottom": 10
+                },
+                "on_click":
+                {
+                  "type": "ActionList",
+                  "component_list": [
+                    {
+                      "type": "JavaScript",
+                      "script_list": [
+                        "eigenActivity.showToast('test: '+eigenView)"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
                 "type": "ListView",
                 "layout_width": "match_parent",
                 "layout_height": "match_parent",
                 "background_color": "#123456",
                 "sftp_script": "'list subdir '+eigenFragment.concatPaths(991000, 991001)",
-                "on_click": {
+                "on_click":
+                {
                   "type": "ActionList",
                   "component_list": [
                     {
@@ -170,10 +197,6 @@
                         "eigenFragment.appendPath(991001, opt)",
                         "eigenFragment.closePopupWindow()"
                       ]
-                    },
-                    {
-                      "type": "Clone",
-                      "ref_eid": 111000
                     }
 
                   ]
