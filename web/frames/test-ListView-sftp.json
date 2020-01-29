@@ -170,7 +170,12 @@
                         "eigenFragment.appendPath(991001, opt)",
                         "eigenFragment.closePopupWindow()"
                       ]
+                    },
+                    {
+                      "type": "Clone",
+                      "ref_eid": 111000
                     }
+
                   ]
                 },
                 "item_layout": {
