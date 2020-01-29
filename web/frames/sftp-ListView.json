@@ -5,6 +5,7 @@
   "layout_width": "match_parent",
   "layout_height": "match_parent",
   "component_list": [
+
     {
       "type": "Button",
       "layout_width": "match_parent",
@@ -26,6 +27,7 @@
         ]
       }
     },
+
     {
       "type": "LinearLayout",
       "orientation": "horizontal",
@@ -80,7 +82,7 @@
         },
 
         {
-          "type": "ListView",
+          "type": "x-ListView",
           "layout_width": "match_parent",
           "layout_height": "match_parent",
           "layout_weight": "1",
