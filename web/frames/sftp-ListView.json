@@ -62,7 +62,6 @@
             "orientation": "horizontal",
             "layout_width": "wrap_content",
             "layout_height": "wrap_content",
-            "gravity": "center_vertical",
             "component_list": [
               {
                 "type": "TextView",
@@ -81,11 +80,11 @@
         },
 
         {
-          "type": "x-ListView",
+          "type": "ListView",
           "layout_width": "match_parent",
           "layout_height": "match_parent",
           "layout_weight": "1",
-          "background_color": "#123456",
+          "background_color": "#123654",
           "sftp_script": "'list files '+eigenFragment.concatPaths(991000, 991001)",
           "on_click":
           {
@@ -109,7 +108,6 @@
             "orientation": "horizontal",
             "layout_width": "wrap_content",
             "layout_height": "wrap_content",
-            "gravity": "center_vertical",
             "component_list": [
               {
                 "type": "TextView",
@@ -117,7 +115,7 @@
                   "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
                 ],
                 "text_color": "#ffffff",
-                "background_color": "#654321",
+                "background_color": "#123654",
                 "margin": {
                   "left": 40,
                   "top": 40,
