@@ -23,22 +23,8 @@
       "id": 2001,
       "sftp": "pwd",
       "on_complete": {
-        "type": "TextView",
-        "id": 991000,
-        "layout_width": "match_parent",
-        "url_script_list": [
-          "'file://' + eigenFragment.getCacheString('SecureFtp:2001')"
-        ],
-        "text_color": "#ffffff",
-        "text_size": "20",
-        "gravity": "left",
-        "background_color": "#000000",
-        "margin": {
-          "left": 10,
-          "top": 10,
-          "right": 10,
-          "bottom": 10
-        }
+        "type": "ToastMessage",
+        "message_script": "'pwd: ' + eigenFragment.getCacheString('SecureFtp:2001')"
       }
     },
 
