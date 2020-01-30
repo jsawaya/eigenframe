@@ -48,7 +48,7 @@
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "show CacheString TextView:991000",
+      "text": "show TextView:991000 cache",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
@@ -92,6 +92,25 @@
         "top": 10,
         "right": 10,
         "bottom": 10
+      }
+    },
+    {
+      "type": "Button",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "show path",
+      "text_color": "#ffffff",
+      "background_color": "#123456",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "ToastMessage",
+        "message_script": "'path: ' + eigenFragment.concatCachePaths('TextView:991000','EditText:991001')"
       }
     },
     {
