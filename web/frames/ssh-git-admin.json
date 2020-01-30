@@ -167,7 +167,7 @@
         "text_size": "14",
         "text_color": "#ffffff",
         "background_color": "#111111",
-        "title_script": "'directory ' + eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)",
+        "title_script": "'directory ' + eigenFragment.concatPaths(991000, 991001)",
         "component_list": [
           {
             "type": "LinearLayout",
@@ -182,7 +182,7 @@
                 "text_size": "14",
                 "gravity": "left",
                 "text_color": "#ffffff",
-                "sftp_script": "'directory ' + eigenFragment.getViewState(991000) + '/' + eigenFragment.getViewState(991001)"
+                "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001)\""
               }
             ]
           }
