@@ -28,7 +28,6 @@
         "message_script": "'pwd: ' + eigenFragment.getCacheString('SecureFtp:2001')"
       }
     },
-
     {
       "type": "TextView",
       "id": 991000,
@@ -131,9 +130,8 @@
         "type": "SecureFtp",
         "comment": "do it this way if you don't need to display the pwd path in a TextView",
         "id": 991004,
-        "sftp_script": "'directory ' + eigenFragment.concatCachePaths('TextView:991000','EditText:991001')",
-        "on_complete":
-        {
+        "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001)",
+        "on_complete": {
           "type": "PopupScreen",
           "layout_width": "match_parent",
           "layout_height": "wrap_content",
@@ -169,6 +167,15 @@
                       "eigenFragment.closePopupWindow()"
                     ]
                   }
+                },
+                {
+                  "type": "LinearLayout",
+                  "orientation": "vertical",
+                  "gravity": "center_horizontal",
+                  "layout_width": "match_parent",
+                  "layout_height": "wrap_content",
+                  "component_list": [
+                  ]
                 },
                 {
                   "type": "ListView",
