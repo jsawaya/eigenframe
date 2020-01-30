@@ -34,7 +34,7 @@
       "color": "#666666"
     },
     {
-      "type": "TextView",
+      "type": "x-TextView",
       "id": 991000,
       "layout_width": "match_parent",
       "sftp": "pwd",
