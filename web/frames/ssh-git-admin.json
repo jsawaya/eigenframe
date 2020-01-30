@@ -6,6 +6,14 @@
   "layout_width": "match_parent",
   "component_list": [
     {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "gravity": "left",
+      "text_color": "#8aec81",
+      "text_size": "22",
+      "text": "Termux/sftp home directory:"
+    },
+    {
       "type": "HorizontalLine",
       "size": 3,
       "color": "#666666"
@@ -35,12 +43,9 @@
     },
 
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Termux/sftp home directory:"
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
     },
     {
       "type": "TextView",
