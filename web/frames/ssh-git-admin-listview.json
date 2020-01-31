@@ -175,9 +175,10 @@
                 "script_list": [
                   "var pos = eigenFragment.getOptionPosition()",
                   "var opt = eigenFragment.getOptionLabel()",
-                  "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
-                  "eigenFragment.appendPath(991001, opt)",
-                  "eigenFragment.closePopupWindow()"
+                  "var rootpath = eigenFragment.concatPaths(991000, 991001)",
+                  "eigenFragment.appendCacheString('SelectFile:100', rootpath, opt) ",
+                  "var selected_file = eigenFragment.getCacheString('SelectFile:100') ",
+                  "eigenActivity.showToast('Selected File: '+ selected_file)"
                 ]
               }
             ]
