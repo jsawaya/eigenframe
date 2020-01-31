@@ -170,57 +170,103 @@
                 },
                 {
                   "type": "LinearLayout",
-                  "orientation": "vertical",
-                  "gravity": "center_horizontal",
+                  "orientation": "horizontal",
                   "layout_width": "match_parent",
                   "layout_height": "wrap_content",
                   "component_list": [
-                  ]
-                },
-                {
-                  "type": "ListView",
-                  "layout_width": "match_parent",
-                  "layout_height": "match_parent",
-                  "background_color": "#123456",
-                  "cached_filename": "SecureFtp:991004",
-                  "dir_type": "subdir",
-                  "on_click": {
-                    "type": "ActionList",
-                    "component_list": [
-                      {
-                        "type": "JavaScript",
-                        "script_list": [
-                          "var pos = eigenFragment.getOptionPosition()",
-                          "var opt = eigenFragment.getOptionLabel()",
-                          "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
-                          "eigenFragment.appendPath(991001, opt)",
-                          "eigenFragment.closePopupWindow()"
+                    {
+                      "type": "ListView",
+                      "layout_width": "match_parent",
+                      "layout_height": "match_parent",
+                      "layout_weight": "1",
+                      "background_color": "#123456",
+                      "cached_filename": "SecureFtp:991004",
+                      "dir_type": "subdir",
+                      "on_click": {
+                        "type": "ActionList",
+                        "component_list": [
+                          {
+                            "type": "JavaScript",
+                            "script_list": [
+                              "var pos = eigenFragment.getOptionPosition()",
+                              "var opt = eigenFragment.getOptionLabel()",
+                              "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
+                              "eigenFragment.appendPath(991001, opt)",
+                              "eigenFragment.closePopupWindow()"
+                            ]
+                          }
+                        ]
+                      },
+                      "item_layout": {
+                        "type": "LinearLayout",
+                        "orientation": "horizontal",
+                        "layout_width": "wrap_content",
+                        "layout_height": "wrap_content",
+                        "gravity": "center_vertical",
+                        "component_list": [
+                          {
+                            "type": "TextView",
+                            "text_script": "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()",
+                            "text_color": "#ffffff",
+                            "background_color": "#123456",
+                            "margin": {
+                              "left": 40,
+                              "top": 40,
+                              "right": 40,
+                              "bottom": 40
+                            }
+                          }
                         ]
                       }
-                    ]
-                  },
-                  "item_layout": {
-                    "type": "LinearLayout",
-                    "orientation": "horizontal",
-                    "layout_width": "wrap_content",
-                    "layout_height": "wrap_content",
-                    "gravity": "center_vertical",
-                    "component_list": [
-                      {
-                        "type": "TextView",
-                        "text_script": "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()",
-                        "text_color": "#ffffff",
-                        "background_color": "#123456",
-                        "margin": {
-                          "left": 40,
-                          "top": 40,
-                          "right": 40,
-                          "bottom": 40
-                        }
+                    },
+                    {
+                      "type": "ListView",
+                      "layout_width": "match_parent",
+                      "layout_height": "match_parent",
+                      "layout_weight": "1",
+                      "background_color": "#123456",
+                      "cached_filename": "SecureFtp:991004",
+                      "dir_type": "files",
+                      "on_click": {
+                        "type": "ActionList",
+                        "component_list": [
+                          {
+                            "type": "JavaScript",
+                            "script_list": [
+                              "var pos = eigenFragment.getOptionPosition()",
+                              "var opt = eigenFragment.getOptionLabel()",
+                              "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
+                              "eigenFragment.appendPath(991001, opt)",
+                              "eigenFragment.closePopupWindow()"
+                            ]
+                          }
+                        ]
+                      },
+                      "item_layout": {
+                        "type": "LinearLayout",
+                        "orientation": "horizontal",
+                        "layout_width": "wrap_content",
+                        "layout_height": "wrap_content",
+                        "gravity": "center_vertical",
+                        "component_list": [
+                          {
+                            "type": "TextView",
+                            "text_script": "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()",
+                            "text_color": "#ffffff",
+                            "background_color": "#123456",
+                            "margin": {
+                              "left": 40,
+                              "top": 40,
+                              "right": 40,
+                              "bottom": 40
+                            }
+                          }
+                        ]
                       }
-                    ]
-                  }
+                    }
+                  ]
                 }
+
               ]
             }
           ]
