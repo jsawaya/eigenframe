@@ -178,7 +178,8 @@
                   "var rootpath = eigenFragment.concatPaths(991000, 991001)",
                   "eigenFragment.appendCacheString('SelectFile:100', rootpath, opt) ",
                   "var selected_file = eigenFragment.getCacheString('SelectFile:100') ",
-                  "eigenActivity.showToast('Selected File: '+ selected_file)"
+                  "eigenActivity.showToast('Selected File: '+ selected_file)",
+                  "eigenFragment.setViewState(991002, opt)"
                 ]
               }
             ]
