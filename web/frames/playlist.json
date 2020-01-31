@@ -7,6 +7,24 @@
   "layout_height": "wrap_content",
   "component_list": [
     {
+      "type": "Define",
+      "name": "HorizontalLine",
+      "component": {
+        "type": "HorizontalLine",
+        "size": 3,
+        "color": "#666666"
+      }
+    },
+    {
+      "type": "Define",
+      "name": "VerticalLine",
+      "component": {
+        "type": "VerticalLine",
+        "size": 3,
+        "color": "#666666"
+      }
+    },
+    {
       "type": "HtmlView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
@@ -19,13 +37,10 @@
         "<h3><font color=\"#8aec81\">Framework to generate Android apps</font></h3>"
       ]
     },
-
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
-
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -35,7 +50,6 @@
       "text_size": "22",
       "text": "Settings:"
     },
-
     {
       "type": "Button",
       "gravity": "center",
@@ -65,13 +79,10 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json"
       }
     },
-
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
-
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -81,7 +92,6 @@
       "text_size": "22",
       "text": "Installation:"
     },
-
     {
       "type": "Button",
       "gravity": "center",
@@ -111,8 +121,6 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
       }
     },
-
-
     {
       "type": "Button",
       "gravity": "center",
@@ -142,14 +150,10 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-package-install.json"
       }
     },
-
-
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
-
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -159,7 +163,6 @@
       "text_size": "22",
       "text": "Administration:"
     },
-
     {
       "type": "Button",
       "gravity": "center",
@@ -189,7 +192,6 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
       }
     },
-
     {
       "type": "Button",
       "gravity": "center",
@@ -219,7 +221,6 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
       }
     },
-
     {
       "type": "Button",
       "gravity": "center",
@@ -247,7 +248,6 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
       }
     },
-
     {
       "type": "Button",
       "gravity": "center",
@@ -277,8 +277,6 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
       }
     },
-
-
     {
       "type": "Button",
       "gravity": "center",
@@ -308,7 +306,6 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
       }
     },
-
     {
       "type": "Button",
       "gravity": "center",
@@ -336,8 +333,6 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
       }
     },
-
-
     {
       "type": "Button",
       "gravity": "center",
@@ -367,14 +362,10 @@
         "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
       }
     },
-
-
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
-
     {
       "type": "TextView",
       "layout_width": "match_parent",
@@ -410,9 +401,8 @@
       }
     },
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "TextView",
@@ -517,11 +507,9 @@
         ]
       }
     },
-
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     }
   ]
 }

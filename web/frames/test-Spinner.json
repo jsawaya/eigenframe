@@ -20,9 +20,8 @@
       }
     },
     {
-      "type": "HorizontalLine",
-      "size": 1,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "Spinner",

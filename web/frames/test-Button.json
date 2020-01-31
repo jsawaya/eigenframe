@@ -43,9 +43,8 @@
       ]
     },
     {
-      "type": "HorizontalLine",
-      "size": 2,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "TextView",
@@ -65,9 +64,8 @@
       }
     },
     {
-      "type": "HorizontalLine",
-      "size": 1,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "LinearLayout",
@@ -142,9 +140,8 @@
       ]
     },
     {
-      "type": "HorizontalLine",
-      "size": 1,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "LinearLayout",

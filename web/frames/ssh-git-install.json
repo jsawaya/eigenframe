@@ -18,9 +18,8 @@
 
 
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "TextView",
@@ -85,9 +84,8 @@
 
 
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "TextView",
@@ -155,9 +153,8 @@
 
 
     {
-      "type": "HorizontalLine",
-      "size": 3,
-      "color": "#666666"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "TextView",

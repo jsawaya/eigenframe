@@ -15,9 +15,8 @@
       "text": "Test ImageView (url -> png)"
     },
     {
-      "type": "HorizontalLine",
-      "size": 2,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "ImageView",
@@ -29,9 +28,8 @@
       }
     },
     {
-      "type": "HorizontalLine",
-      "size": 2,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "ImageView",
@@ -44,9 +42,8 @@
       }
     },
     {
-      "type": "HorizontalLine",
-      "size": 2,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "ImageView",
@@ -59,9 +56,8 @@
       }
     },
     {
-      "type": "HorizontalLine",
-      "size": 2,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "ImageView",
@@ -74,9 +70,8 @@
       }
     },
     {
-      "type": "HorizontalLine",
-      "size": 2,
-      "color": "#00ff00"
+      "type": "Clone",
+      "name": "HorizontalLine"
     }
   ]
 }
