@@ -35,7 +35,7 @@
             "text_size": "14",
             "text_color": "#ffffff",
             "background_color": "#111111",
-            "title_script": "eigenFragment.concatCachePaths('TextView:991000','EditText:991001')",
+            "title_script": "''+eigenFragment.concatCachePaths('TextView:991000','EditText:991001')",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json"
           }
         ]
