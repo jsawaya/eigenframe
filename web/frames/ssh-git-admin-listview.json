@@ -56,6 +56,28 @@
       "layout_height": "wrap_content",
       "component_list": [
         {
+          "type": "TextView",
+          "text": "Sub-directories:",
+          "layout_width": "match_parent",
+          "layout_weight": "1",
+          "background_color": "#123456"
+        },
+        {
+          "type": "TextView",
+          "text": "Files:",
+          "layout_width": "match_parent",
+          "layout_weight": "1",
+          "background_color": "#123456"
+        }
+      ]
+    },
+    {
+      "type": "LinearLayout",
+      "orientation": "horizontal",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "component_list": [
+        {
           "type": "ListView",
           "layout_width": "match_parent",
           "layout_height": "match_parent",
@@ -117,6 +139,13 @@
             ]
           }
         },
+
+        {
+          "type": "VerticalLine",
+          "size": 3,
+          "color": "#666666"
+        },
+
         {
           "type": "ListView",
           "layout_width": "match_parent",
