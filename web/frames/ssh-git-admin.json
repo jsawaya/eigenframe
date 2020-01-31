@@ -131,14 +131,15 @@
         "comment": "do it this way if you don't need to display the pwd path in a TextView",
         "id": 991004,
         "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001)",
-        "on_complete": {
+        "on_complete":
+        {
           "type": "PopupScreen",
           "layout_width": "match_parent",
           "layout_height": "wrap_content",
           "text_size": "14",
           "text_color": "#ffffff",
           "background_color": "#111111",
-          "title": "list files for current working directory",
+          "title_script": "eigenFragment.concatCachePaths('TextView:991000','EditText:991001')",
           "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json"
         }
       }
