@@ -57,25 +57,32 @@
       "component_list": [
         {
           "type": "TextView",
-          "text": "Sub-directories:",
+          "text": "Sub-directories",
           "text_size": "14",
           "text_color": "#ffffff",
           "layout_width": "match_parent",
           "layout_weight": "1",
           "background_color": "#123456",
-          "gravity": "center_horizontal"
+          "gravity": "center_horizontal",
+          "font": "font/open-sans/OpenSans-SemiboldItalic.ttf"
         },
         {
           "type": "TextView",
-          "text": "Files:",
+          "text": "Files",
           "text_size": "14",
           "text_color": "#ffffff",
           "layout_width": "match_parent",
           "layout_weight": "1",
           "background_color": "#123456",
-          "gravity": "center_horizontal"
+          "gravity": "center_horizontal",
+          "font": "font/open-sans/OpenSans-SemiboldItalic.ttf"
         }
       ]
+    },
+    {
+      "type": "HorizontalLine",
+      "size": 3,
+      "color": "#666666"
     },
     {
       "type": "LinearLayout",
