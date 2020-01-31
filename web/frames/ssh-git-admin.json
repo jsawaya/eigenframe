@@ -115,7 +115,7 @@
     },
     {
       "type": "Button",
-      "text": "ListView ",
+      "text": "ListView",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
@@ -129,7 +129,6 @@
       "on_click":
       {
         "type": "SecureFtp",
-        "comment": "do it this way if you don't need to display the pwd path in a TextView",
         "id": 991004,
         "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001)",
         "on_complete":
