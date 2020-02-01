@@ -6,13 +6,13 @@
   "layout_width": "match_parent",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Enter remote file: \n(relative to sftp home directory)"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Enter remote file: \n(relative to sftp home directory)"
+      }
     },
+
     {
       "type": "EditText",
       "id": 999001,
@@ -33,48 +33,41 @@
       "type": "Clone",
       "name": "HorizontalLine"
     },
+
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "Show remote file",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Show remote file",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Show remote file",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Show remote file",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
     {
@@ -107,14 +100,11 @@
             "layout_height": "wrap_content",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'"
+                "type": "Clone",
+                "name": "TextViewDetail",
+                "attributes": {
+                  "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'"
+                }
               }
             ]
           }
@@ -151,14 +141,11 @@
             "layout_height": "wrap_content",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') "
+                "type": "Clone",
+                "name": "TextViewDetail",
+                "attributes": {
+                  "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') "
+                }
               }
             ]
           }

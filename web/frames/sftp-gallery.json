@@ -613,6 +613,7 @@
         "type": "SecureFtp",
         "id": 12345,
         "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+        "comment": "call sftp this way when you don't need immediate results for a TextView",
         "on_complete":
         {
           "type": "PopupScreen",

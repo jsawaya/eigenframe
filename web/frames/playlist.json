@@ -88,10 +88,6 @@
       }
     },
 
-
-
-
-
     {
       "type": "HtmlView",
       "layout_width": "match_parent",
