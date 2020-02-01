@@ -29,8 +29,10 @@
         "location": "top"
       },
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -91,8 +93,10 @@
         "location": "top"
       },
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -151,8 +155,10 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupTextView",
@@ -175,8 +181,10 @@
         "location": "top"
       },
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupTextView",
@@ -197,8 +205,10 @@
         "location": "top"
       },
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupTextView",
@@ -214,8 +224,10 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupTextView",
@@ -233,8 +245,10 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupTextView",
@@ -252,8 +266,10 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupTextView",
@@ -269,8 +285,10 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupTextView",

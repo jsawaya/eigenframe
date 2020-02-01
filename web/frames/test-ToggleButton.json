@@ -67,8 +67,10 @@
       "text_color": "#ffffff",
       "background_color": "#ff00ff",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 40,
+        "top": 40,
+        "right": 40,
+        "bottom": 40
       }
     },
     {

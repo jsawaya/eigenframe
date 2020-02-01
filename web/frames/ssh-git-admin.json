@@ -37,8 +37,10 @@
       "gravity": "left",
       "background_color": "#000000",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       }
     },
     {
@@ -50,8 +52,10 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "ToastMessage",
@@ -82,8 +86,10 @@
       "gravity": "left",
       "background_color": "#000000",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       }
     },
     {
@@ -94,8 +100,10 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click":
       {
@@ -127,8 +135,10 @@
       "background_color": "#123456",
       "gravity": "center",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -171,8 +181,10 @@
         "location": "top"
       },
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -236,8 +248,10 @@
       "background_color": "#123456",
       "gravity": "center",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -278,8 +292,10 @@
       "background_color": "#123456",
       "gravity": "center",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -321,8 +337,10 @@
       "background_color": "#123456",
       "gravity": "center",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -367,8 +385,10 @@
         "location": "top"
       },
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -414,8 +434,10 @@
         "location": "top"
       },
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -470,8 +492,10 @@
       "gravity": "left",
       "background_color": "#000000",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       }
     },
     {
@@ -486,8 +510,10 @@
       "background_color": "#123456",
       "gravity": "center",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
@@ -525,8 +551,10 @@
       "background_color": "#123456",
       "gravity": "center",
       "margin": {
-        "type": "Clone",
-        "name": "Margin10"
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "PopupScreen",
