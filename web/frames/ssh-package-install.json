@@ -111,11 +111,12 @@
                 "type": "TextView",
                 "layout_width": "match_parent",
                 "layout_height": "wrap_content",
-                "text_size": "14",
+                "text_size": "10",
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh": "echo y | pkg upgrade"
+                "ssh": "echo y | pkg upgrade",
+                "is_toast": true
               }
             ]
           }

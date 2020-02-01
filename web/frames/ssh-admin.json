@@ -59,7 +59,8 @@
                 "gravity": "left",
                 "text_color": "#ffffff",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh": "echo y | pkg update"
+                "ssh": "echo y | pkg upgrade",
+                "is_toast": true
               }
             ]
           }
