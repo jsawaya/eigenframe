@@ -30,10 +30,21 @@
       "component": {
         "type": "TextView",
         "layout_width": "match_parent",
-        "layout_height": "wrap_content",
         "gravity": "left",
         "text_color": "#8aec81",
         "text_size": "22"
+      }
+    },
+    {
+      "type": "Define",
+      "name": "TextViewDetail",
+      "component": {
+        "type": "TextView",
+        "layout_width": "match_parent",
+        "gravity": "left",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "text_color": "#ffffff",
+        "text_size": "14"
       }
     },
     {
