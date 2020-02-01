@@ -65,7 +65,9 @@
     {
       "type": "Clone",
       "name": "TextViewLabel",
-      "text": "Settings:"
+      "parm": {
+        "text": "Settings:"
+      }
     },
     {
       "type": "Button",
