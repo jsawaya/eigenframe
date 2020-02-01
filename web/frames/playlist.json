@@ -128,14 +128,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Setup Instructions for Termux",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "Setup Instructions for Termux",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
+        }
       }
     },
     {
@@ -157,14 +155,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Termux Package Installation",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-package-install.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "Termux Package Installation",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-package-install.json"
+        }
       }
     },
     {
@@ -197,14 +193,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "SecureShell Settings",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "SecureShell Settings",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+        }
       }
     },
     {
@@ -226,14 +220,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Termux Administration",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "Termux Administration",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
+        }
       }
     },
     {
@@ -254,13 +246,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Edit Remote File (from Termux)",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "Edit Remote File (from Termux)",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
+        }
       }
     },
     {
@@ -282,14 +273,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "GIT Administration",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "GIT Administration",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
+        }
       }
     },
     {
@@ -311,14 +300,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "SecureFtp Gallery",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "SecureFtp Gallery",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
+        }
       }
     },
     {
@@ -491,13 +478,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Apache Administration",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "Apache Administration",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
+        }
       }
     },
     {
@@ -530,14 +516,12 @@
         "bottom": 10
       },
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "text": "Ruby Administration",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "text": "Ruby Administration",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
+        }
       }
     }
   ]
