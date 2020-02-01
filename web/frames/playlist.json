@@ -109,33 +109,6 @@
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Screen Orientation",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "rotate_90.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "Screen Orientation",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json"
-        }
-      }
-    },
-    {
       "type": "Clone",
       "name": "HorizontalLine"
     },
@@ -147,56 +120,40 @@
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Setup Instructions for Termux",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "playlist_check.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "Setup Instructions for Termux",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Setup Instructions for Termux",
+        "icon": {
+          "name": "playlist_check.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Setup Instructions for Termux",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
+          }
         }
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Termux Package Installation",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "archive.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "Termux Package Installation",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-package-install.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Termux Package Installation",
+        "icon": {
+          "name": "archive.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Termux Package Installation",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-package-install.json"
+          }
         }
       }
     },
@@ -212,136 +169,97 @@
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "SecureShell Settings",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "settings.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "SecureShell Settings",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "SecureShell Settings",
+        "icon": {
+          "name": "settings.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "SecureShell Settings",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+          }
         }
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Termux Administration",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "settings_app.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "Termux Administration",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Termux Administration",
+        "icon": {
+          "name": "settings_app.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Termux Administration",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
+          }
         }
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "text": "Edit Remote File (from Termux)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "edit.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "Edit Remote File (from Termux)",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Edit Remote File (from Termux)",
+        "icon": {
+          "name": "edit.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Edit Remote File (from Termux)",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
+          }
         }
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "GIT Administration",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "cloud_download.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "GIT Administration",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "GIT Administration",
+        "icon": {
+          "name": "cloud_download.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "GIT Administration",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
+          }
         }
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "SecureFtp Gallery",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "import_export.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "SecureFtp Gallery",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "SecureFtp Gallery",
+        "icon": {
+          "name": "import_export.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "SecureFtp Gallery",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
+          }
         }
       }
     },
@@ -357,28 +275,18 @@
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "launch this initial application (again),\nthen press back-button to exit",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "open_browser.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json')"
-        ]
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "launch this initial application (again),\nthen press back-button to exit",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json')"
+        }
       }
     },
     {
@@ -393,28 +301,37 @@
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Gallery examples",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "open_browser.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "GITHUB Gallery Examples",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script":
           "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')"
-        ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Create shortcut for - GITHUB Gallery Examples",
+        "icon": {
+          "name": "save.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.addShortcut('gallery-app', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
+            "eigenActivity.finish()"
+          ]
+        }
       }
     },
     {
@@ -443,50 +360,6 @@
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Create shortcut for - Gallery examples",
-      "text_color": "#ffffff",
-      "background_color": "#654321",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.addShortcut('gallery-app', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
-          "eigenActivity.finish()"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Create shortcut for - PhotoPGP demo",
-      "text_color": "#ffffff",
-      "background_color": "#654321",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.addShortcut('photo-app-demo', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json')",
-          "eigenActivity.finish()"
-        ]
-      }
-    },
-    {
       "type": "Clone",
       "name": "HorizontalLine"
     },
@@ -494,32 +367,25 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch dynamic app specifications from Termux Apache web service (with cgi)"
+        "text": "Launch dynamic app specifications with Termux Apache HTTP/CGI service"
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "text": "Apache Administration",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "apache_logo.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "Apache Administration",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Apache Administration",
+        "icon": {
+          "name": "apache_logo.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Apache Administration",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
+          }
         }
       }
     },
@@ -531,33 +397,25 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch dynamic app specifications from Termux Ruby web application service (webrick)"
+        "text": "Launch dynamic app specifications with Termux Ruby using SSH or HTTP (webrick)"
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Ruby Administration",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "ruby_logo.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "text": "Ruby Administration",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Ruby Administration",
+        "icon": {
+          "name": "ruby_logo.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "text": "Ruby Administration",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
+          }
         }
       }
     }
