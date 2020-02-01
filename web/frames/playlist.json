@@ -367,7 +367,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch dynamic app specifications with Termux Apache HTTP/CGI service"
+        "text": "Launch dynamic app specifications with Termux Apache HTTP/CGI"
       }
     },
     {
@@ -397,7 +397,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch dynamic app specifications with Termux Ruby using SSH or HTTP (webrick)"
+        "text": "Launch dynamic apps with Termux Ruby using SSH or HTTP (webrick)"
       }
     },
     {

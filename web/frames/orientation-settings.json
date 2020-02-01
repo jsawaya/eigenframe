@@ -7,141 +7,99 @@
   "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Screen Orientation Settings:",
-      "gravity": "left"
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Portrait Orientation",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "arrow_up.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.enableOrientationEventListener(false)",
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
-        ]
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Screen Orientation Settings:"
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Landscape Orientation",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "arrow_forward.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.enableOrientationEventListener(false)",
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
-        ]
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Automatic Orientation",
+        "icon": {
+          "name": "rotate_90.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(true)"
+          ]
+        }
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Reverse-Portrait Orientation",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "arrow_down.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.enableOrientationEventListener(false)",
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT)"
-        ]
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Portrait Orientation",
+        "icon": {
+          "name": "arrow_up.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(false)",
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
+          ]
+        }
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Reverse-Landscape Orientation",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "arrow_back.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.enableOrientationEventListener(false)",
-          "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE)"
-        ]
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Landscape Orientation",
+        "icon": {
+          "name": "arrow_forward.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(false)",
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
+          ]
+        }
       }
     },
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Automatic Orientation",
-      "gravity": "center",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "rotate_90.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.enableOrientationEventListener(true)"
-        ]
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Reverse-Portrait Orientation",
+        "icon": {
+          "name": "arrow_down.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(false)",
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT)"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Reverse-Landscape Orientation",
+        "icon": {
+          "name": "arrow_back.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(false)",
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE)"
+          ]
+        }
       }
     }
   ]
