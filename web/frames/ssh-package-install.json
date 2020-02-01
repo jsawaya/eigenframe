@@ -114,7 +114,7 @@
       "attributes": {
         "text": "GIT Installation",
         "icon": {
-          "name": "rotate_90.",
+          "name": "file_download.",
           "location": "top"
         },
         "on_click": {

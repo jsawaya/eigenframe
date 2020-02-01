@@ -7,78 +7,64 @@
   "component_list": [
 
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Install GIT eigenframe branch"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Install GIT package"
+      }
     },
-
 
     {
       "type": "Clone",
       "name": "HorizontalLine"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "Click [Install git package]  ..."
-      ]
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Install git package]  ..."
+        ]
+      }
     },
+
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Install git package",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Install git package",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Install git package",
+        "icon": {
+          "name": "file_download.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Install git package",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "echo pkg install git",
-                  "pkg install git"
-                ]
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_list": [
+                          "echo pkg install git",
+                          "pkg install git"
+                        ]
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
 
@@ -88,166 +74,129 @@
       "name": "HorizontalLine"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "Click [Make '~/git-repos' directory] to create a place for local eigenframe git repository"
-      ]
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Make git-repos directory",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Make '~/git-repos' directory",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "cd ~",
-                  "echo mkdir git-repos",
-                  "mkdir git-repos",
-                  "cd git-repos",
-                  "pwd"
-                ]
-              }
-            ]
-          }
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Make /git-repos directory], prepare to download local eigenframe git working directory"
         ]
       }
     },
 
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Make git-repos directory",
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Make /git-repos directory",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_list": [
+                          "cd ~",
+                          "mkdir git-repos",
+                          "cd git-repos",
+                          "echo pwd:",
+                          "pwd"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
 
     {
       "type": "Clone",
       "name": "HorizontalLine"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "Click [Clone eigenframe github repository]  ..."
-      ]
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Clone eigenframe github repository\n(and checkout test branch)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "cloud_download.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Clone eigenframe github repository, and checkout test branch",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "cd ~/git-repos",
-                  "echo git clone https://github.com/jsawaya/eigenframe.git",
-                  "git clone https://github.com/jsawaya/eigenframe.git",
-                  "echo ",
-                  "echo cd eigenframe",
-                  "cd eigenframe",
-                  "echo ",
-                  "echo git checkout -b test",
-                  "git checkout -b test",
-                  "echo ",
-                  "echo git status:",
-                  "git status",
-                  "echo git remote -v:",
-                  "git remote -v"
-                ]
-              }
-            ]
-          }
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Clone eigenframe github repository] to download eigenframe from github, and checkout a test branch..."
         ]
       }
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "text_list": [
-        "Initial github setup in Termux:",
-        " cd git-repos/eigenframe",
-        " git config credential.helper store",
-        " git push origin http://github.com/jsawaya/eigenframe.git",
-        " git push origin test"
-      ]
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Clone eigenframe from github\nand checkout test branch",
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Clone eigenframe...",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_list": [
+                          "cd ~/git-repos",
+                          "echo git clone https://github.com/jsawaya/eigenframe.git",
+                          "git clone https://github.com/jsawaya/eigenframe.git",
+                          "echo ",
+                          "echo cd eigenframe",
+                          "cd eigenframe",
+                          "echo ",
+                          "echo git checkout -b test",
+                          "git checkout -b test",
+                          "echo ",
+                          "echo git status:",
+                          "git status",
+                          "echo git remote -v:",
+                          "git remote -v"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Initial github setup in Termux:",
+          " cd git-repos/eigenframe",
+          " git config credential.helper store",
+          " git push origin http://github.com/jsawaya/eigenframe.git",
+          " git push origin test"
+        ]
+      }
     }
+
+
   ]
 }
 
