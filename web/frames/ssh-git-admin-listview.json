@@ -153,9 +153,8 @@
         },
 
         {
-          "type": "VerticalLine",
-          "size": 3,
-          "color": "#666666"
+          "type": "Clone",
+          "name": "VerticalLine"
         },
 
         {

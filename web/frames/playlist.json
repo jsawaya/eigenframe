@@ -25,6 +25,18 @@
       }
     },
     {
+      "type": "Define",
+      "name": "TextViewLabel",
+      "component": {
+        "type": "TextView",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "gravity": "left",
+        "text_color": "#8aec81",
+        "text_size": "22"
+      }
+    },
+    {
       "type": "HtmlView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
@@ -48,6 +60,11 @@
       "gravity": "left",
       "text_color": "#8aec81",
       "text_size": "22",
+      "text": "Settings:"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
       "text": "Settings:"
     },
     {

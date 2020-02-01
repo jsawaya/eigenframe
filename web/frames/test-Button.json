@@ -76,9 +76,8 @@
       "layout_height": "wrap_content",
       "component_list": [
         {
-          "type": "VerticalLine",
-          "size": 2,
-          "color": "#00ff00"
+          "type": "Clone",
+          "name": "VerticalLine"
         },
         {
           "type": "TextView",
@@ -95,9 +94,8 @@
           }
         },
         {
-          "type": "VerticalLine",
-          "size": 1,
-          "color": "#00ff00"
+          "type": "Clone",
+          "name": "VerticalLine"
         },
         {
           "type": "TextView",
@@ -114,9 +112,8 @@
           }
         },
         {
-          "type": "VerticalLine",
-          "size": 1,
-          "color": "#00ff00"
+          "type": "Clone",
+          "name": "VerticalLine"
         },
         {
           "type": "TextView",
@@ -133,9 +130,8 @@
           }
         },
         {
-          "type": "VerticalLine",
-          "size": 2,
-          "color": "#00ff00"
+          "type": "Clone",
+          "name": "VerticalLine"
         }
       ]
     },
@@ -152,11 +148,10 @@
       "layout_height": "wrap_content",
       "component_list": [
         {
-          "type": "VerticalLine",
-          "size": 2,
-          "color": "#00ff00"
+          "type": "Clone",
+          "name": "VerticalLine"
         },
-        {
+       {
           "type": "Button",
           "layout_width": "wrap_content",
           "layout_height": "wrap_content",
@@ -174,9 +169,8 @@
           }
         },
         {
-          "type": "VerticalLine",
-          "size": 2,
-          "color": "#00ff00"
+          "type": "Clone",
+          "name": "VerticalLine"
         },
         {
           "type": "Button",
@@ -196,9 +190,8 @@
           }
         },
         {
-          "type": "VerticalLine",
-          "size": 2,
-          "color": "#00ff00"
+          "type": "Clone",
+          "name": "VerticalLine"
         },
         {
           "type": "Button",
@@ -218,9 +211,8 @@
           }
         },
         {
-          "type": "VerticalLine",
-          "size": 2,
-          "color": "#00ff00"
+          "type": "Clone",
+          "name": "VerticalLine"
         }
       ]
     }
