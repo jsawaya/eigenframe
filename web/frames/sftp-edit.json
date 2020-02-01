@@ -71,87 +71,220 @@
       }
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "Get remote file to local cache",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Get remote file to local cache",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Get remote file to local cache",
+        "icon": {
+          "name": "file_download.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Get remote file to local cache",
             "component_list": [
               {
                 "type": "Clone",
-                "name": "TextViewDetail",
+                "name": "LayoutVerticalScrollable",
                 "attributes": {
-                  "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'"
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'"
+                      }
+                    }
+                  ]
                 }
               }
             ]
           }
-        ]
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Show local cache",
+        "icon": {
+          "name": "file_download.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Show local cache",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') "
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
       }
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "Show local cache",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Show local cache",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Edit local cache",
+        "icon": {
+          "name": "edit.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
             "component_list": [
               {
                 "type": "Clone",
-                "name": "TextViewDetail",
+                "name": "LayoutVerticalScrollable",
                 "attributes": {
-                  "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') "
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "ButtonDefault",
+                      "attributes": {
+                        "text": "Save Edits to Remote File",
+                        "icon": {
+                          "name": "save.",
+                          "location": "top"
+                        },
+                        "on_click": {
+                          "type": "ActionList",
+                          "component_list": [
+                            {
+                              "type": "SecureFtp",
+                              "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
+                              "on_complete": {
+                                "type": "JavaScript",
+                                "script_list": [
+                                  "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+                                  "eigenActivity.showToast('Edit Cache: ' + x1 )",
+                                  "var x2 = eigenFragment.clearCacheFile('EditText.txt')",
+                                  "eigenActivity.showToast('File Cache: ' + x2 )",
+                                  "eigenFragment.closePopupWindow()"
+                                ]
+                              }
+                            },
+                            {
+                              "type": "JavaScript",
+                              "script_list": [
+                                "eigenFragment.closePopupWindow()"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "type": "Button",
+                      "layout_width": "match_parent",
+                      "text": "Save Edits to Remote File",
+                      "text_color": "#ffffff",
+                      "gravity": "center_horizontal",
+                      "background_color": "#123456",
+                      "icon": {
+                        "name": "save.",
+                        "location": "top"
+                      },
+                      "margin": {
+                        "left": 10,
+                        "top": 10,
+                        "right": 10,
+                        "bottom": 10
+                      },
+                      "on_click": {
+                        "type": "ActionList",
+                        "component_list": [
+                          {
+                            "type": "SecureFtp",
+                            "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
+                            "on_complete": {
+                              "type": "JavaScript",
+                              "script_list": [
+                                "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+                                "eigenActivity.showToast('Edit Cache: ' + x1 )",
+                                "var x2 = eigenFragment.clearCacheFile('EditText.txt')",
+                                "eigenActivity.showToast('File Cache: ' + x2 )",
+                                "eigenFragment.closePopupWindow()"
+                              ]
+                            }
+                          },
+                          {
+                            "type": "JavaScript",
+                            "script_list": [
+                              "eigenFragment.closePopupWindow()"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Button",
+                      "layout_width": "match_parent",
+                      "text": "Cancel Local Edits",
+                      "text_color": "#ffffff",
+                      "gravity": "center_horizontal",
+                      "background_color": "#123456",
+                      "icon": {
+                        "name": "cancel.",
+                        "location": "top"
+                      },
+                      "margin": {
+                        "left": 10,
+                        "top": 10,
+                        "right": 10,
+                        "bottom": 10
+                      },
+                      "on_click": {
+                        "type": "JavaScript",
+                        "script_list": [
+                          "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+                          "eigenActivity.showToast('Edit Cache: ' + x1 )",
+                          "eigenFragment.closePopupWindow()"
+                        ]
+                      }
+                    },
+                    {
+                      "type": "EditText",
+                      "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') ",
+                      "id": 999000,
+                      "gravity": "left",
+                      "layout_width": "match_parent",
+                      "layout_height": "wrap_content",
+                      "text_color": "#ffffff",
+                      "background_color": "#000000"
+                    }
+                  ]
                 }
               }
             ]
           }
-        ]
+        }
       }
     },
+
 
     {
       "type": "Button",
