@@ -7,14 +7,13 @@
   "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "SSH User-id:"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "SSH User-id:"
+      }
     },
+
     {
       "type": "EditText",
       "id": 88800,
@@ -26,15 +25,15 @@
       "text_color": "#ffffff",
       "background_color": "#000000"
     },
+
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "SSH Passphrase:"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "SSH Passphrase:"
+      }
     },
+
     {
       "type": "EditText",
       "id": 88801,
@@ -45,14 +44,13 @@
       "background_color": "#000000",
       "text": "password"
     },
+
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "SSH Host(name/ip):"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "SSH Host(name/ip):"
+      }
     },
     {
       "type": "EditText",
@@ -67,13 +65,11 @@
       "background_color": "#000000"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "SSH Port:"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "SSH Port:"
+      }
     },
     {
       "type": "EditText",
@@ -92,52 +88,49 @@
       "name": "HorizontalLine"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Test SecureShell Connection"
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "whoami",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "type": "Clone",
-        "name": "Margin10"
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "whoami",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh": "whoami"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Test SecureShell Connection"
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "pwd",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "pwd",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "ssh":  "pwd"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "whoami",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "whoami",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "ssh": "whoami"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "pwd",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "pwd",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "ssh": "pwd"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "ls",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "ls",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "ssh": "ls"
+        }
       }
     }
 
