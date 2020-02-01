@@ -8,6 +8,26 @@
   "component_list": [
     {
       "type": "Define",
+      "name": "Margin10",
+      "component": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      }
+    },
+    {
+      "type": "Define",
+      "name": "Margin40",
+      "component": {
+        "left": 40,
+        "top": 40,
+        "right": 40,
+        "bottom": 40
+      }
+    },
+    {
+      "type": "Define",
       "name": "HorizontalLine",
       "component": {
         "type": "HorizontalLine",
@@ -84,10 +104,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -122,10 +140,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -149,10 +165,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -187,10 +201,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -214,10 +226,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -240,10 +250,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -267,10 +275,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -294,10 +300,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -332,10 +336,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "JavaScript",
@@ -368,10 +370,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "JavaScript",
@@ -393,10 +393,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "JavaScript",
@@ -414,10 +412,8 @@
       "text_color": "#ffffff",
       "background_color": "#654321",
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "JavaScript",
@@ -436,10 +432,8 @@
       "text_color": "#ffffff",
       "background_color": "#654321",
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "JavaScript",
@@ -472,10 +466,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",
@@ -510,10 +502,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "Clone",

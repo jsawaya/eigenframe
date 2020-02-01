@@ -29,10 +29,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "PopupScreen",
@@ -97,10 +95,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "PopupScreen",
@@ -148,10 +144,8 @@
         "location": "top"
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "PopupScreen",
@@ -206,10 +200,8 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "PopupTextView",
@@ -229,10 +221,8 @@
       "text_color": "#ffffff",
       "background_color": "#123456",
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "PopupScreen",

@@ -39,10 +39,8 @@
         "bottom": 20
       },
       "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
+        "type": "Clone",
+        "name": "Margin40"
       },
       "on_click": {
         "type": "JavaScript",
@@ -65,10 +63,8 @@
         "bottom": 20
       },
       "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
+        "type": "Clone",
+        "name": "Margin40"
       },
       "on_click": {
         "type": "JavaScript",
@@ -93,10 +89,8 @@
         "bottom": 20
       },
       "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
+        "type": "Clone",
+        "name": "Margin10"
       }
     },
     {
@@ -113,10 +107,8 @@
         "bottom": 20
       },
       "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click": {
         "type": "JavaScript",

@@ -46,10 +46,8 @@
       "text_color": "#ffffff",
       "background_color": "#000000",
       "margin": {
-        "left": 4,
-        "top": 4,
-        "right": 4,
-        "bottom": 4
+        "type": "Clone",
+        "name": "Margin10"
       },
       "icon": {
         "name": "info.",
@@ -84,10 +82,8 @@
         "bottom": 4
       },
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       }
     }
   ]

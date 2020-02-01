@@ -13,10 +13,8 @@
       "background_color": "#654321",
       "gravity": "center",
       "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
+        "type": "Clone",
+        "name": "Margin10"
       },
       "on_click":
       {
@@ -142,10 +140,8 @@
                 "text_color": "#ffffff",
                 "background_color": "#123456",
                 "margin": {
-                  "left": 40,
-                  "top": 40,
-                  "right": 40,
-                  "bottom": 40
+                  "type": "Clone",
+                  "name": "Margin40"
                 }
               }
             ]
@@ -195,10 +191,8 @@
                 "text_color": "#ffffff",
                 "background_color": "#123456",
                 "margin": {
-                  "left": 40,
-                  "top": 40,
-                  "right": 40,
-                  "bottom": 40
+                  "type": "Clone",
+                  "name": "Margin40"
                 }
               }
             ]
