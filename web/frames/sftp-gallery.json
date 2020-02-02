@@ -345,6 +345,26 @@
         }
       }
     },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "File Transfer (get / put)"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Get remote termux file into a local directory"
+        ]
+      }
+    },
 
     {
       "type": "Clone",
@@ -359,17 +379,38 @@
         }
       }
     },
-
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Put local private cache file to the remote termux/sftp home directory"
+        ]
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "put README.md [in cache] . [to sftp home directory]",
+        "text": "put SecureFtp:12345 [in cache] . [to sftp home directory]",
         "on_click": {
           "type": "PopupTextView",
-          "title": "put README.md [in cache] . [to sftp home directory]",
+          "title": "put SecureFtp:12345 [in cache] . [to sftp home directory]",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "put README.md ."
+          "sftp": "put SecureFtp:12345 ."
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "put /data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345 [in cache] . [to sftp home directory]",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "put /data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345 [in cache] . [to sftp home directory]",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "put /data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345 ."
         }
       }
     }
