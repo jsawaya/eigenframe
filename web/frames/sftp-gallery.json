@@ -37,23 +37,7 @@
         }
       }
     },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "readlink storage",
-        "icon": {
-          "name": "info.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "readlink storage",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "readlink storage"
-        }
-      }
-    },
+
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -89,78 +73,26 @@
         }
       }
     },
-
     {
       "type": "Clone",
-      "name": "ButtonDefault",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
       "attributes": {
-        "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
-        }
+        "text": "Directory Listings"
       }
     },
     {
       "type": "Clone",
-      "name": "ButtonDefault",
+      "name": "TextViewDetail",
       "attributes": {
-        "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
-        }
+        "text_list": [
+          "Termux/sftp home directory"
+        ]
       }
     },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "a) get git-repos/eigenframe/README.md [to private cache]",
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "get git-repos/eigenframe/README.md [to private cache]",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "get git-repos/eigenframe/README.md"
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "b) get git-repos/eigenframe/README.md [to private cache]",
-        "on_click": {
-          "type": "SecureFtp",
-          "sftp": "get git-repos/eigenframe/README.md",
-          "on_complete": {
-            "type": "ToastMessage",
-            "message": "completed get git-repos/eigenframe/README.md [to private cache]"
-          }
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "put README.md [in cache] . [to sftp home directory]",
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "put README.md [in cache] . [to sftp home directory]",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "put README.md ."
-        }
-      }
-    },
-
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -196,7 +128,15 @@
         }
       }
     },
-
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Termux/eigenframe working directory"
+        ]
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -232,8 +172,15 @@
         }
       }
     },
-
-
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "EigenFrame App Shared Directory - From Termux"
+        ]
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -269,12 +216,20 @@
         }
       }
     },
-
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "EigenFrame App Shared Directory - EigenFrame App"
+        ]
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
+        "text": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
         "icon": {
           "name": "info.",
           "location": "top"
@@ -283,7 +238,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
+            "title": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
             "component_list": [
               {
                 "type": "Clone",
@@ -294,7 +249,7 @@
                       "type": "Clone",
                       "name": "TextViewDetail",
                       "attributes": {
-                        "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+                        "sftp": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
                       }
                     }
                   ]
@@ -305,7 +260,15 @@
         }
       }
     },
-
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "EigenFrame App Private Cache - EigenFrame App"
+        ]
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -341,7 +304,6 @@
         }
       }
     },
-
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -382,7 +344,36 @@
           }
         }
       }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [to shared files]",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [to shared files]",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "put README.md [in cache] . [to sftp home directory]",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "put README.md [in cache] . [to sftp home directory]",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "put README.md ."
+        }
+      }
     }
+
 
   ]
 }
