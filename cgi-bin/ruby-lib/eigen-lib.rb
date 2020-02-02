@@ -1,5 +1,5 @@
 =begin
-EigenFrame class produces nested hash objects, that are converted to json by caller (cgi-bin) scripts,
+EigenFrame ruby class produces nested hash objects, that are converted to json by caller (cgi-bin) scripts,
 and sent back to the EigenFrame app (or browser that invoked a url request).
 See example: cgi-bin/sys-directory-listview.rb
 =end
@@ -23,7 +23,6 @@ def eigen_directory_listview_http_cgi(dirpath)
     ]
 
   list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
-  #list_contents_url = "http://localhost:1234/list_contents"
 
   file_item_url_script_list =
     [
@@ -137,92 +136,6 @@ def directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewO
 end
 
 
-=begin
-## deprecated - use eigen_directory_listview_ssh or _http
-def eigen_directory_listview(dirpath, listdir_url, list_contents_url)
-  Dir.chdir dirpath
-  dirHash = directory_hash()
-
-  padding = eigen_padding(5, 5)
-  margin = eigen_margin(10, 10)
-  infoLeftIcon = eigen_icon("info.jpg", "left")
-  horzLine = eigen_horizontal_line(2, "#00ff00")
-  vertLine = eigen_vertical_line(2, "#00ff00")
-
-  dirHashDirectory = dirHash['directory']
-
-  headerTextView = eigen_text_view(24, "#ffffff", padding, margin, ["'List Directory: #{dirHashDirectory}'"])
-
-  text_script_list = ["eigenFragment.getOptionInteger('position', 0) + ': ' + eigenFragment.getOptionString('option', '')"]
-
-  subdirItemLayout = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
-
-  #listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
-  #listdir_url = "http://localhost:1234/listdir"
-  subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenFragment.getOptionString('option', '.')"
-
-  #subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
-
-  subdir_ssh_script_list =
-  [
-    "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-directory-listview.rb #{dirHashDirectory}/' + eigenFragment.getOptionString('option', '.')"
-  ]
-
-  subdirListViewOnClickPopupScreen = launch_PopupScreen_SecureShell(20, "#ffffff", "#222222", subdir_ssh_script_list)
-
-#  parent_path = File.expand_path("..", Dir.pwd)
-#  parent_path = "#{dirpath}/.."
-#  parent_path = parent_path(dirpath)
-
-#  url_script_list0 = ["'#{listdir_url}?dirpath=#{parent_path}'"]
-
-#  buttonOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", url_script_list0)
-#  get_parent_directory_button = eigen_button(30, "#ffffff", "#2222ff", "#{parent_path}", buttonOnClickPopupScreen)
-
-  subdirListView = list_view(dirHash["subdir"], subdirItemLayout, subdirListViewOnClickPopupScreen)
-
-  #list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
-  #list_contents_url = "http://localhost:1234/list_contents"
-
-  #image_url_script_list =
-  #  [
-  #    "var url0 = '#{list_contents_url}?filepath=#{dirpath}/' + eigenFragment.getOptionString('option', '')",
-  #    "java.lang.System.out.println(url0)",
-  #    "url0"
-  #  ]
-
-  #image_view = eigen_image_view(image_url_script_list)
-
-  fileItemTextView = eigen_text_view(20, "#ffffff", padding, margin, text_script_list)
-
-  #fileRowLayout = eigen_horizontal_layout([image_view,fileItemTextView])
-  fileRowLayout = fileItemTextView
-
-  file_item_title_script_list =
-    [
-      "var title0 = 'File:  #{dirpath}' + '/'+ eigenFragment.getOptionString('option', '.')",
-      "java.lang.System.out.println(title0)",
-      "title0"
-    ]
-
-  file_item_url_script_list =
-    [
-      "var url0 = '#{list_contents_url}?filepath=#{dirpath}' + '/'+ eigenFragment.getOptionString('option', '.')",
-      "java.lang.System.out.println(url0)",
-      "url0"
-    ]
-
-  filesListViewOnClickPopupTextView = popup_text_view(file_item_title_script_list, file_item_url_script_list)
-  filesListView = list_view(dirHash["files"], fileRowLayout, filesListViewOnClickPopupTextView)
-
-  layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
-
-#  eigen_vertical_layout([headerTextView,get_parent_directory_button,horzLine,layout0])
-  eigen_vertical_layout([headerTextView,horzLine,layout0])
-end
-=end
-
-
 ## define frame for padding
 def eigen_padding(x, y)
   {
@@ -234,7 +147,6 @@ def eigen_padding(x, y)
 end
 
 
-##==================================================================================================
 ## define frame for margin
 def eigen_margin(x, y)
   {
@@ -246,7 +158,6 @@ def eigen_margin(x, y)
 end
 
 
-##==================================================================================================
 ## define frame for an icon - internal resource ImageGetter registered name, and location (top,left...)
 def eigen_icon(name, location)
   {
@@ -256,7 +167,6 @@ def eigen_icon(name, location)
 end
 
 
-##==================================================================================================
 ## define frame for a horizontal line with size/width(integer) and color(string)
 def eigen_horizontal_line(size, color)
   {
@@ -267,7 +177,6 @@ def eigen_horizontal_line(size, color)
 end
 
 
-##==================================================================================================
 ## define frame for a vertical line with size/width(integer) and color(string)
 def eigen_vertical_line(size, color)
   {
@@ -278,7 +187,6 @@ def eigen_vertical_line(size, color)
 end
 
 
-##==================================================================================================
 def eigen_layout(component_list, orientation, layout_width, layout_height)
   {
     type: "LinearLayout",
@@ -290,19 +198,16 @@ def eigen_layout(component_list, orientation, layout_width, layout_height)
 end
 
 
-##=================================================================================================
 def eigen_horizontal_layout(component_list)
   eigen_layout(component_list, "horizontal", "match_parent", "match_parent")
 end
 
 
-##=================================================================================================
 def eigen_vertical_layout(component_list)
   eigen_layout(component_list, "vertical", "match_parent", "match_parent")
 end
 
 
-##=================================================================================================
 ## this frame defines each row of the subdirectory list
 def eigen_text_view(text_size, text_color, padding, margin, text_script_list)
   {
@@ -318,7 +223,6 @@ def eigen_text_view(text_size, text_color, padding, margin, text_script_list)
 end
 
 
-##==================================================================================================
 ## this frame defines each row of the subdirectory list
 def eigen_image_view(url_script_list)
   {
@@ -461,7 +365,6 @@ def list_view(option_list, item_layout, eigenScript)
 end
 
 
-##=================================================================================================
 def eigen_button(text_size, text_color, background_color, textString, buttonScript)
   {
     type: "Button",
@@ -481,8 +384,5 @@ def parent_path(dirpath)
   dirpath[0..last_slash_index]
 end
 
-## end of class
 end
-
-
-
+## end of class
