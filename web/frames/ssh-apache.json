@@ -268,7 +268,7 @@
         },
         "on_click": {
           "type": "PopupTextView",
-          "title": "File System Explorer\n(Dynamic Application Demo)",
+          "title": "File System Explorer\n(show json textview)",
           "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
         }
       }
@@ -277,7 +277,26 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "File System Explorer\n(Uses Ruby Scripts in CGI)",
+        "text": "File System Explorer\n(show json screen)",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "File System Explorer\n(Dynamic Application Demo)",
+            "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "File System Explorer\n(CGI calls Ruby)",
         "icon": {
           "name": "open_browser.",
           "location": "top"

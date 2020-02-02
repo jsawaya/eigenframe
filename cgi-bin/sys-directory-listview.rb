@@ -16,7 +16,4 @@ dirpath = cgi.params['dirpath'][0]
 
 eigenframe = EigenFrame.new()
 
-#listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
-#list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
-
 puts eigenframe.eigen_directory_listview_http_cgi(dirpath).to_json.to_s

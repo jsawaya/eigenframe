@@ -22,8 +22,8 @@ def eigen_directory_listview_http_cgi(dirpath)
       "title0"
     ]
 
-  #list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
-  list_contents_url = "http://localhost:1234/list_contents"
+  list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
+  #list_contents_url = "http://localhost:1234/list_contents"
 
   file_item_url_script_list =
     [
