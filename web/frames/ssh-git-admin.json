@@ -10,12 +10,11 @@
       "name": "HorizontalLine"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Termux/sftp home directory:"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Termux/sftp home directory:"
+      }
     },
     {
       "type": "x-SecureFtp",
@@ -67,12 +66,11 @@
       "name": "HorizontalLine"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "git working directory: \n(relative to sftp home directory)"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "git working directory: \n(relative to sftp home directory)"
+      }
     },
     {
       "type": "EditText",
@@ -473,12 +471,11 @@
       "name": "HorizontalLine"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "git file-path: \n(relative to git working directory)"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "git file-path: \n(relative to git working directory)"
+      }
     },
     {
       "type": "EditText",

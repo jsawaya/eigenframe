@@ -6,648 +6,383 @@
   "layout_width": "match_parent",
   "layout_height": "wrap_content",
   "component_list": [
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Gallery of sftp examples"
-    },
 
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Gallery of sftp examples"
+      }
+    },
 
     {
       "type": "Clone",
       "name": "HorizontalLine"
     },
 
-
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "sftp version",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "x-margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "sftp version",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp": "version"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "sftp version",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "sftp version",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "version"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "readlink storage",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "readlink storage",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "readlink storage"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "realpath storage",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "realpath storage",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "realpath storage"
+        }
       }
     },
 
-
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "sftp pwd",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "sftp pwd",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp": "pwd"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "sftp pwd",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "sftp pwd",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "pwd"
+        }
       }
     },
 
-
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp_list": [
-          "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
-        ]
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+        }
       }
     },
 
-
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "get git-repos/eigenframe/README.md",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "get git-repos/eigenframe/README.md",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp": "get git-repos/eigenframe/README.md"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "a) get git-repos/eigenframe/README.md [to private cache]",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "get git-repos/eigenframe/README.md [to private cache]",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "get git-repos/eigenframe/README.md"
+        }
       }
     },
 
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "b) get git-repos/eigenframe/README.md [to private cache]",
+        "on_click": {
+          "type": "SecureFtp",
+          "sftp": "get git-repos/eigenframe/README.md",
+          "on_complete": {
+            "type": "ToastMessage",
+            "message": "completed get git-repos/eigenframe/README.md [to private cache]"
+          }
+        }
+      }
+    },
 
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "test-1: get git-repos/eigenframe/README.md",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "SecureFtp",
-        "sftp": "get git-repos/eigenframe/README.md",
-        "on_complete" : {
-          "type": "ToastMessage",
-          "message": "completed: get git-repos/eigenframe/README.md"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "put README.md [in cache] . [to sftp home directory]",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "put README.md [in cache] . [to sftp home directory]",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "sftp": "put README.md ."
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "directory [sftp home]",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "directory [sftp home]",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "sftp": "directory"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "directory /data/data/com.termux/files/home/git-repos/eigenframe",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "directory /data/data/com.termux/files/home/git-repos/eigenframe",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "sftp": "directory /data/data/com.termux/files/home/git-repos/eigenframe"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       }
     },
 
 
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "put README.md .",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "put README.md .",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp": "put README.md ."
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
-        "sftp": "put /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/README.md git-repos"
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "directory",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "directory",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "directory"
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
 
-
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "directory /data/data/com.termux/files/usr/etc/apache2",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "directory /data/data/com.termux/files/usr/etc/apache2",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "directory /data/data/com.termux/files/usr/etc/apache2"
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
 
-
     {
-      "type": "Button",
-      "text": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "directory_local /data/user/0/com.sawaya.eigenframe.full/files [private cache]",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "directory_local /data/user/0/com.sawaya.eigenframe.full/files [private cache]",
             "component_list": [
               {
-                "type": "TextView",
-                "id": 12345,
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full/files"
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
 
-
     {
-      "type": "Button",
-      "text": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "text": "Show EigenFrame Private Directory",
-      "layout_width": "match_parent",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Show EigenFrame Private Directory",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full/files"
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "text": "readlink apache2-cgi",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "readlink apache2-cgi",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "readlink apache2-cgi"
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "text": "realpath apache2-cgi",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "realpath apache2-cgi",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "realpath apache2-cgi"
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "text": "realpath ..",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "title": "realpath ..",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "realpath .."
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "text": "list files .",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "list files .",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp": "list files ."
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-
-    {
-      "type": "Button",
-      "text": "call sftp directory, popup-screen, show SecureFtp:12345 directory listing",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click":
-      {
-        "type": "SecureFtp",
-        "id": 12345,
-        "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
-        "comment": "call sftp this way when you don't need immediate results for a TextView",
-        "on_complete":
-        {
-          "type": "PopupScreen",
-          "layout_width": "match_parent",
-          "layout_height": "wrap_content",
-          "text_size": "14",
-          "text_color": "#ffffff",
-          "background_color": "#111111",
-          "title": "show SecureFtp:12345 directory listing",
-          "component_list": [
-            {
-              "type": "LinearLayout",
-              "scrollable": true,
-              "orientation": "vertical",
-              "gravity": "center_horizontal",
-              "layout_width": "match_parent",
-              "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "call sftp directory, popup-screen, show cache SecureFtp:12345 directory listing",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "SecureFtp",
+          "id": 12345,
+          "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+          "comment": "call sftp this way when you don't need immediate results for a TextView",
+          "on_complete": {
+            "type": "Clone",
+            "name": "PopupScreenDefault",
+            "attributes": {
+              "title": "show cache SecureFtp:12345 directory listing",
               "component_list": [
                 {
-                  "type": "TextView",
-                  "layout_width": "match_parent",
-                  "layout_height": "wrap_content",
-                  "text_size": "14",
-                  "gravity": "left",
-                  "text_color": "#ffffff",
-                  "url": "file:///data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345"
+                  "type": "Clone",
+                  "name": "LayoutVerticalScrollable",
+                  "attributes": {
+                    "component_list": [
+                      {
+                        "type": "Clone",
+                        "name": "TextViewDetail",
+                        "attributes": {
+                          "url": "file:///data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345"
+                        }
+                      }
+                    ]
+                  }
                 }
               ]
             }
-          ]
+          }
         }
       }
     }
-
 
   ]
 }

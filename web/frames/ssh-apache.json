@@ -7,13 +7,11 @@
   "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Apache2 Administration"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Apache2 Administration"
+      }
     },
 
     {
@@ -315,13 +313,11 @@
       "name": "HorizontalLine"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Launch apps from Apache2 HTTP service (CGI):"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Launch apps from Apache2 HTTP service (CGI):"
+      }
     },
     {
       "type": "Button",

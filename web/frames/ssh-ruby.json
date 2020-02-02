@@ -6,14 +6,13 @@
   "layout_width": "match_parent",
   "layout_height": "wrap_content",
   "component_list": [
+
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Ruby Administration"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Ruby Administration"
+      }
     },
 
     {
@@ -71,13 +70,11 @@
     },
 
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Launch dynamic ruby app using ssh:"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Launch dynamic ruby app using ssh"
+      }
     },
 
     {
@@ -138,13 +135,11 @@
     },
 
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "left",
-      "text_color": "#8aec81",
-      "text_size": "22",
-      "text": "Launch ruby application services:"
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Launch ruby HTTP service"
+      }
     },
 
     {
