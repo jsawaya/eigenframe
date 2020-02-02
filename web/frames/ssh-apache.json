@@ -102,6 +102,21 @@
         }
       }
     },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Check if Apache2 HTTP processes are running",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "Check if Apache2 HTTP processes are running",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "ssh_list": [
+            "ps -eo cmd"
+          ]
+        }
+      }
+    },
 
     {
       "type": "Clone",
@@ -150,28 +165,23 @@
 
 
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Test apache2 cgi web-server",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "margin": {
-        "left": 4,
-        "top": 4,
-        "right": 4,
-        "bottom": 4
-      },
-      "icon": {
-        "name": "info.",
-        "location": "left"
-      },
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "Test Apache2 CGI Service",
-        "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Test Apache2 CGI Service",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupTextView",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "title": "Test Apache2 CGI Service",
+          "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+        }
       }
     },
+
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -179,7 +189,7 @@
         "text": "Show Apache2 Error Log (using SSH)",
         "on_click": {
           "type": "PopupTextView",
-          "title": "Show Apache2 Error Log",
+          "title": "Show Apache2 Error Log (using SSH)",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
           "ssh": "tail -n 30 ~/../usr/var/log/apache2/error_log"
         }
@@ -193,7 +203,7 @@
         "text": "Show Apache2 Error Log (using CGI)",
         "on_click": {
           "type": "PopupTextView",
-          "title": "Show Apache2 Error Log",
+          "title": "Show Apache2 Error Log (using CGI)",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
           "url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
         }
@@ -204,14 +214,14 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Stop Apache2 HTTP/CGI processes",
+        "text": "Stop Apache2 HTTP/CGI Services",
         "on_click": {
           "type": "PopupTextView",
-          "title": "Stop Apache2 HTTP/CGI processes",
+          "title": "Stop Apache2 HTTP/CGI Services",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
           "ssh_list": [
             "killall httpd",
-            "ps -eo cmd"
+            "echo Stopped Apache2 services"
           ]
         }
       }
@@ -259,7 +269,8 @@
         "on_click": {
           "type": "PopupTextView",
           "title": "File System Explorer\n(Dynamic Application Demo)",
-          "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
+          "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home",
+          "is_eigen_response": true
         }
       }
     }
