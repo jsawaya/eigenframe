@@ -27,6 +27,21 @@
     },
     {
       "type": "Define",
+      "name": "EditTextLocalFileCache",
+      "component": {
+        "type": "EditText",
+        "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText:999000') ",
+        "id": 999000,
+        "gravity": "left",
+        "layout_width": "match_parent",
+        "text_color": "#ffffff",
+        "background_color": "#000000"
+      }
+    },
+
+
+    {
+      "type": "Define",
       "name": "ButtonSaveEditsToRemoteFile",
       "component": {
         "type": "Clone",
@@ -47,8 +62,7 @@
                   "type": "JavaScript",
                   "script_list": [
                     "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-                    "var x2 = eigenFragment.clearCacheFile('EditText.txt')",
-                    "eigenActivity.showToast('Edit Cache: ' + x1 + ', File Cache: ' + x2 )"
+                    "eigenActivity.showToast('Local File Cache Status: ' + x1 )"
                   ]
                 }
               },
@@ -110,13 +124,8 @@
                     "name": "ButtonCancelLocalEdits"
                   },
                   {
-                    "type": "EditText",
-                    "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') ",
-                    "id": 999000,
-                    "gravity": "left",
-                    "layout_width": "match_parent",
-                    "text_color": "#ffffff",
-                    "background_color": "#000000"
+                    "type": "Clone",
+                    "name": "EditTextLocalFileCache"
                   }
                 ]
               }
@@ -198,7 +207,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title_script": "'Local cache: '+eigenFragment.getCacheFilePath('EditText.txt')",
+            "title_script": "'Local cache: '+eigenFragment.getCacheFilePath('EditText:999000')",
             "component_list": [
               {
                 "type": "Clone",
@@ -207,12 +216,12 @@
                   "component_list": [
                     {
                       "type": "SecureFtp",
-                      "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'",
+                      "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
                       "on_complete": {
                         "type": "Clone",
                         "name": "TextViewDetail",
                         "attributes": {
-                          "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') "
+                          "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText:999000') "
                         }
                       }
                     }
