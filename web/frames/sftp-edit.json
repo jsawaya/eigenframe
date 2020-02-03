@@ -7,6 +7,26 @@
   "component_list": [
     {
       "type": "Define",
+      "name": "EditTextRemoteFilePath",
+      "component": {
+        "type": "EditText",
+        "id": 999001,
+        "max_length": 200,
+        "is_single_line": true,
+        "layout_width": "match_parent",
+        "text": "",
+        "text_color": "#ffffff",
+        "background_color": "#000000",
+        "margin": {
+          "left": 10,
+          "top": 10,
+          "right": 10,
+          "bottom": 10
+        }
+      }
+    },
+    {
+      "type": "Define",
       "name": "ButtonSaveEditsToRemoteFile",
       "component": {
         "type": "Clone",
@@ -44,7 +64,6 @@
         }
       }
     },
-
     {
       "type": "Define",
       "name": "ButtonCancelLocalEdits",
@@ -106,36 +125,51 @@
         }
       }
     },
+    {
+      "type": "Define",
+      "name": "PopupScreenShowRemoteFile",
+      "component": {
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+          "component_list": [
+            {
+              "type": "Clone",
+              "name": "LayoutVerticalScrollable",
+              "attributes": {
+                "component_list": [
+                  {
+                    "type": "Clone",
+                    "name": "TextViewDetail",
+                    "attributes": {
+                      "text_size": "10",
+                      "ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
 
     {
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Enter remote file: \n(relative to sftp home directory)"
+        "text": "Remote file path: \n(relative to sftp home directory)"
       }
     },
-
     {
-      "type": "EditText",
-      "id": 999001,
-      "max_length": 200,
-      "is_single_line": true,
-      "layout_width": "match_parent",
-      "text": "git-repos/eigenframe/",
-      "text_color": "#ffffff",
-      "background_color": "#000000",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      }
+      "type": "Clone",
+      "name": "EditTextRemoteFilePath"
     },
     {
       "type": "Clone",
       "name": "HorizontalLine"
     },
-
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -147,32 +181,10 @@
         },
         "on_click": {
           "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
+          "name": "PopupScreenShowRemoteFile"
         }
       }
     },
-
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -212,8 +224,6 @@
         }
       }
     },
-
-
     {
       "type": "Clone",
       "name": "ButtonDefault",
