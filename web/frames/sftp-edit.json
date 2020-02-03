@@ -44,6 +44,7 @@
         }
       }
     },
+
     {
       "type": "Define",
       "name": "ButtonCancelLocalEdits",
@@ -67,7 +68,44 @@
         }
       }
     },
-
+    {
+      "type": "Define",
+      "name": "PopupScreenEdit",
+      "component": {
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+          "component_list": [
+            {
+              "type": "Clone",
+              "name": "LayoutVerticalScrollable",
+              "attributes": {
+                "component_list": [
+                  {
+                    "type": "Clone",
+                    "name": "ButtonSaveEditsToRemoteFile"
+                  },
+                  {
+                    "type": "Clone",
+                    "name": "ButtonCancelLocalEdits"
+                  },
+                  {
+                    "type": "EditText",
+                    "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') ",
+                    "id": 999000,
+                    "gravity": "left",
+                    "layout_width": "match_parent",
+                    "text_color": "#ffffff",
+                    "background_color": "#000000"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
 
     {
       "type": "Clone",
@@ -187,41 +225,10 @@
         },
         "on_click": {
           "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "ButtonSaveEditsToRemoteFile"
-                    },
-                    {
-                      "type": "Clone",
-                      "name": "ButtonCancelLocalEdits"
-                    },
-                    {
-                      "type": "EditText",
-                      "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') ",
-                      "id": 999000,
-                      "gravity": "left",
-                      "layout_width": "match_parent",
-                      "text_color": "#ffffff",
-                      "background_color": "#000000"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
+          "name": "PopupScreenEdit"
         }
       }
     }
-
   ]
 }
 
