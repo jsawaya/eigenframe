@@ -22,18 +22,20 @@
       {
         "type": "ActionList",
         "component_list": [
+
           {
             "type": "JavaScript",
             "script_list": [
-              "eigenFragment.parentPath(991001)",
+              "eigenFragment.parentPath(991002)",
               "eigenFragment.closePopupWindow()"
             ]
           },
+
           {
             "type": "SecureFtp",
             "comment": "call sftp this way when you don't need immediate results for a TextView",
             "id": 991004,
-            "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001)",
+            "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
             "on_complete":
             {
               "type": "PopupScreen",
@@ -42,7 +44,7 @@
               "text_size": "14",
               "text_color": "#ffffff",
               "background_color": "#111111",
-              "title_script": "''+ eigenFragment.concatPaths(991000, 991001)",
+              "title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
               "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json"
             }
           }
@@ -53,7 +55,6 @@
       "type": "LinearLayout",
       "orientation": "horizontal",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "component_list": [
         {
           "type": "TextView",
@@ -107,7 +108,7 @@
                   "var pos = eigenFragment.getOptionPosition()",
                   "var opt = eigenFragment.getOptionLabel()",
                   "eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
-                  "eigenFragment.appendPath(991001, opt)",
+                  "eigenFragment.appendPath(991002, opt)",
                   "eigenFragment.closePopupWindow()"
                 ]
               },
@@ -115,7 +116,7 @@
                 "type": "SecureFtp",
                 "comment": "call sftp this way when you don't need immediate results for a TextView",
                 "id": 991004,
-                "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001)",
+                "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
                 "on_complete": {
                   "type": "PopupScreen",
                   "layout_width": "match_parent",
@@ -123,7 +124,7 @@
                   "text_size": "14",
                   "text_color": "#ffffff",
                   "background_color": "#111111",
-                  "title_script": "''+ eigenFragment.concatPaths(991000, 991001)",
+                  "title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
                   "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json"
                 }
               }
@@ -173,11 +174,11 @@
                 "script_list": [
                   "var pos = eigenFragment.getOptionPosition()",
                   "var opt = eigenFragment.getOptionLabel()",
-                  "var rootpath = eigenFragment.concatPaths(991000, 991001)",
+                  "var rootpath = eigenFragment.concatPaths(991000, 991001, 991002)",
                   "eigenFragment.appendCacheString('SelectFile:100', rootpath, opt) ",
                   "var selected_file = eigenFragment.getCacheString('SelectFile:100') ",
                   "eigenActivity.showToast('Selected File: '+ selected_file)",
-                  "eigenFragment.setViewState(991002, opt)"
+                  "eigenFragment.setViewState(991003, opt)"
                 ]
               }
             ]

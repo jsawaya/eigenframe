@@ -5,10 +5,12 @@
   "gravity": "center_horizontal",
   "layout_width": "match_parent",
   "component_list": [
+
     {
       "type": "Clone",
       "name": "HorizontalLine"
     },
+
     {
       "type": "Clone",
       "name": "TextViewLabel",
@@ -16,21 +18,12 @@
         "text": "Termux/sftp home directory:"
       }
     },
-    {
-      "type": "x-SecureFtp",
-      "comment": "call sftp this way when you don't need immediate results for a TextView",
-      "id": 2001,
-      "sftp": "pwd",
-      "on_complete": {
-        "type": "ToastMessage",
-        "message_script": "'pwd: ' + eigenFragment.getCacheString('SecureFtp:2001')"
-      }
-    },
+
     {
       "type": "TextView",
       "id": 991000,
-      "layout_width": "match_parent",
       "sftp": "pwd",
+      "layout_width": "match_parent",
       "text_color": "#ffffff",
       "text_size": "20",
       "gravity": "left",
@@ -42,23 +35,36 @@
         "bottom": 10
       }
     },
+
     {
-      "type": "x-Button",
-      "gravity": "center",
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Home git working directory: \n(relative to sftp home directory)"
+      }
+    },
+
+    {
+      "type": "EditText",
+      "id": 991001,
+      "text": "git-repos/eigenframe",
+      "max_length": 200,
+      "is_single_line": true,
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "show TextView:991000 cache",
       "text_color": "#ffffff",
-      "background_color": "#123456",
+      "text_size": "20",
+      "gravity": "left",
+      "background_color": "#000000",
       "margin": {
         "left": 10,
         "top": 10,
         "right": 10,
         "bottom": 10
-      },
-      "on_click": {
-        "type": "ToastMessage",
-        "message_script": "'pwd: ' + eigenFragment.getViewState(991000)"
       }
     },
     {
@@ -69,16 +75,16 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "git working directory: \n(relative to sftp home directory)"
+        "text": "Specific Path (within the git repository)"
       }
     },
     {
       "type": "EditText",
-      "id": 991001,
+      "id": 991002,
+      "text": "",
       "max_length": 200,
       "is_single_line": true,
       "layout_width": "match_parent",
-      "text": "git-repos/eigenframe",
       "text_color": "#ffffff",
       "text_size": "20",
       "gravity": "left",
@@ -90,13 +96,14 @@
         "bottom": 10
       }
     },
+
     {
       "type": "Button",
-      "text": "ListView",
+      "text": "Select Specific Path (ListView)",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
-      "background_color": "#123456",
+      "background_color": "#654321",
       "margin": {
         "left": 10,
         "top": 10,
@@ -107,363 +114,253 @@
       {
         "type": "SecureFtp",
         "id": 991004,
-        "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001)",
+        "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
         "on_complete":
         {
           "type": "PopupScreen",
+          "title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
+          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json",
           "layout_width": "match_parent",
-          "layout_height": "wrap_content",
           "text_size": "14",
           "text_color": "#ffffff",
-          "background_color": "#111111",
-          "title_script": "''+ eigenFragment.concatPaths(991000, 991001)",
-          "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json"
+          "background_color": "#111111"
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "pull github master, merge to test branch in git-repos/eigenframe",
+        "icon": {
+          "name": "cloud_download.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "pull github master, merge to test branch in git-repos/eigenframe",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_list": [
+                          "cd ~/git-repos/eigenframe",
+                          "echo current working directory:",
+                          "pwd",
+                          "echo ",
+                          "echo git status:",
+                          "git status",
+                          "echo ",
+                          "echo git checkout master:",
+                          "git checkout master",
+                          "echo ",
+                          "echo git pull:",
+                          "git pull",
+                          "echo ",
+                          "echo git checkout test:",
+                          "git checkout test",
+                          "echo ",
+                          "echo git merge master:",
+                          "git merge master",
+                          "echo ",
+                          "echo git status:",
+                          "git status"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git status",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git status",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git status'"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       }
     },
     {
       "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "x-Button",
-      "layout_width": "match_parent",
-      "text": "Show git working directory as JSON",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title_script": "'directory ' + eigenFragment.concatPaths(991000,991001)",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git add *",
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git add *",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "sftp_script": "'directory ' + eigenFragment.concatPaths(991000,991001)"
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git add *'"
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "pull github master, merge to test branch in git-repos/eigenframe",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "cloud_download.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "pull github master, merge to test branch in git-repos/eigenframe",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git commit -a m 'testing'",
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git commit -a m 'testing'",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "cd ~/git-repos/eigenframe",
-                  "echo current working directory:",
-                  "pwd",
-                  "echo ",
-                  "echo git status:",
-                  "git status",
-                  "echo ",
-                  "echo git checkout master:",
-                  "git checkout master",
-                  "echo ",
-                  "echo git pull:",
-                  "git pull",
-                  "echo ",
-                  "echo git checkout test:",
-                  "git checkout test",
-                  "echo ",
-                  "echo git merge master:",
-                  "git merge master",
-                  "echo ",
-                  "echo git status:",
-                  "git status"
-                ]
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git commit -a -m \"testing\"'"
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "git status",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git status",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git push origin test",
+        "icon": {
+          "name": "cloud_upload.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git push origin test",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git status'"
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git push origin test' "
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "git add *",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git add *",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "EigenFrame Github Webpage",
+        "icon": {
+          "name": "import_export.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "EigenFrame Github Repository",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git add *'",
-                "x-ssh_script": "'cd ' + eigenFragment.concatPaths(991000,991001) + '; git add *'"
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "WebView",
+                      "layout_width": "match_parent",
+                      "layout_height": "wrap_content",
+                      "is_javascript_enabled": true,
+                      "url": "https://github.com/jsawaya/eigenframe"
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "git commit -a m 'testing'",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git commit -a m 'testing'",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git commit -a -m \"testing\"'"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "git push origin test",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "icon": {
-        "name": "cloud_upload.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git push origin test",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git push origin test' "
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "EigenFrame Github Repository",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "import_export.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "EigenFrame Github Repository",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "WebView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "is_javascript_enabled": true,
-                "url": "https://github.com/jsawaya/eigenframe"
-              }
-            ]
-          }
-        ]
+        }
       }
     },
     {
@@ -479,7 +376,7 @@
     },
     {
       "type": "EditText",
-      "id": 991002,
+      "id": 991003,
       "max_length": 200,
       "is_single_line": true,
       "layout_width": "match_parent",
@@ -497,91 +394,66 @@
     },
     {
       "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "git diff from master",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git diff from master",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git diff from master",
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git diff from master",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "gravity": "left",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.getViewState(991002) + ' -- ' + eigenFragment.getViewState(991002); "
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.concatPaths(991002, 991003) + ' -- ' + eigenFragment.concatPaths(991002, 991003); "
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "text": "git restore (revert to master)",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "gravity": "center",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "git restore",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git restore (revert to master)",
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git restore",
             "component_list": [
               {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git restore ' + eigenFragment.getViewState(991002) "
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git restore ' + eigenFragment.concatPaths(991002, 991003) "
+                      }
+                    }
+                  ]
+                }
               }
             ]
           }
-        ]
+        }
       }
     },
     {
