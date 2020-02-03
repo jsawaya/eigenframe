@@ -179,7 +179,7 @@
                   "var selected_file = eigenFragment.getCacheString('SelectFile:100') ",
                   "eigenActivity.showToast('Selected File: '+ selected_file)",
                   "eigenFragment.setViewState(991003, opt)",
-                  "eigenFragment.setViewState(999001, selected_file)"
+                  "eigenFragment.setCacheString('EditText:999001', selected_file)"
                 ]
               }
             ]
