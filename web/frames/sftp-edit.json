@@ -205,6 +205,46 @@
         }
       }
     },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Get local cache",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Get local cache",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "SecureFtp",
+                      "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText.txt'",
+                      "on_complete": {
+                        "type": "Clone",
+                        "name": "TextViewDetail",
+                        "attributes": {
+                          "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText.txt') "
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
 
     {
       "type": "Clone",
