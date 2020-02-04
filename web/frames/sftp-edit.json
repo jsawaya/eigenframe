@@ -260,7 +260,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title_script": "'Remote file: '+eigenFragment.getViewState(999001) + '\nLocal cache: '+eigenFragment.getCacheFilePath('EditText:999000')",
+            "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
             "component_list": [
               {
                 "type": "Clone",
