@@ -152,7 +152,6 @@
                     "type": "Clone",
                     "name": "TextViewDetail",
                     "attributes": {
-                      "text_size": "10",
                       "ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
                     }
                   }
@@ -245,6 +244,42 @@
         "on_click": {
           "type": "Clone",
           "name": "PopupScreenEdit"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Edit Copy of Remote File",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title_script": "'Remote file: '+eigenFragment.getViewState(999001) + '\nLocal cache: '+eigenFragment.getCacheFilePath('EditText:999000')",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "SecureFtp",
+                      "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
+                      "on_complete": {
+                        "type": "Clone",
+                        "name": "PopupScreenEdit"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       }
     }
