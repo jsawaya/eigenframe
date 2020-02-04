@@ -180,7 +180,7 @@
       "name": "HorizontalLine"
     },
     {
-      "type": "Clone",
+      "type": "x-Clone",
       "name": "ButtonDefault",
       "attributes": {
         "text": "Show remote file",
@@ -195,7 +195,7 @@
       }
     },
     {
-      "type": "Clone",
+      "type": "x-Clone",
       "name": "ButtonDefault",
       "attributes": {
         "text": "Get local cache",
@@ -234,7 +234,7 @@
       }
     },
     {
-      "type": "Clone",
+      "type": "x-Clone",
       "name": "ButtonDefault",
       "attributes": {
         "text": "Edit local cache",
@@ -258,28 +258,11 @@
           "location": "top"
         },
         "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "SecureFtp",
-                      "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
-                      "on_complete": {
-                        "type": "Clone",
-                        "name": "PopupScreenEdit"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
+          "type": "SecureFtp",
+          "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
+          "on_complete": {
+            "type": "Clone",
+            "name": "PopupScreenEdit"
           }
         }
       }
