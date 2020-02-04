@@ -62,12 +62,13 @@
                   "type": "JavaScript",
                   "script_list": [
                     "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-                    "eigenActivity.showToast('Local File Cache Status: ' + x1 )"
+                    "eigenActivity.showToast('Local File Cache Status: ' + x1 )",
+                    "eigenFragment.closePopupScreen(999099)"
                   ]
                 }
               },
               {
-                "type": "JavaScript",
+                "type": "x-JavaScript",
                 "comment": "closePopupWindow needs to be here, rather than inside SecureFtp(on-complete)/JavaScript, because it seeks parent views to find PopupScreen",
                 "script_list": [
                   "eigenFragment.closePopupWindow()"
@@ -95,7 +96,7 @@
             "script_list": [
               "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
               "eigenActivity.showToast('Edit Cache: ' + x1 )",
-              "eigenFragment.closePopupWindow(999099)"
+              "eigenFragment.closePopupScreen(999099)"
             ]
           }
         }
