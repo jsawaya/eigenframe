@@ -164,6 +164,18 @@
         }
       }
     },
+    {
+      "type": "Define",
+      "name": "PopupScreenEditRemoteFile",
+      "component": {
+        "type": "SecureFtp",
+        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
+        "on_complete": {
+          "type": "Clone",
+          "name": "PopupScreenEdit"
+        }
+      }
+    },
 
     {
       "type": "Clone",
@@ -181,10 +193,10 @@
       "name": "HorizontalLine"
     },
     {
-      "type": "x-Clone",
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Show remote file",
+        "text": "Show Remote File",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -196,75 +208,17 @@
       }
     },
     {
-      "type": "x-Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Get local cache",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title_script": "'Local cache: '+eigenFragment.getCacheFilePath('EditText:999000')",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "SecureFtp",
-                      "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
-                      "on_complete": {
-                        "type": "Clone",
-                        "name": "TextViewDetail",
-                        "attributes": {
-                          "url_script": "'file://' + eigenFragment.getCacheFilePath('EditText:999000') "
-                        }
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "x-Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Edit local cache",
-        "icon": {
-          "name": "edit.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenEdit"
-        }
-      }
-    },
-    {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Edit Copy of Remote File",
+        "text": "Edit Remote File",
         "icon": {
           "name": "open_browser.",
           "location": "top"
         },
         "on_click": {
-          "type": "SecureFtp",
-          "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
-          "on_complete": {
-            "type": "Clone",
-            "name": "PopupScreenEdit"
-          }
+          "type": "Clone",
+          "name": "PopupScreenEditRemoteFile"
         }
       }
     }
