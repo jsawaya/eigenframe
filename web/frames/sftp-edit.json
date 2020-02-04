@@ -95,7 +95,7 @@
             "script_list": [
               "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
               "eigenActivity.showToast('Edit Cache: ' + x1 )",
-              "eigenFragment.closePopupWindow()"
+              "eigenFragment.closePopupWindow(999099)"
             ]
           }
         }
@@ -108,6 +108,7 @@
         "type": "Clone",
         "name": "PopupScreenDefault",
         "attributes": {
+          "id": 999099,
           "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
           "component_list": [
             {
