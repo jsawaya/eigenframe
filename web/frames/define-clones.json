@@ -250,6 +250,12 @@
           "name": "PopupScreenEdit"
         }
       }
+    },
+    {
+      "type": "SetVariable",
+      "name": "IsSourceButton",
+      "class": "boolean",
+      "value": false
     }
   ],
   "on_complete": {
