@@ -9,9 +9,7 @@ Example:
   "type": "EigenFrame",
   "is_secure_window": true,
   "request_permissions": [
-    "android.permission.CAMERA",
-    "android.permission.WRITE_EXTERNAL_STORAGE",
-    "android.permission.INTERNET"
+    "android.permission.CAMERA"
   ],
   "tab_list": [
     {
