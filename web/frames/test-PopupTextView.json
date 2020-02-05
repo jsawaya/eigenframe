@@ -77,23 +77,6 @@
       "type": "Button",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
-      "text": "font/gnu-free-font/FreeMono.ttf",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "on_click": {
-        "type": "PopupTextView",
-        "title": "font/gnu-free-font/FreeMono.ttf",
-        "font": "font/gnu-free-font/FreeMono.ttf",
-        "ssh_list": [
-          "ps -e",
-          "ls -la"
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
       "text": "font/droid-sans-mono/DroidSansMono.ttf",
       "text_color": "#ffffff",
       "background_color": "#123456",

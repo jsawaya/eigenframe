@@ -21,15 +21,6 @@
       "layout_height": "wrap_content",
       "text_size": "20",
       "text_color": "#ffffff",
-      "font": "font/Anonymous/Anonymous.ttf",
-      "text": "font/Anonymous/Anonymous.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/droid-sans/DroidSans.ttf",
       "text": "font/droid-sans/DroidSans.ttf"
     },
@@ -50,114 +41,6 @@
       "text_color": "#ffffff",
       "font": "font/droid-sans-mono/DroidSansMono.ttf",
       "text": "font/droid-sans-mono/DroidSansMono.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeMono.ttf",
-      "text": "font/gnu-free-font/FreeMono.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeMonoBold.ttf",
-      "text": "font/gnu-free-font/FreeMonoBold.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeMonoBoldOblique.ttf",
-      "text": "font/gnu-free-font/FreeMonoBoldOblique.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeMonoOblique.ttf",
-      "text": "font/gnu-free-font/FreeMonoOblique.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeSans.ttf",
-      "text": "font/gnu-free-font/FreeSans.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeSansBold.ttf",
-      "text": "font/gnu-free-font/FreeSansBold.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeSansBoldOblique.ttf",
-      "text": "font/gnu-free-font/FreeSansBoldOblique.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeSansOblique.ttf",
-      "text": "font/gnu-free-font/FreeSansOblique.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeSerif.ttf",
-      "text": "font/gnu-free-font/FreeSerif.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeSerifBold.ttf",
-      "text": "font/gnu-free-font/FreeSerifBold.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeSerifBoldItalic.ttf",
-      "text": "font/gnu-free-font/FreeSerifBoldItalic.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/gnu-free-font/FreeSerifItalic.ttf",
-      "text": "font/gnu-free-font/FreeSerifItalic.ttf"
     },
     {
       "type": "TextView",
@@ -536,51 +419,6 @@
       "text_color": "#ffffff",
       "font": "font/roboto/RobotoCondensed-Regular.ttf",
       "text": "font/roboto/RobotoCondensed-Regular.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/Santana/Santana.ttf",
-      "text": "font/Santana/Santana.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/Santana/Santana-Black.ttf",
-      "text": "font/Santana/Santana-Black.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/Santana/Santana-BlackCondensed.ttf",
-      "text": "font/Santana/Santana-BlackCondensed.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/Santana/Santana-Bold.ttf",
-      "text": "font/Santana/Santana-Bold.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
-      "font": "font/Santana/Santana-RegularCondensed.ttf",
-      "text": "font/Santana/Santana-RegularCondensed.ttf"
     },
     {
       "type": "TextView",
