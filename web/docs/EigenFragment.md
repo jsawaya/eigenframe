@@ -17,7 +17,7 @@ Example:
     {
       "icon_name": "ic_launcher.png",
       "type": "EigenFragment",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/playlist.json"
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/playlist.json"
     },
     {
       "name": "PlayList\nfrom github",

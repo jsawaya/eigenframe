@@ -185,7 +185,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
+        "text": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]",
         "icon": {
           "name": "info.",
           "location": "top"
@@ -194,7 +194,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
+            "title": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]",
             "component_list": [
               {
                 "type": "Clone",
@@ -205,7 +205,7 @@
                       "type": "Clone",
                       "name": "TextViewDetail",
                       "attributes": {
-                        "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+                        "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
                       }
                     }
                   ]
@@ -229,7 +229,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
+        "text": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]",
         "icon": {
           "name": "info.",
           "location": "top"
@@ -238,7 +238,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [shared files]",
+            "title": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]",
             "component_list": [
               {
                 "type": "Clone",
@@ -249,7 +249,7 @@
                       "type": "Clone",
                       "name": "TextViewDetail",
                       "attributes": {
-                        "sftp": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+                        "sftp": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
                       }
                     }
                   ]
@@ -273,7 +273,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "directory_local /data/user/0/com.sawaya.eigenframe.full/files [private cache]",
+        "text": "directory_local /data/user/0/com.sawaya.eigenframe/files [private cache]",
         "icon": {
           "name": "info.",
           "location": "top"
@@ -282,7 +282,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "directory_local /data/user/0/com.sawaya.eigenframe.full/files [private cache]",
+            "title": "directory_local /data/user/0/com.sawaya.eigenframe/files [private cache]",
             "component_list": [
               {
                 "type": "Clone",
@@ -293,7 +293,7 @@
                       "type": "Clone",
                       "name": "TextViewDetail",
                       "attributes": {
-                        "sftp": "directory_local /data/user/0/com.sawaya.eigenframe.full/files"
+                        "sftp": "directory_local /data/user/0/com.sawaya.eigenframe/files"
                       }
                     }
                   ]
@@ -316,7 +316,7 @@
         "on_click": {
           "type": "SecureFtp",
           "id": 12345,
-          "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files",
+          "sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files",
           "comment": "call sftp this way when you don't need immediate results for a TextView",
           "on_complete": {
             "type": "Clone",
@@ -333,7 +333,7 @@
                         "type": "Clone",
                         "name": "TextViewDetail",
                         "attributes": {
-                          "url": "file:///data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345"
+                          "url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345"
                         }
                       }
                     ]
@@ -370,12 +370,12 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [to shared files]",
+        "text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [to shared files]",
         "on_click": {
           "type": "PopupTextView",
-          "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files [to shared files]",
+          "title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [to shared files]",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files"
+          "sftp": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
         }
       }
     },
@@ -405,12 +405,12 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "put /data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345 [in cache] . [to sftp home directory]",
+        "text": "put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 [in cache] . [to sftp home directory]",
         "on_click": {
           "type": "PopupTextView",
-          "title": "put /data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345 [in cache] . [to sftp home directory]",
+          "title": "put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 [in cache] . [to sftp home directory]",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "put /data/user/0/com.sawaya.eigenframe.full/files/SecureFtp:12345 ."
+          "sftp": "put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 ."
         }
       }
     }

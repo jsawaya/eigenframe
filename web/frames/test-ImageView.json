@@ -33,7 +33,7 @@
     },
     {
       "type": "ImageView",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/eigenframe.png",
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/eigenframe.png",
       "layout_width": "match_parent",
       "layout_height": "100",
       "on_click": {
@@ -47,7 +47,7 @@
     },
     {
       "type": "ImageView",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/image/photopgp.png",
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/photopgp.png",
       "layout_width": "match_parent",
       "layout_height": "100",
       "on_click": {

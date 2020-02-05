@@ -226,7 +226,7 @@
         },
         "on_click": {
           "type": "JavaScript",
-          "script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json')"
+          "script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json')"
         }
       }
     },

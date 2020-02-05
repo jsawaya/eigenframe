@@ -26,10 +26,10 @@ There are 3 ways to perform the initial EigenFrame url-request:
 * an EigenFrame app can be designed launch the url of another completely different EigenFrame app.
 
 The home-url is defined in this eigenframe shared directory file:
-> /storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/home-url.txt
+> /storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt
 
 This home-url file contains the following default app-url:
-> file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/app.json
+> file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json
 
 As a simple example, this url returns the following EigenFrame specification:
 ```json
@@ -45,7 +45,7 @@ As a simple example, this url returns the following EigenFrame specification:
     {
       "icon_name": "ic_launcher_round.",
       "type": "EigenFragment",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe.full/files/playlist.json"
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/playlist.json"
     },
     {
       "name": "PlayList\nfrom github",
@@ -103,9 +103,9 @@ Component type | Description | Examples
 [AlertDialog](./web/docs/AlertDialog.md) | component represents a popup multiple-choice option-list | [example](./web/frames/test-AlertDialog.json) 
 [PopupTextView](./web/docs/PopupTextView.md) | component that shows a small transient popup text window | [example](./web/frames/test-PopupTextView.json) 
 [PopupHtmlView](./web/docs/PopupHtmlView.md) | component that shows a small transient popup html window | [example](./web/frames/test-PopupHtmlView.json) 
-[JavaScript](./web/docs/JavaScript.md) | component calls embedded javascript  | [example](./web/frames/test-Javascript.json) 
-[SecureShell](./web/docs/SecureShell.md) | component represents ssh commands | [example](./cgi-bin/ruby-lib/eigen-lib.rb) 
-[UrlRequest](./web/docs/UrlRequest.md) | component represents url request - not fully tested |
+[JavaScript](./web/docs/JavaScript.md) | embedded javascript  | [example](./web/frames/test-Javascript.json) 
+[SecureShell](./web/docs/SecureShell.md) | ssh commands | [example](./cgi-bin/ruby-lib/eigen-lib.rb) 
+[UrlRequest](./web/docs/UrlRequest.md) | url request |
 [Variable] | not implemented yet |
 
 
