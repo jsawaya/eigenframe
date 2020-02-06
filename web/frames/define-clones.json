@@ -271,6 +271,34 @@
       "name": "IsSourceButton",
       "class": "boolean",
       "value": true
+    },
+    {
+      "type": "Define",
+      "name": "SetIsSourceButton",
+      "component": {
+        "type": "Switch",
+        "id": 999300,
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text": "Enable Source Button",
+        "checked": true,
+        "text_color": "#ffffff",
+        "background_color": "#ff00ff",
+        "padding": {
+          "left": 40,
+          "top": 40,
+          "right": 40,
+          "bottom": 40
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "var b1 = eigenFragment.getViewState(999300) == 1",
+            "eigenFrame.setBooleanVariable('IsSourceButton', 0, b1)",
+            "eigenActivity.showToast('IsSourceButton: ' + b1)"
+          ]
+        }
+      }
     }
   ],
   "on_complete": {

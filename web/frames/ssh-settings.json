@@ -132,6 +132,19 @@
           "ssh": "ls"
         }
       }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "ps -e",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "ps -e",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "ssh": "ps -e"
+        }
+      }
     }
 
   ]

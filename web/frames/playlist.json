@@ -23,12 +23,17 @@
       "type": "Clone",
       "name": "HorizontalLine"
     },
+    ,
     {
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
         "text": "Settings:"
       }
+    },
+    {
+      "type": "Clone",
+      "name": "SetIsSourceButton"
     },
     {
       "type": "Clone",
