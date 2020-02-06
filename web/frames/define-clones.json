@@ -294,7 +294,7 @@
           "type": "JavaScript",
           "script_list": [
             "var b1 = eigenFragment.getViewState(999300) == 1",
-            "eigenFrame.setBooleanVariable('IsSourceButton', 0, b1)",
+            "eigenFragment.setBooleanVariable('IsSourceButton', 0, b1)",
             "eigenActivity.showToast('IsSourceButton: ' + b1)"
           ]
         }
