@@ -252,6 +252,21 @@
       }
     },
     {
+      "type": "Define",
+      "name": "SendRemoteFile",
+      "component": {
+        "type": "SecureFtp",
+        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
+        "on_complete": {
+          "type": "JavaScript",
+          "script_list": [
+            "var f1 = eigenFragment.getCacheFilePath('EditText:999000')",
+            "eigenFragment.sendFile(f1)"
+          ]
+        }
+      }
+    },
+    {
       "type": "SetVariable",
       "name": "IsSourceButton",
       "class": "boolean",
