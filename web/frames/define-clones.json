@@ -261,7 +261,7 @@
           "type": "JavaScript",
           "script_list": [
             "var f1 = eigenFragment.getCacheFilePath('EditText:999000')",
-            "eigenFragment.sendFile(f1)"
+            "eigenFragment.sendFile(f1, 'photopgp@gmail.com')"
           ]
         }
       }
