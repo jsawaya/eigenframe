@@ -279,7 +279,7 @@
         "type": "Switch",
         "id": 999300,
         "text": "Enable Source Button",
-        "checked": true,
+        "checked_script": "eigenFragment.getBooleanVariable('IsSourceButton', 0, true)",
         "text_color": "#ffffff",
         "background_color": "#654321",
         "margin": {
