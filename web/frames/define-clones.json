@@ -267,7 +267,7 @@
       }
     },
     {
-      "type": "SetVariable",
+      "type": "x-SetVariable",
       "name": "IsSourceButton",
       "class": "boolean",
       "value": true
@@ -278,17 +278,15 @@
       "component": {
         "type": "Switch",
         "id": 999300,
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
         "text": "Enable Source Button",
         "checked": true,
         "text_color": "#ffffff",
-        "background_color": "#ff00ff",
-        "padding": {
-          "left": 40,
-          "top": 40,
-          "right": 40,
-          "bottom": 40
+        "background_color": "#654321",
+        "margin": {
+          "left": 10,
+          "top": 10,
+          "right": 10,
+          "bottom": 10
         },
         "on_click": {
           "type": "JavaScript",
