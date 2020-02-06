@@ -12,28 +12,10 @@
       "type": "EigenFragment"
     },
     {
-      "name": "AlertDialog",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-AlertDialog.json"
-    },
-    {
       "name": "Button",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Button.json"
-    },
-    {
-      "name": "CheckBox",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-CheckBox.json"
-    },
-    {
-      "name": "EditText",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EditText.json"
     },
     {
       "name": "TextView",
@@ -54,52 +36,28 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-HtmlView.json"
     },
     {
+      "name": "WebView",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-WebView.json"
+    },
+    {
       "name": "ImageView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ImageView.json"
     },
     {
-      "name": "JavaScript",
+      "name": "EditText",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Javascript.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EditText.json"
     },
     {
-      "name": "ListView",
+      "name": "CheckBox",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ListView.json"
-    },
-    {
-      "name": "PopupHtmlView",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupHtmlView.json"
-    },
-    {
-      "name": "PopupTextView",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupTextView.json"
-    },
-    {
-      "name": "PopupScreen",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
-    },
-    {
-      "name": "RadioButton",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-RadioButton.json"
-    },
-    {
-      "name": "SelectDialog",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-SelectDialog.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-CheckBox.json"
     },
     {
       "name": "Spinner",
@@ -120,10 +78,52 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ToggleButton.json"
     },
     {
-      "name": "WebView",
+      "name": "RadioButton",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-WebView.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-RadioButton.json"
+    },
+    {
+      "name": "ListView",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ListView.json"
+    },
+    {
+      "name": "AlertDialog",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-AlertDialog.json"
+    },
+    {
+      "name": "SelectDialog",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-SelectDialog.json"
+    },
+    {
+      "name": "PopupTextView",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupTextView.json"
+    },
+    {
+      "name": "PopupHtmlView",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupHtmlView.json"
+    },
+    {
+      "name": "PopupScreen",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
+    },
+    {
+      "name": "JavaScript",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Javascript.json"
     }
   ]
 }

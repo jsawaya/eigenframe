@@ -270,7 +270,7 @@
       "type": "SetVariable",
       "name": "IsSourceButton",
       "class": "boolean",
-      "value": false
+      "value": true
     }
   ],
   "on_complete": {
