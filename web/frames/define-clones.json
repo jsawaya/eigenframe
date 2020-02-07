@@ -258,7 +258,6 @@
         "type": "Clone",
         "name": "PopupScreenDefault",
         "attributes": {
-          "x-id": 999098,
           "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
           "component_list": [
             {
