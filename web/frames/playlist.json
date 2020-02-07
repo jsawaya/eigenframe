@@ -164,7 +164,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Edit Remote File (from Termux)",
+            "title": "Edit Remote File",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
           }
         }
