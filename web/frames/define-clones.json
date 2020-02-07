@@ -270,6 +270,7 @@
                     "url_script": "'file://'+ eigenFragment.getCacheFilePath('ImageView.png')",
                     "layout_width": "match_parent",
                     "layout_height": "100",
+                    "background_color": "#123456",
                     "on_click": {
                       "type": "JavaScript",
                       "script": "eigenActivity.showToast('image click eigenframe')"
