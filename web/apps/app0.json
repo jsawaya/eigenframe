@@ -26,7 +26,7 @@
     {
       "name": "INDEX",
       "type": "IndexFragment",
-      "icon_name": "viewlist.jpg"
+      "icon_name": "listview.jpg"
     },
     {
       "name": "VIEWER",
