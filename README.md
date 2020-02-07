@@ -57,7 +57,7 @@ As an sample, the home-url may return the following EigenFrame app specification
 }
 ```
 
-## EigenFrame Activity/Fragments
+## EigenFrame Activity and Tabs/Fragments
 
 An Android activity is typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
 
@@ -74,63 +74,63 @@ Tabs can either be selected with the user interface, or programmatically selecte
 
 Tabs can have a "name" attribute and/or an "icon_name" attribute to define the tab label.  
 
-Tabs of "type": "EigenFragment" have the "url" attribute to load components dynamically. 
+Tabs of "type": "EigenFragment" have the "url" attribute to dynamically load layouts, components and actions. 
 
 ### App-level specifications:
 
-App spec | Description | Examples
--------------- | ----------- | --------  
-[EigenFrame](./web/docs/EigenFrame.md)  | represents the top-level application specification | [examples](./web/apps/app1.json)
-[EigenFragment](./web/docs/EigenFragment.md)  | a tab/fragment can layout components within the tab selection area. | [examples](./web/apps/app1.json)
+App spec | Description 
+-------------- | ----------- 
+[EigenFrame](./web/docs/EigenFrame.md)  | represents the top-level application specification 
+[EigenFragment](./web/docs/EigenFragment.md)  | a tab/fragment can layout components within the tab selection area. 
 
 
 ### EigenFrame Layouts:
 
-Layout type | Description | Examples
------------ | ----------- | --------  
-[PopupScreen](./web/docs/PopupScreen.md) | layout a sequence of components in a new fullscreen window, and hides tabs (also an Action type) | [example](./web/frames/test-PopupScreen.json) 
-[LinearLayout](./web/docs/LinearLayout.md)  | sequence of components arranged vertically or horizontally, possibly scrollable | [example](./web/frames/playlist.json) 
-RelativeLayout | not implemented yet |
-ConstraintLayout | not implemented yet |
+Layout type | Description 
+----------- | ----------- 
+[PopupScreen](./web/docs/PopupScreen.md) | layout a sequence of components in a new fullscreen window, and hides tabs (also an Action type) 
+[LinearLayout](./web/docs/LinearLayout.md)  | sequence of components arranged vertically or horizontally, possibly scrollable 
+RelativeLayout | not implemented yet 
+ConstraintLayout | not implemented yet 
 
 ### EigenFrame Components
 
-Component type | Description | Examples
--------------- | ----------- | --------  
-[Button](./web/docs/Button.md)  | stateless component shows plaintext, with optional icon and has an "on_click" callback attribute  | [example](./web/frames/test-Button.json) 
-[TextView](./web/docs/TextView.md)  | shows plain text, with built-in fonts | [example](./web/frames/test-TextView.json) 
-[HtmlView](./web/docs/HtmlView.md)  | shows simple html, internal-icons, and simple web-links | [example](./web/frames/test-HtmlView.json) 
-[WebView](./web/docs/WebView.md)  | shows elaborate html, and url web-page  - javascript capable  | [example](./web/frames/test-WebView.json) 
-[ImageView](./web/docs/ImageView.md)  | shows images and external-icons | [example](./web/frames/test-ImageView.json) 
-[EditText](./web/docs/EditText.md) | a string value, with an editable text area for state value | [example](./web/frames/test-EditText.json) 
-[CheckBox](./web/docs/CheckBox.md) | a small box with or without a check mark, with integer value [0, 1] |  [example](./web/frames/test-CheckBox.json) 
-[Spinner](./web/docs/Spinner.md) | a popup multiple-choice option-list, and a selection index |   [example](./web/frames/test-Spinner.json) 
-[Switch](./web/docs/Switch.md) | a small switch [off, on] with an integer state value [0, 1] |  [example](./web/frames/test-Switch.json) 
-[ToggleButton](./web/docs/ToggleButton.md) | bi-modal button label with an integer state value [0, 1] |  [example](./web/frames/test-ToggleButton.json) 
-[RadioButton](./web/docs/RadioButton.md) | a multiple-choice option-list, and a selected index | [example](./web/frames/test-RadioButton.json) 
-[HorizontalLine](./web/docs/HorizontalLine.md) | a horizontal line <hr/> to separate components in vertical LinearLayout | [example](./web/frames/playlist.json) 
-[VerticalLine](./web/docs/VerticalLine.md) | a vertical line to separate components in horizontal LinearLayout |  
-[LinearLayout](./web/docs/LinearLayout.md)  | layout may also be nested component, within another layout | [example](./web/frames/playlist.json) 
+Component type | Description 
+-------------- | ----------- 
+[Button](./web/docs/Button.md)  | stateless component shows plaintext, with optional icon and has an "on_click" callback attribute  
+[TextView](./web/docs/TextView.md)  | shows plain text, with built-in fonts 
+[HtmlView](./web/docs/HtmlView.md)  | shows simple html, internal-icons, and simple web-links 
+[WebView](./web/docs/WebView.md)  | shows elaborate html, and url web-page  - javascript capable 
+[ImageView](./web/docs/ImageView.md)  | shows images and external-icons 
+[EditText](./web/docs/EditText.md) | a string value, with an editable text area for state value 
+[CheckBox](./web/docs/CheckBox.md) | a small box with or without a check mark, with integer value [0, 1] 
+[Spinner](./web/docs/Spinner.md) | a popup multiple-choice option-list, and a selection index 
+[Switch](./web/docs/Switch.md) | a small switch [off, on] with an integer state value [0, 1] 
+[ToggleButton](./web/docs/ToggleButton.md) | bi-modal button label with an integer state value [0, 1] 
+[RadioButton](./web/docs/RadioButton.md) | a multiple-choice option-list, and a selected index 
+[HorizontalLine](./web/docs/HorizontalLine.md) | a horizontal line <hr/> to separate components in vertical LinearLayout 
+[VerticalLine](./web/docs/VerticalLine.md) | a vertical line to separate components in horizontal LinearLayout 
+[LinearLayout](./web/docs/LinearLayout.md)  | layout may also be nested component, within another layout 
 
 ### EigenFrame Actions:
 
-Action type | Description | Examples
------------ | ----------- | --------  
-[ToastMessage](./web/docs/ToastMessage.md) | send a transient non-blocking "toast" message to the user's screen - good for a quick status update |
-[AlertDialog](./web/docs/AlertDialog.md) | popup dialog with "positive", "negative", and "neutral" options defined - Are you sure: "YES", "NO", "CANCEL"  | [example](./web/frames/test-AlertDialog.json) 
-[SelectDialog](./web/docs/SelectDialog.md) | popup multiple-choice option-list selected index| [example](./web/frames/test-SelectDialog.json) 
-[ListView](./web/docs/ListView.md) | popup a complex/dynamic multiple-choice option-list, with a row layout and a selected index | [example](./web/frames/test-ListView.json) 
-[PopupTextView](./web/docs/PopupTextView.md) | popup transient plaintext window | [example](./web/frames/test-PopupTextView.json) 
-[PopupHtmlView](./web/docs/PopupHtmlView.md) | popup transient HTML window | [example](./web/frames/test-PopupHtmlView.json) 
-[PopupScreen](./web/docs/PopupScreen.md) | popup collection of components in a new fullscreen window (also a Layout type) | [example](./web/frames/test-PopupScreen.json) 
-[JavaScript](./web/docs/JavaScript.md) | embedded javascript  | [example](./web/frames/test-Javascript.json) 
-[UrlRequest](./web/docs/UrlRequest.md) | url request |
-[SecureShell](./web/docs/SecureShell.md) | ssh commands |  
-[SecureFtp](./web/docs/SecureShell.md) | sftp commands | 
-[SetVariable](./web/docs/SetVariable.md) | sets a particular variable value |
-[ActionList](./web/docs/ActionList.md) | calls a sequence of actions |
-[Define](./web/docs/Define.md) | define a reusable cached component |
-[Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable component |
+Action type | Description
+----------- | ----------- 
+[ToastMessage](./web/docs/ToastMessage.md) | send a transient non-blocking "toast" message to the user's screen - good for a quick status update 
+[AlertDialog](./web/docs/AlertDialog.md) | popup dialog with "positive", "negative", and "neutral" options defined - Are you sure: "YES", "NO", "CANCEL" 
+[SelectDialog](./web/docs/SelectDialog.md) | popup multiple-choice option-list selected index
+[ListView](./web/docs/ListView.md) | popup a complex/dynamic multiple-choice option-list, with a row layout and a selected index 
+[PopupTextView](./web/docs/PopupTextView.md) | popup transient plaintext window
+[PopupHtmlView](./web/docs/PopupHtmlView.md) | popup transient HTML window 
+[PopupScreen](./web/docs/PopupScreen.md) | popup collection of components in a new fullscreen window (also a Layout type)
+[JavaScript](./web/docs/JavaScript.md) | embedded javascript  
+[UrlRequest](./web/docs/UrlRequest.md) | url request 
+[SecureShell](./web/docs/SecureShell.md) | ssh commands 
+[SecureFtp](./web/docs/SecureShell.md) | sftp commands 
+[SetVariable](./web/docs/SetVariable.md) | sets a particular variable value 
+[ActionList](./web/docs/ActionList.md) | calls a sequence of actions 
+[Define](./web/docs/Define.md) | define a reusable cached component 
+[Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable component 
 
 
 ![Alt](web/res/eigenframe.png "eigenframe")
