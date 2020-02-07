@@ -1,66 +1,74 @@
 # ![Alt](web/res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame
-## Platform for dynamic systems on Android
+## Framework to Generate Android Apps
 
 EigenFrame starts with a url request, but instead of getting a simple web page, 
 EigenFrame parses specifications (represented in JSON format) to dynamically build an openly programmable application that 
-includes Android user-interface components, and provides access to available camera hardware and device sensors.  
+includes Android user-interface components, and provides access to certain device sensors and hardware.  
 
 More than just a web-browser, EigenFrame has an embedded javascript interpreter with access to internal Android classes,
 methods and properties, and a secure-shell client capability to interface with a local Termux app (with openssh)
 to integrate *your own* application scripts, in whatever language/tool you choose (bash, git, ruby, perl, python, prolog, gpg ...).
 In contrast, web-browsers only have limited scripting access to the host mobile device, from inside a browser window.  
 
-EigenFrame provides asynchronous url/ssh requests, so you can use cloud-based services, or local Termux services 
-(like: Apache2/CGI, or Ruby Webrick) to generate dynamic EigenFrame components - the github repository includes examples. 
+EigenFrame provides asynchronous url/ssh/sftp requests, so you can use cloud-based services, or local Termux services 
+(like: Apache2/CGI, or Ruby Webrick) to generate dynamic EigenFrame components - the github jsawaya/eigenframe repository includes examples. 
  
 EigenFrame - a truly extensible architecture for dynamic system integration.
 
-## EigenFrame url-request
+## EigenFrame app url-request
 
-EigenFrame starts with a url-request to retrieve the application-level security specifications, 
-permissions and tab-fragments.  
+EigenFrame starts with an app url-request to retrieve the application-level security specifications, 
+and tab-fragments.  
 
-There are 3 ways to perform the initial EigenFrame url-request:
-* launch the EigenFrame app with a default home-url
-* use an EigenFrame short-cut (which contains an EigenFrame url)
-* an EigenFrame app can be designed launch the url of another completely different EigenFrame app.
+There are 3 ways to perform an initial EigenFrame url-request:
+* launch the EigenFrame app (which uses the default home-url)
+* launch an EigenFrame short-cut (which contains an EigenFrame app url)
+* or an EigenFrame app can be designed launch the url of another EigenFrame app.
 
-The home-url is defined in this eigenframe shared directory file:
+The home-url is defined in this eigenframe shared directory file - this 
 > /storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt
 
 This home-url file contains the following default app-url:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json
 
-As a simple example, this url returns the following EigenFrame specification:
+As an sample, the home-url may return the following EigenFrame app specification:
 ```json
 {
   "type": "EigenFrame",
   "is_secure_window": "true",
-  "request_permissions": [
-    "android.permission.CAMERA"
-  ],
   "tab_list": [
     {
       "icon_name": "ic_launcher_round.",
+      "name": "Startup",
       "type": "EigenFragment",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/playlist.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/define-clones.json"
     },
     {
-      "name": "PlayList\nfrom github",
+      "name": "Readme",
       "type": "EigenFragment",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/eigenframe-readme.json"
+    },
+    {
+      "name": "About",
+      "type": "EigenFragment",
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
     }
   ]
 }
 ```
 
+## EigenFrame Activity and Fragments
 
-Android activities are typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
+An Android activity is typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
 
-Tabs are an easy way to select which fragments are currently active, although your app designs may 
+Tabs are an common way to select which fragments are currently active, although your app designs may 
 choose to hide this particular feature by using PopupScreen components.
 
-The tab_list can define any number of fragments that load as you select them.  
+The tab_list may define any number of fragments that load and activate as you select them.  
+Generally, the fragments associated with adjacent tabs are also kept active.
+For example, using the sample app specification, the About tab fragment would not be loaded until the user selects Readme or About tabs.
+Also, If the user selects the About tab, then the Startup tab would become deactivated.
+This behaviour can be demonstrated with the [Enable Source Button]
 
 Tabs can either be selected with the user interface, or programmatically selected.
 
@@ -73,38 +81,61 @@ Tabs of "type": "EigenFragment" have the "url" attribute to load components dyna
 A fragment can layout scrollable components below the tab selection area, 
 or create any number of new screen components.
 
-Here are the types of component specifications:
+### App-level specifications:
+
+App spec | Description | Examples
+-------------- | ----------- | --------  
+[EigenFrame](./web/docs/EigenFrame.md)  | represents the top-level application specification | [examples](./web/apps/app1.json)
+[EigenFragment](./web/docs/EigenFragment.md)  | represents each tab/fragment within an application | [examples](./web/apps/app1.json)
+
+
+### Layout types:
+
+Layout type | Description | Examples
+----------- | ----------- | --------  
+[PopupScreen](./web/docs/PopupScreen.md) | collection of components in a new fullscreen window (also an Action type) | [example](./web/frames/test-PopupScreen.json) 
+[LinearLayout](./web/docs/LinearLayout.md)  | sequence of components arranged vertically or horizontally, possibly scrollable | [example](./web/frames/playlist.json) 
+RelativeLayout | not implemented yet |
+ConstraintLayout | not implemented yet |
+
+### Component types:
 
 Component type | Description | Examples
 -------------- | ----------- | --------  
-[EigenFrame](./web/docs/EigenFrame.md)  | represents a top-level application specification | [examples](./web/apps/app1.json)
-[EigenFragment](./web/docs/EigenFragment.md)  | represents each tab/fragment in an application | [examples](./web/apps/app1.json)
-[PopupScreen](./web/docs/PopupScreen.md) | represents a collection of components in a fullscreen window | [example](./web/frames/test-PopupScreen.json) 
-[LinearLayout](./web/docs/LinearLayout.md)  | sequence of components arranged vertically or horizontally | [example](./web/frames/playlist.json) 
-[RelativeLayout] | not implemented yet |
-[ConstraintLayout] | not implemented yet |
-[TextView](./web/docs/TextView.md)  | component shows plain text | [example](./web/frames/test-TextView.json) 
-[HtmlView](./web/docs/HtmlView.md)  | component shows simple html, internal-icons, and simple web-links | [example](./web/frames/test-HtmlView.json) 
-[ImageView](./web/docs/ImageView.md)  | component shows images and external-icons | [example](./web/frames/test-ImageView.json) 
-[WebView](./web/docs/WebView.md)  | component shows elaborate html, and url web-page  - javascript capable  | [example](./web/frames/test-WebView.json) 
-[HorizontalLine](./web/docs/HorizontalLine.md) | component that shows a horizontal line <hr/> to separate components in vertical LinearLayout | [example](./web/frames/playlist.json) 
-[VerticalLine](./web/docs/VerticalLine.md) | component that shows a vertical line to separate components in horizontal LinearLayout |  
-[EditText](./web/docs/EditText.md) | component that represents a string value, shows an editable text area | [example](./web/frames/test-EditText.json) 
-[Button](./web/docs/Button.md)  | component that shows plain text and has an "on_click" callback attribute  | [example](./web/frames/test-Button.json) 
-[ToggleButton](./web/docs/ToggleButton.md) | component that represents a integer value [0, 1], shows as bi-modal button label |  [example](./web/frames/test-ToggleButton.json) 
-[CheckBox](./web/docs/CheckBox.md) | component that represents a small box with or without a check mark, with integer value [0, 1] |  [example](./web/frames/test-CheckBox.json) 
-[Switch](./web/docs/Switch.md) | component that represents a  small switch [off, on] with integer value [0, 1] |  [example](./web/frames/test-Switch.json) 
-[RadioButton](./web/docs/RadioButton.md) | component that represents a multiple-choice option-list, and a selected index | [example](./web/frames/test-RadioButton.json) 
-[Spinner](./web/docs/Spinner.md) | component that represents a popup multiple-choice option-list, and a selection index |   [example](./web/frames/test-Spinner.json) 
-[ListView](./web/docs/ListView.md) | component that represents a multiple-choice option-list, with a row layout and a selected index | [example](./web/frames/test-ListView.json) 
-[SelectDialog](./web/docs/SelectDialog.md) | component that represents a popup multiple-choice option-list selection index| [example](./web/frames/test-SelectDialog.json) 
-[AlertDialog](./web/docs/AlertDialog.md) | component represents a popup multiple-choice option-list | [example](./web/frames/test-AlertDialog.json) 
-[PopupTextView](./web/docs/PopupTextView.md) | component that shows a small transient popup text window | [example](./web/frames/test-PopupTextView.json) 
-[PopupHtmlView](./web/docs/PopupHtmlView.md) | component that shows a small transient popup html window | [example](./web/frames/test-PopupHtmlView.json) 
+[Button](./web/docs/Button.md)  | stateless component shows plaintext, with optional icon and has an "on_click" callback attribute  | [example](./web/frames/test-Button.json) 
+[TextView](./web/docs/TextView.md)  | shows plain text, with built-in fonts | [example](./web/frames/test-TextView.json) 
+[HtmlView](./web/docs/HtmlView.md)  | shows simple html, internal-icons, and simple web-links | [example](./web/frames/test-HtmlView.json) 
+[WebView](./web/docs/WebView.md)  | shows elaborate html, and url web-page  - javascript capable  | [example](./web/frames/test-WebView.json) 
+[ImageView](./web/docs/ImageView.md)  | shows images and external-icons | [example](./web/frames/test-ImageView.json) 
+[EditText](./web/docs/EditText.md) | a string value, with an editable text area for state value | [example](./web/frames/test-EditText.json) 
+[CheckBox](./web/docs/CheckBox.md) | a small box with or without a check mark, with integer value [0, 1] |  [example](./web/frames/test-CheckBox.json) 
+[Spinner](./web/docs/Spinner.md) | a popup multiple-choice option-list, and a selection index |   [example](./web/frames/test-Spinner.json) 
+[Switch](./web/docs/Switch.md) | a small switch [off, on] with an integer state value [0, 1] |  [example](./web/frames/test-Switch.json) 
+[ToggleButton](./web/docs/ToggleButton.md) | bi-modal button label with an integer state value [0, 1] |  [example](./web/frames/test-ToggleButton.json) 
+[RadioButton](./web/docs/RadioButton.md) | a multiple-choice option-list, and a selected index | [example](./web/frames/test-RadioButton.json) 
+[HorizontalLine](./web/docs/HorizontalLine.md) | a horizontal line <hr/> to separate components in vertical LinearLayout | [example](./web/frames/playlist.json) 
+[VerticalLine](./web/docs/VerticalLine.md) | a vertical line to separate components in horizontal LinearLayout |  
+[LinearLayout](./web/docs/LinearLayout.md)  | layout may also be nested component, within another layout | [example](./web/frames/playlist.json) 
+
+### Action types:
+
+Action type | Description | Examples
+----------- | ----------- | --------  
+[ToastMessage](./web/docs/ToastMessage.md) | send a transient non-blocking "toast" message to the user's screen - good for a quick status update |
+[AlertDialog](./web/docs/AlertDialog.md) | popup dialog with "positive", "negative", and "neutral" options defined - Are you sure: "YES", "NO", "CANCEL"  | [example](./web/frames/test-AlertDialog.json) 
+[SelectDialog](./web/docs/SelectDialog.md) | popup multiple-choice option-list selected index| [example](./web/frames/test-SelectDialog.json) 
+[ListView](./web/docs/ListView.md) | popup a complex/dynamic multiple-choice option-list, with a row layout and a selected index | [example](./web/frames/test-ListView.json) 
+[PopupTextView](./web/docs/PopupTextView.md) | popup transient plaintext window | [example](./web/frames/test-PopupTextView.json) 
+[PopupHtmlView](./web/docs/PopupHtmlView.md) | popup transient HTML window | [example](./web/frames/test-PopupHtmlView.json) 
+[PopupScreen](./web/docs/PopupScreen.md) | popup collection of components in a new fullscreen window (also a Layout type) | [example](./web/frames/test-PopupScreen.json) 
 [JavaScript](./web/docs/JavaScript.md) | embedded javascript  | [example](./web/frames/test-Javascript.json) 
-[SecureShell](./web/docs/SecureShell.md) | ssh commands | [example](./cgi-bin/ruby-lib/eigen-lib.rb) 
 [UrlRequest](./web/docs/UrlRequest.md) | url request |
-[Variable] | not implemented yet |
+[SecureShell](./web/docs/SecureShell.md) | ssh commands |  
+[SecureFtp](./web/docs/SecureShell.md) | sftp commands | 
+[SetVariable](./web/docs/SetVariable.md) | sets a particular variable value |
+[ActionList](./web/docs/ActionList.md) | calls a sequence of actions |
+[Define](./web/docs/Define.md) | define a reusable cached component |
+[Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable component |
 
 
 ![Alt](web/res/eigenframe.png "eigenframe")
