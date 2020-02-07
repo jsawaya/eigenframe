@@ -155,25 +155,6 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Edit Remote File (from Termux)",
-        "icon": {
-          "name": "edit.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Edit Remote File",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
         "text": "GIT Administration",
         "icon": {
           "name": "cloud_download.",
@@ -185,6 +166,25 @@
           "attributes": {
             "title": "GIT Administration",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Edit Remote File",
+        "icon": {
+          "name": "edit.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Edit Remote File",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
           }
         }
       }

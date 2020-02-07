@@ -23,6 +23,7 @@
     {
       "type": "Clone",
       "name": "ButtonDefault",
+      "condition_script": "!eigenFragment.getViewState(999001).endsWith('.png')",
       "attributes": {
         "text": "Show Remote File",
         "icon": {
@@ -38,6 +39,7 @@
     {
       "type": "Clone",
       "name": "ButtonDefault",
+      "condition_script": "!eigenFragment.getViewState(999001).endsWith('.png')",
       "attributes": {
         "text": "Edit Remote File",
         "icon": {
@@ -53,6 +55,7 @@
     {
       "type": "Clone",
       "name": "ButtonDefault",
+      "condition_script": "eigenFragment.getViewState(999001).endsWith('.png')",
       "attributes": {
         "text": "Show Remote Image",
         "icon": {
