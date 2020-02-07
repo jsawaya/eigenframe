@@ -137,12 +137,12 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "ps -e",
+        "text": "ps -eo cmd",
         "on_click": {
           "type": "PopupTextView",
-          "title": "ps -e",
+          "title": "ps -eo cmd",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh": "ps -e"
+          "ssh": "ps -eo cmd"
         }
       }
     }
