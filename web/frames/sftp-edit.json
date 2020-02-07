@@ -49,21 +49,6 @@
           "name": "PopupScreenEditRemoteFile"
         }
       }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Send Remote File",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "SendRemoteFile"
-        }
-      }
     }
   ]
 }

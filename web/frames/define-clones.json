@@ -253,24 +253,47 @@
     },
     {
       "type": "Define",
-      "name": "SendRemoteFile",
+      "name": "PopupScreenImage",
       "component": {
-        "type": "SecureFtp",
-        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
-        "on_complete": {
-          "type": "JavaScript",
-          "script_list": [
-            "var f1 = eigenFragment.getCacheFilePath('EditText:999000')",
-            "eigenFragment.sendFile(f1, 'photopgp@gmail.com')"
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "x-id": 999098,
+          "title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+          "component_list": [
+            {
+              "type": "Clone",
+              "name": "LayoutVerticalScrollable",
+              "attributes": {
+                "component_list": [
+                  {
+                    "type": "ImageView",
+                    "url_script": "'file://'+ eigenFragment.getCacheFilePath('ImageView.png')",
+                    "layout_width": "match_parent",
+                    "layout_height": "100",
+                    "on_click": {
+                      "type": "JavaScript",
+                      "script": "eigenActivity.showToast('image click eigenframe')"
+                    }
+                  }
+                ]
+              }
+            }
           ]
         }
       }
     },
     {
-      "type": "x-SetVariable",
-      "name": "IsSourceButton",
-      "class": "boolean",
-      "value": true
+      "type": "Define",
+      "name": "PopupScreenImageRemoteFile",
+      "component": {
+        "type": "SecureFtp",
+        "sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' ImageView.png'",
+        "on_complete": {
+          "type": "Clone",
+          "name": "PopupScreenImage"
+        }
+      }
     },
     {
       "type": "Define",
