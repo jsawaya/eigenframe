@@ -269,7 +269,7 @@
                     "type": "ImageView",
                     "url_script": "'file://'+ eigenFragment.getCacheFilePath('ImageView.png')",
                     "layout_width": "match_parent",
-                    "layout_height": "100",
+                    "layout_height": "match_parent",
                     "background_color": "#123456",
                     "on_click": {
                       "type": "JavaScript",
