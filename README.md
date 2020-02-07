@@ -15,15 +15,15 @@ EigenFrame provides asynchronous url/ssh/sftp requests, so you can use cloud-bas
  
 EigenFrame - a truly extensible architecture for dynamic system integration.
 
-## EigenFrame app url-request
+## EigenFrame app url
 
-EigenFrame starts with an app url-request to retrieve the application-level security specifications, 
-and tab-fragments.  
+EigenFrame starts with an app url request to enable window security feature, 
+and tab-fragment specifications.  
 
-There are 3 ways to perform an initial EigenFrame url-request:
-* launch the EigenFrame app (which uses the default home-url)
-* launch an EigenFrame short-cut (which contains an EigenFrame app url)
-* or an EigenFrame app can be designed launch the url of another EigenFrame app.
+There are 3 ways to perform an EigenFrame app url request:
+* launch the default EigenFrame app (which uses the default home-url)
+* launch an EigenFrame short-cut (which contains an EigenFrame app url) - see Startup tab for example.
+* or an EigenFrame app can be designed to launch the url of another EigenFrame app.
 
 The home-url is defined in this eigenframe shared directory file - this 
 > /storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt
@@ -57,7 +57,7 @@ As an sample, the home-url may return the following EigenFrame app specification
 }
 ```
 
-## EigenFrame Activity and Fragments
+## EigenFrame Activity/Fragments
 
 An Android activity is typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
 
@@ -68,7 +68,7 @@ The tab_list may define any number of fragments that load and activate as you se
 Generally, the fragments associated with adjacent tabs are also kept active.
 For example, using the sample app specification, the About tab fragment would not be loaded until the user selects Readme or About tabs.
 Also, If the user selects the About tab, then the Startup tab would become deactivated.
-This behaviour can be demonstrated with the [Enable Source Button]
+This behaviour can be demonstrated with the [Enable Source Button] and selecting [About tab], then [Startup tab].
 
 Tabs can either be selected with the user interface, or programmatically selected.
 
@@ -76,29 +76,24 @@ Tabs can have a "name" attribute and/or an "icon_name" attribute to define the t
 
 Tabs of "type": "EigenFragment" have the "url" attribute to load components dynamically. 
 
-## EigenFrame components
-
-A fragment can layout scrollable components below the tab selection area, 
-or create any number of new screen components.
-
 ### App-level specifications:
 
 App spec | Description | Examples
 -------------- | ----------- | --------  
 [EigenFrame](./web/docs/EigenFrame.md)  | represents the top-level application specification | [examples](./web/apps/app1.json)
-[EigenFragment](./web/docs/EigenFragment.md)  | represents each tab/fragment within an application | [examples](./web/apps/app1.json)
+[EigenFragment](./web/docs/EigenFragment.md)  | a tab/fragment can layout components within the tab selection area. | [examples](./web/apps/app1.json)
 
 
-### Layout types:
+### EigenFrame Layouts:
 
 Layout type | Description | Examples
 ----------- | ----------- | --------  
-[PopupScreen](./web/docs/PopupScreen.md) | collection of components in a new fullscreen window (also an Action type) | [example](./web/frames/test-PopupScreen.json) 
+[PopupScreen](./web/docs/PopupScreen.md) | layout a sequence of components in a new fullscreen window, and hides tabs (also an Action type) | [example](./web/frames/test-PopupScreen.json) 
 [LinearLayout](./web/docs/LinearLayout.md)  | sequence of components arranged vertically or horizontally, possibly scrollable | [example](./web/frames/playlist.json) 
 RelativeLayout | not implemented yet |
 ConstraintLayout | not implemented yet |
 
-### Component types:
+### EigenFrame Components
 
 Component type | Description | Examples
 -------------- | ----------- | --------  
@@ -117,7 +112,7 @@ Component type | Description | Examples
 [VerticalLine](./web/docs/VerticalLine.md) | a vertical line to separate components in horizontal LinearLayout |  
 [LinearLayout](./web/docs/LinearLayout.md)  | layout may also be nested component, within another layout | [example](./web/frames/playlist.json) 
 
-### Action types:
+### EigenFrame Actions:
 
 Action type | Description | Examples
 ----------- | ----------- | --------  
