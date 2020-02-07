@@ -55,7 +55,23 @@
     {
       "type": "Clone",
       "name": "ButtonDefault",
-      "condition_script": "eigenFragment.getViewState(999001).endsWith('.png')",
+      "condition_script": "eigenFragment.getViewState(999001).toLowerCase().endsWith('.png')",
+      "attributes": {
+        "text": "Show Remote Image",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenImageRemoteFile"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "condition_script": "eigenFragment.getViewState(999001).toLowerCase().endsWith('.jpg')",
       "attributes": {
         "text": "Show Remote Image",
         "icon": {
