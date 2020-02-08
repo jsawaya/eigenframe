@@ -111,6 +111,7 @@ Component type | Description
 [HorizontalLine](./web/docs/HorizontalLine.md) | a horizontal line <hr/> to separate components in vertical LinearLayout 
 [VerticalLine](./web/docs/VerticalLine.md) | a vertical line to separate components in horizontal LinearLayout 
 [LinearLayout](./web/docs/LinearLayout.md)  | layout may also be nested component, within another layout 
+[ListView](./web/docs/ListView.md) | a complex/dynamic multiple-choice option-list, with a row layout and a selected index 
 
 ### EigenFrame Actions:
 
@@ -119,7 +120,6 @@ Action type | Description
 [ToastMessage](./web/docs/ToastMessage.md) | send a transient non-blocking "toast" message to the user's screen - good for a quick status update 
 [AlertDialog](./web/docs/AlertDialog.md) | popup dialog with "positive", "negative", and "neutral" options defined - Are you sure: "YES", "NO", "CANCEL" 
 [SelectDialog](./web/docs/SelectDialog.md) | popup multiple-choice option-list selected index
-[ListView](./web/docs/ListView.md) | popup a complex/dynamic multiple-choice option-list, with a row layout and a selected index 
 [PopupTextView](./web/docs/PopupTextView.md) | popup transient plaintext window
 [PopupHtmlView](./web/docs/PopupHtmlView.md) | popup transient HTML window 
 [PopupScreen](./web/docs/PopupScreen.md) | popup collection of components in a new fullscreen window (also a Layout type)
@@ -127,7 +127,8 @@ Action type | Description
 [UrlRequest](./web/docs/UrlRequest.md) | url request 
 [SecureShell](./web/docs/SecureShell.md) | ssh commands 
 [SecureFtp](./web/docs/SecureShell.md) | sftp commands 
-[SetVariable](./web/docs/SetVariable.md) | sets a particular variable value 
+[Variable](./web/docs/Variable.md) | dynamic variable values 
+[Cache](./web/docs/Cache.md) | dynamic cache files
 [ActionList](./web/docs/ActionList.md) | calls a sequence of actions 
 [Define](./web/docs/Define.md) | define a reusable cached component 
 [Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable component 
