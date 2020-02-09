@@ -70,11 +70,12 @@
     {
       "type": "ToggleButton",
       "id": 991005,
-      "text_on": "reset",
-      "text_off": "clear",
+      "text_on": "Clear",
+      "text_off": "Reset",
       "checked": false,
       "text_color": "#ffffff",
       "background_color": "#654321",
+      "gravity": "center",
       "margin": {
         "left": 10,
         "top": 10,
@@ -84,11 +85,6 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))",
-          "if (eigenFragment.getViewState() == '1') eigenFragment.setViewState(991001,'git-repos/eigenframe')",
-          "else eigenFragment.setViewState(991001,'')"
-        ],
-        "x-script_list": [
           "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))",
           "if (eigenFragment.getViewState() == '1') eigenFragment.setViewState(991001,'git-repos/eigenframe')",
           "else eigenFragment.setViewState(991001,'')"
