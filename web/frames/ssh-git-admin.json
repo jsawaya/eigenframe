@@ -254,7 +254,7 @@
       "attributes": {
         "text": "git restore (revert to master)",
         "icon": {
-          "name": "redo.",
+          "name": "undo.",
           "location": "top"
         },
         "on_click": {
