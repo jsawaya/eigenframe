@@ -88,8 +88,8 @@
         ],
         "x-script_list": [
           "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))",
-          "if (eigenView.isChecked()) eigenView.setChecked(false)",
-          "else eigenView.setChecked(true)"
+          "if (eigenFragment.getViewState() == '1') eigenFragment.setViewState(991001,'git-repos/eigenframe')",
+          "else eigenFragment.setViewState(991001,'')"
         ]
       }
     },
