@@ -133,6 +133,50 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
+          "Termux external storage"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "directory ~/storage",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "directory ~/storage",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "sftp": "directory ~/storage"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
           "Termux/eigenframe working directory"
         ]
       }
