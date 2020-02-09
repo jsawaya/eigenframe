@@ -84,7 +84,9 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))"
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))",
+          "if (eigenFragment.getViewState() == '1') eigenFragment.setViewState(991001,'git-repos/eigenframe')",
+          "else eigenFragment.setViewState(991001,'')"
         ],
         "x-script_list": [
           "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))",
