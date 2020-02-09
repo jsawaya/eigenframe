@@ -15,7 +15,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Termux/sftp home directory:"
+        "text": "Termux/sftp Home Directory:"
       }
     },
 
@@ -45,7 +45,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Home git working directory: \n(relative to sftp home directory)"
+        "text": "Home GIT Working Directory: \n(relative to sftp home directory)"
       }
     },
 
@@ -77,7 +77,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Git Repository Path"
+        "text": "Current GIT Path"
       }
     },
     {
@@ -106,7 +106,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Selected File Name: "
+        "text": "Selected Filename: "
       }
     },
     {
@@ -149,14 +149,16 @@
         "type": "JavaScript",
         "script_list": [
           "if (eigenFragment.getViewState() == '1') eigenFragment.setViewState(991001,'git-repos/eigenframe')",
-          "else eigenFragment.setViewState(991001,'')"
+          "else eigenFragment.setViewState(991001,'')",
+          "eigenFragment.setViewState(991002,'')",
+          "eigenFragment.setViewState(991003,'')"
         ]
       }
     },
 
     {
       "type": "Button",
-      "text": "Explore Remote Directory (ListView)",
+      "text": "Explore Current GIT Path",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
@@ -198,7 +200,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "pull github master, merge to test branch in git-repos/eigenframe",
+        "text": "Refresh from github master\n(merge to local test branch)",
         "icon": {
           "name": "cloud_download.",
           "location": "top"
@@ -207,7 +209,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "pull github master, merge to test branch in git-repos/eigenframe",
+            "title": "Refresh from github master\n(merge to local test branch)",
             "component_list": [
               {
                 "type": "Clone",
