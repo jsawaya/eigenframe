@@ -201,6 +201,89 @@
         }
       }
     },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Check differences between selected file and master: "
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git diff from master",
+        "icon": {
+          "name": "check.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git diff from master",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.concatPaths(991002, 991003) + ' -- ' + eigenFragment.concatPaths(991002, 991003); "
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git restore (revert to master)",
+        "icon": {
+          "name": "redo.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git restore",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git restore ' + eigenFragment.concatPaths(991002, 991003) "
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
 
     {
       "type": "Clone",
@@ -210,7 +293,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Refresh Current GIT Working Directory (test branch) from GITHUB Master: "
+        "text": "Refresh GIT Working Directory (test branch) from GITHUB Master: "
       }
     },
     {
@@ -316,81 +399,6 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Show differences between selected file and master: "
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "git diff from master",
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "git diff from master",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.concatPaths(991002, 991003) + ' -- ' + eigenFragment.concatPaths(991002, 991003); "
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "git restore (revert to master)",
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "git restore",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git restore ' + eigenFragment.concatPaths(991002, 991003) "
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
         "text": "Commit Changes in GIT Working Directory to GITHUB (Test Branch): "
       }
     },
@@ -400,6 +408,10 @@
       "name": "ButtonDefault",
       "attributes": {
         "text": "git add *",
+        "icon": {
+          "name": "add.",
+          "location": "top"
+        },
         "on_click": {
           "type": "Clone",
           "name": "PopupScreenDefault",
@@ -432,6 +444,10 @@
       "name": "ButtonDefault",
       "attributes": {
         "text": "git commit -a m 'testing'",
+        "icon": {
+          "name": "save.",
+          "location": "top"
+        },
         "on_click": {
           "type": "Clone",
           "name": "PopupScreenDefault",
