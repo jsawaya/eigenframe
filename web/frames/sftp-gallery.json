@@ -141,7 +141,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "directory ~/storage",
+        "text": "directory storage",
         "icon": {
           "name": "info.",
           "location": "top"
@@ -150,7 +150,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "directory ~/storage",
+            "title": "directory storage",
             "component_list": [
               {
                 "type": "Clone",
@@ -161,7 +161,7 @@
                       "type": "Clone",
                       "name": "TextViewDetail",
                       "attributes": {
-                        "sftp": "directory ~/storage"
+                        "sftp": "directory storage"
                       }
                     }
                   ]
