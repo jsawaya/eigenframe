@@ -212,15 +212,32 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Test Apache2 Web Root",
+        "text": "Test Apache2 Web Service",
         "icon": {
           "name": "info.",
           "location": "top"
         },
         "on_click": {
-          "type": "WebView",
-          "layout_width": "match_parent",
-          "url": "http://localhost:8080/"
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Apache2 Web Service",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "WebView",
+                      "layout_width": "match_parent",
+                      "url": "http://localhost:8080"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       }
     },
