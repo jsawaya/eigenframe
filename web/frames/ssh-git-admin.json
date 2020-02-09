@@ -84,6 +84,9 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))"
+        ],
+        "x-script_list": [
           "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))",
           "if (eigenView.isChecked()) eigenView.setChecked(false)",
           "else eigenView.setChecked(true)"
