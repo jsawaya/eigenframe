@@ -15,7 +15,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Termux/sftp Home Directory:"
+        "text": "Termux Home (sftp home):"
       }
     },
 
@@ -45,7 +45,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Home GIT Working Directory: \n(relative to sftp home directory)"
+        "text": "GIT Working Directory: \n(relative to sftp home)"
       }
     },
 
@@ -77,7 +77,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Current GIT Path"
+        "text": "Current GIT Path:"
       }
     },
     {
@@ -132,13 +132,24 @@
       "name": "HorizontalLine"
     },
     {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Navigation: "
+      }
+    },
+    {
       "type": "ToggleButton",
-      "text_on": "Clear",
-      "text_off": "Reset",
+      "text_on": "Clear Path",
+      "text_off": "Reset Path",
       "checked": false,
       "text_color": "#ffffff",
       "background_color": "#654321",
       "gravity": "center",
+      "icon": {
+        "name": "cancel.",
+        "location": "top"
+      },
       "margin": {
         "left": 10,
         "top": 10,
@@ -195,12 +206,18 @@
       "type": "Clone",
       "name": "HorizontalLine"
     },
-
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Refresh Current GIT Working Directory (test branch) from GITHUB Master: "
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Refresh from github master\n(merge to local test branch)",
+        "text": "Pull from github master\n(merge to working test branch)",
         "icon": {
           "name": "cloud_download.",
           "location": "top"
@@ -209,7 +226,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Refresh from github master\n(merge to local test branch)",
+            "title": "Pull from github master\n(merge to working test branch)",
             "component_list": [
               {
                 "type": "Clone",
@@ -291,6 +308,93 @@
         }
       }
     },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Show differences between selected file and master: "
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git diff from master",
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git diff from master",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.concatPaths(991002, 991003) + ' -- ' + eigenFragment.concatPaths(991002, 991003); "
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git restore (revert to master)",
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git restore",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git restore ' + eigenFragment.concatPaths(991002, 991003) "
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Commit Changes in GIT Working Directory to GITHUB (Test Branch): "
+      }
+    },
+
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -393,6 +497,18 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Sign into GITHUB, select Test branch, create pull request, and merge: "
+      }
+    },
+
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
         "text": "EigenFrame Github Webpage",
@@ -417,74 +533,6 @@
                       "layout_height": "wrap_content",
                       "is_javascript_enabled": true,
                       "url": "https://github.com/jsawaya/eigenframe"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "git diff from master",
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "git diff from master",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git diff master:' + eigenFragment.concatPaths(991002, 991003) + ' -- ' + eigenFragment.concatPaths(991002, 991003); "
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "git restore (revert to master)",
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "git restore",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git restore ' + eigenFragment.concatPaths(991002, 991003) "
-                      }
                     }
                   ]
                 }
