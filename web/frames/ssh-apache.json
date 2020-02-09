@@ -10,7 +10,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Apache2 Administration"
+        "text": "Apache2 Installation"
       }
     },
 
@@ -104,6 +104,18 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Apache2 Administration - Start/Stop Processes"
+      }
+    },
+
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
         "text": "Check if Apache2 HTTP processes are running",
@@ -161,7 +173,49 @@
         }
       }
     },
-
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Stop Apache2 HTTP/CGI Services",
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "Stop Apache2 HTTP/CGI Services",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "ssh_list": [
+            "killall httpd",
+            "echo Stopped Apache2 services"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Apache2 Testing"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Test Apache2 Web Root",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupHtmlView",
+          "title": "Test Apache2 Web Root",
+          "url": "http://localhost:8080/"
+        }
+      }
+    },
 
 
     {
@@ -212,23 +266,6 @@
 
     {
       "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Stop Apache2 HTTP/CGI Services",
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "Stop Apache2 HTTP/CGI Services",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh_list": [
-            "killall httpd",
-            "echo Stopped Apache2 services"
-          ]
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
       "name": "HorizontalLine"
     },
     {
@@ -243,7 +280,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch Localhost HTTP Gallery Example",
+        "text": "Launch Gallery Example (from http localhost:8080)",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -261,14 +298,14 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "File System Explorer\n(show json textview)",
+        "text": "Test File System Explorer\n(shows json specs)",
         "icon": {
           "name": "open_browser.",
           "location": "top"
         },
         "on_click": {
           "type": "PopupTextView",
-          "title": "File System Explorer\n(show json textview)",
+          "title": "File System Explorer\n(show json specs)",
           "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
         }
       }
@@ -278,7 +315,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "File System Explorer\n(CGI calls Ruby)",
+        "text": "Launch File System Explorer\n(CGI calls Ruby)",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -287,7 +324,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "File System Explorer\n(Dynamic Application Demo)",
+            "title": "Launch File System Explorer\n(CGI calls Ruby)",
             "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
           }
         }
