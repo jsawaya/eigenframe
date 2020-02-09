@@ -68,6 +68,32 @@
       }
     },
     {
+      "type": "ToggleButton",
+      "id": 991005,
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_on": "reset",
+      "text_off": "clear",
+      "checked": false,
+      "text_color": "#ffffff",
+      "background_color": "#ff00ff",
+      "margin-x": {
+        "left": 40,
+        "top": 40,
+        "right": 40,
+        "bottom": 40
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(991005))",
+          "if (eigenView.setChecked()) {eigenView.setChecked(false)}",
+          "else {eigenView.setChecked(true)}"
+        ]
+      }
+    },
+
+    {
       "type": "Clone",
       "name": "HorizontalLine"
     },
