@@ -11,7 +11,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Termux/Host Administration"
+        "text": "Termux Host Administration"
       }
     },
     {
