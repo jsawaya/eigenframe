@@ -280,31 +280,6 @@
       }
     },
     {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "PhotoPGP demo",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "open_browser.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app0.json')"
-        ]
-      }
-    },
-    {
       "type": "Clone",
       "name": "HorizontalLine"
     },

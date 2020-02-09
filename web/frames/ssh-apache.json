@@ -119,6 +119,10 @@
       "name": "ButtonDefault",
       "attributes": {
         "text": "Check if Apache2 HTTP processes are running",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
         "on_click": {
           "type": "PopupTextView",
           "title": "Check if Apache2 HTTP processes are running",
@@ -136,7 +140,7 @@
       "attributes": {
         "text": "Start Apache2 HTTP/CGI Services",
         "icon": {
-          "name": "settings.",
+          "name": "open_with.",
           "location": "top"
         },
         "on_click": {
@@ -178,6 +182,10 @@
       "name": "ButtonDefault",
       "attributes": {
         "text": "Stop Apache2 HTTP/CGI Services",
+        "icon": {
+          "name": "close.",
+          "location": "top"
+        },
         "on_click": {
           "type": "PopupTextView",
           "title": "Stop Apache2 HTTP/CGI Services",
