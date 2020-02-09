@@ -70,18 +70,16 @@
     {
       "type": "ToggleButton",
       "id": 991005,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "text_on": "reset",
       "text_off": "clear",
       "checked": false,
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "margin-x": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
+      "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "JavaScript",
