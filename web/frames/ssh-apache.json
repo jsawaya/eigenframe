@@ -110,7 +110,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Apache2 Administration - Start/Stop Processes"
+        "text": "Apache2 Administration - Start/Stop"
       }
     },
 
@@ -218,8 +218,8 @@
           "location": "top"
         },
         "on_click": {
-          "type": "PopupHtmlView",
-          "title": "Test Apache2 Web Root",
+          "type": "WebView",
+          "layout_width": "match_parent",
           "url": "http://localhost:8080/"
         }
       }
