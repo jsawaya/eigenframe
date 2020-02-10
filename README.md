@@ -61,16 +61,14 @@ As an sample, the home-url may return the following EigenFrame app specification
 
 An Android activity is typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
 
-Tabs are an common way to select which fragments are currently active, although your app designs may 
-choose to hide this particular feature by using PopupScreen components.
+As a simple way to define muliple fragments, tabs also provide a way to select which fragments are currently active, 
+although your app design may choose to hide this particular feature by using PopupScreen components.
 
 The tab_list may define any number of fragments that load and activate as you select them.  
-Generally, the fragments associated with adjacent tabs are also kept active.
-For example, using the sample app specification, the About tab fragment would not be loaded until the user selects Readme or About tabs.
-Also, If the user selects the About tab, then the Startup tab would become deactivated.
-This behaviour can be demonstrated with the [Enable Source Button] and selecting [About tab], then [Startup tab].
 
-Tabs can either be selected with the user interface, or programmatically selected.
+Fragments associated with adjacent tabs are also activated.
+
+Tabs can either be selected with the user interface, or selected programmatically.
 
 Tabs can have a "name" attribute and/or an "icon_name" attribute to define the tab label.  
 
