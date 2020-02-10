@@ -15,65 +15,6 @@ EigenFrame provides asynchronous url/ssh/sftp requests, so you can use cloud-bas
  
 EigenFrame - a truly extensible architecture for dynamic system integration.
 
-## EigenFrame app url
-
-EigenFrame starts with an app url request to enable window security feature, 
-and tab-fragment specifications.  
-
-There are 3 ways to perform an EigenFrame app url request:
-* launch the default EigenFrame app (which uses the default home-url)
-* launch an EigenFrame short-cut (which contains an EigenFrame app url) - see Startup tab for example.
-* or an EigenFrame app can be designed to launch the url of another EigenFrame app.
-
-The home-url is defined in this eigenframe shared directory file - this 
-> /storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt
-
-This home-url file contains the following default app-url:
-> file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json
-
-As an sample, the home-url may return the following EigenFrame app specification:
-```json
-{
-  "type": "EigenFrame",
-  "is_secure_window": "true",
-  "tab_list": [
-    {
-      "icon_name": "ic_launcher_round.",
-      "name": "Startup",
-      "type": "EigenFragment",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/define-clones.json"
-    },
-    {
-      "name": "Readme",
-      "type": "EigenFragment",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/eigenframe-readme.json"
-    },
-    {
-      "name": "About",
-      "type": "EigenFragment",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
-    }
-  ]
-}
-```
-
-## EigenFrame Activity and Tabs/Fragments
-
-An Android activity is typically composed of several fragments that can be dynamically loaded and unloaded to manage system resources.
-
-As a simple way to define muliple fragments, tabs also provide a way to select which fragments are currently active, 
-although your app design may choose to hide this particular feature by using PopupScreen components.
-
-The tab_list may define any number of fragments that load and activate as you select them.  
-
-Fragments associated with adjacent tabs are also activated.
-
-Tabs can either be selected with the user interface, or selected programmatically.
-
-Tabs can have a "name" attribute and/or an "icon_name" attribute to define the tab label.  
-
-Tabs of "type": "EigenFragment" have the "url" attribute to dynamically load layouts, components and actions. 
-
 ### App-level specifications:
 
 App spec | Description 
