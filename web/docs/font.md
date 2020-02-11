@@ -1,6 +1,8 @@
 # font attribute 
 ## schema pattern
 
+See: https://github.com/jsawaya/eigenframe/web/res/font 
+
 Example:
 ```json
   {
