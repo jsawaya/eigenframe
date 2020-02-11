@@ -1,18 +1,12 @@
 # ![Alt](web/res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame
 ## Framework to Generate Android Apps
 
-EigenFrame starts with a url request, but instead of getting a simple web page, 
-EigenFrame parses specifications (represented in JSON format) to dynamically build an openly programmable application that 
-includes Android user-interface components, and provides access to certain device sensors and hardware.  
+EigenFrame starts with a url request, but instead of getting a simple web page, EigenFrame parses specifications (represented in JSON format) to dynamically build an openly programmable application that includes Android user-interface components, and provides access to certain device sensors and hardware.
 
-More than just a web-browser, EigenFrame has an embedded javascript interpreter with access to internal Android classes,
-methods and properties, and a secure-shell client capability to interface with a local Termux app (with openssh)
-to integrate *your own* application scripts, in whatever language/tool you choose (bash, git, ruby, perl, python, prolog, gpg ...).
-In contrast, web-browsers only have limited scripting access to the host mobile device, from inside a browser window.  
+More than just a web-browser, EigenFrame has an embedded javascript interpreter with access to Android classes, methods and properties, and a secure-shell client capability to interface with a local Termux app (through openssh) to integrate your own application scripts, in *whatever* language/tool you choose (bash, git, ruby, perl, python, prolog, gpg ...). In contrast, web-browsers only have limited scripting access to the host mobile device, from inside a browser window.
 
-EigenFrame provides asynchronous url/ssh/sftp requests, so you can use cloud-based services, or local Termux services 
-(like: Apache2/CGI, or Ruby Webrick) to generate dynamic EigenFrame components - the github jsawaya/eigenframe repository includes examples. 
- 
+EigenFrame also provides asynchronous url, ssh, and sftp requests, so you can use cloud-based services, or local Termux services (like: Apache2/CGI, or Ruby Webrick) to generate dynamic EigenFrame components at runtime.
+
 EigenFrame - a truly extensible architecture for dynamic system integration.
 
 ### App-level specifications:
