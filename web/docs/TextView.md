@@ -11,7 +11,7 @@
 
 * text_color
 * text_size
-* font: [font attribute](./web/docs/font.md)
+* font: [font attribute](./font.md)
 * layout_width
 * layout_height
 * gravity

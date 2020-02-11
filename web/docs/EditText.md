@@ -4,7 +4,7 @@
 * type = "EditText"
 * is_password = true | false (default)
 * is_single_line = true | false (default)
-* filter: [filter attribute](./web/docs/EditText-filter.md)
+* filter: [filter attribute](./EditText-filter.md)
 * text | text_script
 * url
 * ssh / is_toast = true | false
@@ -14,7 +14,7 @@
 
 * text_color
 * text_size
-* font: [font attribute](./web/docs/font.md)
+* font: [font attribute](./font.md)
 * layout_width
 * layout_height
 * gravity
