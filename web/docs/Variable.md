@@ -1,6 +1,17 @@
 # Variable
 ## schema pattern
 
+* type = "Variable"
+* name
+* id (optional)
+* method
+** set 
+ class = boolean | integer | long | string
+ value 
+
+** toast - shows the value as a transient toast message 
+
+
 Example:
 ```json
   {
@@ -21,12 +32,3 @@ Example:
 ```
 
 
-* type = "Variable"
-* name
-* id (optional)
-* method
-** set 
- class = boolean | integer | long | string
- value 
-
-** toast - shows the value as a transient toast message 

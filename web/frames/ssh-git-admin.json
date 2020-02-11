@@ -522,41 +522,18 @@
         "text": "Sign into GITHUB, select Test branch, create pull request, and merge: "
       }
     },
-
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "EigenFrame Github Webpage",
-        "icon": {
-          "name": "import_export.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "EigenFrame Github Repository",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "WebView",
-                      "layout_width": "match_parent",
-                      "layout_height": "wrap_content",
-                      "is_javascript_enabled": true,
-                      "url": "https://github.com/jsawaya/eigenframe"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
+      "type": "HtmlView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "gravity": "center",
+      "x_text_size": "14",
+      "text_color": "#ffffff",
+      "html_list": [
+        "<img src='ic_launcher.'>",
+        "<h1><font color=\"#8aec81\">EigenFrame Github Webpage: </font></h1>",
+        "https://github.com/jsawaya/eigenframe"
+      ]
     },
     {
       "type": "Clone",

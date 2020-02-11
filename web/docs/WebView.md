@@ -1,6 +1,13 @@
 # WebView
 ## schema pattern
 
+* type = "WebView"
+* layout_width
+* layout_height
+* html
+* url
+** is_javascript_enabled : true | false (default)
+
 Example:
 ```json
 {
@@ -28,13 +35,6 @@ Example:
 }
 ```
 
-
-* type = "WebView"
-* layout_width
-* layout_height
-* html
-* url
-** is_javascript_enabled : true | false (default)
 
 
 

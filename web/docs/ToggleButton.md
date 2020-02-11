@@ -1,6 +1,21 @@
 # ToggleButton
 ## schema pattern
 
+* type = "ToggleButton"
+* text_on
+* text_off
+* checked = true | false (default) 
+* id = define unique view id
+* text_color
+* layout_width
+* layout_height
+* gravity
+* background_color
+* icon
+* padding 
+* margin
+* on_click action script
+
 Example:
 ```json
     {
@@ -32,20 +47,4 @@ Example:
       }
     }
 ```
-
-
-* type = "ToggleButton"
-* text_on
-* text_off
-* checked = true | false (default) 
-* id = define unique view id
-* text_color
-* layout_width
-* layout_height
-* gravity
-* background_color
-* icon
-* padding 
-* margin
-* on_click action script
 

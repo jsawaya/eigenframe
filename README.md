@@ -36,11 +36,11 @@ ConstraintLayout | not implemented yet
 
 Component type | Description 
 -------------- | ----------- 
-[Button](./web/docs/Button.md)  | stateless component shows plaintext, with optional icon and has an "on_click" callback attribute  
+[Button](./web/docs/Button.md)  | stateless button component with optional icon and has an "on_click" callback attribute  
 [TextView](./web/docs/TextView.md)  | shows plain text, with built-in fonts 
 [HtmlView](./web/docs/HtmlView.md)  | shows simple html, internal-icons, and simple web-links 
 [WebView](./web/docs/WebView.md)  | shows elaborate html, and url web-page  - javascript capable 
-[ImageView](./web/docs/ImageView.md)  | shows images and external-icons 
+[ImageView](./web/docs/ImageView.md)  | shows image or external-icons 
 [EditText](./web/docs/EditText.md) | a string value, with an editable text area for state value 
 [CheckBox](./web/docs/CheckBox.md) | a small box with or without a check mark, with integer value [0, 1] 
 [Spinner](./web/docs/Spinner.md) | a popup multiple-choice option-list, and a selection index 
@@ -50,14 +50,14 @@ Component type | Description
 [HorizontalLine](./web/docs/HorizontalLine.md) | a horizontal line <hr/> to separate components in vertical LinearLayout 
 [VerticalLine](./web/docs/VerticalLine.md) | a vertical line to separate components in horizontal LinearLayout 
 [LinearLayout](./web/docs/LinearLayout.md)  | layout may also be nested component, within another layout 
-[ListView](./web/docs/ListView.md) | a complex/dynamic multiple-choice option-list, with a row layout and a selected index 
+[ListView](./web/docs/ListView.md) | a complex/dynamic multiple-choice option-list, with runtime row layout and define items from cached file 
 
 ### EigenFrame Actions:
 
 Action type | Description
 ----------- | ----------- 
 [ToastMessage](./web/docs/ToastMessage.md) | send a transient non-blocking "toast" message to the user's screen - good for a quick status update 
-[AlertDialog](./web/docs/AlertDialog.md) | popup dialog with "positive", "negative", and "neutral" options defined - Are you sure: "YES", "NO", "CANCEL" 
+[AlertDialog](./web/docs/AlertDialog.md) | popup dialog with "positive", "negative", and "neutral" options defined - e.g. Are you sure: "YES", "NO", "CANCEL" 
 [SelectDialog](./web/docs/SelectDialog.md) | popup multiple-choice option-list selected index
 [PopupTextView](./web/docs/PopupTextView.md) | popup transient plaintext window
 [PopupHtmlView](./web/docs/PopupHtmlView.md) | popup transient HTML window 
@@ -70,7 +70,7 @@ Action type | Description
 [Cache](./web/docs/Cache.md) | dynamic cache files (not implemented yet)
 [ActionList](./web/docs/ActionList.md) | calls a sequence of actions 
 [Define](./web/docs/Define.md) | define a reusable cached component 
-[Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable component 
+[Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable cached component 
 
 
 ![Alt](web/res/eigenframe.png "eigenframe")

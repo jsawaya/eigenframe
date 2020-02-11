@@ -1,6 +1,13 @@
 # SecureFtp
 ## schema pattern
 
+
+* type = "SecureFtp"
+* id
+* sftp
+** is_eigen_response : true | false (default)
+* on_complete : action script begins when url response is available 
+
 Example:
 ```json
       {
@@ -19,15 +26,4 @@ Example:
         }
       }
 ```
-
-
-* type = "SecureFtp"
-* id
-* sftp
-** is_eigen_response : true | false (default)
-* on_complete : action script begins when url response is available 
-
-
-
-
 

@@ -9,3 +9,45 @@
 * gravity = top | bottom | left | right | center_horizontal | center_vertical
 * component_list is a sequence of components, actions or nested layouts
 
+Example:
+```json
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "component_list": [
+
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Termux Home (sftp home):"
+      }
+    },
+
+    {
+      "type": "TextView",
+      "id": 991000,
+      "sftp": "pwd",
+      "layout_width": "match_parent",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "gravity": "left",
+      "background_color": "#000000",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      }
+    }
+  ]
+}
+```

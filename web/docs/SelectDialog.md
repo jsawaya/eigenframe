@@ -9,7 +9,7 @@
 * option_list
 * on_click : action script event listener
 
-Example SelectDialog
+Example:
 ```json
 {
   "type": "SelectDialog",

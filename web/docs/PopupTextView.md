@@ -19,4 +19,27 @@
 * padding 
 * margin
 
+Example:
+```json
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Stop Apache2 HTTP/CGI Services",
+        "icon": {
+          "name": "close.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "Stop Apache2 HTTP/CGI Services",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "ssh_list": [
+            "killall httpd",
+            "echo Stopped Apache2 services"
+          ]
+        }
+      }
+    }
+```
 
