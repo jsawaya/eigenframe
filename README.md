@@ -67,7 +67,7 @@ Action type | Description
 [SecureShell](./web/docs/SecureShell.md) | ssh commands 
 [SecureFtp](./web/docs/SecureShell.md) | sftp commands 
 [Variable](./web/docs/Variable.md) | dynamic variable values 
-[Cache](./web/docs/Cache.md) | dynamic cache files
+[Cache](./web/docs/Cache.md) | dynamic cache files (not implemented yet)
 [ActionList](./web/docs/ActionList.md) | calls a sequence of actions 
 [Define](./web/docs/Define.md) | define a reusable cached component 
 [Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable component 

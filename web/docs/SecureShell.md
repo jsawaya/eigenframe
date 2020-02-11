@@ -1,0 +1,21 @@
+# SecureShell
+## schema pattern
+
+* type = "SecureShell"
+* id : saves ssh response to cache SecureShell:{id}
+* ssh | ssh_list
+** is_eigen_response : true | false (default)
+* is_toast = true | false (default)
+* on_complete : action script begins when url response is available 
+
+Example:
+```json
+  {
+    "type": "SecureShell",
+    "is_eigen_response": true,
+    "ssh_list": [
+      "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+      "ruby ssh-directory-listview.rb /data/data/com.termux/files/home"
+    ]
+  }
+```

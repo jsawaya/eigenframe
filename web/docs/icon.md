@@ -2,7 +2,7 @@
 
 Component types that support icon: {"Button" | "TextView" | "AlertDialog" | "SelectDialog" | "PopupScreen"}.
 
-"Button" and "TextView" also support icon location: {"left" | "right" | "top" | "bottom"}
+"Button" and "TextView" also support icon location: {"left" (default) | "right" | "top" | "bottom"}
 
 For example:
 ```json

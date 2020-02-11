@@ -1,3 +1,12 @@
+# Define
+## schema pattern
+
+* type: "Define"
+* name 
+* component
+
+Example:
+```json
 {
   "type": "ActionList",
   "component_list": [
@@ -128,16 +137,28 @@
             "location": "top"
           },
           "on_click": {
-            "type": "SecureFtp",
-            "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
-            "on_complete": {
-              "type": "JavaScript",
-              "script_list": [
-                "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-                "eigenActivity.showToast('Local File Cache Status: ' + x1 )",
-                "eigenFragment.closePopupScreen(999099)"
-              ]
-            }
+            "type": "ActionList",
+            "component_list": [
+              {
+                "type": "SecureFtp",
+                "sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
+                "on_complete": {
+                  "type": "JavaScript",
+                  "script_list": [
+                    "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+                    "eigenActivity.showToast('Local File Cache Status: ' + x1 )",
+                    "eigenFragment.closePopupScreen(999099)"
+                  ]
+                }
+              },
+              {
+                "type": "x-JavaScript",
+                "comment": "closePopupWindow needs to be here, rather than inside SecureFtp(on-complete)/JavaScript, because it seeks parent views to find PopupScreen",
+                "script_list": [
+                  "eigenFragment.closePopupWindow()"
+                ]
+              }
+            ]
           }
         }
       }
@@ -326,5 +347,6 @@
     "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
   }
 }
+```
 
 

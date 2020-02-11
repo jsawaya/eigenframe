@@ -1,5 +1,6 @@
+# AlertDialog
+## schema pattern
 
-AlertDialog specification:
 * "type": "AlertDialog"
 * "title": text string appears at top of popup dialog
 * "icon": {"name", "location"} 
@@ -8,7 +9,7 @@ icon appears adjacent to title (on left, by default)
 * "negative": {"option", "on_click"}
 * "neutral": {"option", "on_click"}
 
-Example AlertDialog as Button on_click action
+Example:
 ```json
 {
   "type": "LinearLayout",
