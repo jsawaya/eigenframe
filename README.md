@@ -72,8 +72,10 @@ Action type | Description
 [Define](./web/docs/Define.md) | define a reusable cached component 
 [Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable cached component 
 
-Attributes | Description
----------- | ----------- 
+### Attribute Descriptions :
+
+Attribute | Description
+--------- | ----------- 
 [Font](./web/docs/font.md) | Available fonts (see individual licences)
 [EditText Filter](./web/docs/EditText-filter.md) | Controls valid keyboard entries
 
