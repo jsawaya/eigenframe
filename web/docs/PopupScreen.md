@@ -19,6 +19,19 @@ The contents of the screen are sourced synchronously from the component_list, or
 * component_list
 * url | url_script
 
+Related:
+[LinearLayout](LinearLayout.md) 
+[AlertDialog](AlertDialog.md)
+[SelectDialog](SelectDialog.md) 
+[PopupTextView](PopupTextView.md) 
+[PopupHtmlView](PopupHtmlView.md) 
+[JavaScript](JavaScript.md)  
+[UrlRequest](UrlRequest.md)  
+[SecureShell](SecureShell.md)  
+[SecureFtp](SecureFtp.md) 
+[ActionList](ActionList.md)  
+
+
 Example:
 ```json
       {

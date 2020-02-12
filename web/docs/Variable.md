@@ -4,12 +4,18 @@
 * type = "Variable"
 * name
 * id (optional)
-* method
-** set 
+* method = "set" 
  class = boolean | integer | long | string
  value 
 
-** toast - shows the value as a transient toast message 
+* method = "toast" - shows the value as a transient toast message 
+
+Related:
+[Define](Define.md)  
+[Variable](Variable.md)  
+[Cache](Cache.md)  
+[ListView](ListView.md)  
+[ActionList](ActionList.md)  
 
 
 Example:

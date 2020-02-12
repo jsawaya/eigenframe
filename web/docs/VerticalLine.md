@@ -5,6 +5,9 @@
 * size = line width
 * color
 
+Related:
+[HorizontalLine](HorizontalLine.md)  
+[LinearLayout](LinearLayout.md) 
 
 Example:
 ```json

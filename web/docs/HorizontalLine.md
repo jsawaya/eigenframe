@@ -5,6 +5,11 @@
 * size = line width
 * color
 
+
+Related:
+[VerticalLine](VerticalLine.md)  
+[LinearLayout](LinearLayout.md) 
+
 Example:
 ```json
 {

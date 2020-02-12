@@ -20,7 +20,10 @@ As an sample, the home-url may return the following EigenFrame app specification
 * is_secure_window: [true | false], true disables screen snapshots and android task-manager screen view
 * tab_list: sequence of EigenFragment components
 
+Related:
+[EigenFragment](EigenFragment.md)  
 
+Example:
 ```json
 {
   "type": "EigenFrame",

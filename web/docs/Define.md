@@ -5,6 +5,9 @@
 * name 
 * component
 
+Related:
+[Clone](Clone.md)  
+
 Example:
 ```json
 {

@@ -2,8 +2,17 @@
 ## schema pattern
 
 * type: "ActionList"
-* name 
-* component
+* component_list = list of actions
+
+Related:
+[Define](Define.md)  
+[Variable](Variable.md)  
+[Cache](Cache.md)  
+[JavaScript](JavaScript.md)  
+[UrlRequest](UrlRequest.md)  
+[SecureShell](SecureShell.md)  
+[SecureFtp](SecureFtp.md) 
+
 
 Example:
 ```json

@@ -13,6 +13,18 @@
 * padding 
 * margin
 
+Related:
+[Button](Button.md)  
+[TextView](TextView.md)  
+[ImageView](ImageView.md) 
+[EditText](EditText.md)  
+[CheckBox](CheckBox.md) 
+[Switch](Switch.md)  
+[ToggleButton](ToggleButton.md)  
+[RadioButton](RadioButton.md) 
+[Spinner](Spinner.md) 
+
+
 Example:
 ```json
 {

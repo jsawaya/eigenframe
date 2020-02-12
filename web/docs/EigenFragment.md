@@ -16,8 +16,10 @@ Tabs can have a "name" attribute and/or an "icon_name" attribute to define the t
 * icon_name: [Internal Icons](./icon.md)
 * url: attribute to dynamically load layouts, components and actions.
 
-Example:
+Related:
+[EigenFrame](EigenFrame.md)
 
+Example:
 ```json
 {
   "type": "EigenFrame",

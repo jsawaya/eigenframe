@@ -2,10 +2,8 @@
 ## schema pattern
 
 * type = "PopupHtmlView"
-* text | text_script
+* html | html_list
 * url
-
-* text_color
 * layout_width
 * layout_height
 * gravity
@@ -13,6 +11,15 @@
 * icon
 * padding 
 * margin
+
+Related:
+[PopupTextView](PopupTextView.md)  
+[PopupScreen](PopupScreen.md)  
+[JavaScript](JavaScript.md)  
+[UrlRequest](UrlRequest.md)  
+[SecureShell](SecureShell.md)  
+[SecureFtp](SecureFtp.md) 
+[ActionList](ActionList.md)  
 
 
 Example:

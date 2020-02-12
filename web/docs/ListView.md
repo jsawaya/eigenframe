@@ -2,18 +2,26 @@
 ## schema pattern
 
 * type = "ListView"
-* id = define unique view id
+* id = define unique id to store the view-state
 * layout_width
 * layout_height
 * gravity
 * background_color
-* on_click action script
 * item_layout - define the layout for each list item
-* option_list | cached_filename
+* on_click action script
 
-** cached_filename 
+ListView support for dynamic lists:
+* checked_option
+* option_list
 
-* on_complete
+ListView support for file lists:
+* cached_filename : "SecureFtp:{id}"
+* dir_type: subdir | files | links
+ 
+Related:
+[SelectDialog](SelectDialog.md)  
+[Spinner](Spinner.md)  
+
 
 Example:
 ```json

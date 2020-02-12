@@ -16,6 +16,11 @@
 * padding 
 * margin
 
+Related:
+[TextView](TextView.md)  
+[ImageView](ImageView.md) 
+[WebView](WebView.md) 
+
 
 Example:
 ```json

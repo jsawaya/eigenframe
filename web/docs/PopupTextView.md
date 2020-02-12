@@ -19,6 +19,16 @@
 * padding 
 * margin
 
+Related:
+[PopupHtmlView](PopupHtmlView.md)  
+[PopupScreen](PopupScreen.md)  
+[JavaScript](JavaScript.md)  
+[UrlRequest](UrlRequest.md)  
+[SecureShell](SecureShell.md)  
+[SecureFtp](SecureFtp.md) 
+[ActionList](ActionList.md)  
+
+
 Example:
 ```json
     {
