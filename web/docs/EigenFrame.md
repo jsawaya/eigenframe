@@ -21,7 +21,7 @@ As an sample, the home-url may return the following EigenFrame app specification
 * tab_list: sequence of EigenFragment components
 
 Related:
-[EigenFragment](EigenFragment.md)  
+[EigenFragment](EigenFragment.md) 
 
 Example:
 ```json

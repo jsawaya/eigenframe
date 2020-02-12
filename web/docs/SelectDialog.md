@@ -10,12 +10,11 @@
 * on_click : action script event listener
 
 Related:
-[AlertDialog](AlertDialog.md)  
-[SelectDialog](SelectDialog.md)  
-[RadioButton](RadioButton.md)  
-[Spinner](Spinner.md)  
-[ListView](ListView.md)  
-[PopupScreen](PopupScreen.md)  
+[AlertDialog](AlertDialog.md) 
+[RadioButton](RadioButton.md) 
+[Spinner](Spinner.md) 
+[ListView](ListView.md) 
+[PopupScreen](PopupScreen.md) 
 
 Example:
 ```json

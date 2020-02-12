@@ -6,7 +6,7 @@
 * color
 
 Related:
-[HorizontalLine](HorizontalLine.md)  
+[HorizontalLine](HorizontalLine.md) 
 [LinearLayout](LinearLayout.md) 
 
 Example:

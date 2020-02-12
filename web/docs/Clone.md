@@ -6,7 +6,7 @@
 * attributes
 
 Related:
-[Define](Define.md)  
+[Define](Define.md) 
 
 Example:
 ```json

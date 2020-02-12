@@ -6,7 +6,7 @@
 * component
 
 Related:
-[Clone](Clone.md)  
+[Clone](Clone.md) 
 
 Example:
 ```json

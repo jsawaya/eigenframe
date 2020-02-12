@@ -7,7 +7,7 @@
 
 
 Related:
-[VerticalLine](VerticalLine.md)  
+[VerticalLine](VerticalLine.md) 
 [LinearLayout](LinearLayout.md) 
 
 Example:

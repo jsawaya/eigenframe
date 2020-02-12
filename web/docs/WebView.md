@@ -9,8 +9,8 @@
 ** is_javascript_enabled : true | false (default)
 
 Related:
-[TextView](TextView.md)  
-[HtmlView](HtmlView.md)  
+[TextView](TextView.md) 
+[HtmlView](HtmlView.md) 
 [ImageView](ImageView.md) 
 
 

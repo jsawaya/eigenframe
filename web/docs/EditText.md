@@ -24,7 +24,7 @@
 * margin
 
 Related:
-[TextView](TextView.md)  
+[TextView](TextView.md) 
 
 GIT Relative Path Example:
 ```json

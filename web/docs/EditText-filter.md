@@ -8,7 +8,7 @@ alphanumeric : isLetterOrDigit
 
 alphabetic : isLetter
 
-whitespace : no whitespace allowed (blank, tab, new-line, ...)
+no-whitespace : no whitespace allowed (blank, tab, new-line, ...)
 
 label : isLetterOrDigit | '_' allowed
 

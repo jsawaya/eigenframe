@@ -19,8 +19,8 @@ ListView support for file lists:
 * dir_type: subdir | files | links
  
 Related:
-[SelectDialog](SelectDialog.md)  
-[Spinner](Spinner.md)  
+[SelectDialog](SelectDialog.md) 
+[Spinner](Spinner.md) 
 
 
 Example:

@@ -17,7 +17,7 @@
 * margin
 
 Related:
-[TextView](TextView.md)  
+[TextView](TextView.md) 
 [ImageView](ImageView.md) 
 [WebView](WebView.md) 
 

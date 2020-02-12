@@ -54,13 +54,12 @@ void eigenActivity.enableOrientationEventListener(boolean isEnabled)
 void eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         
 Related:
-[PopupTextView](PopupTextView.md)  
-[PopupScreen](PopupScreen.md)  
-[JavaScript](JavaScript.md)  
-[UrlRequest](UrlRequest.md)  
-[SecureShell](SecureShell.md)  
+[PopupTextView](PopupTextView.md) 
+[PopupScreen](PopupScreen.md) 
+[UrlRequest](UrlRequest.md) 
+[SecureShell](SecureShell.md) 
 [SecureFtp](SecureFtp.md) 
-[ActionList](ActionList.md)  
+[ActionList](ActionList.md) 
 
         
 Example:

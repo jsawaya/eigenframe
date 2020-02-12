@@ -10,12 +10,11 @@ icon appears adjacent to title (on left, by default)
 * neutral: {"option", "on_click"}
 
 Related:
-[AlertDialog](AlertDialog.md)  
-[SelectDialog](SelectDialog.md)  
-[RadioButton](RadioButton.md)  
-[Spinner](Spinner.md)  
-[ListView](ListView.md)  
-[PopupScreen](PopupScreen.md)  
+[SelectDialog](SelectDialog.md) 
+[RadioButton](RadioButton.md) 
+[Spinner](Spinner.md) 
+[ListView](ListView.md) 
+[PopupScreen](PopupScreen.md) 
 
 Example:
 ```json

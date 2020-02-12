@@ -9,13 +9,12 @@
 * on_complete : action script begins when url response is available 
 
 Related:
-[PopupTextView](PopupTextView.md)  
-[PopupScreen](PopupScreen.md)  
-[JavaScript](JavaScript.md)  
-[UrlRequest](UrlRequest.md)  
-[SecureShell](SecureShell.md)  
-[SecureFtp](SecureFtp.md) 
-[ActionList](ActionList.md)  
+[PopupTextView](PopupTextView.md) 
+[PopupScreen](PopupScreen.md) 
+[JavaScript](JavaScript.md) 
+[UrlRequest](UrlRequest.md) 
+[SecureShell](SecureShell.md) 
+[ActionList](ActionList.md) 
 
 
 Example:
