@@ -76,5 +76,5 @@ Attribute | Description
 [EditText Filter](./web/docs/EditText-filter.md) | Controls valid keyboard entries
 
 
-![Alt](web/res/eigenframe.png "eigenframe")
+![Alt](web/docs/EigenFrame-Overview.JPG "eigenframe")
 
