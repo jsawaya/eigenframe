@@ -45,7 +45,7 @@ Component type | Description
 [RadioButton](./web/docs/RadioButton.md) | a multiple-choice option-list, and a selected index 
 [HorizontalLine](./web/docs/HorizontalLine.md) | a horizontal line <hr/> to separate components in vertical LinearLayout 
 [VerticalLine](./web/docs/VerticalLine.md) | a vertical line to separate components in horizontal LinearLayout 
-[LinearLayout](./web/docs/LinearLayout.md)  | layout may also be nested component, within another layout 
+[LinearLayout](./web/docs/LinearLayout.md)  | layouts may be nested components, within another layout 
 [ListView](./web/docs/ListView.md) | a complex/dynamic multiple-choice option-list, with runtime row layout and define items from cached file 
 
 ### EigenFrame Actions:
@@ -59,11 +59,11 @@ Action type | Description
 [PopupHtmlView](./web/docs/PopupHtmlView.md) | popup transient HTML window 
 [PopupScreen](./web/docs/PopupScreen.md) | popup collection of components in a new fullscreen window (also a Layout type)
 [JavaScript](./web/docs/JavaScript.md) | embedded javascript  
-[UrlRequest](./web/docs/UrlRequest.md) | url request 
-[SecureShell](./web/docs/SecureShell.md) | ssh commands 
-[SecureFtp](./web/docs/SecureShell.md) | sftp commands 
-[Variable](./web/docs/Variable.md) | dynamic variable values 
-[Cache](./web/docs/Cache.md) | dynamic cache files (not implemented yet)
+[UrlRequest](./web/docs/UrlRequest.md) | url request
+[SecureShell](./web/docs/SecureShell.md) | ssh connection 
+[SecureFtp](./web/docs/SecureFtp.md) | sftp commands 
+[Variable](./web/docs/Variable.md) | dynamic variable values: boolean, integer, long, string  
+Cache | dynamic cache files, String | BinaryArray (not implemented yet)
 [ActionList](./web/docs/ActionList.md) | calls a sequence of actions 
 [Define](./web/docs/Define.md) | define a reusable cached component 
 [Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable cached component 
