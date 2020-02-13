@@ -1,5 +1,5 @@
 # ![Alt](web/res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame
-## Framework to Generate Android Apps
+## Github Framework for Dynamic App Specification Deployment, Rendering & Execution
 
 EigenFrame starts with a url request, but instead of getting a simple web page, EigenFrame parses specifications (represented in JSON format) to dynamically build an openly programmable application that includes Android user-interface components, and provides access to certain device sensors and hardware.
 
