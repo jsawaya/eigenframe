@@ -56,6 +56,17 @@
       }
     },
     {
+      "type": "TextView",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "text": "http://photopgp.com/site",
+      "icon": {
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/photopgp.png",
+        "location": "left"
+      }
+    },
+    {
       "type": "Clone",
       "name": "HorizontalLine"
     },
