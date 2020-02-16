@@ -11,7 +11,7 @@ Use cases:
 Attributes:
 * type: "ActionList"
 * component_list: sequence of actions to perform
-* on_complete: event listener layout, component, or action that may produce an eigen-response
+* on_complete (optional): event listener to call layout, component, or action that may produce an eigen-response
   - example:
 ```json
   "on_complete": {
