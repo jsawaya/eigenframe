@@ -11,6 +11,8 @@ EigenFrame - a truly extensible architecture for dynamic system integration.
 
 https://play.google.com/store/apps/details?id=com.sawaya.eigenframe
 
+[EigenFrame App ScreenShots](./web/docs/EigenFrameApp.md)
+
 ### App-level specifications:
 
 App spec | Description 
