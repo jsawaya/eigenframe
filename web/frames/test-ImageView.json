@@ -58,7 +58,6 @@
     {
       "type": "TextView",
       "layout_width": "match_parent",
-      "layout_height": "100",
       "text_color": "#ffffff",
       "text": "Share",
       "icon": {
