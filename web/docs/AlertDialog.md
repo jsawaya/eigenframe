@@ -14,7 +14,7 @@ Attributes:
 * type: "AlertDialog"
 * title: text string that appears at top of popup dialog
 * icon: 
-    - name: internal icon name, or url
+    - name: internal icon name
     - location
     - icon appears adjacent to title (on left, by default)
 * positive: 

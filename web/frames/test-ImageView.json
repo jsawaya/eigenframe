@@ -60,10 +60,10 @@
       "layout_width": "match_parent",
       "layout_height": "100",
       "text_color": "#ffffff",
-      "text": "http://photopgp.com/site",
+      "text": "Google drive",
       "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/photopgp.png",
-        "location": "left"
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/icon/grey/ic_google_drive_grey600_18dp.png",
+        "location": "right"
       }
     },
     {

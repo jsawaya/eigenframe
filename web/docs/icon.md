@@ -4,7 +4,9 @@ Component types that support icon: {"Button" | "TextView" | "AlertDialog" | "Sel
 
 "Button" and "TextView" also support icon location: {"left" (default) | "right" | "top" | "bottom"}
 
-For example:
+
+
+Internal icon example:
 ```json
 {
    "type": "Button",
@@ -16,8 +18,23 @@ For example:
 }
 ```
 
-icon name | image
---------- | ----- 
+External icon example:
+```json
+{
+  "type": "TextView",
+  "layout_width": "match_parent",
+  "layout_height": "100",
+  "text_color": "#ffffff",
+  "text": "photopgp:",
+  "icon": {
+    "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/icon/grey/ic_google_drive_grey600_18dp.png",
+    "location": "right"
+  }
+}
+```
+
+internal icon name | image
+------------------ | ----- 
 ic_launcher. | ![icon](../res/icon/mipmap-hdpi/ic_launcher.png "icon")
 ic_launcher_round. | ![icon](../res/icon/mipmap-hdpi/ic_launcher_round.png "icon")
 add_photo. | ![icon](../res/icon/black/ic_add_a_photo_black_24dp.png "icon")
