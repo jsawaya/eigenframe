@@ -76,6 +76,7 @@ Attribute | Description
 --------- | ----------- 
 [Font](./web/docs/font.md) | Available fonts (see individual licences)
 [EditText Filter](./web/docs/EditText-filter.md) | Controls valid keyboard entries
+[Icon](./web/docs/icon.md) | Icon and Branding Support
 
 
 ![Alt](web/docs/EigenFrame-Overview.JPG "eigenframe")

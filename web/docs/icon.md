@@ -1,16 +1,17 @@
 # ![Alt](../res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame Icon Support
 
-Component types that support icon: {"Button" | "TextView" | "AlertDialog" | "SelectDialog" | "PopupScreen"}.
+EigenFrame tab (EigenFragment) only allows internal icon names.
+For example:
+ > "icon_name": "ic_launcher_round."
 
-"Button" and "TextView" also support icon location: {"left" (default) | "right" | "top" | "bottom"}
+* Most component types support an icon specification which contains an internal name attribute and may also include a location attribute:
 
-
+  - icon location: {"left" (default) | "right" | "top" | "bottom"}
 
 Internal icon example:
 ```json
 {
    "type": "Button",
-
    "icon": {
       "name": "info.",
       "location": "left"
@@ -18,20 +19,30 @@ Internal icon example:
 }
 ```
 
+In addition, popup components provide an optional icon for the title bar.
+
+Some component types also support an external icon name : {"Button" | "CheckBox" | "Switch" "ToggleButton" | "TextView" | "HtmlView" | "PopupScreen" }.
+
+External icons are small image files that you may dynamically add to the EigenFrame shared folder (/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/...)
+
+External icons may represent your own branding or trademark.
+
 External icon example:
 ```json
 {
   "type": "TextView",
   "layout_width": "match_parent",
-  "layout_height": "100",
   "text_color": "#ffffff",
-  "text": "photopgp:",
+  "text": "Share",
   "icon": {
-    "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/icon/grey/ic_google_drive_grey600_18dp.png",
-    "location": "right"
+    "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/icon/white/baseline_share_white_18.png",
+    "location": "left"
   }
 }
 ```
+
+Note: Currently RadioButton do not support icon attributes
+Note: Icons do not scale to fit like with ImageView - it will be actual size.
 
 internal icon name | image
 ------------------ | ----- 

@@ -5,14 +5,9 @@
 * option_list
 * checked_option = 0 ... n 
 * id = define unique id to store the view-state
-* text_color
 * layout_width
 * layout_height
-* gravity
 * background_color
-* icon
-* padding 
-* margin
 * on_click action script
 
 Related:
