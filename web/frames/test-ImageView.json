@@ -60,9 +60,9 @@
       "layout_width": "match_parent",
       "layout_height": "100",
       "text_color": "#ffffff",
-      "text": "Drive",
+      "text": "Share",
       "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/icon/grey/ic_google_drive_grey600_18dp.png",
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/icon/white/baseline_share_white_18.png",
         "location": "left"
       }
     },
