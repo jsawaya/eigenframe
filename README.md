@@ -13,6 +13,8 @@ https://play.google.com/store/apps/details?id=com.sawaya.eigenframe
 
 [EigenFrame App ScreenShots](./web/docs/EigenFrameApp.md)
 
+[Getting Started](./web/docs/initial-setup.md)
+
 ### App-level specifications:
 
 App spec | Description 
