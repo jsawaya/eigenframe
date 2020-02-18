@@ -23,22 +23,22 @@
 At this point you have a Secure-Shell connection to Termux.  
 This is enough to for you to use EigenFrame to perform the remaining setup tasks.
 
-## Initial Setup for EigenFrame - Edit default EigenFrame app
+## Initial Setup for EigenFrame - edit default app
 
-    * Edit home-url.txt to call a new customized app, change:
+* Edit home-url.txt to call a new customized app, change:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json
 
         - into:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json
 
-    * Restart EigenFrame      
+* Restart EigenFrame      
 
-    * Read [EigenFrame](EigenFrame.md) to understand the top-level application specification. 
+* Read [EigenFrame](EigenFrame.md) to understand the top-level application specification. 
 
-    * Read [EigenFragment](EigenFragment.md) to understand the EigenFragment tabs.
+* Read [EigenFragment](EigenFragment.md) to understand the EigenFragment tabs.
 
-    * On your Android device edit yourapp.json and newfile.json 
-    * yourapp.json creates a new tab that points to newfile.json:
+* On your Android device edit yourapp.json and newfile.json 
+* yourapp.json creates a new tab that points to newfile.json:
     
 ```json
 {
