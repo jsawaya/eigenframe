@@ -23,6 +23,31 @@
 At this point you have a Secure-Shell connection to Termux.  
 This is enough to for you to use EigenFrame to perform the remaining setup tasks.
 
+## Initial Setup for EigenFrame - Edit default EigenFrame app
+
+    * Edit home-url.txt to call a new customized app, change:
+> file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json
+
+        - into:
+> file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json
+
+    * Restart EigenFrame      
+
+    * Read [EigenFrame](EigenFrame.md) to understand the top-level application specification. 
+
+    * Read [EigenFragment](EigenFragment.md) to understand the EigenFragment tabs.
+
+    * On your Android device edit yourapp.json and newfile.json 
+    * yourapp.json creates a new tab that points to newfile.json:
+    
+```json
+{
+  "type": "EigenFragment",
+  "name": "MyProject",
+  "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/<your-frame>.json"
+}
+```
+
 ## Initial Setup for EigenFrame - install git
 
 1. Click [Git Installation] Button
@@ -49,29 +74,3 @@ This is enough to for you to use EigenFrame to perform the remaining setup tasks
                   - Or you might happen to have a web-service running on your pc (or vm). 
                   - Better yet, you might run sshd on your pc (or vm) and use the builtin EigenFrame ssh/sftp interface to access static (and dynamic) components directly.  So many choices.
 
-3. Edit the default EigenFrame app.json 
-    * Read [EigenFrame](EigenFrame.md) to understand the top-level application specification. 
-    * Read [EigenFragment](EigenFragment.md) to understand the EigenFragment tabs.
-
-    * On your Android device, copy /storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json to <your-frame>.json
-        - customize this initial frame (LinearLayout) any you want
-
-    * copy app.json to yourapp.json (already done for you)
-    * create a tab that points to <your-frame>.json (newfile.json):
-    
-```json
-...     },
-        {
-          "type": "EigenFragment",
-          "name": "MyProject",
-          "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/<your-frame>.json"
-        }
-```
-
-    * Edit home-url.txt to call your customized app:
-file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json
-
-        - into:
-file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json
-
-    * Restart EigenFrame      
