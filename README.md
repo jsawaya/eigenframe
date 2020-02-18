@@ -55,7 +55,7 @@ Component type | Description
 Action type | Description
 ----------- | ----------- 
 [ToastMessage](./web/docs/ToastMessage.md) | send a transient non-blocking "toast" message to the user's screen - good for a quick status update 
-[AlertDialog](./web/docs/AlertDialog.md) | popup dialog with "positive", "negative", and "neutral" options defined - e.g. Are you sure: "YES", "NO", "CANCEL" 
+[AlertDialog](./web/docs/AlertDialog.md) | popup dialog with "positive", "negative", and "neutral" options - e.g. Are you sure: "YES", "NO", "CANCEL" 
 [SelectDialog](./web/docs/SelectDialog.md) | popup multiple-choice option-list selected index
 [PopupTextView](./web/docs/PopupTextView.md) | popup transient plaintext window
 [PopupHtmlView](./web/docs/PopupHtmlView.md) | popup transient HTML window 
