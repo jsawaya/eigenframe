@@ -207,7 +207,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "du (disk usage)",
+        "text": "ifconfig (network ip address)",
         "icon": {
           "name": "info.",
           "location": "top"
@@ -216,7 +216,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "du (disk usage)",
+            "title": "ifconfig (network ip address)",
             "component_list": [
               {
                 "type": "Clone",
@@ -228,7 +228,7 @@
                       "name": "TextViewDetail",
                       "attributes": {
                         "text_size": "10",
-                        "ssh": "du"
+                        "ssh": "ifconfig"
                       }
                     }
                   ]
