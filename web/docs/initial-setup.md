@@ -25,13 +25,15 @@ This is enough to for you to use EigenFrame to perform the remaining setup tasks
 
 ## Initial Setup for EigenFrame - edit default app
 
-* Edit home-url.txt to call a new customized app, change:
+* Edit home-url.txt to call a new customized app
+
+from:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json
 
-        - into:
+to:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json
 
-* Restart EigenFrame      
+* Restart EigenFrame - see the new tab     
 
 * Read [EigenFrame](EigenFrame.md) to understand the top-level application specification. 
 
