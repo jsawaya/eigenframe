@@ -61,13 +61,14 @@ to:
     * At this point you have a git working storage copy of EigenFrame that you can use as reference examples.  
 
 2. You may want to create a new GitHub repository for your own EigenFrame projects. 
-    - You may clone the EigenFrame repository as an example
+    * You may clone the EigenFrame repository as an example
 
-3. Decide your EigenFrame devops workflow - choose a method to edit your source files:
-1. You might get a [Simple Text Editor] from the Google Playstore, there are many.
-2. Or you might use an editor in Termux (emacs, vim, etc.)
+3. Decide your EigenFrame devops workflow - choose a method to edit your source files
+
+4. You might get a [Simple Text Editor] from the Google Playstore, there are many.
+5. You might use an editor in Termux (emacs, vim, etc.)
   * With this option, you'll want to get a bluetooth keyboard, or software interface like "Vysor".
-3. Better yet, use your PC and favorite IDE to edit source files 
+6. Better yet, use your PC and favorite IDE to edit source files 
   * This method probably supports JSON format checks, git/github integration, and much more. 
   * But these files will need to be accessible in some way to your Android device
     - You could copy files through usb
