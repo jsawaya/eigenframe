@@ -1,11 +1,11 @@
+require 'json'
+require_relative 'eigen_padding'
+
 =begin
 EigenFrame ruby class produces nested hash objects, that are converted to json by caller (cgi-bin) scripts,
 and sent back to the EigenFrame app (or browser that invoked a url request).
 See example: cgi-bin/sys-directory-listview.rb
 =end
-
-require_relative 'eigen_padding'
-
 
 class EigenFrame
 
