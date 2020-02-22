@@ -126,8 +126,8 @@ def directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewO
   padding = eigen_padding(5, 5)
   margin = eigen_margin(10, 10)
   infoLeftIcon = eigen_icon("info.jpg", "left")
-  horzLine = eigen_horizontal_line(2, "#00ff00")
-  vertLine = eigen_vertical_line(2, "#00ff00")
+  horzLine = EigenLine.new.eigen_horizontal_line(3, "#0000ff")
+  vertLine = EigenLine.new.eigen_vertical_line(3, "#0000ff")
 
   dirHashDirectory = dirHash['directory']
 

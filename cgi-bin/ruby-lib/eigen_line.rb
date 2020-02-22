@@ -1,4 +1,4 @@
-class EigenFrame
+class EigenLine
 
   ## define frame for a horizontal line with size/width(integer) and color(string)
   def eigen_horizontal_line(size, color)
