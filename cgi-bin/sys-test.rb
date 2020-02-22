@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!ruby
 
 puts "Content-type: text/plain; charset=iso-8859-1"
 puts ""

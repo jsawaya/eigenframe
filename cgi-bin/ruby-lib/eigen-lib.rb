@@ -4,6 +4,8 @@ and sent back to the EigenFrame app (or browser that invoked a url request).
 See example: cgi-bin/sys-directory-listview.rb
 =end
 
+require_relative 'eigen_padding'
+
 
 class EigenFrame
 
@@ -133,17 +135,6 @@ def directory_listview(dirHash, subdirListViewOnClickPopupScreen, filesListViewO
   layout0 = eigen_horizontal_layout([vertLine,subdirListView,vertLine,filesListView,vertLine])
 
   eigen_vertical_layout([headerTextView,horzLine,layout0])
-end
-
-
-## define frame for padding
-def eigen_padding(x, y)
-  {
-    left: x,
-    top: y,
-    right: x,
-    bottom: y
-  }
 end
 
 
