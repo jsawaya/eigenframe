@@ -1,12 +1,12 @@
-# test/eigen_padding_test_test.rb
+# test/eigen_space_test.rb
 require 'test/unit'
 require 'json'
-require_relative '../eigen_padding'
+require_relative '../eigen_space'
 
 # hashmaps compare properly with keys as symbolize_names
 # 
 
-class Eigen_padding_test < Test::Unit::TestCase
+class Eigen_space_test < Test::Unit::TestCase
   def test_hash_with_extentions
     ef = EigenFrame.new
     x = ef.eigen_padding(2,3)
