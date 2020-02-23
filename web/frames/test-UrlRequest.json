@@ -157,7 +157,7 @@
         "parameter_list": [
           {
             "name": "dirpath",
-            "value_script": "eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
+            "value_script": "''+eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
           }
         ],
         "on_complete": {
