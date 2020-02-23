@@ -18,9 +18,10 @@
       "type": "Clone",
       "name": "HorizontalLine"
     },
+
     {
       "type": "Button",
-      "text": "UrlRequest:5001 (directory listing)",
+      "text": "UrlRequest:5001 (directory listing) is_eigen_response: false",
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
@@ -57,6 +58,33 @@
               }
             ]
           }
+        }
+      }
+    },
+
+    {
+      "type": "Button",
+      "text": "UrlRequest (directory-listview) is_eigen_response: true",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
+      "icon": {
+        "name": "info.",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "UrlRequest directory listing",
+          "component_list": [
+            {
+              "type": "UrlRequest",
+              "is_eigen_response": true,
+              "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=."
+            }
+          ]
         }
       }
     }
