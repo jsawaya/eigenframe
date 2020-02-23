@@ -3,14 +3,49 @@
 
 * type = UrlRequest
 * url : url-string 
-  - http: | https: - get method request - with or without query parameters
-  - http: | https: - put method request - requires parameter_list
-  - file: - local filesystem request 
-    - syntax:  file://{absolute-file-path}
-    - example:  
-     >  "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/eigenframe.png"
+    - http: | https: - get method request - with or without url query parameters
+    - http: | https: - put method request - requires parameter_list
+    - file: - local filesystem request 
+        - syntax:  file://{absolute-file-path}
+        - example:  
+        >  "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/eigenframe.png"
 
-* is_eigen_response : true | false (default)
+* parameter_list : list of name/value pairs, enables http(s) put method requests
+    - each name/value pair 
+        - simple example:  
+
+```json
+{
+    "type": "UrlRequest",
+    "is_eigen_response": true,
+    "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
+    "parameter_list": 
+    [
+      {
+      "name": "dirpath",
+      "value": "."
+      }
+    ]
+}
+```
+
+        - example that show how to create url parameters dynamically with javascript:  
+```json
+{
+    "type": "UrlRequest",
+    "is_eigen_response": true,
+    "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
+    "parameter_list": 
+    [
+      {
+      "name": "dirpath",
+      "value_script": "''+eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
+      }
+    ]
+}
+```
+    
+* is_eigen_response : response is a JSON formatted layout, component or action { true | false (default)}
 * on_complete : action script begins when url response is available 
 
 Related:
