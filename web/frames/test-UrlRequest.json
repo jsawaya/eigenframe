@@ -136,6 +136,88 @@
           }
         }
       }
+    },
+
+    {
+      "type": "Button",
+      "text": "UrlRequest:5002 (directory listing) is_eigen_response: false",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
+      "icon": {
+        "name": "info.",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "UrlRequest",
+        "id": 5003,
+        "is_eigen_response": false,
+        "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
+        "parameter_list": [
+          {
+            "name": "dirpath",
+            "value_script": "eigenFragment.concatPaths(991000, 991001)"
+          }
+        ],
+        "on_complete": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "UrlRequest:5003 directory listing",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:5003"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "type": "Button",
+      "text": "UrlRequest PostMethod is_eigen_response: true",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
+      "icon": {
+        "name": "info.",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "UrlRequest directory listing",
+          "component_list": [
+            {
+              "type": "UrlRequest",
+              "is_eigen_response": true,
+              "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
+              "parameter_list": [
+                {
+                  "name": "dirpath",
+                  "value_script": "eigenFragment.concatPaths(991000, 991001)"
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
 
   ]

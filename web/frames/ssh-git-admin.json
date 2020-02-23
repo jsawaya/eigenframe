@@ -15,6 +15,113 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
+        "text": "Refresh GIT Working Directory (test branch) from GITHUB Master: "
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Pull from github master\n(merge to working test branch)",
+        "icon": {
+          "name": "cloud_download.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Pull from github master\n(merge to working test branch)",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_list": [
+                          "cd ~/git-repos/eigenframe",
+                          "echo current working directory:",
+                          "pwd",
+                          "echo ",
+                          "echo git status:",
+                          "git status",
+                          "echo ",
+                          "echo git checkout master:",
+                          "git checkout master",
+                          "echo ",
+                          "echo git pull:",
+                          "git pull",
+                          "echo ",
+                          "echo git checkout test:",
+                          "git checkout test",
+                          "echo ",
+                          "echo git merge master:",
+                          "git merge master",
+                          "echo ",
+                          "echo git status:",
+                          "git status"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "git status",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "git status",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git status'"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
         "text": "Termux Home (sftp home):"
       }
     },
@@ -184,13 +291,11 @@
         "right": 10,
         "bottom": 10
       },
-      "on_click":
-      {
+      "on_click": {
         "type": "SecureFtp",
         "id": 991004,
         "sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
-        "on_complete":
-        {
+        "on_complete": {
           "type": "PopupScreen",
           "title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
           "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json",
@@ -285,112 +390,6 @@
       }
     },
 
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Refresh GIT Working Directory (test branch) from GITHUB Master: "
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Pull from github master\n(merge to working test branch)",
-        "icon": {
-          "name": "cloud_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Pull from github master\n(merge to working test branch)",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_list": [
-                          "cd ~/git-repos/eigenframe",
-                          "echo current working directory:",
-                          "pwd",
-                          "echo ",
-                          "echo git status:",
-                          "git status",
-                          "echo ",
-                          "echo git checkout master:",
-                          "git checkout master",
-                          "echo ",
-                          "echo git pull:",
-                          "git pull",
-                          "echo ",
-                          "echo git checkout test:",
-                          "git checkout test",
-                          "echo ",
-                          "echo git merge master:",
-                          "git merge master",
-                          "echo ",
-                          "echo git status:",
-                          "git status"
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "git status",
-        "icon": {
-          "name": "info.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "git status",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_script": "'cd ' + eigenFragment.getViewState(991001) + '; git status'"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
     {
       "type": "Clone",
       "name": "HorizontalLine"
