@@ -105,7 +105,7 @@
         "id": 5002,
         "is_eigen_response": false,
         "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
-        "data_list": [
+        "parameter_list": [
           {
             "name": "dirpath",
             "value": "."
