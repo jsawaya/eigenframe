@@ -9,9 +9,7 @@ print_response_header
 
 cgi = CGI.new
 
-p cgi.params.inspect
-
-puts "testing"
+puts cgi.params.to_json.to_s
 
 #exit 10 if !cgi.has_key?('dirpath')
 #dirpath = cgi.params['dirpath'][0]
