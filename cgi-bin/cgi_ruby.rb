@@ -11,6 +11,7 @@ cgi = CGI.new
 
 p cgi.params.inspect
 
+puts "testing"
 
 #exit 10 if !cgi.has_key?('dirpath')
 #dirpath = cgi.params['dirpath'][0]
