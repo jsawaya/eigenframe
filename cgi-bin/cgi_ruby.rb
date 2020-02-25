@@ -10,6 +10,22 @@ print_response_header
 
 cgi = CGI.new
 
+def show(params)
+  cgi.params.each do |key|
+    puts 'key: '+key
+    value_list = cgi.params[key]
+    value_list.each do |value|
+      puts '  value: '+value
+    end
+   end
+end
+
+def get(key)
+  puts 'dirpath_name: '+dirpath_name
+  show(params)
+  cgi.params[key][0]
+end
+
 #ruby = "EigenFrame.new(cgi.params).eigen_directory_listview_http_cgi('dirpath').to_json.to_s"
 if cgi.has_key?('ruby')
   ruby_string = cgi.params['ruby'][0]

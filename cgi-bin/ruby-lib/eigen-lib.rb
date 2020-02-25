@@ -20,35 +20,7 @@ See example: cgi-bin/sys-directory-listview.rb
 
 class EigenFrame
 
-  def initialize(params)
-    show(params)
-    @params = params
-  end
  
-  def show(params)
-    params.each do |key|
-      puts 'key: '+key
-      value_list = params[key]
-      value_list.each do |value|
-        puts '  value: '+value
-      end
-     end
-  end
-  
-  def get(key)
-    puts 'dirpath_name: '+dirpath_name
-    show(params)
-    @params[key][0]
-  end
-
-  def ruby_eigen_directory_listview_http_cgi(dirpath_name)
-    puts 'dirpath_name: '+dirpath_name
-    dirpath = get(dirpath_name)
-    puts 'dirpath: '+dirpath
-    eigen_directory_listview_http_cgi(dirpath)
-  end
-  
-  
   def eigen_directory_listview_http_cgi(dirpath)
   dirHash = set_directory_hash(dirpath)
   dirHashDirectory = dirHash['directory']
