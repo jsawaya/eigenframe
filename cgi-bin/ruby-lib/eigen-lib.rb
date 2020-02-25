@@ -25,11 +25,14 @@ class EigenFrame
   end
  
   def get(param_key)
-    @params[key]
+    @params[key][0]
   end
 
   def ruby_eigen_directory_listview_http_cgi(dirpath_name)
-    eigen_directory_listview_http_cgi(get(dirpath_name))
+    puts 'dirpath_name: '+dirpath_name
+    dirpath = get(dirpath_name)
+    puts 'dirpath: '+dirpath.
+    eigen_directory_listview_http_cgi(dirpath)
   end
   
   

@@ -12,7 +12,8 @@ cgi = CGI.new
 
 #ruby = "EigenFrame.new(cgi.params).eigen_directory_listview_http_cgi('dirpath').to_json.to_s"
 if cgi.has_key?('ruby')
-  puts eval(ruby)
+  ruby_string = cgi.params['ruby'][0]
+  puts eval(ruby_string)
 else
   cgi.keys.each do |key|
     puts 'key: '+key
