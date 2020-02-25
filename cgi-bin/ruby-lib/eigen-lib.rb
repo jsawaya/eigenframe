@@ -20,7 +20,20 @@ See example: cgi-bin/sys-directory-listview.rb
 
 class EigenFrame
 
-def eigen_directory_listview_http_cgi(dirpath)
+  def initialize(params)
+    @params = params
+  end
+ 
+  def get(param_key)
+    @params[key]
+  end
+
+  def ruby_eigen_directory_listview_http_cgi(dirpath_name)
+    eigen_directory_listview_http_cgi(get(dirpath_name))
+  end
+  
+  
+  def eigen_directory_listview_http_cgi(dirpath)
   dirHash = set_directory_hash(dirpath)
   dirHashDirectory = dirHash['directory']
 
