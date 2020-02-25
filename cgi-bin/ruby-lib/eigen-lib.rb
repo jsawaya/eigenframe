@@ -21,13 +21,23 @@ See example: cgi-bin/sys-directory-listview.rb
 class EigenFrame
 
   def initialize(params)
-    puts 'params: '+params
+    show(params)
     @params = params
   end
  
-  def get(param_key)
+  def show(params)
+    params.each do |key|
+      puts 'key: '+key
+      value_list = params[key]
+      value_list.each do |value|
+        puts '  value: '+value
+      end
+     end
+  end
+  
+  def get(key)
     puts 'dirpath_name: '+dirpath_name
-    puts '@params: '+@params
+    show(params)
     @params[key][0]
   end
 
