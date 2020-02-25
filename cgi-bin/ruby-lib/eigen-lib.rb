@@ -21,17 +21,20 @@ See example: cgi-bin/sys-directory-listview.rb
 class EigenFrame
 
   def initialize(params)
+    puts 'params: '+params
     @params = params
   end
  
   def get(param_key)
+    puts 'dirpath_name: '+dirpath_name
+    puts '@params: '+@params
     @params[key][0]
   end
 
   def ruby_eigen_directory_listview_http_cgi(dirpath_name)
     puts 'dirpath_name: '+dirpath_name
     dirpath = get(dirpath_name)
-    puts 'dirpath: '+dirpath.
+    puts 'dirpath: '+dirpath
     eigen_directory_listview_http_cgi(dirpath)
   end
   
