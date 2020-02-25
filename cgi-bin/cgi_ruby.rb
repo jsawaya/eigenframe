@@ -10,19 +10,18 @@ print_response_header
 
 cgi = CGI.new
 
-def show(params)
+def show()
   cgi.params.each do |key|
     puts 'key: '+key
     value_list = cgi.params[key]
     value_list.each do |value|
       puts '  value: '+value
     end
-   end
+  end
 end
 
 def get(key)
-  puts 'dirpath_name: '+dirpath_name
-  show(params)
+  puts 'key: '+key
   cgi.params[key][0]
 end
 
@@ -30,6 +29,7 @@ end
 if cgi.has_key?('ruby')
   ruby_string = cgi.params['ruby'][0]
   puts eval(ruby_string)
+  show()
 else
   cgi.keys.each do |key|
     puts 'key: '+key
