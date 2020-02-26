@@ -65,12 +65,7 @@
                           "git merge master",
                           "echo ",
                           "echo git status:",
-                          "git status",
-                          "echo ",
-                          "echo enable execution of any new cgi-bin files",
-                          "cd ~/git-repos/eigenframe/cgi-bin",
-                          "chmod 755 *.sh",
-                          "chmod 755 *.rb"
+                          "git status"
                         ]
                       }
                     }
