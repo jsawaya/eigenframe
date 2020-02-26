@@ -98,6 +98,43 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
+        "text": "Termux Package Upgrade",
+        "icon": {
+          "name": "file_download.",
+          "location": "left"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Termux Package Upgrade",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh": "echo y | pkg upgrade",
+                        "is_toast": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
         "text": "whoami",
         "icon": {
           "name": "info.",
@@ -149,16 +186,16 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Termux Package Upgrade",
+        "text": "df (display filesystem)",
         "icon": {
-          "name": "file_download.",
+          "name": "info.",
           "location": "left"
         },
         "on_click": {
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Termux Package Upgrade",
+            "title": "df (display filesystem)",
             "component_list": [
               {
                 "type": "Clone",
@@ -170,8 +207,7 @@
                       "name": "TextViewDetail",
                       "attributes": {
                         "text_size": "10",
-                        "ssh": "echo y | pkg upgrade",
-                        "is_toast": true
+                        "ssh": "df"
                       }
                     }
                   ]
@@ -181,6 +217,47 @@
           }
         }
       }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "ifconfig (network ip address)",
+        "icon": {
+          "name": "info.",
+          "location": "left"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "ifconfig (network ip address)",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh": "ifconfig"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
     }
 
   ]

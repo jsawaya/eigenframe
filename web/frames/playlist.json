@@ -66,6 +66,15 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Setup Instructions for Termux] to install termux and setup openssh"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
         "text": "Setup Instructions for Termux",
@@ -85,23 +94,33 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [GIT Installation] to install git, and download local eigenframe branch"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Termux Package Installation",
+        "text": "GIT Installation",
         "icon": {
-          "name": "archive.",
+          "name": "file_download.",
           "location": "top"
         },
         "on_click": {
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Termux Package Installation",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-package-install.json"
+            "title": "GIT Installation",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-install.json"
           }
         }
       }
     },
+
     {
       "type": "Clone",
       "name": "HorizontalLine"
@@ -128,25 +147,6 @@
           "attributes": {
             "title": "SecureShell Settings",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Termux Administration",
-        "icon": {
-          "name": "settings_app.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Termux Administration",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-admin.json"
           }
         }
       }
