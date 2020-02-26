@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
 
 require 'json'
-require './ruby-lib/app-lib'
-require './ruby-lib/gpg-lib'
+require_relative 'ruby-lib/app-lib'
+require_relative 'ruby-lib/gpg-lib'
 
 exit 10 if (ARGV.length != 3) 
 
