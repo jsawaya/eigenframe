@@ -224,6 +224,16 @@
         "text": "Launch eigenframe app from the local Android filesystem"
       }
     },
+
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "This demonstrates how to launch a local custom eigenframe from file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json"
+        ]
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -250,6 +260,16 @@
         "text": "Launch eigenframe app from internet/cloud server (GITHUB)"
       }
     },
+
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "This demonstrates a cloud-based eigenframe and a variety of sample layouts, components and actions -- hint: use tabs to select, then click source button"
+        ]
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -264,6 +284,15 @@
           "script":
           "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')"
         }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "This creates a shortcut on your android screen to launch the GITHUB Gallery Examples"
+        ]
       }
     },
     {
@@ -292,7 +321,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch dynamic eigenframe app from Termux Apache HTTP/CGI"
+        "text": "Launch dynamic eigenframe apps from Termux Apache HTTP/CGI"
       }
     },
     {
