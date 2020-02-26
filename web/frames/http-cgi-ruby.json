@@ -172,6 +172,89 @@
           }
         }
       }
+    },
+
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "PGP Examples (requires PGP installation)"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "These examples demonstrate CGI post method calls to Ruby, which calls Bash to invoke GnuPG"
+        ]
+      }
+    },
+
+    {
+      "type": "Button",
+      "text": "cgi_ruby: sys_output_frame_format",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
+      "icon": {
+        "name": "info.",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "UrlRequest",
+        "id": 6601,
+        "is_eigen_response": false,
+        "url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+        "parameter_list": [
+          {
+            "name": "dirpath",
+            "value_script_list": [
+              "var t991000 = eigenFragment.getCacheString('TextView:991000')",
+              "var t991001 = eigenFragment.getCacheString('EditText:991001')",
+              "'' + eigenFragment.concatPaths(t991000, t991001)"
+            ]
+          },
+          {
+            "name": "ruby",
+            "value_list": [
+              "dirpath = cgi.params['dirpath'][0]",
+              "Dir.chdir dirpath",
+              "h = directory_hash()",
+              "h.to_json.to_s"
+            ]
+          }
+        ],
+        "on_complete": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "directory_hash",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6601"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
     }
 
   ]

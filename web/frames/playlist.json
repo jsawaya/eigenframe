@@ -381,7 +381,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Optional: Install PGP (gnupg)"
+        "text": "Optional: PGP Installation (GnuPG)"
       }
     },
     {
@@ -389,7 +389,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Install gnupg package] - only if you plan to add encryption, decryption, signing and verification to your app"
+          "Click [GnuPG Installation] - only if you plan to add PGP encryption, decryption, signing and verification to your app"
         ]
       }
     },
@@ -397,7 +397,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Install gnupg package (optional)",
+        "text": "GnuPG Installation (optional)",
         "icon": {
           "name": "file_download.",
           "location": "top"
@@ -440,7 +440,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Optional: Install Prolog (swi-prolog)"
+        "text": "Optional: Prolog Installation (swi-prolog)"
       }
     },
     {
