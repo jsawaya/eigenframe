@@ -99,6 +99,10 @@
       "name": "ButtonDefault",
       "attributes": {
         "text": "whoami",
+        "icon": {
+          "name": "info.",
+          "location": "left"
+        },
         "on_click": {
           "type": "PopupTextView",
           "title": "whoami",
@@ -112,6 +116,10 @@
       "name": "ButtonDefault",
       "attributes": {
         "text": "pwd",
+        "icon": {
+          "name": "info.",
+          "location": "left"
+        },
         "on_click": {
           "type": "PopupTextView",
           "title": "pwd",
@@ -124,12 +132,16 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "ls",
+        "text": "ps -eo cmd",
+        "icon": {
+          "name": "info.",
+          "location": "left"
+        },
         "on_click": {
           "type": "PopupTextView",
-          "title": "ls",
+          "title": "ps -eo cmd",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh": "ls"
+          "ssh": "ps -eo cmd"
         }
       }
     },
@@ -137,12 +149,36 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "ps -eo cmd",
+        "text": "Termux Package Upgrade",
+        "icon": {
+          "name": "file_download.",
+          "location": "left"
+        },
         "on_click": {
-          "type": "PopupTextView",
-          "title": "ps -eo cmd",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh": "ps -eo cmd"
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Termux Package Upgrade",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh": "echo y | pkg upgrade",
+                        "is_toast": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
         }
       }
     }
