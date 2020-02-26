@@ -1,0 +1,190 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
+    {
+      "type": "TextView",
+      "text": "HTTP CGI Ruby Gallery",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text_size": "14",
+      "text_color": "#ffffff"
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+
+    {
+      "type": "Button",
+      "text": "cgi_ruby: eigen_directory_listview_http_cgi",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
+      "icon": {
+        "name": "info.",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "Clone",
+        "name": "PopupScreenDefault",
+        "attributes": {
+          "title": "cgi_ruby: eigen_directory_listview_http_cgi",
+          "component_list": [
+            {
+              "type": "UrlRequest",
+              "is_eigen_response": true,
+              "url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+              "parameter_list": [
+                {
+                  "name": "dirpath",
+                  "value_script": "''+eigenFragment.getCacheString('TextView:991000')"
+                },
+                {
+                  "name": "ruby",
+                  "value_list": [
+                    "dirpath = cgi.params['dirpath'][0]",
+                    "EigenFrame.new.eigen_directory_listview_http_cgi(dirpath).to_json.to_s"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+
+    {
+      "type": "Button",
+      "text": "cgi_ruby: eigen_directory_listview_http_cgi",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
+      "icon": {
+        "name": "info.",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "UrlRequest",
+        "id": 6001,
+        "is_eigen_response": false,
+        "url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+        "parameter_list": [
+          {
+            "name": "dirpath",
+            "value_script": "''+eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
+          },
+          {
+            "name": "ruby",
+            "value_list": [
+              "dirpath = cgi.params['dirpath'][0]",
+              "EigenFrame.new.eigen_directory_listview_http_cgi(dirpath).to_json.to_s"
+            ]
+          }
+        ],
+        "on_complete": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "cgi_ruby: eigen_directory_listview_http_cgi",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6001"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "type": "Button",
+      "text": "cgi_ruby: sys_output_frame_format",
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000",
+      "icon": {
+        "name": "info.",
+        "location": "left"
+      },
+      "on_click": {
+        "type": "UrlRequest",
+        "id": 6002,
+        "is_eigen_response": false,
+        "url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+        "parameter_list": [
+          {
+            "name": "dirpath",
+            "value_script": "''+eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
+          },
+          {
+            "name": "format",
+            "value": "json",
+            "x-value": "txt",
+            "x-value": "ruby"
+          },
+          {
+            "name": "frame",
+            "value": "",
+            "x-value": "",
+            "x-value": ""
+          },
+          {
+            "name": "ruby",
+            "value_list": [
+              "dirpath = cgi.params['dirpath'][0]",
+              "format = cgi.params['format'][0]",
+              "frame = cgi.params['frame'][0]",
+              "h = directory_hash()",
+              "sys_output_frame_format(h, frame, format)"
+            ]
+          }
+        ],
+        "on_complete": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "cgi_ruby: sys_output_frame_format",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6002"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+
+  ]
+}

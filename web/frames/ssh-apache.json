@@ -320,39 +320,25 @@
     },
 
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Test File System Explorer\n(shows json specs)",
+      "type": "Button",
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "text": "CGI Ruby Gallery (requires Apache2 and Ruby)",
+      "text_color": "#ffffff",
+      "background_color": "#ff0000",
+      "on_click": {
+        "type": "PopupScreen",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text_size": "14",
+        "text_color": "#ffffff",
+        "background_color": "#111111",
+        "title": "CGI Ruby Gallery",
         "icon": {
-          "name": "open_browser.",
-          "location": "top"
+          "name": "info.",
+          "location": "left"
         },
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "File System Explorer\n(show json specs)",
-          "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Launch File System Explorer\n(CGI calls Ruby)",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Launch File System Explorer\n(CGI calls Ruby)",
-            "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
-          }
-        }
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby.json"
       }
     }
 
