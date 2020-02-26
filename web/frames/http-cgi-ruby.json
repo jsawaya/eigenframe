@@ -155,7 +155,7 @@
               "format = cgi.params['format'][0]",
               "frame = cgi.params['frame'][0]",
               "h = directory_hash()",
-              "sys_output_frame_format(h, frame, format)"
+              "h.to_json.to_s"
             ]
           }
         ],
