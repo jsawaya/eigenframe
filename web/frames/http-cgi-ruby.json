@@ -140,7 +140,10 @@
             "name": "ruby",
             "value_list": [
               "dirpath = cgi.params['dirpath'][0]",
-              "puts 'dirpath: '+dirpath"
+              "puts 'dirpath: '+dirpath",
+              "Dir.chdir dirpath",
+              "h = directory_hash()",
+              "puts h.to_json.to_s"
             ]
           }
         ],
