@@ -138,15 +138,11 @@
           },
           {
             "name": "format",
-            "value": "json",
-            "x-value": "txt",
-            "x-value": "ruby"
+            "value": "json"
           },
           {
             "name": "frame",
-            "value": "",
-            "x-value": "",
-            "x-value": ""
+            "value": ""
           },
           {
             "name": "ruby",
