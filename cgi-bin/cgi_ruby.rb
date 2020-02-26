@@ -2,8 +2,9 @@
 
 require 'cgi'
 require 'json'
-
+require 'open3'
 require_relative 'ruby-lib/app-lib'
+require_relative 'ruby-lib/gpg-lib'
 require_relative 'ruby-lib/eigen-lib'
 
 print_response_header

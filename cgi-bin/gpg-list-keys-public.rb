@@ -3,8 +3,8 @@
 require 'open3'
 require 'cgi'
 require 'json'
-require './ruby-lib/app-lib'
-require './ruby-lib/gpg-lib'
+require_relative 'ruby-lib/app-lib'
+require_relative 'ruby-lib/gpg-lib'
 
 print_response_header
 
