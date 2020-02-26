@@ -316,7 +316,7 @@
             "eigenFragment.setBooleanVariable('IsSourceButton', 0, b1)",
             "eigenActivity.showToast('IsSourceButton: ' + b1)",
             "eigenActivity.finish()",
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')"
+            "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json')"
           ]
         }
       }
