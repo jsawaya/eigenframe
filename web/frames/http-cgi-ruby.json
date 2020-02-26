@@ -128,21 +128,13 @@
       },
       "on_click": {
         "type": "UrlRequest",
-        "id": 6002,
+        "id": 6661,
         "is_eigen_response": false,
         "url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
         "parameter_list": [
           {
             "name": "dirpath",
             "value_script": "''+eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
-          },
-          {
-            "name": "format",
-            "value": "json"
-          },
-          {
-            "name": "frame",
-            "value": ""
           },
           {
             "name": "ruby",
@@ -156,7 +148,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "cgi_ruby: sys_output_frame_format",
+            "title": "sys_output_frame_format",
             "component_list": [
               {
                 "type": "Clone",
@@ -167,7 +159,7 @@
                       "type": "Clone",
                       "name": "TextViewDetail",
                       "attributes": {
-                        "url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6002"
+                        "url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6661"
                       }
                     }
                   ]
