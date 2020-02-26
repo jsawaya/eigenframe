@@ -118,26 +118,6 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Check if Apache2 HTTP processes are running",
-        "icon": {
-          "name": "info.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "Check if Apache2 HTTP processes are running",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh_list": [
-            "ps -eo cmd"
-          ]
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
         "text": "Start Apache2 HTTP/CGI Services",
         "icon": {
           "name": "open_with.",
@@ -212,6 +192,44 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
+        "text": "Check if any HTTP processes are running",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupTextView",
+          "title": "Check if Apache2 HTTP processes are running",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "ssh_list": [
+            "ps -eo cmd"
+          ]
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Test Apache2 CGI Service",
+        "icon": {
+          "name": "info.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "PopupTextView",
+          "font": "font/droid-sans-mono/DroidSansMono.ttf",
+          "title": "Test Apache2 CGI Service",
+          "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+        }
+      }
+    },
+
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
         "text": "Test Apache2 Web Service",
         "icon": {
           "name": "info.",
@@ -242,25 +260,26 @@
       }
     },
 
-
     {
       "type": "Clone",
-      "name": "ButtonDefault",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
       "attributes": {
-        "text": "Test Apache2 CGI Service",
-        "icon": {
-          "name": "info.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "title": "Test Apache2 CGI Service",
-          "url": "http://localhost:8080/cgi-bin/sys-test.sh"
-        }
+        "text": "Apache2 Logs"
       }
     },
-
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click here to see any unusual activity when you are testing new scripts"
+        ]
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -343,28 +362,24 @@
     },
 
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "CGI Ruby Gallery (requires Apache2 and Ruby)",
-      "text_color": "#ffffff",
-      "background_color": "#ff0000",
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "CGI Ruby Gallery",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "CGI Ruby Gallery (requires Ruby installed)",
         "icon": {
-          "name": "info.",
-          "location": "left"
+          "name": "open_browser.",
+          "location": "top"
         },
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby.json"
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "CGI Ruby Gallery",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby.json"
+          }
+        }
       }
     }
-
 
   ]
 }
