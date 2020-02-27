@@ -136,7 +136,7 @@
         ]
       }
     },
-    {
+		{
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {

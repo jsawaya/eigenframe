@@ -24,7 +24,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Secure FTP Home:"
+				"text": "Home Directory (sftp):"
 			}
 		},
 		{
@@ -189,7 +189,7 @@
 				"on_complete": {
 					"type": "PopupScreen",
 					"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
-					"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json",
+					"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json",
 					"layout_width": "match_parent",
 					"text_size": "14",
 					"text_color": "#ffffff",
