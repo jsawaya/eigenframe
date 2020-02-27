@@ -296,9 +296,144 @@
 					}
 				}
 			}
+		},
+		{
+			"type": "Button",
+			"text": "cgi_ruby: gpg_import_public_key(keyfile)",
+			"layout_width": "wrap_content",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#11ff0000",
+			"icon": {
+				"name": "info.",
+				"location": "left"
+			},
+			"on_click": {
+				"type": "UrlRequest",
+				"id": 6604,
+				"is_eigen_response": false,
+				"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+				"parameter_list": [
+					{
+						"name": "keyfile",
+						"value_script_list": [
+							"'' + eigenFragment.getCacheString('EditText:999001')"
+						]
+					},
+					{
+						"name": "ruby",
+						"value_list": [
+							"keyfile = cgi.params['keyfile'][0]",
+							"gpg_import_public_key(keyfile).to_json.to_s"
+						]
+					}
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "cgi_ruby: gpg_import_public_key(keyfile)",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6604"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Private Key Passphrase:"
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 6606,
+			"is_password": true,
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#000000",
+			"text": "password"
+		},
+		{
+			"type": "Button",
+			"text": "cgi_ruby: gpg_import_private_key(keyfile,password)",
+			"layout_width": "wrap_content",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#11ff0000",
+			"icon": {
+				"name": "info.",
+				"location": "left"
+			},
+			"on_click": {
+				"type": "UrlRequest",
+				"id": 6605,
+				"is_eigen_response": false,
+				"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+				"parameter_list": [
+					{
+						"name": "keyfile",
+						"value_script_list": [
+							"'' + eigenFragment.getCacheString('EditText:999001')"
+						]
+					},
+					{
+						"name": "password",
+						"value_script_list": [
+							"'' + eigenFragment.getCacheString('EditText:6606')"
+						]
+					},
+					{
+						"name": "ruby",
+						"value_list": [
+							"keyfile = cgi.params['keyfile'][0]",
+							"password = cgi.params['password'][0]",
+							"gpg_import_private_key(keyfile,password).to_json.to_s"
+						]
+					}
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "cgi_ruby: gpg_import_private_key(keyfile,password)",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
 		}
 	]
 }
-
-
-
