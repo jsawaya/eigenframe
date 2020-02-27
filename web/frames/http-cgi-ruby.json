@@ -246,6 +246,59 @@
 					}
 				}
 			}
+		},
+		{
+			"type": "Button",
+			"text": "cgi_ruby: gpg_list_private_keys()",
+			"layout_width": "wrap_content",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#11ff0000",
+			"icon": {
+				"name": "info.",
+				"location": "left"
+			},
+			"on_click": {
+				"type": "UrlRequest",
+				"id": 6603,
+				"is_eigen_response": false,
+				"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+				"parameter_list": [
+					{
+						"name": "ruby",
+						"value_list": [
+							"gpg_list_private_keys().to_json.to_s"
+						]
+					}
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "cgi_ruby: gpg_list_private_keys()",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6603"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
 		}
 	]
 }
+
+
+

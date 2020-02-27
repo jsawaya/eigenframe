@@ -20,13 +20,13 @@ String eigenFragment.getCacheString(String filename)
 byte[] eigenFragment.getCacheByteArray(String filename)
 void eigenFragment.setCacheString(String type, int id, String initialValue)
 void eigenFragment.setCacheString(String filename, String initialValue)
-void eigenFragment.appendCacheString(String variableName, String rootpath, String optionLabel)
 String eigenFragment.clearCacheFile(String filename)
 String eigenFragment.concatPaths(String rootPath, String relativePath)
 String eigenFragment.concatPaths(int viewId1, int viewId2)
 String eigenFragment.concatPaths(int viewId1, int viewId2, int viewId3)
 String eigenFragment.concatCachePaths(String rootPathCache, String relativePathCache)
 boolean eigenFragment.appendPath(int viewId1, String optionLabel)
+- setViewState(viewId1, concatPaths(getViewState(viewId1), optionLabel))
 boolean eigenFragment.parentPath(int viewId1)
 String eigenFragment.getOptionLabel()
 int eigenFragment.getOptionPosition()
@@ -61,36 +61,6 @@ Related:
 [SecureFtp](SecureFtp.md) 
 [ActionList](ActionList.md) 
 
-        
-Example:
-```json
-{
-  "type": "JavaScript",
-  "script_list": [
-    "if (eigenFragment.getViewState() == '1') eigenFragment.setViewState(991001,'git-repos/eigenframe')",
-    "else eigenFragment.setViewState(991001,'')",
-    "eigenFragment.setViewState(991002,'')",
-    "eigenFragment.setViewState(991003,'')"
-  ]
-}
-```
-
-Example:
-```json
-{
-  "type": "JavaScript",
-  "script_list": [
-    "var pos = eigenFragment.getOptionPosition()",
-    "var opt = eigenFragment.getOptionLabel()",
-    "var rootpath = eigenFragment.concatPaths(991000, 991001, 991002)",
-    "eigenFragment.appendCacheString('SelectFile:100', rootpath, opt) ",
-    "var selected_file = eigenFragment.getCacheString('SelectFile:100') ",
-    "eigenActivity.showToast('Selected File: '+ selected_file)",
-    "eigenFragment.setViewState(991003, opt)",
-    "eigenFragment.setCacheString('EditText:999001', selected_file)"
-  ]
-}
-```
 
 Example:
 ```json
