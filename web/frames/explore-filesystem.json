@@ -1,0 +1,207 @@
+{
+	"type": "LinearLayout",
+	"scrollable": true,
+	"orientation": "vertical",
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"component_list": [
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Explore Filesystem"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Secure FTP Home:"
+			}
+		},
+		{
+			"type": "TextView",
+			"id": 991000,
+			"sftp": "pwd",
+			"layout_width": "match_parent",
+			"text_color": "#ffffff",
+			"text_size": "20",
+			"gravity": "left",
+			"background_color": "#000000",
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Working Directory:\n(relative to sftp home)"
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 991001,
+			"text": "",
+			"max_length": 200,
+			"is_single_line": true,
+			"layout_width": "match_parent",
+			"text_color": "#ffffff",
+			"text_size": "20",
+			"gravity": "left",
+			"background_color": "#000000",
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Current Path:\n(in working directory)"
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 991002,
+			"text": "",
+			"max_length": 200,
+			"is_single_line": true,
+			"layout_width": "match_parent",
+			"text_color": "#ffffff",
+			"text_size": "20",
+			"gravity": "left",
+			"background_color": "#000000",
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Current Filename: "
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 991003,
+			"max_length": 200,
+			"is_single_line": true,
+			"layout_width": "match_parent",
+			"text": "",
+			"text_color": "#ffffff",
+			"text_size": "20",
+			"gravity": "left",
+			"background_color": "#000000",
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Navigation: "
+			}
+		},
+		{
+			"type": "Button",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"gravity": "center",
+			"icon": {
+				"name": "cancel.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setViewState(991001,'')",
+					"eigenFragment.setViewState(991002,'')",
+					"eigenFragment.setViewState(991003,'')"
+				]
+			}
+		},
+		{
+			"type": "Button",
+			"text": "Explore Filesystem",
+			"layout_width": "wrap_content",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "listview.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "SecureFtp",
+				"id": 991004,
+				"sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
+				"on_complete": {
+					"type": "PopupScreen",
+					"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
+					"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json",
+					"layout_width": "match_parent",
+					"text_size": "14",
+					"text_color": "#ffffff",
+					"background_color": "#111111"
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		}
+	]
+}
+
+
