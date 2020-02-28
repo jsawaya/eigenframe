@@ -146,61 +146,68 @@
 			}
 		},
 		{
-			"type": "Button",
-			"text": "Reset",
-			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"gravity": "center",
-			"icon": {
-				"name": "cancel.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "JavaScript",
-				"script_list": [
-					"eigenFragment.setViewState(991001,'')",
-					"eigenFragment.setViewState(991002,'')",
-					"eigenFragment.setViewState(991003,'')"
-				]
-			}
-		},
-		{
-			"type": "Button",
-			"text": "Explore Filesystem",
-			"layout_width": "wrap_content",
-			"layout_height": "wrap_content",
-			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"icon": {
-				"name": "listview.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "SecureFtp",
-				"id": 991004,
-				"sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
-				"on_complete": {
-					"type": "PopupScreen",
-					"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
-					"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json",
-					"layout_width": "match_parent",
-					"text_size": "14",
+			"type": "LinearLayout",
+			"orientation": "horizontal",
+			"layout_width": "match_parent",
+			"component_list": [
+				{
+					"type": "Button",
+					"text": "Explore Filesystem",
+					"layout_width": "wrap_content",
+					"layout_height": "wrap_content",
 					"text_color": "#ffffff",
-					"background_color": "#111111"
+					"background_color": "#123456",
+					"icon": {
+						"name": "listview.",
+						"location": "top"
+					},
+					"margin": {
+						"left": 10,
+						"top": 10,
+						"right": 10,
+						"bottom": 10
+					},
+					"on_click": {
+						"type": "SecureFtp",
+						"id": 991004,
+						"sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
+						"on_complete": {
+							"type": "PopupScreen",
+							"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
+							"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json",
+							"layout_width": "match_parent",
+							"text_size": "14",
+							"text_color": "#ffffff",
+							"background_color": "#111111"
+						}
+					}
+				},
+				{
+					"type": "Button",
+					"text": "Reset",
+					"text_color": "#ffffff",
+					"background_color": "#123456",
+					"gravity": "center",
+					"icon": {
+						"name": "cancel.",
+						"location": "top"
+					},
+					"margin": {
+						"left": 10,
+						"top": 10,
+						"right": 10,
+						"bottom": 10
+					},
+					"on_click": {
+						"type": "JavaScript",
+						"script_list": [
+							"eigenFragment.setViewState(991001,'')",
+							"eigenFragment.setViewState(991002,'')",
+							"eigenFragment.setViewState(991003,'')"
+						]
+					}
 				}
-			}
+			]
 		},
 		{
 			"type": "Clone",
