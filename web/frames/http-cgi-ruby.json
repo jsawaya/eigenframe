@@ -14,7 +14,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Current Path:"
+				"text": "Current File Path:"
 			}
 		},
 		{
@@ -47,7 +47,44 @@
 							"type": "JavaScript",
 							"script_list": [
 								"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
+								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)",
 								"eigenFragment.setViewState(991001, '')",
+								"eigenFragment.setViewState(999001, '')"
+							]
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Select Directory",
+				"background_color": "#123456",
+				"icon": {
+					"name": "open_with.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "ActionList",
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "PopupScreenDefault",
+							"attributes": {
+								"id": 991005,
+								"title": "Explore Filesystem",
+								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem.json"
+							}
+						},
+						{
+							"type": "JavaScript",
+							"script_list": [
+								"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
+								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,false)",
+								"eigenFragment.setViewState(991001, '')",
+								s
 								"eigenFragment.setViewState(999001, '')"
 							]
 						}

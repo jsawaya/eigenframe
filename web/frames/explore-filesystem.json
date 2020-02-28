@@ -33,10 +33,6 @@
 			}
 		},
 		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
 			"type": "Define",
 			"name": "ExploreFilesystemWorkingDirectory",
 			"component": {
@@ -44,6 +40,10 @@
 				"orientation": "vertical",
 				"layout_width": "match_parent",
 				"component_list": [
+					{
+						"type": "Clone",
+						"name": "HorizontalLine"
+					},
 					{
 						"type": "Clone",
 						"name": "TextViewLabel",
@@ -106,34 +106,51 @@
 			}
 		},
 		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "Current Filename: "
+			"type": "Define",
+			"name": "ExploreFilesystemCurrentFilename",
+			"component": {
+				"type": "LinearLayout",
+				"orientation": "vertical",
+				"layout_width": "match_parent",
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "HorizontalLine"
+					},
+					{
+						"type": "Clone",
+						"name": "TextViewLabel",
+						"attributes": {
+							"text": "Current Filename: "
+						}
+					},
+					{
+						"type": "EditText",
+						"id": 991003,
+						"max_length": 200,
+						"is_single_line": true,
+						"layout_width": "match_parent",
+						"text": "",
+						"text_color": "#ffffff",
+						"text_size": "20",
+						"gravity": "left",
+						"background_color": "#000000",
+						"margin": {
+							"left": 10,
+							"top": 10,
+							"right": 10,
+							"bottom": 10
+						}
+					}
+				]
 			}
 		},
 		{
-			"type": "EditText",
-			"id": 991003,
-			"max_length": 200,
-			"is_single_line": true,
-			"layout_width": "match_parent",
-			"text": "",
-			"text_color": "#ffffff",
-			"text_size": "20",
-			"gravity": "left",
-			"background_color": "#000000",
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			}
+			"type": "Clone",
+			"name": "ExploreFilesystemCurrentFilename",
+			"condition_script": "eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)"
 		},
+
 		{
 			"type": "Clone",
 			"name": "HorizontalLine"
