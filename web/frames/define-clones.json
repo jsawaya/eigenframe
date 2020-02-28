@@ -284,6 +284,19 @@
       }
     },
     {
+			"type": "Define",
+			"name": "SecureFtpHomeDirectoryQuery",
+			"component": {
+				"type": "SecureFtp",
+				"id": 411000,
+				"sftp_script": "'pwd'"
+			},
+			"on_complete": {
+				"type": "JavaScript",
+				"script": "eigenActivity.showToast('sftp-home: '+eigenFragment.getCacheString('SecureFtp:411000'))"
+			}
+		},
+		{
       "type": "Define",
       "name": "SetIsSourceButton",
       "component": {

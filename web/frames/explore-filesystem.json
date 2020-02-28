@@ -17,6 +17,11 @@
 			}
 		},
 		{
+			"type": "Clone",
+			"name": "SecureFtpHomeDirectoryQuery",
+			"condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'').isEmpty()"
+		},
+		{
 			"type": "TextView",
 			"id": 991000,
 			"sftp": "pwd",
