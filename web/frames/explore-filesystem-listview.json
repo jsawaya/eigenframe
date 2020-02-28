@@ -11,7 +11,7 @@
 		},
 		{
 			"type": "Clone",
-			"name": "TextViewLabel",
+			"name": "TextViewDetail",
 			"attributes": {
 				"text_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)"
 			}

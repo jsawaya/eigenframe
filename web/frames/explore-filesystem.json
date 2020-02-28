@@ -191,7 +191,7 @@
 						"sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
 						"on_complete": {
 							"type": "PopupScreen",
-							"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
+							"title": "Explore Filesystem",
 							"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json",
 							"layout_width": "match_parent",
 							"text_size": "14",
