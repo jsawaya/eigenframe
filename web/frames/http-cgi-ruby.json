@@ -84,7 +84,6 @@
 								"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
 								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,false)",
 								"eigenFragment.setViewState(991001, '')",
-								s
 								"eigenFragment.setViewState(999001, '')"
 							]
 						}
