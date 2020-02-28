@@ -13,7 +13,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Explore Filesystem"
+				"text_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)"
 			}
 		},
 		{
