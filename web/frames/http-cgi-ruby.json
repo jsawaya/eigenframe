@@ -25,7 +25,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Explore Filesystem",
+				"text": "Select Filepath",
 				"background_color": "#123456",
 				"icon": {
 					"name": "open_with.",
@@ -46,7 +46,8 @@
 						{
 							"type": "JavaScript",
 							"script_list": [
-								"eigenFragment.setViewState(991001, '')"
+								"eigenFragment.setViewState(991001, '')",
+								"eigenFragment.setViewState(999001, '')"
 							],
 							"x-script_list": [
 								"eigenFragment.setViewState(991001, '')",
