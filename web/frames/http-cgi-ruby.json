@@ -456,7 +456,9 @@
 					"component_list": [
 						{
 							"type": "JavaScript",
-							"script": "eigenFragment.setStringVariable('ExploreFilesystemWorkingDirectory', 0, '')"
+							"script_list": [
+								"eigenFragment.setCacheString('EditText:991001', '')"
+							]
 						},
 						{
 							"type": "Clone",
@@ -471,6 +473,5 @@
 				}
 			}
 		}
-		
 	]
 }
