@@ -365,7 +365,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "CGI Ruby Gallery (requires Ruby installed)",
+        "text": "HTTP/CGI Ruby Gallery (requires Ruby)",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -374,7 +374,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "CGI Ruby Gallery",
+            "title": "HTTP/CGI Ruby Gallery",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby.json"
           }
         }

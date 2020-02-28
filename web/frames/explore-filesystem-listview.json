@@ -194,6 +194,7 @@
 									"eigenActivity.showToast('Filepath: '+ absolute_filepath)",
 									"eigenFragment.setViewState(999001, absolute_filepath)",
 									"eigenFragment.setViewState(991003, selected_name)",
+									"eigenFragment.closePopupWindow()",
 									"eigenFragment.closePopupScreen(991005)"
 								]
 							},
