@@ -184,19 +184,21 @@
 									"root_path: /home/git-repo/gitpath view-states(991000, 991001, 991002)",
 									"absolute_filepath: absolute file path",
 									"'EditText:999001' holds the absolute_filepath), set cache not view state",
-									"'EditText:991003' holds selected_name), set view state not cache"
+									"'EditText:991003' holds selected_name), set view state not cache",
+									"eigenFragment.setCacheString('EditText:999001', absolute_filepath)"
 								],
 								"script_list": [
 									"var selected_name = eigenFragment.getOptionLabel()",
 									"var root_path = eigenFragment.concatPaths(991000, 991001, 991002)",
 									"var absolute_filepath = eigenFragment.concatPaths(root_path, selected_name) ",
 									"eigenActivity.showToast('Filepath: '+ absolute_filepath)",
-									"eigenFragment.setCacheString('EditText:999001', absolute_filepath)",
-									"eigenFragment.setViewState(991003, selected_name)"
+									"eigenFragment.setViewState(999001, absolute_filepath)",
+									"eigenFragment.setViewState(991003, selected_name)",
+									"eigenFragment.closePopupScreen(991005)"
 								]
 							},
 							{
-								"type": "Clone",
+								"type": "x-Clone",
 								"name": "PopupScreenDefault",
 								"attributes": {
 									"title": "Edit Remote File",

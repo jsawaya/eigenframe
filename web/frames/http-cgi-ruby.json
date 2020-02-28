@@ -463,6 +463,7 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
+						"id": 991005,
 						"title": "Explore Filesystem",
 						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem.json"
 					}
