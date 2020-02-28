@@ -46,12 +46,9 @@
 						{
 							"type": "JavaScript",
 							"script_list": [
+								"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
 								"eigenFragment.setViewState(991001, '')",
 								"eigenFragment.setViewState(999001, '')"
-							],
-							"x-script_list": [
-								"eigenFragment.setViewState(991001, '')",
-								"eigenFragment.setCacheString('EditText:991001', '')"
 							]
 						}
 					]

@@ -74,7 +74,7 @@
 		{
 			"type": "Clone",
 			"name": "ExploreFilesystemWorkingDirectory",
-			"condition_script": "false"
+			"condition_script": "eigenFragment.getBooleanVariable('IsSourceButton',0,false)"
 		},
 		{
 			"type": "Clone",
@@ -154,6 +154,7 @@
 				{
 					"type": "Button",
 					"text": "Explore Filesystem",
+					"layout_width": "match_parent",
 					"layout_weight": 1,
 					"text_color": "#ffffff",
 					"background_color": "#123456",
@@ -188,6 +189,7 @@
 					"text_color": "#ffffff",
 					"background_color": "#123456",
 					"gravity": "center",
+					"layout_width": "match_parent",
 					"layout_weight": 1,
 					"icon": {
 						"name": "cancel.",

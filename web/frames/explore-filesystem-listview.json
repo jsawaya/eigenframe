@@ -22,11 +22,12 @@
 		},
 		{
 			"type": "Button",
-			"layout_width": "match_parent",
 			"text": "Open Parent Directory",
 			"text_color": "#ffffff",
 			"background_color": "#123456",
 			"gravity": "center",
+			"layout_width": "match_parent",
+			"layout_weight": 1,
 			"margin": {
 				"left": 10,
 				"top": 10,
