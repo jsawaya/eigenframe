@@ -28,9 +28,10 @@
 				{
 					"type": "Button",
 					"text": "Open Parent Directory",
+					"text_size": "14",
+					"gravity": "center_horizontal",
 					"text_color": "#ffffff",
 					"background_color": "#123456",
-					"gravity": "center",
 					"layout_width": "match_parent",
 					"layout_weight": "1",
 					"margin": {
@@ -70,10 +71,11 @@
 				},
 				{
 					"type": "Button",
-					"text": "Select Directory",
+					"text": "Select This Directory",
+					"text_size": "14",
+					"gravity": "center_horizontal",
 					"text_color": "#ffffff",
 					"background_color": "#123456",
-					"gravity": "center",
 					"layout_width": "match_parent",
 					"layout_weight": "1",
 					"margin": {
