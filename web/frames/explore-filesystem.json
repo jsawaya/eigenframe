@@ -54,7 +54,6 @@
 					{
 						"type": "EditText",
 						"id": 991001,
-						"text": "",
 						"max_length": 200,
 						"is_single_line": true,
 						"layout_width": "match_parent",

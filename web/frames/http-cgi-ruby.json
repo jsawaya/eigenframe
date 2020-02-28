@@ -455,12 +455,6 @@
 					"type": "ActionList",
 					"component_list": [
 						{
-							"type": "JavaScript",
-							"script_list": [
-								"eigenFragment.setCacheString('EditText:991001', '')"
-							]
-						},
-						{
 							"type": "Clone",
 							"name": "PopupScreenDefault",
 							"attributes": {
@@ -468,6 +462,16 @@
 								"title": "Explore Filesystem",
 								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem.json"
 							}
+						},
+						{
+							"type": "JavaScript",
+							"script_list": [
+								"eigenFragment.setViewState(991001, '')"
+							],
+							"x-script_list": [
+								"eigenFragment.setViewState(991001, '')",
+								"eigenFragment.setCacheString('EditText:991001', '')"
+							]
 						}
 					]
 				}
