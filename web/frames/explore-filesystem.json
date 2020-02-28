@@ -13,17 +13,6 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Explore Filesystem"
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
 				"text": "Home Directory (sftp):"
 			}
 		},
@@ -143,6 +132,7 @@
 		},
 		{
 			"type": "Button",
+			"text": "Reset",
 			"text_color": "#ffffff",
 			"background_color": "#654321",
 			"gravity": "center",

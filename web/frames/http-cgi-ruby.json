@@ -19,6 +19,21 @@
 			"name": "HorizontalLine"
 		},
 		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Current Path:"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "EditTextRemoteFilePath"
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
 			"type": "Button",
 			"text": "cgi_ruby: eigen_directory_listview_http_cgi",
 			"layout_width": "wrap_content",
