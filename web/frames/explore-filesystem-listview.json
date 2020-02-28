@@ -56,7 +56,7 @@
 							"text_color": "#ffffff",
 							"background_color": "#111111",
 							"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
-							"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filefystem-listview.json"
+							"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json"
 						}
 					}
 				]
@@ -135,7 +135,7 @@
 									"text_color": "#ffffff",
 									"background_color": "#111111",
 									"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
-									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filefystem-listview.json"
+									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json"
 								}
 							}
 						]
