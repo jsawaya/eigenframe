@@ -84,7 +84,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Current Path:\n(in working directory)"
+				"text": "Current Path:"
 			}
 		},
 		{
@@ -149,12 +149,12 @@
 			"type": "LinearLayout",
 			"orientation": "horizontal",
 			"layout_width": "match_parent",
+			"gravity": "center_horizontal",
 			"component_list": [
 				{
 					"type": "Button",
 					"text": "Explore Filesystem",
-					"layout_width": "wrap_content",
-					"layout_height": "wrap_content",
+					"layout_weight": 1,
 					"text_color": "#ffffff",
 					"background_color": "#123456",
 					"icon": {
@@ -188,6 +188,7 @@
 					"text_color": "#ffffff",
 					"background_color": "#123456",
 					"gravity": "center",
+					"layout_weight": 1,
 					"icon": {
 						"name": "cancel.",
 						"location": "top"
