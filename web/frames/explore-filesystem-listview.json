@@ -197,14 +197,6 @@
 									"eigenFragment.closePopupWindow()",
 									"eigenFragment.closePopupScreen(991005)"
 								]
-							},
-							{
-								"type": "x-Clone",
-								"name": "PopupScreenDefault",
-								"attributes": {
-									"title": "Edit Remote File",
-									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
-								}
 							}
 						]
 					},

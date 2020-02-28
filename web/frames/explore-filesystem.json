@@ -37,29 +37,45 @@
 			"name": "HorizontalLine"
 		},
 		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "Working Directory:\n(relative to sftp home)"
+			"type": "Define",
+			"name": "ExploreFilesystemWorkingDirectory",
+			"component": {
+				"type": "LinearLayout",
+				"orientation": "vertical",
+				"layout_width": "match_parent",
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "TextViewLabel",
+						"attributes": {
+							"text": "Working Directory:\n(relative to sftp home)"
+						}
+					},
+					{
+						"type": "EditText",
+						"id": 991001,
+						"text": "",
+						"max_length": 200,
+						"is_single_line": true,
+						"layout_width": "match_parent",
+						"text_color": "#ffffff",
+						"text_size": "20",
+						"gravity": "left",
+						"background_color": "#000000",
+						"margin": {
+							"left": 10,
+							"top": 10,
+							"right": 10,
+							"bottom": 10
+						}
+					}
+				]
 			}
 		},
 		{
-			"type": "EditText",
-			"id": 991001,
-			"text": "",
-			"max_length": 200,
-			"is_single_line": true,
-			"layout_width": "match_parent",
-			"text_color": "#ffffff",
-			"text_size": "20",
-			"gravity": "left",
-			"background_color": "#000000",
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			}
+			"type": "Clone",
+			"name": "ExploreFilesystemWorkingDirectory",
+			"condition_script": "false"
 		},
 		{
 			"type": "Clone",
