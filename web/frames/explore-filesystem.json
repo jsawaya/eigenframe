@@ -74,7 +74,7 @@
 		{
 			"type": "Clone",
 			"name": "ExploreFilesystemWorkingDirectory",
-			"condition_script": "eigenFragment.getBooleanVariable('IsSourceButton',0,false)"
+			"condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)"
 		},
 		{
 			"type": "Clone",
