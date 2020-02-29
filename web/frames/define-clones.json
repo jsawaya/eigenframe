@@ -285,22 +285,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "SecureFtpHomeDirectoryQuery",
-			"component": {
-				"type": "SecureFtp",
-				"id": 411000,
-				"sftp_script": "'pwd'"
-			},
-			"on_complete": {
-				"type": "JavaScript",
-				"script_list": [
-					"var s1 = eigenFragment.getCacheString('SecureFtp:411000')",
-					"eigenFragment.setCacheString('HomeDirectory', s1)"
-				]
-			}
-		},
-		{
-			"type": "Define",
 			"name": "SetIsSourceButton",
 			"component": {
 				"type": "Switch",
