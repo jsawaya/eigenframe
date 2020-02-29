@@ -231,10 +231,24 @@
 						"bottom": 10
 					},
 					"on_click": {
-						"type": "JavaScript",
-						"script_list": [
-							"eigenFragment.setCacheString('SelectedDirectory', '')",
-							"eigenFragment.setCacheString('SelectedFile', '')"
+						"type": "ActionList",
+						"component_list": [
+							{
+								"type": "JavaScript",
+								"script_list": [
+									"eigenFragment.setCacheString('SelectedDirectory', '')",
+									"eigenFragment.setCacheString('SelectedFile', '')"
+								]
+							},
+							{
+								"type": "Clone",
+								"name": "PopupScreenDefault",
+								"attributes": {
+									"id": 991005,
+									"title": "Explore Filesystem",
+									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem.json"
+								}
+							}
 						]
 					}
 				}
