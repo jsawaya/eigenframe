@@ -79,12 +79,6 @@
 							"text_size": "20",
 							"gravity": "left",
 							"background_color": "#000000",
-							"margin": {
-								"left": 10,
-								"top": 10,
-								"right": 10,
-								"bottom": 10
-							}
 						}
 					]
 				}
@@ -115,12 +109,6 @@
 				"text_size": "20",
 				"gravity": "left",
 				"background_color": "#000000",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				}
 			},
 			{
 				"type": "Define",
@@ -151,12 +139,6 @@
 							"text_size": "20",
 							"gravity": "left",
 							"background_color": "#000000",
-							"margin": {
-								"left": 10,
-								"top": 10,
-								"right": 10,
-								"bottom": 10
-							}
 						},
 						{
 							"type": "Clone",
@@ -175,12 +157,6 @@
 							"text_size": "20",
 							"gravity": "left",
 							"background_color": "#000000",
-							"margin": {
-								"left": 10,
-								"top": 10,
-								"right": 10,
-								"bottom": 10
-							}
 						}
 					]
 				}
