@@ -58,11 +58,10 @@
 						"component_list": [
 							{
 								"type": "JavaScript",
+								"comment": "find the parent directory of the SelectedPath",
 								"script_list": [
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"var lastIndex = selected_path.lastIndexOf('/')",
-									"if (lastIndex > 0) selected_path = selected_path.substring(0, lastIndex)",
-									"else selected_path = ''",
+									"selected_path = eigenFragment.parentPath(selected_path)",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
 									"eigenFragment.setCacheString('SelectedFile', '')",
 
