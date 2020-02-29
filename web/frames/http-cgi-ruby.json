@@ -11,22 +11,6 @@
 		"layout_width": "match_parent",
 		"component_list": [
 			{
-				"type": "JavaScript",
-				"script_list": [
-					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
-					"eigenFragment.setCacheString('WorkingDirectory',0,'')",
-					"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-					"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
-					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-					"java.lang.System.out.println('SelectedPath (initial): '+selected_path)",
-					"eigenActivity.showToast('SelectedPath: '+ selected_path)",
-					"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
-					"java.lang.System.out.println('FullPath (initial): '+full_path)",
-					"eigenFragment.setCacheString('FullPath', full_path)"
-				]
-			},
-			{
 				"type": "Clone",
 				"name": "HorizontalLine"
 			},
@@ -43,31 +27,25 @@
 				"max_length": 200,
 				"is_single_line": true,
 				"layout_width": "match_parent",
-				"text_script": "'' + eigenFragment.getCacheString('FullPathFile')",
 				"text_color": "#ffffff",
-				"background_color": "#000000",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				}
+				"background_color": "#000000"
 			},
 			{
-				"type": "EditText",
-				"id": 6699,
-				"max_length": 200,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"text_script": "'' + eigenFragment.getCacheString('FullPathFile')",
-				"text_color": "#ffffff",
-				"background_color": "#000000",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				}
+				"type": "JavaScript",
+				"script_list": [
+					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
+					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
+					"eigenFragment.setCacheString('WorkingDirectory',0,'')",
+					"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+					"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+					"java.lang.System.out.println('SelectedPath (initial): '+selected_path)",
+					"eigenActivity.showToast('SelectedPath: '+ selected_path)",
+					"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+					"java.lang.System.out.println('FullPath (initial): '+full_path)",
+					"eigenFragment.setCacheString('FullPath', full_path)",
+					"eigenFragment.setViewState(6699, full_path)"
+				]
 			},
 			{
 				"type": "Clone",
