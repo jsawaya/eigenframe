@@ -9,12 +9,13 @@
 			"type": "JavaScript",
 			"comment": "set the full path: concat home/working/selected directories",
 			"script_list": [
-				"var s1 = eigenFragment.getCacheString('HomeDirectory')",
-				"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
-				"var s3 = eigenFragment.getCacheString('SelectedPath')",
-				"var s12 = eigenFragment.concatPaths(s1, s2)",
-				"var s123 = eigenFragment.concatPaths(s12, s3)",
-				"eigenFragment.setCacheString('FullPath', s123)"
+				"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+				"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+				"var full_path = eigenFragment.concatPaths(home_dir, work_dir)",
+				"eigenFragment.setCacheString('FullPath', full_path)",
+				"eigenFragment.setViewState(6699, full_path)",
+				"eigenFragment.setCacheString('SelectedPath', '')",
+				"eigenFragment.setCacheString('SelectedFile', '')"
 			]
 		},
 		{
@@ -58,16 +59,16 @@
 							{
 								"type": "JavaScript",
 								"script_list": [
-									"var s3 = eigenFragment.getCacheString('SelectedPath')",
-									"var lastIndex = s3.lastIndexOf('/')",
-									"if (lastIndex > 0) s3 = s3.substring(0, lastIndex)",
-									"else s3 = ''",
-									"eigenFragment.setCacheString('SelectedPath', s3)",
-									"var s1 = eigenFragment.getCacheString('HomeDirectory')",
-									"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
-									"var s12 = eigenFragment.concatPaths(s1, s2)",
-									"var s123 = eigenFragment.concatPaths(s12, s3)",
-									"eigenFragment.setCacheString('FullPath', s123)",
+									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+									"var lastIndex = selected_path.lastIndexOf('/')",
+									"if (lastIndex > 0) selected_path = selected_path.substring(0, lastIndex)",
+									"else selected_path = ''",
+									"eigenFragment.setCacheString('SelectedPath', selected_path)",
+									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+									"eigenFragment.setCacheString('FullPath', full_path)",
+									"eigenFragment.setViewState(6699, full_path)",
 
 									"eigenFragment.closePopupWindow()"
 								]
@@ -112,8 +113,8 @@
 							{
 								"type": "JavaScript",
 								"script_list": [
-									"var s4 = eigenFragment.getCacheString('FullPath')",
-									"eigenActivity.showToast('Directory: '+ s4)",
+									"var full_path = eigenFragment.getCacheString('FullPath')",
+									"eigenActivity.showToast('Directory: '+ full_path)",
 									"eigenFragment.setCacheString('SelectedPath', '')",
 									"eigenFragment.closePopupScreen(991005)",
 									"eigenFragment.closePopupWindow()"
@@ -180,14 +181,15 @@
 								"script_list": [
 									"var selected_dir = eigenFragment.getOptionLabel()",
 									"eigenActivity.showToast('selected directory: ' + selected_dir)",
-									"var s3 = eigenFragment.getCacheString('SelectedPath')",
-									"s3 = eigenFragment.concatPaths(s3, selected_dir)",
-									"eigenFragment.setCacheString('SelectedPath', s3)",
-									"var s1 = eigenFragment.getCacheString('HomeDirectory')",
-									"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
-									"var s12 = eigenFragment.concatPaths(s1, s2)",
-									"var s123 = eigenFragment.concatPaths(s12, s3)",
-									"eigenFragment.setCacheString('FullPath', s123)",
+									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
+									"eigenFragment.setCacheString('SelectedPath', selected_path)",
+									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+									"eigenFragment.setCacheString('FullPath', full_path)",
+									"eigenFragment.setCacheString('FullPathFile', full_path)",
+									"eigenFragment.setViewState(6699, full_path)",
 
 									"eigenFragment.closePopupWindow()"
 								]
@@ -250,20 +252,20 @@
 							{
 								"type": "JavaScript",
 								"comment": [
-									"selected_name: file name selected by the user",
+									"selected_file: file name selected by the user",
 									"full_path: /home/git-repo/git-path",
-									"full_path += selected_name"
+									"full_path += selected_file"
 								],
 								"script_list": [
-									"var selected_name = eigenFragment.getOptionLabel()",
-									"eigenActivity.showToast('selected name: ' + selected_name)",
-									"eigenFragment.setCacheString('SelectedFile', selected_name)",
-									"var s4 = eigenFragment.getCacheString('FullPath')",
-									"s4 = eigenFragment.concatPaths(s4, selected_name)",
-									"eigenFragment.setCacheString('FullPath', s4)",
-
-									"eigenFragment.closePopupWindow()",
-									"eigenFragment.closePopupScreen(991005)"
+									"var selected_file = eigenFragment.getOptionLabel()",
+									"eigenActivity.showToast('selected filename: ' + selected_file)",
+									"eigenFragment.setCacheString('SelectedFile', selected_file)",
+									"var full_path = eigenFragment.getCacheString('FullPath')",
+									"var full_path_file = eigenFragment.concatPaths(full_path, selected_file)",
+									"eigenFragment.setCacheString('FullPathFile', full_path_file)",
+									"eigenFragment.setViewState(6699, full_path_file)",
+									"eigenFragment.closePopupScreen(991005)",
+									"eigenFragment.closePopupWindow()"
 								]
 							}
 						]

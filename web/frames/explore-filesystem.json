@@ -12,8 +12,8 @@
 			{
 				"type": "JavaScript",
 				"script_list": [
-					"var s1 = eigenFragment.getCacheString('SecureFtp:411000')",
-					"eigenFragment.setCacheString('HomeDirectory', s1)",
+					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
+					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"eigenFragment.setCacheString('WorkingDirectory',0,'')",
 					"eigenFragment.setCacheString('SelectedPath',0,'')",
 					"eigenFragment.setCacheString('SelectedFile',0,'')"

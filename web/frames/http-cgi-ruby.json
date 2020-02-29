@@ -14,15 +14,16 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Current File Path:"
+				"text": "Selected FullPath:"
 			}
 		},
 		{
 			"type": "EditText",
+			"id": 6699,
 			"max_length": 200,
 			"is_single_line": true,
 			"layout_width": "match_parent",
-			"text_script": "'' + eigenFragment.getCacheString('FullPath')",
+			"text_script": "'' + eigenFragment.getCacheString('FullPathFile')",
 			"text_color": "#ffffff",
 			"background_color": "#000000",
 			"margin": {
