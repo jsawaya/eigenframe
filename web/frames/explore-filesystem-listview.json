@@ -64,6 +64,8 @@
 									"if (lastIndex > 0) selected_path = selected_path.substring(0, lastIndex)",
 									"else selected_path = ''",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
+									"eigenFragment.setCacheString('SelectedFile', '')",
+
 									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
 									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
