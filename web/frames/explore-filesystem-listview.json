@@ -7,15 +7,15 @@
 	"component_list": [
 		{
 			"type": "JavaScript",
-			"comment": "set the full path: concat home/working/selected directories",
+			"comment": "initialize the full path: concat home/working/selected directories",
 			"script_list": [
 				"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
 				"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 				"var full_path = eigenFragment.concatPaths(home_dir, work_dir)",
 				"eigenFragment.setCacheString('FullPath', full_path)",
 				"eigenFragment.setViewState(6699, full_path)",
-				"eigenFragment.setCacheString('SelectedPath', '')",
-				"eigenFragment.setCacheString('SelectedFile', '')"
+				"//eigenFragment.setCacheString('SelectedPath', '')",
+				"//eigenFragment.setCacheString('SelectedFile', '')"
 			]
 		},
 		{
