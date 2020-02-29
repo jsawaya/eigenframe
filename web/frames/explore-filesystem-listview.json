@@ -251,11 +251,8 @@
 								"type": "JavaScript",
 								"comment": [
 									"selected_name: file name selected by the user",
-									"root_path: /home/git-repo/gitpath view-states(991000, 991001, 991002)",
-									"absolute_filepath: absolute file path",
-									"'EditText:999001' holds the absolute_filepath), set cache not view state",
-									"'EditText:991003' holds selected_name), set view state not cache",
-									"eigenFragment.setCacheString('EditText:999001', absolute_filepath)"
+									"full_path: /home/git-repo/git-path",
+									"full_path += selected_name"
 								],
 								"script_list": [
 									"var selected_name = eigenFragment.getOptionLabel()",

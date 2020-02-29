@@ -243,10 +243,7 @@
 							"script_list": [
 								"eigenFragment.setCacheString('WorkingDirectory', '')",
 								"eigenFragment.setCacheString('SelectedDirectory', '')",
-								"eigenFragment.setCacheString('SelectedFile', '')",
-								"eigenFragment.setViewState(991001,'')",
-								"eigenFragment.setViewState(991002,'')",
-								"eigenFragment.setViewState(991003,'')"
+								"eigenFragment.setCacheString('SelectedFile', '')"
 							]
 						}
 					}
