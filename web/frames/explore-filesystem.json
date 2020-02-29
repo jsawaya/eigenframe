@@ -16,8 +16,12 @@
 					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
 					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"eigenFragment.setCacheString('WorkingDirectory',0,'')",
-					"eigenFragment.setCacheString('SelectedPath',0,'')",
-					"eigenFragment.setCacheString('SelectedFile',0,'')"
+					"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+					"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+					"eigenFragment.setCacheString('FullPath', full_path)"
 				]
 			},
 			{

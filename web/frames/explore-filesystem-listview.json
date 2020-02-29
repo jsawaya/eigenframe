@@ -60,13 +60,14 @@
 								"type": "JavaScript",
 								"comment": "find the parent directory of the SelectedPath",
 								"script_list": [
+									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
 									"selected_path = eigenFragment.parentPath(selected_path)",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
 									"eigenFragment.setCacheString('SelectedFile', '')",
 
-									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
 									"eigenFragment.setCacheString('FullPathFile', full_path)",
