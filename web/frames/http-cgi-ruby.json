@@ -59,10 +59,7 @@
 							"type": "JavaScript",
 							"script_list": [
 								"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
-								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)",
-								"eigenFragment.setCacheString('WorkingDirectory',0,'')",
-								"eigenFragment.setCacheString('SelectedPath',0,'')",
-								"eigenFragment.setCacheString('SelectedFile',0,'')"
+								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
 							]
 						}
 					]
@@ -95,10 +92,7 @@
 							"type": "JavaScript",
 							"script_list": [
 								"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
-								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,false)",
-								"eigenFragment.setCacheString('WorkingDirectory',0,'')",
-								"eigenFragment.setCacheString('SelectedPath',0,'')",
-								"eigenFragment.setCacheString('SelectedFile',0,'')"
+								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,false)"
 							]
 						}
 					]

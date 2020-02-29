@@ -1,4 +1,5 @@
 {
+	"comment": "set the HomeDirectory to the sftp pwd",
 	"type": "SecureFtp",
 	"id": 411000,
 	"sftp_script": "'pwd'",
@@ -32,7 +33,6 @@
 			},
 			{
 				"type": "TextView",
-				"id": 991000,
 				"text_script": "''+eigenFragment.getCacheString('HomeDirectory')",
 				"layout_width": "match_parent",
 				"text_color": "#ffffff",
@@ -67,7 +67,6 @@
 						},
 						{
 							"type": "EditText",
-							"id": 991001,
 							"text_script": "''+eigenFragment.getCacheString('WorkingDirectory')",
 							"max_length": 200,
 							"is_single_line": true,
@@ -104,7 +103,6 @@
 			},
 			{
 				"type": "EditText",
-				"id": 991002,
 				"text_script": "''+eigenFragment.getCacheString('SelectedPath')",
 				"max_length": 200,
 				"is_single_line": true,
@@ -146,6 +144,30 @@
 							"is_single_line": true,
 							"layout_width": "match_parent",
 							"text_script": "''+eigenFragment.getCacheString('SelectedFile')",
+							"text_color": "#ffffff",
+							"text_size": "20",
+							"gravity": "left",
+							"background_color": "#000000",
+							"margin": {
+								"left": 10,
+								"top": 10,
+								"right": 10,
+								"bottom": 10
+							}
+						},
+						{
+							"type": "Clone",
+							"name": "TextViewLabel",
+							"attributes": {
+								"text": "Full File Path: "
+							}
+						},
+						{
+							"type": "EditText",
+							"max_length": 200,
+							"is_single_line": true,
+							"layout_width": "match_parent",
+							"text_script": "''+eigenFragment.getCacheString('FullPathFile')",
 							"text_color": "#ffffff",
 							"text_size": "20",
 							"gravity": "left",
@@ -201,22 +223,18 @@
 						},
 						"on_click": {
 							"type": "SecureFtp",
+							"comment": "call sftp this way when you don't need immediate results for a TextView",
 							"id": 991004,
-							"sftp_script_list": [
-								"var homeDirectory = eigenFragment.getCacheString('HomeDirectory')",
-								"var workingDirectory = eigenFragment.getCacheString('WorkingDirectory')",
-								"var selectedDirectory = eigenFragment.getCacheString('SelectedDirectory')",
-								"var homeWorkDirectory = eigenFragment.concatPaths(homeDirectory, workingDirectory)",
-								"'directory ' + eigenFragment.concatPaths(homeWorkDirectory, selectedDirectory)"
-							],
+							"sftp_script": "'directory ' + eigenFragment.getCacheString('FullPath')",
 							"on_complete": {
 								"type": "PopupScreen",
-								"title": "Explore Filesystem (ListView)",
-								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json",
 								"layout_width": "match_parent",
+								"layout_height": "wrap_content",
 								"text_size": "14",
 								"text_color": "#ffffff",
-								"background_color": "#111111"
+								"background_color": "#111111",
+								"title": "Explore Filesystem (ListView)",
+								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json"
 							}
 						}
 					},
