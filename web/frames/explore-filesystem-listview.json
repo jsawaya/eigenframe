@@ -186,11 +186,20 @@
 									"var selected_dir = eigenFragment.getOptionLabel()",
 									"eigenActivity.showToast('selected directory: ' + selected_dir)",
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+									"java.lang.System.out.println('SelectedPath (initial): '+selected_path)",
 									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
+
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
+									"java.lang.System.out.println('SelectedPath: '+selected_path)",
+
 									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+									"java.lang.System.out.println('HomeDirectory: '+home_dir)",
+
 									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+									"java.lang.System.out.println('WorkingDirectory: '+work_dir)",
+
 									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+									"java.lang.System.out.println('FullPath: '+full_path)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
 									"eigenFragment.setCacheString('FullPathFile', full_path)",
 									"eigenFragment.setViewState(6699, full_path)",
