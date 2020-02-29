@@ -206,7 +206,8 @@
 								"var homeDirectory = eigenFragment.getCacheString('HomeDirectory')",
 								"var workingDirectory = eigenFragment.getCacheString('WorkingDirectory')",
 								"var selectedDirectory = eigenFragment.getCacheString('SelectedDirectory')",
-								"'directory ' + eigenFragment.concatPaths(homeDirectory, workingDirectory, selectedDirectory)"
+								"var homeWorkDirectory = eigenFragment.concatPaths(homeDirectory, workingDirectory)",
+								"'directory ' + eigenFragment.concatPaths(homeWorkDirectory, selectedDirectory)"
 							],
 							"on_complete": {
 								"type": "PopupScreen",
