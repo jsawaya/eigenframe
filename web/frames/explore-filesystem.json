@@ -159,7 +159,7 @@
 							"type": "Clone",
 							"name": "TextViewLabel",
 							"attributes": {
-								"text": "Full File Path: "
+								"text": "FullPath: "
 							}
 						},
 						{
@@ -167,7 +167,7 @@
 							"max_length": 200,
 							"is_single_line": true,
 							"layout_width": "match_parent",
-							"text_script": "''+eigenFragment.getCacheString('FullPathFile')",
+							"text_script": "''+eigenFragment.getCacheString('FullPath')",
 							"text_color": "#ffffff",
 							"text_size": "20",
 							"gravity": "left",

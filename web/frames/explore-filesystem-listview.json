@@ -75,7 +75,7 @@
 							},
 							{
 								"type": "SecureFtp",
-								"comment": "call sftp this way when you don't need immediate results for a TextView",
+								"comment": "new full path, open directory",
 								"id": 991004,
 								"sftp_script": "'directory ' + eigenFragment.getCacheString('FullPath')",
 								"on_complete": {
