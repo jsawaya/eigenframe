@@ -1,249 +1,244 @@
 {
-	"comment": "set the HomeDirectory to the sftp pwd",
-	"type": "SecureFtp",
-	"id": 411000,
-	"sftp_script": "'pwd'",
-	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
-		"component_list": [
-			{
-				"type": "JavaScript",
-				"script_list": [
-					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
-					"eigenFragment.setCacheString('WorkingDirectory',0,'')",
-					"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-					"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
-					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-					"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
-					"eigenFragment.setCacheString('FullPath', full_path)"
-				]
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Home Directory (sftp):"
-				}
-			},
-			{
-				"type": "TextView",
-				"text_script": "''+eigenFragment.getCacheString('HomeDirectory')",
-				"layout_width": "match_parent",
-				"text_color": "#ffffff",
-				"text_size": "20",
-				"gravity": "left",
-				"background_color": "#000000"
-			},
-			{
-				"type": "Define",
-				"name": "ExploreFilesystemWorkingDirectory",
-				"component": {
-					"type": "LinearLayout",
-					"orientation": "vertical",
-					"layout_width": "match_parent",
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "HorizontalLine"
-						},
-						{
-							"type": "Clone",
-							"name": "TextViewLabel",
-							"attributes": {
-								"text": "Working Directory:\n(relative to sftp home)"
-							}
-						},
-						{
-							"type": "EditText",
-							"text_script": "''+eigenFragment.getCacheString('WorkingDirectory')",
-							"max_length": 200,
-							"is_single_line": true,
-							"layout_width": "match_parent",
-							"text_color": "#ffffff",
-							"text_size": "20",
-							"gravity": "left",
-							"background_color": "#000000"
-						}
-					]
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ExploreFilesystemWorkingDirectory",
-				"condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)"
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Selected Path:"
-				}
-			},
-			{
-				"type": "EditText",
-				"text_script": "''+eigenFragment.getCacheString('SelectedPath')",
-				"max_length": 200,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"text_color": "#ffffff",
-				"text_size": "20",
-				"gravity": "left",
-				"background_color": "#000000"
-			},
-			{
-				"type": "Define",
-				"name": "ExploreFilesystemCurrentFilename",
-				"component": {
-					"type": "LinearLayout",
-					"orientation": "vertical",
-					"layout_width": "match_parent",
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "HorizontalLine"
-						},
-						{
-							"type": "Clone",
-							"name": "TextViewLabel",
-							"attributes": {
-								"text": "Selected Filename: "
-							}
-						},
-						{
-							"type": "EditText",
-							"max_length": 200,
-							"is_single_line": true,
-							"layout_width": "match_parent",
-							"text_script": "''+eigenFragment.getCacheString('SelectedFile')",
-							"text_color": "#ffffff",
-							"text_size": "20",
-							"gravity": "left",
-							"background_color": "#000000"
-						},
-						{
-							"type": "Clone",
-							"name": "TextViewLabel",
-							"attributes": {
-								"text": "FullPath: "
-							}
-						},
-						{
-							"type": "EditText",
-							"max_length": 200,
-							"is_single_line": true,
-							"layout_width": "match_parent",
-							"text_script": "''+eigenFragment.getCacheString('FullPath')",
-							"text_color": "#ffffff",
-							"text_size": "20",
-							"gravity": "left",
-							"background_color": "#000000"
-						}
-					]
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ExploreFilesystemCurrentFilename",
-				"condition_script": "eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)"
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Navigation: "
-				}
-			},
-			{
+	"type": "LinearLayout",
+	"scrollable": true,
+	"orientation": "vertical",
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"component_list": [
+		{
+			"type": "x-JavaScript",
+			"script_list": [
+				"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
+				"eigenFragment.setCacheString('HomeDirectory', home_dir)",
+				"eigenFragment.setCacheString('WorkingDirectory',0,'')",
+				"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+				"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+				"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+				"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+				"eigenFragment.setCacheString('FullPath', full_path)"
+			]
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Home Directory (sftp):"
+			}
+		},
+		{
+			"type": "TextView",
+			"text_script": "''+eigenFragment.getCacheString('HomeDirectory')",
+			"layout_width": "match_parent",
+			"text_color": "#ffffff",
+			"text_size": "20",
+			"gravity": "left",
+			"background_color": "#000000"
+		},
+		{
+			"type": "Define",
+			"name": "ExploreFilesystemWorkingDirectory",
+			"component": {
 				"type": "LinearLayout",
-				"orientation": "horizontal",
+				"orientation": "vertical",
 				"layout_width": "match_parent",
-				"gravity": "center_horizontal",
 				"component_list": [
 					{
-						"type": "Button",
-						"text": "Explore Filesystem",
-						"layout_width": "match_parent",
-						"layout_weight": 1,
-						"text_color": "#ffffff",
-						"background_color": "#123456",
-						"icon": {
-							"name": "listview.",
-							"location": "top"
-						},
-						"margin": {
-							"left": 10,
-							"top": 10,
-							"right": 10,
-							"bottom": 10
-						},
-						"on_click": {
-							"type": "SecureFtp",
-							"comment": "call sftp this way when you don't need immediate results for a TextView",
-							"id": 991004,
-							"sftp_script": "'directory ' + eigenFragment.getCacheString('FullPath')",
-							"on_complete": {
-								"type": "PopupScreen",
-								"layout_width": "match_parent",
-								"layout_height": "wrap_content",
-								"text_size": "14",
-								"text_color": "#ffffff",
-								"background_color": "#111111",
-								"title": "Explore Filesystem (ListView)",
-								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json"
-							}
+						"type": "Clone",
+						"name": "HorizontalLine"
+					},
+					{
+						"type": "Clone",
+						"name": "TextViewLabel",
+						"attributes": {
+							"text": "Working Directory:\n(relative to sftp home)"
 						}
 					},
 					{
-						"type": "Button",
-						"text": "Reset",
-						"text_color": "#ffffff",
-						"background_color": "#123456",
-						"gravity": "center",
+						"type": "EditText",
+						"text_script": "''+eigenFragment.getCacheString('WorkingDirectory')",
+						"max_length": 200,
+						"is_single_line": true,
 						"layout_width": "match_parent",
-						"layout_weight": 1,
-						"icon": {
-							"name": "cancel.",
-							"location": "top"
-						},
-						"margin": {
-							"left": 10,
-							"top": 10,
-							"right": 10,
-							"bottom": 10
-						},
-						"on_click": {
-							"type": "JavaScript",
-							"script_list": [
-								"eigenFragment.setCacheString('SelectedDirectory', '')",
-								"eigenFragment.setCacheString('SelectedFile', '')"
-							]
-						}
+						"text_color": "#ffffff",
+						"text_size": "20",
+						"gravity": "left",
+						"background_color": "#000000"
 					}
 				]
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
 			}
-		]
-	}
+		},
+		{
+			"type": "Clone",
+			"name": "ExploreFilesystemWorkingDirectory",
+			"condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)"
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Selected Path:"
+			}
+		},
+		{
+			"type": "EditText",
+			"text_script": "''+eigenFragment.getCacheString('SelectedPath')",
+			"max_length": 200,
+			"is_single_line": true,
+			"layout_width": "match_parent",
+			"text_color": "#ffffff",
+			"text_size": "20",
+			"gravity": "left",
+			"background_color": "#000000"
+		},
+		{
+			"type": "Define",
+			"name": "ExploreFilesystemCurrentFilename",
+			"component": {
+				"type": "LinearLayout",
+				"orientation": "vertical",
+				"layout_width": "match_parent",
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "HorizontalLine"
+					},
+					{
+						"type": "Clone",
+						"name": "TextViewLabel",
+						"attributes": {
+							"text": "Selected Filename: "
+						}
+					},
+					{
+						"type": "EditText",
+						"max_length": 200,
+						"is_single_line": true,
+						"layout_width": "match_parent",
+						"text_script": "''+eigenFragment.getCacheString('SelectedFile')",
+						"text_color": "#ffffff",
+						"text_size": "20",
+						"gravity": "left",
+						"background_color": "#000000"
+					},
+					{
+						"type": "Clone",
+						"name": "TextViewLabel",
+						"attributes": {
+							"text": "FullPath: "
+						}
+					},
+					{
+						"type": "EditText",
+						"max_length": 200,
+						"is_single_line": true,
+						"layout_width": "match_parent",
+						"text_script": "''+eigenFragment.getCacheString('FullPath')",
+						"text_color": "#ffffff",
+						"text_size": "20",
+						"gravity": "left",
+						"background_color": "#000000"
+					}
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ExploreFilesystemCurrentFilename",
+			"condition_script": "eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)"
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Navigation: "
+			}
+		},
+		{
+			"type": "LinearLayout",
+			"orientation": "horizontal",
+			"layout_width": "match_parent",
+			"gravity": "center_horizontal",
+			"component_list": [
+				{
+					"type": "Button",
+					"text": "Explore Filesystem",
+					"layout_width": "match_parent",
+					"layout_weight": 1,
+					"text_color": "#ffffff",
+					"background_color": "#123456",
+					"icon": {
+						"name": "listview.",
+						"location": "top"
+					},
+					"margin": {
+						"left": 10,
+						"top": 10,
+						"right": 10,
+						"bottom": 10
+					},
+					"on_click": {
+						"type": "SecureFtp",
+						"comment": "call sftp this way when you don't need immediate results for a TextView",
+						"id": 991004,
+						"sftp_script": "'directory ' + eigenFragment.getCacheString('FullPath')",
+						"on_complete": {
+							"type": "PopupScreen",
+							"layout_width": "match_parent",
+							"layout_height": "wrap_content",
+							"text_size": "14",
+							"text_color": "#ffffff",
+							"background_color": "#111111",
+							"title": "Explore Filesystem (ListView)",
+							"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json"
+						}
+					}
+				},
+				{
+					"type": "Button",
+					"text": "Reset",
+					"text_color": "#ffffff",
+					"background_color": "#123456",
+					"gravity": "center",
+					"layout_width": "match_parent",
+					"layout_weight": 1,
+					"icon": {
+						"name": "cancel.",
+						"location": "top"
+					},
+					"margin": {
+						"left": 10,
+						"top": 10,
+						"right": 10,
+						"bottom": 10
+					},
+					"on_click": {
+						"type": "JavaScript",
+						"script_list": [
+							"eigenFragment.setCacheString('SelectedDirectory', '')",
+							"eigenFragment.setCacheString('SelectedFile', '')"
+						]
+					}
+				}
+			]
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		}
+	]
 }
+
 
 
