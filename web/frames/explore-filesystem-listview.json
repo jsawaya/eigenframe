@@ -6,14 +6,14 @@
 	"layout_height": "wrap_content",
 	"component_list": [
 		{
-			"type": "JavaScript",
+			"type": "x-JavaScript",
 			"comment": "initialize the full path: concat home/working/selected directories",
 			"script_list": [
-				"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-				"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
-				"var full_path = eigenFragment.concatPaths(home_dir, work_dir)",
-				"eigenFragment.setCacheString('FullPath', full_path)",
-				"eigenFragment.setViewState(6699, full_path)",
+				"//var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+				"//var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+				"//var full_path = eigenFragment.concatPaths(home_dir, work_dir)",
+				"//eigenFragment.setCacheString('FullPath', full_path)",
+				"//eigenFragment.setViewState(6699, full_path)",
 				"//eigenFragment.setCacheString('SelectedPath', '')",
 				"//eigenFragment.setCacheString('SelectedFile', '')"
 			]
@@ -26,7 +26,7 @@
 			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
-				"text_script": "''+eigenFragment.getCacheString('FullPath')"
+				"text_script": "''+eigenFragment.getCacheString('FullPathFile')"
 			}
 		},
 		{
