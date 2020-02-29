@@ -236,7 +236,7 @@
 							{
 								"type": "JavaScript",
 								"script_list": [
-									"eigenFragment.setCacheString('SelectedDirectory', '')",
+									"eigenFragment.setCacheString('SelectedPath', '')",
 									"eigenFragment.setCacheString('SelectedFile', '')",
 									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
 									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
