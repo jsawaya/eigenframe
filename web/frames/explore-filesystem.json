@@ -32,7 +32,7 @@
 		{
 			"type": "TextView",
 			"id": 991000,
-			"sftp": "pwd",
+			"text_script": "eigenFragment.getCacheString('HomeDirectory')",
 			"layout_width": "match_parent",
 			"text_color": "#ffffff",
 			"text_size": "20",
@@ -67,6 +67,7 @@
 					{
 						"type": "EditText",
 						"id": 991001,
+						"text_script": "eigenFragment.getCacheString('WorkingDirectory')",
 						"max_length": 200,
 						"is_single_line": true,
 						"layout_width": "match_parent",
@@ -97,13 +98,13 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Current Path:"
+				"text": "Selected Path:"
 			}
 		},
 		{
 			"type": "EditText",
 			"id": 991002,
-			"text": "",
+			"text_script": "eigenFragment.getCacheString('SelectedPath')",
 			"max_length": 200,
 			"is_single_line": true,
 			"layout_width": "match_parent",
@@ -134,7 +135,7 @@
 						"type": "Clone",
 						"name": "TextViewLabel",
 						"attributes": {
-							"text": "Current Filename: "
+							"text": "Selected Filename: "
 						}
 					},
 					{
@@ -143,7 +144,7 @@
 						"max_length": 200,
 						"is_single_line": true,
 						"layout_width": "match_parent",
-						"text": "",
+						"text_script": "eigenFragment.getCacheString('SelectedFile')",
 						"text_color": "#ffffff",
 						"text_size": "20",
 						"gravity": "left",
@@ -201,7 +202,12 @@
 					"on_click": {
 						"type": "SecureFtp",
 						"id": 991004,
-						"sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
+						"sftp_script_list": [
+							"var homeDirectory = eigenFragment.getCacheString('HomeDirectory')",
+							"var workingDirectory = eigenFragment.getCacheString('WorkingDirectory')",
+							"var selectedDirectory = eigenFragment.getCacheString('SelectedDirectory')",
+							"'directory ' + eigenFragment.concatPaths(homeDirectory, workingDirectory, selectedDirectory)"
+						],
 						"on_complete": {
 							"type": "PopupScreen",
 							"title": "Explore Filesystem (ListView)",
@@ -234,6 +240,10 @@
 					"on_click": {
 						"type": "JavaScript",
 						"script_list": [
+							"eigenFragment.setCacheString('HomeDirectory', '')",
+							"eigenFragment.setCacheString('WorkingDirectory', '')",
+							"eigenFragment.setCacheString('SelectedDirectory', '')",
+							"eigenFragment.setCacheString('SelectedFile', '')",
 							"eigenFragment.setViewState(991001,'')",
 							"eigenFragment.setViewState(991002,'')",
 							"eigenFragment.setViewState(991003,'')"
