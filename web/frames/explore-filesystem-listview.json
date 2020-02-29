@@ -116,11 +116,16 @@
 							{
 								"type": "JavaScript",
 								"script_list": [
-									"var full_path = eigenFragment.getCacheString('FullPath')",
-									"eigenActivity.showToast('Directory: '+ full_path)",
-									"eigenFragment.setCacheString('SelectedPath', '')",
-									"eigenFragment.closePopupScreen(991005)",
-									"eigenFragment.closePopupWindow()"
+									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+									"eigenFragment.setCacheString('SelectedFile', '')",
+									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+									"eigenFragment.setCacheString('FullPath', full_path)",
+									"eigenFragment.setCacheString('FullPathFile', full_path)",
+									"eigenFragment.setViewState(6699, full_path)",
+									"eigenFragment.closePopupWindow()",
+									"eigenFragment.closePopupScreen(991005)"
 								]
 							}
 						]
