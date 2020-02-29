@@ -182,6 +182,7 @@
 								"type": "JavaScript",
 								"comment": "selected directory, append to selected path",
 								"script_list": [
+									"eigenFragment.setCacheString('SelectedFile', '')",
 									"var selected_dir = eigenFragment.getOptionLabel()",
 									"eigenActivity.showToast('selected directory: ' + selected_dir)",
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
