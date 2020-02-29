@@ -114,6 +114,40 @@
 				}
 			},
 			{
+				"type": "Button",
+				"text": "Reset",
+				"text_color": "#ffffff",
+				"background_color": "#123456",
+				"gravity": "center",
+				"layout_width": "match_parent",
+				"layout_weight": 1,
+				"icon": {
+					"name": "cancel.",
+					"location": "top"
+				},
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"eigenFragment.setCacheString('SelectedDirectory', '')",
+						"eigenFragment.setCacheString('SelectedFile', '')",
+						"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+						"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
+						"var selected_path = ''",
+						"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+						"eigenFragment.setCacheString('FullPath', full_path)",
+						"eigenFragment.setCacheString('FullPathFile', full_path)",
+						"eigenFragment.setViewState(6699, full_path)"
+					]
+				}
+			},
+
+			{
 				"type": "Clone",
 				"name": "HorizontalLine"
 			},
