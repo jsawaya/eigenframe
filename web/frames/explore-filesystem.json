@@ -19,6 +19,13 @@
 			]
 		},
 		{
+			"type": "JavaScript",
+			"script_list": [
+				"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+				"eigenActivity.showToast('Directory: '+ selected_path)"
+			]
+		},
+		{
 			"type": "Clone",
 			"name": "HorizontalLine"
 		},
