@@ -19,8 +19,10 @@
 					"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
 					"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+					"java.lang.System.out.println('SelectedPath (initial): '+selected_path)",
 					"eigenActivity.showToast('SelectedPath: '+ selected_path)",
 					"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
+					"java.lang.System.out.println('FullPath (initial): '+full_path)",
 					"eigenFragment.setCacheString('FullPath', full_path)"
 				]
 			},
