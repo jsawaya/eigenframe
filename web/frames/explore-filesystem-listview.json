@@ -12,8 +12,9 @@
 				"var s1 = eigenFragment.getCacheString('HomeDirectory')",
 				"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
 				"var s3 = eigenFragment.getCacheString('SelectedPath')",
-				"var s4 = eigenFragment.concatPaths(s1, s2, s3)",
-				"eigenFragment.setCacheString('FullPath', s4)"
+				"var s12 = eigenFragment.concatPaths(s1, s2)",
+				"var s123 = eigenFragment.concatPaths(s12, s3)",
+				"eigenFragment.setCacheString('FullPath', s123)"
 			]
 		},
 		{
@@ -64,8 +65,9 @@
 									"eigenFragment.setCacheString('SelectedPath', s3)",
 									"var s1 = eigenFragment.getCacheString('HomeDirectory')",
 									"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
-									"var s4 = eigenFragment.concatPaths(s1, s2, s3)",
-									"eigenFragment.setCacheString('FullPath', s4)",
+									"var s12 = eigenFragment.concatPaths(s1, s2)",
+									"var s123 = eigenFragment.concatPaths(s12, s3)",
+									"eigenFragment.setCacheString('FullPath', s123)",
 
 									"eigenFragment.closePopupWindow()"
 								]
@@ -183,8 +185,9 @@
 									"eigenFragment.setCacheString('SelectedPath', s3)",
 									"var s1 = eigenFragment.getCacheString('HomeDirectory')",
 									"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
-									"var s4 = eigenFragment.concatPaths(s1, s2, s3)",
-									"eigenFragment.setCacheString('FullPath', s4)",
+									"var s12 = eigenFragment.concatPaths(s1, s2)",
+									"var s123 = eigenFragment.concatPaths(s12, s3)",
+									"eigenFragment.setCacheString('FullPath', s123)",
 
 									"eigenFragment.closePopupWindow()"
 								]
