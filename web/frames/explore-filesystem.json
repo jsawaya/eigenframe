@@ -238,6 +238,8 @@
 								"script_list": [
 									"eigenFragment.setCacheString('SelectedDirectory', '')",
 									"eigenFragment.setCacheString('SelectedFile', '')",
+									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
+									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 									"var full_path = eigenFragment.concatPaths(home_dir, work_dir)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
 									"eigenFragment.setViewState(6699, full_path)",
