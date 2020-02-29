@@ -22,7 +22,7 @@
 			"type": "JavaScript",
 			"script_list": [
 				"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-				"eigenActivity.showToast('Directory: '+ selected_path)"
+				"eigenActivity.showToast('SelectedPath: '+ selected_path)"
 			]
 		},
 		{
