@@ -26,7 +26,7 @@
 			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
-				"text_script": "''+eigenFragment.getCacheString('FullPathFile')"
+				"text_script": "''+eigenFragment.getCacheString('FullPath')"
 			}
 		},
 		{
@@ -70,6 +70,7 @@
 									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
+									"eigenFragment.setCacheString('FullPathFile', full_path)",
 									"eigenFragment.setViewState(6699, full_path)",
 
 									"eigenFragment.closePopupWindow()"
