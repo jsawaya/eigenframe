@@ -19,7 +19,15 @@
 		{
 			"type": "Clone",
 			"name": "SecureFtpHomeDirectoryQuery",
-			"condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'').isEmpty()"
+			"condition_script": "eigenFragment.getCacheString('HomeDirectory','').isEmpty()"
+		},
+		{
+			"type": "JavaScript",
+			"script_list": [
+				"eigenFragment.setCacheString('WorkingDirectory',0,'')",
+				"eigenFragment.setCacheString('SelectedPath',0,'')",
+				"eigenFragment.setCacheString('SelectedFile',0,'')"
+			]
 		},
 		{
 			"type": "TextView",

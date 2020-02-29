@@ -292,15 +292,12 @@
 				"sftp_script": "'pwd'"
 			},
 			"on_complete": {
-				"type": "PopupTextView",
-				"font": "font/droid-sans-mono/DroidSansMono.ttf",
-				"title": "Secure FTP Home Directory",
-				"text_script": "'sftp-home: '+eigenFragment.getCacheString('SecureFtp:411000')"
+				"type": "JavaScript",
+				"script_list": [
+					"var s1 = eigenFragment.getCacheString('SecureFtp:411000')",
+					"eigenFragment.setCacheString('HomeDirectory', s1)"
+				]
 			}
-		},
-		{
-			"type": "x-JavaScript",
-			"script": "eigenActivity.showToast('sftp-home: '+eigenFragment.getCacheString('SecureFtp:411000'))"
 		},
 		{
 			"type": "Define",
