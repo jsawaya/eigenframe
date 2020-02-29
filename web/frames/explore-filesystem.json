@@ -19,7 +19,7 @@
 		{
 			"type": "Clone",
 			"name": "SecureFtpHomeDirectoryQuery",
-			"condition_script": "eigenFragment.getCacheString('HomeDirectory','').isEmpty()"
+			"condition_script": "eigenFragment.getCacheString('HomeDirectory',0,'').isEmpty()"
 		},
 		{
 			"type": "JavaScript",
