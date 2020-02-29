@@ -19,7 +19,6 @@
 					"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
 					"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
 					"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
 					"eigenFragment.setCacheString('FullPath', full_path)"
 				]
