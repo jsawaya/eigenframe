@@ -18,8 +18,19 @@
 			}
 		},
 		{
-			"type": "Clone",
-			"name": "EditTextRemoteFilePath"
+			"type": "EditText",
+			"max_length": 200,
+			"is_single_line": true,
+			"layout_width": "match_parent",
+			"text_script": "'' + eigenFragment.getCacheString('FullPath')",
+			"text_color": "#ffffff",
+			"background_color": "#000000",
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			}
 		},
 		{
 			"type": "Clone",
@@ -48,8 +59,9 @@
 							"script_list": [
 								"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
 								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)",
-								"eigenFragment.setViewState(991001, '')",
-								"eigenFragment.setViewState(999001, '')"
+								"eigenFragment.setCacheString('WorkingDirectory',0,'')",
+								"eigenFragment.setCacheString('SelectedPath',0,'')",
+								"eigenFragment.setCacheString('SelectedFile',0,'')"
 							]
 						}
 					]
@@ -83,8 +95,9 @@
 							"script_list": [
 								"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
 								"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,false)",
-								"eigenFragment.setViewState(991001, '')",
-								"eigenFragment.setViewState(999001, '')"
+								"eigenFragment.setCacheString('WorkingDirectory',0,'')",
+								"eigenFragment.setCacheString('SelectedPath',0,'')",
+								"eigenFragment.setCacheString('SelectedFile',0,'')"
 							]
 						}
 					]
@@ -512,6 +525,5 @@
 				}
 			}
 		}
-
 	]
 }

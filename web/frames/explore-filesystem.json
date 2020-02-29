@@ -241,7 +241,6 @@
 						"on_click": {
 							"type": "JavaScript",
 							"script_list": [
-								"eigenFragment.setCacheString('WorkingDirectory', '')",
 								"eigenFragment.setCacheString('SelectedDirectory', '')",
 								"eigenFragment.setCacheString('SelectedFile', '')"
 							]
