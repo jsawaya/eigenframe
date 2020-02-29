@@ -6,6 +6,17 @@
 	"layout_height": "wrap_content",
 	"component_list": [
 		{
+			"type": "JavaScript",
+			"comment": "set the full path: concat home/working/selected directories",
+			"script_list": [
+				"var s1 = eigenFragment.getCacheString('HomeDirectory')",
+				"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
+				"var s3 = eigenFragment.getCacheString('SelectedPath')",
+				"var s4 = eigenFragment.concatPaths(s1, s2, s3)",
+				"eigenFragment.setCacheString('FullPath', s4)"
+			]
+		},
+		{
 			"type": "Clone",
 			"name": "HorizontalLine"
 		},
@@ -13,7 +24,7 @@
 			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
-				"text_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)"
+				"text_script": "''+eigenFragment.getCacheString('FullPath')"
 			}
 		},
 		{
@@ -46,7 +57,16 @@
 							{
 								"type": "JavaScript",
 								"script_list": [
-									"eigenFragment.parentPath(991002)",
+									"var s3 = eigenFragment.getCacheString('SelectedPath')",
+									"var lastIndex = s3.lastIndexOf('/')",
+									"if (lastIndex > 0) s3 = s3.substring(0, lastIndex)",
+									"else s3 = ''",
+									"eigenFragment.setCacheString('SelectedPath', s3)",
+									"var s1 = eigenFragment.getCacheString('HomeDirectory')",
+									"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
+									"var s4 = eigenFragment.concatPaths(s1, s2, s3)",
+									"eigenFragment.setCacheString('FullPath', s4)",
+
 									"eigenFragment.closePopupWindow()"
 								]
 							},
@@ -54,7 +74,7 @@
 								"type": "SecureFtp",
 								"comment": "call sftp this way when you don't need immediate results for a TextView",
 								"id": 991004,
-								"sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
+								"sftp_script": "'directory ' + eigenFragment.getCacheString('FullPath')",
 								"on_complete": {
 									"type": "PopupScreen",
 									"layout_width": "match_parent",
@@ -62,7 +82,7 @@
 									"text_size": "14",
 									"text_color": "#ffffff",
 									"background_color": "#111111",
-									"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
+									"title": "Explore Filesystem (ListView)",
 									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json"
 								}
 							}
@@ -90,10 +110,9 @@
 							{
 								"type": "JavaScript",
 								"script_list": [
-									"var root_path = eigenFragment.concatPaths(991000, 991001, 991002)",
-									"eigenActivity.showToast('Directory: '+ root_path)",
-									"eigenFragment.setViewState(999001, root_path)",
-									"eigenFragment.setViewState(991003, '')",
+									"var s4 = eigenFragment.getCacheString('FullPath')",
+									"eigenActivity.showToast('Directory: '+ s4)",
+									"eigenFragment.setCacheString('SelectedPath', '')",
 									"eigenFragment.closePopupScreen(991005)",
 									"eigenFragment.closePopupWindow()"
 								]
@@ -155,11 +174,18 @@
 						"component_list": [
 							{
 								"type": "JavaScript",
+								"comment": "selected directory, append to selected path",
 								"script_list": [
-									"var pos = eigenFragment.getOptionPosition()",
-									"var opt = eigenFragment.getOptionLabel()",
-									"eigenActivity.showToast('ListView row selected: '+ pos + ' - ' + opt)",
-									"eigenFragment.appendPath(991002, opt)",
+									"var selected_dir = eigenFragment.getOptionLabel()",
+									"eigenActivity.showToast('selected directory: ' + selected_dir)",
+									"var s3 = eigenFragment.getCacheString('SelectedPath')",
+									"s3 = eigenFragment.concatPaths(s3, selected_dir)",
+									"eigenFragment.setCacheString('SelectedPath', s3)",
+									"var s1 = eigenFragment.getCacheString('HomeDirectory')",
+									"var s2 = eigenFragment.getCacheString('WorkingDirectory')",
+									"var s4 = eigenFragment.concatPaths(s1, s2, s3)",
+									"eigenFragment.setCacheString('FullPath', s4)",
+
 									"eigenFragment.closePopupWindow()"
 								]
 							},
@@ -167,7 +193,7 @@
 								"type": "SecureFtp",
 								"comment": "call sftp this way when you don't need immediate results for a TextView",
 								"id": 991004,
-								"sftp_script": "'directory ' + eigenFragment.concatPaths(991000, 991001, 991002)",
+								"sftp_script": "'directory ' +  eigenFragment.getCacheString('FullPath')",
 								"on_complete": {
 									"type": "PopupScreen",
 									"layout_width": "match_parent",
@@ -175,7 +201,7 @@
 									"text_size": "14",
 									"text_color": "#ffffff",
 									"background_color": "#111111",
-									"title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
+									"title": "Explore Filesystem (ListView)",
 									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem-listview.json"
 								}
 							}
@@ -230,11 +256,12 @@
 								],
 								"script_list": [
 									"var selected_name = eigenFragment.getOptionLabel()",
-									"var root_path = eigenFragment.concatPaths(991000, 991001, 991002)",
-									"var absolute_filepath = eigenFragment.concatPaths(root_path, selected_name) ",
-									"eigenActivity.showToast('Filepath: '+ absolute_filepath)",
-									"eigenFragment.setViewState(999001, absolute_filepath)",
-									"eigenFragment.setViewState(991003, selected_name)",
+									"eigenActivity.showToast('selected name: ' + selected_name)",
+									"eigenFragment.setCacheString('SelectedFile', selected_name)",
+									"var s4 = eigenFragment.getCacheString('FullPath')",
+									"s4 = eigenFragment.concatPaths(s4, selected_name)",
+									"eigenFragment.setCacheString('FullPath', s4)",
+
 									"eigenFragment.closePopupWindow()",
 									"eigenFragment.closePopupScreen(991005)"
 								]

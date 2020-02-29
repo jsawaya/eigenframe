@@ -9,17 +9,21 @@
 ### eigenFragment methods:
 void eigenFragment.closePopupScreen(int screenId)
 void eigenFragment.closePopupWindow()
+
 boolean eigenFragment.setViewState(int viewId, String value)
 String eigenFragment.getViewState()
 String eigenFragment.getViewState(int viewId)
+
 void eigenFragment.setOptionList(int listViewId, int secureFtpViewId)
-String eigenFragment.getVariableName(String type, int id)
+
 String eigenFragment.getCacheFilePath(String filename)
 String eigenFragment.getCacheString(String type, int id, String initValue)
 String eigenFragment.getCacheString(String filename)
 byte[] eigenFragment.getCacheByteArray(String filename)
+
 void eigenFragment.setCacheString(String type, int id, String initialValue)
 void eigenFragment.setCacheString(String filename, String initialValue)
+
 String eigenFragment.clearCacheFile(String filename)
 String eigenFragment.concatPaths(String rootPath, String relativePath)
 String eigenFragment.concatPaths(int viewId1, int viewId2)
@@ -27,6 +31,7 @@ String eigenFragment.concatPaths(int viewId1, int viewId2, int viewId3)
 String eigenFragment.concatCachePaths(String rootPathCache, String relativePathCache)
 boolean eigenFragment.appendPath(int viewId1, String optionLabel)
 - setViewState(viewId1, concatPaths(getViewState(viewId1), optionLabel))
+
 boolean eigenFragment.parentPath(int viewId1)
 String eigenFragment.getOptionLabel()
 int eigenFragment.getOptionPosition()
@@ -35,6 +40,8 @@ int eigenFragment.getOptionInteger(String optionName, int init)
 long eigenFragment.getOptionLong(String optionName, long init)
 boolean eigenFragment.getOptionBoolean(String optionName, boolean init)
 Object eigenFragment.getOption(String optionName)
+
+String eigenFragment.getVariableName(String type, int id)
 String eigenFragment.getStringVariable(String type, int id, String initialValue)
 int eigenFragment.getIntegerVariable(String type, int id, int initialValue)
 long eigenFragment.getLongVariable(String type, int id, long initialValue)
