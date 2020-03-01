@@ -81,7 +81,7 @@
 		{
 			"type": "Clone",
 			"name": "ExploreFilesystemWorkingDirectory",
-			"x-condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)"
+			"condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)"
 		},
 		{
 			"type": "Clone",
@@ -159,7 +159,7 @@
 		{
 			"type": "Clone",
 			"name": "ExploreFilesystemCurrentFilename",
-			"x-condition_script": "eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)"
+			"condition_script": "eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)"
 		},
 		{
 			"type": "Clone",
