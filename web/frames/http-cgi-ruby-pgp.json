@@ -13,7 +13,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Cryptography (requires PGP installation)"
+				"text": "Cryptography"
 			}
 		},
 		{
@@ -21,7 +21,7 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"These examples demonstrate UrlRequest calls to Ruby/Bash/GnuPG"
+					"Cryptography methods below require Apache2/Ruby/GnuPG"
 				]
 			}
 		},

@@ -75,7 +75,6 @@
 				"name": "ButtonDefault",
 				"attributes": {
 					"text": "Select Public Key File",
-					"background_color": "#123456",
 					"icon": {
 						"name": "open_with.",
 						"location": "top"
@@ -114,10 +113,16 @@
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
+				"background_color": "#654321",
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
+				},
 				"icon": {
-					"name": "info.",
-					"location": "left"
+					"name": "import_export.",
+					"location": "top"
 				},
 				"on_click": {
 					"type": "UrlRequest",
@@ -173,10 +178,10 @@
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
+				"background_color": "#654321",
 				"icon": {
 					"name": "info.",
-					"location": "left"
+					"location": "top"
 				},
 				"on_click": {
 					"type": "UrlRequest",
