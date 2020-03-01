@@ -36,6 +36,12 @@
 				"name": "info.",
 				"location": "top"
 			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
 			"on_click": {
 				"type": "UrlRequest",
 				"id": 6602,
@@ -85,6 +91,12 @@
 			"icon": {
 				"name": "info.",
 				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
 			},
 			"on_click": {
 				"type": "UrlRequest",
