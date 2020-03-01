@@ -59,6 +59,7 @@ void eigenActivity.finish()
 String eigenActivity.getString(com.sawaya.R.string.change_log)
 void eigenActivity.enableOrientationEventListener(boolean isEnabled)
 void eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
         
 Related:
 [PopupTextView](PopupTextView.md) 
@@ -68,6 +69,19 @@ Related:
 [SecureFtp](SecureFtp.md) 
 [ActionList](ActionList.md) 
 
+
+## Examples:        
+Example:
+```json
+{
+  "type": "JavaScript",
+  "script_list": [
+    "var selected_path = 'Hello World')",
+    "eigenActivity.showToast('SelectedPath: '+ selected_path)",
+    "java.lang.System.out.println('SelectedPath: '+selected_path)"
+  ]
+}
+```
 
 Example:
 ```json

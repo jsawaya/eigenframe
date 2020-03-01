@@ -191,7 +191,6 @@
 									"java.lang.System.out.println('WorkingDirectory: '+work_dir)",
 
 									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
-									"java.lang.System.out.println('FullPath: '+full_path)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
 									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
 									"eigenFragment.setViewState(targetVid, full_path)",

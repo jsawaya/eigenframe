@@ -359,26 +359,6 @@
           ]
         }
       }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "HTTP/CGI Ruby Gallery (requires Ruby)",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "HTTP/CGI Ruby Gallery",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby.json"
-          }
-        }
-      }
     }
 
   ]

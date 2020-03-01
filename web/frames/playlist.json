@@ -389,7 +389,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [GnuPG Installation] - only if you plan to add PGP encryption, decryption, signing and verification to your app"
+          "Click [GnuPG Installation] - only if you plan to use OpenPGP encryption, decryption, signing and verification to your app"
         ]
       }
     },
@@ -428,6 +428,37 @@
                 }
               }
             ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Cryptography requires:",
+          " - Apache2 (for CGI post method request into Termux)",
+          " - Ruby (for eigenframe transforms)",
+          " - GnuPG (for OpenPGP Encryption, Decryption, Signing and Verification)"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Cryptography",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Cryptography",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json"
           }
         }
       }

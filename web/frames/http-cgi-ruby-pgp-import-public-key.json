@@ -1,0 +1,222 @@
+{
+	"comment": "set the HomeDirectory from sftp pwd",
+	"type": "SecureFtp",
+	"id": 411000,
+	"sftp_script": "'pwd'",
+	"on_complete": {
+		"type": "LinearLayout",
+		"scrollable": true,
+		"orientation": "vertical",
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"component_list": [
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Import Public Key File (PGP)"
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"Import a recipient's public key file",
+						"- this enables you to encrypt files for that recipient"
+					]
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Select Public Key File:"
+				}
+			},
+			{
+				"type": "EditText",
+				"id": 6699,
+				"max_length": 200,
+				"is_single_line": true,
+				"layout_width": "match_parent",
+				"text_color": "#ffffff",
+				"background_color": "#000000"
+			},
+			{
+				"type": "JavaScript",
+				"comment": [
+					"set home_dir_cache: 'SecureFtp:411000'",
+					"set targetVid: 6699",
+					"set work_dir: ''"
+				],
+				"script_list": [
+					"var home_dir_cache = 'SecureFtp:411000'",
+					"var targetVid = 6699",
+					"var work_dir = ''",
+					"var home_dir = eigenFragment.getCacheString(home_dir_cache)",
+					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
+					"eigenFragment.setCacheString('WorkingDirectory', work_dir)",
+					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
+					"eigenFragment.setCacheString('FullPath', full_path)",
+					"var selected_file = eigenFragment.getCacheString('SelectedFile')",
+					"var selected_filepath = eigenFragment.concatPaths(full_path, selected_file)",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, targetVid)",
+					"eigenFragment.setViewState(targetVid, selected_filepath)"
+				]
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Select Public Key File",
+					"background_color": "#123456",
+					"icon": {
+						"name": "open_with.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "ActionList",
+						"comment": "set the dialog type, then start popup",
+						"component_list": [
+							{
+								"type": "JavaScript",
+								"script_list": [
+									"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
+									"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
+								]
+							},
+							{
+								"type": "Clone",
+								"name": "PopupScreenDefault",
+								"attributes": {
+									"id": 991005,
+									"title": "Select Public Key File",
+									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json"
+								}
+							}
+						]
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "Button",
+				"text": "Import Public Key File",
+				"layout_width": "wrap_content",
+				"layout_height": "wrap_content",
+				"text_color": "#ffffff",
+				"background_color": "#11ff0000",
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"on_click": {
+					"type": "UrlRequest",
+					"id": 6604,
+					"is_eigen_response": false,
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+					"parameter_list": [
+						{
+							"name": "keyfile",
+							"value_script_list": [
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+								"var keyfile = eigenFragment.getViewState(targetVid)",
+								"'' + keyfile"
+							]
+						},
+						{
+							"name": "ruby",
+							"value_list": [
+								"keyfile = cgi.params['keyfile'][0]",
+								"gpg_import_public_key(keyfile).to_json.to_s"
+							]
+						}
+					],
+					"on_complete": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Import Public Key File",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6604"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "Button",
+				"text": "List Public Keys",
+				"layout_width": "wrap_content",
+				"layout_height": "wrap_content",
+				"text_color": "#ffffff",
+				"background_color": "#11ff0000",
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"on_click": {
+					"type": "UrlRequest",
+					"id": 6602,
+					"is_eigen_response": false,
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+					"parameter_list": [
+						{
+							"name": "ruby",
+							"value_list": [
+								"gpg_list_public_keys().to_json.to_s"
+							]
+						}
+					],
+					"on_complete": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "List Public Keys",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6602"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			}
+		]
+	}
+}
