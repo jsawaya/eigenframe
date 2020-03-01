@@ -57,7 +57,8 @@
 
 									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
-									"eigenFragment.setViewState(6699, full_path)",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+									"eigenFragment.setViewState(targetVid, full_path)",
 
 									"eigenFragment.closePopupWindow()"
 								]
@@ -108,7 +109,8 @@
 									"eigenFragment.setCacheString('SelectedFile', '')",
 									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
-									"eigenFragment.setViewState(6699, full_path)",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+									"eigenFragment.setViewState(targetVid, full_path)",
 									"eigenFragment.closePopupWindow()",
 									"eigenFragment.closePopupScreen(991005)"
 								]
@@ -191,7 +193,8 @@
 									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
 									"java.lang.System.out.println('FullPath: '+full_path)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
-									"eigenFragment.setViewState(6699, full_path)",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+									"eigenFragment.setViewState(targetVid, full_path)",
 
 									"eigenFragment.closePopupWindow()"
 								]
@@ -264,7 +267,8 @@
 									"eigenFragment.setCacheString('SelectedFile', selected_file)",
 									"var full_path = eigenFragment.getCacheString('FullPath')",
 									"var full_path_file = eigenFragment.concatPaths(full_path, selected_file)",
-									"eigenFragment.setViewState(6699, full_path_file)",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+									"eigenFragment.setViewState(targetVid, full_path_file)",
 									"eigenFragment.closePopupScreen(991005)",
 									"eigenFragment.closePopupWindow()"
 								]

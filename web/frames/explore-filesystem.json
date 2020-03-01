@@ -6,26 +6,6 @@
 	"layout_width": "match_parent",
 	"component_list": [
 		{
-			"type": "x-JavaScript",
-			"script_list": [
-				"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-				"eigenFragment.setCacheString('HomeDirectory', home_dir)",
-				"eigenFragment.setCacheString('WorkingDirectory',0,'')",
-				"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-				"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
-				"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-				"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
-				"eigenFragment.setCacheString('FullPath', full_path)"
-			]
-		},
-		{
-			"type": "JavaScript",
-			"script_list": [
-				"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-				"eigenActivity.showToast('SelectedPath: '+ selected_path)"
-			]
-		},
-		{
 			"type": "Clone",
 			"name": "HorizontalLine"
 		},
@@ -134,24 +114,6 @@
 						"text_size": "20",
 						"gravity": "left",
 						"background_color": "#000000"
-					},
-					{
-						"type": "Clone",
-						"name": "TextViewLabel",
-						"attributes": {
-							"text": "FullPath: "
-						}
-					},
-					{
-						"type": "EditText",
-						"max_length": 200,
-						"is_single_line": true,
-						"layout_width": "match_parent",
-						"text_script": "''+eigenFragment.getCacheString('FullPath')",
-						"text_color": "#ffffff",
-						"text_size": "20",
-						"gravity": "left",
-						"background_color": "#000000"
 					}
 				]
 			}
@@ -169,7 +131,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Navigation: "
+				"text": "Explore Filesystem: "
 			}
 		},
 		{
@@ -242,7 +204,8 @@
 									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 									"var full_path = eigenFragment.concatPaths(home_dir, work_dir)",
 									"eigenFragment.setCacheString('FullPath', full_path)",
-									"eigenFragment.setViewState(6699, full_path)",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+									"eigenFragment.setViewState(targetVid, full_path)",
 									"eigenFragment.closePopupWindow()"
 								]
 							},
@@ -251,8 +214,8 @@
 								"name": "PopupScreenDefault",
 								"attributes": {
 									"id": 991005,
-									"title": "Explore Filesystem",
-									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/explore-filesystem.json"
+									"title": "Select Filepath",
+									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json"
 								}
 							}
 						]
