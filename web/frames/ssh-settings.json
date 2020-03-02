@@ -98,60 +98,6 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Termux Package Upgrade",
-        "icon": {
-          "name": "file_download.",
-          "location": "left"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Termux Package Upgrade",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh": "echo y | pkg upgrade",
-                        "is_toast": true
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "whoami",
-        "icon": {
-          "name": "info.",
-          "location": "left"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "whoami",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh": "whoami"
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
         "text": "pwd",
         "icon": {
           "name": "info.",
@@ -165,6 +111,23 @@
         }
       }
     },
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "whoami",
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"on_click": {
+					"type": "PopupTextView",
+					"title": "whoami",
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh": "whoami"
+				}
+			}
+		},
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -254,6 +217,43 @@
         }
       }
     },
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Termux Package Upgrade",
+				"icon": {
+					"name": "file_download.",
+					"location": "left"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Termux Package Upgrade",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh": "echo y | pkg upgrade",
+												"is_toast": true
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
 
     {
       "type": "Clone",
