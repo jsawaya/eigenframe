@@ -81,6 +81,68 @@
         }
       }
     },
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Pull from github beta\n(merge to working test branch)",
+				"icon": {
+					"name": "cloud_download.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Pull from github beta\n(merge to working test branch)",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"cd ~/git-repos/eigenframe",
+													"echo current working directory:",
+													"pwd",
+													"echo ",
+													"echo git status:",
+													"git status",
+													"echo ",
+													"echo git checkout beta:",
+													"git checkout beta",
+													"echo ",
+													"echo git pull:",
+													"git pull",
+													"echo ",
+													"echo git checkout test:",
+													"git checkout test",
+													"echo ",
+													"echo git merge beta:",
+													"git merge beta",
+													"echo ",
+													"echo git status:",
+													"git status",
+													"echo enable execution of cgi-bin directory files",
+													"cd ~/git-repos/eigenframe/cgi-bin",
+													"chmod 755 *.sh",
+													"chmod 755 *.rb"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
 
     {
       "type": "Clone",
