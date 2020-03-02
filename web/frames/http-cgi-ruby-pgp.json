@@ -195,7 +195,7 @@
 			}
 		},
 		{
-			"type": "Clone",
+			"type": "x-Clone",
 			"name": "ButtonDefault",
 			"attributes": {
 				"text": "Encrypt File",
@@ -214,7 +214,7 @@
 			}
 		},
 		{
-			"type": "Clone",
+			"type": "x-Clone",
 			"name": "ButtonDefault",
 			"attributes": {
 				"text": "Verify Encrypted File (with embedded signature)",
@@ -233,7 +233,7 @@
 			}
 		},
 		{
-			"type": "Clone",
+			"type": "x-Clone",
 			"name": "ButtonDefault",
 			"attributes": {
 				"text": "Verify File with Detached Signature",
@@ -252,7 +252,7 @@
 			}
 		},
 		{
-			"type": "Clone",
+			"type": "x-Clone",
 			"name": "ButtonDefault",
 			"attributes": {
 				"text": "Decrypt File",
