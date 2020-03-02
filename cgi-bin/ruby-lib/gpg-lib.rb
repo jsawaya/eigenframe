@@ -307,14 +307,20 @@ def gpg_encrypt(keyid, in_file, format)
 #  end
 
   output_filename = "#{in_file}.pgp"
+
+  puts "\n"
   puts "output_filename: "+output_filename
 
   #File.delete output_filename if File.exists? output_filename
 
   recipients = array_to_string(" --recipient ", keyid)
 
+  puts "\n"
+  puts "recipients: #{recipients}"
+
   cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/" #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
 
+  puts "\n"
   puts cmd
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
