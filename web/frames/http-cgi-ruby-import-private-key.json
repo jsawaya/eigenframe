@@ -18,7 +18,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Import Public Key File (OpenPGP)"
+					"text": "Import Private Key File (OpenPGP)"
 				}
 			},
 			{
@@ -26,8 +26,8 @@
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"Import a recipient's public key file",
-						"- this enables you to encrypt files for that recipient"
+						"Import your private key file",
+						"- the private key enables you to open files that have been encrypted with your public key"
 					]
 				}
 			},
@@ -35,7 +35,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Select Public Key File:"
+					"text": "Select Private Key File:"
 				}
 			},
 			{
@@ -74,7 +74,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Select Public Key File",
+					"text": "Select Private Key File",
 					"icon": {
 						"name": "open_with.",
 						"location": "top"
@@ -95,7 +95,7 @@
 								"name": "PopupScreenDefault",
 								"attributes": {
 									"id": 991005,
-									"title": "Select Public Key File",
+									"title": "Select Private Key File",
 									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json"
 								}
 							}
@@ -106,71 +106,6 @@
 			{
 				"type": "Clone",
 				"name": "HorizontalLine"
-			},
-			{
-				"type": "Button",
-				"text": "Import Public Key File",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#654321",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				},
-				"icon": {
-					"name": "import_export.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "UrlRequest",
-					"id": 6604,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "keyfile",
-							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
-								"var keyfile = eigenFragment.getViewState(targetVid)",
-								"'' + keyfile"
-							]
-						},
-						{
-							"name": "ruby",
-							"value_list": [
-								"keyfile = cgi.params['keyfile'][0]",
-								"gpg_import_public_key(keyfile).to_json.to_s"
-							]
-						}
-					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Import Public Key File",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6604"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
 			},
 			{
 				"type": "Clone",
@@ -191,7 +126,7 @@
 			},
 			{
 				"type": "Button",
-				"text": "cgi_ruby: gpg_import_private_key(keyfile,password)",
+				"text": "Import Private Key File",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
@@ -233,7 +168,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "cgi_ruby: gpg_import_private_key(keyfile,password)",
+							"title": "Import Private Key File",
 							"component_list": [
 								{
 									"type": "Clone",
