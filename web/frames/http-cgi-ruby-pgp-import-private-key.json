@@ -125,7 +125,7 @@
 				"text": "password"
 			},
 			{
-				"type": "x-Button",
+				"type": "Button",
 				"text": "Import Private Key File",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
