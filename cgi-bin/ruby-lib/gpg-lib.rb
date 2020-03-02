@@ -298,9 +298,9 @@ end
 ## encrypt unsigned, with default output name
 def gpg_encrypt(keyid, in_file, format)
 
-  puts keyid
-  puts in_file
-  puts format
+  puts "keyid: "+keyid
+  puts "targetfile: "+in_file
+  puts "format: "+format
 
   if (format == "asc")
     isarmor = "-a"
@@ -310,9 +310,13 @@ def gpg_encrypt(keyid, in_file, format)
     output_filename = "#{in_file}.pgp"
   end
 
-  File.delete output_filename if File.exists? output_filename
+  puts "output_filename: "+output_filename
+
+  #File.delete output_filename if File.exists? output_filename
 
   recipients = array_to_string(" --recipient ", recipients)
+
+  puts "recipients: "+recipients
 
   cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/" #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
 
