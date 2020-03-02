@@ -302,14 +302,15 @@ def gpg_encrypt(keyid, in_file, format)
   puts "targetfile: "+in_file
   puts "format: "+format
 
-  if (format == "asc")
-    isarmor = "-a"
-    output_filename = "#{in_file}.asc"
-  else
-    isarmor = ""
-    output_filename = "#{in_file}.pgp"
-  end
+#  if (format == "asc")
+#    isarmor = "-a"
+#    output_filename = "#{in_file}.asc"
+#  else
+#    isarmor = ""
+#    output_filename = "#{in_file}.pgp"
+#  end
 
+  output_filename = "#{in_file}.pgp"
   puts "output_filename: "+output_filename
 
   #File.delete output_filename if File.exists? output_filename
