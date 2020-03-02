@@ -298,10 +298,6 @@ end
 ## encrypt unsigned, with default output name
 def gpg_encrypt(keyid, in_file, format)
 
-  puts "keyid: "+keyid
-  puts "targetfile: "+in_file
-  puts "format: "+format
-
 #  if (format == "asc")
 #    isarmor = "-a"
 #    output_filename = "#{in_file}.asc"
