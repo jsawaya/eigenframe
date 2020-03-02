@@ -27,7 +27,9 @@
 				"attributes": {
 					"text_list": [
 						"Import a recipient's public key file",
-						"- this enables you to encrypt files for that recipient"
+						"- this enables you to encrypt files for that recipient",
+						"- try importing photopgp-public-key: ",
+						"photopgp-public-key: /data/data/com.termux/files/home/storage/shared/Android/data/com.sawaya.eigenframe/files/photopgp-public-key.pgp"
 					]
 				}
 			},
