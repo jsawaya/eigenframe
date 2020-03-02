@@ -313,7 +313,8 @@ def gpg_encrypt(keyid, in_file, format)
 
   #File.delete output_filename if File.exists? output_filename
 
-  recipients = array_to_string(" --recipient ", keyid)
+  #recipients = array_to_string(" --recipient ", keyid)
+  recipients = ' --recipient #{keyid}'
 
   puts "\n"
   puts "recipients: #{recipients}"
