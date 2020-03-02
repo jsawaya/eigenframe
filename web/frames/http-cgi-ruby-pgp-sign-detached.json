@@ -197,7 +197,7 @@
 								"keyid = cgi.params['keyid'][0]",
 								"password = cgi.params['password'][0]",
 								"keyfile = cgi.params['keyfile'][0]",
-								"puts gpg_sign_detached(keyid, password, keyfile).to_json.to_s"
+								"gpg_sign_detached(keyid, password, keyfile).to_json.to_s"
 							]
 						}
 					],
