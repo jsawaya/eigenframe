@@ -319,10 +319,20 @@ def gpg_encrypt(keyid, in_file, format)
   puts "\n"
   puts "recipients: #{recipients}"
 
-  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/ #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
-
   puts "\n"
+  cmd = '/data/data/com.termux/files/usr/bin/gpg -v -v '
   puts cmd
+  cmd = '#{cmd} --homedir /data/data/com.termux/files/home/.gnupg/ '
+  puts cmd
+  cmd = '#{cmd} #{recipients} #{isarmor} --no-tty '
+  puts cmd
+  cmd = '#{cmd} --always-trust -o #{output_filename} --encrypt #{in_file}'
+
+
+
+
+
+
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
 
