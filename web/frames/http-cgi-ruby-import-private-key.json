@@ -18,7 +18,24 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Selected FullPath:"
+					"text": "Import Public Key File (OpenPGP)"
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"Import a recipient's public key file",
+						"- this enables you to encrypt files for that recipient"
+					]
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Select Public Key File:"
 				}
 			},
 			{
@@ -57,8 +74,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Select Filepath",
-					"background_color": "#123456",
+					"text": "Select Public Key File",
 					"icon": {
 						"name": "open_with.",
 						"location": "top"
@@ -79,7 +95,7 @@
 								"name": "PopupScreenDefault",
 								"attributes": {
 									"id": 991005,
-									"title": "Select Filepath",
+									"title": "Select Public Key File",
 									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json"
 								}
 							}
@@ -93,293 +109,20 @@
 			},
 			{
 				"type": "Button",
-				"text": "cgi_ruby: eigen_directory_listview_http_cgi",
+				"text": "Import Public Key File",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
-				"icon": {
-					"name": "info.",
-					"location": "left"
+				"background_color": "#654321",
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
 				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title": "cgi_ruby: eigen_directory_listview_http_cgi",
-						"component_list": [
-							{
-								"type": "UrlRequest",
-								"is_eigen_response": true,
-								"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-								"parameter_list": [
-									{
-										"name": "dirpath",
-										"value_script": "''+eigenFragment.getCacheString('TextView:991000')"
-									},
-									{
-										"name": "ruby",
-										"value_list": [
-											"dirpath = cgi.params['dirpath'][0]",
-											"EigenFrame.new.eigen_directory_listview_http_cgi(dirpath).to_json.to_s"
-										]
-									}
-								]
-							}
-						]
-					}
-				}
-			},
-			{
-				"type": "Button",
-				"text": "cgi_ruby: eigen_directory_listview_http_cgi",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
 				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"on_click": {
-					"type": "UrlRequest",
-					"id": 6600,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "dirpath",
-							"value_script_list": [
-								"var t991000 = eigenFragment.getCacheString('TextView:991000')",
-								"var t991001 = eigenFragment.getCacheString('EditText:991001')",
-								"'' + eigenFragment.concatPaths(t991000, t991001)"
-							]
-						},
-						{
-							"name": "ruby",
-							"value_list": [
-								"dirpath = cgi.params['dirpath'][0]",
-								"EigenFrame.new.eigen_directory_listview_http_cgi(dirpath).to_json.to_s"
-							]
-						}
-					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "cgi_ruby: eigen_directory_listview_http_cgi",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6600"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Button",
-				"text": "cgi_ruby: directory_hash",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"on_click": {
-					"type": "UrlRequest",
-					"id": 6601,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "dirpath",
-							"value_script_list": [
-								"var t991000 = eigenFragment.getCacheString('TextView:991000')",
-								"var t991001 = eigenFragment.getCacheString('EditText:991001')",
-								"'' + eigenFragment.concatPaths(t991000, t991001)"
-							]
-						},
-						{
-							"name": "ruby",
-							"value_list": [
-								"dirpath = cgi.params['dirpath'][0]",
-								"Dir.chdir dirpath",
-								"h = directory_hash()",
-								"h.to_json.to_s"
-							]
-						}
-					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "cgi_ruby: directory_hash",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6601"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "PGP Examples (requires PGP installation)"
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"These examples demonstrate CGI post method calls to Ruby, which calls Bash to invoke GnuPG"
-					]
-				}
-			},
-			{
-				"type": "Button",
-				"text": "cgi_ruby: gpg_list_public_keys",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"on_click": {
-					"type": "UrlRequest",
-					"id": 6602,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "ruby",
-							"value_list": [
-								"gpg_list_public_keys().to_json.to_s"
-							]
-						}
-					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "cgi_ruby: gpg_list_public_keys",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6602"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Button",
-				"text": "cgi_ruby: gpg_list_private_keys()",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"on_click": {
-					"type": "UrlRequest",
-					"id": 6603,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "ruby",
-							"value_list": [
-								"gpg_list_private_keys().to_json.to_s"
-							]
-						}
-					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "cgi_ruby: gpg_list_private_keys()",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6603"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Button",
-				"text": "cgi_ruby: gpg_import_public_key(keyfile)",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
-				"icon": {
-					"name": "info.",
-					"location": "left"
+					"name": "import_export.",
+					"location": "top"
 				},
 				"on_click": {
 					"type": "UrlRequest",
@@ -390,7 +133,9 @@
 						{
 							"name": "keyfile",
 							"value_script_list": [
-								"'' + eigenFragment.getCacheString('EditText:999001')"
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+								"var keyfile = eigenFragment.getViewState(targetVid)",
+								"'' + keyfile"
 							]
 						},
 						{
@@ -405,7 +150,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "cgi_ruby: gpg_import_public_key(keyfile)",
+							"title": "Import Public Key File",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -464,7 +209,9 @@
 						{
 							"name": "keyfile",
 							"value_script_list": [
-								"'' + eigenFragment.getCacheString('EditText:999001')"
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+								"var keyfile = eigenFragment.getViewState(targetVid)",
+								"'' + keyfile"
 							]
 						},
 						{
@@ -498,6 +245,63 @@
 												"name": "TextViewDetail",
 												"attributes": {
 													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+
+			{
+				"type": "Button",
+				"text": "List Private Keys",
+				"layout_width": "wrap_content",
+				"layout_height": "wrap_content",
+				"text_color": "#ffffff",
+				"background_color": "#654321",
+				"icon": {
+					"name": "info.",
+					"location": "top"
+				},
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
+				},
+				"on_click": {
+					"type": "UrlRequest",
+					"id": 6603,
+					"is_eigen_response": false,
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+					"parameter_list": [
+						{
+							"name": "ruby",
+							"value_list": [
+								"gpg_list_private_keys().to_json.to_s"
+							]
+						}
+					],
+					"on_complete": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "List Private Keys",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6603"
 												}
 											}
 										]

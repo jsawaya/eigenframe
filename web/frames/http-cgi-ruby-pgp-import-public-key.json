@@ -18,7 +18,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Import Public Key File (PGP)"
+					"text": "Import Public Key File (OpenPGP)"
 				}
 			},
 			{
