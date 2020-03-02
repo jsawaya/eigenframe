@@ -154,7 +154,7 @@
 				"text": "asc"
 			},
 			{
-				"type": "Button",
+				"type": "x-Button",
 				"text": "Create an OpenPGP Encryption File",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
