@@ -152,11 +152,11 @@
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
 				"background_color": "#000000",
-				"text": "password"
+				"text": "demo"
 			},
 			{
 				"type": "Button",
-				"text": "Import Private Key File",
+				"text": "Create Detached Digital Signature",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
@@ -205,7 +205,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Import Private Key File",
+							"title": "Create Detached Digital Signature",
 							"component_list": [
 								{
 									"type": "Clone",
