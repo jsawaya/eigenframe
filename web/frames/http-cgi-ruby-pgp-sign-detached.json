@@ -26,8 +26,7 @@
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"After your private key file has been imported, you can create a detached digital signature for a particular file to ensure it's authenticity and has not been modified",
-						"passphrase: demo"
+						"After your private key file has been imported, you can create a detached digital signature for any particular file to ensure it's authenticity and that it has not been modified since it was signed"
 					]
 				}
 			},
@@ -35,7 +34,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Select File (for which to create a detached digital signature):"
+					"text": "Select File to sign:\n(for which to create a detached digital signature)"
 				}
 			},
 			{
@@ -74,7 +73,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Select Private Key File",
+					"text": "Select File to sign",
 					"icon": {
 						"name": "open_with.",
 						"location": "top"
@@ -95,7 +94,7 @@
 								"name": "PopupScreenDefault",
 								"attributes": {
 									"id": 991005,
-									"title": "Select Private Key File",
+									"title": "Select File to sign",
 									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json"
 								}
 							}
@@ -119,7 +118,8 @@
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"Try the demo-private-key KeyId: 5C91FC661620EAFA"
+						"Try the demo-private-key KeyId: 5C91FC661620EAFA",
+						"demo-private-key passphrase: demo"
 					]
 				}
 			},
