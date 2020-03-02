@@ -298,6 +298,10 @@ end
 ## encrypt unsigned, with default output name
 def gpg_encrypt(keyid, in_file, format)
 
+  puts keyid
+  puts in_file
+  puts format
+
   if (format == "asc")
     isarmor = "-a"
     output_filename = "#{in_file}.asc"
@@ -312,10 +316,15 @@ def gpg_encrypt(keyid, in_file, format)
 
   cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/" #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
 
+  puts cmd
+
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
 
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
+
+  puts exit_status
+  puts exit_code
 
   stdout_stringarray = get_io_as_array(stdout)
   stderr_stringarray = get_io_as_array(stderr)
