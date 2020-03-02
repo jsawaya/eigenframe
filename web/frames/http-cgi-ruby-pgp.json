@@ -151,7 +151,8 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Import Public Key",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-import-public-key.json"
+						"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-import-public-key.json",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-import-public-key.json'"
 					}
 				}
 			}
@@ -170,7 +171,8 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Import Private Key",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-import-private-key.json"
+						"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-import-private-key.json",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-import-private-key.json'"
 					}
 				}
 			}
@@ -189,7 +191,8 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Create Detached Signature (for selected file)",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-sign-detached.json"
+						"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-sign-detached.json",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-sign-detached.json'"
 					}
 				}
 			}
@@ -208,7 +211,8 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Encrypt File",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-encrypt.json"
+						"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-encrypt.json",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-encrypt.json'"
 					}
 				}
 			}
@@ -227,7 +231,8 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Verify Encrypted File (with embedded signature)",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-verify-embedded.json"
+						"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-verify-embedded.json",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-verify-embedded.json'"
 					}
 				}
 			}
@@ -246,7 +251,8 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Verify File with Detached Signature",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-verify-detached.json"
+						"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-verify-detached.json",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-verify-detached.json'"
 					}
 				}
 			}
@@ -265,7 +271,8 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Decrypt File",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-decrypt.json"
+						"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-decrypt.json",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-decrypt.json'"
 					}
 				}
 			}

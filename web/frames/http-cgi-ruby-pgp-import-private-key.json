@@ -99,7 +99,8 @@
 								"attributes": {
 									"id": 991005,
 									"title": "Select Private Key File",
-									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json"
+									"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json",
+									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath.json'"
 								}
 							}
 						]

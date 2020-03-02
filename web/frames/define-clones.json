@@ -4,7 +4,7 @@
 		{
 			"type": "JavaScript",
 			"comment": [
-				"Set root_url:",
+				"Set root_url for github branch: remember to include the trailing '/' ",
 				"https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/",
 				"https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/",
 				"https://raw.githubusercontent.com/jsawaya/eigenframe/test/web/"
@@ -338,7 +338,8 @@
 	"on_complete": {
 		"type": "UrlRequest",
 		"is_eigen_response": true,
-		"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
+		"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/playlist.json'"
+
 	}
 }
 

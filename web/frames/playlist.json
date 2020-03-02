@@ -53,7 +53,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "Setup Instructions for Termux",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-initial-setup.json'"
           }
         }
       }
@@ -81,7 +82,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "GIT Installation",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-install.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-install.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-install.json'"
           }
         }
       }
@@ -121,7 +123,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "SecureShell Settings",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
           }
         }
       }
@@ -150,7 +153,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "GIT Administration",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
           }
         }
       }
@@ -179,7 +183,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "Edit Remote File",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
           }
         }
       }
@@ -208,7 +213,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "SecureFtp Gallery",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json'"
           }
         }
       }
@@ -281,8 +287,7 @@
         },
         "on_click": {
           "type": "JavaScript",
-          "script":
-          "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')"
+          "script": "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app1.json')"
         }
       }
     },
@@ -307,7 +312,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.addShortcut('gallery-app', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app1.json')",
+            "eigenActivity.addShortcut('gallery-app', eigenFragment.getCacheString('RootUrl')+'apps/app1.json')",
             "eigenActivity.finish()"
           ]
         }
@@ -338,7 +343,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "Apache Administration",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
           }
         }
       }
@@ -368,7 +374,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "text": "Ruby Administration",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
           }
         }
       }

@@ -52,7 +52,8 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "SecureShell Settings",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json"
+            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
           }
         }
       }
