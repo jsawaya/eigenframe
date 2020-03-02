@@ -171,11 +171,11 @@
 					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
 					"parameter_list": [
 						{
-							"name": "infile",
+							"name": "targetfile",
 							"value_script_list": [
 								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
-								"var infile = eigenFragment.getViewState(targetVid)",
-								"'' + infile"
+								"var targetfile = eigenFragment.getViewState(targetVid)",
+								"'' + targetfile"
 							]
 						},
 						{
@@ -194,9 +194,9 @@
 							"name": "ruby",
 							"value_list": [
 								"keyid = cgi.params['keyid'][0].split",
-								"infile = cgi.params['infile'][0]",
+								"targetfile = cgi.params['targetfile'][0]",
 								"format = cgi.params['format'][0]",
-								"gpg_encrypt(keyid, infile, format).to_json.to_s"
+								"gpg_encrypt(keyid, targetfile, format).to_json.to_s"
 							]
 						}
 					],
