@@ -2,6 +2,19 @@
 	"type": "ActionList",
 	"component_list": [
 		{
+			"type": "JavaScript",
+			"comment": [
+				"Set root_url:",
+				"https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/",
+				"https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/",
+				"https://raw.githubusercontent.com/jsawaya/eigenframe/test/web/"
+			],
+			"script_list": [
+				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/'",
+				"eigenFragment.setCacheString('RootUrl', root_url)"
+			]
+		},
+		{
 			"type": "Define",
 			"name": "HorizontalLine",
 			"component": {
