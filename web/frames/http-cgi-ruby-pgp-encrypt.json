@@ -196,6 +196,9 @@
 								"keyid = cgi.params['keyid'][0].split",
 								"targetfile = cgi.params['targetfile'][0]",
 								"format = cgi.params['format'][0]",
+								"puts '> keyid: '+keyid",
+								"puts '> targetfile: '+targetfile",
+								"puts '> format: '+format",
 								"gpg_encrypt(keyid, targetfile, format).to_json.to_s"
 							]
 						}
