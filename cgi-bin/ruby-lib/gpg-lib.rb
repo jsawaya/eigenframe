@@ -318,7 +318,7 @@ def gpg_encrypt(keyid, in_file, format)
   puts "\n"
   puts "recipients: #{recipients}"
 
-  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/" #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
+  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/ #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
 
   puts "\n"
   puts cmd
