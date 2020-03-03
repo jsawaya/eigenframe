@@ -12,13 +12,13 @@
       "layout_height": "wrap_content",
       "text_size": "14",
       "text_color": "#ffffff",
-      "text": "EigenFrame Repository"
+			"text": "EigenFrame Documentation"
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "README",
+				"text": "GitHub: jsawaya/eigenframe/README.md",
         "icon": {
           "name": "settings.",
           "location": "top"
@@ -27,22 +27,14 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-						"title": "GitHub: README",
+						"title": "GitHub: jsawaya/eigenframe/README.md",
             "component_list": [
               {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-											"type": "WebView",
-                      "layout_width": "match_parent",
-                      "layout_height": "wrap_content",
-											"is_javascript_enabled": true,
-											"url": "'https://github.com/jsawaya/eigenframe/blob/beta/README.md'"
-                    }
-                  ]
-                }
+								"type": "WebView",
+								"layout_width": "match_parent",
+								"layout_height": "wrap_content",
+								"is_javascript_enabled": true,
+								"url": "'https://github.com/jsawaya/eigenframe/blob/beta/README.md'"
               }
             ]
           }
