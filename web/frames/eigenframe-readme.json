@@ -39,10 +39,7 @@
                       "layout_width": "match_parent",
                       "layout_height": "wrap_content",
 											"is_javascript_enabled": true,
-                      "url_script_list": [
-                        "var github_branch = eigenFragment.getCacheString('GithubBranch')",
-                        "'https://github.com/jsawaya/eigenframe/blob/'+github_branch+'/README.md'"
-                      ]
+											"url_script": "'https://github.com/jsawaya/eigenframe/blob/'+eigenFragment.getCacheString('GithubBranch')+'/README.md'"
                     }
                   ]
                 }
