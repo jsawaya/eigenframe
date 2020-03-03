@@ -10,7 +10,9 @@
 				"https://raw.githubusercontent.com/jsawaya/eigenframe/test/web/"
 			],
 			"script_list": [
-				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/'",
+				"var github_branch = 'beta'",
+				"eigenFragment.setCacheString('GithubBranch', github_branch)",
+				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
 				"eigenFragment.setCacheString('RootUrl', root_url)"
 			]
 		},

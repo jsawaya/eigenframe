@@ -15,7 +15,47 @@
       "text": "EigenFrame Repository"
     },
     {
-      "type": "WebView",
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "SecureShell Settings",
+        "icon": {
+          "name": "settings.",
+          "location": "top"
+        },
+        "on_complete": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "cgi_ruby: gpg_import_public_key(keyfile)",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "HtmlView",
+                      "layout_width": "match_parent",
+                      "layout_height": "wrap_content",
+                      "text_size": "14",
+                      "text_color": "#ffffff",
+                      "url_script_list": [
+                        "var github_branch = eigenFragment.getCacheString('GithubBranch')",
+                        "'https://github.com/jsawaya/eigenframe/blob/'+github_branch+'/README.md'"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
+    {
+      "type": "HtmlView",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "is_javascript_enabled": true,
