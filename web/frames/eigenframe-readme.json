@@ -53,15 +53,6 @@
 						"layout_height": "wrap_content",
 						"component_list": [
 							{
-								"type": "TextView",
-								"layout_width": "match_parent",
-								"layout_height": "wrap_content",
-								"text": "Readme",
-								"text_size": "14",
-								"gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-								"text_color": "#ffffff"
-							},
-							{
 								"type": "WebView",
 								"layout_width": "match_parent",
 								"layout_height": "wrap_content",
