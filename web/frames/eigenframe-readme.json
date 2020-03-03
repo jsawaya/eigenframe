@@ -55,7 +55,7 @@
 								"layout_width": "match_parent",
 								"layout_height": "match_parent",
 								"is_javascript_enabled": true,
-								"url": "https://github.com/jsawaya/eigenframe/blob/beta/README.md"
+								"url_script": "'https://github.com/jsawaya/eigenframe/blob/'+eigenFragment.getCacheString('GithubBranch')+'/README.md'"
 							}
 						]
 					}
@@ -104,7 +104,7 @@
 								"layout_width": "match_parent",
 								"layout_height": "match_parent",
 								"is_javascript_enabled": true,
-								"url": "https://github.com/jsawaya/eigenframe/blob/beta/web/docs/initial-setup.md"
+								"url_script": "'https://github.com/jsawaya/eigenframe/blob/'+eigenFragment.getCacheString('GithubBranch')+'/web/docs/initial-setup.md'"
 							}
 						]
 					}
