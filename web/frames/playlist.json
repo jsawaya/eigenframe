@@ -374,7 +374,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "text": "Ruby Administration",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
           }
         }
