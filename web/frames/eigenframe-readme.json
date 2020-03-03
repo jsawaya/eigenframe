@@ -6,19 +6,18 @@
   "layout_width": "match_parent",
   "layout_height": "match_parent",
   "component_list": [
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "14",
-      "text_color": "#ffffff",
-			"text": "EigenFrame Documentation"
-    },
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "EigenFrame Documentation (from GitHub):"
+			}
+		},
 		{
 			"type": "Button",
 			"layout_width": "match_parent",
 			"layout_height": "wrap_content",
-			"text": "GitHub: jsawaya/eigenframe/README.md",
+			"text": "README",
 			"text_color": "#ffffff",
 			"background_color": "#654321",
 			"icon": {
@@ -38,7 +37,7 @@
 				"text_size": "14",
 				"text_color": "#ffffff",
 				"background_color": "#111111",
-				"title": "GitHub: jsawaya/eigenframe/README.md",
+				"title": "README",
 				"icon": {
 					"name": "info.",
 					"location": "left"
@@ -57,6 +56,153 @@
 								"layout_height": "match_parent",
 								"is_javascript_enabled": true,
 								"url": "https://github.com/jsawaya/eigenframe/blob/beta/README.md"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"type": "Button",
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text": "Getting Started",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "info.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "PopupScreen",
+				"layout_width": "match_parent",
+				"layout_height": "wrap_content",
+				"text_size": "14",
+				"text_color": "#ffffff",
+				"background_color": "#111111",
+				"title": "Getting Started",
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"component_list": [
+					{
+						"type": "LinearLayout",
+						"scrollable": true,
+						"orientation": "vertical",
+						"layout_width": "match_parent",
+						"layout_height": "match_parent",
+						"component_list": [
+							{
+								"type": "WebView",
+								"layout_width": "match_parent",
+								"layout_height": "match_parent",
+								"is_javascript_enabled": true,
+								"url": "https://github.com/jsawaya/eigenframe/blob/beta/web/docs/initial-setup.md"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"type": "Button",
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text": "EigenFrame Specification",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "info.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "PopupScreen",
+				"layout_width": "match_parent",
+				"layout_height": "wrap_content",
+				"text_size": "14",
+				"text_color": "#ffffff",
+				"background_color": "#111111",
+				"title": "EigenFrame Specification",
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"component_list": [
+					{
+						"type": "LinearLayout",
+						"scrollable": true,
+						"orientation": "vertical",
+						"layout_width": "match_parent",
+						"layout_height": "match_parent",
+						"component_list": [
+							{
+								"type": "WebView",
+								"layout_width": "match_parent",
+								"layout_height": "match_parent",
+								"is_javascript_enabled": true,
+								"url": "https://github.com/jsawaya/eigenframe/blob/beta/web/docs/EigenFrame.md"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"type": "Button",
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text": "EigenFragment Specification",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "info.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "PopupScreen",
+				"layout_width": "match_parent",
+				"layout_height": "wrap_content",
+				"text_size": "14",
+				"text_color": "#ffffff",
+				"background_color": "#111111",
+				"title": "EigenFragment Specification",
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"component_list": [
+					{
+						"type": "LinearLayout",
+						"scrollable": true,
+						"orientation": "vertical",
+						"layout_width": "match_parent",
+						"layout_height": "match_parent",
+						"component_list": [
+							{
+								"type": "WebView",
+								"layout_width": "match_parent",
+								"layout_height": "match_parent",
+								"is_javascript_enabled": true,
+								"url": "https://github.com/jsawaya/eigenframe/blob/beta/web/docs/EigenFragment.md"
 							}
 						]
 					}
