@@ -20,7 +20,7 @@
       "attributes": {
 				"text": "GitHub: jsawaya/eigenframe/README.md",
         "icon": {
-          "name": "settings.",
+					"name": "open_browser.",
           "location": "top"
         },
         "on_complete": {
@@ -30,7 +30,7 @@
 						"title": "GitHub: jsawaya/eigenframe/README.md",
             "component_list": [
               {
-								"type": "WebView",
+								"type": "x-WebView",
 								"layout_width": "match_parent",
 								"layout_height": "wrap_content",
 								"is_javascript_enabled": true,
