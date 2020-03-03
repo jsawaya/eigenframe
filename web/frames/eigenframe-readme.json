@@ -18,7 +18,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "SecureShell Settings",
+				"text": "README",
         "icon": {
           "name": "settings.",
           "location": "top"
@@ -27,7 +27,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "cgi_ruby: gpg_import_public_key(keyfile)",
+						"title": "GitHub: README",
             "component_list": [
               {
                 "type": "Clone",
@@ -35,11 +35,10 @@
                 "attributes": {
                   "component_list": [
                     {
-                      "type": "HtmlView",
+											"type": "WebView",
                       "layout_width": "match_parent",
                       "layout_height": "wrap_content",
-                      "text_size": "14",
-                      "text_color": "#ffffff",
+											"is_javascript_enabled": true,
                       "url_script_list": [
                         "var github_branch = eigenFragment.getCacheString('GithubBranch')",
                         "'https://github.com/jsawaya/eigenframe/blob/'+github_branch+'/README.md'"
@@ -52,14 +51,6 @@
           }
         }
       }
-    },
-
-    {
-      "type": "HtmlView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "is_javascript_enabled": true,
-      "url": "https://github.com/jsawaya/eigenframe/blob/master/README.md"
     }
-  ]
+	]
 }
