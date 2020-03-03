@@ -10,7 +10,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "EigenFrame Documentation (GitHub):"
+				"text": "EigenFrame Documentation:"
 			}
 		},
 		{
@@ -115,7 +115,7 @@
 			"type": "Button",
 			"layout_width": "match_parent",
 			"layout_height": "wrap_content",
-			"text": "EigenFrame Specification",
+			"text": "EigenFrame Specifications",
 			"text_color": "#ffffff",
 			"background_color": "#654321",
 			"icon": {
