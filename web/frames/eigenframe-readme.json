@@ -10,7 +10,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "EigenFrame Documentation (from GitHub):"
+				"text": "EigenFrame Documentation (GitHub):"
 			}
 		},
 		{
@@ -135,7 +135,7 @@
 				"text_size": "14",
 				"text_color": "#ffffff",
 				"background_color": "#111111",
-				"title": "EigenFrame Specification",
+				"title": "EigenFrame Specifications",
 				"icon": {
 					"name": "info.",
 					"location": "left"
@@ -152,57 +152,7 @@
 								"type": "WebView",
 								"layout_width": "match_parent",
 								"layout_height": "match_parent",
-								"is_javascript_enabled": true,
-								"url": "https://github.com/jsawaya/eigenframe/blob/beta/web/docs/EigenFrame.md"
-							}
-						]
-					}
-				]
-			}
-		},
-		{
-			"type": "Button",
-			"layout_width": "match_parent",
-			"layout_height": "wrap_content",
-			"text": "EigenFragment Specification",
-			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"icon": {
-				"name": "info.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "PopupScreen",
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"text_size": "14",
-				"text_color": "#ffffff",
-				"background_color": "#111111",
-				"title": "EigenFragment Specification",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"component_list": [
-					{
-						"type": "LinearLayout",
-						"scrollable": true,
-						"orientation": "vertical",
-						"layout_width": "match_parent",
-						"layout_height": "match_parent",
-						"component_list": [
-							{
-								"type": "WebView",
-								"layout_width": "match_parent",
-								"layout_height": "match_parent",
-								"is_javascript_enabled": true,
-								"url": "https://github.com/jsawaya/eigenframe/blob/beta/web/docs/EigenFragment.md"
+								"url": "https://github.com/jsawaya/eigenframe/blob/beta/web/docs/"
 							}
 						]
 					}
