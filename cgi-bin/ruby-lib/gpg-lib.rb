@@ -317,7 +317,7 @@ def gpg_encrypt(keyid, in_file, format)
   #File.delete output_filename if File.exists? output_filename
 
   #recipients = array_to_string(" --recipient ", keyid)
-  recipients = " --recipient #{keyid}""
+  recipients = " --recipient #{keyid}"
   p recipients
 
   cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/ #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
