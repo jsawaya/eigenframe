@@ -26,42 +26,34 @@
 			"background_color": "#000000"
 		},
 		{
-			"type": "Define",
-			"name": "ExploreFilesystemWorkingDirectory",
-			"component": {
-				"type": "LinearLayout",
-				"orientation": "vertical",
-				"layout_width": "match_parent",
-				"component_list": [
-					{
-						"type": "Clone",
-						"name": "HorizontalLine"
-					},
-					{
-						"type": "Clone",
-						"name": "TextViewLabel",
-						"attributes": {
-							"text": "Working Directory:\n(relative to sftp home)"
-						}
-					},
-					{
-						"type": "EditText",
-						"text_script": "''+eigenFragment.getCacheString('WorkingDirectory')",
-						"max_length": 200,
-						"is_single_line": true,
-						"layout_width": "match_parent",
-						"text_color": "#ffffff",
-						"text_size": "20",
-						"gravity": "left",
-						"background_color": "#000000"
+			"type": "LinearLayout",
+			"condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)",
+			"orientation": "vertical",
+			"layout_width": "match_parent",
+			"component_list": [
+				{
+					"type": "Clone",
+					"name": "HorizontalLine"
+				},
+				{
+					"type": "Clone",
+					"name": "TextViewLabel",
+					"attributes": {
+						"text": "Working Directory:\n(relative to sftp home)"
 					}
-				]
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ExploreFilesystemWorkingDirectory",
-			"condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)"
+				},
+				{
+					"type": "EditText",
+					"text_script": "''+eigenFragment.getCacheString('WorkingDirectory')",
+					"max_length": 200,
+					"is_single_line": true,
+					"layout_width": "match_parent",
+					"text_color": "#ffffff",
+					"text_size": "20",
+					"gravity": "left",
+					"background_color": "#000000"
+				}
+			]
 		},
 		{
 			"type": "Clone",
@@ -86,42 +78,34 @@
 			"background_color": "#000000"
 		},
 		{
-			"type": "Define",
-			"name": "ExploreFilesystemCurrentFilename",
-			"component": {
-				"type": "LinearLayout",
-				"orientation": "vertical",
-				"layout_width": "match_parent",
-				"component_list": [
-					{
-						"type": "Clone",
-						"name": "HorizontalLine"
-					},
-					{
-						"type": "Clone",
-						"name": "TextViewLabel",
-						"attributes": {
-							"text": "Selected Filename: "
-						}
-					},
-					{
-						"type": "EditText",
-						"max_length": 200,
-						"is_single_line": true,
-						"layout_width": "match_parent",
-						"text_script": "''+eigenFragment.getCacheString('SelectedFile')",
-						"text_color": "#ffffff",
-						"text_size": "20",
-						"gravity": "left",
-						"background_color": "#000000"
+			"type": "LinearLayout",
+			"condition_script": "eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)",
+			"orientation": "vertical",
+			"layout_width": "match_parent",
+			"component_list": [
+				{
+					"type": "Clone",
+					"name": "HorizontalLine"
+				},
+				{
+					"type": "Clone",
+					"name": "TextViewLabel",
+					"attributes": {
+						"text": "Selected Filename: "
 					}
-				]
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ExploreFilesystemCurrentFilename",
-			"condition_script": "eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)"
+				},
+				{
+					"type": "EditText",
+					"max_length": 200,
+					"is_single_line": true,
+					"layout_width": "match_parent",
+					"text_script": "''+eigenFragment.getCacheString('SelectedFile')",
+					"text_color": "#ffffff",
+					"text_size": "20",
+					"gravity": "left",
+					"background_color": "#000000"
+				}
+			]
 		},
 		{
 			"type": "Clone",

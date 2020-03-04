@@ -99,6 +99,17 @@
 		},
 		{
 			"type": "Define",
+			"name": "LayoutHorizontalScrollable",
+			"component": {
+				"type": "LinearLayout",
+				"scrollable": true,
+				"orientation": "horizontal",
+				"gravity": "center_vertical",
+				"layout_width": "match_parent"
+			}
+		},
+		{
+			"type": "Define",
 			"name": "EditTextRemoteFilePath",
 			"component": {
 				"type": "EditText",
