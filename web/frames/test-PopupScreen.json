@@ -93,7 +93,6 @@
           "name": "info.",
           "location": "left"
         },
-        "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView.json",
         "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/test-TextView.json'"
       }
     },

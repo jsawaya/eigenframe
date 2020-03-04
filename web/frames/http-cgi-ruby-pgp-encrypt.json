@@ -95,7 +95,6 @@
 								"attributes": {
 									"id": 991005,
 									"title": "Select Private Key File",
-									"x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json",
 									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath.json'"
 								}
 							}
@@ -128,7 +127,6 @@
 				"id": 6607,
 				"is_single_line": true,
 				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
 				"background_color": "#000000",
 				"text": "5C91FC661620EAFA"
@@ -149,16 +147,13 @@
 				"id": 6606,
 				"is_single_line": true,
 				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
 				"background_color": "#000000",
 				"text": "asc"
 			},
 			{
-				"type": "x-Button",
+				"type": "Button",
 				"text": "Create an OpenPGP Encryption File",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"icon": {

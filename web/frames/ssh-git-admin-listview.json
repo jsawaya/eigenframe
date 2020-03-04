@@ -45,7 +45,6 @@
               "text_color": "#ffffff",
               "background_color": "#111111",
               "title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
-              "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json",
               "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin-listview.json'"
             }
           }
@@ -126,7 +125,6 @@
                   "text_color": "#ffffff",
                   "background_color": "#111111",
                   "title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
-                  "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json",
                   "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin-listview.json'"
                 }
               }
@@ -194,7 +192,6 @@
                 "name": "PopupScreenDefault",
                 "attributes": {
                   "title": "Edit Remote File",
-                  "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json",
                   "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
                 }
               }

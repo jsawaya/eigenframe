@@ -358,7 +358,6 @@
         "on_complete": {
           "type": "PopupScreen",
           "title_script": "''+ eigenFragment.concatPaths(991000, 991001, 991002)",
-          "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin-listview.json",
           "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin-listview.json'",
           "layout_width": "match_parent",
           "text_size": "14",

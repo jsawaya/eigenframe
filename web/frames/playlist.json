@@ -53,7 +53,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "Setup Instructions for Termux",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-initial-setup.json'"
           }
         }
@@ -82,7 +81,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "GIT Installation",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-install.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-install.json'"
           }
         }
@@ -123,7 +121,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "SecureShell Settings",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-settings.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
           }
         }
@@ -153,7 +150,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "GIT Administration",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
           }
         }
@@ -183,7 +179,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "Edit Remote File",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
           }
         }
@@ -213,7 +208,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "SecureFtp Gallery",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json'"
           }
         }
@@ -343,7 +337,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "Apache Administration",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
           }
         }
@@ -454,7 +447,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Cryptography",
+        "text": "OpenPGP Cryptography",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -464,7 +457,6 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "OpenPGP Cryptography",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp.json'"
           }
         }

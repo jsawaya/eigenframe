@@ -153,13 +153,6 @@ Example:
                     "eigenFragment.closePopupScreen(999099)"
                   ]
                 }
-              },
-              {
-                "type": "x-JavaScript",
-                "comment": "closePopupWindow needs to be here, rather than inside SecureFtp(on-complete)/JavaScript, because it seeks parent views to find PopupScreen",
-                "script_list": [
-                  "eigenFragment.closePopupWindow()"
-                ]
               }
             ]
           }
