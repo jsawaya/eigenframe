@@ -299,6 +299,11 @@ end
 def gpg_encrypt(keyid, in_file, format)
 
   p keyid
+  keyidArray = keyid.split
+  recipient = " --recipient "
+  recipients = recipient + keyidArray.join(recipient)
+  p recipients
+
   p in_file
   p format
 
@@ -315,10 +320,6 @@ def gpg_encrypt(keyid, in_file, format)
   puts "output_filename: "+output_filename
 
   #File.delete output_filename if File.exists? output_filename
-
-  #recipients = array_to_string(" --recipient ", keyid)
-  recipients = " --recipient #{keyid}"
-  p recipients
 
   cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/ #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
 
