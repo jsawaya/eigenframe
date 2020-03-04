@@ -144,7 +144,7 @@
 			},
 			{
 				"type": "EditText",
-				"id": 6606,
+				"id": 6608,
 				"is_single_line": true,
 				"layout_width": "match_parent",
 				"text_color": "#ffffff",
@@ -183,7 +183,7 @@
 						{
 							"name": "format",
 							"value_script_list": [
-								"'' + eigenFragment.getCacheString('EditText:6606')"
+								"'' + eigenFragment.getCacheString('EditText:6608')"
 							]
 						},
 						{
