@@ -25,10 +25,7 @@
 			"name": "LayoutVerticalScrollable",
 			"condition_script_list": [
 				"var filename = eigenFragment.getViewState(999001).toLowerCase()",
-				"var isImage = filename.endsWith('.png')",
-				"isImage |= filename.endsWith('.jpg')",
-				"isImage |= filename.endsWith('.jpeg')",
-				"!isImage"
+				"!(filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg'))"
 			],
 			"attributes": {
 				"component_list": [
@@ -70,9 +67,7 @@
 			"name": "LayoutVerticalScrollable",
 			"condition_script_list": [
 				"var filename = eigenFragment.getViewState(999001).toLowerCase()",
-				"var isImage = filename.endsWith('.png')",
-				"isImage |= filename.endsWith('.jpg')",
-				"isImage |= filename.endsWith('.jpeg')"
+				"filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg')"
 			],
 			"attributes": {
 				"component_list": [
