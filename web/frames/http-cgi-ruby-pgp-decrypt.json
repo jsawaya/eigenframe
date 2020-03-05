@@ -162,7 +162,6 @@
 							"value_list": [
 								"encrypted_file = cgi.params['encrypted_file'][0]",
 								"output_file = encrypted_file[0..(encrypted_file.rindex('.')-1)]",
-								"p output_file",
 								"password = cgi.params['password'][0]",
 								"gpg_decrypt(password, encrypted_file, output_file).to_json.to_s"
 							]
@@ -184,63 +183,6 @@
 												"name": "TextViewDetail",
 												"attributes": {
 													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-
-			{
-				"type": "Button",
-				"text": "List Private Keys",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#654321",
-				"icon": {
-					"name": "info.",
-					"location": "top"
-				},
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				},
-				"on_click": {
-					"type": "UrlRequest",
-					"id": 6603,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "ruby",
-							"value_list": [
-								"gpg_list_private_keys().to_json.to_s"
-							]
-						}
-					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "List Private Keys",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6603"
 												}
 											}
 										]
