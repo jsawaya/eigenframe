@@ -198,6 +198,25 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
+				"text": "Verify Selected File (that has a Detached Signature)",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Verify Selected File (that has a Detached Signature)",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-verify-detached.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
 				"text": "Encrypt File",
 				"icon": {
 					"name": "open_browser.",
@@ -247,25 +266,6 @@
 					"attributes": {
 						"title": "Verify Encrypted File (with embedded signature)",
 						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-verify-embedded.json'"
-					}
-				}
-			}
-		},
-		{
-			"type": "x-Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Verify File with Detached Signature",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title": "Verify File with Detached Signature",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-verify-detached.json'"
 					}
 				}
 			}

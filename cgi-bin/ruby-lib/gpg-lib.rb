@@ -288,13 +288,6 @@ def gpg_export_private_key(keyid, password)
 end
 
 
-#" --recipient "
-def array_to_string(prefix, keyid)
-  recipients = ""
-  keyid.each {|x| recipients << "#{prefix}#{x}" }
-end
-
-
 ## encrypt unsigned, with default output name
 def gpg_encrypt(keyid, in_file, format)
 
@@ -363,11 +356,9 @@ def gpg_sign_detached(keyid, password, in_file)
 end
 
 
-def gpg_verify(keyfile)
+def gpg_verify(sig_file, original_file)
 
-  filepaths = array_to_string(" ", keyfile)
-
-  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/  --verify #{filepaths}"
+  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/  --verify #{sig_file} #{original_file}"
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
 
