@@ -164,14 +164,7 @@
 												"name": "TextViewDetail",
 												"attributes": {
 													"text_size": "10",
-													"ssh_script_list": [
-														"cd ~/git-repos/eigenframe",
-														"echo current working directory:",
-														"pwd",
-														"echo ",
-														"echo git status:",
-														"git status"
-													]
+													"ssh": "cd ~/git-repos/eigenframe ; git status"
 												}
 											}
 										]
@@ -190,23 +183,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Verify File with Detached Signature"
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"You can verify a particular file with a detached digital signature to ensure that it has not been modified"
-					]
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Select File (that has a detached digital signature):"
+					"text": "Select File (in eigenframe git working storage)"
 				}
 			},
 			{
