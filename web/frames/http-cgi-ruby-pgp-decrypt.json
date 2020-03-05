@@ -161,7 +161,7 @@
 							"name": "ruby",
 							"value_list": [
 								"encrypted_file = cgi.params['encrypted_file'][0]",
-								"output_file = encrypted_file[0..encrypted_file.rindex('.')]",
+								"output_file = encrypted_file[0..(encrypted_file.rindex('.')-1)]",
 								"p output_file",
 								"password = cgi.params['password'][0]",
 								"gpg_decrypt(password, encrypted_file, output_file).to_json.to_s"
