@@ -130,45 +130,41 @@ end
 
 
 def gpg_decrypt(password, keyfile, outfile)
-  #  puts "gpg_decrypt running..."
+
   h = Hash.new("null")
 
   gpg = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/"
-  #  puts "command: #{gpg}"
 
   gpg_sec = "#{gpg} --pinentry-mode loopback --batch --yes --passphrase-fd 0"
+
   cmd = "#{gpg_sec} --decrypt #{keyfile}"
-  #  puts "command: #{cmd}"
 
   if outfile.to_s.strip.size > 0
     cmd = cmd << " > #{outfile}"
   end
 
-  #  puts "command: #{cmd}"
-
   h["command"] = cmd
 
-  stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
+#  stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
   stdin.puts password
 
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
-  #  puts "exit_code: #{exit_code}"
+
   h["exit_code"] = exit_code
 
   stdout_stringarray = get_io_as_array(stdout)
-  #  puts "stdout_stringarray: #{stdout_stringarray}"
+
   h["stdout"] = stdout_stringarray
 
   stderr_stringarray = get_io_as_array(stderr)
-  #  puts "stderr_stringarray: #{stderr_stringarray}"
+
   h["stderr"] = stderr_stringarray
 
   stdout.close
   stderr.close
 
-  #h.to_json
-  jj h
+	h
 
 end
 

@@ -233,7 +233,7 @@
 			}
 		},
 		{
-			"type": "x-Clone",
+			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
 				"text": "Decrypt File",

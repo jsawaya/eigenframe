@@ -138,7 +138,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Create an OpenPGP Encryption File",
+							"title": "Verify File (that has a detached digital signature)",
 							"component_list": [
 								{
 									"type": "Clone",
