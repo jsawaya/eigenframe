@@ -114,13 +114,13 @@
 						{
 							"name": "keyid",
 							"value_script_list": [
-								"'' + eigenFragment.getCacheString('EditText:6607')"
+								"'' + eigenFragment.getViewState(6607)"
 							]
 						},
 						{
 							"name": "password",
 							"value_script_list": [
-								"'' + eigenFragment.getCacheString('EditText:6606')"
+								"'' + eigenFragment.getViewState(6606)"
 							]
 						},
 						{

@@ -113,13 +113,13 @@
 						{
 							"name": "keyid",
 							"value_script_list": [
-								"'' + eigenFragment.getCacheString('EditText:6607')"
+								"'' + eigenFragment.getViewState(6607)"
 							]
 						},
 						{
 							"name": "format",
 							"value_script_list": [
-								"'' + eigenFragment.getCacheString('EditText:6608')"
+								"'' + eigenFragment.getViewState(6608)"
 							]
 						},
 						{

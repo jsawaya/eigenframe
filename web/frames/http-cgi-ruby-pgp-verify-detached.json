@@ -40,7 +40,7 @@
 			},
 			{
 				"type": "Button",
-				"text": "Verify File (that has a detached digital signature)",
+				"text": "Verify File (that has Detached Signature)",
 				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"icon": {
@@ -74,7 +74,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Verify File (that has a detached digital signature)",
+							"title": "Verify File (that has Detached Signature)",
 							"component_list": [
 								{
 									"type": "Clone",

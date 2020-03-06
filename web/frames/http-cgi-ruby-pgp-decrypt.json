@@ -86,7 +86,7 @@
 						{
 							"name": "password",
 							"value_script_list": [
-								"'' + eigenFragment.getCacheString('EditText:6606')"
+								"'' + eigenFragment.getViewState(6606)"
 							]
 						},
 						{
