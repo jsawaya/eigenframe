@@ -154,7 +154,11 @@
 					},
 					"on_click": {
 						"type": "SecureFtp",
-						"sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'put EditText:999000 ' + filename"
+						],
 						"on_complete": {
 							"type": "JavaScript",
 							"script_list": [
@@ -183,7 +187,7 @@
 						"type": "JavaScript",
 						"script_list": [
 							"var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-							"eigenActivity.showToast('Edit Cache: ' + x1 )",
+							"eigenActivity.showToast('EditText Cache: ' + x1 )",
 							"eigenFragment.closePopupScreen(999099)"
 						]
 					}
@@ -198,7 +202,11 @@
 				"name": "PopupScreenDefault",
 				"attributes": {
 					"id": 999099,
-					"title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+					"title_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"'Remote File: ' + filename"
+					],
 					"component_list": [
 						{
 							"type": "Clone",
