@@ -58,7 +58,7 @@
       "on_click": {
         "type": "PopupHtmlView",
         "title": "PopupHtmlView",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/about.html"
+        "url_script": "eigenFragment.getCacheString('RootUrl')+'html/about.html'"
       }
     },
     {
@@ -75,7 +75,7 @@
       "on_click": {
         "type": "PopupHtmlView",
         "title": "PopupHtmlView",
-        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/html/recent-changes.html"
+        "url_script": "eigenFragment.getCacheString('RootUrl')+'html/recent-changes.html'"
       },
       "padding": {
         "left": 4,

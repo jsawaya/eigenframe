@@ -2,6 +2,21 @@
 	"type": "ActionList",
 	"component_list": [
 		{
+			"type": "JavaScript",
+			"comment": [
+				"Set root_url for github branch: remember to include the trailing '/' ",
+				"https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/",
+				"https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/",
+				"https://raw.githubusercontent.com/jsawaya/eigenframe/test/web/"
+			],
+			"script_list": [
+				"var github_branch = 'beta'",
+				"eigenFragment.setCacheString('GithubBranch', github_branch)",
+				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+				"eigenFragment.setCacheString('RootUrl', root_url)"
+			]
+		},
+		{
 			"type": "Define",
 			"name": "HorizontalLine",
 			"component": {
@@ -58,7 +73,6 @@
 			"name": "ButtonDefault",
 			"component": {
 				"type": "Button",
-				"text": "Button Text",
 				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"gravity": "center",
@@ -84,22 +98,13 @@
 		},
 		{
 			"type": "Define",
-			"name": "EditTextRemoteFilePath",
+			"name": "LayoutHorizontalScrollable",
 			"component": {
-				"type": "EditText",
-				"id": 999001,
-				"max_length": 200,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"text": "",
-				"text_color": "#ffffff",
-				"background_color": "#000000",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				}
+				"type": "LinearLayout",
+				"scrollable": true,
+				"orientation": "horizontal",
+				"gravity": "center_vertical",
+				"layout_width": "match_parent"
 			}
 		},
 		{
@@ -129,7 +134,11 @@
 					},
 					"on_click": {
 						"type": "SecureFtp",
-						"sftp_script": "'put EditText:999000 ' + eigenFragment.getViewState(999001)",
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'put EditText:999000 ' + filename"
+						],
 						"on_complete": {
 							"type": "JavaScript",
 							"script_list": [
@@ -158,7 +167,7 @@
 						"type": "JavaScript",
 						"script_list": [
 							"var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-							"eigenActivity.showToast('Edit Cache: ' + x1 )",
+							"eigenActivity.showToast('EditText Cache: ' + x1 )",
 							"eigenFragment.closePopupScreen(999099)"
 						]
 					}
@@ -173,7 +182,11 @@
 				"name": "PopupScreenDefault",
 				"attributes": {
 					"id": 999099,
-					"title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+					"title_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"'Remote File: ' + filename"
+					],
 					"component_list": [
 						{
 							"type": "Clone",
@@ -206,7 +219,11 @@
 				"type": "Clone",
 				"name": "PopupScreenDefault",
 				"attributes": {
-					"title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+					"title_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"'Remote File: '+filename"
+					],
 					"component_list": [
 						{
 							"type": "Clone",
@@ -217,7 +234,11 @@
 										"type": "Clone",
 										"name": "TextViewDetail",
 										"attributes": {
-											"ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
+											"ssh_script_list": [
+												"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+												"var filename = eigenFragment.getViewState(targetVid)",
+												"'cat ' + filename"
+											]
 										}
 									}
 								]
@@ -232,7 +253,11 @@
 			"name": "PopupScreenEditRemoteFile",
 			"component": {
 				"type": "SecureFtp",
-				"sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' EditText:999000'"
+				],
 				"on_complete": {
 					"type": "Clone",
 					"name": "PopupScreenEdit"
@@ -246,7 +271,11 @@
 				"type": "Clone",
 				"name": "PopupScreenDefault",
 				"attributes": {
-					"title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+					"title_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"'Remote Image: '+filename"
+					],
 					"component_list": [
 						{
 							"type": "Clone",
@@ -276,7 +305,11 @@
 			"name": "PopupScreenImageRemoteFile",
 			"component": {
 				"type": "SecureFtp",
-				"sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' ImageView.png'",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' ImageView.png'"
+				],
 				"on_complete": {
 					"type": "Clone",
 					"name": "PopupScreenImage"
@@ -320,12 +353,103 @@
 					]
 				}
 			}
+		},
+		{
+			"type": "JavaScript",
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File')"
+		},
+		{
+			"type": "Define",
+			"name": "JavaScriptSelectFilePath",
+			"component": {
+				"type": "Clone",
+				"name": "LayoutVerticalScrollable",
+				"attributes": {
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "HorizontalLine"
+						},
+						{
+							"type": "Clone",
+							"name": "TextViewLabel",
+							"attributes": {
+								"text_script": "''+eigenFragment.getCacheString('SelectFilePrompt')"
+							}
+						},
+						{
+							"type": "EditText",
+							"id": 6699,
+							"max_length": 200,
+							"is_single_line": true,
+							"layout_width": "match_parent",
+							"text_color": "#ffffff",
+							"background_color": "#000000"
+						},
+						{
+							"type": "JavaScript",
+							"script_list": [
+								"var home_dir_cache = 'SecureFtp:411000'",
+								"var targetVid = 6699",
+								"var work_dir = ''",
+								"var home_dir = eigenFragment.getCacheString(home_dir_cache)",
+								"eigenFragment.setCacheString('HomeDirectory', home_dir)",
+								"eigenFragment.setCacheString('WorkingDirectory', work_dir)",
+								"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+								"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
+								"eigenFragment.setCacheString('FullPath', full_path)",
+								"var selected_file = eigenFragment.getCacheString('SelectedFile')",
+								"var selected_filepath = eigenFragment.concatPaths(full_path, selected_file)",
+								"eigenFragment.setIntegerVariable('TargetViewId', 0, targetVid)",
+								"eigenFragment.setViewState(targetVid, selected_filepath)"
+							]
+						},
+						{
+							"type": "Clone",
+							"name": "ButtonDefault",
+							"attributes": {
+								"text_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+								"icon": {
+									"name": "open_with.",
+									"location": "top"
+								},
+								"on_click": {
+									"type": "ActionList",
+									"component_list": [
+										{
+											"type": "JavaScript",
+											"script_list": [
+												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
+												"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
+											]
+										},
+										{
+											"type": "Clone",
+											"name": "PopupScreenDefault",
+											"attributes": {
+												"id": 991005,
+												"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+												"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath.json'"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"type": "Clone",
+							"name": "HorizontalLine"
+						}
+					]
+				}
+			}
 		}
 	],
 	"on_complete": {
 		"type": "UrlRequest",
 		"is_eigen_response": true,
-		"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
+		"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/playlist.json'"
+
 	}
 }
 

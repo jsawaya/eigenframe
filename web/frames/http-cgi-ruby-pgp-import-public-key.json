@@ -34,80 +34,12 @@
 				}
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Select Public Key File:"
-				}
-			},
-			{
-				"type": "EditText",
-				"id": 6699,
-				"max_length": 200,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"text_color": "#ffffff",
-				"background_color": "#000000"
-			},
-			{
 				"type": "JavaScript",
-				"comment": [
-					"set home_dir_cache: 'SecureFtp:411000'",
-					"set targetVid: 6699",
-					"set work_dir: ''"
-				],
-				"script_list": [
-					"var home_dir_cache = 'SecureFtp:411000'",
-					"var targetVid = 6699",
-					"var work_dir = ''",
-					"var home_dir = eigenFragment.getCacheString(home_dir_cache)",
-					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
-					"eigenFragment.setCacheString('WorkingDirectory', work_dir)",
-					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
-					"eigenFragment.setCacheString('FullPath', full_path)",
-					"var selected_file = eigenFragment.getCacheString('SelectedFile')",
-					"var selected_filepath = eigenFragment.concatPaths(full_path, selected_file)",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, targetVid)",
-					"eigenFragment.setViewState(targetVid, selected_filepath)"
-				]
+				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Public Key File')"
 			},
 			{
 				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Select Public Key File",
-					"icon": {
-						"name": "open_with.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "ActionList",
-						"comment": "set the dialog type, then start popup",
-						"component_list": [
-							{
-								"type": "JavaScript",
-								"script_list": [
-									"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
-									"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
-								]
-							},
-							{
-								"type": "Clone",
-								"name": "PopupScreenDefault",
-								"attributes": {
-									"id": 991005,
-									"title": "Select Public Key File",
-									"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/select-filepath.json"
-								}
-							}
-						]
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+				"name": "JavaScriptSelectFilePath"
 			},
 			{
 				"type": "Button",

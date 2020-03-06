@@ -157,7 +157,7 @@
         "parameter_list": [
           {
             "name": "dirpath",
-            "value_script": "''+eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
+            "value_script": "''+eigenFragment.getCacheString('FullPath')"
           }
         ],
         "on_complete": {
@@ -211,7 +211,7 @@
               "parameter_list": [
                 {
                   "name": "dirpath",
-                  "value_script": "''+eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
+                  "value_script": "''+eigenFragment.getCacheString('FullPath')"
                 }
               ]
             }
@@ -239,7 +239,7 @@
         "parameter_list": [
           {
             "name": "dirpath",
-            "value_script": "''+eigenFragment.concatPaths(eigenFragment.getCacheString('TextView:991000'), eigenFragment.getCacheString('EditText:991001'))"
+            "value_script": "''+eigenFragment.getCacheString('FullPath')"
           },
           {
             "name": "ruby",
@@ -300,7 +300,7 @@
               "parameter_list": [
                 {
                   "name": "dirpath",
-                  "value_script": "''+eigenFragment.getCacheString('TextView:991000')"
+                  "value_script": "''+eigenFragment.getCacheString('FullPath')"
                 },
                 {
                   "name": "ruby",

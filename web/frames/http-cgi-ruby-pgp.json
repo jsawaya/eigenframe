@@ -13,7 +13,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Cryptography"
+				"text": "OpenPGP Cryptography"
 			}
 		},
 		{
@@ -21,13 +21,23 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"Cryptography methods below require Apache2/Ruby/GnuPG"
+					"Requires Apache2, Ruby and GnuPG installed, and httpd running.",
+					"These methods use HTTP/CGI (post method) to invoke Ruby which calls GnuPG"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Show the current list of public keys that have been imported"
 				]
 			}
 		},
 		{
 			"type": "Button",
-			"text": "List Public Keys",
+			"text": "Show Imported Public Key Listings",
 			"layout_width": "wrap_content",
 			"layout_height": "wrap_content",
 			"text_color": "#ffffff",
@@ -82,8 +92,17 @@
 			}
 		},
 		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Show the current list of your private keys that have been imported"
+				]
+			}
+		},
+		{
 			"type": "Button",
-			"text": "List Private Keys",
+			"text": "Show Imported Private Key Listings",
 			"layout_width": "wrap_content",
 			"layout_height": "wrap_content",
 			"text_color": "#ffffff",
@@ -139,28 +158,20 @@
 		},
 		{
 			"type": "Clone",
-			"name": "ButtonDefault",
+			"name": "TextViewDetail",
 			"attributes": {
-				"text": "Import Public Key",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title": "Import Public Key",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-import-public-key.json"
-					}
-				}
+				"text_list": [
+					"Import someone's public key file",
+					" - which enables you to encrypt files for that person",
+					" - and you can verify files with detached signatures from that person"
+				]
 			}
 		},
 		{
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Import Private Key",
+				"text": "Import a Public Key",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -169,10 +180,50 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "Import Private Key",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-import-private-key.json"
+						"title": "Import a Public Key",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-import-public-key.json'"
 					}
 				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Import your own key files",
+					" - which enables you to encrypt/decrypt your files",
+					" - and you can sign a file (create a detached signature) to ensure it has not been modified"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Import Your Private Key",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Import Your Private Key",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-import-private-key.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Create a detached signature for a selected file",
+					" - the signature file is created in the same directory, with a filename suffix '.sig' "
+				]
 			}
 		},
 		{
@@ -189,13 +240,52 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Create Detached Signature (for selected file)",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-sign-detached.json"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-sign-detached.json'"
 					}
 				}
 			}
 		},
 		{
-			"type": "x-Clone",
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Verify a selected file that has a detached signature in the same directory",
+					" - the selected file, must have an associated signature file"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Verify Selected File (that has a Detached Signature)",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Verify Selected File (that has a Detached Signature)",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-verify-detached.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Encrypt a selected file",
+					" - indicate the recipients by keyid or email-address (see public key listing) "
+				]
+			}
+		},
+		{
+			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
 				"text": "Encrypt File",
@@ -208,51 +298,23 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Encrypt File",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-encrypt.json"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-encrypt.json'"
 					}
 				}
 			}
 		},
 		{
-			"type": "x-Clone",
-			"name": "ButtonDefault",
+			"type": "Clone",
+			"name": "TextViewDetail",
 			"attributes": {
-				"text": "Verify Encrypted File (with embedded signature)",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title": "Verify Encrypted File (with embedded signature)",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-verify-embedded.json"
-					}
-				}
+				"text_list": [
+					"Decrypt a selected file",
+					" - enter a passphrase associated with one of the keys that encrypted the file"
+				]
 			}
 		},
 		{
-			"type": "x-Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Verify File with Detached Signature",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title": "Verify File with Detached Signature",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-verify-detached.json"
-					}
-				}
-			}
-		},
-		{
-			"type": "x-Clone",
+			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
 				"text": "Decrypt File",
@@ -265,9 +327,18 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Decrypt File",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp-decrypt.json"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-decrypt.json'"
 					}
 				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"TO DO: export keys"
+				]
 			}
 		}
 	]

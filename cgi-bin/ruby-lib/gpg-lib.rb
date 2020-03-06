@@ -130,21 +130,18 @@ end
 
 
 def gpg_decrypt(password, keyfile, outfile)
-  #  puts "gpg_decrypt running..."
+
   h = Hash.new("null")
 
   gpg = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/"
-  #  puts "command: #{gpg}"
 
   gpg_sec = "#{gpg} --pinentry-mode loopback --batch --yes --passphrase-fd 0"
+
   cmd = "#{gpg_sec} --decrypt #{keyfile}"
-  #  puts "command: #{cmd}"
 
   if outfile.to_s.strip.size > 0
     cmd = cmd << " > #{outfile}"
   end
-
-  #  puts "command: #{cmd}"
 
   h["command"] = cmd
 
@@ -153,22 +150,21 @@ def gpg_decrypt(password, keyfile, outfile)
 
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
-  #  puts "exit_code: #{exit_code}"
+
   h["exit_code"] = exit_code
 
   stdout_stringarray = get_io_as_array(stdout)
-  #  puts "stdout_stringarray: #{stdout_stringarray}"
+
   h["stdout"] = stdout_stringarray
 
   stderr_stringarray = get_io_as_array(stderr)
-  #  puts "stderr_stringarray: #{stderr_stringarray}"
+
   h["stderr"] = stderr_stringarray
 
   stdout.close
   stderr.close
 
-  #h.to_json
-  jj h
+	h
 
 end
 
@@ -288,49 +284,29 @@ def gpg_export_private_key(keyid, password)
 end
 
 
-#" --recipient "
-def array_to_string(prefix, keyid)
-  recipients = ""
-  keyid.each {|x| recipients << "#{prefix}#{x}" }
-end
-
-
 ## encrypt unsigned, with default output name
 def gpg_encrypt(keyid, in_file, format)
 
-#  if (format == "asc")
-#    isarmor = "-a"
-#    output_filename = "#{in_file}.asc"
-#  else
-#    isarmor = ""
-#    output_filename = "#{in_file}.pgp"
-#  end
+  keyidArray = keyid.split
+  recipient = " --recipient "
+  recipients = recipient + keyidArray.join(recipient)
 
-  output_filename = "#{in_file}.pgp"
+  if (format == "asc")
+    isarmor = "-a"
+    output_filename = "#{in_file}.asc"
+  else
+    isarmor = ""
+    output_filename = "#{in_file}.pgp"
+  end
 
-  puts "\n"
-  puts "output_filename: "+output_filename
-
-  #File.delete output_filename if File.exists? output_filename
-
-  #recipients = array_to_string(" --recipient ", keyid)
-  recipients = ' --recipient #{keyid}'
-
-  puts "\n"
-  puts "recipients: #{recipients}"
+  File.delete output_filename if File.exists? output_filename
 
   cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/ #{recipients} #{isarmor} --no-tty --always-trust -o #{output_filename} --encrypt #{in_file}"
-
-  puts "\n"
-  puts cmd
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
 
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
-
-  puts exit_status
-  puts exit_code
 
   stdout_stringarray = get_io_as_array(stdout)
   stderr_stringarray = get_io_as_array(stderr)
@@ -376,11 +352,9 @@ def gpg_sign_detached(keyid, password, in_file)
 end
 
 
-def gpg_verify(keyfile)
+def gpg_verify(sig_file, original_file)
 
-  filepaths = array_to_string(" ", keyfile)
-
-  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/  --verify #{filepaths}"
+  cmd = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/  --verify #{sig_file} #{original_file}"
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
 

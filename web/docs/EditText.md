@@ -26,28 +26,6 @@
 Related:
 [TextView](TextView.md) 
 
-GIT Relative Path Example:
-```json
-    {
-      "type": "EditText",
-      "id": 991001,
-      "text": "git-repos/eigenframe",
-      "max_length": 200,
-      "is_single_line": true,
-      "layout_width": "match_parent",
-      "text_color": "#ffffff",
-      "text_size": "20",
-      "gravity": "left",
-      "background_color": "#000000",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      }
-    }
-```
-
 UserID Example:
 ```json
     {

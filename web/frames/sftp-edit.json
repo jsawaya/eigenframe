@@ -6,82 +6,82 @@
 	"layout_width": "match_parent",
 	"component_list": [
 		{
+			"type": "JavaScript",
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File (sftp home)')"
+		},
+		{
 			"type": "Clone",
-			"name": "TextViewLabel",
+			"name": "JavaScriptSelectFilePath"
+		},
+		{
+			"type": "Clone",
+			"name": "LayoutVerticalScrollable",
+			"x-condition_script_list": [
+				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+				"var filename = eigenFragment.getViewState(targetVid).toLowerCase()",
+				"!(filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg'))"
+			],
 			"attributes": {
-				"text": "Remote file path:"
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "ButtonDefault",
+						"attributes": {
+							"text": "Show Remote Text File",
+							"icon": {
+								"name": "open_browser.",
+								"location": "top"
+							},
+							"on_click": {
+								"type": "Clone",
+								"name": "PopupScreenShowRemoteFile"
+							}
+						}
+					},
+					{
+						"type": "Clone",
+						"name": "ButtonDefault",
+						"attributes": {
+							"text": "Edit Remote File",
+							"icon": {
+								"name": "open_browser.",
+								"location": "top"
+							},
+							"on_click": {
+								"type": "Clone",
+								"name": "PopupScreenEditRemoteFile"
+							}
+						}
+					}
+				]
 			}
 		},
 		{
 			"type": "Clone",
-			"name": "EditTextRemoteFilePath"
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"condition_script": "!eigenFragment.getViewState(999001).endsWith('.png')",
+			"name": "LayoutVerticalScrollable",
+			"x-condition_script_list": [
+				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+				"var filename = eigenFragment.getViewState(targetVid).toLowerCase()",
+				"filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg')"
+			],
 			"attributes": {
-				"text": "Show Remote File",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenShowRemoteFile"
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"condition_script": "!eigenFragment.getViewState(999001).endsWith('.png')",
-			"attributes": {
-				"text": "Edit Remote File",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenEditRemoteFile"
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"condition_script": "eigenFragment.getViewState(999001).toLowerCase().endsWith('.png')",
-			"attributes": {
-				"text": "Show Remote Image",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenImageRemoteFile"
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"condition_script": "eigenFragment.getViewState(999001).toLowerCase().endsWith('.jpg')",
-			"attributes": {
-				"text": "Show Remote Image",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenImageRemoteFile"
-				}
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "ButtonDefault",
+						"attributes": {
+							"text": "Show Remote Image File",
+							"icon": {
+								"name": "open_browser.",
+								"location": "top"
+							},
+							"on_click": {
+								"type": "Clone",
+								"name": "PopupScreenImageRemoteFile"
+							}
+						}
+					}
+				]
 			}
 		}
 	]

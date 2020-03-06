@@ -16,35 +16,6 @@ Example:
 }
 ```
 
-```json
-{
-  "type": "Clone",
-  "name": "TextViewDetail",
-  "attributes": {
-    "ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
-  }
-}
-```
-
-Example:
-```json
-{
-  "type": "Clone",
-  "name": "LayoutVerticalScrollable",
-  "attributes": {
-    "component_list": [
-      {
-        "type": "Clone",
-        "name": "TextViewDetail",
-        "attributes": {
-          "ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
-        }
-      }
-    ]
-  }
-}
-```
-
 Example:
 ```json
 {
