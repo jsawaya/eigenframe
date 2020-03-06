@@ -40,10 +40,6 @@
 			},
 			{
 				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Private KeyId:"

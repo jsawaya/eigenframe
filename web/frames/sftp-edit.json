@@ -6,25 +6,19 @@
 	"layout_width": "match_parent",
 	"component_list": [
 		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "Remote file path:"
-			}
+			"type": "JavaScript",
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File (sftp home)')"
 		},
 		{
 			"type": "Clone",
-			"name": "EditTextRemoteFilePath"
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
+			"name": "JavaScriptSelectFilePath"
 		},
 		{
 			"type": "Clone",
 			"name": "LayoutVerticalScrollable",
 			"condition_script_list": [
-				"var filename = eigenFragment.getViewState(999001).toLowerCase()",
+				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+				"var filename = eigenFragment.getViewState(targetVid).toLowerCase()",
 				"!(filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg'))"
 			],
 			"attributes": {
@@ -33,7 +27,7 @@
 						"type": "Clone",
 						"name": "ButtonDefault",
 						"attributes": {
-							"text": "Show Remote File",
+							"text": "Show Remote Text File",
 							"icon": {
 								"name": "open_browser.",
 								"location": "top"
@@ -66,7 +60,8 @@
 			"type": "Clone",
 			"name": "LayoutVerticalScrollable",
 			"condition_script_list": [
-				"var filename = eigenFragment.getViewState(999001).toLowerCase()",
+				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+				"var filename = eigenFragment.getViewState(targetVid).toLowerCase()",
 				"filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg')"
 			],
 			"attributes": {
@@ -75,7 +70,7 @@
 						"type": "Clone",
 						"name": "ButtonDefault",
 						"attributes": {
-							"text": "Show Remote Image",
+							"text": "Show Remote Image File",
 							"icon": {
 								"name": "open_browser.",
 								"location": "top"
