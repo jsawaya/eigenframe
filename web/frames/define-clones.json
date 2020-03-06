@@ -109,26 +109,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "EditTextRemoteFilePath",
-			"component": {
-				"type": "EditText",
-				"id": 999001,
-				"max_length": 200,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"text": "",
-				"text_color": "#ffffff",
-				"background_color": "#000000",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				}
-			}
-		},
-		{
-			"type": "Define",
 			"name": "EditTextLocalFileCache",
 			"component": {
 				"type": "EditText",
