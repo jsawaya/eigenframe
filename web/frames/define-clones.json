@@ -73,7 +73,6 @@
 			"name": "ButtonDefault",
 			"component": {
 				"type": "Button",
-				"text": "Button Text",
 				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"gravity": "center",
