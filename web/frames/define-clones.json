@@ -231,7 +231,11 @@
 				"type": "Clone",
 				"name": "PopupScreenDefault",
 				"attributes": {
-					"title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+					"title_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"'Remote File: '+filename"
+					],
 					"component_list": [
 						{
 							"type": "Clone",
@@ -242,7 +246,11 @@
 										"type": "Clone",
 										"name": "TextViewDetail",
 										"attributes": {
-											"ssh_script": "'cat ' + eigenFragment.getViewState(999001)"
+											"ssh_script": [
+												"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+												"var filename = eigenFragment.getViewState(targetVid)",
+												"'cat ' + filename"
+											]
 										}
 									}
 								]
@@ -257,7 +265,11 @@
 			"name": "PopupScreenEditRemoteFile",
 			"component": {
 				"type": "SecureFtp",
-				"sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' EditText:999000'",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' EditText:999000'"
+				],
 				"on_complete": {
 					"type": "Clone",
 					"name": "PopupScreenEdit"
@@ -271,7 +283,11 @@
 				"type": "Clone",
 				"name": "PopupScreenDefault",
 				"attributes": {
-					"title_script": "'Remote file: '+eigenFragment.getViewState(999001)",
+					"title_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"'Remote Image: '+filename"
+					],
 					"component_list": [
 						{
 							"type": "Clone",
@@ -301,7 +317,11 @@
 			"name": "PopupScreenImageRemoteFile",
 			"component": {
 				"type": "SecureFtp",
-				"sftp_script": "'get ' + eigenFragment.getViewState(999001) + ' ImageView.png'",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' ImageView.png'"
+				],
 				"on_complete": {
 					"type": "Clone",
 					"name": "PopupScreenImage"

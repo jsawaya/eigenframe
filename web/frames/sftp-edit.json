@@ -16,7 +16,7 @@
 		{
 			"type": "Clone",
 			"name": "LayoutVerticalScrollable",
-			"condition_script_list": [
+			"x-condition_script_list": [
 				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
 				"var filename = eigenFragment.getViewState(targetVid).toLowerCase()",
 				"!(filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg'))"
@@ -59,7 +59,7 @@
 		{
 			"type": "Clone",
 			"name": "LayoutVerticalScrollable",
-			"condition_script_list": [
+			"x-condition_script_list": [
 				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
 				"var filename = eigenFragment.getViewState(targetVid).toLowerCase()",
 				"filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg')"
