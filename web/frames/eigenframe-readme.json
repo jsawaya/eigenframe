@@ -14,151 +14,18 @@
 			}
 		},
 		{
-			"type": "Button",
+			"type": "HtmlView",
 			"layout_width": "match_parent",
-			"layout_height": "wrap_content",
-			"text": "README",
+			"x-layout_height": "wrap_content",
+			"gravity": "center",
 			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"icon": {
-				"name": "info.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "PopupScreen",
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"text_size": "14",
-				"text_color": "#ffffff",
-				"background_color": "#111111",
-				"title": "README",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"component_list": [
-					{
-						"type": "LinearLayout",
-						"scrollable": true,
-						"orientation": "vertical",
-						"layout_width": "match_parent",
-						"layout_height": "match_parent",
-						"component_list": [
-							{
-								"type": "WebView",
-								"layout_width": "match_parent",
-								"layout_height": "match_parent",
-								"is_javascript_enabled": false,
-								"url_script": "'https://github.com/jsawaya/eigenframe/blob/'+eigenFragment.getCacheString('GithubBranch')+'/README.md'"
-							}
-						]
-					}
-				]
-			}
-		},
-		{
-			"type": "Button",
-			"layout_width": "match_parent",
-			"layout_height": "wrap_content",
-			"text": "Getting Started",
-			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"icon": {
-				"name": "info.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "PopupScreen",
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"text_size": "14",
-				"text_color": "#ffffff",
-				"background_color": "#111111",
-				"title": "Getting Started",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"component_list": [
-					{
-						"type": "LinearLayout",
-						"scrollable": true,
-						"orientation": "vertical",
-						"layout_width": "match_parent",
-						"layout_height": "match_parent",
-						"component_list": [
-							{
-								"type": "WebView",
-								"layout_width": "match_parent",
-								"layout_height": "match_parent",
-								"is_javascript_enabled": false,
-								"url_script": "'https://github.com/jsawaya/eigenframe/blob/'+eigenFragment.getCacheString('GithubBranch')+'/web/docs/initial-setup.md'"
-							}
-						]
-					}
-				]
-			}
-		},
-		{
-			"type": "Button",
-			"layout_width": "match_parent",
-			"layout_height": "wrap_content",
-			"text": "EigenFrame Specifications",
-			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"icon": {
-				"name": "info.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "PopupScreen",
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"text_size": "14",
-				"text_color": "#ffffff",
-				"background_color": "#111111",
-				"title": "EigenFrame Specifications",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"component_list": [
-					{
-						"type": "LinearLayout",
-						"scrollable": true,
-						"orientation": "vertical",
-						"layout_width": "match_parent",
-						"layout_height": "match_parent",
-						"component_list": [
-							{
-								"type": "WebView",
-								"layout_width": "match_parent",
-								"layout_height": "match_parent",
-								"is_javascript_enabled": false,
-								"url_script": "'https://github.com/jsawaya/eigenframe/blob/'+eigenFragment.getCacheString('GithubBranch')+'/web/docs/'"
-							}
-						]
-					}
-				]
-			}
+			"html_list": [
+				"<img src='ic_launcher.png'>",
+				"<h1><font color=\"#8aec81\">EigenFrame Documentation: </font></h1>",
+				"<h2><i>README:</i></h2> https://github.com/jsawaya/eigenframe/blob/master/README.md",
+				"<h2><i>Initial Setup:</i></h2> https://github.com/jsawaya/eigenframe/blob/master/web/docs/initial-setup.md",
+				"<h2><i>Components:</i></h2> https://github.com/jsawaya/eigenframe/blob/master/web/docs/"
+			]
 		}
 	]
 }
