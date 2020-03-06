@@ -246,7 +246,7 @@
 										"type": "Clone",
 										"name": "TextViewDetail",
 										"attributes": {
-											"ssh_script": [
+											"ssh_script_list": [
 												"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
 												"var filename = eigenFragment.getViewState(targetVid)",
 												"'cat ' + filename"
