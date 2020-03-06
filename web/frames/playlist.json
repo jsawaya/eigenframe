@@ -155,25 +155,6 @@
         }
       }
     },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "GIT Administration (old)",
-        "icon": {
-          "name": "cloud_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "GIT Administration",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
-          }
-        }
-      }
-    },
 
     {
       "type": "Clone",
