@@ -200,7 +200,7 @@
 				"comment": [
 					"set home_dir_cache: 'SecureFtp:411000'",
 					"set targetVid: 6699",
-					"set work_dir: 'git-repos/eigenframe'"
+					"set work_dir: ''"
 				],
 				"script_list": [
 					"var home_dir_cache = 'SecureFtp:411000'",
