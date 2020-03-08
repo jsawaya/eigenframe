@@ -197,26 +197,16 @@
 			},
 			{
 				"type": "JavaScript",
-				"comment": [
-					"set home_dir_cache: 'SecureFtp:411000'",
-					"set targetVid: 6699",
-					"set work_dir: ''"
-				],
 				"script_list": [
-					"var home_dir_cache = 'SecureFtp:411000'",
-					"var targetVid = 6699",
-					"var work_dir = 'git-repos/eigenframe'",
-					"var home_dir = eigenFragment.getCacheString(home_dir_cache)",
-					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
-					"eigenFragment.setCacheString('WorkingDirectory', work_dir)",
-					"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
-					"eigenFragment.setCacheString('FullPath', full_path)",
-					"var selected_file = eigenFragment.getCacheString('SelectedFile')",
-					"var selected_filepath = eigenFragment.concatPaths(full_path, selected_file)",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, targetVid)",
-					"eigenFragment.setViewState(targetVid, selected_filepath)"
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
+					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedPath', '')",
+					"eigenFragment.setCacheString('SelectedFile', '')"
 				]
+			},
+			{
+				"type": "Clone",
+				"name": "JavaScriptSetFullPath"
 			},
 			{
 				"type": "Clone",
