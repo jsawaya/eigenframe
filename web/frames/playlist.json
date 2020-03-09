@@ -169,7 +169,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Edit Remote File",
+				"text": "Edit Remote File (through sftp)",
         "icon": {
           "name": "edit.",
           "location": "top"
@@ -178,7 +178,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Edit Remote File",
+						"title": "Edit Remote File (through sftp)",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
           }
         }
