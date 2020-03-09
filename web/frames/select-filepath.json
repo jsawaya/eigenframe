@@ -153,7 +153,8 @@
 							"text_size": "14",
 							"text_color": "#ffffff",
 							"background_color": "#111111",
-							"title": "Explore Filesystem (ListView)",
+							"x-title": "Explore Filesystem (ListView)",
+							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
 							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
 						}
 					}
