@@ -520,9 +520,57 @@
           }
         }
       }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Select GitHub Branch:"
+      }
+    },
+    {
+      "type": "RadioButton",
+      "id": 7500,
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "orientation": "vertical",
+      "background_color": "#ff00ff",
+      "checked_option": 0,
+      "option_list": [
+        "master",
+        "beta",
+        "test"
+      ],
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "var github_branch = eigenFragment.getViewState(7500)",
+          "eigenActivity.showToast('Selected GitHub Branch: '+github_branch)",
+          "eigenFragment.setCacheString('GithubBranch', github_branch)",
+          "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+          "eigenFragment.setCacheString('RootUrl', root_url)"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "GitHub EigenFrame Apps",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script": "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github.json')"
+        }
+      }
     }
-
-
   ]
 }
 

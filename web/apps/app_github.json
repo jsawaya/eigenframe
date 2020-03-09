@@ -1,0 +1,17 @@
+{
+	"type": "EigenFrame",
+	"is_secure_window": "false",
+	"tab_list": [
+		{
+			"name": "Gallery PlayList\nfor GITHUB",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
+		},
+		{
+			"name": "OpenPGP\nCrypto",
+			"type": "EigenFragment",
+			"icon_name": "ic_launcher_round.",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json"
+		}
+	]
+}

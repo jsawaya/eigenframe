@@ -13,7 +13,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "OpenPGP Cryptography"
+				"text": "PGP Installation (GnuPG)"
 			}
 		},
 		{
@@ -21,10 +21,65 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"Requires Apache2, Ruby and GnuPG installed, and httpd running.",
+					"Click [GnuPG Installation] - if you plan to use OpenPGP encryption, decryption, signing and verification to your app"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "GnuPG Installation",
+				"icon": {
+					"name": "file_download.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Install gnupg package",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"echo pkg install gnupg",
+													"pkg install gnupg"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"EigenFrame OpenPGP Cryptography requires:",
+					" - Apache2 Installed and running httpd (for CGI post method request into Termux)",
+					" - Ruby Installed (for eigenframe transforms)",
+					" - GnuPG Installed (for OpenPGP Encryption, Decryption, Signing and Verification)",
 					"These methods use HTTP/CGI (post method) to invoke Ruby which calls GnuPG"
 				]
 			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
 		},
 		{
 			"type": "Clone",
