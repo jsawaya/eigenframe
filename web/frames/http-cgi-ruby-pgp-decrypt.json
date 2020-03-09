@@ -43,20 +43,7 @@
 			},
 			{
 				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Private Key Passphrase:"
-				}
-			},
-			{
-				"type": "EditText",
-				"id": 6606,
-				"is_password": true,
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#000000",
-				"text": "password"
+				"name": "EditTextPgpPassword6606"
 			},
 			{
 				"type": "Button",
