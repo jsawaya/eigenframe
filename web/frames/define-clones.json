@@ -356,7 +356,7 @@
 		},
 		{
 			"type": "JavaScript",
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File')"
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File...')"
 		},
 		{
 			"type": "Define",

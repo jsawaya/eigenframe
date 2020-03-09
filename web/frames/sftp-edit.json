@@ -7,7 +7,7 @@
 	"component_list": [
 		{
 			"type": "JavaScript",
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File (sftp home)')"
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to Edit')"
 		},
 		{
 			"type": "Clone",

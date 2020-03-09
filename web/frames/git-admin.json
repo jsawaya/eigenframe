@@ -11,6 +11,10 @@
 		"layout_width": "match_parent",
 		"component_list": [
 			{
+				"type": "JavaScript",
+				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File from Git Working Storage...')"
+			},
+			{
 				"type": "Clone",
 				"name": "HorizontalLine"
 			},
