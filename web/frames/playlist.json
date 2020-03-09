@@ -538,7 +538,8 @@
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "orientation": "vertical",
-      "background_color": "#ff00ff",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
       "checked_option": 0,
       "option_list": [
         "master",
@@ -548,7 +549,10 @@
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "var github_branch = eigenFragment.getViewState(7500)",
+					"var rb_index = eigenFragment.getViewState(7500)",
+					"var github_branch = 'master'",
+					"if (rb_index == '1') github_branch = 'beta'",
+					"if (rb_index == '2') github_branch = 'test'",
           "eigenActivity.showToast('Selected GitHub Branch: '+github_branch)",
           "eigenFragment.setCacheString('GithubBranch', github_branch)",
           "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
