@@ -183,8 +183,6 @@
 									"eigenActivity.showToast('selected directory: ' + selected_dir)",
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
 									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
-									"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
-									"eigenFragment.setCacheString('WorkingDirectory', '')",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
 									"eigenFragment.setCacheString('SelectedFile', '')"
 								]
