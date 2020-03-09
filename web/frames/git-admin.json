@@ -230,12 +230,7 @@
 							},
 							{
 								"type": "Clone",
-								"name": "PopupScreenDefault",
-								"attributes": {
-									"id": 991005,
-									"title": "Select File (in eigenframe git working storage)",
-									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath.json'"
-								}
+								"name": "PopupScreenSelectFilePath"
 							}
 						]
 					}
