@@ -533,10 +533,35 @@
       }
     },
     {
-      "type": "RadioButton",
+      "type": "Spinner",
       "id": 7500,
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "checked_option": 0,
+      "option_list": [
+        "master",
+        "beta",
+        "test"
+      ],
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "var rb_index = eigenFragment.getViewState(7500)",
+          "var github_branch = 'master'",
+          "if (rb_index == '1') github_branch = 'beta'",
+          "if (rb_index == '2') github_branch = 'test'",
+          "eigenActivity.showToast('Selected GitHub Branch: '+github_branch)",
+          "eigenFragment.setCacheString('GithubBranch', github_branch)",
+          "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+          "eigenFragment.setCacheString('RootUrl', root_url)"
+        ]
+      }
+    },
+    {
+      "type": "x-RadioButton",
+      "id": 7501,
+      "layout_width": "match_parent",
       "orientation": "vertical",
 			"text_color": "#ffffff",
 			"background_color": "#654321",
