@@ -47,21 +47,20 @@
 								"type": "JavaScript",
 								"comment": "find the parent directory of the SelectedPath",
 								"script_list": [
-									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
-
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
 									"selected_path = eigenFragment.parentPath(selected_path)",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
-									"eigenFragment.setCacheString('SelectedFile', '')",
-
-									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
-									"eigenFragment.setCacheString('FullPath', full_path)",
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
-									"eigenFragment.setViewState(targetVid, full_path)",
-
-									"eigenFragment.closePopupWindow()"
+									"eigenActivity.showToast('selected path: ' + selected_path)",
+									"eigenFragment.setCacheString('SelectedFile', '')"
 								]
+							},
+							{
+								"type": "Clone",
+								"name": "JavaScriptSetFullPath"
+							},
+							{
+								"type": "JavaScript",
+								"script": "eigenFragment.closePopupWindow()"
 							},
 							{
 								"type": "SecureFtp",
@@ -75,7 +74,8 @@
 									"text_size": "14",
 									"text_color": "#ffffff",
 									"background_color": "#111111",
-									"title": "Explore Filesystem (ListView)",
+									"x-title": "Explore Filesystem (ListView)",
+									"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
 									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
 								}
 							}
@@ -102,15 +102,21 @@
 						"component_list": [
 							{
 								"type": "JavaScript",
+								"comment": "selected directory, not file",
 								"script_list": [
-									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"eigenFragment.setCacheString('SelectedFile', '')",
-									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
-									"eigenFragment.setCacheString('FullPath', full_path)",
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
-									"eigenFragment.setViewState(targetVid, full_path)",
+									"eigenActivity.showToast('selected path: ' + selected_path)",
+									"eigenFragment.setCacheString('SelectedFile', '')"
+								]
+							},
+							{
+								"type": "Clone",
+								"name": "JavaScriptSetFullPath"
+							},
+							{
+								"type": "JavaScript",
+								"comment": "selected directory - not file",
+								"script_list": [
 									"eigenFragment.closePopupWindow()",
 									"eigenFragment.closePopupScreen(991005)"
 								]
@@ -174,27 +180,22 @@
 								"type": "JavaScript",
 								"comment": "selected directory, append to selected path",
 								"script_list": [
-									"eigenFragment.setCacheString('SelectedFile', '')",
 									"var selected_dir = eigenFragment.getOptionLabel()",
 									"eigenActivity.showToast('selected directory: ' + selected_dir)",
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"java.lang.System.out.println('SelectedPath (initial): '+selected_path)",
 									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
-
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
-									"java.lang.System.out.println('SelectedPath: '+selected_path)",
-
-									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-									"java.lang.System.out.println('HomeDirectory: '+home_dir)",
-
-									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
-									"java.lang.System.out.println('WorkingDirectory: '+work_dir)",
-
-									"var full_path = eigenFragment.concatPaths(eigenFragment.concatPaths(home_dir, work_dir), selected_path)",
-									"eigenFragment.setCacheString('FullPath', full_path)",
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
-									"eigenFragment.setViewState(targetVid, full_path)",
-
+									"eigenFragment.setCacheString('SelectedFile', '')"
+								]
+							},
+							{
+								"type": "Clone",
+								"name": "JavaScriptSetFullPath"
+							},
+							{
+								"type": "JavaScript",
+								"comment": "selected directory, append to selected path",
+								"script_list": [
 									"eigenFragment.closePopupWindow()"
 								]
 							},
@@ -210,7 +211,8 @@
 									"text_size": "14",
 									"text_color": "#ffffff",
 									"background_color": "#111111",
-									"title": "Explore Filesystem (ListView)",
+									"x-title": "Explore Filesystem (ListView)",
+									"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
 									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
 								}
 							}

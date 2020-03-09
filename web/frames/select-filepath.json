@@ -153,7 +153,8 @@
 							"text_size": "14",
 							"text_color": "#ffffff",
 							"background_color": "#111111",
-							"title": "Explore Filesystem (ListView)",
+							"x-title": "Explore Filesystem (ListView)",
+							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
 							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
 						}
 					}
@@ -182,25 +183,23 @@
 							{
 								"type": "JavaScript",
 								"script_list": [
+									"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
+									"eigenFragment.setCacheString('WorkingDirectory', '')",
 									"eigenFragment.setCacheString('SelectedPath', '')",
-									"eigenFragment.setCacheString('SelectedFile', '')",
-									"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-									"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
-									"var full_path = eigenFragment.concatPaths(home_dir, work_dir)",
-									"eigenFragment.setCacheString('FullPath', full_path)",
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
-									"eigenFragment.setViewState(targetVid, full_path)",
-									"eigenFragment.closePopupWindow()"
+									"eigenFragment.setCacheString('SelectedFile', '')"
 								]
 							},
 							{
 								"type": "Clone",
-								"name": "PopupScreenDefault",
-								"attributes": {
-									"id": 991005,
-									"title": "Select Filepath",
-									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath.json'"
-								}
+								"name": "JavaScriptSetFullPath"
+							},
+							{
+								"type": "JavaScript",
+								"script": "eigenFragment.closePopupWindow()"
+							},
+							{
+								"type": "Clone",
+								"name": "PopupScreenSelectFilePath"
 							}
 						]
 					}

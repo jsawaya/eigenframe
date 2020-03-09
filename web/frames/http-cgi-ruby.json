@@ -76,14 +76,7 @@
 					"parameter_list": [
 						{
 							"name": "dirpath",
-							"value_script_list": [
-								"var home_dir = eigenFragment.getCacheString('HomeDirectory')",
-								"var work_dir = eigenFragment.getCacheString('WorkingDirectory')",
-								"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-								"var full_path0 = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
-								"var full_path = eigenFragment.getCacheString('FullPath')",
-								"''+full_path"
-							]
+							"value_script": "'' + eigenFragment.getCacheString('FullPath')"
 						},
 						{
 							"name": "ruby",

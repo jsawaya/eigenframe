@@ -356,7 +356,38 @@
 		},
 		{
 			"type": "JavaScript",
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File')"
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File...')"
+		},
+		{
+			"type": "Define",
+			"name": "JavaScriptSetFullPath",
+			"component": {
+				"type": "JavaScript",
+				"script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
+					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '')",
+					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '')",
+					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '')",
+					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
+					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
+					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
+					"eigenFragment.setCacheString('FullPath', full_path)",
+					"eigenFragment.setViewState(targetVid, full_path)"
+				]
+			}
+		},
+		{
+			"type": "Define",
+			"name": "PopupScreenSelectFilePath",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"id": 991005,
+					"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath.json'"
+				}
+			}
 		},
 		{
 			"type": "Define",
@@ -387,24 +418,6 @@
 							"background_color": "#000000"
 						},
 						{
-							"type": "JavaScript",
-							"script_list": [
-								"var home_dir_cache = 'SecureFtp:411000'",
-								"var targetVid = 6699",
-								"var work_dir = ''",
-								"var home_dir = eigenFragment.getCacheString(home_dir_cache)",
-								"eigenFragment.setCacheString('HomeDirectory', home_dir)",
-								"eigenFragment.setCacheString('WorkingDirectory', work_dir)",
-								"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-								"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
-								"eigenFragment.setCacheString('FullPath', full_path)",
-								"var selected_file = eigenFragment.getCacheString('SelectedFile')",
-								"var selected_filepath = eigenFragment.concatPaths(full_path, selected_file)",
-								"eigenFragment.setIntegerVariable('TargetViewId', 0, targetVid)",
-								"eigenFragment.setViewState(targetVid, selected_filepath)"
-							]
-						},
-						{
 							"type": "Clone",
 							"name": "ButtonDefault",
 							"attributes": {
@@ -419,22 +432,67 @@
 										{
 											"type": "JavaScript",
 											"script_list": [
+												"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
+												"eigenFragment.setCacheString('WorkingDirectory', '')",
+												"eigenFragment.setCacheString('SelectedPath', '')",
+												"eigenFragment.setCacheString('SelectedFile', '')"
+											]
+										},
+										{
+											"type": "Clone",
+											"name": "JavaScriptSetFullPath"
+										},
+										{
+											"type": "JavaScript",
+											"script_list": [
 												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
 												"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
 											]
 										},
 										{
 											"type": "Clone",
-											"name": "PopupScreenDefault",
-											"attributes": {
-												"id": 991005,
-												"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-												"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath.json'"
-											}
+											"name": "PopupScreenSelectFilePath"
 										}
 									]
 								}
 							}
+						},
+						{
+							"type": "Clone",
+							"name": "HorizontalLine"
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "EditTextPgpPassword6606",
+			"component": {
+				"type": "Clone",
+				"name": "LayoutVerticalScrollable",
+				"attributes": {
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "HorizontalLine"
+						},
+						{
+							"type": "Clone",
+							"name": "TextViewLabel",
+							"attributes": {
+								"text": "Private Key Passphrase:"
+							}
+						},
+						{
+							"type": "EditText",
+							"id": 6606,
+							"is_password": true,
+							"layout_width": "match_parent",
+							"layout_height": "wrap_content",
+							"text_color": "#ffffff",
+							"background_color": "#000000",
+							"text": "password"
 						},
 						{
 							"type": "Clone",
@@ -449,7 +507,6 @@
 		"type": "UrlRequest",
 		"is_eigen_response": true,
 		"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/playlist.json'"
-
 	}
 }
 
