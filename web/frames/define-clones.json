@@ -364,10 +364,10 @@
 			"component": {
 				"type": "JavaScript",
 				"script_list": [
-					"var targetVid = getIntegerVariable('TargetViewId', 0, 6699)",
-					"var work_dir = getCacheString('WorkingDirectory', '')",
-					"var selected_path = getCacheString('SelectedPath', '')",
-					"var selected_file = getCacheString('SelectedFile', '')",
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
+					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', '')",
+					"var selected_path = eigenFragment.getCacheString('SelectedPath', '')",
+					"var selected_file = eigenFragment.getCacheString('SelectedFile', '')",
 					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
 					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
