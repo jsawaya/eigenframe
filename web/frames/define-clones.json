@@ -405,19 +405,6 @@
 							"background_color": "#000000"
 						},
 						{
-							"type": "JavaScript",
-							"script_list": [
-								"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
-								"eigenFragment.setCacheString('WorkingDirectory', '')",
-								"eigenFragment.setCacheString('SelectedPath', '')",
-								"eigenFragment.setCacheString('SelectedFile', '')"
-							]
-						},
-						{
-							"type": "Clone",
-							"name": "JavaScriptSetFullPath"
-						},
-						{
 							"type": "Clone",
 							"name": "ButtonDefault",
 							"attributes": {
@@ -429,6 +416,19 @@
 								"on_click": {
 									"type": "ActionList",
 									"component_list": [
+										{
+											"type": "JavaScript",
+											"script_list": [
+												"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
+												"eigenFragment.setCacheString('WorkingDirectory', '')",
+												"eigenFragment.setCacheString('SelectedPath', '')",
+												"eigenFragment.setCacheString('SelectedFile', '')"
+											]
+										},
+										{
+											"type": "Clone",
+											"name": "JavaScriptSetFullPath"
+										},
 										{
 											"type": "JavaScript",
 											"script_list": [
