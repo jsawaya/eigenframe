@@ -3,6 +3,7 @@
 	"is_secure_window": "false",
 	"tab_list": [
 		{
+			"icon_name": "ic_launcher_round.",
 			"name": "Beta",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/playlist.json"
@@ -14,7 +15,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-ruby.json"
 		},
 		{
-			"name": "PGP",
+			"name": "Open-\nPGP",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"
 		},
