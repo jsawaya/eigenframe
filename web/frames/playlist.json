@@ -529,14 +529,14 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "GitHub EigenFrame Apps (BETA)",
+        "text": "EigenFrame Apps (github beta branch)",
         "icon": {
           "name": "open_browser.",
           "location": "top"
         },
         "on_click": {
           "type": "JavaScript",
-					"script": "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github.json')"
+          "script": "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
         }
       }
     }
