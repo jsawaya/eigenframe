@@ -12,7 +12,7 @@
 		"component_list": [
 			{
 				"type": "JavaScript",
-				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Ruby File')"
+				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Directory')"
 			},
 			{
 				"type": "Clone",
@@ -33,7 +33,7 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "cgi_ruby: eigen_directory_listview_http_cgi",
+						"title": "eigen_directory_listview_http_cgi",
 						"component_list": [
 							{
 								"type": "UrlRequest",
@@ -59,7 +59,7 @@
 			},
 			{
 				"type": "Button",
-				"text": "cgi_ruby: directory_hash",
+				"text": "directory_hash",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",

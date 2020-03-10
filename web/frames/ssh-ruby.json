@@ -143,7 +143,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Encrypt File",
+        "text": "HTTP/CGI Ruby",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -152,7 +152,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Encrypt File",
+            "title": "HTTP/CGI Ruby",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby.json'"
           }
         }
