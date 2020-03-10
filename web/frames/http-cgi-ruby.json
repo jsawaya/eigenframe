@@ -20,14 +20,20 @@
 			},
 			{
 				"type": "Button",
-				"text": "cgi_ruby: eigen_directory_listview_http_cgi",
+				"text": "eigen_directory_listview_http_cgi",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
+				"background_color": "#654321",
 				"icon": {
 					"name": "info.",
-					"location": "left"
+					"location": "top"
+				},
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
 				},
 				"on_click": {
 					"type": "Clone",
@@ -63,10 +69,16 @@
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
-				"background_color": "#11ff0000",
+				"background_color": "#654321",
 				"icon": {
 					"name": "info.",
-					"location": "left"
+					"location": "top"
+				},
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
 				},
 				"on_click": {
 					"type": "UrlRequest",
@@ -92,7 +104,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "cgi_ruby: directory_hash",
+							"title": "Directory HashMap Json",
 							"component_list": [
 								{
 									"type": "Clone",
