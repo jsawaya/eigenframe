@@ -8,10 +8,19 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/playlist.json"
 		},
 		{
-			"name": "OpenPGP\nCrypto",
+			"name": "PGP",
 			"type": "EigenFragment",
-			"icon_name": "ic_launcher_round.",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"
+		},
+		{
+			"name": "Prolog",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-swi.json"
+		},
+		{
+			"name": "About",
+			"type": "EigenFragment",
+			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
 		}
 	]
 }
