@@ -8,6 +8,12 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/playlist.json"
 		},
 		{
+			"icon_name": "ruby_logo.",
+			"name": "Ruby",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-ruby.json"
+		},
+		{
 			"name": "PGP",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"

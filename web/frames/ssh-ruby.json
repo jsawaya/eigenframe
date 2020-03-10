@@ -73,7 +73,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch dynamic ruby app using ssh"
+        "text": "Launch dynamic ruby apps using ssh"
       }
     },
 
@@ -126,6 +126,36 @@
             ]
           }
         ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Launch dynamic ruby apps using http/cgi"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Encrypt File",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Encrypt File",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby.json'"
+          }
+        }
       }
     },
 
