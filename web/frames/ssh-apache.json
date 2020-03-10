@@ -336,9 +336,16 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Call Apache2 HTTP/CGI Bash Script:"
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "HTTP/CGI Bash",
+        "text": "HTTP/CGI Bash Script",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -347,7 +354,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "HTTP/CGI Bash",
+            "title": "HTTP/CGI Bash Script",
             "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi.json"
           }
         }

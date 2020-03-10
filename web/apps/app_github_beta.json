@@ -21,7 +21,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-ruby.json"
 		},
 		{
-			"name": "Open-\nPGP",
+			"name": "PGP",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"
 		},
