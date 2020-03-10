@@ -290,7 +290,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "This creates a shortcut on your android screen to launch the GITHUB Gallery Examples"
+					"This creates a shortcut on your android screen to launch the GITHUB Gallery of Examples"
         ]
       }
     },
@@ -298,7 +298,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Create shortcut for - GITHUB Gallery Examples",
+				"text": "Create shortcut for - GITHUB Gallery of Examples",
         "icon": {
           "name": "save.",
           "location": "top"
@@ -320,67 +320,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch dynamic eigenframe apps from Termux Apache HTTP/CGI"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Apache Administration",
-        "icon": {
-          "name": "apache_logo.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Apache Administration",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Launch dynamic eigenframe apps from Termux Ruby using SSH or HTTP (webrick)"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Ruby Administration",
-        "icon": {
-          "name": "ruby_logo.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "text": "Ruby Administration",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Optional: PGP Installation (GnuPG)"
+				"text": "EigenFrame GITHUB Beta Branch"
       }
     },
     {
@@ -388,7 +328,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [GnuPG Installation] - only if you plan to use OpenPGP encryption, decryption, signing and verification to your app"
+					"The beta branch is home to EigenFrame app development (pre-release)"
         ]
       }
     },
@@ -396,140 +336,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "GnuPG Installation (optional)",
-        "icon": {
-          "name": "file_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Install gnupg package",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_list": [
-                          "echo pkg install gnupg",
-                          "pkg install gnupg"
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Cryptography requires:",
-          " - Apache2 (for CGI post method request into Termux)",
-          " - Ruby (for eigenframe transforms)",
-          " - GnuPG (for OpenPGP Encryption, Decryption, Signing and Verification)"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "OpenPGP Cryptography",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "OpenPGP Cryptography",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Optional: Prolog Installation (swi-prolog)"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [Install swi-prolog package] - only if you plan to add an inference engine to your app"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Install swi-prolog package (optional)",
-        "icon": {
-          "name": "file_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Install swi-prolog package",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_list": [
-                          "echo pkg install swi-prolog",
-                          "pkg install swi-prolog"
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "EigenFrame Apps (github beta branch)",
+				"text": "EigenFrame Apps (GITHUB beta branch)",
         "icon": {
           "name": "open_browser.",
           "location": "top"
