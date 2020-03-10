@@ -9,6 +9,12 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/playlist.json"
 		},
 		{
+			"icon_name": "apache_logo.",
+			"name": "Apache",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-apache.json"
+		},
+		{
 			"icon_name": "ruby_logo.",
 			"name": "Ruby",
 			"type": "EigenFragment",

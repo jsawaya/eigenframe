@@ -330,6 +330,29 @@
         }
       }
     },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "HTTP/CGI Bash",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "HTTP/CGI Bash",
+            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi.json"
+          }
+        }
+      }
+    },
 
     {
       "type": "Clone",
@@ -360,7 +383,6 @@
         }
       }
     }
-
   ]
 }
 

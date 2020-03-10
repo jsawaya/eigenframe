@@ -1,0 +1,135 @@
+{
+	"comment": "set the HomeDirectory from sftp pwd",
+	"type": "SecureFtp",
+	"id": 411000,
+	"sftp_script": "'pwd'",
+	"on_complete": {
+		"type": "LinearLayout",
+		"scrollable": true,
+		"orientation": "vertical",
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"component_list": [
+			{
+				"type": "JavaScript",
+				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Directory')"
+			},
+			{
+				"type": "Clone",
+				"name": "JavaScriptSelectFilePath"
+			},
+			{
+				"type": "Button",
+				"text": "eigen_directory_listview_http_cgi",
+				"layout_width": "wrap_content",
+				"layout_height": "wrap_content",
+				"text_color": "#ffffff",
+				"background_color": "#654321",
+				"icon": {
+					"name": "info.",
+					"location": "top"
+				},
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "eigen_directory_listview_http_cgi",
+						"component_list": [
+							{
+								"type": "UrlRequest",
+								"is_eigen_response": true,
+								"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+								"parameter_list": [
+									{
+										"name": "dirpath",
+										"value_script": "''+eigenFragment.getCacheString('FullPath')"
+									},
+									{
+										"name": "ruby",
+										"value_list": [
+											"dirpath = cgi.params['dirpath'][0]",
+											"EigenFrame.new.eigen_directory_listview_http_cgi(dirpath).to_json.to_s"
+										]
+									}
+								]
+							}
+						]
+					}
+				}
+			},
+			{
+				"type": "Button",
+				"text": "directory_hash",
+				"layout_width": "wrap_content",
+				"layout_height": "wrap_content",
+				"text_color": "#ffffff",
+				"background_color": "#654321",
+				"icon": {
+					"name": "info.",
+					"location": "top"
+				},
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
+				},
+				"on_click": {
+					"type": "UrlRequest",
+					"id": 6601,
+					"is_eigen_response": false,
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+					"parameter_list": [
+						{
+							"name": "dirpath",
+							"value_script": "'' + eigenFragment.getCacheString('FullPath')"
+						},
+						{
+							"name": "ruby",
+							"value_list": [
+								"dirpath = cgi.params['dirpath'][0]",
+								"Dir.chdir dirpath",
+								"h = directory_hash()",
+								"h.to_json.to_s"
+							]
+						}
+					],
+					"on_complete": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Directory HashMap Json",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6601"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			}
+		]
+	}
+}
