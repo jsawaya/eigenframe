@@ -10,10 +10,16 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "SSH User-id:"
+				"text": "Secure Shell (ssh) - Administration"
       }
     },
-
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text": "SSH User-id:"
+			}
+		},
     {
       "type": "EditText",
       "id": 88800,
@@ -28,7 +34,7 @@
 
     {
       "type": "Clone",
-      "name": "TextViewLabel",
+			"name": "TextViewDetail",
       "attributes": {
         "text": "SSH Passphrase:"
       }
@@ -47,7 +53,7 @@
 
     {
       "type": "Clone",
-      "name": "TextViewLabel",
+			"name": "TextViewDetail",
       "attributes": {
         "text": "SSH Host(name/ip):"
       }
@@ -66,7 +72,7 @@
     },
     {
       "type": "Clone",
-      "name": "TextViewLabel",
+			"name": "TextViewDetail",
       "attributes": {
         "text": "SSH Port:"
       }
@@ -94,11 +100,25 @@
         "text": "Test SecureShell Connection"
       }
     },
-    {
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"If you get a connection error message - ",
+					"Ensure that you are running sshd in Termux.",
+					"Open Termux console, enter: ps -e",
+					"if sshd is NOT listed under CMD, enter: sshd",
+					"if sshd IS running, maybe you entered the wrong password?",
+					"or maybe sshd was recently upgraded, restart your device."
+				]
+			}
+		},
+		{
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "pwd",
+				"text": "Show Home Directory (pwd)",
         "icon": {
           "name": "info.",
           "location": "left"
@@ -115,7 +135,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "whoami",
+				"text": "Show Remote UserId (whoami)",
 				"icon": {
 					"name": "info.",
 					"location": "left"
@@ -132,7 +152,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "ps -eo cmd",
+				"text": "Show Processes (ps -eo cmd)",
         "icon": {
           "name": "info.",
           "location": "left"
@@ -149,7 +169,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "df (display filesystem)",
+				"text": "Display Filesystem (df)",
         "icon": {
           "name": "info.",
           "location": "left"
@@ -185,7 +205,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "ifconfig (network ip address)",
+				"text": "Network IP Addresses (ifconfig)",
         "icon": {
           "name": "info.",
           "location": "left"
@@ -221,7 +241,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Termux Package Upgrade",
+				"text": "Termux Package Upgrade (may take a while)",
 				"icon": {
 					"name": "file_download.",
 					"location": "left"
