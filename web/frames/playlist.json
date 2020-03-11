@@ -298,7 +298,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "Create shortcut for - GITHUB Gallery of Examples",
+        "text": "Create shortcut - GITHUB Gallery of Examples",
         "icon": {
           "name": "save.",
           "location": "top"
@@ -306,7 +306,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.addShortcut('gallery-app', eigenFragment.getCacheString('RootUrl')+'apps/app1.json')",
+            "eigenActivity.addShortcut('Gallery', eigenFragment.getCacheString('RootUrl')+'apps/app1.json')",
             "eigenActivity.finish()"
           ]
         }
@@ -320,7 +320,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-				"text": "EigenFrame GITHUB Beta Branch"
+        "text": "GITHUB Beta Branch"
       }
     },
     {
@@ -328,7 +328,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"The beta branch is home to EigenFrame app development (pre-release)"
+          "The beta branch of EigenFrame on GITHUB is home to EigenFrame app development (pre-release)."
         ]
       }
     },
@@ -336,7 +336,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "EigenFrame Apps (GITHUB beta branch)",
+        "text": "GITHUB Beta Branch",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -344,6 +344,24 @@
         "on_click": {
           "type": "JavaScript",
           "script": "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Create shortcut - GITHUB Beta Branch",
+        "icon": {
+          "name": "save.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.addShortcut('Beta', 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
+            "eigenActivity.finish()"
+          ]
         }
       }
     }
