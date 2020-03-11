@@ -16,114 +16,20 @@
       "html_list": [
         "<img src='ic_launcher.'>",
         "<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
-        "<h3><font color=\"#8aec81\">Framework to Generate Android Apps</font></h3>"
+				"<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps</font></h4>",
+				"{Specification, Deployment, Rendering & Execution}"
       ]
     },
     {
       "type": "Clone",
       "name": "HorizontalLine"
     },
+
     {
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Installation:"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [Setup Instructions for Termux] to install termux and setup openssh"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Setup Instructions for Termux",
-        "icon": {
-          "name": "playlist_check.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Setup Instructions for Termux",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-initial-setup.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [GIT Installation] to install git, and download local eigenframe branch"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "GIT Installation",
-        "icon": {
-          "name": "file_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "GIT Installation",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-install.json'"
-          }
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Administration:"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [SecureShell Settings] to connect with Termux (or other remote host)"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "SecureShell Settings",
-        "icon": {
-          "name": "settings.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "SecureShell Settings",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
-          }
-        }
+				"text": "Launch an app from the local file..."
       }
     },
 
@@ -132,36 +38,9 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [GIT Administration] to update git local working directory"
-        ]
-      }
-    },
-		{
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "GIT Administration",
-        "icon": {
-          "name": "cloud_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "GIT Administration",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/git-admin.json'"
-          }
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [Edit Remote File] to edit file via sftp"
+					"Here's where to put your local eigenframe specifications:",
+					" - Use the Android shared directory (/storage/emulated/0/Android/data/com.sawaya.eigenframe/files).",
+					"The following demonstrates how to launch a local app."
         ]
       }
     },
@@ -169,83 +48,14 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "Edit Remote File (through sftp)",
-        "icon": {
-          "name": "edit.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-						"title": "Edit Remote File (through sftp)",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
-          }
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [SecureFtp Gallery] to see more sftp examples"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "SecureFtp Gallery",
-        "icon": {
-          "name": "import_export.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "SecureFtp Gallery",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Launch eigenframe app from the local Android filesystem"
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "This demonstrates how to launch a local custom eigenframe from file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "launch this initial application (again),\nthen press back-button to exit",
+				"text": "Launch local app,\npress back-button to exit",
         "icon": {
           "name": "open_browser.",
           "location": "top"
         },
         "on_click": {
           "type": "JavaScript",
-          "script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json')"
+					"script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json')"
         }
       }
     },
@@ -257,7 +67,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch eigenframe app from internet/cloud server (GITHUB)"
+				"text": "Launch app from internet/cloud server (GITHUB)"
       }
     },
 
@@ -266,7 +76,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "This demonstrates a cloud-based eigenframe and a variety of sample layouts, components and actions -- hint: use tabs to select, then click source button"
+					"This demonstrates a cloud-based eigenframe app with a gallery of sample layouts, components and actions -- hint: use tabs to select, then click source button"
         ]
       }
     },
@@ -274,7 +84,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "GITHUB Gallery Examples",
+				"text": "GITHUB Gallery",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -290,7 +100,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"This creates a shortcut on your android screen to launch the GITHUB Gallery of Examples"
+					"This creates a shortcut on your android screen to launch the Gallery (on GitHub)"
         ]
       }
     },
@@ -298,7 +108,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "Create shortcut for - GITHUB Gallery of Examples",
+				"text": "Create shortcut - Gallery",
         "icon": {
           "name": "save.",
           "location": "top"
@@ -306,7 +116,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.addShortcut('gallery-app', eigenFragment.getCacheString('RootUrl')+'apps/app1.json')",
+            "eigenActivity.addShortcut('Gallery', eigenFragment.getCacheString('RootUrl')+'apps/app1.json')",
             "eigenActivity.finish()"
           ]
         }
@@ -320,7 +130,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-				"text": "EigenFrame GITHUB Beta Branch"
+				"text": "Beta Branch on GitHub"
       }
     },
     {
@@ -328,7 +138,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"The beta branch is home to EigenFrame app development (pre-release)"
+					"The Beta Branch of EigenFrame on GITHUB is home to current EigenFrame app development (pre-release)."
         ]
       }
     },
@@ -336,7 +146,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "EigenFrame Apps (GITHUB beta branch)",
+				"text": "Beta Branch",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -344,6 +154,24 @@
         "on_click": {
           "type": "JavaScript",
           "script": "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+				"text": "Create shortcut - Beta",
+        "icon": {
+          "name": "save.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.addShortcut('Beta', 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
+            "eigenActivity.finish()"
+          ]
         }
       }
     }

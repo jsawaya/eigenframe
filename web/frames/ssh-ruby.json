@@ -11,68 +11,6 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Ruby Administration"
-      }
-    },
-
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Install ruby package",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "archive.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Install ruby package",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "echo pkg install ruby",
-                  "pkg install ruby"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
         "text": "Launch dynamic ruby apps using ssh"
       }
     },

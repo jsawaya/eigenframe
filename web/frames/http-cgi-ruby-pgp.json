@@ -7,65 +7,6 @@
 	"component_list": [
 		{
 			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "PGP Installation (GnuPG)"
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text_list": [
-					"Click [GnuPG Installation] - if you plan to use OpenPGP encryption, decryption, signing and verification to your app"
-				]
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "GnuPG Installation",
-				"icon": {
-					"name": "file_download.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title": "Install gnupg package",
-						"component_list": [
-							{
-								"type": "Clone",
-								"name": "LayoutVerticalScrollable",
-								"attributes": {
-									"component_list": [
-										{
-											"type": "Clone",
-											"name": "TextViewDetail",
-											"attributes": {
-												"text_size": "10",
-												"ssh_list": [
-													"echo pkg install gnupg",
-													"pkg install gnupg"
-												]
-											}
-										}
-									]
-								}
-							}
-						]
-					}
-				}
-			}
-		},
-		{
-			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
