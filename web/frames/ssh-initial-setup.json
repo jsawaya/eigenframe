@@ -37,7 +37,13 @@
         ]
       }
     },
-
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "SecureShell (SSH) Settings"
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -55,6 +61,14 @@
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
           }
         }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "GIT Installation, then download from GitHub"
+        s
       }
     },
     {

@@ -13,6 +13,25 @@
         "text": "Apache2 Administration - Start/Stop"
       }
     },
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Check if any HTTP processes are running",
+				"icon": {
+					"name": "info.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "PopupTextView",
+					"title": "Check if Apache2 HTTP processes are running",
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh_list": [
+						"ps -eo cmd"
+					]
+				}
+			}
+		},
 
     {
       "type": "Clone",
@@ -86,25 +105,6 @@
       "name": "TextViewLabel",
       "attributes": {
         "text": "Apache2 Testing"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Check if any HTTP processes are running",
-        "icon": {
-          "name": "info.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "Check if Apache2 HTTP processes are running",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh_list": [
-            "ps -eo cmd"
-          ]
-        }
       }
     },
 
