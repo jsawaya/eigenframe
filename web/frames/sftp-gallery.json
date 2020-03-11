@@ -42,24 +42,6 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "realpath storage",
-        "icon": {
-          "name": "info.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "realpath storage",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "sftp": "realpath storage"
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
         "text": "sftp pwd",
         "icon": {
           "name": "info.",
@@ -73,6 +55,34 @@
         }
       }
     },
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Click [Edit Remote File] to edit file via sftp"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Edit Remote File (via sftp)",
+				"icon": {
+					"name": "edit.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Edit Remote File (via sftp)",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
+					}
+				}
+			}
+		},
     {
       "type": "Clone",
       "name": "HorizontalLine"
