@@ -15,6 +15,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-initial-setup.json"
 		},
 		{
+			"icon_name": "play.",
 			"name": "SSH",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-settings.json"
@@ -26,6 +27,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-gallery.json"
 		},
 		{
+			"icon_name": "cloud_download.",
 			"name": "GITHUB",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/git-admin.json"
