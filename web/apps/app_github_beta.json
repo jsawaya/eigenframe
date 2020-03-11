@@ -12,23 +12,23 @@
 			"icon_name": "playlist_check.",
 			"name": "Install",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-initial-setup.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-initial-setup.json"
 		},
 		{
 			"name": "SSH",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-settings.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-settings.json"
 		},
 		{
 			"icon_name": "import_export.",
 			"name": "SFTP",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-gallery.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-gallery.json"
 		},
 		{
-			"name": "GIT",
+			"name": "GITHUB",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/git-admin.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/git-admin.json"
 		},
 		{
 			"icon_name": "apache_logo.",
