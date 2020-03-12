@@ -10,14 +10,14 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-				"text": "Secure Shell (ssh) - Administration"
+				"text": "Secure Shell (SSH) Settings"
       }
     },
 		{
 			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
-				"text": "SSH User-id:"
+				"text": "SSH User-id (optional for Termux):"
 			}
 		},
     {
@@ -36,7 +36,7 @@
       "type": "Clone",
 			"name": "TextViewDetail",
       "attributes": {
-        "text": "SSH Passphrase:"
+				"text": "SSH Passphrase (required)\nEnter same password you typed in Termux with passwd"
       }
     },
 
@@ -48,14 +48,14 @@
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
       "background_color": "#000000",
-      "text": "password"
+			"text": "abc"
     },
 
     {
       "type": "Clone",
 			"name": "TextViewDetail",
       "attributes": {
-        "text": "SSH Host(name/ip):"
+				"text": "SSH Host (name/ip):"
       }
     },
     {
@@ -74,7 +74,7 @@
       "type": "Clone",
 			"name": "TextViewDetail",
       "attributes": {
-        "text": "SSH Port:"
+				"text": "SSH Port (8822 for Termux):"
       }
     },
     {
@@ -106,11 +106,11 @@
 			"attributes": {
 				"text_list": [
 					"If you get a connection error message - ",
-					"Ensure that you are running sshd in Termux.",
+					"Ensure that sshd is running in Termux.",
 					"Open Termux console, enter: ps -e",
-					"if sshd is NOT listed under CMD, enter: sshd",
+					"if sshd is NOT listed, enter: sshd",
 					"if sshd IS running, maybe you entered the wrong password?",
-					"or maybe sshd was recently upgraded, restart your device."
+					"or maybe sshd was recently upgraded, try to restart your device."
 				]
 			}
 		},

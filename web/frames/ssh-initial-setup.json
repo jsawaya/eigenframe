@@ -39,6 +39,10 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
         "text": "SecureShell (SSH) Settings"
@@ -64,10 +68,14 @@
       }
     },
     {
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "GIT Installation, then download from GitHub"
+        "text": "GIT Installation / GitHub Download"
       }
     },
     {
@@ -106,14 +114,24 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Apache2 Installation"
+        "text": "Ruby Installation"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Ruby Installation] - ",
+          "Ruby is a dynamic scripting language used for server-side eigenframe transforms."
+        ]
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Install apache2 package",
+        "text": "Ruby Installation",
         "icon": {
           "name": "file_download.",
           "location": "top"
@@ -122,76 +140,8 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Install apache2 package",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_list": [
-                          "echo pkg install apache2",
-                          "pkg install apache2"
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Import eigenframe apache2 configuration, and cgi scripts",
-        "icon": {
-          "name": "settings.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Import eigenframe apache2 configuration, and cgi scripts",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_list": [
-                          "echo ",
-                          "cd ~/../usr/etc/apache2/",
-                          "cp -f --backup=numbered httpd.conf httpd.conf",
-                          "echo ",
-                          "echo install apache2 configuration from eigenframe/etc-apache2/httpd.conf",
-                          "cp ~/git-repos/eigenframe/etc-apache2/httpd.conf .",
-                          "echo ",
-                          "echo enable execution of cgi-bin directory files",
-                          "cd ~/git-repos/eigenframe/cgi-bin",
-                          "chmod 755 *.sh",
-                          "chmod 755 *.rb"
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
+            "title": "Ruby Installation",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-install.json'"
           }
         }
       }
@@ -204,70 +154,38 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Ruby Installation"
+        "text": "Apache2 Installation"
       }
     },
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Click [Apache2 Installation] - ",
+					"Apache2 provides a common gateway interface (CGI) to call ruby eigenframe transforms.",
+					"This Termux service is started by EigenFrame using ssh to run httpd - see Apache2 Administration",
+					"And the service is configured to only respond to localhost requests (from EigenFrame)"
+				]
+			}
+		},
     {
       "type": "Clone",
-      "name": "TextViewDetail",
+      "name": "ButtonDefault",
       "attributes": {
-        "text_list": [
-          "Click [Ruby Installation] - ",
-          "Ruby is a dynamic scripting language used for eigenframe transforms."
-        ]
-      }
-    },
-    {
-      "type": "Button",
-      "gravity": "center",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Ruby Installation",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
-      "icon": {
-        "name": "archive.",
-        "location": "top"
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "Install ruby package",
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text_size": "14",
-                "gravity": "left",
-                "text_color": "#ffffff",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "ssh_list": [
-                  "echo pkg install ruby",
-                  "pkg install ruby"
-                ]
-              }
-            ]
+        "text": "Apache2 Installation",
+        "icon": {
+          "name": "file_download.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Apache2 Installation",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache-install.json'"
           }
-        ]
+        }
       }
     },
     {
@@ -304,27 +222,7 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "PGP Installation",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_list": [
-                          "echo pkg install gnupg",
-                          "pkg install gnupg"
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-pgp-install.json'"
           }
         }
       }
@@ -346,7 +244,7 @@
       "attributes": {
         "text_list": [
           "Click [Prolog Installation] - if you plan to use an inference engine in your app",
-          "Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition can be inferred from a knowledge base (rules) using backward chaining algorithms. "
+          "Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition can be inferred from a knowledge base (rules) using backward chaining algorithms. "
         ]
       }
     },
@@ -362,7 +260,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Prolog Installation",
+        "text": "Prolog Installation (gnupg)",
         "icon": {
           "name": "file_download.",
           "location": "top"
@@ -372,27 +270,7 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "Prolog Installation",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh_list": [
-                          "echo pkg install swi-prolog",
-                          "pkg install swi-prolog"
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-prolog-install.json'"
           }
         }
       }

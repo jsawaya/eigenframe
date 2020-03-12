@@ -10,7 +10,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Install GIT package"
+        "text": "GIT Installation"
       }
     },
 
