@@ -68,6 +68,10 @@
       }
     },
     {
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
@@ -153,6 +157,18 @@
         "text": "Apache2 Installation"
       }
     },
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Click [Apache2 Installation] - ",
+					"Apache2 provides a common gateway interface (CGI) to call ruby eigenframe transforms.",
+					"This Termux service is started by EigenFrame using ssh to run httpd - see Apache2 Administration",
+					"And the service is configured to only respond to localhost requests (from EigenFrame)"
+				]
+			}
+		},
     {
       "type": "Clone",
       "name": "ButtonDefault",
