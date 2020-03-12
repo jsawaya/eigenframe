@@ -13,6 +13,15 @@
 				"text": "PGP Installation"
 			}
 		},
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [PGP Installation] - if you plan to use OpenPGP encryption, decryption, signing and verification."
+        ]
+      }
+    },
 		{
 			"type": "Clone",
 			"name": "HorizontalLine"
