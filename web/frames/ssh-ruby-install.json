@@ -13,6 +13,16 @@
 				"text": "Ruby Installation"
 			}
 		},
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Ruby Installation] - ",
+          "Ruby is a dynamic scripting language used for server-side eigenframe transforms."
+        ]
+      }
+    },
 		{
 			"type": "Clone",
 			"name": "HorizontalLine"

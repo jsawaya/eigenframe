@@ -15,6 +15,17 @@
 		},
 		{
 			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Apache2 provides a common gateway interface (CGI) to call ruby eigenframe transforms.",
+					"This Termux service is started by EigenFrame using ssh to run httpd - see Apache2 Administration",
+					"Note: eigenframe configuration (etc-apache2/httpd.conf) enables CGI and only allows localhost requests (from EigenFrame)"
+				]
+			}
+		},
+		{
+			"type": "Clone",
 			"name": "HorizontalLine"
 		},
 		{

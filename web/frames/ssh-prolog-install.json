@@ -15,6 +15,16 @@
 		},
 		{
 			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Click [Prolog Installation] - if you plan to use an inference engine in your app",
+					"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition can be inferred from a knowledge base (rules) using backward chaining algorithms. "
+				]
+			}
+		},
+		{
+			"type": "Clone",
 			"name": "HorizontalLine"
 		},
 		{
