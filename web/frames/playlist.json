@@ -29,7 +29,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-				"text": "Launch an app from the local file..."
+        "text": "Launch an app from a local file..."
       }
     },
 
@@ -38,17 +38,25 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"Here's where to put your local eigenframe specifications:",
-					" - Use the Android shared directory (/storage/emulated/0/Android/data/com.sawaya.eigenframe/files).",
-					"The following demonstrates how to launch a local app."
+          "The following demonstrates how to launch a local app.",
+          "Here's where to put your local eigenframe specifications - the shared directory:"
         ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_size": "8",
+        "font": "font/droid-sans-mono/DroidSansMono.ttf",
+        "text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "Launch local app,\npress back-button to exit",
+        "text": "Launch a local app,\npress back-button to exit",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -67,7 +75,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-				"text": "Launch app from internet/cloud server (GITHUB)"
+        "text": "Launch an app from internet/cloud server (GITHUB)"
       }
     },
 
@@ -76,7 +84,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"This demonstrates a cloud-based eigenframe app with a gallery of sample layouts, components and actions -- hint: use tabs to select, then click source button"
+          "This demonstrates a cloud-based gallery of eigenframe layouts, components and actions -- hint: use tabs to select, then click source button"
         ]
       }
     },
@@ -84,7 +92,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "GITHUB Gallery",
+        "text": "Gallery",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -97,10 +105,36 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Eigenframe Admin] to install and configure tools that support Eigenframe"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Eigenframe Admin",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script": "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_admin.json')"
+        }
+      }
+    },
+    {
+      "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"This creates a shortcut on your android screen to launch the Gallery (on GitHub)"
+          "Click [Admin Shortcut] to create a shortcut on your home screen to launch the Admin app"
         ]
       }
     },
@@ -108,7 +142,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "Create shortcut - Gallery",
+        "text": "Admin Shortcut",
         "icon": {
           "name": "save.",
           "location": "top"
@@ -116,7 +150,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.addShortcut('Gallery', eigenFragment.getCacheString('RootUrl')+'apps/app1.json')",
+            "eigenActivity.addShortcut('Admin', eigenFragment.getCacheString('RootUrl')+'apps/app_admin.json')",
             "eigenActivity.finish()"
           ]
         }
@@ -130,7 +164,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-				"text": "Beta Branch on GitHub"
+        "text": "Beta Branch"
       }
     },
     {
@@ -138,7 +172,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"The Beta Branch of EigenFrame on GITHUB is home to current EigenFrame app development (pre-release)."
+          "Click [Beta Branch] for pre-release EigenFrame apps (in development)"
         ]
       }
     },
@@ -154,24 +188,6 @@
         "on_click": {
           "type": "JavaScript",
           "script": "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-				"text": "Create shortcut - Beta",
-        "icon": {
-          "name": "save.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenActivity.addShortcut('Beta', 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
-            "eigenActivity.finish()"
-          ]
         }
       }
     }
