@@ -1,0 +1,63 @@
+{
+	"type": "EigenFrame",
+	"is_secure_window": "true",
+	"tab_list": [
+		{
+			"icon_name": "ic_launcher_round.",
+			"name": "Admin",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/playlist.json"
+		},
+		{
+			"icon_name": "playlist_check.",
+			"name": "Install",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-initial-setup.json"
+		},
+		{
+			"icon_name": "play.",
+			"name": "SSH",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-settings.json"
+		},
+		{
+			"icon_name": "import_export.",
+			"name": "SFTP",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-gallery.json"
+		},
+		{
+			"icon_name": "cloud_download.",
+			"name": "GITHUB",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/git-admin.json"
+		},
+		{
+			"icon_name": "ruby_logo.",
+			"name": "Ruby",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-ruby.json"
+		},
+		{
+			"icon_name": "apache_logo.",
+			"name": "Apache",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-apache.json"
+		},
+		{
+			"name": "PGP",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"
+		},
+		{
+			"name": "Prolog",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-swi.json"
+		},
+		{
+			"name": "About",
+			"type": "EigenFragment",
+			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
+		}
+	]
+}
