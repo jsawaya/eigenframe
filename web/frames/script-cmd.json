@@ -1,0 +1,90 @@
+{
+	"type": "LinearLayout",
+	"scrollable": true,
+	"orientation": "vertical",
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"layout_height": "wrap_content",
+	"component_list": [
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "JavaScript"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"JavaScript provides capability to invoke dynamic scripts (no services required)..."
+				]
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 7500,
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text": "'result: '+(1+2+3+4)",
+			"text_color": "#ffffff",
+			"background_color": "#11ff0000"
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Execute JavaScript Command",
+				"icon": {
+					"name": "play.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "JavaScript Command Output",
+						"component_list": [
+							{
+								"type": "JavaScript",
+								"id": 7501,
+								"script_script": "''+eigenFragment.getViewState(7500)"
+							},
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"text_script": "''+eigenFragment.getViewState(7500)"
+											}
+										},
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"url": "file:///data/user/0/com.sawaya.eigenframe/files/JavaScript:7501"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}
+
+
