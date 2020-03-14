@@ -45,7 +45,6 @@
       "name": "TextViewDetail",
       "attributes": {
 				"text_size": "10",
-        "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
       }
     },

@@ -16,6 +16,12 @@
 		},
 		{
 			"icon_name": "play.",
+			"name": "JavaScript",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/script-cmd.json"
+		},
+		{
+			"icon_name": "play.",
 			"name": "SSH",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-cmd.json"

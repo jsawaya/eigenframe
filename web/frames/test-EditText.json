@@ -72,7 +72,6 @@
 
     {
       "type": "EditText",
-      "id": 10100,
       "layout_width": "match_parent",
       "text_color": "#ffffff",
       "background_color": "#123456",
