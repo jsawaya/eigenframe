@@ -14,13 +14,24 @@
         "text": "Launch dynamic ruby apps using ssh"
       }
     },
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"These methods use ssh to invoke Ruby",
+					" - which may return plain text (default)",
+					" - or may return dynamic EigenFrame components (is_eigen_response: true)"
+				]
+			}
+		},
 
     {
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "File System Explorer",
+			"text": "File System Explorer (via ssh)",
       "text_color": "#ffffff",
       "background_color": "#123456",
       "icon": {
@@ -70,37 +81,6 @@
       "type": "Clone",
       "name": "HorizontalLine"
     },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Launch dynamic ruby apps using http/cgi"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "HTTP/CGI Ruby",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "HTTP/CGI Ruby",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby.json"
-          }
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
 
     {
       "type": "Clone",
@@ -109,6 +89,17 @@
         "text": "Launch ruby HTTP service"
       }
     },
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Ruby can be used for a simple http server:",
+					" - best for very light-weight ruby methods",
+					" - not as robust as Apache2 (multi-threading, etc.)"
+				]
+			}
+		},
 
     {
       "type": "Button",
