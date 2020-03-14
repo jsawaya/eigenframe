@@ -1,10 +1,13 @@
 # JavaScript
 ## schema pattern
 
-* type = "JavaScript"
+ * type = "JavaScript"
 
-* script 
-* script_list 
+One of the following:
+ * script - a javascript string to evaluate.
+ * script_list - a list of javascript script strings to evaluate.
+ * script_script - a script that produces the script to evaluate (see example).
+ * (script_script_list is not supported)
 
 ### eigenFragment methods:
 void eigenFragment.closePopupScreen(int screenId)
@@ -30,7 +33,7 @@ String eigenFragment.concatPaths(int viewId1, int viewId2)
 String eigenFragment.concatPaths(int viewId1, int viewId2, int viewId3)
 String eigenFragment.concatCachePaths(String rootPathCache, String relativePathCache)
 boolean eigenFragment.appendPath(int viewId1, String optionLabel)
-- setViewState(viewId1, concatPaths(getViewState(viewId1), optionLabel))
+-> setViewState(viewId1, concatPaths(getViewState(viewId1), optionLabel))
 
 boolean eigenFragment.parentPath(int viewId1)
 String eigenFragment.getOptionLabel()
@@ -101,7 +104,7 @@ Example:
   "type": "Clone",
   "name": "ButtonDefault",
   "attributes": {
-    "text": "launch this initial application (again),\nthen press back-button to exit",
+    "text": "launch an application",
     "icon": {
       "name": "open_browser.",
       "location": "top"
@@ -113,4 +116,59 @@ Example:
   }
 }
 ```
+
+This one is more advanced, the attribute "script_script": evaluates a script that is itself the script to be evaluated.
+In other words, this script produces a script to be evaluated.  Simply meta-programming.
+```json
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Execute JavaScript Command",
+				"icon": {
+					"name": "play.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "JavaScript Command Output",
+						"component_list": [
+							{
+								"type": "JavaScript",
+								"id": 7501,
+								"script_script": "''+eigenFragment.getViewState(7500)"
+							},
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"text_script": "''+eigenFragment.getViewState(7500)"
+											}
+										},
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"url": "file:///data/user/0/com.sawaya.eigenframe/files/JavaScript:7501"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+```
+
 
