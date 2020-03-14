@@ -18,7 +18,7 @@
 			"icon_name": "play.",
 			"name": "SSH",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-settings.json"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-cmd.json"
 		},
 		{
 			"icon_name": "import_export.",
