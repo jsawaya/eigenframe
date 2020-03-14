@@ -3,13 +3,9 @@
   "is_secure_window": "false",
   "tab_list": [
     {
-      "name": "Gallery PlayList\nfor GITHUB",
+			"name": "Gallery\n(GITHUB)",
       "type": "EigenFragment",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
-    },
-    {
-      "name": "empty",
-      "type": "EigenFragment"
     },
     {
       "name": "Button",

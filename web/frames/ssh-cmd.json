@@ -1,0 +1,107 @@
+{
+	"type": "LinearLayout",
+	"scrollable": true,
+	"orientation": "vertical",
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"layout_height": "wrap_content",
+	"component_list": [
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "SecureShell"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "SecureShell (SSH) Settings"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "SecureShell Settings",
+				"icon": {
+					"name": "settings.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "SecureShell Settings",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"SecureShell (ssh) provides capability to run processes remotely..."
+				]
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 7600,
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text": "ls -la",
+			"text_color": "#ffffff",
+			"background_color": "#11ff0000"
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Execute",
+				"icon": {
+					"name": "play.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Command Output",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_script": "''+eigenFragment.getViewState(7600)"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}
+
+
