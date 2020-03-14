@@ -53,7 +53,7 @@
 							{
 								"type": "JavaScript",
 								"id": 7501,
-								"script": "''+eigenFragment.getViewState(7500)"
+								"script_script": "''+eigenFragment.getViewState(7500)"
 							},
 							{
 								"type": "Clone",
