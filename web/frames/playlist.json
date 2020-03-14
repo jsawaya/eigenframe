@@ -37,17 +37,14 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text_list": [
-          "The following demonstrates how to launch a local app.",
-          "Here's where to put your local eigenframe specifications - the shared directory:"
-        ]
+				"text": "The following demonstrates how to launch a local app.  Here's where to put your local eigenframe specifications - the shared directory:"
       }
     },
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text_size": "8",
+				"text_size": "10",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
       }
@@ -84,7 +81,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "This demonstrates a cloud-based gallery of eigenframe layouts, components and actions -- hint: use tabs to select, then click source button"
+					"Click [Gallery] to see a cloud-based gallery of eigenframe layouts, components and actions;  use tabs to select, or drag left, then click source button to see examples"
         ]
       }
     },
@@ -111,9 +108,16 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Eigenframe Admin] to install and configure tools that support Eigenframe"
+				"text": "Click [Eigenframe Admin] to install and configure services that support EigenFrame."
       }
     },
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text": "It is with these kinds of remote services that EigenFrame applications are developed."
+			}
+		},
     {
       "type": "Clone",
       "name": "ButtonDefault",

@@ -3,13 +3,9 @@
   "is_secure_window": "false",
   "tab_list": [
     {
-      "name": "Gallery PlayList\nfor GITHUB",
+			"name": "Gallery\nlocalhost",
       "type": "EigenFragment",
       "url": "http://localhost:8080/frames/playlist.json"
-    },
-    {
-      "name": "empty",
-      "type": "EigenFragment"
     },
     {
       "name": "Button",

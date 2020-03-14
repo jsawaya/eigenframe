@@ -105,11 +105,11 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"If you get a connection error message - ",
-					"Ensure that sshd is running in Termux.",
+					"If you are unable to connect - ",
+					"Ensure that sshd is running (in Termux).",
 					"Open Termux console, enter: ps -e",
 					"if sshd is NOT listed, enter: sshd",
-					"if sshd IS running, maybe you entered the wrong password?",
+					"With an Auth error, maybe you entered the wrong password?",
 					"or maybe sshd was recently upgraded, try to restart your device."
 				]
 			}
