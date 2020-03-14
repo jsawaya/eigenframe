@@ -52,7 +52,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch a local app,\npress back-button to exit",
+        "text": "Launch a local app\n(hello world)",
         "icon": {
           "name": "open_browser.",
           "location": "top"
