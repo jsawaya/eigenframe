@@ -16,6 +16,12 @@
 		},
 		{
 			"icon_name": "play.",
+			"name": "JavaScript",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/script-cmd.json"
+		},
+		{
+			"icon_name": "play.",
 			"name": "SSH",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-cmd.json"
@@ -27,8 +33,8 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
 		},
 		{
-			"icon_name": "cloud_download.",
-			"name": "GITHUB",
+			"icon_name": "github_logo.",
+			"name": "GitHub",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/git-admin.json"
 		},
@@ -45,6 +51,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
 		},
 		{
+			"icon_name": "security.",
 			"name": "PGP",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json"
