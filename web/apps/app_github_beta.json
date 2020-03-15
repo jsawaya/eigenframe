@@ -51,6 +51,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-apache.json"
 		},
 		{
+			"icon_name": "security.",
 			"name": "PGP",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"
