@@ -17,7 +17,7 @@
         "<img src='ic_launcher.'>",
         "<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
 				"<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps</font></h4>",
-				"{Specification, Deployment, Rendering & Execution}"
+        "{Specification, Deployment, Rendering, Execution}"
       ]
     },
     {
