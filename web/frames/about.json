@@ -1,0 +1,136 @@
+{
+	"type": "LinearLayout",
+	"scrollable": true,
+	"orientation": "vertical",
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"layout_height": "wrap_content",
+	"component_list": [
+		{
+			"type": "HtmlView",
+			"layout_width": "match_parent",
+			"gravity": "center",
+			"html": "<img src='ic_launcher.png'>"
+		},
+		{
+			"type": "HtmlView",
+			"layout_width": "match_parent",
+			"gravity": "left",
+			"text_color": "#ffffff",
+			"html_list": [
+				"<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
+				"<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps</font></h4>",
+				"{Specification, Deployment, Rendering, Execution}",
+				"<h1><font color=\"#8aec81\">Documentation: </font></h1>",
+				"<h4>GitHub README:</h4> https://github.com/jsawaya/eigenframe/blob/master/README.md",
+				"<h4>Initial Setup:</h4> https://github.com/jsawaya/eigenframe/blob/master/web/docs/initial-setup.md",
+				"<h4>Privacy Policy:</h4> https://github.com/jsawaya/eigenframe/blob/master/web/docs/privacy-policy.md",
+				"<h4>Design Components:</h4> https://github.com/jsawaya/eigenframe/blob/master/web/docs/"
+			]
+		},
+		{
+			"type": "Button",
+			"text": "Show EigenFrame Version",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "info.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "PopupTextView",
+				"title": "EigenFrame Version",
+				"font": "font/droid-sans-mono/DroidSansMono.ttf",
+				"text_script": "'Version: '+eigenActivity.packageInfo.versionName",
+				"background_color": "#654321"
+			}
+		},
+		{
+			"type": "Button",
+			"text": "Show EigenFrame Edition",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "info.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "PopupTextView",
+				"title": "EigenFrame Edition",
+				"font": "font/droid-sans-mono/DroidSansMono.ttf",
+				"text_script": "'Edition: '+eigenActivity.getEdition()",
+				"background_color": "#654321"
+			}
+		},
+		{
+			"type": "Button",
+			"text": "End User License Agreement",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "info.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "JavaScript",
+				"script": "eigenActivity.dialogEula()"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Settings:"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "SetIsSourceButton"
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Screen Orientation",
+				"icon": {
+					"name": "rotate_90.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Screen Orientation",
+						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		}
+	]
+}
