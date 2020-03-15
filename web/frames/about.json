@@ -9,8 +9,16 @@
 		{
 			"type": "HtmlView",
 			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
 			"gravity": "center",
-			"html": "<img src='ic_launcher.png'>"
+			"x_text_size": "14",
+			"text_color": "#ffffff",
+			"html_list": [
+				"<img src='ic_launcher.'>",
+				"<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
+				"<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps</font></h4>",
+				"{Specification, Deployment, Rendering, Execution}"
+			]
 		},
 		{
 			"type": "HtmlView",
@@ -18,9 +26,6 @@
 			"gravity": "left",
 			"text_color": "#ffffff",
 			"html_list": [
-				"<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
-				"<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps</font></h4>",
-				"{Specification, Deployment, Rendering, Execution}",
 				"<h1><font color=\"#8aec81\">Documentation: </font></h1>",
 				"<h4>GitHub README:</h4> https://github.com/jsawaya/eigenframe/blob/master/README.md",
 				"<h4>Initial Setup:</h4> https://github.com/jsawaya/eigenframe/blob/master/web/docs/initial-setup.md",
