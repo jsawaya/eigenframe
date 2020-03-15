@@ -40,7 +40,7 @@
           "layout_height": "wrap_content",
           "text_size": "14",
           "text_color": "#ffffff",
-          "url_script": "''+eigenFragment.getCacheString('RootUrl')"
+          "url_script": "eigenFragment.getCacheString('RootUrl')+'web/frames/about.json'"
         }
       ]
     }

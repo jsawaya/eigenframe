@@ -26,8 +26,8 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView-font.json"
     },
     {
-			"name": "x-HtmlView",
-      "type": "EigenFragment",
+			"name": "HtmlView",
+			"type": "x-EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-HtmlView.json"
     },
