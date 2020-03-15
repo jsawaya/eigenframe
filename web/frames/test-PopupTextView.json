@@ -58,7 +58,8 @@
       "on_click": {
         "type": "PopupTextView",
         "title": "Popup TextView for the contents of a url request (from github)",
-        "url_script": "eigenFragment.getCacheString('RootUrl')+'README.md'"
+        "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupTextView.json"
+
       }
     },
     {

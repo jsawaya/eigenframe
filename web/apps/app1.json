@@ -27,7 +27,7 @@
     },
     {
 			"name": "HtmlView",
-			"type": "x-EigenFragment",
+			"type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-HtmlView.json"
     },
