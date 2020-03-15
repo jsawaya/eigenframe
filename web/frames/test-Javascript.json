@@ -39,32 +39,6 @@
           "eigenActivity.showToast('var x: '+x)"
         ]
       }
-    },
-    {
-      "type": "Button",
-      "text": "JavaScript using script_list",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#11ff0000",
-      "icon": {
-        "name": "info.",
-        "location": "left"
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "htmlString = eigenActivity.getString(com.sawaya.R.string.change_log)",
-          "titleString = eigenActivity.getString(com.sawaya.R.string.recent_changes_title)",
-          "java.lang.System.out.println(htmlString)",
-          "java.lang.System.out.println(titleString)",
-          "popupTextWindow = new com.sawaya.eigenframe.PopupTextView(eigenActivity)",
-          "popupTextWindow.createPopupTextWindow()",
-          "popupTextWindow.setPopupTextTitle(titleString)",
-          "popupTextWindow.setPopupHtml(htmlString, null)",
-          "popupTextWindow.showPopupTextWindow(eigenActivity.viewPager)"
-        ]
-      }
     }
 
   ]
