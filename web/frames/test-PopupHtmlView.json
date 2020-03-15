@@ -37,58 +37,6 @@
           "- Popup dynamic html with access to application-embedded icons [<img src='info.jpg'>]"
         ]
       }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "PopupHtmlView with url request: About",
-      "text_color": "#ffffff",
-      "background_color": "#000000",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "icon": {
-        "name": "info.",
-        "location": "left"
-      },
-      "on_click": {
-        "type": "PopupHtmlView",
-        "title": "PopupHtmlView",
-        "url_script": "eigenFragment.getCacheString('RootUrl')+'html/about.html'"
-      }
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "PopupHtmlView with url request: Recent Changes",
-      "text_color": "#ffffff",
-      "background_color": "#000000",
-      "icon": {
-        "name": "info.",
-        "location": "left"
-      },
-      "on_click": {
-        "type": "PopupHtmlView",
-        "title": "PopupHtmlView",
-        "url_script": "eigenFragment.getCacheString('RootUrl')+'html/recent-changes.html'"
-      },
-      "padding": {
-        "left": 4,
-        "top": 4,
-        "right": 4,
-        "bottom": 4
-      },
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      }
     }
   ]
 }
