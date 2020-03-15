@@ -95,24 +95,6 @@
         },
         "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/test-TextView.json'"
       }
-    },
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "PopupScreen generates a directory ListView by calling a localhost url...",
-      "text_color": "#ffffff",
-      "background_color": "#ff0000",
-      "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "20",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "EigenFrame",
-        "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=/data/data/com.termux/files/home"
-      }
     }
 
   ]
