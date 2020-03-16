@@ -25,6 +25,29 @@
 				]
 			}
 		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Ruby Command Console"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Enter a ruby command",
+					"example: EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
+					"This returns a dynamic eigenframe (json string) which may presented as plain text -- click: [Execute Ruby Command]",
+					"Or you may render this same result as an EigenFrame component -- click [Execute Ruby EigenFrame]"
+				]
+			}
+		},
 
     {
       "type": "EditText",
@@ -106,6 +129,17 @@
 			}
 		},
 		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Ruby EigenFrame Gallery"
+			}
+		},
+		{
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
@@ -165,7 +199,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch ruby HTTP service"
+				"text": "Ruby HTTP service (webrick)"
       }
     },
 		{
@@ -173,8 +207,8 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"Ruby can be used for a simple http server:",
-					" - best for very light-weight ruby methods",
+					"Ruby can be used as a simple http server:",
+					" - best for very quick light-weight ruby methods",
 					" - not as robust as Apache2 (multi-threading, etc.)"
 				]
 			}
