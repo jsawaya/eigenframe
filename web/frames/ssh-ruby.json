@@ -42,9 +42,7 @@
 			"attributes": {
 				"text_list": [
 					"Enter ruby command",
-					"example: EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
-					"This returns a dynamic eigenframe (json string) which may presented as plain text -- click: [Execute Ruby Command]",
-					"Or you may render this same result as an EigenFrame component -- click [Execute Ruby EigenFrame]"
+					"example: EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s"
 				]
 			}
 		},
