@@ -25,8 +25,121 @@
 				]
 			}
 		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Ruby Command Console"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Enter a ruby command",
+					"example: EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
+					"This returns a dynamic eigenframe (json string) which may presented as plain text -- click: [Execute Ruby Command]",
+					"Or you may render this same result as an EigenFrame component -- click [Execute Ruby EigenFrame]"
+				]
+			}
+		},
 
     {
+      "type": "EditText",
+      "id": 7700,
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+			"text": "EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
+      "text_color": "#ffffff",
+      "background_color": "#11ff0000"
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Execute Ruby Command",
+        "icon": {
+          "name": "play.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Ruby Command Output",
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "TextViewDetail",
+                      "attributes": {
+                        "text_size": "10",
+                        "ssh_script": "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Execute Ruby EigenFrame",
+				"icon": {
+					"name": "play.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Ruby Produced EigenFrame",
+						"component_list": [
+							{
+								"type": "LinearLayout",
+								"orientation": "vertical",
+								"gravity": "center",
+								"layout_width": "match_parent",
+								"layout_height": "match_parent",
+								"component_list": [
+									{
+										"type": "SecureShell",
+										"is_eigen_response": true,
+										"ssh_script": "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'"
+									}
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Ruby EigenFrame Gallery"
+			}
+		},
+		{
       "type": "Button",
       "gravity": "center",
       "layout_width": "match_parent",
@@ -86,7 +199,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch ruby HTTP service"
+				"text": "Ruby HTTP service (webrick)"
       }
     },
 		{
@@ -94,8 +207,8 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"Ruby can be used for a simple http server:",
-					" - best for very light-weight ruby methods",
+					"Ruby can be used as a simple http server:",
+					" - best for very quick light-weight ruby methods",
 					" - not as robust as Apache2 (multi-threading, etc.)"
 				]
 			}
