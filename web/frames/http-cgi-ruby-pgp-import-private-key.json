@@ -29,7 +29,7 @@
 						"Import your private key file",
 						"- the private key enables you to open files that have been encrypted with your public key",
 						"- try importing demo-private-key: ",
-						"demo-private-key: /data/data/com.termux/files/home/storage/shared/Android/data/com.sawaya.eigenframe/files/demo-private-key.pgp",
+						"demo-private-key: /data/data/com.termux/files/home/git-repos/eigenframe/web/pubkeys/demo-private-key.pgp",
 						"passphrase: demo"
 					]
 				}
