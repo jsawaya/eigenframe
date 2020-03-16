@@ -41,10 +41,8 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"Enter a ruby command",
-					"example: EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
-					"This returns a dynamic eigenframe (json string) which may presented as plain text -- click: [Execute Ruby Command]",
-					"Or you may render this same result as an EigenFrame component -- click [Execute Ruby EigenFrame]"
+					"Enter ruby command",
+					"example: EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s"
 				]
 			}
 		},
@@ -58,6 +56,13 @@
       "text_color": "#ffffff",
       "background_color": "#11ff0000"
     },
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text": "Click [Execute Ruby Command] to execute the ruby command and return the result as plain text"
+			}
+		},
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -94,6 +99,13 @@
         }
       }
     },
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text": "Click [Execute Ruby EigenFrame] to execute the ruby command and return the result as an EigenFrame component"
+			}
+		},
     {
 			"type": "Clone",
 			"name": "ButtonDefault",
