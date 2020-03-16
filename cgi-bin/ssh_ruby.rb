@@ -17,5 +17,3 @@ puts eval(ruby_string)
 #    "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb 'p 1+2' "
 #    ]
 #  }
-
-#ruby = "EigenFrame.new(cgi.params).eigen_directory_listview_http_cgi(dirpath).to_json.to_s"
