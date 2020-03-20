@@ -83,6 +83,23 @@
 					}
 				}
 			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Take Photo",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"eigenActivity.captureCameraImage()"
+					]
+				}
+			}
 		}
 	]
 }

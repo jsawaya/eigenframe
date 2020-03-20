@@ -62,6 +62,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-swi.json"
 		},
 		{
+			"icon_name": "info.",
 			"name": "About",
 			"type": "EigenFragment",
 			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
