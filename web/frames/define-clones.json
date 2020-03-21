@@ -531,6 +531,7 @@
 								"component_list": [
 									{
 										"type": "ImageView",
+										"rotation": -90,
 										"url_script_list": [
 											"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
 											"'file://'+jpg_filename"
