@@ -526,7 +526,7 @@
 					"component_list": [
 						{
 							"type": "Clone",
-							"name": "LayoutVerticalScrollable",
+							"name": "LayoutVertical",
 							"attributes": {
 								"component_list": [
 									{
