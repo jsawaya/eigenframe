@@ -87,13 +87,23 @@
 		},
 		{
 			"type": "Define",
-			"name": "LayoutVerticalScrollable",
+			"name": "LayoutVertical",
 			"component": {
 				"type": "LinearLayout",
-				"scrollable": true,
 				"orientation": "vertical",
 				"gravity": "center_horizontal",
 				"layout_width": "match_parent"
+			}
+		},
+		{
+			"type": "Define",
+			"name": "LayoutVerticalScrollable",
+			"component": {
+				"type": "Clone",
+				"name": "LayoutVertical",
+				"attributes": {
+					"scrollable": true
+				}
 			}
 		},
 		{
