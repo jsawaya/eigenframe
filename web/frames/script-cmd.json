@@ -96,11 +96,28 @@
 				"on_click": {
 					"type": "JavaScript",
 					"script_list": [
-						"eigenActivity.captureCameraImage()"
+						"var jpg_filename = eigenActivity.captureCameraImage()",
+						"eigenFragment.setCacheString('CameraImage', jpg_filename)"
 					]
 				}
 			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "View Photo",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenCameraImage"
+				}
+			}
 		}
+
 	]
 }
 

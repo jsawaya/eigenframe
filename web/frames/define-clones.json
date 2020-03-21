@@ -501,6 +501,44 @@
 					]
 				}
 			}
+		},
+		{
+			"type": "Define",
+			"name": "PopupScreenCameraImage",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"title_script_list": [
+						"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
+						"'Camera Image: '+jpg_filename"
+					],
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "LayoutVerticalScrollable",
+							"attributes": {
+								"component_list": [
+									{
+										"type": "ImageView",
+										"url_script_list": [
+											"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
+											"'file://'+ eigenFragment.getCacheFilePath(jpg_filename)"
+										],
+										"layout_width": "match_parent",
+										"layout_height": "match_parent",
+										"background_color": "#123456",
+										"on_click": {
+											"type": "JavaScript",
+											"script": "eigenActivity.showToast('image click eigenframe')"
+										}
+									}
+								]
+							}
+						}
+					]
+				}
+			}
 		}
 	],
 	"on_complete": {
