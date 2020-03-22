@@ -116,8 +116,24 @@
 					"name": "PopupScreenCameraImage"
 				}
 			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Draw",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"eigenActivity.onCreateDrawingBlank()"
+					]
+				}
+			}
 		}
-
 	]
 }
 
