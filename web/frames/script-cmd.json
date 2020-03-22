@@ -129,7 +129,9 @@
 				"on_click": {
 					"type": "JavaScript",
 					"script_list": [
-						"eigenActivity.onCreateDrawingBlank()"
+						"var drawingFilePath = eigenFragment.getCacheString('DrawingFile')",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
 					]
 				}
 			}
