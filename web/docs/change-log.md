@@ -4,6 +4,8 @@
 V1.2 EigenFrame is a truly extensible architecture for dynamic system integration with
 Termux, ssh, sftp, javascript, apache http/cgi, ruby, and pgp, using json specs.
  * Added JavaScript console (script_script example).
+ * Added Camera Image Capture and Camera Image View - see [example](../frames/script-cmd.json)
+ * Added Drawing Screen see [example](../frames/script-cmd.json)
  * Added support for URL post-method (which enables simple integration with GnuPG, Prolog, ...)
  * Added support for OpenPGP (ruby interface to GnuPG, many post-method examples).
  * Added new 'condition' attribute to all components, layouts and actions.
