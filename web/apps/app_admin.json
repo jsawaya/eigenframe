@@ -57,6 +57,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json"
 		},
 		{
+			"icon_name": "info.",
 			"name": "About",
 			"type": "EigenFragment",
 			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"

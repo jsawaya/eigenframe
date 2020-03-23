@@ -87,13 +87,23 @@
 		},
 		{
 			"type": "Define",
-			"name": "LayoutVerticalScrollable",
+			"name": "LayoutVertical",
 			"component": {
 				"type": "LinearLayout",
-				"scrollable": true,
 				"orientation": "vertical",
 				"gravity": "center_horizontal",
 				"layout_width": "match_parent"
+			}
+		},
+		{
+			"type": "Define",
+			"name": "LayoutVerticalScrollable",
+			"component": {
+				"type": "Clone",
+				"name": "LayoutVertical",
+				"attributes": {
+					"scrollable": true
+				}
 			}
 		},
 		{
@@ -497,6 +507,45 @@
 						{
 							"type": "Clone",
 							"name": "HorizontalLine"
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "PopupScreenCameraImage",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"title_script_list": [
+						"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
+						"'Camera Image: '+jpg_filename"
+					],
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "LayoutVertical",
+							"attributes": {
+								"component_list": [
+									{
+										"type": "ImageView",
+										"rotation": 90,
+										"url_script_list": [
+											"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
+											"'file://'+jpg_filename"
+										],
+										"layout_width": "match_parent",
+										"layout_height": "match_parent",
+										"background_color": "#123456",
+										"on_click": {
+											"type": "JavaScript",
+											"script": "eigenActivity.showToast('image click eigenframe')"
+										}
+									}
+								]
+							}
 						}
 					]
 				}

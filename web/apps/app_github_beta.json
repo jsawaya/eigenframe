@@ -6,7 +6,7 @@
 			"icon_name": "ic_launcher_round.",
 			"name": "Beta",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/playlist.json"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/define-clones.json"
 		},
 		{
 			"icon_name": "playlist_check.",
@@ -62,6 +62,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-swi.json"
 		},
 		{
+			"icon_name": "info.",
 			"name": "About",
 			"type": "EigenFragment",
 			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"

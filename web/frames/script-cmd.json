@@ -83,6 +83,58 @@
 					}
 				}
 			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Take Photo",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"var jpg_filename = eigenActivity.captureCameraImage()",
+						"eigenFragment.setCacheString('CameraImage', jpg_filename)"
+					]
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "View Photo",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenCameraImage"
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Draw",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"var drawingFilePath = eigenFragment.getCacheString('DrawingFile')",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
+					]
+				}
+			}
 		}
 	]
 }
