@@ -102,23 +102,30 @@
     },
     {
       "type": "Clone",
-      "name": "TextViewDetail",
+      "name": "TextViewLabel",
       "attributes": {
-        "text": "Click [Eigenframe Admin] to install and configure services that support EigenFrame."
+        "text": "Enable Termux Services..."
       }
     },
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "It is with these kinds of remote services that EigenFrame applications are developed."
+        "text": "Click [Termux Admin] to install and configure Termux services to support EigenFrame."
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "These are the kinds of remote services that you can use to build EigenFrame applications."
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Eigenframe Admin",
+        "text": "Termux Admin",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -150,7 +157,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.addShortcut('Admin', eigenFragment.getCacheString('RootUrl')+'apps/app_admin.json')",
+            "eigenActivity.addShortcut('AdminBeta', 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/app/app_admin.json')",
             "eigenActivity.finish()"
           ]
         }
