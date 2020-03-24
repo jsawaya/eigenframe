@@ -99,11 +99,11 @@
 			"type": "Define",
 			"name": "LayoutVerticalScrollable",
 			"component": {
-				"type": "Clone",
-				"name": "LayoutVertical",
-				"attributes": {
-					"scrollable": true
-				}
+				"type": "LinearLayout",
+				"scrollable": true,
+				"orientation": "vertical",
+				"gravity": "center_horizontal",
+				"layout_width": "match_parent"
 			}
 		},
 		{

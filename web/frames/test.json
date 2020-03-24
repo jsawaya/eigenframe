@@ -1,0 +1,26 @@
+{
+	"type": "PopupScreen",
+	"layout_width": "match_parent",
+	"text_size": "14",
+	"text_color": "#ffffff",
+	"background_color": "#222222",
+	"title": "df (display filesystem)",
+	"component_list": [
+		{
+			"type": "Clone",
+			"name": "LayoutVerticalScrollable",
+			"attributes": {
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "TextViewDetail",
+						"attributes": {
+							"text_size": "10",
+							"ssh": "df"
+						}
+					}
+				]
+			}
+		}
+	]
+}
