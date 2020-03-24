@@ -16,7 +16,7 @@
       "html_list": [
         "<img src='ic_launcher.'>",
         "<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
-				"<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps</font></h4>",
+        "<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps</font></h4>",
         "{Specification, Deployment, Rendering, Execution}"
       ]
     },
@@ -24,7 +24,6 @@
       "type": "Clone",
       "name": "HorizontalLine"
     },
-
     {
       "type": "Clone",
       "name": "TextViewLabel",
@@ -32,19 +31,18 @@
         "text": "Launch an app from a local file..."
       }
     },
-
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-				"text": "The following demonstrates how to launch a local app.  Here's where to put your local eigenframe specifications - the shared directory:"
+        "text": "The following demonstrates how to launch a local app.  Here's where to put your local eigenframe specifications - the shared directory:"
       }
     },
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-				"text_size": "10",
+        "text_size": "10",
         "text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
       }
     },
@@ -59,7 +57,7 @@
         },
         "on_click": {
           "type": "JavaScript",
-					"script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json')"
+          "script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json')"
         }
       }
     },
@@ -74,13 +72,12 @@
         "text": "Launch an app from internet/cloud server (GITHUB)"
       }
     },
-
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"Click [Gallery] to see a cloud-based gallery of eigenframe layouts, components and actions;  use tabs to select, or drag left, then click source button to see examples"
+          "Click [Gallery] to see a cloud-based gallery of eigenframe layouts, components and actions;  use tabs to select, or drag left, then click source button to see examples"
         ]
       }
     },
@@ -105,23 +102,30 @@
     },
     {
       "type": "Clone",
-      "name": "TextViewDetail",
+      "name": "TextViewLabel",
       "attributes": {
-				"text": "Click [Eigenframe Admin] to install and configure services that support EigenFrame."
+        "text": "Enable Termux Services..."
       }
     },
-		{
-			"type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text": "It is with these kinds of remote services that EigenFrame applications are developed."
-			}
-		},
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Termux Admin] to install and configure Termux services to support EigenFrame."
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "These are the kinds of remote services that you can use to build EigenFrame applications."
+      }
+    },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Eigenframe Admin",
+        "text": "Termux Admin",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -183,7 +187,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "Beta Branch",
+        "text": "Beta Branch",
         "icon": {
           "name": "open_browser.",
           "location": "top"
