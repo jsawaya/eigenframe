@@ -135,6 +135,25 @@
 					]
 				}
 			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "New Drawing",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"var drawingFilePath = ''",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
+					]
+				}
+			}
 		}
 	]
 }
