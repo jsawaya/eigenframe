@@ -2,24 +2,22 @@
 ## schema pattern
 
 Attributes:
-{
-* "type": "Draw",
-* "version": 1,
-* "color": "#ffffff00",
-* "stroke_width": 4,
-* "event_list": [ events ]
-}
+ * "type": "Draw",
+ * "version": 1,
+ * "color": "#ffffff00",
+ * "stroke_width": 4,
+ * "event_list": [ events ]
+
 
 event schema:
-{
-	a:
+ *	a:
    ACTION_DOWN = 0;
    ACTION_MOVE = 2;
    ACTION_UP = 1;
 
-	x: relative x-value [0.0 - 1.0]
-	y: relative y-value [0.0 - 1.0]
-}
+ *	x: relative x-value [0.0 - 1.0]
+ *	y: relative y-value [0.0 - 1.0]
+
 
 Related:
 [Define](Define.md) 
