@@ -180,7 +180,7 @@
 				"on_complete": {
 					"type": "JavaScript",
 					"script_list": [
-						"var drawingFilePath = eigenFragment.getCacheString('UrlRequest:801')",
+						"var drawingFilePath = eigenFragment.getCacheFilePath('UrlRequest:801') ",
 						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
 						"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
 					]
