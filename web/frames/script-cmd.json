@@ -157,13 +157,13 @@
 		},
 		{
 			"type": "Button",
-			"text": "Open EigenFrame Drawing",
+			"text": "Show EigenFrame Drawing",
 			"layout_width": "wrap_content",
 			"layout_height": "wrap_content",
 			"text_color": "#ffffff",
 			"background_color": "#654321",
 			"icon": {
-				"name": "info.",
+				"name": "open_browser.",
 				"location": "top"
 			},
 			"margin": {
