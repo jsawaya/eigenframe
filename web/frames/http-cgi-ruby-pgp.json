@@ -76,8 +76,46 @@
 			}
 		},
 		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "List Public Keys Imported (via ssh)",
+				"icon": {
+					"name": "file_download.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "List Public Keys Imported",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"gpg -k"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
 			"type": "Button",
-			"text": "Show Imported Public Key Listings",
+			"text": "List Public Keys Imported",
 			"layout_width": "wrap_content",
 			"layout_height": "wrap_content",
 			"text_color": "#ffffff",
@@ -109,7 +147,7 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "List Public Keys",
+						"title": "List Public Keys Imported",
 						"component_list": [
 							{
 								"type": "Clone",
@@ -182,8 +220,46 @@
 			}
 		},
 		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "List Private Keys Imported (via ssh)",
+				"icon": {
+					"name": "file_download.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "List Private Keys Imported",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"gpg --list-secret-keys"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
 			"type": "Button",
-			"text": "Show Imported Private Key Listings",
+			"text": "List Private Keys Imported (via http/cgi)",
 			"layout_width": "wrap_content",
 			"layout_height": "wrap_content",
 			"text_color": "#ffffff",
@@ -215,7 +291,7 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "List Private Keys",
+						"title": "List Private Keys Imported",
 						"component_list": [
 							{
 								"type": "Clone",
