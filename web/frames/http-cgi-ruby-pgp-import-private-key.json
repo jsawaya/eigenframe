@@ -48,7 +48,7 @@
 			},
 			{
 				"type": "Button",
-				"text": "Import Private Key File",
+				"text": "Import Private Key File (via http post)",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
@@ -111,8 +111,45 @@
 						}
 					}
 				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "List Secret Keys (via ssh)",
+					"icon": {
+						"name": "file_download.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "List Secret Keys",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_list": [
+														"gpg --list-secret-keys"
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
 			}
-
 		]
 	}
 }
