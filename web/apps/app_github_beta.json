@@ -57,6 +57,7 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"
 		},
 		{
+			"icon_name": "swi_prolog.",
 			"name": "Prolog",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-swi.json"
