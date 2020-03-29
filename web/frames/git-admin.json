@@ -115,8 +115,8 @@
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
 														"git stash",
-														"git branch -d beta",
 														"git checkout -b beta refs/remotes/origin/beta",
+														"git pull",
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
 														"chmod 755 *.rb",
