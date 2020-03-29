@@ -5,7 +5,7 @@ require_relative 'ruby-lib/gpg-lib'
 require_relative 'ruby-lib/eigen-lib'
 
 #/cgi-bin/swi-routes.rb?route(nottinghill_gate,maida_vale,X)
-def swipl_test(swipl_path, swipl_goal, outfile)
+def swipl_test(swipl_path, swipl_goal)
 
   #swipl_path = "swipl-lib/routes.pl"
   puts "swipl_path: ", swipl_path, nil
@@ -15,9 +15,9 @@ def swipl_test(swipl_path, swipl_goal, outfile)
 
 	cmd = "/data/data/com.termux/files/usr/bin/swipl -s #{swipl_path} -g \"#{swipl_goal}\" -t halt"
 
-  if outfile.to_s.strip.size > 0
-    cmd = cmd << " > #{outfile}"
-  end
+#  if outfile.to_s.strip.size > 0
+#    cmd = cmd << " > #{outfile}"
+#  end
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
 #  stdin.puts password
