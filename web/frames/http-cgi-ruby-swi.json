@@ -13,7 +13,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Prolog Installation (swi-prolog)"
+				"text": "Prolog Applications"
 			}
 		},
 		{
@@ -21,24 +21,28 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"Click [Install swi-prolog package] - if you plan to add an inference engine to your app"
+					"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition can be inferred from a knowledge base (rules) using backward chaining algorithms. "
 				]
 			}
 		},
 		{
 			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Install swi-prolog package",
+				"text": "Prolog Example",
 				"icon": {
-					"name": "file_download.",
+					"name": "open_browser.",
 					"location": "top"
 				},
 				"on_click": {
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "Install swi-prolog package",
+						"title": "Prolog Example",
 						"component_list": [
 							{
 								"type": "Clone",
@@ -46,13 +50,21 @@
 								"attributes": {
 									"component_list": [
 										{
+											"type": "x-SecureShell",
+											"is_eigen_response": false,
+											"ssh_list": [
+												"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+												"ruby ssh-directory-listview.rb /data/data/com.termux/files/home"
+											]
+										},
+										{
 											"type": "Clone",
 											"name": "TextViewDetail",
 											"attributes": {
 												"text_size": "10",
 												"ssh_list": [
-													"echo pkg install swi-prolog",
-													"pkg install swi-prolog"
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_ruby.rb 'swipl_test(\",/cgi-bin/swi-routes.rb\", \"route(nottinghill_gate,maida_vale,X)\")' "
 												]
 											}
 										}
@@ -66,20 +78,6 @@
 		},
 		{
 			"type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text_list": [
-					"Prolog (Programming in Logic) is a programming language, based on predicate calculus, to evaluate if a certain proposition can be inferred from a KB (knowledge base) using an algorithm called backward chaining. ",
-					"EigenFrame SWI-Prolog requires:",
-					" - Apache2 Installed and running httpd (for CGI post method request into Termux)",
-					" - Ruby Installed (for eigenframe transforms)",
-					" - SWI-Prolog Installed",
-					"These methods use HTTP/CGI (post method) to invoke ruby which calls swi-prolog"
-				]
-			}
-		},
-		{
-			"type": "Clone",
 			"name": "HorizontalLine"
 		},
 		{
@@ -87,7 +85,7 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"TO DO: examples"
+					"TO DO: more examples"
 				]
 			}
 		}

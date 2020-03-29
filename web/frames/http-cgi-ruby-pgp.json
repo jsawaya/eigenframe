@@ -81,7 +81,7 @@
 			"attributes": {
 				"text": "List Public Keys Imported (via ssh)",
 				"icon": {
-					"name": "file_download.",
+					"name": "info.",
 					"location": "top"
 				},
 				"on_click": {
@@ -115,7 +115,7 @@
 		},
 		{
 			"type": "Button",
-			"text": "List Public Keys Imported",
+			"text": "List Public Keys Imported (via http/cgi/ruby)",
 			"layout_width": "wrap_content",
 			"layout_height": "wrap_content",
 			"text_color": "#ffffff",
@@ -195,7 +195,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Import Your Private Key",
+				"text": "Import Your Private Key (via http/cgi/ruby)",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -225,7 +225,7 @@
 			"attributes": {
 				"text": "List Private Keys Imported (via ssh)",
 				"icon": {
-					"name": "file_download.",
+					"name": "info.",
 					"location": "top"
 				},
 				"on_click": {
@@ -259,7 +259,7 @@
 		},
 		{
 			"type": "Button",
-			"text": "List Private Keys Imported (via http/cgi)",
+			"text": "List Private Keys Imported (via http/cgi/ruby)",
 			"layout_width": "wrap_content",
 			"layout_height": "wrap_content",
 			"text_color": "#ffffff",
