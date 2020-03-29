@@ -177,7 +177,7 @@
 														"git status",
 														"echo ",
 														"echo git checkout beta:",
-														"git checkout -B origin/beta",
+														"git checkout --track -B origin/beta",
 														"echo ",
 														"echo git pull:",
 														"git pull",
