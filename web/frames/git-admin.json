@@ -91,7 +91,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Pull from github beta branch",
+					"text": "Merge from github beta branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -130,7 +130,7 @@
 														"git pull",
 														"echo ",
 														"echo git merge beta",
-														"git merge beta",
+														"git merge remotes/origin/beta",
 														"echo ",
 														"echo git status",
 														"git status",
