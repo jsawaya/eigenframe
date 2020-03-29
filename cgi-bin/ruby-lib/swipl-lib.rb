@@ -32,8 +32,6 @@ def swipl_test(swipl_path, swipl_goal)
     type: "swipl_test",
     swipl_path: swipl_path,
     swipl_goal: swipl_goal,
-    kbfile: kbfile,
-    outfile: outfile,
     command: cmd,
     exit_code: exit_code,
     stdout: stdout_stringarray,
