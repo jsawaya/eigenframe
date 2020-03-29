@@ -91,7 +91,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Merge from github beta branch",
+					"text": "Clean checkout from github beta branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -100,7 +100,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Merge from github beta branch",
+							"title": "Clean checkout from github beta branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -114,34 +114,13 @@
 													"text_size": "10",
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
-														"echo current working directory",
-														"pwd",
-														"echo ",
-														"echo git status",
-														"git status",
-														"echo ",
-														"echo git branch -d beta",
+														"git stash",
 														"git branch -d beta",
-														"echo ",
-														"echo  checkout --track origin/beta",
-														"git checkout --track origin/beta",
-														"echo ",
-														"echo clean  -d  -fx .",
-														"git clean  -d  -fx .",
-														"echo ",
-														"echo git pull",
-														"git pull",
-														"echo ",
-														"echo git merge beta",
-														"git merge remotes/origin/beta",
-														"echo ",
-														"echo git status",
-														"git status",
-														"echo ",
-														"echo enable execution of cgi-bin directory files",
+														"git checkout -b beta refs/remotes/origin/beta",
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
-														"chmod 755 *.rb"
+														"chmod 755 *.rb",
+														"git status"
 													]
 												}
 											}
