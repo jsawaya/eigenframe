@@ -1,8 +1,5 @@
-require 'json'
 require 'open3'
-require_relative 'ruby-lib/app-lib'
-require_relative 'ruby-lib/gpg-lib'
-require_relative 'ruby-lib/eigen-lib'
+require 'json'
 
 #/cgi-bin/swi-routes.rb?route(nottinghill_gate,maida_vale,X)
 def swipl_test(swipl_path, swipl_goal)
