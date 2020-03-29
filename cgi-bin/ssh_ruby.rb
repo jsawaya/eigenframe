@@ -5,6 +5,7 @@ require 'open3'
 require_relative 'ruby-lib/app-lib'
 require_relative 'ruby-lib/gpg-lib'
 require_relative 'ruby-lib/eigen-lib'
+require_relative 'ruby-lib/swipl-lib'
 
 exit 10 if ARGV.length == 0
 ruby_string = ARGV[0]
