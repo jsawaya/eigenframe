@@ -113,7 +113,8 @@
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
 														"git status",
-														"git checkout --track origin/beta",
+														"git branch --set-upstream-to beta remotes/origin/beta",
+														"git checkout remotes/origin/beta",
 														"git pull",
 														"git status",
 														"cd ~/git-repos/eigenframe/cgi-bin",
