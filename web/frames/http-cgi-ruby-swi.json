@@ -121,8 +121,10 @@
 												"text_size": "10",
 												"ssh_script_list": [
 													"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-													"swipl_path = 'swipl-lib/routes.pl' ",
-													"swipl_goal = 'route(nottinghill_gate,maida_vale,X)' ",
+													"swipl_path0 = 'swipl-lib/routes.pl' ",
+													"swipl_goal0 = 'route(nottinghill_gate,maida_vale,X)' ",
+													"swipl_path = eigenFragment.getViewState(7601) ",
+													"swipl_goal = +eigenFragment.getViewState(7602) ",
 													"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
 												]
 											}
