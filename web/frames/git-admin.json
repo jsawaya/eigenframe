@@ -640,7 +640,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "git push origin test",
+					"text": "git push origin beta",
 					"icon": {
 						"name": "cloud_upload.",
 						"location": "top"
@@ -649,7 +649,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "git push origin test",
+							"title": "git push origin beta",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -661,7 +661,7 @@
 												"name": "TextViewDetail",
 												"attributes": {
 													"text_size": "10",
-													"ssh_script": "'cd ~/git-repos/eigenframe ; git push origin test' "
+													"ssh_script": "'cd ~/git-repos/eigenframe ; git push origin beta' "
 												}
 											}
 										]
