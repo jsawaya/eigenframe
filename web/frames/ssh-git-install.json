@@ -221,7 +221,7 @@
           " cd git-repos/eigenframe",
           " git config credential.helper store",
           " git push origin http://github.com/jsawaya/eigenframe.git",
-          " git push origin test"
+          " git push origin beta"
         ]
       }
     }
