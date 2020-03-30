@@ -8,4 +8,5 @@ parent(cynthia, melissa).
 sibling(X, Y) :-
     parent(Z, X),
     parent(Z, Y),
-    X \= Y.
+    X \= Y,
+    write(X),write(' is sibling of '),write(Y),write(' with parent '),write(Z),nl.
