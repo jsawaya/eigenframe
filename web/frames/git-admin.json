@@ -122,10 +122,11 @@
 														"git branch --set-upstream-to beta origin/beta",
 
 														"echo //git checkout origin/beta",
-														"git checkout origin/beta",
+														"git checkout -B beta",
 
 														"echo //git pull",
-														"git pull",
+														"git pull origin/beta beta",
+														"echo //git merge beta",
 
 														"echo //git status",
 														"git status",
@@ -174,8 +175,8 @@
 														"echo //git stash",
 														"git stash",
 														"echo //git checkout beta",
-														"echo //git pull",
-														"git pull",
+														"echo //git pull origin/beta beta",
+														"git pull origin/beta beta",
 
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
@@ -227,8 +228,8 @@
 														"git fetch origin",
 														"echo //git reset --hard origin/beta",
 														"git reset --hard origin/beta",
-														"echo //git pull",
-														"git pull",
+														"echo //git pull origin/beta beta",
+														"git pull origin/beta beta",
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
 														"chmod 755 *.rb",
