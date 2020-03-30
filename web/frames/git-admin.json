@@ -94,7 +94,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Clone eigenframe...",
+							"title": "Checkout -B beta branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -136,7 +136,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Pull from github beta branch",
+							"title": "Fetch/reset github beta branch - into existing local beta branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -187,7 +187,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Pull updates from github",
+							"title": "Pull from github",
 							"component_list": [
 								{
 									"type": "Clone",

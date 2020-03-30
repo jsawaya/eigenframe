@@ -374,7 +374,6 @@
 			"component": {
 				"type": "JavaScript",
 				"script_list": [
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
 					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '')",
 					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '')",
 					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '')",
@@ -382,6 +381,7 @@
 					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
 					"eigenFragment.setCacheString('FullPath', full_path)",
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
 					"eigenFragment.setViewState(targetVid, full_path)"
 				]
 			}
