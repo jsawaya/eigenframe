@@ -108,8 +108,8 @@
 													"text_size": "10",
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
-														"echo //git checkout -b beta",
-														"git checkout -b beta",
+														"echo //git checkout -B beta",
+														"git checkout -B beta",
 														"echo //git status",
 														"git status"
 													]
