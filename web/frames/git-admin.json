@@ -89,6 +89,85 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
+					"text": "Checkout beta branch",
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Clone eigenframe...",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_list": [
+														"cd ~/git-repos/eigenframe",
+														"echo //git checkout -b beta",
+														"git checkout -b beta",
+														"echo //git status",
+														"git status"
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Fetch/merge eigenframe beta",
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Fetch/merge eigenframe beta",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_list": [
+														"cd ~/git-repos/eigenframe",
+														"echo //git fetch",
+														"git fetch",
+														"echo //git merge beta",
+														"git merge beta",
+														"echo //git status",
+														"git status"
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
 					"text": "Checkout/pull from github beta branch",
 					"icon": {
 						"name": "cloud_download.",
@@ -122,7 +201,7 @@
 														"git branch --set-upstream-to beta origin/beta",
 
 														"echo //git checkout origin/beta",
-														"git checkout -B beta",
+														"git checkout -b beta",
 														"echo //git pull",
 														"git pull",
 
