@@ -163,7 +163,7 @@
 												"text_size": "10",
 												"ssh_script_list": [
 													"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-													"swipl_path = eigenFragment.getCacheString('SelectedPath') ",
+													"swipl_path = eigenFragment.getCacheString('FullPath') ",
 													"swipl_goal = eigenFragment.getViewState(7602) ",
 													"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
 												]
