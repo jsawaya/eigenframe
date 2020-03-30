@@ -89,7 +89,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Pull from github beta branch",
+					"text": "Checkout/pull from github beta branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -98,7 +98,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Pull from github beta branch",
+							"title": "Checkout/pull from github beta branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -112,16 +112,24 @@
 													"text_size": "10",
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
+
 														"echo //git status",
 														"git status",
+														"echo //git stash",
+														"git stash",
+
 														"echo //git branch --set-upstream-to beta origin/beta",
 														"git branch --set-upstream-to beta origin/beta",
+
 														"echo //git checkout origin/beta",
 														"git checkout origin/beta",
+
 														"echo //git pull",
 														"git pull",
+
 														"echo //git status",
 														"git status",
+
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
 														"chmod 755 *.rb"
@@ -149,7 +157,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Clean checkout from github beta branch",
+							"title": "Pull updates from github",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -163,9 +171,12 @@
 													"text_size": "10",
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
+														"echo //git stash",
 														"git stash",
-														"echo git checkout beta",
+														"echo //git checkout beta",
+														"echo //git pull",
 														"git pull",
+
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
 														"chmod 755 *.rb",
@@ -185,7 +196,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Pull from github beta branch - into existing local beta branch",
+					"text": "Fetch/reset github beta branch - into existing local beta branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -208,16 +219,20 @@
 													"text_size": "10",
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
+														"echo //git status",
 														"git status",
+														"echo //git stash",
+														"git stash",
+														"echo //git fetch origin",
 														"git fetch origin",
+														"echo //git reset --hard origin/beta",
 														"git reset --hard origin/beta",
-														"echo git pull",
+														"echo //git pull",
 														"git pull",
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
 														"chmod 755 *.rb",
-														"echo ",
-														"echo git status",
+														"echo //git status",
 														"git status"
 													]
 												}
