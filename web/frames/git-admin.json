@@ -89,7 +89,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Checkout beta branch",
+					"text": "Checkout -B beta branch",
 					"on_click": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
@@ -168,7 +168,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Checkout/pull from github beta branch",
+					"text": "Pull from github beta branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -197,6 +197,8 @@
 
 														"echo //git branch --set-upstream-to beta origin/beta",
 														"git branch --set-upstream-to beta origin/beta",
+														"echo //git stash",
+														"git stash",
 
 														"echo //git pull",
 														"git pull",
@@ -266,7 +268,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Pull updates from github",
+					"text": "Pull from github",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
