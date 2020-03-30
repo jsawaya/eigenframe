@@ -13,7 +13,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Prolog Installation (swi-prolog)"
+				"text": "Prolog Applications"
 			}
 		},
 		{
@@ -21,24 +21,28 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"Click [Install swi-prolog package] - if you plan to add an inference engine to your app"
+					"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition can be inferred from a knowledge base (rules) using backward chaining algorithms. "
 				]
 			}
 		},
 		{
 			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Install swi-prolog package",
+				"text": "Prolog Example",
 				"icon": {
-					"name": "file_download.",
+					"name": "open_browser.",
 					"location": "top"
 				},
 				"on_click": {
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "Install swi-prolog package",
+						"title": "Prolog Example",
 						"component_list": [
 							{
 								"type": "Clone",
@@ -51,8 +55,8 @@
 											"attributes": {
 												"text_size": "10",
 												"ssh_list": [
-													"echo pkg install swi-prolog",
-													"pkg install swi-prolog"
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_ruby.rb 'swipl_test(\"swipl-lib/routes.pl\", \"route(nottinghill_gate,maida_vale,X)\")' "
 												]
 											}
 										}
@@ -66,16 +70,104 @@
 		},
 		{
 			"type": "Clone",
-			"name": "TextViewDetail",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "JavaScript",
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Prolog File (KB)')"
+		},
+		{
+			"type": "Clone",
+			"name": "JavaScriptSelectFilePath"
+		},
+		{
+			"type": "Clone",
+			"name": "LayoutVerticalScrollable",
 			"attributes": {
-				"text_list": [
-					"Prolog (Programming in Logic) is a programming language, based on predicate calculus, to evaluate if a certain proposition can be inferred from a KB (knowledge base) using an algorithm called backward chaining. ",
-					"EigenFrame SWI-Prolog requires:",
-					" - Apache2 Installed and running httpd (for CGI post method request into Termux)",
-					" - Ruby Installed (for eigenframe transforms)",
-					" - SWI-Prolog Installed",
-					"These methods use HTTP/CGI (post method) to invoke ruby which calls swi-prolog"
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "ButtonDefault",
+						"attributes": {
+							"text": "Show Prolog File",
+							"icon": {
+								"name": "open_browser.",
+								"location": "top"
+							},
+							"on_click": {
+								"type": "Clone",
+								"name": "PopupScreenShowRemoteFile"
+							}
+						}
+					},
+					{
+						"type": "Clone",
+						"name": "ButtonDefault",
+						"attributes": {
+							"text": "Edit Prolog File",
+							"icon": {
+								"name": "open_browser.",
+								"location": "top"
+							},
+							"on_click": {
+								"type": "Clone",
+								"name": "PopupScreenEditRemoteFile"
+							}
+						}
+					}
 				]
+			}
+		},
+
+		{
+			"type": "EditText",
+			"id": 7602,
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text": "route(nottinghill_gate,maida_vale,X)",
+			"text_color": "#ffffff",
+			"background_color": "#11ff0000"
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Prolog Example2",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Prolog Example2",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_script_list": [
+													"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
+													"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+													"swipl_path = eigenFragment.getViewState(targetVid)",
+													"swipl_goal = eigenFragment.getViewState(7602) ",
+													"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
 			}
 		},
 		{
@@ -87,7 +179,7 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"TO DO: examples"
+					"TO DO: more examples"
 				]
 			}
 		}

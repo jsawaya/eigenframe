@@ -8,13 +8,8 @@ require_relative 'ruby-lib/eigen-lib'
 require_relative 'ruby-lib/swipl-lib'
 
 exit 10 if ARGV.length == 0
-ruby_string = ARGV[0]
+swipl_path = ARGV[0]
+swipl_goal = ARGV[1]
 
+ruby_string = "swipl_test(\"#{swipl_path}\", \"#{swipl_goal}\")"
 puts eval(ruby_string)
-
-#  {
-#    "type": "SecureShell",
-#    "is_eigen_response": true,
-#    "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb 'p 1+2' "
-#    ]
-#  }

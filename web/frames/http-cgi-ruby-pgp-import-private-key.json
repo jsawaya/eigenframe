@@ -48,7 +48,7 @@
 			},
 			{
 				"type": "Button",
-				"text": "Import Private Key File",
+				"text": "Import Private Key File (via http post)",
 				"layout_width": "wrap_content",
 				"layout_height": "wrap_content",
 				"text_color": "#ffffff",
@@ -112,7 +112,6 @@
 					}
 				}
 			}
-
 		]
 	}
 }
