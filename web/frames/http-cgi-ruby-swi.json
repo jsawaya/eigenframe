@@ -50,14 +50,6 @@
 								"attributes": {
 									"component_list": [
 										{
-											"type": "x-SecureShell",
-											"is_eigen_response": false,
-											"ssh_list": [
-												"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-												"ruby ssh-directory-listview.rb /data/data/com.termux/files/home"
-											]
-										},
-										{
 											"type": "Clone",
 											"name": "TextViewDetail",
 											"attributes": {
@@ -82,7 +74,7 @@
 		},
 		{
 			"type": "JavaScript",
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select swipl file')"
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Prolog File (KB)')"
 		},
 		{
 			"type": "Clone",
@@ -97,7 +89,7 @@
 						"type": "Clone",
 						"name": "ButtonDefault",
 						"attributes": {
-							"text": "Show Remote Text File",
+							"text": "Show Prolog File",
 							"icon": {
 								"name": "open_browser.",
 								"location": "top"
@@ -112,7 +104,7 @@
 						"type": "Clone",
 						"name": "ButtonDefault",
 						"attributes": {
-							"text": "Edit Remote File",
+							"text": "Edit Prolog File",
 							"icon": {
 								"name": "open_browser.",
 								"location": "top"
