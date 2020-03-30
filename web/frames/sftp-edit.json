@@ -10,6 +10,14 @@
 			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File to Edit')"
 		},
 		{
+			"type": "JavaScript",
+			"script_list": [
+				"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
+				"eigenFragment.setCacheString('SelectedPath', '')",
+				"eigenFragment.setCacheString('SelectedFile', '')"
+			]
+		},
+		{
 			"type": "Clone",
 			"name": "JavaScriptSelectFilePath"
 		},

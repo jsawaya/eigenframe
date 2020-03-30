@@ -441,12 +441,7 @@
 									"component_list": [
 										{
 											"type": "JavaScript",
-											"script_list": [
-												"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
-												"eigenFragment.setCacheString('WorkingDirectory', '')",
-												"eigenFragment.setCacheString('SelectedPath', '')",
-												"eigenFragment.setCacheString('SelectedFile', '')"
-											]
+											"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)"
 										},
 										{
 											"type": "Clone",
@@ -455,7 +450,7 @@
 										{
 											"type": "JavaScript",
 											"script_list": [
-												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,false)",
+												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,true)",
 												"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
 											]
 										},

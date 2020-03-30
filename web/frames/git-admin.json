@@ -404,6 +404,15 @@
 				"name": "HorizontalLine"
 			},
 			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedPath', '')",
+					"eigenFragment.setCacheString('SelectedFile', '')"
+				]
+			},
+
+			{
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
@@ -422,10 +431,7 @@
 			{
 				"type": "JavaScript",
 				"script_list": [
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
-					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedPath', '')",
-					"eigenFragment.setCacheString('SelectedFile', '')"
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)"
 				]
 			},
 			{
