@@ -77,6 +77,57 @@
 			}
 		},
 		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "JavaScript",
+			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select swipl file')"
+		},
+		{
+			"type": "Clone",
+			"name": "JavaScriptSelectFilePath"
+		},
+		{
+			"type": "Clone",
+			"name": "LayoutVerticalScrollable",
+			"attributes": {
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "ButtonDefault",
+						"attributes": {
+							"text": "Show Remote Text File",
+							"icon": {
+								"name": "open_browser.",
+								"location": "top"
+							},
+							"on_click": {
+								"type": "Clone",
+								"name": "PopupScreenShowRemoteFile"
+							}
+						}
+					},
+					{
+						"type": "Clone",
+						"name": "ButtonDefault",
+						"attributes": {
+							"text": "Edit Remote File",
+							"icon": {
+								"name": "open_browser.",
+								"location": "top"
+							},
+							"on_click": {
+								"type": "Clone",
+								"name": "PopupScreenEditRemoteFile"
+							}
+						}
+					}
+				]
+			}
+		},
+
+		{
 			"type": "EditText",
 			"id": 7601,
 			"layout_width": "match_parent",
@@ -124,7 +175,7 @@
 													"swipl_path0 = 'swipl-lib/routes.pl' ",
 													"swipl_goal0 = 'route(nottinghill_gate,maida_vale,X)' ",
 													"swipl_path = eigenFragment.getViewState(7601) ",
-													"swipl_goal = +eigenFragment.getViewState(7602) ",
+													"swipl_goal = eigenFragment.getViewState(7602) ",
 													"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
 												]
 											}
