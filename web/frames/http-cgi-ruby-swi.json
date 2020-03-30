@@ -81,7 +81,7 @@
 			"id": 7601,
 			"layout_width": "match_parent",
 			"layout_height": "wrap_content",
-			"text": "ls -la",
+			"text": "swipl-lib/routes.pl",
 			"text_color": "#ffffff",
 			"background_color": "#11ff0000"
 		},
@@ -90,7 +90,7 @@
 			"id": 7602,
 			"layout_width": "match_parent",
 			"layout_height": "wrap_content",
-			"text": "ls -la",
+			"text": "route(nottinghill_gate,maida_vale,X)",
 			"text_color": "#ffffff",
 			"background_color": "#11ff0000"
 		},
@@ -120,7 +120,10 @@
 											"attributes": {
 												"text_size": "10",
 												"ssh_script_list": [
-													"'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; pwd '"
+													"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+													"swipl_path = 'swipl-lib/routes.pl' ",
+													"swipl_goal = 'route(nottinghill_gate,maida_vale,X)' ",
+													"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
 												]
 											}
 										}
