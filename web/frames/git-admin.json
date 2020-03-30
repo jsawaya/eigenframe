@@ -94,7 +94,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Clone eigenframe...",
+							"title": "Checkout -B beta branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -127,48 +127,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Fetch/merge eigenframe beta",
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Fetch/merge eigenframe beta",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_list": [
-														"cd ~/git-repos/eigenframe",
-														"echo //git fetch",
-														"git fetch",
-														"echo //git merge beta",
-														"git merge beta",
-														"echo //git status",
-														"git status"
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Pull from github beta branch",
+					"text": "Fetch/reset github beta branch - into existing local beta branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -177,7 +136,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Pull from github beta branch",
+							"title": "Fetch/reset github beta branch - into existing local beta branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -191,66 +150,17 @@
 													"text_size": "10",
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
-
 														"echo //git status",
 														"git status",
-
-														"echo //git branch --set-upstream-to beta origin/beta",
-														"git branch --set-upstream-to beta origin/beta",
 														"echo //git stash",
 														"git stash",
-
-														"echo //git pull",
-														"git pull",
-
-														"echo //git status",
-														"git status",
-
+														"echo //git fetch origin",
+														"git fetch origin",
+														"echo //git reset --hard origin/beta",
+														"git reset --hard origin/beta",
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
-														"chmod 755 *.rb"
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Stash local changes",
-					"icon": {
-						"name": "cloud_download.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Stash local changes",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_list": [
-														"cd ~/git-repos/eigenframe",
-														"echo //git status",
-														"git status",
-														"echo //git stash",
-														"git stash",
+														"chmod 755 *.rb",
 														"echo //git status",
 														"git status"
 													]
@@ -277,7 +187,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Pull updates from github",
+							"title": "Pull from github",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -293,64 +203,11 @@
 														"cd ~/git-repos/eigenframe",
 														"echo //git stash",
 														"git stash",
-														"echo //git checkout beta",
 														"echo //git pull",
 														"git pull",
-
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
 														"chmod 755 *.rb",
-														"git status"
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Fetch/reset github beta branch - into existing local beta branch",
-					"icon": {
-						"name": "cloud_download.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Pull from github beta branch",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_list": [
-														"cd ~/git-repos/eigenframe",
-														"echo //git status",
-														"git status",
-														"echo //git stash",
-														"git stash",
-														"echo //git fetch origin",
-														"git fetch origin",
-														"echo //git reset --hard origin/beta",
-														"git reset --hard origin/beta",
-														"cd ~/git-repos/eigenframe/cgi-bin",
-														"chmod 755 *.sh",
-														"chmod 755 *.rb",
-														"echo //git status",
 														"git status"
 													]
 												}
@@ -404,6 +261,15 @@
 				"name": "HorizontalLine"
 			},
 			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedPath', '')",
+					"eigenFragment.setCacheString('SelectedFile', '')"
+				]
+			},
+
+			{
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
@@ -422,10 +288,7 @@
 			{
 				"type": "JavaScript",
 				"script_list": [
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
-					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedPath', '')",
-					"eigenFragment.setCacheString('SelectedFile', '')"
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)"
 				]
 			},
 			{
@@ -640,7 +503,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "git push origin test",
+					"text": "git push origin beta",
 					"icon": {
 						"name": "cloud_upload.",
 						"location": "top"
@@ -649,7 +512,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "git push origin test",
+							"title": "git push origin beta",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -661,7 +524,7 @@
 												"name": "TextViewDetail",
 												"attributes": {
 													"text_size": "10",
-													"ssh_script": "'cd ~/git-repos/eigenframe ; git push origin test' "
+													"ssh_script": "'cd ~/git-repos/eigenframe ; git push origin beta' "
 												}
 											}
 										]

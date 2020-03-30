@@ -39,6 +39,14 @@
 				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Private Key File')"
 			},
 			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
+					"eigenFragment.setCacheString('SelectedFile', '')"
+				]
+			},
+			{
 				"type": "Clone",
 				"name": "JavaScriptSelectFilePath"
 			},

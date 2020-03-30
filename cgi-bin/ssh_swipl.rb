@@ -11,5 +11,6 @@ exit 10 if ARGV.length == 0
 swipl_path = ARGV[0]
 swipl_goal = ARGV[1]
 
-ruby_string = "swipl_test(\"#{swipl_path}\", \"#{swipl_goal}\")"
+ruby_string = "swipl_exec(\"#{swipl_path}\", \"#{swipl_goal}\")"
+puts "Execute Ruby: #{ruby_string}"
 puts eval(ruby_string)

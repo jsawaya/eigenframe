@@ -42,7 +42,7 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "Prolog Example",
+						"title": "Example: routes.pl, route(nottinghill_gate,maida_vale,X)",
 						"component_list": [
 							{
 								"type": "Clone",
@@ -56,7 +56,7 @@
 												"text_size": "10",
 												"ssh_list": [
 													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_ruby.rb 'swipl_test(\"swipl-lib/routes.pl\", \"route(nottinghill_gate,maida_vale,X)\")' "
+													"ruby ssh_ruby.rb 'swipl_exec(\"swipl-lib/routes.pl\", \"route(nottinghill_gate,maida_vale,X)\")' "
 												]
 											}
 										}
@@ -75,6 +75,14 @@
 		{
 			"type": "JavaScript",
 			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Prolog File (KB)')"
+		},
+		{
+			"type": "JavaScript",
+			"script_list": [
+				"eigenFragment.setCacheString('WorkingDirectory', '')",
+				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/swipl-lib')",
+				"eigenFragment.setCacheString('SelectedFile', '')"
+			]
 		},
 		{
 			"type": "Clone",
@@ -118,21 +126,27 @@
 				]
 			}
 		},
-
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Prolog Goal:"
+			}
+		},
 		{
 			"type": "EditText",
 			"id": 7602,
 			"layout_width": "match_parent",
 			"layout_height": "wrap_content",
-			"text": "route(nottinghill_gate,maida_vale,X)",
+			"text": "houses(X), write(X)",
 			"text_color": "#ffffff",
-			"background_color": "#11ff0000"
+			"background_color": "#000000"
 		},
 		{
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Prolog Example2",
+				"text": "Execute Prolog Command",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -141,7 +155,7 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "Prolog Example2",
+						"title": "Execute Prolog Command",
 						"component_list": [
 							{
 								"type": "Clone",

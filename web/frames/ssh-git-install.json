@@ -178,12 +178,12 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Checkout beta branch",
+        "text": "Checkout (create) local beta branch",
         "on_click": {
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Clone eigenframe...",
+            "title": "Checkout (create) local beta branch",
             "component_list": [
               {
                 "type": "Clone",
@@ -221,7 +221,7 @@
           " cd git-repos/eigenframe",
           " git config credential.helper store",
           " git push origin http://github.com/jsawaya/eigenframe.git",
-          " git push origin test"
+          " git push origin beta"
         ]
       }
     }
