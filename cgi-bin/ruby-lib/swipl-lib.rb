@@ -28,6 +28,8 @@ def swipl_test(swipl_path, swipl_goal)
   stdout.close
   stderr.close
 
+  puts "stdout_stringarray: ", stdout_stringarray, nil
+
   {
     type: "swipl_test",
     swipl_path: swipl_path,
