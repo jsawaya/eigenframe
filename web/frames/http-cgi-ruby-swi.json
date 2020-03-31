@@ -234,7 +234,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Example: ein-riddle.pl // zebra_owner(Owner) -- find all instances",
+				"text": "Example: ein-riddle.pl // zebra_owner(Owner) -- find an instance",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -257,7 +257,7 @@
 												"text_size": "10",
 												"ssh_list": [
 													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/ein-riddle.pl' 'zebra_owner(Owner), write(Owner), false' "
+													"ruby ssh_swipl.rb 'swipl-lib/ein-riddle.pl' 'zebra_owner(Owner), write(Owner)' "
 												]
 											}
 										}
@@ -273,7 +273,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Example: ein-riddle.pl // water_drinker(Drinker) -- find all instances",
+				"text": "Example: ein-riddle.pl // water_drinker(Drinker) -- find an instance",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -296,7 +296,7 @@
 												"text_size": "10",
 												"ssh_list": [
 													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/ein-riddle.pl' 'water_drinker(Drinker), write(Drinker), false' "
+													"ruby ssh_swipl.rb 'swipl-lib/ein-riddle.pl' 'water_drinker(Drinker), write(Drinker)' "
 												]
 											}
 										}
