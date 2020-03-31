@@ -18,7 +18,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Refresh GIT Working Directory (Beta Branch) from GITHUB Master: "
+					"text": "Refresh Beta Branch from GITHUB"
 				}
 			},
 			{
@@ -74,7 +74,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Fetch/Reset GitHub EigenFrame Beta Branch",
+					"text": "Fetch/Reset GITHUB EigenFrame Beta Branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -83,7 +83,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Fetch/reset github beta branch - into existing local beta branch",
+							"title": "Fetch/reset GITHUB beta branch - into existing local beta branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -125,7 +125,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Pull from GitHub",
+					"text": "Pull from GITHUB",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -134,7 +134,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Pull from GitHub",
+							"title": "Pull from GITHUB",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -321,7 +321,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Commit Changes in GIT Working Directory to GITHUB (Test Branch): "
+					"text": "Commit Changes to GITHUB (Beta Branch)"
 				}
 			},
 			{
@@ -440,14 +440,14 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Sign into GITHUB, select Test branch, create pull request, and merge: "
+					"text": "Refresh GIT Working Directory (Beta Branch) from GITHUB Master: "
 				}
 			},
 			{
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Pull from github master\n(merge to working test branch)",
+					"text": "Pull from github master\n(merge to working beta branch)",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
