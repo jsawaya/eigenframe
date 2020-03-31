@@ -482,7 +482,7 @@
 														"git merge master",
 														"echo //git status",
 														"git status",
-														"echo //enable execution of cgi-bin directory files (.sh, .rb)",
+														"echo //enable execution of cgi-bin files",
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
 														"chmod 755 *.rb"
