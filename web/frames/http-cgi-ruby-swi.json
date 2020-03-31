@@ -31,9 +31,18 @@
 		},
 		{
 			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Route planning example"
+				]
+			}
+		},
+		{
+			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Example: routes.pl // route(nottinghill_gate,maida_vale,X) -- find an instance",
+				"text": "Example: routes.pl // route(nottinghill_gate,maida_vale,X) -- find one instance",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -109,6 +118,58 @@
 		},
 		{
 			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Relational example"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Prolog Source: swipl.pl",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Prolog Source: swipl.pl",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/swipl.pl"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
 				"text": "Example: swipl.pl // sibling(X,Y) -- find an instance",
@@ -138,7 +199,7 @@
 												],
 												"x-ssh_script_list": [
 													"swipl_path = 'swipl-lib/swipl.pl' ",
-													"swipl_goal = 'sibling(X,Y), false' ",
+													"swipl_goal = 'sibling(X,Y)' ",
 													"cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;' ",
 													"cmd+'ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
 												]
@@ -195,6 +256,192 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
+				"text": "Example: swipl.pl // ancestor(A,B) -- find all instances",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Prolog",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/swipl.pl' 'ancestor(A,B),put_ancestor(A,B),false' "
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Einstein Zebra Puzzle:",
+					"source http://en.wikipedia.org/wiki/Zebra_Puzzle",
+					" 1) Five colored houses in a row, each with an owner, a pet, cigarettes, and a drink.",
+					" 2) The English lives in the red house.",
+					" 3) The Spanish has a dog.",
+					" 4) They drink coffee in the green house.",
+					" 5) The Ukrainian drinks tea.",
+					" 6) The green house is next to the white house.",
+					" 7) The Winston smoker has a serpent.",
+					" 8) In the yellow house they smoke Kool.",
+					" 9) In the middle house they drink milk.",
+					"10) The Norwegian lives in the first house from the left.",
+					"11) The Chesterfield smoker lives near the man with the fox.",
+					"12) In the house near the house with the horse they smoke Kool.",
+					"13) The Lucky Strike smoker drinks juice.",
+					"14) The Japanese smokes Kent.",
+					"15) The Norwegian lives near the blue house.",
+					"Who owns the zebra and who drinks water?"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Prolog Source: ein-riddle.pl",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Prolog Source: ein-riddle.pl",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/ein-riddle.pl"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Example: ein-riddle.pl // zebra_owner(Owner) -- find instance",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Prolog",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/ein-riddle.pl' 'zebra_owner(Owner), write(Owner)' "
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Example: ein-riddle.pl // water_drinker(Drinker) -- find instance",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Prolog",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/ein-riddle.pl' 'water_drinker(Drinker), write(Drinker)' "
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
 				"text": "Example: ein-riddle.pl // houses(Houses), write(Houses), false -- find all instances",
 				"icon": {
 					"name": "open_browser.",
@@ -219,6 +466,58 @@
 												"ssh_list": [
 													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
 													"ruby ssh_swipl.rb 'swipl-lib/ein-riddle.pl' 'houses(Houses), write(Houses), false' "
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"List manipulation example"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Prolog Source: list.pl",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Prolog Source: list.pl",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/list.pl"
 												]
 											}
 										}
@@ -271,9 +570,34 @@
 		},
 		{
 			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Sudoku Example by Markus Triska,",
+					"from the SWI-Prolog manual.",
+					"[_,_,_, _,_,_, _,_,_]",
+					"[_,_,_, _,_,3, _,8,5]",
+					"[_,_,1, _,2,_, _,_,_]",
+					"",
+					"[_,_,_, 5,_,7, _,_,_]",
+					"[_,_,4, _,_,_, 1,_,_]",
+					"[_,9,_, _,_,_, _,_,_]",
+					"",
+					"[5,_,_, _,_,_, _,7,3]",
+					"[_,_,2, _,1,_, _,_,_]",
+					"[_,_,_, _,4,_, _,_,9]"
+				]
+			}
+		},
+		{
+			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Example: list.pl // numlist(1, 1000, L), time(nrev(L, _)) -- find an instance",
+				"text": "Prolog Source: sudoku.pl",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -282,7 +606,7 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "Prolog",
+						"title": "Prolog Source: sudoku.pl",
 						"component_list": [
 							{
 								"type": "Clone",
@@ -296,7 +620,7 @@
 												"text_size": "10",
 												"ssh_list": [
 													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/list.pl' 'numlist(1, 1000, L), time(nrev(L, _))' "
+													"cat swipl-lib/sudoku.pl"
 												]
 											}
 										}
@@ -350,6 +674,18 @@
 		{
 			"type": "Clone",
 			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Execute any prolog file // goal:",
+					" 1) Select a prolog file, knowledge-base (kb)",
+					" 2) Define your prolog proposition (goal)",
+					" 3) Execute the inference engine"
+				]
+			}
 		},
 		{
 			"type": "JavaScript",
@@ -422,7 +758,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Infer Prolog Proposition (kb // goal)",
+				"text": "Execute Inference Engine\nTry to infer the prolog proposition (goal) with a declarative prolog file (kb)",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
