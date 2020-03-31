@@ -15,6 +15,12 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
 		},
 		{
+			"icon_name": "github_logo.",
+			"name": "GitHub",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/git-admin.json"
+		},
+		{
 			"icon_name": "play.",
 			"name": "JavaScript",
 			"type": "EigenFragment",
@@ -33,12 +39,6 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
 		},
 		{
-			"icon_name": "github_logo.",
-			"name": "GitHub",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/git-admin.json"
-		},
-		{
 			"icon_name": "ruby_logo.",
 			"name": "Ruby",
 			"type": "EigenFragment",
@@ -55,6 +55,12 @@
 			"name": "PGP",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json"
+		},
+		{
+			"icon_name": "swi_prolog.",
+			"name": "Prolog",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-swi.json"
 		},
 		{
 			"icon_name": "info.",
