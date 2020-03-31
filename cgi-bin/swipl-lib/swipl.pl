@@ -15,8 +15,10 @@ sibling(X, Y) :-
     X \= Y,
     write('{\"'),write(X),write(' is sibling of '),write(Y),write(' with parent '),write(Z),write('\"}'),nl.
 
-ancestor(X, Y) :-
-    parent(X, Z),
-    parent(Z, Y),
-    X \= Y,
-    write('{\"'),write(X),write(' is sibling of '),write(Y),write(' with parent '),write(Z),write('\"}'),nl.
+ancestor(A, B) :-
+ 		parent(A, B),
+    write('{\"'),write(A),write(' is parent of '),write(B),write('\"}'),nl.
+
+ancestor(A, B) :-
+		parent(A, X), ancestor(X, B),
+    write('{\"'),write(A),write(' is an ancestor of '),write(B),write('\"}'),nl.
