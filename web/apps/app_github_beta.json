@@ -15,6 +15,12 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-initial-setup.json"
 		},
 		{
+			"icon_name": "github_logo.",
+			"name": "GitHub",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/git-admin.json"
+		},
+		{
 			"icon_name": "play.",
 			"name": "JavaScript",
 			"type": "EigenFragment",
@@ -31,12 +37,6 @@
 			"name": "SFTP",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-gallery.json"
-		},
-		{
-			"icon_name": "github_logo.",
-			"name": "GitHub",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/git-admin.json"
 		},
 		{
 			"icon_name": "ruby_logo.",
