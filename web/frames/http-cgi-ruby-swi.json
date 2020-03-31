@@ -353,11 +353,8 @@
 		},
 		{
 			"type": "JavaScript",
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Prolog File (kb)')"
-		},
-		{
-			"type": "JavaScript",
 			"script_list": [
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Prolog File (kb)')",
 				"eigenFragment.setCacheString('WorkingDirectory', '')",
 				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/swipl-lib')",
 				"eigenFragment.setCacheString('SelectedFile', '')"

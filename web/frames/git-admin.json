@@ -11,10 +11,6 @@
 		"layout_width": "match_parent",
 		"component_list": [
 			{
-				"type": "JavaScript",
-				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File from Git Working Storage...')"
-			},
-			{
 				"type": "Clone",
 				"name": "HorizontalLine"
 			},
@@ -23,66 +19,6 @@
 				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Refresh GIT Working Directory (test branch) from GITHUB Master: "
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Pull from github master\n(merge to working test branch)",
-					"icon": {
-						"name": "cloud_download.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Pull from github master\n(merge to working test branch)",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_list": [
-														"cd ~/git-repos/eigenframe",
-														"echo ",
-														"echo git status",
-														"git status",
-														"echo ",
-														"echo git checkout master",
-														"git checkout master",
-														"echo ",
-														"echo git pull",
-														"git pull",
-														"echo ",
-														"echo git checkout test",
-														"git checkout test",
-														"echo ",
-														"echo git merge master",
-														"git merge master",
-														"echo ",
-														"echo git status",
-														"git status",
-														"echo enable execution of cgi-bin directory files",
-														"cd ~/git-repos/eigenframe/cgi-bin",
-														"chmod 755 *.sh",
-														"chmod 755 *.rb"
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
 				}
 			},
 			{
@@ -263,65 +199,15 @@
 			{
 				"type": "JavaScript",
 				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select EigenFrame File')",
 					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedPath', '')",
 					"eigenFragment.setCacheString('SelectedFile', '')"
 				]
 			},
-
 			{
 				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Select File (in eigenframe git working storage)"
-				}
-			},
-			{
-				"type": "EditText",
-				"id": 6699,
-				"max_length": 200,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"text_color": "#ffffff",
-				"background_color": "#000000"
-			},
-			{
-				"type": "JavaScript",
-				"script_list": [
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)"
-				]
-			},
-			{
-				"type": "Clone",
-				"name": "JavaScriptSetFullPath"
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Select File (in eigenframe git working storage)",
-					"icon": {
-						"name": "open_with.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "ActionList",
-						"comment": "set the dialog type, then start popup",
-						"component_list": [
-							{
-								"type": "JavaScript",
-								"script_list": [
-									"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,true)",
-									"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
-								]
-							},
-							{
-								"type": "Clone",
-								"name": "PopupScreenSelectFilePath"
-							}
-						]
-					}
-				}
+				"name": "JavaScriptSelectFilePath"
 			},
 			{
 				"type": "Clone",
@@ -544,6 +430,60 @@
 				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Sign into GITHUB, select Test branch, create pull request, and merge: "
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Pull from github master\n(merge to working test branch)",
+					"icon": {
+						"name": "cloud_download.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Pull from github master\n(merge to working beta branch)",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_list": [
+														"cd ~/git-repos/eigenframe",
+														"echo //git status",
+														"git status",
+														"echo //git checkout master",
+														"git checkout master",
+														"echo //git pull",
+														"git pull",
+														"echo //git checkout beta",
+														"git checkout beta",
+														"echo //git merge master",
+														"git merge master",
+														"echo //git status",
+														"git status",
+														"echo //enable execution of cgi-bin directory files (.sh, .rb)",
+														"cd ~/git-repos/eigenframe/cgi-bin",
+														"chmod 755 *.sh",
+														"chmod 755 *.rb"
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
 				}
 			},
 			{
