@@ -140,10 +140,9 @@
 												"text_size": "10",
 												"ssh_list": [
 													"TEST1=\"Dogs and cats\"",
-													"living together",
-													"The world",
-													"Upside down",
-													"\"",
+													"TEST1+=\"living together\"",
+													"TEST1+=\"The world\"",
+													"TEST1+=\"Upside down\"",
 													"echo \"$TEST1\" "
 												]
 											}
