@@ -117,6 +117,51 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
+				"text": "Test",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Test",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"TEST1=\"Dogs and cats\"",
+													"living together",
+													"The world",
+													"Upside down",
+													"\"",
+													"echo \"$TEST1\" "
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+
+
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
 				"text": "List Public Keys Imported (via ssh/ruby)",
 				"icon": {
 					"name": "open_browser.",
@@ -241,40 +286,19 @@
 			}
 		},
 		{
-			"type": "Button",
-			"text": "List Private Keys Imported (via http/cgi/ruby)",
-			"layout_width": "wrap_content",
-			"layout_height": "wrap_content",
-			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"icon": {
-				"name": "info.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "UrlRequest",
-				"id": 6603,
-				"is_eigen_response": false,
-				"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-				"parameter_list": [
-					{
-						"name": "ruby",
-						"value_list": [
-							"gpg_list_private_keys().to_json.to_s"
-						]
-					}
-				],
-				"on_complete": {
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "List Private Keys Imported (via ssh/ruby)",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "List Private Keys Imported",
+						"title": "OpenPGP",
 						"component_list": [
 							{
 								"type": "Clone",
@@ -285,7 +309,11 @@
 											"type": "Clone",
 											"name": "TextViewDetail",
 											"attributes": {
-												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6603"
+												"text_size": "10",
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_ruby.rb 'gpg_list_private_keys().to_json.to_s' "
+												]
 											}
 										}
 									]
