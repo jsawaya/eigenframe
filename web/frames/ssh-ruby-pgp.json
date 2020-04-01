@@ -117,7 +117,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Test",
+				"text": "Test2",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
