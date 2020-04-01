@@ -117,7 +117,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Test3",
+				"text": "Test4",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -143,7 +143,7 @@
 													"TEST1+='living together\n'",
 													"TEST1+='The world\n'",
 													"TEST1+='Upside down\n'",
-													"echo '$TEST1' "
+													"echo \"$TEST1\"s "
 												]
 											}
 										}
