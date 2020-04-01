@@ -1,0 +1,460 @@
+{
+	"type": "LinearLayout",
+	"scrollable": true,
+	"orientation": "vertical",
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"component_list": [
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "OpenPGP Cryptography (GnuPG)"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"EigenFrame OpenPGP Cryptography requires:",
+					" - Apache2 Installed and running httpd (for CGI post method request into Termux)",
+					" - Ruby Installed (for eigenframe transforms)",
+					" - GnuPG Installed (for OpenPGP Encryption, Decryption, Signing and Verification)",
+					"These methods use HTTP/CGI (post method) to invoke Ruby which calls GnuPG"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Public Keys"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Import someone's public key file",
+					" - which enables you to encrypt files for that person",
+					" - and you can verify files with detached signatures from that person"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Import a Public Key",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Import a Public Key",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-import-public-key.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Show the current list of public keys that have been imported"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "List Public Keys Imported (via ssh)",
+				"icon": {
+					"name": "info.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "List Public Keys Imported",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"gpg -k"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "List Public Keys Imported (via ssh/ruby)",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "OpenPGP",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_ruby.rb 'gpg_list_public_keys().to_json.to_s' "
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Private Keys"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Import your own key files",
+					" - which enables you to encrypt/decrypt your files",
+					" - and you can sign a file (create a detached signature) to ensure it has not been modified"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Import Your Private Key (via http/cgi/ruby)",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Import Your Private Key",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-import-private-key.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Show the current list of your private keys that have been imported"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "List Private Keys Imported (via ssh)",
+				"icon": {
+					"name": "info.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "List Private Keys Imported",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"gpg --list-secret-keys"
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Button",
+			"text": "List Private Keys Imported (via http/cgi/ruby)",
+			"layout_width": "wrap_content",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "info.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "UrlRequest",
+				"id": 6603,
+				"is_eigen_response": false,
+				"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+				"parameter_list": [
+					{
+						"name": "ruby",
+						"value_list": [
+							"gpg_list_private_keys().to_json.to_s"
+						]
+					}
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "List Private Keys Imported",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6603"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Detached Signature Creation / Verification"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Create a detached signature for a selected file",
+					" - the signature file is created in the same directory, with a filename suffix '.sig' "
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Create Detached Signature (for selected file)",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Create Detached Signature (for selected file)",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-sign-detached.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Verify a selected file that already has a detached signature in the same directory",
+					" - the selected file, must have an associated signature file"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Verify Selected File (that has a Detached Signature)",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Verify Selected File (that has a Detached Signature)",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-verify-detached.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Encrypt / Decrypt"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Encrypt a selected file",
+					" - indicate the recipients by keyid or email-address (see public key listing) "
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Encrypt File",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Encrypt File",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-encrypt.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Decrypt a selected file",
+					" - enter a passphrase associated with one of the keys that encrypted the file"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Decrypt File",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Decrypt File",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-decrypt.json'"
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Export Keys"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"You would export your private-key to make a backup, or to enable you to re-import your key somewhere else.",
+					"You would export your public-key to give to others, so they can encrypt files to you, or verify signatures from you."
+				]
+			}
+		}
+	]
+}
+
