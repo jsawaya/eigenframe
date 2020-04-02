@@ -18,10 +18,10 @@
 			"attributes": {
 				"text_list": [
 					"EigenFrame OpenPGP Cryptography requires:",
-					" - Apache2 Installed and running httpd (for CGI post method request into Termux)",
+					" - Openssh running sshd (for ssh request into Termux)",
 					" - Ruby Installed (for eigenframe transforms)",
 					" - GnuPG Installed (for OpenPGP Encryption, Decryption, Signing and Verification)",
-					"These methods use HTTP/CGI (post method) to invoke Ruby which calls GnuPG"
+					"These methods use javascript/ssh to invoke Ruby which calls GnuPG"
 				]
 			}
 		},
@@ -61,7 +61,7 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Import a Public Key",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-import-public-key.json'"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp-import-public-key.json'"
 					}
 				}
 			}
@@ -117,7 +117,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Test4",
+				"text": "Test1",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -126,7 +126,7 @@
 					"type": "Clone",
 					"name": "PopupScreenDefault",
 					"attributes": {
-						"title": "Test",
+						"title": "Test1",
 						"component_list": [
 							{
 								"type": "Clone",
@@ -155,7 +155,48 @@
 				}
 			}
 		},
-
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Test1",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Test1",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh_list": [
+													"TEST1='Dogs and cats\n'",
+													"TEST1+='living together\n'",
+													"TEST1+='The world\n'",
+													"TEST1+='Upside down\n'",
+													"echo \"$TEST1\" "
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
 
 		{
 			"type": "Clone",
@@ -222,7 +263,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Import Your Private Key (via http/cgi/ruby)",
+				"text": "Import Your Private Key (via ssh/ruby)",
 				"icon": {
 					"name": "open_browser.",
 					"location": "top"
@@ -232,7 +273,7 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Import Your Private Key",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-import-private-key.json'"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp-import-private-key.json'"
 					}
 				}
 			}
@@ -358,7 +399,7 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Create Detached Signature (for selected file)",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-sign-detached.json'"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp-sign-detached.json'"
 					}
 				}
 			}
@@ -387,7 +428,7 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Verify Selected File (that has a Detached Signature)",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-verify-detached.json'"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp-verify-detached.json'"
 					}
 				}
 			}
@@ -427,7 +468,7 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Encrypt File",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-encrypt.json'"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp-encrypt.json'"
 					}
 				}
 			}
@@ -456,7 +497,7 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Decrypt File",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp-decrypt.json'"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp-decrypt.json'"
 					}
 				}
 			}

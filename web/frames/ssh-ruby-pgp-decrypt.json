@@ -57,7 +57,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "List Public Keys Imported (via ssh/ruby)",
+					"text": "Decrypt (via ssh/ruby)",
 					"icon": {
 						"name": "open_browser.",
 						"location": "top"
@@ -78,9 +78,14 @@
 												"name": "TextViewDetail",
 												"attributes": {
 													"text_size": "10",
-													"ssh_list": [
-														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-														"ruby ssh_ruby.rb 'gpg_list_public_keys().to_json.to_s' "
+													"ssh_script_list": [
+														"var password = '' + eigenFragment.getViewState(6606)",
+														"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+														"var encrypted_file = eigenFragment.getViewState(targetVid)",
+														"var output_file = 'decryption.out'",
+														"var ruby_cmd = 'gpg_decrypt('+password+', '+encrypted_file+', '+output_file+').to_json.to_s' ",
+														"var cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;' ",
+														"cmd += 'echo ruby ssh_ruby.rb '+ruby_cmd "
 													]
 												}
 											}
