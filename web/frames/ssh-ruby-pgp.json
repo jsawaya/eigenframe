@@ -497,7 +497,7 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Decrypt File",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp-decrypt.json'"
+						"url_script": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-ruby-pgp-decrypt.json'"
 					}
 				}
 			}
