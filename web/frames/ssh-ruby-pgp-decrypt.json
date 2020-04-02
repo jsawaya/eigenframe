@@ -83,7 +83,7 @@
 														"TEST1='p 1;'",
 														"TEST1+='p 2;'",
 														"TEST1+='p 3;'",
-														"ruby ssh_ruby.rb \"$TEST1\" "
+														"echo ruby ssh_ruby.rb \"$TEST1\" "
 													]
 												}
 											}
