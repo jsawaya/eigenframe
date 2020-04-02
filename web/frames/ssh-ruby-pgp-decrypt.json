@@ -57,7 +57,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Decrypt (via ssh/ruby)",
+					"text": "TEST1 (via ssh/ruby)",
 					"icon": {
 						"name": "open_browser.",
 						"location": "top"
@@ -66,7 +66,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "OpenPGP",
+							"title": "TEST1",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -78,15 +78,12 @@
 												"name": "TextViewDetail",
 												"attributes": {
 													"text_size": "10",
-													"ssh_script_list": [
-														"var password = '' + eigenFragment.getViewState(6606)",
-														"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
-														"var encrypted_file = eigenFragment.getViewState(targetVid)",
-														"var output_file = 'decryption.out'",
-														"var ruby_cmd = 'gpg_decrypt(\"'+password+'\", \"'+encrypted_file+'\", \"'+output_file+'\").to_json.to_s' ",
-														"var cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;' ",
-														"var cmd2 = 'echo ruby ssh_ruby.rb \"'+ruby_cmd+'\"' ",
-														"'echo '+ruby_cmd"
+													"ssh_list": [
+														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;",
+														"TEST1='p 1; \n'",
+														"TEST1+='p 2; \n'",
+														"TEST1+='p 3; \n'",
+														"ruby ssh_ruby.rb \"$TEST1\" "
 													]
 												}
 											}
