@@ -80,9 +80,9 @@
 													"text_size": "10",
 													"ssh_list": [
 														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;",
-														"TEST1='p 1; \n'",
-														"TEST1+='p 2; \n'",
-														"TEST1+='p 3; \n'",
+														"TEST1='p 1;'",
+														"TEST1+='p 2;'",
+														"TEST1+='p 3;'",
 														"ruby ssh_ruby.rb \"$TEST1\" "
 													]
 												}
