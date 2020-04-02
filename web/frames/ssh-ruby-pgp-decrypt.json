@@ -83,7 +83,7 @@
 														"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
 														"var encrypted_file = eigenFragment.getViewState(targetVid)",
 														"var output_file = 'decryption.out'",
-														"var ruby_cmd = 'test' ",
+														"var ruby_cmd = 'gpg_decrypt(\"'+password+'\", \"'+encrypted_file+'\", \"'+output_file+'\").to_json.to_s' ",
 														"var cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;' ",
 														"cmd += 'echo ruby ssh_ruby.rb '+ruby_cmd "
 													]
