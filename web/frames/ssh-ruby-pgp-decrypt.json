@@ -54,48 +54,6 @@
 				"name": "EditTextPgpPassword6606"
 			},
 			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "TEST1 (via ssh/ruby)",
-					"icon": {
-						"name": "open_browser.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "TEST1",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_list": [
-														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;",
-														"TEST1='p 1;'",
-														"TEST1+='p 2;'",
-														"TEST1+='p 3;'",
-														"echo 'ruby ssh_ruby.rb \"$TEST1\"' "
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
 				"type": "Button",
 				"text": "Decrypt File",
 				"layout_width": "wrap_content",
