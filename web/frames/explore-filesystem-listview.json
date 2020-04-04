@@ -50,7 +50,6 @@
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
 									"selected_path = eigenFragment.parentPath(selected_path)",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
-									"eigenActivity.showToast('selected path: ' + selected_path)",
 									"eigenFragment.setCacheString('SelectedFile', '')"
 								]
 							},
@@ -105,7 +104,6 @@
 								"comment": "selected directory, not file",
 								"script_list": [
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"eigenActivity.showToast('selected path: ' + selected_path)",
 									"eigenFragment.setCacheString('SelectedFile', '')"
 								]
 							},
@@ -181,7 +179,6 @@
 								"comment": "selected directory, append to selected path",
 								"script_list": [
 									"var selected_dir = eigenFragment.getOptionLabel()",
-									"eigenActivity.showToast('selected directory: ' + selected_dir)",
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
 									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
@@ -274,7 +271,6 @@
 								],
 								"script_list": [
 									"var selected_file = eigenFragment.getOptionLabel()",
-									"eigenActivity.showToast('selected filename: ' + selected_file)",
 									"eigenFragment.setCacheString('SelectedFile', selected_file)",
 									"var full_path = eigenFragment.getCacheString('FullPath')",
 									"var full_path_file = eigenFragment.concatPaths(full_path, selected_file)",
