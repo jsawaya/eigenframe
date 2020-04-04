@@ -461,15 +461,16 @@
 			"component": {
 				"type": "JavaScript",
 				"script_list": [
+					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
+					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '')",
 					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '')",
 					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '')",
-					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
 					"eigenFragment.setCacheString('FullPath', full_path)",
 					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
-					"eigenFragment.setViewState(targetVid, full_path)"
+					"eigenFragment.setViewState(targetVid, full_path)",
+					"eigenActivity.showToast('Initial Path: '+full_path)"
 				]
 			}
 		},
