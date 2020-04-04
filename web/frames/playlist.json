@@ -194,9 +194,17 @@
         },
         "on_click": {
           "type": "JavaScript",
-          "script": "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
+          "script-list": [
+            "eigenFragment.setCacheString('GithubBranch', 'beta')",
+            "eigenFragment.setCacheString('ToggleButton', 999200, '0')",
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
+          ]
         }
       }
+    },
+    {
+      "type": "Clone",
+      "name": "SetIsMasterBranchButton"
     }
   ]
 }
