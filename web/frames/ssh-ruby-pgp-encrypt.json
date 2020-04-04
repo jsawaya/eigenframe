@@ -1,0 +1,167 @@
+{
+	"comment": "set the HomeDirectory from sftp pwd",
+	"type": "SecureFtp",
+	"id": 411000,
+	"sftp_script": "'pwd'",
+	"on_complete": {
+		"type": "LinearLayout",
+		"scrollable": true,
+		"orientation": "vertical",
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"component_list": [
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Encrypt File"
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"After a public key file has been imported, you can create an OpenPGP encryption file for a particular file to ensure it's privacy"
+					]
+				}
+			},
+			{
+				"type": "JavaScript",
+				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to Encrypt')"
+			},
+			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedFile', '')"
+				]
+			},
+			{
+				"type": "Clone",
+				"name": "JavaScriptSelectFilePath"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Private KeyId:"
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"Try the demo-private-key KeyId: 5C91FC661620EAFA"
+					]
+				}
+			},
+			{
+				"type": "EditText",
+				"id": 6607,
+				"is_single_line": true,
+				"layout_width": "match_parent",
+				"text_color": "#ffffff",
+				"background_color": "#000000",
+				"text": "5C91FC661620EAFA"
+			},
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Format: asc (ASCII Armor) | pgp (Binary)"
+				}
+			},
+			{
+				"type": "EditText",
+				"id": 6608,
+				"is_single_line": true,
+				"layout_width": "match_parent",
+				"text_color": "#ffffff",
+				"background_color": "#000000",
+				"text": "asc"
+			},
+			{
+				"type": "Button",
+				"text": "Create an OpenPGP Encryption File",
+				"text_color": "#ffffff",
+				"background_color": "#654321",
+				"icon": {
+					"name": "info.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "UrlRequest",
+					"id": 6605,
+					"is_eigen_response": false,
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+					"parameter_list": [
+						{
+							"name": "targetfile",
+							"value_script_list": [
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+								"var targetfile = eigenFragment.getViewState(targetVid)",
+								"'' + targetfile"
+							]
+						},
+						{
+							"name": "keyid",
+							"value_script_list": [
+								"'' + eigenFragment.getViewState(6607)"
+							]
+						},
+						{
+							"name": "format",
+							"value_script_list": [
+								"'' + eigenFragment.getViewState(6608)"
+							]
+						},
+						{
+							"name": "ruby",
+							"value_list": [
+								"keyid = cgi.params['keyid'][0]",
+								"targetfile = cgi.params['targetfile'][0]",
+								"format = cgi.params['format'][0]",
+								"gpg_encrypt(keyid, targetfile, format).to_json.to_s"
+							]
+						}
+					],
+					"on_complete": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Create an OpenPGP Encryption File",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			}
+		]
+	}
+}

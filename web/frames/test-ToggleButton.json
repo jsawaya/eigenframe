@@ -30,12 +30,12 @@
       "layout_height": "wrap_content",
       "checked": false,
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "margin-x": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
+      "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       },
       "on_click": {
         "type": "JavaScript",
@@ -46,11 +46,15 @@
     },
     {
       "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
       "text": "getViewState ToggleButton:400",
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "JavaScript",
         "script_list": [
@@ -60,30 +64,73 @@
     },
     {
       "type": "ToggleButton",
-      "id": 4099,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
+      "id": 409,
       "checked": false,
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#654321",
       "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
       }
     },
     {
       "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "getViewState ToggleButton:4099",
+      "text": "getViewState ToggleButton:409",
       "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(4099))"
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(409))"
+        ]
+      }
+    },
+    {
+      "type": "ToggleButton",
+      "id": 408,
+      "checked": true,
+      "text_on": "Master",
+      "text_off": "Beta",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(408))"
+        ]
+      }
+    },
+    {
+      "type": "ToggleButton",
+      "checked": true,
+      "text_on": "Master",
+      "text_off": "Beta",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton NO-id getViewState: '+eigenFragment.getViewState())"
         ]
       }
     }

@@ -51,16 +51,22 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-apache.json"
 		},
 		{
-			"icon_name": "security.",
-			"name": "PGP",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"
-		},
-		{
 			"icon_name": "swi_prolog.",
 			"name": "Prolog",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-swi.json"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-ruby-swipl.json"
+		},
+		{
+			"icon_name": "security.",
+			"name": "PGP (via ssh)",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-ruby-pgp.json"
+		},
+		{
+			"icon_name": "security.",
+			"name": "PGP (via cgi)",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi-ruby-pgp.json"
 		},
 		{
 			"icon_name": "info.",

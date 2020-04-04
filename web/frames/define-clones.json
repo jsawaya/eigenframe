@@ -10,7 +10,7 @@
 				"https://raw.githubusercontent.com/jsawaya/eigenframe/test/web/"
 			],
 			"script_list": [
-				"var github_branch = 'master'",
+				"var github_branch = 'beta'",
 				"eigenFragment.setCacheString('GithubBranch', github_branch)",
 				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
 				"eigenFragment.setCacheString('RootUrl', root_url)"
@@ -186,6 +186,58 @@
 		},
 		{
 			"type": "Define",
+			"name": "ButtonExecuteRuby",
+			"component": {
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Execute Ruby",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "SecureFtp",
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'put EditText:999000 ' + filename"
+						],
+						"on_complete": {
+							"type": "Clone",
+							"name": "PopupScreenDefault",
+							"attributes": {
+								"title": "Ruby Command Output",
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "LayoutVerticalScrollable",
+										"attributes": {
+											"component_list": [
+												{
+													"type": "Clone",
+													"name": "TextViewDetail",
+													"attributes": {
+														"text_size": "10",
+														"ssh_script_list": [
+															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+															"var filename = eigenFragment.getViewState(targetVid)",
+															"'cd /data/data/com.termux/files/home; ruby '+filename "
+														]
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
 			"name": "PopupScreenEdit",
 			"component": {
 				"type": "Clone",
@@ -206,6 +258,10 @@
 									{
 										"type": "Clone",
 										"name": "ButtonSaveEditsToRemoteFile"
+									},
+									{
+										"type": "Clone",
+										"name": "ButtonExecuteRuby"
 									},
 									{
 										"type": "Clone",
@@ -360,6 +416,37 @@
 						"eigenActivity.showToast('IsSourceButton: ' + b1)",
 						"eigenActivity.finish()",
 						"eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json')"
+					]
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "SetIsMasterBranchButton",
+			"component": {
+				"type": "ToggleButton",
+				"id": 999200,
+				"checked_script_list": [
+					"var b1 = 'master'.equals(eigenFragment.getCacheString('GithubBranch'))",
+					"b1"
+				],
+				"text_on": "Master Branch Enabled",
+				"text_off": "Beta Branch Enabled",
+				"text_color": "#ffffff",
+				"background_color": "#654321",
+				"margin": {
+					"left": 10,
+					"top": 10,
+					"right": 10,
+					"bottom": 10
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"var b1 = eigenFragment.getViewState(999200) == 1",
+						"if (b1) eigenFragment.setCacheString('GithubBranch', 'master')",
+						"else eigenFragment.setCacheString('GithubBranch', 'beta')",
+						"eigenActivity.showToast('GithubBranch: ' + eigenFragment.getCacheString('GithubBranch') )"
 					]
 				}
 			}
