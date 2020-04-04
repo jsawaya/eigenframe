@@ -73,7 +73,7 @@
 						{
 							"name": "encrypted_file",
 							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 								"var encrypted_file = eigenFragment.getViewState(targetVid)",
 								"'' + encrypted_file"
 							]

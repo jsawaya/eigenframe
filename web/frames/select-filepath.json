@@ -183,7 +183,6 @@
 							{
 								"type": "JavaScript",
 								"script_list": [
-									"eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)",
 									"eigenFragment.setCacheString('WorkingDirectory', '')",
 									"eigenFragment.setCacheString('SelectedPath', '')",
 									"eigenFragment.setCacheString('SelectedFile', '')"

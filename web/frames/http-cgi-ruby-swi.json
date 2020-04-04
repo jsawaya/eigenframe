@@ -819,7 +819,7 @@
 											"attributes": {
 												"text_size": "10",
 												"ssh_script_list": [
-													"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
+													"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 													"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
 													"swipl_path = eigenFragment.getViewState(targetVid)",
 													"swipl_goal = eigenFragment.getViewState(7602) ",

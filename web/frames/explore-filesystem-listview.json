@@ -268,7 +268,7 @@
 									"eigenFragment.setCacheString('SelectedFile', selected_file)",
 									"var full_path = eigenFragment.getCacheString('FullPath')",
 									"var full_path_file = eigenFragment.concatPaths(full_path, selected_file)",
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 									"eigenFragment.setViewState(targetVid, full_path_file)",
 									"eigenFragment.closePopupScreen(991005)",
 									"eigenFragment.closePopupWindow()"
