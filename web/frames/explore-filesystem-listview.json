@@ -190,6 +190,10 @@
 								"name": "JavaScriptSetFullPath"
 							},
 							{
+								"type": "JavaScript",
+								"script": "eigenFragment.closePopupWindow()"
+							},
+							{
 								"type": "SecureFtp",
 								"comment": "call sftp this way when you don't need immediate results for a TextView",
 								"id": 991004,
@@ -205,11 +209,6 @@
 									"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
 									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
 								}
-							},
-							{
-								"type": "JavaScript",
-								"comment": "selected directory, append to selected path",
-								"script": "eigenFragment.closePopupWindow()"
 							}
 						]
 					},
