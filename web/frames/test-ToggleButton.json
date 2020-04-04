@@ -113,6 +113,26 @@
           "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(408))"
         ]
       }
+    },
+    {
+      "type": "ToggleButton",
+      "checked": true,
+      "text_on": "Master",
+      "text_off": "Beta",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton NO-id getViewState: '+eigenFragment.getViewState())"
+        ]
+      }
     }
   ]
 }

@@ -424,36 +424,30 @@
 			"type": "Define",
 			"name": "SetIsMasterButton",
 			"component": {
-				"type": "Switch",
-				"id": 999300,
-				"text": "Master(On) Beta(off)",
-				"checked_script": "eigenFragment.getBooleanVariable('IsMasterButton', 0, true)",
+				"type": "ToggleButton",
+				"id": 999200,
+				"checked": true,
+				"text_on": "Master",
+				"text_off": "Beta",
 				"text_color": "#ffffff",
 				"background_color": "#654321",
-				"icon": {
-					"name": "pageview.",
-					"location": "top"
-				},
 				"margin": {
 					"left": 10,
 					"top": 10,
 					"right": 10,
 					"bottom": 10
 				},
-				"padding": {
-					"left": 30,
-					"top": 30,
-					"right": 30,
-					"bottom": 30
-				},
 				"on_click": {
 					"type": "JavaScript",
-					"script_list": [
-						"var b1 = eigenFragment.getViewState(999300) == 1",
-						"eigenFragment.setBooleanVariable('IsSourceButton', 0, b1)",
-						"eigenActivity.showToast('IsSourceButton: ' + b1)",
+					"comment_list": [
+						"eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(999200))",
 						"eigenActivity.finish()",
 						"eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json')"
+					],
+					"script_list": [
+						"var b1 = eigenFragment.getViewState(999200) == 1",
+						"eigenFragment.setBooleanVariable('IsMasterButton', 0, b1)",
+						"eigenActivity.showToast('IsMasterButton: ' + b1)"
 					]
 				}
 			}
