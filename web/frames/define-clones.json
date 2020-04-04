@@ -511,15 +511,6 @@
 							"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 999666)"
 						},
 						{
-							"type": "EditText",
-							"id_script": "eigenFragment.getIntegerVariable('TargetViewId')",
-							"max_length": 200,
-							"is_single_line": true,
-							"layout_width": "match_parent",
-							"text_color": "#ffffff",
-							"background_color": "#000000"
-						},
-						{
 							"type": "Clone",
 							"name": "ButtonDefault",
 							"attributes": {
@@ -549,6 +540,16 @@
 									]
 								}
 							}
+						},
+						{
+							"type": "EditText",
+							"id": 999666,
+							"max_length": 200,
+							"is_single_line": true,
+							"layout_width": "match_parent",
+							"text_color": "#ffffff",
+							"background_color": "#000000",
+							"text": "undefined"
 						},
 						{
 							"type": "Clone",
