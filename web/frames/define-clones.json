@@ -447,7 +447,7 @@
 						"eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json')"
 					],
 					"script_list": [
-						"var b1 = eigenFragment.getViewState() == 1",
+						"var b1 = eigenFragment.getViewState(999200) == 1",
 						"if (b1) eigenFragment.setCacheString('GithubBranch', 'master')",
 						"else eigenFragment.setCacheString('GithubBranch', 'beta')",
 						"eigenActivity.showToast('GithubBranch: ' + eigenFragment.getCacheString('GithubBranch') )"
