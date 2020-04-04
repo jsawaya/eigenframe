@@ -142,21 +142,8 @@
 						"bottom": 10
 					},
 					"on_click": {
-						"type": "SecureFtp",
-						"comment": "call sftp this way when you don't need immediate results for a TextView",
-						"id": 991004,
-						"sftp_script": "'directory ' + eigenFragment.getCacheString('FullPath')",
-						"on_complete": {
-							"type": "PopupScreen",
-							"layout_width": "match_parent",
-							"layout_height": "wrap_content",
-							"text_size": "14",
-							"text_color": "#ffffff",
-							"background_color": "#111111",
-							"x-title": "Explore Filesystem (ListView)",
-							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
-						}
+						"type": "Clone",
+						"name": "ListViewPopupScreenAfterSecureFtp"
 					}
 				},
 				{
