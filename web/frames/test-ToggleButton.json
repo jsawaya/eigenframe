@@ -60,7 +60,7 @@
     },
     {
       "type": "ToggleButton",
-      "id": 4099,
+      "id": 409,
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "checked": false,
@@ -77,13 +77,36 @@
       "type": "Button",
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text": "getViewState ToggleButton:4099",
+      "text": "getViewState ToggleButton:409",
       "text_color": "#ffffff",
       "background_color": "#ff00ff",
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(4099))"
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(409))"
+        ]
+      }
+    },
+    {
+      "type": "ToggleButton",
+      "id": 408,
+      "layout_width": "match_parent",
+      "layout_height": "wrap_content",
+      "checked": true,
+      "text_on": "Master",
+      "text_off": "Beta",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "margin-x": {
+        "left": 40,
+        "top": 40,
+        "right": 40,
+        "bottom": 40
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(408))"
         ]
       }
     }
