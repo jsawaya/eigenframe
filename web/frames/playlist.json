@@ -69,9 +69,13 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch an app from internet/cloud server (GITHUB)"
+				"text": "Launch an app from internet/cloud server (EigenFrame Github Branches)"
       }
     },
+		{
+			"type": "Clone",
+			"name": "SetIsMasterBranchButton"
+		},
     {
       "type": "Clone",
       "name": "TextViewDetail",
@@ -92,7 +96,10 @@
         },
         "on_click": {
           "type": "JavaScript",
-          "script": "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app1.json')"
+					"script_list": [
+						"eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app1.json')",
+						"eigenActivity.finish()"
+					]
         }
       }
     },
@@ -131,7 +138,8 @@
 					"script_list": [
 						"eigenFragment.setCacheString('GithubBranch', 'master')",
 						"eigenFragment.setViewState(999200, '1')",
-						"eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_admin.json')"
+						"eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_admin.json')",
+						"eigenActivity.finish()"
 					]
         }
       }
@@ -174,10 +182,6 @@
 				"text": "Beta Branch Features"
       }
     },
-		{
-			"type": "Clone",
-			"name": "SetIsMasterBranchButton"
-		},
     {
       "type": "Clone",
       "name": "TextViewDetail",
@@ -201,7 +205,8 @@
 					"script_list": [
             "eigenFragment.setCacheString('GithubBranch', 'beta')",
 						"eigenFragment.setViewState(999200, '0')",
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
+						"eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
+						"eigenActivity.finish()"
           ]
         }
       }
