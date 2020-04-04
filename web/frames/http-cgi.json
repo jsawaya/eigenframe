@@ -12,11 +12,8 @@
 		"component_list": [
 			{
 				"type": "JavaScript",
-				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Directory')"
-			},
-			{
-				"type": "JavaScript",
 				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Directory')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedFile', '')"

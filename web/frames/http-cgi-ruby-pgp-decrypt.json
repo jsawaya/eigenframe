@@ -35,11 +35,8 @@
 			},
 			{
 				"type": "JavaScript",
-				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Encrypted File')"
-			},
-			{
-				"type": "JavaScript",
 				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Encrypted File')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedFile', '')"

@@ -7,11 +7,8 @@
 	"component_list": [
 		{
 			"type": "JavaScript",
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File to Edit')"
-		},
-		{
-			"type": "JavaScript",
 			"script_list": [
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File to Edit')",
 				"eigenFragment.setCacheString('WorkingDirectory', '')",
 				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 				"eigenFragment.setCacheString('SelectedFile', '')"
