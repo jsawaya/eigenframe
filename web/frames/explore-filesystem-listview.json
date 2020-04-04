@@ -193,7 +193,7 @@
 								"name": "JavaScriptSetFullPath"
 							},
 							{
-								"type": "JavaScript",
+								"x-type": "JavaScript",
 								"comment": "selected directory, append to selected path",
 								"script_list": [
 									"eigenFragment.closePopupWindow()"
@@ -215,6 +215,13 @@
 									"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
 									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
 								}
+							},
+							{
+								"type": "JavaScript",
+								"comment": "selected directory, close prior window - beta",
+								"script_list": [
+									"eigenFragment.closePopupWindow()"
+								]
 							}
 						]
 					},
