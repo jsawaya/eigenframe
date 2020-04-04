@@ -508,7 +508,7 @@
 						},
 						{
 							"type": "JavaScript",
-							"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)"
+							"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 999666)"
 						},
 						{
 							"type": "EditText",
