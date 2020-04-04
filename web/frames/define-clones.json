@@ -387,7 +387,6 @@
 			"name": "SetIsSourceButton",
 			"component": {
 				"type": "Switch",
-				"id": 999300,
 				"text": "Enable Source Button",
 				"checked_script": "eigenFragment.getBooleanVariable('IsSourceButton', 0, true)",
 				"text_color": "#ffffff",
@@ -411,7 +410,7 @@
 				"on_click": {
 					"type": "JavaScript",
 					"script_list": [
-						"var b1 = eigenFragment.getViewState(999300) == 1",
+						"var b1 = eigenFragment.getViewState() == 1",
 						"eigenFragment.setBooleanVariable('IsSourceButton', 0, b1)",
 						"eigenActivity.showToast('IsSourceButton: ' + b1)",
 						"eigenActivity.finish()",
@@ -422,10 +421,9 @@
 		},
 		{
 			"type": "Define",
-			"name": "SetIsMasterButton",
+			"name": "SetIsMasterBranchButton",
 			"component": {
 				"type": "ToggleButton",
-				"id": 999200,
 				"checked": true,
 				"text_on": "Master",
 				"text_off": "Beta",
@@ -440,14 +438,14 @@
 				"on_click": {
 					"type": "JavaScript",
 					"comment_list": [
-						"eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(999200))",
+						"eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState())",
 						"eigenActivity.finish()",
 						"eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json')"
 					],
 					"script_list": [
-						"var b1 = eigenFragment.getViewState(999200) == 1",
-						"eigenFragment.setBooleanVariable('IsMasterButton', 0, b1)",
-						"eigenActivity.showToast('IsMasterButton: ' + b1)"
+						"var b1 = eigenFragment.getViewState() == 1",
+						"eigenFragment.setBooleanVariable('IsMasterBranch', 0, b1)",
+						"eigenActivity.showToast('IsMasterBranch: ' + b1)"
 					]
 				}
 			}

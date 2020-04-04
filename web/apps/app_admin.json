@@ -6,61 +6,61 @@
 			"icon_name": "ic_launcher_round.",
 			"name": "Admin",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/playlist.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
 		},
 		{
 			"icon_name": "playlist_check.",
 			"name": "Install",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-initial-setup.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
 		},
 		{
 			"icon_name": "github_logo.",
 			"name": "GitHub",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/git-admin.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/git-admin.json"
 		},
 		{
 			"icon_name": "play.",
 			"name": "JavaScript",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/script-cmd.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/script-cmd.json"
 		},
 		{
 			"icon_name": "play.",
 			"name": "SSH",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-cmd.json"
 		},
 		{
 			"icon_name": "import_export.",
 			"name": "SFTP",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
 		},
 		{
 			"icon_name": "ruby_logo.",
 			"name": "Ruby",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
 		},
 		{
 			"icon_name": "apache_logo.",
 			"name": "Apache",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
 		},
 		{
 			"icon_name": "swi_prolog.",
 			"name": "Prolog",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby-swipl.json"
 		},
 		{
 			"icon_name": "security.",
 			"name": "PGP/CGI",
 			"type": "EigenFragment",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp.json'"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json"
 		},
 		{
 			"icon_name": "info.",
