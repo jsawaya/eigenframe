@@ -819,8 +819,8 @@
 											"attributes": {
 												"text_size": "10",
 												"ssh_script_list": [
-													"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
 													"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+													"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 													"swipl_path = eigenFragment.getViewState(targetVid)",
 													"swipl_goal = eigenFragment.getViewState(7602) ",
 													"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"

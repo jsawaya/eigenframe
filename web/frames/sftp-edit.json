@@ -7,11 +7,8 @@
 	"component_list": [
 		{
 			"type": "JavaScript",
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File to Edit')"
-		},
-		{
-			"type": "JavaScript",
 			"script_list": [
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File to Edit')",
 				"eigenFragment.setCacheString('WorkingDirectory', '')",
 				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 				"eigenFragment.setCacheString('SelectedFile', '')"
@@ -25,7 +22,7 @@
 			"type": "Clone",
 			"name": "LayoutVerticalScrollable",
 			"x-condition_script_list": [
-				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 				"var filename = eigenFragment.getViewState(targetVid).toLowerCase()",
 				"!(filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg'))"
 			],
@@ -68,7 +65,7 @@
 			"type": "Clone",
 			"name": "LayoutVerticalScrollable",
 			"x-condition_script_list": [
-				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 				"var filename = eigenFragment.getViewState(targetVid).toLowerCase()",
 				"filename.endsWith('.png') || filename.endsWith('.jpg') || filename.endsWith('.jpeg')"
 			],

@@ -35,11 +35,8 @@
 			},
 			{
 				"type": "JavaScript",
-				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Public Key File')"
-			},
-			{
-				"type": "JavaScript",
 				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Public Key File')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
 					"eigenFragment.setCacheString('SelectedFile', '')"
@@ -75,7 +72,7 @@
 						{
 							"name": "keyfile",
 							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 								"var keyfile = eigenFragment.getViewState(targetVid)",
 								"'' + keyfile"
 							]

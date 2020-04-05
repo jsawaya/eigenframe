@@ -145,7 +145,7 @@
 					"on_click": {
 						"type": "SecureFtp",
 						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 							"var filename = eigenFragment.getViewState(targetVid)",
 							"'put EditText:999000 ' + filename"
 						],
@@ -153,7 +153,6 @@
 							"type": "JavaScript",
 							"script_list": [
 								"var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-								"eigenActivity.showToast('Local File Cache Status: ' + x1 )",
 								"eigenFragment.closePopupScreen(999099)"
 							]
 						}
@@ -177,7 +176,6 @@
 						"type": "JavaScript",
 						"script_list": [
 							"var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-							"eigenActivity.showToast('EditText Cache: ' + x1 )",
 							"eigenFragment.closePopupScreen(999099)"
 						]
 					}
@@ -199,7 +197,7 @@
 					"on_click": {
 						"type": "SecureFtp",
 						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 							"var filename = eigenFragment.getViewState(targetVid)",
 							"'put EditText:999000 ' + filename"
 						],
@@ -220,7 +218,7 @@
 													"attributes": {
 														"text_size": "10",
 														"ssh_script_list": [
-															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 															"var filename = eigenFragment.getViewState(targetVid)",
 															"'cd /data/data/com.termux/files/home; ruby '+filename "
 														]
@@ -245,7 +243,7 @@
 				"attributes": {
 					"id": 999099,
 					"title_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 						"var filename = eigenFragment.getViewState(targetVid)",
 						"'Remote File: ' + filename"
 					],
@@ -286,7 +284,7 @@
 				"name": "PopupScreenDefault",
 				"attributes": {
 					"title_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 						"var filename = eigenFragment.getViewState(targetVid)",
 						"'Remote File: '+filename"
 					],
@@ -301,7 +299,7 @@
 										"name": "TextViewDetail",
 										"attributes": {
 											"ssh_script_list": [
-												"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+												"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 												"var filename = eigenFragment.getViewState(targetVid)",
 												"'cat ' + filename"
 											]
@@ -320,7 +318,7 @@
 			"component": {
 				"type": "SecureFtp",
 				"sftp_script_list": [
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 					"var filename = eigenFragment.getViewState(targetVid)",
 					"'get ' + filename + ' EditText:999000'"
 				],
@@ -338,7 +336,7 @@
 				"name": "PopupScreenDefault",
 				"attributes": {
 					"title_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 						"var filename = eigenFragment.getViewState(targetVid)",
 						"'Remote Image: '+filename"
 					],
@@ -372,7 +370,7 @@
 			"component": {
 				"type": "SecureFtp",
 				"sftp_script_list": [
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 					"var filename = eigenFragment.getViewState(targetVid)",
 					"'get ' + filename + ' ImageView.png'"
 				],
@@ -413,7 +411,6 @@
 					"script_list": [
 						"var b1 = eigenFragment.getViewState(999300) == 1",
 						"eigenFragment.setBooleanVariable('IsSourceButton', 0, b1)",
-						"eigenActivity.showToast('IsSourceButton: ' + b1)",
 						"eigenActivity.finish()",
 						"eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/app.json')"
 					]
@@ -461,14 +458,14 @@
 			"component": {
 				"type": "JavaScript",
 				"script_list": [
+					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
+					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '')",
 					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '')",
 					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '')",
-					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
 					"eigenFragment.setCacheString('FullPath', full_path)",
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 6699)",
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 					"eigenFragment.setViewState(targetVid, full_path)"
 				]
 			}
@@ -506,13 +503,8 @@
 							}
 						},
 						{
-							"type": "EditText",
-							"id": 6699,
-							"max_length": 200,
-							"is_single_line": true,
-							"layout_width": "match_parent",
-							"text_color": "#ffffff",
-							"background_color": "#000000"
+							"type": "JavaScript",
+							"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 999666)"
 						},
 						{
 							"type": "Clone",
@@ -526,10 +518,6 @@
 								"on_click": {
 									"type": "ActionList",
 									"component_list": [
-										{
-											"type": "JavaScript",
-											"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 6699)"
-										},
 										{
 											"type": "Clone",
 											"name": "JavaScriptSetFullPath"
@@ -548,6 +536,16 @@
 									]
 								}
 							}
+						},
+						{
+							"type": "EditText",
+							"id": 999666,
+							"max_length": 200,
+							"is_single_line": true,
+							"layout_width": "match_parent",
+							"text_color": "#ffffff",
+							"background_color": "#000000",
+							"text": "undefined"
 						},
 						{
 							"type": "Clone",
@@ -630,6 +628,25 @@
 							}
 						}
 					]
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "ListViewPopupScreenAfterSecureFtp",
+			"component": {
+				"type": "SecureFtp",
+				"id": 991004,
+				"sftp_script": "'directory ' +  eigenFragment.getCacheString('FullPath')",
+				"on_complete": {
+					"type": "PopupScreen",
+					"layout_width": "match_parent",
+					"layout_height": "wrap_content",
+					"text_size": "14",
+					"text_color": "#ffffff",
+					"background_color": "#111111",
+					"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
 				}
 			}
 		}

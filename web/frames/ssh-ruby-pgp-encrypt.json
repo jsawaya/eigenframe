@@ -32,11 +32,8 @@
 			},
 			{
 				"type": "JavaScript",
-				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to Encrypt')"
-			},
-			{
-				"type": "JavaScript",
 				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to Encrypt')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedFile', '')"
@@ -109,7 +106,7 @@
 						{
 							"name": "targetfile",
 							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 								"var targetfile = eigenFragment.getViewState(targetVid)",
 								"'' + targetfile"
 							]

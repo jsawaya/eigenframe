@@ -70,9 +70,10 @@
 								"gravity": "left",
 								"text_color": "#ffffff",
 								"font": "font/droid-sans-mono/DroidSansMono.ttf",
+								"is_toast": true,
 								"ssh_list": [
 									"echo pkg install ruby",
-									"pkg install ruby"
+									"echo y | pkg install ruby"
 								]
 							}
 						]

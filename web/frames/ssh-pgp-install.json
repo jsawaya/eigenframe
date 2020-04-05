@@ -51,9 +51,10 @@
 											"name": "TextViewDetail",
 											"attributes": {
 												"text_size": "10",
+												"is_toast": true,
 												"ssh_list": [
 													"echo pkg install gnupg",
-													"pkg install gnupg"
+													"echo y | pkg install gnupg"
 												]
 											}
 										}

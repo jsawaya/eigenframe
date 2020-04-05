@@ -50,7 +50,6 @@
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
 									"selected_path = eigenFragment.parentPath(selected_path)",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
-									"eigenActivity.showToast('selected path: ' + selected_path)",
 									"eigenFragment.setCacheString('SelectedFile', '')"
 								]
 							},
@@ -63,21 +62,8 @@
 								"script": "eigenFragment.closePopupWindow()"
 							},
 							{
-								"type": "SecureFtp",
-								"comment": "new full path, open directory",
-								"id": 991004,
-								"sftp_script": "'directory ' + eigenFragment.getCacheString('FullPath')",
-								"on_complete": {
-									"type": "PopupScreen",
-									"layout_width": "match_parent",
-									"layout_height": "wrap_content",
-									"text_size": "14",
-									"text_color": "#ffffff",
-									"background_color": "#111111",
-									"x-title": "Explore Filesystem (ListView)",
-									"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
-								}
+								"type": "Clone",
+								"name": "ListViewPopupScreenAfterSecureFtp"
 							}
 						]
 					}
@@ -105,7 +91,6 @@
 								"comment": "selected directory, not file",
 								"script_list": [
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"eigenActivity.showToast('selected path: ' + selected_path)",
 									"eigenFragment.setCacheString('SelectedFile', '')"
 								]
 							},
@@ -181,7 +166,6 @@
 								"comment": "selected directory, append to selected path",
 								"script_list": [
 									"var selected_dir = eigenFragment.getOptionLabel()",
-									"eigenActivity.showToast('selected directory: ' + selected_dir)",
 									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
 									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
 									"eigenFragment.setCacheString('SelectedPath', selected_path)",
@@ -194,27 +178,11 @@
 							},
 							{
 								"type": "JavaScript",
-								"comment": "selected directory, append to selected path",
-								"script_list": [
-									"eigenFragment.closePopupWindow()"
-								]
+								"script": "eigenFragment.closePopupWindow()"
 							},
 							{
-								"type": "SecureFtp",
-								"comment": "call sftp this way when you don't need immediate results for a TextView",
-								"id": 991004,
-								"sftp_script": "'directory ' +  eigenFragment.getCacheString('FullPath')",
-								"on_complete": {
-									"type": "PopupScreen",
-									"layout_width": "match_parent",
-									"layout_height": "wrap_content",
-									"text_size": "14",
-									"text_color": "#ffffff",
-									"background_color": "#111111",
-									"x-title": "Explore Filesystem (ListView)",
-									"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
-								}
+								"type": "Clone",
+								"name": "ListViewPopupScreenAfterSecureFtp"
 							}
 						]
 					},
@@ -264,11 +232,10 @@
 								],
 								"script_list": [
 									"var selected_file = eigenFragment.getOptionLabel()",
-									"eigenActivity.showToast('selected filename: ' + selected_file)",
 									"eigenFragment.setCacheString('SelectedFile', selected_file)",
 									"var full_path = eigenFragment.getCacheString('FullPath')",
 									"var full_path_file = eigenFragment.concatPaths(full_path, selected_file)",
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 									"eigenFragment.setViewState(targetVid, full_path_file)",
 									"eigenFragment.closePopupScreen(991005)",
 									"eigenFragment.closePopupWindow()"

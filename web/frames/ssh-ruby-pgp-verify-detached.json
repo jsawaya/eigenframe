@@ -32,13 +32,10 @@
 			},
 			{
 				"type": "JavaScript",
-				"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File (that has Detached Signature)')"
-			},
-			{
-				"type": "JavaScript",
 				"script_list": [
-					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedPath', '')",
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File (that has Detached Signature)')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedFile', '')"
 				]
 			},
@@ -64,7 +61,7 @@
 						{
 							"name": "original_file",
 							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId', 0, 0)",
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 								"var original_file = eigenFragment.getViewState(targetVid)",
 								"'' + original_file"
 							]
