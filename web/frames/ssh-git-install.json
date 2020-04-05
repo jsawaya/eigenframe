@@ -156,6 +156,7 @@
                       "name": "TextViewDetail",
                       "attributes": {
                         "text_size": "10",
+												"is_toast": true,
                         "ssh_list": [
                           "cd ~/git-repos",
                           "echo //git clone https://github.com/jsawaya/eigenframe.git",
@@ -196,6 +197,7 @@
                       "name": "TextViewDetail",
                       "attributes": {
                         "text_size": "10",
+												"is_toast": true,
                         "ssh_list": [
                           "cd ~/git-repos/eigenframe",
                           "echo //git checkout -b beta",
