@@ -53,9 +53,10 @@
 											"name": "TextViewDetail",
 											"attributes": {
 												"text_size": "10",
+												"is_toast": true,
 												"ssh_list": [
 													"echo pkg install apache2",
-													"pkg install apache2"
+													"echo y | pkg install apache2"
 												]
 											}
 										}

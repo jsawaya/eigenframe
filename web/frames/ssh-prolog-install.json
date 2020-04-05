@@ -52,9 +52,10 @@
 											"name": "TextViewDetail",
 											"attributes": {
 												"text_size": "10",
+												"is_toast": true,
 												"ssh_list": [
 													"echo pkg install swi-prolog",
-													"pkg install swi-prolog"
+													"echo y | pkg install swi-prolog"
 												]
 											}
 										}
