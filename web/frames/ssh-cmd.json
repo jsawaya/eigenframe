@@ -69,7 +69,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Execute",
+				"text": "Execute Shell Command",
 				"icon": {
 					"name": "play.",
 					"location": "top"

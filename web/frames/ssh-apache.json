@@ -283,7 +283,7 @@
           "name": "PopupScreenDefault",
           "attributes": {
 						"title": "HTTP/CGI (bash) Script",
-            "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/http-cgi.json"
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi.json'"
           }
         }
       }

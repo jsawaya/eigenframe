@@ -184,12 +184,116 @@
 		},
 		{
 			"type": "Define",
-			"name": "ButtonExecuteRuby",
+			"name": "ButtonExecuteShellFile",
 			"component": {
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Execute Ruby",
+					"text": "Execute Shell File",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "SecureFtp",
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'put EditText:999000 ' + filename"
+						],
+						"on_complete": {
+							"type": "Clone",
+							"name": "PopupScreenDefault",
+							"attributes": {
+								"title": "Shell Command Output",
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "LayoutVerticalScrollable",
+										"attributes": {
+											"component_list": [
+												{
+													"type": "Clone",
+													"name": "TextViewDetail",
+													"attributes": {
+														"text_size": "10",
+														"ssh_script_list": [
+															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+															"var filename = eigenFragment.getViewState(targetVid)",
+															"'cd /data/data/com.termux/files/home; /usr/bin/sh -s < '+filename "
+														]
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "ButtonExecutePrologFile",
+			"component": {
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Execute Prolog File",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "SecureFtp",
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'put EditText:999000 ' + filename"
+						],
+						"on_complete": {
+							"type": "Clone",
+							"name": "PopupScreenDefault",
+							"attributes": {
+								"title": "Shell Command Output",
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "LayoutVerticalScrollable",
+										"attributes": {
+											"component_list": [
+												{
+													"type": "Clone",
+													"name": "TextViewDetail",
+													"attributes": {
+														"text_size": "10",
+														"ssh_script_list": [
+															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+															"var filename = eigenFragment.getViewState(targetVid)",
+															"'cd /data/data/com.termux/files/home; ruby ssh_swipl.rb \"swipl-lib/ein-riddle.pl\", \"houses(Houses), write(Houses), false\" '"
+														]
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "ButtonExecuteRubyFile",
+			"component": {
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Execute Ruby File",
 					"icon": {
 						"name": "play.",
 						"location": "top"
@@ -259,11 +363,23 @@
 									},
 									{
 										"type": "Clone",
-										"name": "ButtonExecuteRuby"
+										"name": "ButtonCancelLocalEdits"
 									},
 									{
 										"type": "Clone",
-										"name": "ButtonCancelLocalEdits"
+										"name": "ButtonExecuteShellFile"
+									},
+									{
+										"type": "Clone",
+										"name": "ButtonExecuteRubyFile"
+									},
+									{
+										"type": "Clone",
+										"name": "ButtonExecutePrologFile"
+									},
+									{
+										"type": "Clone",
+										"name": "HorizontalLine"
 									},
 									{
 										"type": "Clone",
@@ -314,7 +430,7 @@
 		},
 		{
 			"type": "Define",
-			"name": "PopupScreenEditRemoteFile",
+			"name": "GetRemoteFilePopupScreenEdit",
 			"component": {
 				"type": "SecureFtp",
 				"sftp_script_list": [

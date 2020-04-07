@@ -47,14 +47,14 @@
 						"type": "Clone",
 						"name": "ButtonDefault",
 						"attributes": {
-							"text": "Edit Remote File",
+							"text": "Edit/Execute Remote File",
 							"icon": {
 								"name": "open_browser.",
 								"location": "top"
 							},
 							"on_click": {
 								"type": "Clone",
-								"name": "PopupScreenEditRemoteFile"
+								"name": "GetRemoteFilePopupScreenEdit"
 							}
 						}
 					}

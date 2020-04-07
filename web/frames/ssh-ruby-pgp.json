@@ -117,91 +117,6 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Test1",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title": "Test1",
-						"component_list": [
-							{
-								"type": "Clone",
-								"name": "LayoutVerticalScrollable",
-								"attributes": {
-									"component_list": [
-										{
-											"type": "Clone",
-											"name": "TextViewDetail",
-											"attributes": {
-												"text_size": "10",
-												"ssh_list": [
-													"TEST1='Dogs and cats\n'",
-													"TEST1+='living together\n'",
-													"TEST1+='The world\n'",
-													"TEST1+='Upside down\n'",
-													"echo \"$TEST1\" "
-												]
-											}
-										}
-									]
-								}
-							}
-						]
-					}
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Test1",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title": "Test1",
-						"component_list": [
-							{
-								"type": "Clone",
-								"name": "LayoutVerticalScrollable",
-								"attributes": {
-									"component_list": [
-										{
-											"type": "Clone",
-											"name": "TextViewDetail",
-											"attributes": {
-												"text_size": "10",
-												"ssh_list": [
-													"TEST1='Dogs and cats\n'",
-													"TEST1+='living together\n'",
-													"TEST1+='The world\n'",
-													"TEST1+='Upside down\n'",
-													"echo \"$TEST1\" "
-												]
-											}
-										}
-									]
-								}
-							}
-						]
-					}
-				}
-			}
-		},
-
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
 				"text": "List Public Keys Imported (via ssh/ruby)",
 				"icon": {
 					"name": "open_browser.",
@@ -497,7 +412,7 @@
 					"name": "PopupScreenDefault",
 					"attributes": {
 						"title": "Decrypt File",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-ruby-pgp-decrypt.json"
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp-decrypt.json'"
 					}
 				}
 			}
