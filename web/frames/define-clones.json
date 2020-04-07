@@ -340,6 +340,99 @@
 		},
 		{
 			"type": "Define",
+			"name": "ButtonShowRemoteTextFile",
+			"component": {
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Show Remote Text File",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "SecureFtp",
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'put EditText:999000 ' + filename"
+						],
+						"on_complete": {
+							"type": "Clone",
+							"name": "PopupScreenDefault",
+							"attributes": {
+								"title": "Show Remote Text File",
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "LayoutVerticalScrollable",
+										"attributes": {
+											"component_list": [
+												{
+													"type": "Clone",
+													"name": "TextViewDetail",
+													"attributes": {
+														"text_size": "10",
+														"ssh_script_list": [
+															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+															"var filename = eigenFragment.getViewState(targetVid)",
+															"'cd /data/data/com.termux/files/home; cat '+filename "
+														]
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "ButtonShowRemoteEigenFrame",
+			"component": {
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Popup Remote EigenFrame",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "SecureFtp",
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'put EditText:999000 ' + filename"
+						],
+						"on_complete": {
+							"type": "Clone",
+							"name": "PopupScreenDefault",
+							"attributes": {
+								"title": "Popup Remote EigenFrame",
+								"component_list": [
+									{
+										"type": "SecureShell",
+										"is_eigen_response": true,
+										"ssh_list": [
+											"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+											"var filename = eigenFragment.getViewState(targetVid)",
+											"'cd /data/data/com.termux/files/home; cat '+filename "
+										]
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
 			"name": "PopupScreenEdit",
 			"component": {
 				"type": "Clone",
@@ -364,6 +457,14 @@
 									{
 										"type": "Clone",
 										"name": "ButtonCancelLocalEdits"
+									},
+									{
+										"type": "Clone",
+										"name": "ButtonShowRemoteTextFile"
+									},
+									{
+										"type": "Clone",
+										"name": "ButtonShowRemoteEigenFrame"
 									},
 									{
 										"type": "Clone",
