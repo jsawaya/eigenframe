@@ -39,6 +39,12 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-gallery.json"
 		},
 		{
+			"icon_name": "edit.",
+			"name": "EDIT/EXEC",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-edit.json"
+		},
+		{
 			"icon_name": "ruby_logo.",
 			"name": "Ruby",
 			"type": "EigenFragment",
