@@ -418,7 +418,7 @@
 									{
 										"type": "SecureShell",
 										"is_eigen_response": true,
-										"ssh_list": [
+										"ssh_script_list": [
 											"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 											"var filename = eigenFragment.getViewState(targetVid)",
 											"'cd /data/data/com.termux/files/home; cat '+filename "
