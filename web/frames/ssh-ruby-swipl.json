@@ -748,7 +748,7 @@
 						"type": "Clone",
 						"name": "ButtonDefault",
 						"attributes": {
-							"text": "Show Prolog File",
+							"text": "Show Prolog Remote File",
 							"icon": {
 								"name": "open_browser.",
 								"location": "top"
@@ -763,14 +763,14 @@
 						"type": "Clone",
 						"name": "ButtonDefault",
 						"attributes": {
-							"text": "Edit Prolog File",
+							"text": "Edit Prolog Remote File",
 							"icon": {
 								"name": "open_browser.",
 								"location": "top"
 							},
 							"on_click": {
 								"type": "Clone",
-								"name": "PopupScreenEditRemoteFile"
+								"name": "GetRemoteFilePopupScreenEdit"
 							}
 						}
 					}
