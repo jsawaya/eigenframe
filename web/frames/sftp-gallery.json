@@ -50,7 +50,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"Here is the Termux sftp home directory listing"
+					"Here is the Termux sftp home directory listing - formatted with Ruby into json, to make it more usable"
         ]
       }
     },
@@ -98,19 +98,11 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"Termux External Storage"
+					"Termux External Storage",
+					"Here is the path that Termux can access any public Android storage -- if you enabled this with the termux-setup-storage command (see Install Tab)"
         ]
       }
     },
-		{
-			"type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text_list": [
-					"Here is the path that Termux can access any public Android storage -- if you enabled this with the termux-setup-storage command (see Install Tab)"
-				]
-			}
-		},
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -155,20 +147,12 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"EigenFrame Working Directory (in termux)"
+					"EigenFrame Working Directory (in termux)",
+					"Here is the path in termux that corresponds with github eigenframe repository -- if you installed git (see Install Tab)"
         ]
       }
     },
 		{
-			"type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text_list": [
-					"Here is the path in termux that corresponds with github eigenframe repository -- if you installed git (see Install Tab)"
-				]
-			}
-		},
-    {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
@@ -297,19 +281,11 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "EigenFrame App Private Cache - EigenFrame App"
+					"EigenFrame App Private Cache Directory -- only the EigenFrame App has access to these files",
+					"Termux can't access it directly, but EigenFrame's sftp can put these files to termux"
         ]
       }
     },
-		{
-			"type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text_list": [
-					"EigenFrame App Private Cache Directory -- only the EigenFrame App has access to these files"
-				]
-			}
-		},
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -361,7 +337,8 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"Get a remote file (in termux app) to a local directory (in eigenframe app)"
+					"Get - copies a remote file (in termux app) to a local directory (in eigenframe app)",
+					"Put - copies a local file (in eigenframe app) to a remote directory (in termux app)"
         ]
       }
     },
