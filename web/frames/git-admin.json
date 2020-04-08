@@ -498,6 +498,10 @@
 				}
 			},
 			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
 				"type": "HtmlView",
 				"layout_width": "match_parent",
 				"layout_height": "wrap_content",
@@ -505,7 +509,7 @@
 				"x_text_size": "14",
 				"text_color": "#ffffff",
 				"html_list": [
-					"<h1><font color=\"#8aec81\">EigenFrame Github Webpage: </font></h1>",
+					"<h1><font color=\"#8aec81\">EigenFrame Github Repository</font></h1>",
 					"https://github.com/jsawaya/eigenframe"
 				]
 			},

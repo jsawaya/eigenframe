@@ -75,7 +75,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "GIT Installation / GitHub Download"
+        "text": "GIT Installation -- Download GitHub EigenFrame Repository"
       }
     },
     {
@@ -135,14 +135,22 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Apache2 Installation"
+        "text": "Prolog Installation (swi-prolog)"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+        ]
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Apache2 Installation",
+        "text": "Prolog Installation (swi-prolog)",
         "icon": {
           "name": "file_download.",
           "location": "top"
@@ -151,8 +159,8 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Apache2 Installation",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache-install.json'"
+            "title": "Prolog Installation",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-prolog-install.json'"
           }
         }
       }
@@ -195,22 +203,14 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Prolog Installation (swi-prolog)"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-        ]
+        "text": "Apache2 Installation"
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Prolog Installation (gnupg)",
+        "text": "Apache2 Installation",
         "icon": {
           "name": "file_download.",
           "location": "top"
@@ -219,8 +219,8 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Prolog Installation",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-prolog-install.json'"
+            "title": "Apache2 Installation",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache-install.json'"
           }
         }
       }
