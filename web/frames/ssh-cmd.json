@@ -8,13 +8,6 @@
 	"component_list": [
 		{
 			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "SecureShell"
-			}
-		},
-		{
-			"type": "Clone",
 			"name": "HorizontalLine"
 		},
 		{
@@ -49,10 +42,17 @@
 		},
 		{
 			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "SecureShell Command Line"
+			}
+		},
+		{
+			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"SecureShell (ssh) provides capability to run processes remotely..."
+					"SecureShell (ssh) provides capability to execute a remote command line interface (with Termux, for example)"
 				]
 			}
 		},
@@ -63,7 +63,7 @@
 			"layout_height": "wrap_content",
 			"text": "ls -la",
 			"text_color": "#ffffff",
-			"background_color": "#11ff0000"
+			"background_color": "#000000"
 		},
 		{
 			"type": "Clone",
