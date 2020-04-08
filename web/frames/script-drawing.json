@@ -1,0 +1,102 @@
+{
+	"type": "LinearLayout",
+	"scrollable": true,
+	"orientation": "vertical",
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"layout_height": "wrap_content",
+	"component_list": [
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Drawing, Rendering Data Graphs"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"JavaScript provides capability to create and render data graphically..."
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Edit Current Drawing",
+				"icon": {
+					"name": "create.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"var drawingFilePath = eigenFragment.getCacheString('DrawingFile')",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
+					]
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Create New Drawing",
+				"icon": {
+					"name": "create.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+						"var drawingFilePath = ''",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
+					]
+				}
+			}
+		},
+		{
+			"type": "Button",
+			"text": "Show Sample Drawing From Github",
+			"layout_width": "wrap_content",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "open_browser.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"on_click": {
+				"type": "UrlRequest",
+				"id": 801,
+				"is_eigen_response": false,
+				"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/draw/tictactoe.draw",
+				"on_complete": {
+					"type": "JavaScript",
+					"script_list": [
+						"var drawingFilePath = eigenFragment.getCacheFilePath('UrlRequest:801') ",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
+					]
+				}
+			}
+		}
+	]
+}
+
+
