@@ -58,6 +58,38 @@
 					"name": "PopupScreenCameraImage"
 				}
 			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "JavaScript",
+			"script_list": [
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Image File')",
+				"eigenFragment.setCacheString('WorkingDirectory', '')",
+				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/screenshots')",
+				"eigenFragment.setCacheString('SelectedFile', '')"
+			]
+		},
+		{
+			"type": "Clone",
+			"name": "JavaScriptSelectFilePath"
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Show Remote Image File",
+				"icon": {
+					"name": "image.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenImageRemoteFile"
+				}
+			}
 		}
 	]
 }

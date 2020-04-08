@@ -32,21 +32,6 @@
 					"name": "GetRemoteFilePopupScreenEdit"
 				}
 			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Show Remote Image File",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenImageRemoteFile"
-				}
-			}
 		}
 	]
 }
