@@ -48,45 +48,15 @@
 				"name": "JavaScriptSelectFilePath"
 			},
 			{
-				"type": "Button",
-				"text": "Import Public Key File",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
-				"background_color": "#654321",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				},
-				"icon": {
-					"name": "import_export.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "UrlRequest",
-					"id": 6604,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "keyfile",
-							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var keyfile = eigenFragment.getViewState(targetVid)",
-								"'' + keyfile"
-							]
-						},
-						{
-							"name": "ruby",
-							"value_list": [
-								"keyfile = cgi.params['keyfile'][0]",
-								"gpg_import_public_key(keyfile).to_json.to_s"
-							]
-						}
-					],
-					"on_complete": {
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Import Public Key File",
+					"icon": {
+						"name": "import_export.",
+						"location": "top"
+					},
+					"on_click": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
@@ -101,7 +71,13 @@
 												"type": "Clone",
 												"name": "TextViewDetail",
 												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6604"
+													"text_size": "10",
+													"ssh_script_list": [
+														"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+														"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+														"key_path = eigenFragment.getViewState(targetVid)",
+														"'cd '+dir+'; ruby ssh_ruby.rb \"gpg_import_public_key('+ key_path +').to_json.to_s\"'"
+													]
 												}
 											}
 										]
