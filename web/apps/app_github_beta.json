@@ -18,7 +18,7 @@
 			"icon_name": "github_logo.",
 			"name": "GitHub",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/git-admin.json"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/ssh-git-admin.json"
 		},
 		{
 			"icon_name": "play.",
