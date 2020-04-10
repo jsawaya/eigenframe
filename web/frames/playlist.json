@@ -69,13 +69,13 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-				"text": "Launch an app from EigenFrame github server"
+        "text": "Launch an app from EigenFrame github server"
       }
     },
-		{
-			"type": "Clone",
-			"name": "SetIsMasterBranchButton"
-		},
+    {
+      "type": "Clone",
+      "name": "SetIsMasterBranchButton"
+    },
     {
       "type": "Clone",
       "name": "TextViewDetail",
@@ -96,76 +96,8 @@
         },
         "on_click": {
           "type": "JavaScript",
-					"script_list": [
-						"eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')",
-						"eigenActivity.finish()"
-					]
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-				"text": "EigenFrame Github Master Branch"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-				"text_list": [
-					"Click [Launch Github Master Branch] to run EigenFrame apps as Termux services.",
-					"Administer SSH/SFTP, GIT, Bash, Ruby, Prolog, PGP, Apache2, ..."
-				]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-				"text": "Launch Github Master Branch",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-					"script_list": [
-						"eigenFragment.setCacheString('GithubBranch', 'master')",
-						"eigenFragment.setViewState(999200, '1')",
-						"eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
-						"eigenActivity.finish()"
-					]
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-					"Click [EigenFrame Shortcut] to create a shortcut on your home screen to launch the EigenFrame app from the github master branch"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-				"text": "EigenFrame Shortcut",
-        "icon": {
-          "name": "save.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
           "script_list": [
-						"eigenActivity.addShortcut('EigenFrame', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')",
             "eigenActivity.finish()"
           ]
         }
@@ -179,7 +111,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-				"text": "Beta Branch Features"
+        "text": "EigenFrame Github Master Branch"
       }
     },
     {
@@ -187,7 +119,8 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-					"Click [Launch Github Beta Branch] for pre-release features (in development)"
+          "Click [Launch Github Master Branch] to run EigenFrame apps as Termux services.",
+          "Administer SSH/SFTP, GIT, Bash, Ruby, Prolog, PGP, Apache2, ..."
         ]
       }
     },
@@ -195,52 +128,119 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-				"text": "Launch Github Beta Branch",
+        "text": "Launch Github Master Branch",
         "icon": {
           "name": "open_browser.",
           "location": "top"
         },
         "on_click": {
           "type": "JavaScript",
-					"script_list": [
-            "eigenFragment.setCacheString('GithubBranch', 'beta')",
-						"eigenFragment.setViewState(999200, '0')",
-						"eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
-						"eigenActivity.finish()"
+          "script_list": [
+            "eigenFragment.setCacheString('GithubBranch', 'master')",
+            "eigenFragment.setViewState(999200, '1')",
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
+            "eigenActivity.finish()"
           ]
         }
       }
     },
     {
       "type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text_list": [
-					"Click [Beta Shortcut] to create a shortcut on your home screen to launch the EigenFrame app from the github beta branch"
-				]
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Beta Shortcut",
-				"icon": {
-					"name": "save.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "JavaScript",
-					"script_list": [
-						"eigenActivity.addShortcut('Beta', 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
-						"eigenActivity.finish()"
-					]
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [EigenFrame Shortcut] to create a shortcut on your home screen to launch the EigenFrame app from the github master branch"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "EigenFrame Shortcut",
+        "icon": {
+          "name": "save.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.addShortcut('EigenFrame', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
+            "eigenActivity.finish()"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Beta Branch Features"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Launch Github Beta Branch] for pre-release features (in development)"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Launch Github Beta Branch",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenFragment.setCacheString('GithubBranch', 'beta')",
+            "eigenFragment.setViewState(999200, '0')",
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
+            "eigenActivity.finish()"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Beta Shortcut] to create a shortcut on your home screen to launch the EigenFrame app from the github beta branch"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Beta Shortcut",
+        "icon": {
+          "name": "save.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.addShortcut('Beta', 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
+            "eigenActivity.finish()"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "PopupTextView",
@@ -248,12 +248,10 @@
       "title": "Warning",
       "font": "font/droid-sans-mono/DroidSansMono.ttf",
       "text_list": [
-        "SecureShell (ssh) is not enabled.\n",
-        "Open Termux, enter:  sshd"
+        "SecureShell (ssh) has not yet been enabled\n",
+        " - Not needed for most of the Gallery, JavaScript, Url-Requests, Camera and Drawing\n",
+        " - But is required for almost everything else"
       ]
     }
-
   ]
 }
-
-
