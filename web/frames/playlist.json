@@ -11,7 +11,6 @@
       "layout_width": "match_parent",
       "layout_height": "wrap_content",
       "gravity": "center",
-      "x_text_size": "14",
       "text_color": "#ffffff",
       "html_list": [
         "<img src='ic_launcher.'>",
@@ -97,8 +96,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')",
-            "eigenActivity.finish()"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')"
           ]
         }
       }
@@ -138,8 +136,7 @@
           "script_list": [
             "eigenFragment.setCacheString('GithubBranch', 'master')",
             "eigenFragment.setViewState(999200, '1')",
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
-            "eigenActivity.finish()"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')"
           ]
         }
       }
@@ -165,7 +162,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.addShortcut('EigenFrame', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
+            "eigenActivity.addShortcut('Master', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
             "eigenActivity.finish()"
           ]
         }
@@ -205,8 +202,7 @@
           "script_list": [
             "eigenFragment.setCacheString('GithubBranch', 'beta')",
             "eigenFragment.setViewState(999200, '0')",
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
-            "eigenActivity.finish()"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
           ]
         }
       }
