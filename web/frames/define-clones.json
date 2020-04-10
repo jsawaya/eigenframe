@@ -720,7 +720,7 @@
 							}
 						},
 						{
-							"type": "JavaScript",
+							"type": "x-JavaScript",
 							"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 999666)"
 						},
 						{
@@ -756,7 +756,7 @@
 						},
 						{
 							"type": "EditText",
-							"id": 999666,
+							"id_script": "eigenFragment.getIntegerVariable('TargetViewId')",
 							"max_length": 200,
 							"is_single_line": true,
 							"layout_width": "match_parent",

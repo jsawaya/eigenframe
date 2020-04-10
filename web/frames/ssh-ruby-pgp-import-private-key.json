@@ -40,7 +40,8 @@
 					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Private Key File')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
-					"eigenFragment.setCacheString('SelectedFile', '')"
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999715)"
 				]
 			},
 			{

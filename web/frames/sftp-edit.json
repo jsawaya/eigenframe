@@ -11,7 +11,8 @@
 				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File to Edit')",
 				"eigenFragment.setCacheString('WorkingDirectory', '')",
 				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-				"eigenFragment.setCacheString('SelectedFile', '')"
+				"eigenFragment.setCacheString('SelectedFile', '')",
+				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999712)"
 			]
 		},
 		{
