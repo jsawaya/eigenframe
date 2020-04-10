@@ -18,7 +18,7 @@
 		},
 		{
 			"type": "TextView",
-			"text_script": "''+eigenFragment.getCacheString('HomeDirectory')",
+			"text_script": "''+eigenFragment.getCacheString('SecureFtp',411000,'') ",
 			"layout_width": "match_parent",
 			"text_color": "#ffffff",
 			"text_size": "20",

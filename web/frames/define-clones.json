@@ -676,7 +676,6 @@
 				"type": "JavaScript",
 				"script_list": [
 					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-					"eigenFragment.setCacheString('HomeDirectory', home_dir)",
 					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '')",
 					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '')",
 					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '')",
@@ -718,10 +717,6 @@
 							"attributes": {
 								"text_script": "''+eigenFragment.getCacheString('SelectFilePrompt')"
 							}
-						},
-						{
-							"type": "x-JavaScript",
-							"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 999666)"
 						},
 						{
 							"type": "Clone",
@@ -856,14 +851,30 @@
 				"id": 991004,
 				"sftp_script": "'directory ' +  eigenFragment.getCacheString('FullPath')",
 				"on_complete": {
-					"type": "PopupScreen",
-					"layout_width": "match_parent",
-					"layout_height": "wrap_content",
-					"text_size": "14",
-					"text_color": "#ffffff",
-					"background_color": "#111111",
-					"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
+					"type": "ActionList",
+					"component_list": [
+						{
+							"type": "PopupTextView",
+							"condition_script": "!eigenFragment.getCacheString('SecureFtp',991004,'') ",
+							"title": "Warning",
+							"font": "font/droid-sans-mono/DroidSansMono.ttf",
+							"text_list": [
+								"SecureShell (ssh) is not enabled.\n",
+								"Open Termux, enter:  sshd"
+							]
+						},
+						{
+							"type": "PopupScreen",
+							"condition_script": "!!eigenFragment.getCacheString('SecureFtp',991004,'') ",
+							"layout_width": "match_parent",
+							"layout_height": "wrap_content",
+							"text_size": "14",
+							"text_color": "#ffffff",
+							"background_color": "#111111",
+							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
+						}
+					]
 				}
 			}
 		}
@@ -874,5 +885,3 @@
 		"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/playlist.json'"
 	}
 }
-
-

@@ -1,40 +1,44 @@
 {
-	"type": "LinearLayout",
-	"scrollable": true,
-	"orientation": "vertical",
-	"gravity": "center_horizontal",
-	"layout_width": "match_parent",
-	"component_list": [
-		{
-			"type": "JavaScript",
-			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File to Edit')",
-				"eigenFragment.setCacheString('WorkingDirectory', '')",
-				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-				"eigenFragment.setCacheString('SelectedFile', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999712)"
-			]
-		},
-		{
-			"type": "Clone",
-			"name": "JavaScriptSelectFilePath"
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Edit/Execute Remote File",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "GetRemoteFilePopupScreenEdit"
+	"comment": "set the HomeDirectory from sftp pwd",
+	"type": "SecureFtp",
+	"id": 411000,
+	"sftp": "pwd",
+	"on_complete": {
+		"type": "LinearLayout",
+		"scrollable": true,
+		"orientation": "vertical",
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"component_list": [
+			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999712)"
+				]
+			},
+			{
+				"type": "Clone",
+				"name": "JavaScriptSelectFilePath"
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Edit/Execute Remote File",
+					"icon": {
+						"name": "open_browser.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "GetRemoteFilePopupScreenEdit"
+					}
 				}
 			}
-		}
-	]
+		]
+	}
 }
-
-

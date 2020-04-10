@@ -2,7 +2,7 @@
 	"comment": "set the HomeDirectory from sftp pwd",
 	"type": "SecureFtp",
 	"id": 411000,
-	"sftp_script": "'pwd'",
+	"sftp": "pwd",
 	"on_complete": {
 		"type": "LinearLayout",
 		"scrollable": true,
