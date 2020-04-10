@@ -8,25 +8,6 @@
     "component_list": [
       {
         "type": "LinearLayout",
-        "orientation": "vertical",
-        "gravity": "center_horizontal",
-        "layout_width": "match_parent",
-        "component_list": [
-          {
-            "type": "TextView",
-            "layout_width": "match_parent",
-            "text_size": "14",
-            "text_color": "#ffffff",
-            "text_list": [
-              "SecureShell (ssh) is not enabled.\n",
-              "Open Termux, enter:  sshd"
-            ]
-          }
-        ]
-      },
-      {
-        "type": "LinearLayout",
-        "condition_script": "!!eigenFragment.getCacheString('SecureFtp',411000,'')",
         "scrollable": true,
         "orientation": "vertical",
         "gravity": "center_horizontal",
