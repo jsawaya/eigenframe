@@ -113,7 +113,7 @@
 					"or maybe sshd was recently upgraded, try to restart your device."
 				]
 			}
-		},
+    },
 		{
       "type": "Clone",
       "name": "ButtonDefault",
@@ -124,11 +124,40 @@
           "location": "left"
         },
         "on_click": {
-          "type": "PopupTextView",
-          "title": "pwd",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh": "pwd"
-        }
+          "comment": "set the HomeDirectory from sftp pwd",
+          "type": "SecureFtp",
+          "id": 411000,
+          "sftp_script": "'pwd'",
+          "on_complete": {
+            "type": "ActionList",
+            "component_list": [
+              {
+                "type": "JavaScript",
+                "script_list": [
+                  "var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
+                  "eigenFragment.setCacheString('HomeDirectory', home_dir)"
+                ]
+              },
+              {
+                "type": "PopupTextView",
+                "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') != '' ",
+                "title": "SecureShell HomeDirectory",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "text_script": "eigenFragment.getCacheString('SecureFtp:411000')"
+            },
+            {
+                  "type": "PopupTextView",
+                  "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
+                  "title": "Warning",
+                  "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                  "text": [
+                    "SecureShell (ssh) is not enabled./n",
+                    "Open Termux, enter:  sshd"
+                  ]
+              }	
+            ]
+          }
+        }    
       }
     },
 		{

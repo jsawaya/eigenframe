@@ -720,10 +720,6 @@
 							}
 						},
 						{
-							"type": "x-JavaScript",
-							"script": "eigenFragment.setIntegerVariable('TargetViewId', 0, 999666)"
-						},
-						{
 							"type": "Clone",
 							"name": "ButtonDefault",
 							"attributes": {
@@ -856,14 +852,30 @@
 				"id": 991004,
 				"sftp_script": "'directory ' +  eigenFragment.getCacheString('FullPath')",
 				"on_complete": {
-					"type": "PopupScreen",
-					"layout_width": "match_parent",
-					"layout_height": "wrap_content",
-					"text_size": "14",
-					"text_color": "#ffffff",
-					"background_color": "#111111",
-					"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
+					"type": "ActionList",
+					"component_list": [
+						{
+							"type": "PopupScreen",
+							"condition_script": "eigenFragment.getCacheString('SecureFtp',991004,'') != '' ",
+							"layout_width": "match_parent",
+							"layout_height": "wrap_content",
+							"text_size": "14",
+							"text_color": "#ffffff",
+							"background_color": "#111111",
+							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
+						},
+						{
+								"type": "PopupTextView",
+								"condition_script": "eigenFragment.getCacheString('SecureFtp',991004,'') == '' ",
+								"title": "Warning",
+								"font": "font/droid-sans-mono/DroidSansMono.ttf",
+								"text": [
+									"SecureShell (ssh) is not enabled./n",
+									"Open Termux, enter:  sshd"
+								]
+						}	
+					]
 				}
 			}
 		}
@@ -874,5 +886,3 @@
 		"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/playlist.json'"
 	}
 }
-
-
