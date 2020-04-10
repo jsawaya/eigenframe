@@ -244,14 +244,12 @@
     },
     {
       "type": "PopupTextView",
-      "condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'') ",
+      "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
       "title": "Warning",
       "font": "font/droid-sans-mono/DroidSansMono.ttf",
       "text_list": [
-        "Notice - SecureShell (ssh) is not enabled\n",
-        "Open Termux, enter:  sshd",
-        "Open Install Tab / SecureShell Settings",
-        " - Click [Open SSH Home Directory]"
+        "SecureShell (ssh) is not enabled.\n",
+        "Open Termux, enter:  sshd"
       ]
     }
 
