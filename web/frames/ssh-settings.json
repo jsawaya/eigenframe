@@ -106,11 +106,11 @@
 			"attributes": {
 				"text_list": [
 					"If you are unable to connect - ",
-					"Ensure that sshd is running (in Termux).",
-					"Open Termux console, enter: ps -e",
-					"if sshd is NOT listed, enter: sshd",
+					"Make sure sshd is running!\n",
+					"Open Termux, enter:  ps -e",
+					"if sshd is NOT listed, enter: sshd\n",
 					"With an Auth error, maybe you entered the wrong password?",
-					"or maybe sshd was recently upgraded, try to restart your device."
+					"or maybe openssh was upgraded, try restarting your device"
 				]
 			}
     },
@@ -127,7 +127,7 @@
           "comment": "set the HomeDirectory from sftp pwd",
           "type": "SecureFtp",
           "id": 411000,
-          "sftp_script": "'pwd'",
+          "sftp": "pwd",
           "on_complete": {
             "type": "ActionList",
             "component_list": [
@@ -151,7 +151,7 @@
                   "title": "Warning",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
                   "text_list": [
-                    "SecureShell (ssh) is not enabled./n",
+                    "SecureShell (ssh) is not enabled.\n",
                     "Open Termux, enter:  sshd"
                   ]
               }	

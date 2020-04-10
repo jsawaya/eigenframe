@@ -871,7 +871,7 @@
 								"title": "Warning",
 								"font": "font/droid-sans-mono/DroidSansMono.ttf",
 								"text_list": [
-									"SecureShell (ssh) is not enabled./n",
+									"SecureShell (ssh) is not enabled.\n",
 									"Open Termux, enter:  sshd"
 								]
 						}	
