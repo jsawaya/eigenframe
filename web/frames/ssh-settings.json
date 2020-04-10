@@ -150,7 +150,7 @@
                   "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
                   "title": "Warning",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "text": [
+                  "text_list": [
                     "SecureShell (ssh) is not enabled./n",
                     "Open Termux, enter:  sshd"
                   ]
