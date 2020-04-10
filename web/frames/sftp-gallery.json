@@ -8,7 +8,6 @@
     "component_list": [
       {
         "type": "LinearLayout",
-        "condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'')",
         "orientation": "vertical",
         "gravity": "center_horizontal",
         "layout_width": "match_parent",
