@@ -8,7 +8,7 @@
     "component_list": [
       {
         "type": "LinearLayout",
-        "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
+        "condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'') ",
         "orientation": "vertical",
         "gravity": "center_horizontal",
         "layout_width": "match_parent",
@@ -28,7 +28,7 @@
       },
       {
         "type": "LinearLayout",
-        "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') != '' ",
+        "condition_script": "!!eigenFragment.getCacheString('SecureFtp',411000,'') ",
         "scrollable": true,
         "orientation": "vertical",
         "gravity": "center_horizontal",

@@ -140,14 +140,14 @@
               },
               {
                 "type": "PopupTextView",
-                "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') != '' ",
+                "condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'') ",
                 "title": "SecureShell HomeDirectory",
                 "font": "font/droid-sans-mono/DroidSansMono.ttf",
                 "text_script": "eigenFragment.getCacheString('SecureFtp:411000')"
             },
             {
                   "type": "PopupTextView",
-                  "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
+                  "condition_script": "!!eigenFragment.getCacheString('SecureFtp',411000,'') ",
                   "title": "Warning",
                   "font": "font/droid-sans-mono/DroidSansMono.ttf",
                   "text_list": [
