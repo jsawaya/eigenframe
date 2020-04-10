@@ -1,18 +1,18 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
-  "component_list": [
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
+	"type": "LinearLayout",
+	"scrollable": true,
+	"orientation": "vertical",
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"layout_height": "wrap_content",
+	"component_list": [
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
 				"text": "Secure Shell (SSH) Settings"
-      }
-    },
+			}
+		},
 		{
 			"type": "Clone",
 			"name": "TextViewDetail",
@@ -20,86 +20,83 @@
 				"text": "SSH User-id (optional for Termux):"
 			}
 		},
-    {
-      "type": "EditText",
-      "id": 88800,
-      "max_length": 40,
-      "filter": "no-whitespace",
-      "is_single_line": true,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#000000"
-    },
-
-    {
-      "type": "Clone",
+		{
+			"type": "EditText",
+			"id": 88800,
+			"max_length": 40,
+			"filter": "no-whitespace",
+			"is_single_line": true,
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#000000"
+		},
+		{
+			"type": "Clone",
 			"name": "TextViewDetail",
-      "attributes": {
+			"attributes": {
 				"text": "SSH Passphrase (required)\nEnter same password you typed in Termux with passwd"
-      }
-    },
-
-    {
-      "type": "EditText",
-      "id": 88801,
-      "is_password": true,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#000000",
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 88801,
+			"is_password": true,
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#000000",
 			"text": "abc"
-    },
-
-    {
-      "type": "Clone",
+		},
+		{
+			"type": "Clone",
 			"name": "TextViewDetail",
-      "attributes": {
+			"attributes": {
 				"text": "SSH Host (name/ip):"
-      }
-    },
-    {
-      "type": "EditText",
-      "id": 88802,
-      "max_length": 40,
-      "filter": "no-whitespace",
-      "is_single_line": true,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "localhost",
-      "text_color": "#ffffff",
-      "background_color": "#000000"
-    },
-    {
-      "type": "Clone",
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 88802,
+			"max_length": 40,
+			"filter": "no-whitespace",
+			"is_single_line": true,
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text": "localhost",
+			"text_color": "#ffffff",
+			"background_color": "#000000"
+		},
+		{
+			"type": "Clone",
 			"name": "TextViewDetail",
-      "attributes": {
+			"attributes": {
 				"text": "SSH Port (8822 for Termux):"
-      }
-    },
-    {
-      "type": "EditText",
-      "id": 88803,
-      "max_length": 6,
-      "filter": "digits",
-      "is_single_line": true,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "8022",
-      "text_color": "#ffffff",
-      "background_color": "#000000"
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Test SecureShell Connection"
-      }
-    },
+			}
+		},
+		{
+			"type": "EditText",
+			"id": 88803,
+			"max_length": 6,
+			"filter": "digits",
+			"is_single_line": true,
+			"layout_width": "match_parent",
+			"layout_height": "wrap_content",
+			"text": "8022",
+			"text_color": "#ffffff",
+			"background_color": "#000000"
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Test SecureShell Connection"
+			}
+		},
 		{
 			"type": "Clone",
 			"name": "TextViewDetail",
@@ -113,142 +110,135 @@
 					"or maybe openssh was upgraded, try restarting your device"
 				]
 			}
-    },
+		},
 		{
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
 				"text": "Show Home Directory (pwd)",
-        "icon": {
-          "name": "info.",
-          "location": "left"
-        },
-        "on_click": {
-          "comment": "set the HomeDirectory from sftp pwd",
-          "type": "SecureFtp",
-          "id": 411000,
-          "sftp": "pwd",
-          "on_complete": {
-            "type": "ActionList",
-            "component_list": [
-              {
-                "type": "JavaScript",
-                "script_list": [
-                  "var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-                  "eigenFragment.setCacheString('HomeDirectory', home_dir)"
-                ]
-              },
-              {
-                "type": "PopupTextView",
-                "condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'') ",
-                "title": "SecureShell HomeDirectory",
-                "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                "text_script": "eigenFragment.getCacheString('SecureFtp:411000')"
-            },
-            {
-                  "type": "PopupTextView",
-                  "condition_script": "!!eigenFragment.getCacheString('SecureFtp',411000,'') ",
-                  "title": "Warning",
-                  "font": "font/droid-sans-mono/DroidSansMono.ttf",
-                  "text_list": [
-                    "SecureShell (ssh) is not enabled.\n",
-                    "Open Termux, enter:  sshd"
-                  ]
-              }	
-            ]
-          }
-        }    
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"on_click": {
+					"comment": "set the HomeDirectory from sftp pwd",
+					"type": "SecureFtp",
+					"id": 411000,
+					"sftp": "pwd",
+					"on_complete": {
+						"type": "ActionList",
+						"component_list": [
+							{
+								"type": "PopupTextView",
+								"condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'') ",
+								"title": "SecureShell HomeDirectory",
+								"font": "font/droid-sans-mono/DroidSansMono.ttf",
+								"text_script": "eigenFragment.getCacheString('SecureFtp:411000')"
+							},
+							{
+								"type": "PopupTextView",
+								"condition_script": "!!eigenFragment.getCacheString('SecureFtp',411000,'') ",
+								"title": "Warning",
+								"font": "font/droid-sans-mono/DroidSansMono.ttf",
+								"text_list": [
+									"SecureShell (ssh) is not enabled.\n",
+									"Open Termux, enter:  sshd"
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
 				"text": "Show Processes (ps -eo cmd)",
-        "icon": {
-          "name": "info.",
-          "location": "left"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "ps -eo cmd",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh": "ps -eo cmd"
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"on_click": {
+					"type": "PopupTextView",
+					"title": "ps -eo cmd",
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh": "ps -eo cmd"
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
 				"text": "Display Filesystem (df)",
-        "icon": {
-          "name": "info.",
-          "location": "left"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "df (display filesystem)",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh": "df"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "df (display filesystem)",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh": "df"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
 				"text": "Network IP Addresses (ifconfig)",
-        "icon": {
-          "name": "info.",
-          "location": "left"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "ifconfig (network ip address)",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "TextViewDetail",
-                      "attributes": {
-                        "text_size": "10",
-                        "ssh": "ifconfig"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "ifconfig (network ip address)",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh": "ifconfig"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
 		{
 			"type": "Clone",
 			"name": "ButtonDefault",
@@ -286,13 +276,9 @@
 				}
 			}
 		},
-
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    }
-
-  ]
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		}
+	]
 }
-
-
