@@ -1,298 +1,323 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
-  "component_list": [
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Apache2 Administration"
-      }
-    },
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Check if any HTTP processes are running",
-				"icon": {
-					"name": "info.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "PopupTextView",
-					"title": "Check if Apache2 HTTP processes are running",
-					"font": "font/droid-sans-mono/DroidSansMono.ttf",
-					"ssh_list": [
-						"ps -eo cmd"
-					]
-				}
-			}
-		},
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Start Apache2 HTTP/CGI Services",
-        "icon": {
-          "name": "open_with.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Start Apache2 HTTP/CGI Services",
-            "component_list": [
-              {
+  "comment": "set the HomeDirectory from sftp pwd",
+  "type": "SecureFtp",
+  "id": 411000,
+  "sftp": "pwd",
+  "on_complete": {
+    "type": "ActionList",
+    "component_list": [
+      {
+        "type": "LinearLayout",
+        "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
+        "orientation": "vertical",
+        "gravity": "center_horizontal",
+        "layout_width": "match_parent",
+        "component_list": [
+          {
+            "type": "TextView",
+            "layout_width": "match_parent",
+            "layout_height": "match_parent",
+            "text_size": "14",
+            "text_color": "#ffffff",
+            "text_list": [
+              "SecureShell (ssh) is not enabled.\n",
+              "Open Termux, enter:  sshd"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "LinearLayout",
+				"condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') != '' ",
+        "scrollable": true,
+        "orientation": "vertical",
+        "gravity": "center_horizontal",
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "component_list": [
+          {
+            "type": "Clone",
+            "name": "TextViewLabel",
+            "attributes": {
+              "text": "Apache2 Administration"
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "Check if any HTTP processes are running",
+              "icon": {
+                "name": "info.",
+                "location": "top"
+              },
+              "on_click": {
+                "type": "PopupTextView",
+                "title": "Check if Apache2 HTTP processes are running",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "ps -eo cmd"
+                ]
+              }
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "Start Apache2 HTTP/CGI Services",
+              "icon": {
+                "name": "open_with.",
+                "location": "top"
+              },
+              "on_click": {
                 "type": "Clone",
-                "name": "LayoutVerticalScrollable",
+                "name": "PopupScreenDefault",
                 "attributes": {
+                  "title": "Start Apache2 HTTP/CGI Services",
                   "component_list": [
                     {
                       "type": "Clone",
-                      "name": "TextViewDetail",
+                      "name": "LayoutVerticalScrollable",
                       "attributes": {
-                        "text_size": "10",
-                        "ssh_list": [
-                          "echo Starting Apache2 HTTP/CGI Services ...",
-                          "httpd",
-                          "sleep 1",
-                          "echo ps -e",
-                          "ps -e",
-                          "echo ready to test - click [Test Apache2 CGI Service]"
+                        "component_list": [
+                          {
+                            "type": "Clone",
+                            "name": "TextViewDetail",
+                            "attributes": {
+                              "text_size": "10",
+                              "ssh_list": [
+                                "echo Starting Apache2 HTTP/CGI Services ...",
+                                "httpd",
+                                "sleep 1",
+                                "echo ps -e",
+                                "ps -e",
+                                "echo ready to test - click [Test Apache2 CGI Service]"
+                              ]
+                            }
+                          }
                         ]
                       }
                     }
                   ]
                 }
               }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Stop Apache2 HTTP/CGI Services",
-        "icon": {
-          "name": "close.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "Stop Apache2 HTTP/CGI Services",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh_list": [
-            "killall httpd",
-            "echo Stopped Apache2 services"
-          ]
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Apache2 Testing"
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Test Apache2 CGI Service",
-        "icon": {
-          "name": "info.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "PopupTextView",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "title": "Test Apache2 CGI Service",
-          "url": "http://localhost:8080/cgi-bin/sys-test.sh"
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Test Apache2 Web Service",
-        "icon": {
-          "name": "info.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Apache2 Web Service",
-            "component_list": [
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "WebView",
-                      "layout_width": "match_parent",
-                      "url": "http://localhost:8080"
-                    }
-                  ]
-                }
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "Stop Apache2 HTTP/CGI Services",
+              "icon": {
+                "name": "close.",
+                "location": "top"
+              },
+              "on_click": {
+                "type": "PopupTextView",
+                "title": "Stop Apache2 HTTP/CGI Services",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "ssh_list": [
+                  "killall httpd",
+                  "echo Stopped Apache2 services"
+                ]
               }
-            ]
-          }
-        }
-      }
-    },
-
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Apache2 Logs"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click here to see any unusual activity when you are testing new scripts"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Show Apache2 Error Log (using SSH)",
-        "icon": {
-          "name": "open_with.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Show Apache2 Error Log",
-            "component_list": [
-              {
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "HorizontalLine"
+          },
+          {
+            "type": "Clone",
+            "name": "TextViewLabel",
+            "attributes": {
+              "text": "Apache2 Testing"
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "Test Apache2 CGI Service",
+              "icon": {
+                "name": "info.",
+                "location": "top"
+              },
+              "on_click": {
+                "type": "PopupTextView",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "title": "Test Apache2 CGI Service",
+                "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+              }
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "Test Apache2 Web Service",
+              "icon": {
+                "name": "info.",
+                "location": "top"
+              },
+              "on_click": {
                 "type": "Clone",
-                "name": "LayoutVerticalScrollable",
+                "name": "PopupScreenDefault",
                 "attributes": {
+                  "title": "Apache2 Web Service",
                   "component_list": [
                     {
                       "type": "Clone",
-                      "name": "TextViewDetail",
+                      "name": "LayoutVerticalScrollable",
                       "attributes": {
-                        "text_size": "10",
-                        "ssh": "tail -n 30 ~/../usr/var/log/apache2/error_log"
+                        "component_list": [
+                          {
+                            "type": "WebView",
+                            "layout_width": "match_parent",
+                            "url": "http://localhost:8080"
+                          }
+                        ]
                       }
                     }
                   ]
                 }
               }
-            ]
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "HorizontalLine"
+          },
+          {
+            "type": "Clone",
+            "name": "TextViewLabel",
+            "attributes": {
+              "text": "Apache2 Logs"
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "TextViewDetail",
+            "attributes": {
+              "text_list": [
+                "Click here to see any unusual activity when you are testing new scripts"
+              ]
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "Show Apache2 Error Log (using SSH)",
+              "icon": {
+                "name": "open_with.",
+                "location": "top"
+              },
+              "on_click": {
+                "type": "Clone",
+                "name": "PopupScreenDefault",
+                "attributes": {
+                  "title": "Show Apache2 Error Log",
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "LayoutVerticalScrollable",
+                      "attributes": {
+                        "component_list": [
+                          {
+                            "type": "Clone",
+                            "name": "TextViewDetail",
+                            "attributes": {
+                              "text_size": "10",
+                              "ssh": "tail -n 30 ~/../usr/var/log/apache2/error_log"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "Show Apache2 Error Log (using HTTP/CGI)",
+              "on_click": {
+                "type": "PopupTextView",
+                "title": "Show Apache2 Error Log (using HTTP/CGI)",
+                "font": "font/droid-sans-mono/DroidSansMono.ttf",
+                "url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
+              }
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "HorizontalLine"
+          },
+          {
+            "type": "Clone",
+            "name": "TextViewLabel",
+            "attributes": {
+              "text": "Launch apps from Apache2 HTTP/CGI service:"
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "Launch Gallery (from http localhost:8080)",
+              "icon": {
+                "name": "open_browser.",
+                "location": "top"
+              },
+              "on_click": {
+                "type": "JavaScript",
+                "script_list": [
+                  "eigenActivity.launch('http://localhost:8080/apps/app_localhost_gallery.json')"
+                ]
+              }
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "HorizontalLine"
+          },
+          {
+            "type": "Clone",
+            "name": "TextViewLabel",
+            "attributes": {
+              "text": "Call Apache2 HTTP/CGI (bash) Script:"
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text": "HTTP/CGI (bash) Script",
+              "icon": {
+                "name": "open_browser.",
+                "location": "top"
+              },
+              "on_click": {
+                "type": "Clone",
+                "name": "PopupScreenDefault",
+                "attributes": {
+                  "title": "HTTP/CGI (bash) Script",
+                  "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi.json'"
+                }
+              }
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "HorizontalLine"
           }
-        }
+        ]
       }
-    },
-
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Show Apache2 Error Log (using HTTP/CGI)",
-        "on_click": {
-          "type": "PopupTextView",
-          "title": "Show Apache2 Error Log (using HTTP/CGI)",
-          "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Launch apps from Apache2 HTTP/CGI service:"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Launch Gallery (from http localhost:8080)",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenActivity.launch('http://localhost:8080/apps/app_localhost_gallery.json')"
-          ]
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-				"text": "Call Apache2 HTTP/CGI (bash) Script:"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-				"text": "HTTP/CGI (bash) Script",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-						"title": "HTTP/CGI (bash) Script",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    }
-  ]
+    ]
+  }
 }
-
-

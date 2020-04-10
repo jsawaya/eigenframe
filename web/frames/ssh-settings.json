@@ -160,23 +160,6 @@
         }    
       }
     },
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Show Remote UserId (whoami)",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"on_click": {
-					"type": "PopupTextView",
-					"title": "whoami",
-					"font": "font/droid-sans-mono/DroidSansMono.ttf",
-					"ssh": "whoami"
-				}
-			}
-		},
     {
       "type": "Clone",
       "name": "ButtonDefault",
