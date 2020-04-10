@@ -28,7 +28,7 @@
 		},
 		{
 			"icon_name": "photo.",
-			"name": "Photo",
+			"name": "Camera",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/script-photo.json"
 		},

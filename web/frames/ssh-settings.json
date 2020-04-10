@@ -129,7 +129,7 @@
 								"condition_script": "!(eigenFragment.getCacheString('SecureFtp',411000,'') == '')",
 								"title": "SecureShell HomeDirectory",
 								"font": "font/droid-sans-mono/DroidSansMono.ttf",
-								"text_script": "eigenFragment.getCacheString('SecureFtp:411000')"
+								"text_script": "''+eigenFragment.getCacheString('SecureFtp:411000')"
 							}
 						]
 					}
