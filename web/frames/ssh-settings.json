@@ -94,7 +94,46 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Test SecureShell Connection"
+				"text": "Verify SecureShell Connection"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Open SSH Home Directory (pwd)",
+				"icon": {
+					"name": "info.",
+					"location": "left"
+				},
+				"on_click": {
+					"comment": "set the HomeDirectory from sftp pwd",
+					"type": "SecureFtp",
+					"id": 411000,
+					"sftp": "pwd",
+					"on_complete": {
+						"type": "ActionList",
+						"component_list": [
+							{
+								"type": "PopupTextView",
+								"condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'') ",
+								"title": "Warning",
+								"font": "font/droid-sans-mono/DroidSansMono.ttf",
+								"text_list": [
+									"SecureShell (ssh) is not enabled.\n",
+									"Open Termux, enter:  sshd"
+								]
+							},
+							{
+								"type": "PopupTextView",
+								"condition_script": "!!eigenFragment.getCacheString('SecureFtp',411000,'') ",
+								"title": "SecureShell HomeDirectory",
+								"font": "font/droid-sans-mono/DroidSansMono.ttf",
+								"text_script": "eigenFragment.getCacheString('SecureFtp:411000')"
+							}
+						]
+					}
+				}
 			}
 		},
 		{
@@ -113,41 +152,13 @@
 		},
 		{
 			"type": "Clone",
-			"name": "ButtonDefault",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Show Home Directory (pwd)",
-				"icon": {
-					"name": "info.",
-					"location": "left"
-				},
-				"on_click": {
-					"comment": "set the HomeDirectory from sftp pwd",
-					"type": "SecureFtp",
-					"id": 411000,
-					"sftp": "pwd",
-					"on_complete": {
-						"type": "ActionList",
-						"component_list": [
-							{
-								"type": "PopupTextView",
-								"condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'') ",
-								"title": "SecureShell HomeDirectory",
-								"font": "font/droid-sans-mono/DroidSansMono.ttf",
-								"text_script": "eigenFragment.getCacheString('SecureFtp:411000')"
-							},
-							{
-								"type": "PopupTextView",
-								"condition_script": "!!eigenFragment.getCacheString('SecureFtp',411000,'') ",
-								"title": "Warning",
-								"font": "font/droid-sans-mono/DroidSansMono.ttf",
-								"text_list": [
-									"SecureShell (ssh) is not enabled.\n",
-									"Open Termux, enter:  sshd"
-								]
-							}
-						]
-					}
-				}
+				"text": "Secure Shell Gallery"
 			}
 		},
 		{

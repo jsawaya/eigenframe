@@ -4,133 +4,107 @@
 	"id": 411000,
 	"sftp": "pwd",
 	"on_complete": {
-		"type": "ActionList",
+		"type": "LinearLayout",
+		"scrollable": true,
+		"orientation": "vertical",
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"layout_height": "wrap_content",
 		"component_list": [
 			{
-				"type": "LinearLayout",
-				"condition_script": "!eigenFragment.getCacheString('SecureFtp',411000,'') ",
-				"orientation": "vertical",
-				"gravity": "center_horizontal",
-				"layout_width": "match_parent",
-				"component_list": [
-					{
-						"type": "TextView",
-						"layout_width": "match_parent",
-						"layout_height": "match_parent",
-						"text_size": "14",
-						"text_color": "#ffffff",
-						"text_list": [
-							"SecureShell (ssh) is not enabled.\n",
-							"Open Termux, enter:  sshd"
-						]
-					}
-				]
+				"type": "Clone",
+				"name": "HorizontalLine"
 			},
 			{
-				"type": "LinearLayout",
-				"condition_script": "!!eigenFragment.getCacheString('SecureFtp',411000,'') ",
-				"scrollable": true,
-				"orientation": "vertical",
-				"gravity": "center_horizontal",
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"component_list": [
-					{
-						"type": "Clone",
-						"name": "HorizontalLine"
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "SecureShell (SSH) Settings"
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "SecureShell Settings",
+					"icon": {
+						"name": "settings.",
+						"location": "top"
 					},
-					{
+					"on_click": {
 						"type": "Clone",
-						"name": "TextViewLabel",
+						"name": "PopupScreenDefault",
 						"attributes": {
-							"text": "SecureShell (SSH) Settings"
-						}
-					},
-					{
-						"type": "Clone",
-						"name": "ButtonDefault",
-						"attributes": {
-							"text": "SecureShell Settings",
-							"icon": {
-								"name": "settings.",
-								"location": "top"
-							},
-							"on_click": {
-								"type": "Clone",
-								"name": "PopupScreenDefault",
-								"attributes": {
-									"title": "SecureShell Settings",
-									"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
-								}
-							}
-						}
-					},
-					{
-						"type": "Clone",
-						"name": "HorizontalLine"
-					},
-					{
-						"type": "Clone",
-						"name": "TextViewLabel",
-						"attributes": {
-							"text": "SecureShell Command Line"
-						}
-					},
-					{
-						"type": "Clone",
-						"name": "TextViewDetail",
-						"attributes": {
-							"text_list": [
-								"SecureShell (ssh) provides capability to execute a remote command line interface (with Termux, for example)"
-							]
-						}
-					},
-					{
-						"type": "EditText",
-						"id": 7600,
-						"layout_width": "match_parent",
-						"layout_height": "wrap_content",
-						"text": "ls -la",
-						"text_color": "#ffffff",
-						"background_color": "#000000"
-					},
-					{
-						"type": "Clone",
-						"name": "ButtonDefault",
-						"attributes": {
-							"text": "Execute Shell Command",
-							"icon": {
-								"name": "play.",
-								"location": "top"
-							},
-							"on_click": {
-								"type": "Clone",
-								"name": "PopupScreenDefault",
-								"attributes": {
-									"title": "Command Output",
-									"component_list": [
-										{
-											"type": "Clone",
-											"name": "LayoutVerticalScrollable",
-											"attributes": {
-												"component_list": [
-													{
-														"type": "Clone",
-														"name": "TextViewDetail",
-														"attributes": {
-															"text_size": "10",
-															"ssh_script": "''+eigenFragment.getViewState(7600)"
-														}
-													}
-												]
-											}
-										}
-									]
-								}
-							}
+							"title": "SecureShell Settings",
+							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
 						}
 					}
-				]
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "SecureShell Command Line"
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"SecureShell (ssh) provides capability to execute a remote command line interface (with Termux, for example)"
+					]
+				}
+			},
+			{
+				"type": "EditText",
+				"id": 7600,
+				"layout_width": "match_parent",
+				"layout_height": "wrap_content",
+				"text": "ls -la",
+				"text_color": "#ffffff",
+				"background_color": "#000000"
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Execute Shell Command",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Command Output",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_script": "''+eigenFragment.getViewState(7600)"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
 			}
 		]
 	}
