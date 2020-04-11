@@ -78,13 +78,13 @@
 														"key_path = eigenFragment.getViewState(targetVid)",
 														"key_path = '''+eigenFragment.getViewState(targetVid)+''' ",
 														"'cd '+dir+'; echo \"gpg_import_public_key('+ key_path +').to_json.to_s\"'",
-														"'cd '+dir+'; ruby ssh_ruby.rb \"gpg_import_public_key('+ key_path +').to_json.to_s\"'"
+														"'cd '+dir+'; ruby ssh_ruby.rb \"gpg_import_public_key('+ key_path +').to_json.to_s\"'",
+														"'echo ' + eigenFragment.getViewState(targetVid) "
 													],
 													"ssh_script_list": [
 														"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
 														"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-														"'echo ' + targetVid ",
-														"'echo ' + eigenFragment.getViewState(targetVid) "
+														"'echo ' + targetVid "
 													]
 												}
 											}
