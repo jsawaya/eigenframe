@@ -550,6 +550,31 @@
 		},
 		{
 			"type": "Define",
+			"name": "PopupScreenGetRemoteFilePopupScreenEditProlog",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"title": "Edit Remote Prolog File",
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "LayoutVerticalScrollable",
+							"attributes": {
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "GetRemoteFilePopupScreenEditProlog"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "Define",
 			"name": "GetRemoteFilePopupScreenEditRuby",
 			"component": {
 				"type": "SecureFtp",
@@ -599,6 +624,31 @@
 							}
 						]
 					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "PopupScreenGetRemoteFilePopupScreenEditRuby",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"title": "Edit Remote Ruby File",
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "LayoutVerticalScrollable",
+							"attributes": {
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "GetRemoteFilePopupScreenEditRuby"
+									}
+								]
+							}
+						}
+					]
 				}
 			}
 		},
@@ -658,6 +708,31 @@
 		},
 		{
 			"type": "Define",
+			"name": "PopupScreenGetRemoteFilePopupScreenEditShell",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"title": "Edit Remote Shell File",
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "LayoutVerticalScrollable",
+							"attributes": {
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "GetRemoteFilePopupScreenEditShell"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "Define",
 			"name": "GetRemoteFilePopupScreenEditFrame",
 			"component": {
 				"type": "SecureFtp",
@@ -712,6 +787,31 @@
 		},
 		{
 			"type": "Define",
+			"name": "PopupScreenGetRemoteFilePopupScreenEditFrame",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"title": "Edit Remote EigenFrame",
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "LayoutVerticalScrollable",
+							"attributes": {
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "GetRemoteFilePopupScreenEditFrame"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "Define",
 			"name": "GetRemoteFilePopupScreenEditFile",
 			"component": {
 				"type": "SecureFtp",
@@ -757,6 +857,31 @@
 							}
 						]
 					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "PopupScreenGetRemoteFilePopupScreenEditFile",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"title": "Edit Remote File",
+					"component_list": [
+						{
+							"type": "Clone",
+							"name": "LayoutVerticalScrollable",
+							"attributes": {
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "GetRemoteFilePopupScreenEditFile"
+									}
+								]
+							}
+						}
+					]
 				}
 			}
 		},
