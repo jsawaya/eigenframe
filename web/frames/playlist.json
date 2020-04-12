@@ -66,6 +66,13 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Install EigenFrame Services"
+      }
+    },
+    {
+      "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
@@ -106,7 +113,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch an app from EigenFrame github server"
+        "text": "Launch an app from EigenFrame GitHub server"
       }
     },
     {
@@ -147,7 +154,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "EigenFrame Github Master Branch"
+        "text": "EigenFrame GitHub Master Branch"
       }
     },
     {
@@ -155,7 +162,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Launch Github Master Branch] to run EigenFrame apps as Termux services.",
+          "Click [Launch GitHub Master Branch] to run EigenFrame apps as Termux services.",
           "Administer SSH/SFTP, GIT, Bash, Ruby, Prolog, PGP, Apache2, ..."
         ]
       }
@@ -164,7 +171,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch Github Master Branch",
+        "text": "Launch GitHub Master Branch",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -252,7 +259,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Launch Github Beta Branch] for pre-release features (in development)"
+          "Click [Launch GitHub Beta Branch] for pre-release features (in development)"
         ]
       }
     },
@@ -260,7 +267,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch Github Beta Branch",
+        "text": "Launch GitHub Beta Branch",
         "icon": {
           "name": "open_browser.",
           "location": "top"
