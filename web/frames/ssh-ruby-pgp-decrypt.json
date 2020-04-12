@@ -72,7 +72,7 @@
 						"var encrypted_file = eigenFragment.getViewState(targetVid)",
 						"output_file = 'test.out'",
 						"password = eigenFragment.getViewState(6606)",
-						"dir + 'ruby ssh-gpg-decrypt.rb ' + password + ',' + encrypted_file + ',' + output_file"
+						"dir + 'ruby ssh-gpg-decrypt.rb \"' + password + '\" ' + encrypted_file + ' ' + output_file"
 					],
 					"on_complete": {
 						"type": "Clone",
