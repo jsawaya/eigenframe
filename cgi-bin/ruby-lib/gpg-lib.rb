@@ -44,11 +44,11 @@ def gpg_list_private_keys()
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
 
-  stdout_string_array = get_io_as_array(stdout)
-  stdout_string_array_selected = stdout_string_array.select { |line| line =~ /^sec/ }
+  stdout_stringarray = get_io_as_array(stdout)
+  stdout_stringarray_selected = stdout_stringarray.select { |line| line =~ /^sec/ }
 
   keys = []
-  stdout_string_array_selected.each do |line|
+  stdout_stringarray_selected.each do |line|
     /\/\S+/.match(line) do |matchdata|
       keys << matchdata.to_s[1..-1]
     end
