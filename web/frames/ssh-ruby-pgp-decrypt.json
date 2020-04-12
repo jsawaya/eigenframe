@@ -70,7 +70,7 @@
 						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
 						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 						"var encrypted_file = eigenFragment.getViewState(targetVid)",
-						"output_file = 'test.out'",
+						"output_file = encrypted_file+'.out'",
 						"password = eigenFragment.getViewState(6606)",
 						"dir + 'ruby ssh-gpg-decrypt.rb \"' + password + '\" ' + encrypted_file + ' ' + output_file"
 					],
