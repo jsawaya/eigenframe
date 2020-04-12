@@ -107,12 +107,12 @@ def gpg_list_packets_hash(keyfile)
 end
 
 
-def gpg_decrypt(password, keyfile, outfile)
+def gpg_decrypt(password, pgpfile, outfile)
   gpg = "/data/data/com.termux/files/usr/bin/gpg -v -v --homedir /data/data/com.termux/files/home/.gnupg/"
 
   gpg_sec = "#{gpg} --pinentry-mode loopback --batch --yes --passphrase-fd 0"
 
-  cmd = "#{gpg_sec} --decrypt #{keyfile}"
+  cmd = "#{gpg_sec} --decrypt #{pgpfile}"
 
   if outfile.to_s.strip.size > 0
     cmd = cmd << " > #{outfile}"
@@ -132,7 +132,8 @@ def gpg_decrypt(password, keyfile, outfile)
 
   {
     type: "gpg_decrypt",
-    keyfile: keyfile,
+    pgpfile: pgpfile,
+    outfile: outfile,
     command: cmd,
     exit_code: exit_code,
     stdout: stdout_stringarray,

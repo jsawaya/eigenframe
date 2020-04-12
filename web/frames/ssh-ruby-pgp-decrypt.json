@@ -73,7 +73,7 @@
 						"output_file = encrypted_file+'.out'",
 						"password = eigenFragment.getViewState(6606)",
 						"password0 = '' ",
-						"dir + 'echo \"'+ password + '\" | ruby ssh-gpg-decrypt.rb \"' + password0 + '\" ' + encrypted_file + ' ' + output_file"
+						"dir + 'echo \"'+ password + '\" | ruby ssh-gpg-decrypt.rb ' + encrypted_file + ' ' + output_file + ' \"' + password0 + '\"' "
 					],
 					"on_complete": {
 						"type": "Clone",
