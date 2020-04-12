@@ -13,9 +13,9 @@
 			{
 				"type": "JavaScript",
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote EigenFrame File')",
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote EigenFrame')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/frames')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
 					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999712)"
 				]
@@ -28,7 +28,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Edit/Exec Remote EigenFrame File",
+					"text": "Edit/Exec Remote EigenFrame",
 					"icon": {
 						"name": "open_browser.",
 						"location": "top"
