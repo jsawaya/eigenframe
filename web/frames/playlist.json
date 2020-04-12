@@ -34,7 +34,7 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "The following demonstrates how to launch a local app.  Here's where to put your local eigenframe specifications - the shared directory:"
+        "text": "The following demonstrates how to launch an app from your local shared directory:"
       }
     },
     {
@@ -49,7 +49,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch a local app\n(hello world)",
+        "text": "Launch Hello World App",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -57,6 +57,43 @@
         "on_click": {
           "type": "JavaScript",
           "script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json')"
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Install] for Termux setup instructions, SecureShell Settings, GIT Installation, Ruby Installation, Prolog Installation, OpenPGP Installation, Apache2 (CGI) Installation and EigenFrame GitHub Installation ",
+          " - Termux Setup Instructions",
+          " - SecureShell Settings - EigenFrame remote control of Termux App",
+          " - GIT Installation - EigenFrame GitHub repository",
+          " - Ruby Installation - system integration",
+          " - Prolog Installation - inference engine",
+          " - OpenPGP Installation - cryptography and security",
+          " - Apache2 (CGI) Installation - http/cgi support (optional)"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Installation",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_master_install.json')"
+          ]
         }
       }
     },
@@ -177,43 +214,6 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Install] for Termux setup instructions, SecureShell Settings, GIT Installation, Ruby Installation, Prolog Installation, OpenPGP Installation, Apache2 (CGI) Installation and EigenFrame GitHub Installation ",
-          " - Termux Setup Instructions",
-          " - SecureShell Settings - EigenFrame remote control of Termux App",
-          " - GIT Installation - EigenFrame GitHub repository",
-          " - Ruby Installation - system integration",
-          " - Prolog Installation - inference engine",
-          " - OpenPGP Installation - cryptography and security",
-          " - Apache2 (CGI) Installation - http/cgi support (optional)"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Install",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_install.json')"
-          ]
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
           "Click [Security] to use OpenPGP Cryptography (GnuPG) to encrypt/decrypt/sign/verify/import-key/export-key.  "
         ]
       }
@@ -230,7 +230,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_security.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_master_security.json')"
           ]
         }
       }
