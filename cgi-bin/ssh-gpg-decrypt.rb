@@ -10,4 +10,4 @@ password = ARGV[0]
 keyfile = ARGV[1]
 outfile = ARGV[2]
 
-puts gpg_decrypt(password, keyfile, outfile)
+puts gpg_decrypt(password, keyfile, outfile).to_json.to_s

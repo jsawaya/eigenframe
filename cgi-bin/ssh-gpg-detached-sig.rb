@@ -10,4 +10,4 @@ keyfile = ARGV[0]
 password = ARGV[1]
 keyid = ARGV[2]
 
-puts gpg_sign_detached(keyid, password, keyfile)
+puts gpg_sign_detached(keyid, password, keyfile).to_json.to_s

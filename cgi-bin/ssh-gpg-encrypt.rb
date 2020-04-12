@@ -10,4 +10,4 @@ keyid = ARGV[0]
 infile = ARGV[1]
 fmt = ARGV[2]
 
-puts gpg_encrypt(keyid, infile, fmt)
+puts gpg_encrypt(keyid, infile, fmt).to_json.to_s

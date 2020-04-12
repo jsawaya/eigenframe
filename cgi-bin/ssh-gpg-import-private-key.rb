@@ -9,4 +9,4 @@ exit 10 if ARGV.length == 0
 keyfile = ARGV[0]
 password = ARGV[1]
 
-puts gpg_import_private_key(keyfile, password)
+puts gpg_import_private_key(keyfile, password).to_json.to_s

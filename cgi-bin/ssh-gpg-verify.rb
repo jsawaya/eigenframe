@@ -8,4 +8,4 @@ exit 10 if ARGV.length == 0
 
 keyfile = ARGV[0]
 
-puts gpg_verify(keyfile)
+puts gpg_verify(keyfile).to_json.to_s
