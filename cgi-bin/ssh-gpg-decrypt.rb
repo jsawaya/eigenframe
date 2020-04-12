@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-# 'ruby ssh-gpg-decrypt.rb ' + encrypted_file + ' ' + output_file + ' \"' + password0 + '\"' "
+# 'ruby ssh-gpg-decrypt.rb ' + encrypted_file + ' ' + output_file + ' \"' + password + '\"' "
 
 require 'json'
 require_relative 'ruby-lib/app-lib'
