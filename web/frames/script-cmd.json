@@ -10,19 +10,15 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "JavaScript"
+				"text": "EigenFrame supports JavaScript"
 			}
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
 		},
 		{
 			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"JavaScript provides capability to invoke dynamic scripts (no additional services required)"
+					"JavaScript can invoke dynamic attributes and actions (no additional services required)"
 				]
 			}
 		},
@@ -35,10 +31,10 @@
       "layout_width": "wrap_content",
       "layout_height": "wrap_content",
       "text_color": "#ffffff",
-      "background_color": "#ff0000",
+      "background_color": "#654321",
       "icon": {
-        "name": "info.",
-        "location": "left"
+        "name": "play.",
+        "location": "top"
       },
       "on_click": {
         "type": "JavaScript",
@@ -53,14 +49,13 @@
       "type": "Clone",
       "name": "HorizontalLine"
     },
-    {
-      "type": "TextView",
-      "text": "JavaScript Command",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "14",
-      "text_color": "#ffffff"
-    },
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "JavaScript Command Line"
+			}
+		},
 		{
 			"type": "EditText",
 			"id": 7500,
