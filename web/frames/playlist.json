@@ -312,6 +312,102 @@
     {
       "type": "Clone",
       "name": "HorizontalLine"
+    },
+    {
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Edit Remote File",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Edit Remote File",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
+					}
+				}
+			}
+		},
+    {
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Shell Edit/Exec",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Shell",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
+					}
+				}
+			}
+		},
+    {
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "EigenFrame Edit/Exec",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "EigenFrame Edit/Exec",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-frame.json'"
+					}
+				}
+			}
+		},
+    {
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Ruby Edit/Exec",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Ruby Edit/Exec",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
+					}
+				}
+			}
+		},
+    {
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Prolog Edit/Exec",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Prolog Edit/Exec",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl.json'"
+					}
+				}
+			}
     }
+
   ]
 }

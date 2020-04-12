@@ -15,40 +15,16 @@
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
 		},
 		{
-			"icon_name": "play.",
-			"name": "SSH",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-cmd.json"
-		},
-		{
 			"icon_name": "import_export.",
 			"name": "SFTP",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-gallery.json"
 		},
 		{
-			"icon_name": "edit.",
-			"name": "EDIT/EXEC",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/sftp-edit.json"
-		},
-		{
-			"icon_name": "ruby_logo.",
-			"name": "Ruby",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby.json"
-		},
-		{
 			"icon_name": "apache_logo.",
 			"name": "Apache",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-apache.json"
-		},
-		{
-			"icon_name": "swi_prolog.",
-			"name": "Prolog",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby-swipl.json"
 		},
 		{
 			"icon_name": "info.",
