@@ -10,20 +10,50 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "JavaScript"
+				"text": "EigenFrame supports JavaScript"
 			}
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
 		},
 		{
 			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"JavaScript provides capability to invoke dynamic scripts (no services required)..."
+					"JavaScript can invoke dynamic attributes and actions (no additional services required)"
 				]
+			}
+		},
+    {
+      "type": "Button",
+      "text": [
+        "JavaScript using script_list: ",
+        "x = 8*5; eigenActivity.showToast('var x: '+x); x;"
+      ],
+      "layout_width": "wrap_content",
+      "layout_height": "wrap_content",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "icon": {
+        "name": "play.",
+        "location": "top"
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "x = 8*5",
+          "eigenActivity.showToast('var x: '+x)"
+        ]
+      }
+		},
+		
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "JavaScript Command Line"
 			}
 		},
 		{
@@ -64,7 +94,7 @@
 											"type": "Clone",
 											"name": "TextViewDetail",
 											"attributes": {
-												"text_size": "10",
+												"text_size": "14",
 												"text_script": "''+eigenFragment.getViewState(7500)"
 											}
 										},

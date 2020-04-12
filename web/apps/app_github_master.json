@@ -4,15 +4,9 @@
 	"tab_list": [
 		{
 			"icon_name": "ic_launcher_round.",
-			"name": "Admin",
+			"name": "Master",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
-		},
-		{
-			"icon_name": "playlist_check.",
-			"name": "Install",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/define-clones.json"
 		},
 		{
 			"icon_name": "github_logo.",
@@ -73,12 +67,6 @@
 			"name": "Prolog",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby-swipl.json"
-		},
-		{
-			"icon_name": "security.",
-			"name": "PGP/CGI",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json"
 		},
 		{
 			"icon_name": "info.",

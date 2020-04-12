@@ -54,9 +54,7 @@
 			},
 			{
 				"type": "Button",
-				"text": "Import Private Key File (via http post)",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
+				"text": "Import Private Key File",
 				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"icon": {
@@ -64,33 +62,15 @@
 					"location": "top"
 				},
 				"on_click": {
-					"type": "UrlRequest",
+					"type": "SecureShell",
 					"id": 6605,
 					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "keyfile",
-							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var keyfile = eigenFragment.getViewState(targetVid)",
-								"'' + keyfile"
-							]
-						},
-						{
-							"name": "password",
-							"value_script_list": [
-								"'' + eigenFragment.getViewState(6606)"
-							]
-						},
-						{
-							"name": "ruby",
-							"value_list": [
-								"keyfile = cgi.params['keyfile'][0]",
-								"password = cgi.params['password'][0]",
-								"gpg_import_private_key(keyfile,password).to_json.to_s"
-							]
-						}
+					"ssh_script_list": [
+						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+						"var key_file = eigenFragment.getViewState(targetVid)",
+						"password = eigenFragment.getViewState(6606)",
+						"dir + 'ruby ssh-gpg-import-private-key.rb ' + key_file + ' \"' + password + '\"' "
 					],
 					"on_complete": {
 						"type": "Clone",
@@ -107,7 +87,7 @@
 												"type": "Clone",
 												"name": "TextViewDetail",
 												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
 												}
 											}
 										]

@@ -46,7 +46,7 @@
 			},
 			{
 				"type": "Button",
-				"text": "Verify File (that has Detached Signature)",
+				"text": "Verify File that has a Detached Digital Signature",
 				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"icon": {
@@ -54,33 +54,21 @@
 					"location": "top"
 				},
 				"on_click": {
-					"type": "UrlRequest",
+					"type": "SecureShell",
 					"id": 6605,
 					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "original_file",
-							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var original_file = eigenFragment.getViewState(targetVid)",
-								"'' + original_file"
-							]
-						},
-						{
-							"name": "ruby",
-							"value_list": [
-								"original_file = cgi.params['original_file'][0]",
-								"sig_file = original_file+'.sig'",
-								"gpg_verify(sig_file, original_file).to_json.to_s"
-							]
-						}
+					"ssh_script_list": [
+						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+						"var original_file = eigenFragment.getViewState(targetVid)",
+						"var sig_file = original_file+'.sig'",
+						"dir + 'ruby ssh-gpg-verify-detached.rb ' + sig_file + ' ' + original_file "
 					],
 					"on_complete": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Verify File (that has Detached Signature)",
+							"title": "Verify File that has a Detached Digital Signature",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -91,7 +79,7 @@
 												"type": "Clone",
 												"name": "TextViewDetail",
 												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
 												}
 											}
 										]

@@ -2,7 +2,7 @@
 
 Effective Date: February 7, 2020 
 
-This privacy notice discloses the privacy practices for Sawaya LLC (the "Company"), regarding the EigenFrame mobile application ("EigenFrame") and associated GITHUB repository, https://github.com/jsawaya/eigenframe (the "Website").  
+This privacy notice discloses the privacy practices for Sawaya LLC (the "Company"), regarding the EigenFrame mobile application ("EigenFrame") and associated GitHub repository, https://github.com/jsawaya/eigenframe (the "Website").  
 
 This privacy notice applies solely to information collected by the Company, except where stated otherwise.  
 

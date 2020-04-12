@@ -63,34 +63,15 @@
 					"location": "top"
 				},
 				"on_click": {
-					"type": "UrlRequest",
+					"type": "SecureShell",
 					"id": 6605,
 					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "encrypted_file",
-							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var encrypted_file = eigenFragment.getViewState(targetVid)",
-								"'' + encrypted_file"
-							]
-						},
-						{
-							"name": "password",
-							"value_script_list": [
-								"'' + eigenFragment.getViewState(6606)"
-							]
-						},
-						{
-							"name": "ruby",
-							"value_list": [
-								"encrypted_file = cgi.params['encrypted_file'][0]",
-								"output_file = encrypted_file[0..(encrypted_file.rindex('.')-1)]",
-								"password = cgi.params['password'][0]",
-								"gpg_decrypt(password, encrypted_file, output_file).to_json.to_s"
-							]
-						}
+					"ssh_script_list": [
+						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+						"var pgpfile = eigenFragment.getViewState(targetVid)",
+						"var password = eigenFragment.getViewState(6606)",
+						"dir + 'ruby ssh-gpg-decrypt.rb ' + pgpfile + ' \"' + password + '\"' "
 					],
 					"on_complete": {
 						"type": "Clone",
@@ -107,7 +88,7 @@
 												"type": "Clone",
 												"name": "TextViewDetail",
 												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
 												}
 											}
 										]

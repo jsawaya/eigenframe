@@ -1,28 +1,14 @@
-#!/usr/bin/ruby 
+#!/usr/bin/ruby
 
-require 'open3'
-require 'cgi'
 require 'json'
-require './ruby-lib/app-lib'
-require './ruby-lib/gpg-lib'
+require_relative 'ruby-lib/app-lib'
+require_relative 'ruby-lib/gpg-lib'
 
-print_response_header
-cgi = CGI.new
+exit 10 if ARGV.length == 0 
 
-exit 10 if !cgi.has_key?('keyfile')
+keyfile = ARGV[0]
 
-keyfile = cgi.params['keyfile'][0].strip
-
-exit 11 if keyfile.empty?
-exit 12 if !File.exists? keyfile
-exit 13 if File.directory? keyfile
-
-h = gpg_list_packets_hash(keyfile)
-
-frame = cgi.params['frame'][0] if cgi.has_key?('frame')
-format = cgi.params['format'][0] if cgi.has_key?('format')
-sys_output_frame_format(h, frame, format)
-
+puts gpg_list_packets_hash(keyfile).to_json.to_s
 
 #=======================================================================================================
 #

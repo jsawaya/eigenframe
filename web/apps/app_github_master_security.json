@@ -1,0 +1,19 @@
+{
+	"type": "EigenFrame",
+	"is_secure_window": "true",
+	"tab_list": [
+		{
+			"icon_name": "security.",
+			"name": "OpenPGP/SSH",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-ruby-pgp.json"
+		},
+		{
+			"icon_name": "security.",
+			"name": "OpenPGP/CGI",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/http-cgi-ruby-pgp.json"
+		}
+
+	]
+}

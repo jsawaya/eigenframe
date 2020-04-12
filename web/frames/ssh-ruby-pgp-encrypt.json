@@ -91,7 +91,7 @@
 			},
 			{
 				"type": "Button",
-				"text": "Create an OpenPGP Encryption File",
+				"text": "Create OpenPGP Encryption File",
 				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"icon": {
@@ -99,46 +99,22 @@
 					"location": "top"
 				},
 				"on_click": {
-					"type": "UrlRequest",
+					"type": "SecureShell",
 					"id": 6605,
 					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
-					"parameter_list": [
-						{
-							"name": "targetfile",
-							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var targetfile = eigenFragment.getViewState(targetVid)",
-								"'' + targetfile"
-							]
-						},
-						{
-							"name": "keyid",
-							"value_script_list": [
-								"'' + eigenFragment.getViewState(6607)"
-							]
-						},
-						{
-							"name": "format",
-							"value_script_list": [
-								"'' + eigenFragment.getViewState(6608)"
-							]
-						},
-						{
-							"name": "ruby",
-							"value_list": [
-								"keyid = cgi.params['keyid'][0]",
-								"targetfile = cgi.params['targetfile'][0]",
-								"format = cgi.params['format'][0]",
-								"gpg_encrypt(keyid, targetfile, format).to_json.to_s"
-							]
-						}
+					"ssh_script_list": [
+						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+						"var input_file = eigenFragment.getViewState(targetVid)",
+						"var keyid = eigenFragment.getViewState(6607)",
+						"var fmt = eigenFragment.getViewState(6608)",
+						"dir + 'ruby ssh-gpg-encrypt.rb ' + keyid + ' ' + input_file + ' ' + fmt"
 					],
 					"on_complete": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Create an OpenPGP Encryption File",
+							"title": "Encrypt File",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -149,7 +125,7 @@
 												"type": "Clone",
 												"name": "TextViewDetail",
 												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
 												}
 											}
 										]

@@ -34,7 +34,7 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "The following demonstrates how to launch a local app.  Here's where to put your local eigenframe specifications - the shared directory:"
+        "text": "The following demonstrates how to launch an app from your local shared directory:"
       }
     },
     {
@@ -49,7 +49,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch a local app\n(hello world)",
+        "text": "Launch Hello World App",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -68,7 +68,52 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch an app from EigenFrame github server"
+        "text": "Install EigenFrame Services"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Install EigenFrame Services]:",
+          " - Termux Setup Instructions",
+          " - SecureShell Settings",
+          "   -- enables remote control of Termux App",
+          " - GIT - EigenFrame GitHub repository",
+          " - Ruby - system integration",
+          " - Prolog - inference engine",
+          " - OpenPGP - cryptography and security",
+          " - Apache2(CGI) - http/cgi support (optional)"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Install EigenFrame Services",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_master_install.json')"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Launch an app from EigenFrame GitHub server"
       }
     },
     {
@@ -109,7 +154,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "EigenFrame Github Master Branch"
+        "text": "EigenFrame GitHub Master Branch"
       }
     },
     {
@@ -117,7 +162,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Launch Github Master Branch] to run EigenFrame apps as Termux services.",
+          "Click [Launch GitHub Master Branch] to run EigenFrame apps as Termux services.",
           "Administer SSH/SFTP, GIT, Bash, Ruby, Prolog, PGP, Apache2, ..."
         ]
       }
@@ -126,7 +171,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch Github Master Branch",
+        "text": "Launch GitHub Master Branch",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -174,6 +219,36 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Security] to use OpenPGP Cryptography (GnuPG) to encrypt/decrypt/sign/verify/import-key/export-key.  "
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Security",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_master_security.json')"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
         "text": "Beta Branch Features"
@@ -184,7 +259,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Launch Github Beta Branch] for pre-release features (in development)"
+          "Click [Launch GitHub Beta Branch] for pre-release features (in development)"
         ]
       }
     },
@@ -192,7 +267,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch Github Beta Branch",
+        "text": "Launch GitHub Beta Branch",
         "icon": {
           "name": "open_browser.",
           "location": "top"
@@ -237,17 +312,6 @@
     {
       "type": "Clone",
       "name": "HorizontalLine"
-    },
-    {
-      "type": "PopupTextView",
-      "condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
-      "title": "Warning",
-      "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text_list": [
-        "SecureShell (ssh) has not yet been enabled\n",
-        " - Not needed for most of the Gallery, JavaScript, Url-Requests, Camera and Drawing\n",
-        " - But is required for almost everything else"
-      ]
     }
   ]
 }
