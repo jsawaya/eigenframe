@@ -13,7 +13,7 @@ password = ARGV[1]
 
 outfile = pgpfile[0..(pgpfile.rindex('.')-1)]
 if File.exist? outfile
-	puts "file already exists: ${outfile}"
+	puts "file already exists: #{outfile}"
 	exit 20
 end
 
