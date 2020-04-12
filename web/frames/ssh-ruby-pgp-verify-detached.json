@@ -62,7 +62,7 @@
 						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 						"var original_file = eigenFragment.getViewState(targetVid)",
 						"var sig_file = original_file+'.sig'",
-						"dir + 'ruby ssh-gpg-verify-detached ' + sig_file + ',' + original_file "
+						"dir + 'ruby ssh-gpg-verify-detached.rb ' + sig_file + ',' + original_file "
 					],
 					"on_complete": {
 						"type": "Clone",

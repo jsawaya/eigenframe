@@ -108,7 +108,7 @@
 						"var input_file = eigenFragment.getViewState(targetVid)",
 						"var keyid = eigenFragment.getViewState(6607)",
 						"var fmt = eigenFragment.getViewState(6608)",
-						"dir + 'ruby ssh-gpg-encrypt ' + keyid + ',' + input_file + ',' + fmt"
+						"dir + 'ruby ssh-gpg-encrypt.rb ' + keyid + ',' + input_file + ',' + fmt"
 					],
 					"on_complete": {
 						"type": "Clone",

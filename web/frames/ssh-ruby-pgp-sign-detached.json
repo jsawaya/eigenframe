@@ -94,7 +94,7 @@
 						"var key_file = eigenFragment.getViewState(targetVid)",
 						"var password = eigenFragment.getViewState(6606)",
 						"var keyid = eigenFragment.getViewState(6607)",
-						"dir + 'ruby ssh-gpg-sign-detached ' + keyid + ',' + password + ',' + key_file"
+						"dir + 'ruby ssh-gpg-sign-detached.rb ' + keyid + ',' + password + ',' + key_file"
 					],
 					"on_complete": {
 						"type": "Clone",
