@@ -99,7 +99,7 @@ def eigen_directory_listview_ssh(dirpath)
     [
       "var filepath0 = '#{dirpath}/' + eigenFragment.getOptionString('option', '.')",
       "java.lang.System.out.println('js filepath0: '+filepath0)",
-      "var ssh_cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents.rb ' + filepath0",
+      "var ssh_cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-list-termux-file-contents.rb ' + filepath0",
       "java.lang.System.out.println('js ssh_cmd: '+ssh_cmd)",
       "ssh_cmd"
     ]

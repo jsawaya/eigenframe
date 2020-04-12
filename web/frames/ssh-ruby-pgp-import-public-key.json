@@ -48,15 +48,25 @@
 				"name": "JavaScriptSelectFilePath"
 			},
 			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Import Public Key File",
-					"icon": {
-						"name": "import_export.",
-						"location": "top"
-					},
-					"on_click": {
+				"type": "Button",
+				"text": "Import Public Key File",
+				"text_color": "#ffffff",
+				"background_color": "#654321",
+				"icon": {
+					"name": "info.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "SecureShell",
+					"id": 6605,
+					"is_eigen_response": false,
+					"ssh_script_list": [
+						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+						"var key_file = eigenFragment.getViewState(targetVid)",
+						"dir + 'ruby ssh-gpg-import-public-key ' + keyfile"
+					],
+					"on_complete": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
@@ -71,21 +81,7 @@
 												"type": "Clone",
 												"name": "TextViewDetail",
 												"attributes": {
-													"text_size": "10",
-													"comment": [
-														"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-														"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-														"key_path = eigenFragment.getViewState(targetVid)",
-														"key_path = '''+eigenFragment.getViewState(targetVid)+''' ",
-														"'cd '+dir+'; echo \"gpg_import_public_key('+ key_path +').to_json.to_s\"'",
-														"'cd '+dir+'; ruby ssh_ruby.rb \"gpg_import_public_key('+ key_path +').to_json.to_s\"'",
-														"'echo ' + targetVid "
-													],
-													"ssh_script_list": [
-														"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-														"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-														"'echo ' + eigenFragment.getViewState(targetVid) "
-													]
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
 												}
 											}
 										]

@@ -312,7 +312,7 @@
           "type": "PopupTextView",
           "title": "Show ruby webrick log",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents.rb /data/data/com.termux/files/home/ruby-webrick.log"
+          "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-list-termux-file-contents.rb /data/data/com.termux/files/home/ruby-webrick.log"
         }
       },
       {
@@ -332,7 +332,7 @@
           "type": "PopupTextView",
           "title": "Show ruby webrick output",
           "font": "font/droid-sans-mono/DroidSansMono.ttf",
-          "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby list-termux-file-contents.rb /data/data/com.termux/files/home/ruby-webrick.out"
+          "ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-list-termux-file-contents.rb /data/data/com.termux/files/home/ruby-webrick.out"
         }
       },
       {

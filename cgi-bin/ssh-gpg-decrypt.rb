@@ -4,7 +4,7 @@ require 'json'
 require_relative 'ruby-lib/app-lib'
 require_relative 'ruby-lib/gpg-lib'
 
-exit 10 if (ARGV.length != 3) 
+exit 10 if ARGV.length == 0 
 
 password = ARGV[0]
 keyfile = ARGV[1]
