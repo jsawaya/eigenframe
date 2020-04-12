@@ -175,45 +175,257 @@
           }
         }
       },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Checkout (create) local beta branch",
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "Checkout (create) local beta branch",
-              "component_list": [
-                {
-                  "type": "Clone",
-                  "name": "LayoutVerticalScrollable",
-                  "attributes": {
-                    "component_list": [
-                      {
-                        "type": "Clone",
-                        "name": "TextViewDetail",
-                        "attributes": {
-                          "text_size": "10",
-                          "is_toast": true,
-                          "ssh_list": [
-                            "cd ~/git-repos/eigenframe",
-                            "echo //git checkout -b beta",
-                            "git checkout -b beta",
-                            "echo //git status",
-                            "git status"
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        }
-      },
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Refresh Local Beta Branch from GitHub"
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"Click [Checkout EigenFrame Beta Branch] activates your local beta branch - so you can pull beta updates from EigenFrame GitHub"
+					]
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Checkout EigenFrame GitHub Beta Branch",
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Checkout EigenFrame GitHub Beta Branch",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_list": [
+														"cd ~/git-repos/eigenframe",
+														"echo //git checkout -B beta",
+														"git checkout -B beta",
+														"echo //git status",
+														"git status"
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Checkout EigenFrame GitHub Master Branch",
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Checkout EigenFrame GitHub Master Branch",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_list": [
+														"cd ~/git-repos/eigenframe",
+														"echo //git checkout master",
+														"git checkout master",
+														"echo //git status",
+														"git status"
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"Click [Fetch/Reset GitHub EigenFrame Beta Branch] to do a hard reset - do this only if your local repository is really a mess"
+					]
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Fetch/Reset EigenFrame GitHub Beta Branch",
+					"icon": {
+						"name": "cloud_download.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Fetch/Reset EigenFrame GitHub Beta Branch",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_list": [
+														"cd ~/git-repos/eigenframe",
+														"echo //git status",
+														"git status",
+														"echo //git stash",
+														"git stash",
+														"echo //git fetch origin",
+														"git fetch origin",
+														"echo //git reset --hard origin/beta",
+														"git reset --hard origin/beta",
+														"cd ~/git-repos/eigenframe/cgi-bin",
+														"chmod 755 *.sh",
+														"chmod 755 *.rb",
+														"echo //git status",
+														"git status"
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"Click [Pull from GitHub] to pull updates for current branch - this is the typical way to get the recent updates from EigenFrame GitHub"
+					]
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Pull from EigenFrame GitHub Beta Branch",
+					"icon": {
+						"name": "cloud_download.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "Pull from EigenFrame GitHub Beta Branch",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh_list": [
+														"cd ~/git-repos/eigenframe",
+														"echo //git stash",
+														"git stash",
+														"echo //git pull",
+														"git pull",
+														"cd ~/git-repos/eigenframe/cgi-bin",
+														"chmod 755 *.sh",
+														"chmod 755 *.rb",
+														"git status"
+													]
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "git status",
+					"icon": {
+						"name": "info.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title": "git status",
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "Clone",
+												"name": "TextViewDetail",
+												"attributes": {
+													"text_size": "10",
+													"ssh": "cd ~/git-repos/eigenframe ; git status"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
       {
         "type": "Clone",
         "name": "TextViewDetail",
