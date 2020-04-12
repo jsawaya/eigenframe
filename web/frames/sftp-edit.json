@@ -11,18 +11,19 @@
 		"layout_width": "match_parent",
 		"component_list": [
 			{
-				"type": "JavaScript",
-				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote EigenFrame')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/frames')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999722)"
-				]
-			},
-			{
 				"type": "Clone",
-				"name": "JavaScriptSelectFilePath"
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Edit Remote Text File",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenGetRemoteFilePopupScreenEditFile"
+					}
+				}
 			},
 			{
 				"type": "Clone",
@@ -30,12 +31,59 @@
 				"attributes": {
 					"text": "Edit/Exec Remote EigenFrame",
 					"icon": {
-						"name": "open_browser.",
+						"name": "play.",
 						"location": "top"
 					},
 					"on_click": {
 						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditFrame"
+						"name": "PopupScreenGetRemoteFilePopupScreenEditFrame"
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Edit/Exec Remote Shell File",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenGetRemoteFilePopupScreenEditShell"
+					}
+				}
+			},
+		
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Edit/Exec Remote Ruby File",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenGetRemoteFilePopupScreenEditRuby"
+					}
+				}
+			},
+		
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Edit/Exec Remote Prolog File",
+					"icon": {
+						"name": "play.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "PopupScreenGetRemoteFilePopupScreenEditProlog"
 					}
 				}
 			}
