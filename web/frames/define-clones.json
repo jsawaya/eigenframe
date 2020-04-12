@@ -434,6 +434,7 @@
 		{
 			"type": "Define",
 			"name": "PopupScreenEdit",
+			"comment": "depricated",
 			"component": {
 				"type": "Clone",
 				"name": "PopupScreenDefault",
@@ -495,6 +496,272 @@
 		},
 		{
 			"type": "Define",
+			"name": "GetRemoteFilePopupScreenEditProlog",
+			"component": {
+				"type": "SecureFtp",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' EditText:999000'"
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"id": 999099,
+						"title_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'Remote File: ' + filename"
+						],
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "ButtonSaveEditsToRemoteFile"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonCancelLocalEdits"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonExecutePrologFile"
+										},
+										{
+											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
+											"name": "EditTextLocalFileCache"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "GetRemoteFilePopupScreenEditRuby",
+			"component": {
+				"type": "SecureFtp",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' EditText:999000'"
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"id": 999099,
+						"title_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'Remote File: ' + filename"
+						],
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "ButtonSaveEditsToRemoteFile"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonCancelLocalEdits"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonExecuteRubyFile"
+										},
+										{
+											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
+											"name": "EditTextLocalFileCache"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "GetRemoteFilePopupScreenEditShell",
+			"component": {
+				"type": "SecureFtp",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' EditText:999000'"
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"id": 999099,
+						"title_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'Remote File: ' + filename"
+						],
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "ButtonSaveEditsToRemoteFile"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonCancelLocalEdits"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonExecuteShellFile"
+										},
+										{
+											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
+											"name": "EditTextLocalFileCache"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "GetRemoteFilePopupScreenEditFrame",
+			"component": {
+				"type": "SecureFtp",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' EditText:999000'"
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"id": 999099,
+						"title_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'Remote File: ' + filename"
+						],
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "ButtonSaveEditsToRemoteFile"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonCancelLocalEdits"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonShowRemoteEigenFrame"
+										},
+										{
+											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
+											"name": "EditTextLocalFileCache"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "GetRemoteFilePopupScreenEditFile",
+			"component": {
+				"type": "SecureFtp",
+				"sftp_script_list": [
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+					"var filename = eigenFragment.getViewState(targetVid)",
+					"'get ' + filename + ' EditText:999000'"
+				],
+				"on_complete": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"id": 999099,
+						"title_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'Remote File: ' + filename"
+						],
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "ButtonSaveEditsToRemoteFile"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonCancelLocalEdits"
+										},
+										{
+											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
+											"name": "EditTextLocalFileCache"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "Define",
 			"name": "PopupScreenShowRemoteFile",
 			"component": {
 				"type": "Clone",
@@ -532,6 +799,7 @@
 		{
 			"type": "Define",
 			"name": "GetRemoteFilePopupScreenEdit",
+			"comment": "depricated",
 			"component": {
 				"type": "SecureFtp",
 				"sftp_script_list": [

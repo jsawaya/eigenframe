@@ -28,14 +28,74 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Edit/Execute Remote File",
+					"text": "Edit Remote File",
 					"icon": {
 						"name": "open_browser.",
 						"location": "top"
 					},
 					"on_click": {
 						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEdit"
+						"name": "GetRemoteFilePopupScreenEditFile"
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Execute Remote Shell File",
+					"icon": {
+						"name": "open_browser.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "GetRemoteFilePopupScreenEditShell"
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Execute Remote Ruby File",
+					"icon": {
+						"name": "open_browser.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "GetRemoteFilePopupScreenEditRuby"
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Execute Remote Prolog File",
+					"icon": {
+						"name": "open_browser.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "GetRemoteFilePopupScreenEditProlog"
+					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Popup Remote EigenFrame",
+					"icon": {
+						"name": "open_browser.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "GetRemoteFilePopupScreenEditFrame"
 					}
 				}
 			}

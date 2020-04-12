@@ -1,0 +1,24 @@
+{
+	"type": "EigenFrame",
+	"is_secure_window": "true",
+	"tab_list": [
+		{
+			"icon_name": "ic_launcher_round.",
+			"name": "Install",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/define-clones.json"
+		},
+		{
+			"icon_name": "playlist_check.",
+			"name": "Install",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-initial-setup.json"
+		},
+		{
+			"icon_name": "github_logo.",
+			"name": "GitHub",
+			"type": "EigenFragment",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/ssh-git-admin.json"
+		}
+	]
+}

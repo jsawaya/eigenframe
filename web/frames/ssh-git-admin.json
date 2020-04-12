@@ -18,7 +18,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Refresh Beta Branch from GITHUB"
+					"text": "Refresh Beta Branch from GitHub"
 				}
 			},
 			{
@@ -36,12 +36,12 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Checkout EigenFrame Beta Branch",
+					"text": "Checkout EigenFrame GitHub Beta Branch",
 					"on_click": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Checkout EigenFrame Beta Branch",
+							"title": "Checkout EigenFrame GitHub Beta Branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -74,7 +74,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Fetch/Reset GITHUB EigenFrame Beta Branch",
+					"text": "Fetch/Reset EigenFrame GitHub Beta Branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -83,7 +83,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Fetch/reset GITHUB beta branch - into existing local beta branch",
+							"title": "Fetch/Reset EigenFrame GitHub Beta Branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -125,7 +125,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Pull from GITHUB",
+					"text": "Pull from EigenFrame GitHub Beta Branch",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -134,7 +134,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Pull from GITHUB",
+							"title": "Pull from EigenFrame GitHub Beta Branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -322,7 +322,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Commit Changes to GITHUB (Beta Branch)"
+					"text": "Commit Changes to GitHub (Beta Branch)"
 				}
 			},
 			{
@@ -441,14 +441,14 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Refresh GIT Working Directory (Beta Branch) from GITHUB Master: "
+					"text": "Refresh GIT Working Directory (Beta Branch) from GitHub Master: "
 				}
 			},
 			{
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Pull from github master\n(merge to working beta branch)",
+					"text": "Pull from GitHub master\n(merge to working beta branch)",
 					"icon": {
 						"name": "cloud_download.",
 						"location": "top"
@@ -457,7 +457,7 @@
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Pull from github master\n(merge to working beta branch)",
+							"title": "Pull from GitHub master\n(merge to working beta branch)",
 							"component_list": [
 								{
 									"type": "Clone",

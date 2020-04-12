@@ -3,9 +3,27 @@
   "is_secure_window": "false",
   "tab_list": [
     {
-			"name": "Gallery\nlocalhost",
+      "name": "Gallery\nlocalhost",
       "type": "EigenFragment",
       "url": "http://localhost:8080/frames/playlist.json"
+    },
+    {
+      "icon_name": "play.",
+      "name": "JavaScript",
+      "type": "EigenFragment",
+      "url": "http://localhost:8080/frames/script-cmd.json"
+    },
+    {
+      "icon_name": "photo.",
+      "name": "Camera",
+      "type": "EigenFragment",
+      "url": "http://localhost:8080/frames/script-photo.json"
+    },
+    {
+      "icon_name": "create.",
+      "name": "Drawing",
+      "type": "EigenFragment",
+      "url": "http://localhost:8080/frames/script-drawing.json"
     },
     {
       "name": "Button",
@@ -114,18 +132,6 @@
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url": "http://localhost:8080/frames/test-PopupScreen.json"
-    },
-    {
-      "name": "JavaScript",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "http://localhost:8080/frames/test-Javascript.json"
-    },
-    {
-      "name": "UrlRequest",
-      "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "http://localhost:8080/frames/test-UrlRequest.json"
     }
   ]
 }
