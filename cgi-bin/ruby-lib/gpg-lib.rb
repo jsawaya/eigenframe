@@ -119,7 +119,10 @@ def gpg_decrypt(password, keyfile, outfile)
   end
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
-  stdin.puts password
+
+  if password.to_s.strip.size > 0
+    stdin.puts password
+  end
 
   exit_status = wait_thread.value
   exit_code = exit_status.exitstatus
