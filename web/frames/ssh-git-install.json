@@ -79,7 +79,7 @@
         "name": "TextViewDetail",
         "attributes": {
           "text_list": [
-            "Click [Make /git-repos directory], prepare to download local eigenframe git working directory"
+            "Click [Make git-repos directory] prepares a local eigenframe git working directory"
           ]
         }
       },
@@ -130,7 +130,7 @@
         "name": "TextViewDetail",
         "attributes": {
           "text_list": [
-            "Click [Clone eigenframe github repository] to download eigenframe from github, and checkout a test branch..."
+            "Click [Clone eigenframe] to download EigenFrame repository from GitHub"
           ]
         }
       },
@@ -138,12 +138,12 @@
         "type": "Clone",
         "name": "ButtonDefault",
         "attributes": {
-          "text": "Clone eigenframe from github",
+          "text": "Clone eigenframe",
           "on_click": {
             "type": "Clone",
             "name": "PopupScreenDefault",
             "attributes": {
-              "title": "Clone eigenframe...",
+              "title": "Clone eigenframe",
               "component_list": [
                 {
                   "type": "Clone",
@@ -183,7 +183,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Refresh Local Beta Branch from GitHub"
+					"text": "Select Branch from EigenFrame GitHub"
 				}
 			},
 			{
@@ -191,7 +191,7 @@
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"Click [Checkout EigenFrame Beta Branch] activates your local beta branch - so you can pull beta updates from EigenFrame GitHub"
+						"Click [Checkout EigenFrame Beta Branch] to activate your local beta branch - so you can pull beta updates from EigenFrame GitHub"
 					]
 				}
 			},
@@ -199,12 +199,12 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Checkout EigenFrame GitHub Beta Branch",
+					"text": "Checkout EigenFrame Beta Branch",
 					"on_click": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Checkout EigenFrame GitHub Beta Branch",
+							"title": "Checkout EigenFrame Beta Branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -434,7 +434,7 @@
             "Initial github setup in Termux:",
             " cd git-repos/eigenframe",
             " git config credential.helper store",
-            " git push origin http://github.com/jsawaya/eigenframe.git",
+            " git push origin https://github.com/jsawaya/eigenframe.git",
             " git push origin beta"
           ]
         }
