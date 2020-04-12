@@ -114,9 +114,9 @@ def gpg_decrypt(password, keyfile, outfile)
 
   cmd = "#{gpg_sec} --decrypt #{keyfile}"
 
-#  if outfile.to_s.strip.size > 0
-#    cmd = cmd << " > #{outfile}"
-#  end
+  if outfile.to_s.strip.size > 0
+    cmd = cmd << " > #{outfile}"
+  end
 
   stdin, stdout, stderr, wait_thread = Open3.popen3(cmd)
   stdin.puts password
