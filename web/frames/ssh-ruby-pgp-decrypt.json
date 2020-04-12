@@ -69,9 +69,9 @@
 					"ssh_script_list": [
 						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
 						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var encrypted_file = eigenFragment.getViewState(targetVid)",
-						"password = eigenFragment.getViewState(6606)",
-						"dir + 'ruby ssh-gpg-decrypt.rb ' + encrypted_file + ' \"' + password + '\"' "
+						"var pgpfile = eigenFragment.getViewState(targetVid)",
+						"var password = eigenFragment.getViewState(6606)",
+						"dir + 'ruby ssh-gpg-decrypt.rb ' + pgpfile + ' \"' + password + '\"' "
 					],
 					"on_complete": {
 						"type": "Clone",

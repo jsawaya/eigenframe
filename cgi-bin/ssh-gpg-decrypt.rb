@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-# 'ruby ssh-gpg-decrypt.rb ' + encrypted_file + ' \"' + password + '\"' "
+# 'ruby ssh-gpg-decrypt.rb ' + pgpfile + ' \"' + password + '\"' "
 
 require 'json'
 require 'fileutils'
@@ -11,7 +11,7 @@ exit 10 if ARGV.length == 0
 pgpfile = ARGV[0]
 password = ARGV[1]
 
-outfile = encrypted_file[0..(encrypted_file.rindex('.')-1)]
+outfile = pgpfile[0..(pgpfile.rindex('.')-1)]
 if File.exist? outfile
 	puts "file already exists: ${outfile}"
 	exit 20
