@@ -74,7 +74,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Execute Shell Command",
+					"text": "Execute Shell Command Line",
 					"icon": {
 						"name": "play.",
 						"location": "top"
@@ -105,7 +105,41 @@
 						}
 					}
 				}
+			},
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Shell File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999712)"
+				]
+			},
+			{
+				"type": "Clone",
+				"name": "JavaScriptSelectFilePath"
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Execute Remote Shell File",
+					"icon": {
+						"name": "open_browser.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "GetRemoteFilePopupScreenEditShell"
+					}
+				}
 			}
+
 		]
 	}
 }

@@ -37,7 +37,7 @@
         "type": "Clone",
         "name": "TextViewLabel",
         "attributes": {
-          "text": "Ruby Command Console"
+          "text": "Ruby Command Line"
         }
       },
       {
@@ -57,20 +57,20 @@
         "layout_height": "wrap_content",
         "text": "EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
         "text_color": "#ffffff",
-        "background_color": "#11ff0000"
+        "background_color": "#000000"
       },
       {
         "type": "Clone",
         "name": "TextViewDetail",
         "attributes": {
-          "text": "Click [Execute Ruby Command] to execute the ruby command and return the result as plain text"
+          "text": "Click [Execute Ruby Command Line] to execute the ruby command and return the result as plain text"
         }
       },
       {
         "type": "Clone",
         "name": "ButtonDefault",
         "attributes": {
-          "text": "Execute Ruby Command",
+          "text": "Execute Ruby Command Line",
           "icon": {
             "name": "play.",
             "location": "top"
@@ -106,14 +106,14 @@
         "type": "Clone",
         "name": "TextViewDetail",
         "attributes": {
-          "text": "Click [Execute Ruby EigenFrame] to execute the ruby command and return the result as an EigenFrame component"
+          "text": "Click [Execute Ruby Command Line - Return EigenFrame] to execute the ruby command and return the result as an EigenFrame component"
         }
       },
       {
         "type": "Clone",
         "name": "ButtonDefault",
         "attributes": {
-          "text": "Execute Ruby EigenFrame",
+          "text": "Execute Ruby Command Line - Return EigenFrame",
           "icon": {
             "name": "play.",
             "location": "top"
@@ -147,6 +147,40 @@
         "type": "Clone",
         "name": "HorizontalLine"
       },
+			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Ruby File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999712)"
+				]
+			},
+			{
+				"type": "Clone",
+				"name": "JavaScriptSelectFilePath"
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Edit/Exec Remote Ruby File",
+					"icon": {
+						"name": "open_browser.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "GetRemoteFilePopupScreenEditRuby"
+					}
+				}
+			},
+      {
+        "type": "Clone",
+        "name": "HorizontalLine"
+      },
+
       {
         "type": "Clone",
         "name": "TextViewLabel",
