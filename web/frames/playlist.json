@@ -69,7 +69,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Install] for Termux setup instructions, SecureShell Settings, GIT Installation, Ruby Installation, Prolog Installation, OpenPGP Installation, Apache2 (CGI) Installation and EigenFrame GitHub Installation ",
+          "Click [Install EigenFrame Services]:",
           " - Termux Setup Instructions",
           " - SecureShell Settings - EigenFrame remote control of Termux App",
           " - GIT Installation - EigenFrame GitHub repository",
@@ -84,7 +84,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Installation",
+        "text": "Install EigenFrame Services",
         "icon": {
           "name": "open_browser.",
           "location": "top"
