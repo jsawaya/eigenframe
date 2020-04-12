@@ -13,7 +13,7 @@
 			{
 				"type": "JavaScript",
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File')",
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote EigenFrame File')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
@@ -28,67 +28,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Edit Remote File",
-					"icon": {
-						"name": "open_browser.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditFile"
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Execute Remote Shell File",
-					"icon": {
-						"name": "open_browser.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditShell"
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Execute Remote Ruby File",
-					"icon": {
-						"name": "open_browser.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditRuby"
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Execute Remote Prolog File",
-					"icon": {
-						"name": "open_browser.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditProlog"
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Popup Remote EigenFrame",
+					"text": "Edit/Exec Remote EigenFrame File",
 					"icon": {
 						"name": "open_browser.",
 						"location": "top"

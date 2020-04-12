@@ -272,7 +272,7 @@
 														"ssh_script_list": [
 															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 															"var filename = eigenFragment.getViewState(targetVid)",
-															"'cd /data/data/com.termux/files/home; ruby ssh_swipl.rb \"swipl-lib/ein-riddle.pl\", \"houses(Houses), write(Houses), false\" '"
+															"'cd /data/data/com.termux/files/home; ruby ssh_swipl.rb \"'+filename+'\", \"houses(Houses), write(Houses), false\" '"
 														]
 													}
 												}
