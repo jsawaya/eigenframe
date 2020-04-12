@@ -115,9 +115,9 @@
 				"script_list": [
 					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Shell File')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999712)"
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999720)"
 				]
 			},
 			{
@@ -128,7 +128,7 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Execute Remote Shell File",
+					"text": "Edit/Exec Remote Shell File",
 					"icon": {
 						"name": "open_browser.",
 						"location": "top"
