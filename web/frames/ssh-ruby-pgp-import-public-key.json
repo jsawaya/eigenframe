@@ -64,7 +64,7 @@
 						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
 						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 						"var key_file = eigenFragment.getViewState(targetVid)",
-						"dir + 'ruby ssh-gpg-import-public-key ' + keyfile"
+						"dir + 'ruby ssh-gpg-import-public-key ' + key_file"
 					],
 					"on_complete": {
 						"type": "Clone",

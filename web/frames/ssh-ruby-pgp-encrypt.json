@@ -106,8 +106,8 @@
 						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
 						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 						"var input_file = eigenFragment.getViewState(targetVid)",
-						"keyid = eigenFragment.getViewState(6607)",
-						"fmt = eigenFragment.getViewState(6608)",
+						"var keyid = eigenFragment.getViewState(6607)",
+						"var fmt = eigenFragment.getViewState(6608)",
 						"dir + 'ruby ssh-gpg-encrypt ' + keyid + ',' + input_file + ',' + fmt"
 					],
 					"on_complete": {
