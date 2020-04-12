@@ -17,7 +17,7 @@
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/frames')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999712)"
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999722)"
 				]
 			},
 			{
