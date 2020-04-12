@@ -71,12 +71,13 @@
         "text_list": [
           "Click [Install EigenFrame Services]:",
           " - Termux Setup Instructions",
-          " - SecureShell Settings - EigenFrame remote control of Termux App",
-          " - GIT Installation - EigenFrame GitHub repository",
-          " - Ruby Installation - system integration",
-          " - Prolog Installation - inference engine",
-          " - OpenPGP Installation - cryptography and security",
-          " - Apache2 (CGI) Installation - http/cgi support (optional)"
+          " - SecureShell Settings",
+          "   -- enables remote control of Termux App",
+          " - GIT - EigenFrame GitHub repository",
+          " - Ruby - system integration",
+          " - Prolog - inference engine",
+          " - OpenPGP - cryptography and security",
+          " - Apache2(CGI) - http/cgi support (optional)"
         ]
       }
     },
