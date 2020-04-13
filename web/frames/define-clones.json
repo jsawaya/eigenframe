@@ -236,58 +236,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "ButtonExecuteRubyFile",
-			"component": {
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Execute Ruby File",
-					"icon": {
-						"name": "play.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "SecureFtp",
-						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'put EditText:999000 ' + filename"
-						],
-						"on_complete": {
-							"type": "Clone",
-							"name": "PopupScreenDefault",
-							"attributes": {
-								"title": "Ruby Command Output",
-								"component_list": [
-									{
-										"type": "Clone",
-										"name": "LayoutVerticalScrollable",
-										"attributes": {
-											"component_list": [
-												{
-													"type": "Clone",
-													"name": "TextViewDetail",
-													"attributes": {
-														"text_size": "10",
-														"ssh_script_list": [
-															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-															"var filename = eigenFragment.getViewState(targetVid)",
-															"'cd /data/data/com.termux/files/home; ruby '+filename "
-														]
-													}
-												}
-											]
-										}
-									}
-								]
-							}
-						}
-					}
-				}
-			}
-		},
-		{
-			"type": "Define",
 			"name": "ButtonShowRemoteTextFile",
 			"component": {
 				"type": "Clone",
@@ -381,65 +329,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "PopupScreenEdit",
-			"comment": "depricated",
-			"component": {
-				"type": "Clone",
-				"name": "PopupScreenDefault",
-				"attributes": {
-					"id": 999099,
-					"title_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var filename = eigenFragment.getViewState(targetVid)",
-						"'Remote File: ' + filename"
-					],
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "LayoutVerticalScrollable",
-							"attributes": {
-								"component_list": [
-									{
-										"type": "Clone",
-										"name": "ButtonSaveEditsToRemoteFile"
-									},
-									{
-										"type": "Clone",
-										"name": "ButtonCancelLocalEdits"
-									},
-									{
-										"type": "Clone",
-										"name": "ButtonShowRemoteTextFile"
-									},
-									{
-										"type": "Clone",
-										"name": "ButtonShowRemoteEigenFrame"
-									},
-									{
-										"type": "Clone",
-										"name": "ButtonExecuteShellFile"
-									},
-									{
-										"type": "Clone",
-										"name": "ButtonExecuteRubyFile"
-									},
-									{
-										"type": "Clone",
-										"name": "HorizontalLine"
-									},
-									{
-										"type": "Clone",
-										"name": "EditTextLocalFileCache"
-									}
-								]
-							}
-						}
-					]
-				}
-			}
-		},
-		{
-			"type": "Define",
 			"name": "GetRemoteFilePopupScreenEditProlog",
 			"component": {
 				"type": "SecureFtp",
@@ -478,6 +367,68 @@
 										},
 										{
 											"type": "Clone",
+											"name": "TextViewLabel",
+											"attributes": {
+												"text": "Prolog Proposition (Goal):"
+											}
+										},
+										{
+											"type": "EditText",
+											"id": 976000,
+											"layout_width": "match_parent",
+											"layout_height": "wrap_content",
+											"text": "houses(X), write(X)",
+											"text_color": "#ffffff",
+											"background_color": "#000000"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonDefault",
+											"attributes": {
+												"text": "Execute Inference Engine",
+												"icon": {
+													"name": "open_browser.",
+													"location": "top"
+												},
+												"on_click": {
+													"type": "Clone",
+													"name": "PopupScreenDefault",
+													"attributes": {
+														"title": "Prolog",
+														"component_list": [
+															{
+																"type": "Clone",
+																"name": "LayoutVerticalScrollable",
+																"attributes": {
+																	"component_list": [
+																		{
+																			"type": "Clone",
+																			"name": "TextViewDetail",
+																			"attributes": {
+																				"text_size": "10",
+																				"ssh_script_list": [
+																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+																					"swipl_path = eigenFragment.getViewState(targetVid)",
+																					"swipl_goal = eigenFragment.getViewState(976000) ",
+																					"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
+																				]
+																			}
+																		}
+																	]
+																}
+															}
+														]
+													}
+												}
+											}
+										},
+										{
+											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
 											"name": "EditTextLocalFileCache"
 										}
 									]
@@ -485,31 +436,6 @@
 							}
 						]
 					}
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "PopupScreenGetRemoteFilePopupScreenEditProlog",
-			"component": {
-				"type": "Clone",
-				"name": "PopupScreenDefault",
-				"attributes": {
-					"title": "Edit Remote Prolog File",
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "LayoutVerticalScrollable",
-							"attributes": {
-								"component_list": [
-									{
-										"type": "Clone",
-										"name": "GetRemoteFilePopupScreenEditProlog"
-									}
-								]
-							}
-						}
-					]
 				}
 			}
 		},
@@ -549,11 +475,117 @@
 										},
 										{
 											"type": "Clone",
-											"name": "ButtonExecuteRubyFile"
+											"name": "HorizontalLine"
 										},
 										{
 											"type": "Clone",
+											"name": "TextViewLabel",
+											"attributes": {
+												"text": "Ruby Arguments:"
+											}
+										},
+										{
+											"type": "EditText",
+											"id": 976001,
+											"layout_width": "match_parent",
+											"layout_height": "wrap_content",
+											"text_color": "#ffffff",
+											"background_color": "#000000"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonDefault",
+											"attributes": {
+												"text": "Execute Ruby Script\nProduce PlainText",
+												"icon": {
+													"name": "open_browser.",
+													"location": "top"
+												},
+												"on_click": {
+													"type": "Clone",
+													"name": "PopupScreenDefault",
+													"attributes": {
+														"title": "Ruby Output Console",
+														"component_list": [
+															{
+																"type": "Clone",
+																"name": "LayoutVerticalScrollable",
+																"attributes": {
+																	"component_list": [
+																		{
+																			"type": "Clone",
+																			"name": "TextViewDetail",
+																			"attributes": {
+																				"text_size": "10",
+																				"ssh_script_list": [
+																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+																					"rubyfilepath = eigenFragment.getViewState(targetVid)",
+																					"rubyargs = eigenFragment.getViewState(976001) ",
+																					"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+																				]
+																			}
+																		}
+																	]
+																}
+															}
+														]
+													}
+												}
+											}
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonDefault",
+											"attributes": {
+												"text": "Execute Ruby Script\nProduce EigenFrame",
+												"icon": {
+													"name": "open_browser.",
+													"location": "top"
+												},
+												"on_click": 
+												{
+													"type": "Clone",
+													"name": "PopupScreenDefault",
+													"attributes": {
+														"title": "Dynamic Ruby EigenFrame",
+														"component_list": [
+															{
+																"type": "LinearLayout",
+																"orientation": "vertical",
+																"gravity": "center",
+																"layout_width": "match_parent",
+																"layout_height": "match_parent",
+																"component_list": [
+																	{
+																		"type": "SecureShell",
+																		"is_eigen_response": true,
+																		"ssh_script_list": [
+																			"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+																			"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+																			"rubyfilepath = eigenFragment.getViewState(targetVid)",
+																			"rubyargs = eigenFragment.getViewState(976001) ",
+																			"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+																		]
+																	}
+																]
+															}
+														]
+													}
+												}
+											}
+										},
+
+										{
+											"type": "Clone",
 											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
+											"name": "TextViewLabel",
+											"attributes": {
+												"text": "Ruby Script:"
+											}
 										},
 										{
 											"type": "Clone",
@@ -564,31 +596,6 @@
 							}
 						]
 					}
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "PopupScreenGetRemoteFilePopupScreenEditRuby",
-			"component": {
-				"type": "Clone",
-				"name": "PopupScreenDefault",
-				"attributes": {
-					"title": "Edit Remote Ruby File",
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "LayoutVerticalScrollable",
-							"attributes": {
-								"component_list": [
-									{
-										"type": "Clone",
-										"name": "GetRemoteFilePopupScreenEditRuby"
-									}
-								]
-							}
-						}
-					]
 				}
 			}
 		},
@@ -636,6 +643,67 @@
 										},
 										{
 											"type": "Clone",
+											"name": "TextViewLabel",
+											"attributes": {
+												"text": "Shell Arguments:"
+											}
+										},
+										{
+											"type": "EditText",
+											"id": 976002,
+											"layout_width": "match_parent",
+											"layout_height": "wrap_content",
+											"text_color": "#ffffff",
+											"background_color": "#000000"
+										},
+										{
+											"type": "Clone",
+											"name": "ButtonDefault",
+											"attributes": {
+												"text": "Execute Shell Script",
+												"icon": {
+													"name": "open_browser.",
+													"location": "top"
+												},
+												"on_click": {
+													"type": "Clone",
+													"name": "PopupScreenDefault",
+													"attributes": {
+														"title": "Shell Output Console",
+														"component_list": [
+															{
+																"type": "Clone",
+																"name": "LayoutVerticalScrollable",
+																"attributes": {
+																	"component_list": [
+																		{
+																			"type": "Clone",
+																			"name": "TextViewDetail",
+																			"attributes": {
+																				"text_size": "10",
+																				"ssh_script_list": [
+																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+																					"shellfilepath = eigenFragment.getViewState(targetVid)",
+																					"shellargs = eigenFragment.getViewState(976002) ",
+																					"'cd '+dir+'; /usr/bin/sh -s < '+shellfilepath + ' ' + shellargs"
+																				]
+																			}
+																		}
+																	]
+																}
+															}
+														]
+													}
+												}
+											}
+										},
+										{
+											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
 											"name": "EditTextLocalFileCache"
 										}
 									]
@@ -643,31 +711,6 @@
 							}
 						]
 					}
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "PopupScreenGetRemoteFilePopupScreenEditShell",
-			"component": {
-				"type": "Clone",
-				"name": "PopupScreenDefault",
-				"attributes": {
-					"title": "Edit Remote Shell File",
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "LayoutVerticalScrollable",
-							"attributes": {
-								"component_list": [
-									{
-										"type": "Clone",
-										"name": "GetRemoteFilePopupScreenEditShell"
-									}
-								]
-							}
-						}
-					]
 				}
 			}
 		},
@@ -727,31 +770,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "PopupScreenGetRemoteFilePopupScreenEditFrame",
-			"component": {
-				"type": "Clone",
-				"name": "PopupScreenDefault",
-				"attributes": {
-					"title": "Edit Remote EigenFrame",
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "LayoutVerticalScrollable",
-							"attributes": {
-								"component_list": [
-									{
-										"type": "Clone",
-										"name": "GetRemoteFilePopupScreenEditFrame"
-									}
-								]
-							}
-						}
-					]
-				}
-			}
-		},
-		{
-			"type": "Define",
 			"name": "GetRemoteFilePopupScreenEditFile",
 			"component": {
 				"type": "SecureFtp",
@@ -802,31 +820,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "PopupScreenGetRemoteFilePopupScreenEditFile",
-			"component": {
-				"type": "Clone",
-				"name": "PopupScreenDefault",
-				"attributes": {
-					"title": "Edit Remote File",
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "LayoutVerticalScrollable",
-							"attributes": {
-								"component_list": [
-									{
-										"type": "Clone",
-										"name": "GetRemoteFilePopupScreenEditFile"
-									}
-								]
-							}
-						}
-					]
-				}
-			}
-		},
-		{
-			"type": "Define",
 			"name": "PopupScreenShowRemoteFile",
 			"component": {
 				"type": "Clone",
@@ -858,23 +851,6 @@
 							}
 						}
 					]
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "GetRemoteFilePopupScreenEdit",
-			"comment": "depricated",
-			"component": {
-				"type": "SecureFtp",
-				"sftp_script_list": [
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-					"var filename = eigenFragment.getViewState(targetVid)",
-					"'get ' + filename + ' EditText:999000'"
-				],
-				"on_complete": {
-					"type": "Clone",
-					"name": "PopupScreenEdit"
 				}
 			}
 		},

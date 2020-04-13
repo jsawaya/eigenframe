@@ -15,7 +15,7 @@
         "type": "Clone",
         "name": "TextViewLabel",
         "attributes": {
-          "text": "Launch dynamic ruby apps using ssh"
+          "text": "Execute Ruby Script (via ssh)"
         }
       },
       {
@@ -23,124 +23,8 @@
         "name": "TextViewDetail",
         "attributes": {
           "text_list": [
-            "These methods use ssh to invoke Ruby",
-            " - which may return plain text (default)",
-            " - or may return dynamic EigenFrame components (is_eigen_response: true)"
+            "The return value may be handled either as plain text, or as a dynamic EigenFrame component (json)"
           ]
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "HorizontalLine"
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewLabel",
-        "attributes": {
-          "text": "Ruby Command Line"
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewDetail",
-        "attributes": {
-          "text_list": [
-            "Enter ruby command",
-            "example: EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s"
-          ]
-        }
-      },
-      {
-        "type": "EditText",
-        "id": 7700,
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text": "EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
-        "text_color": "#ffffff",
-        "background_color": "#000000"
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewDetail",
-        "attributes": {
-          "text": "Click [Execute Ruby Command Line] to execute the ruby command and return the result as plain text"
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Execute Ruby Command Line",
-          "icon": {
-            "name": "play.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "Ruby Command Output",
-              "component_list": [
-                {
-                  "type": "Clone",
-                  "name": "LayoutVerticalScrollable",
-                  "attributes": {
-                    "component_list": [
-                      {
-                        "type": "Clone",
-                        "name": "TextViewDetail",
-                        "attributes": {
-                          "text_size": "10",
-                          "ssh_script": "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewDetail",
-        "attributes": {
-          "text": "Click [Execute Ruby Command Line - Return EigenFrame] to execute the ruby command and return the result as an EigenFrame component"
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Execute Ruby Command Line - Return EigenFrame",
-          "icon": {
-            "name": "play.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "Ruby Produced EigenFrame",
-              "component_list": [
-                {
-                  "type": "LinearLayout",
-                  "orientation": "vertical",
-                  "gravity": "center",
-                  "layout_width": "match_parent",
-                  "layout_height": "match_parent",
-                  "component_list": [
-                    {
-                      "type": "SecureShell",
-                      "is_eigen_response": true,
-                      "ssh_script": "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'"
-                    }
-                  ]
-                }
-              ]
-            }
-          }
         }
       },
       {
@@ -176,6 +60,105 @@
 					}
 				}
 			},
+      {
+        "type": "Clone",
+        "name": "HorizontalLine"
+      },
+      {
+        "type": "Clone",
+        "name": "TextViewLabel",
+        "attributes": {
+          "text": "Ruby Command Line"
+        }
+      },
+      {
+        "type": "Clone",
+        "name": "TextViewDetail",
+        "attributes": {
+          "text_list": [
+            "Enter ruby command"
+          ]
+        }
+      },
+      {
+        "type": "EditText",
+        "id": 7700,
+        "layout_width": "match_parent",
+        "layout_height": "wrap_content",
+        "text": "EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
+        "text_color": "#ffffff",
+        "background_color": "#000000"
+      },
+      {
+        "type": "Clone",
+        "name": "ButtonDefault",
+        "attributes": {
+          "text": "Execute Ruby Command Line\nReturn value as PlainText",
+          "icon": {
+            "name": "play.",
+            "location": "top"
+          },
+          "on_click": {
+            "type": "Clone",
+            "name": "PopupScreenDefault",
+            "attributes": {
+              "title": "Ruby Command Output",
+              "component_list": [
+                {
+                  "type": "Clone",
+                  "name": "LayoutVerticalScrollable",
+                  "attributes": {
+                    "component_list": [
+                      {
+                        "type": "Clone",
+                        "name": "TextViewDetail",
+                        "attributes": {
+                          "text_size": "10",
+                          "ssh_script": "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "Clone",
+        "name": "ButtonDefault",
+        "attributes": {
+          "text": "Execute Ruby Command Line\nReturn Dynamic EigenFrame",
+          "icon": {
+            "name": "play.",
+            "location": "top"
+          },
+          "on_click": {
+            "type": "Clone",
+            "name": "PopupScreenDefault",
+            "attributes": {
+              "title": "Ruby Produced Dynamic EigenFrame",
+              "component_list": [
+                {
+                  "type": "LinearLayout",
+                  "orientation": "vertical",
+                  "gravity": "center",
+                  "layout_width": "match_parent",
+                  "layout_height": "match_parent",
+                  "component_list": [
+                    {
+                      "type": "SecureShell",
+                      "is_eigen_response": true,
+                      "ssh_script": "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
       {
         "type": "Clone",
         "name": "HorizontalLine"

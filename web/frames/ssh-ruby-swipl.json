@@ -18,7 +18,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Prolog Applications"
+					"text": "Execute Prolog Inference Engine"
 				}
 			},
 			{
@@ -26,23 +26,11 @@
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred from a knowledge base (kb) using backward chaining algorithms. "
-					]
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"Execute any prolog file // goal:",
-						" 1) Select a prolog file, knowledge-base (kb)",
+						"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred from a knowledge base (kb) using backward chaining algorithms. ",
+						"Execute prolog file // goal:",
+						" 1) Select prolog knowlege-base file",
 						" 2) Define your prolog proposition (goal)",
-						" 3) Execute the inference engine"
+						" 3) Execute the prolog inference engine"
 					]
 				}
 			},
@@ -62,97 +50,16 @@
 			},
 			{
 				"type": "Clone",
-				"name": "LayoutVerticalScrollable",
-				"attributes": {
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "ButtonDefault",
-							"attributes": {
-								"text": "Show Prolog Remote File",
-								"icon": {
-									"name": "open_browser.",
-									"location": "top"
-								},
-								"on_click": {
-									"type": "Clone",
-									"name": "PopupScreenShowRemoteFile"
-								}
-							}
-						},
-						{
-							"type": "Clone",
-							"name": "ButtonDefault",
-							"attributes": {
-								"text": "Edit Prolog Remote File",
-								"icon": {
-									"name": "open_browser.",
-									"location": "top"
-								},
-								"on_click": {
-									"type": "Clone",
-									"name": "GetRemoteFilePopupScreenEditProlog"
-								}
-							}
-						}
-					]
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Prolog Proposition (Goal):"
-				}
-			},
-			{
-				"type": "EditText",
-				"id": 7602,
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"text": "houses(X), write(X)",
-				"text_color": "#ffffff",
-				"background_color": "#000000"
-			},
-			{
-				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Execute Inference Engine\nTry to infer the prolog proposition (goal) with a declarative prolog file (kb)",
+					"text": "Edit/Execute Prolog Remote File",
 					"icon": {
 						"name": "open_browser.",
 						"location": "top"
 					},
 					"on_click": {
 						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Prolog",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_script_list": [
-														"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-														"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-														"swipl_path = eigenFragment.getViewState(targetVid)",
-														"swipl_goal = eigenFragment.getViewState(7602) ",
-														"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
+						"name": "GetRemoteFilePopupScreenEditProlog"
 					}
 				}
 			},
@@ -162,11 +69,9 @@
 			},
 			{
 				"type": "Clone",
-				"name": "TextViewDetail",
+				"name": "TextViewLabel",
 				"attributes": {
-					"text_list": [
-						"Route Planning Example"
-					]
+					"text": "Route Planning Example"
 				}
 			},
 			{
@@ -292,11 +197,9 @@
 			},
 			{
 				"type": "Clone",
-				"name": "TextViewDetail",
+				"name": "TextViewLabel",
 				"attributes": {
-					"text_list": [
-						"Relational example"
-					]
+					"text": "Relationships"
 				}
 			},
 			{
@@ -467,10 +370,16 @@
 			},
 			{
 				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Einstein Zebra Puzzle"
+				}
+			},
+			{
+				"type": "Clone",
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"Einstein Zebra Puzzle:",
 						"source http://en.wikipedia.org/wiki/Zebra_Puzzle",
 						" 1) Five colored houses in a row, each with an owner, a pet, cigarettes, and a drink.",
 						" 2) The English lives in the red house.",
@@ -653,11 +562,9 @@
 			},
 			{
 				"type": "Clone",
-				"name": "TextViewDetail",
+				"name": "TextViewLabel",
 				"attributes": {
-					"text_list": [
-						"List manipulation example"
-					]
+					"text": "List Handling"
 				}
 			},
 			{
@@ -741,6 +648,13 @@
 			{
 				"type": "Clone",
 				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Sudoku"
+				}
 			},
 			{
 				"type": "Clone",
@@ -844,15 +758,6 @@
 			{
 				"type": "Clone",
 				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"TO DO: more examples"
-					]
-				}
 			}
 		]
 	}

@@ -64,11 +64,14 @@
                           "text_size": "10",
                           "ssh_list": [
                             "echo Starting Apache2 HTTP/CGI Services ...",
+                            "echo //remove httpd process id ",
+                            "rm /data/data/com.termux/files/usr/var/run/apache2/httpd.pid",
+                            "sleep 1",
                             "httpd",
                             "sleep 1",
-                            "echo ps -e",
+                            "echo //ps -e",
                             "ps -e",
-                            "echo ready to test - click [Test Apache2 CGI Service]"
+                            "echo //ready to test - click [Test Apache2 CGI Service]"
                           ]
                         }
                       }

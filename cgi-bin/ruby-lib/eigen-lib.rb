@@ -15,7 +15,7 @@ require_relative 'eigen_text_view'
 =begin
 EigenFrame ruby class produces nested hash objects, that are converted to json by caller (cgi-bin) scripts,
 and sent back to the EigenFrame app (or browser that invoked a url request).
-See example: cgi-bin/sys-directory-listview.rb
+See example: cgi-bin/cgi-directory-listview.rb
 =end
 
 class EigenFrame
@@ -25,7 +25,7 @@ class EigenFrame
   dirHash = set_directory_hash(dirpath)
   dirHashDirectory = dirHash['directory']
 
-  listdir_url = "http://localhost:8080/cgi-bin/sys-directory-listview.rb"
+  listdir_url = "http://localhost:8080/cgi-bin/cgi-directory-listview.rb"
   subdir_url_script = "'#{listdir_url}?dirpath=#{dirHashDirectory}/' + eigenFragment.getOptionString('option', '.')"
   subdirListViewOnClickPopupScreen = launch_PopupScreen(20, "#ffffff", "#222222", [subdir_url_script])
 
@@ -36,7 +36,7 @@ class EigenFrame
       "title0"
     ]
 
-  list_contents_url = "http://localhost:8080/cgi-bin/sys-list-termux-file-contents.rb"
+  list_contents_url = "http://localhost:8080/cgi-bin/cgi-list-termux-file-contents.rb"
 
   file_item_url_script_list =
     [

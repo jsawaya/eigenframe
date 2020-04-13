@@ -1,7 +1,6 @@
 require 'open3'
 require 'json'
 
-#/cgi-bin/swi-routes.rb?route(nottinghill_gate,maida_vale,X)
 def swipl_exec(swipl_path, swipl_goal)
 
   #swipl_path = "swipl-lib/routes.pl"

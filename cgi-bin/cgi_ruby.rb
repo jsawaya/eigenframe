@@ -24,5 +24,3 @@ else
     end
   end
 end
-
-#ruby = "EigenFrame.new(cgi.params).eigen_directory_listview_http_cgi(dirpath).to_json.to_s"

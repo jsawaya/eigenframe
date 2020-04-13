@@ -12,6 +12,7 @@ ruby_string = ARGV[0]
 
 puts eval(ruby_string)
 
+# Example:
 #  {
 #    "type": "SecureShell",
 #    "is_eigen_response": true,

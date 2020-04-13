@@ -2,14 +2,11 @@
 #!/usr/bin/sh
 set -f
 
-# curl localhost:8080/cgi-bin/sudoku.cgi?problem\(1,Rows\),sudoku\(Rows\),write\(Rows\),nl
-
 echo "Content-type: text/plain; charset=iso-8859-1"
 echo
 
-#cd /data/data/com.termux/files/home/storage/downloads/termux-files/swipl
 cd swipl-lib
-ls
+pwd
 
 echo swi-prolog:
 echo =========================================================================

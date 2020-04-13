@@ -253,14 +253,14 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Render EigenFrame Files"
+        "text": "Render Static EigenFrame Files"
       }
     },
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [EigenFrame] to view, edit and render frames"
+        "text": "Click [EigenFrame] to view, edit and render EigenFrame File"
       }
     },
     {

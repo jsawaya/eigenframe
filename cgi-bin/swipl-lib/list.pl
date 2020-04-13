@@ -27,6 +27,6 @@ nrev([H|T0], L) :-
 % sublist([a, b, c, d, e], [c, d]) is true
 % sublist([a, b, c, d, e], Ys).
 % nrev([a, b, c, d, e], Ys).
-
-% swipl -s list.pl -g "nrev([a,b,c,d,e], Y), write(Y), nl" -t halt
-% swipl -s list.pl -g "numlist(1, 1000, L), time(nrev(L, _)), nl" -t halt
+% nrev([a,b,c,d,e], Y), write(Y)
+% numlist(1, 1000, L), time(nrev(L, _)), nl
+% sublist([a, b, c, d, e], Y),writeln(Y),false
