@@ -447,7 +447,25 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "GitHub UrlRequests may target the master branch or the beta branch."
+      }
+    },
+    {
+      "type": "Clone",
       "name": "SetIsMasterBranchButton"
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "EigenFrame GitHub Gallery"
+      }
     },
     {
       "type": "Clone",
@@ -470,7 +488,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')"
+            "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master_gallery.json')"
           ]
         }
       }
