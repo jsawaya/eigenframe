@@ -308,6 +308,17 @@
 			},
 			{
 				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Fetch/Reset EigenFrame Beta Branch"
+				}
+			},
+			{
+				"type": "Clone",
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
@@ -364,6 +375,17 @@
 							]
 						}
 					}
+				}
+			},
+			{
+				"type": "Clone",
+				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Download Updated EigenFrame Files"
 				}
 			},
 			{
@@ -460,6 +482,13 @@
 			{
 				"type": "Clone",
 				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Create EigenFrame GitHub Pull Request"
+				}
 			},
       {
         "type": "Clone",
