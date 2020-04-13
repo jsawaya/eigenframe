@@ -66,6 +66,20 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Install EigenFrame Services"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Install] to prepare Termux App for EigenFrame services."
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
         "text": "Install",
@@ -81,6 +95,24 @@
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-initial-setup.json'"
           }
         }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "EigenFrame GitHub Repository Administration"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [GitHub] to download the latest updates from EigenFrame GitHub Repository."
       }
     },
     {
@@ -105,6 +137,198 @@
     {
       "type": "Clone",
       "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "GitHub",
+        "icon": {
+          "name": "github_logo.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "GitHub",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Edit Remote File",
+        "icon": {
+          "name": "edit.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Edit Remote File",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Shell Edit/Exec",
+        "icon": {
+          "name": "play.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Shell",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "EigenFrame Edit/Exec",
+        "icon": {
+          "name": "ic_launcher_round.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "EigenFrame Edit/Exec",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-frame.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Ruby Edit/Exec",
+        "icon": {
+          "name": "ruby_logo.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Ruby Edit/Exec",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Prolog Edit/Exec",
+        "icon": {
+          "name": "swi_prolog.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Prolog Edit/Exec",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "OpenPGP Cryptography"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [OpenPGP Cryptography] to use GnuPG to encrypt/decrypt/sign/verify/import-keys/export-keys.  "
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "OpenPGP Cryptography",
+        "icon": {
+          "name": "security.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "OpenPGP Cryptography",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Apache2 HTTP/CGI (Common Gateway Interface)"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Apache2] to use cgi as an alternative to ssh."
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Apache",
+        "icon": {
+          "name": "security.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Apache2",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
+          }
+        }
+      }
     },
     {
       "type": "Clone",
@@ -281,163 +505,7 @@
     {
       "type": "Clone",
       "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "GitHub",
-        "icon": {
-          "name": "github_logo.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "GitHub",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Edit Remote File",
-        "icon": {
-          "name": "edit.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Edit Remote File",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Shell Edit/Exec",
-        "icon": {
-          "name": "play.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Shell",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "EigenFrame Edit/Exec",
-        "icon": {
-          "name": "ic_launcher_round.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "EigenFrame Edit/Exec",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-frame.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Ruby Edit/Exec",
-        "icon": {
-          "name": "ruby_logo.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Ruby Edit/Exec",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Prolog Edit/Exec",
-        "icon": {
-          "name": "swi_prolog.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Prolog Edit/Exec",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "OpenPGP Cryptography"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [OpenPGP Cryptography] to use GnuPG to encrypt/decrypt/sign/verify/import-keys/export-keys.  "
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "OpenPGP Cryptography",
-        "icon": {
-          "name": "security.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "OpenPGP Cryptography",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
     }
+
   ]
 }
