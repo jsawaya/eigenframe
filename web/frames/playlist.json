@@ -146,7 +146,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [EigenFrame Shortcut] to create a shortcut on your home screen to launch the EigenFrame app from the github master branch"
+          "Click [Master Branch Shortcut] to create a shortcut on your home screen to launch the EigenFrame app from the github master branch"
         ]
       }
     },
@@ -154,7 +154,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "EigenFrame Shortcut",
+        "text": "Master Branch Shortcut",
         "icon": {
           "name": "save.",
           "location": "top"
@@ -164,36 +164,6 @@
           "script_list": [
             "eigenActivity.addShortcut('Master', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
             "eigenActivity.finish()"
-          ]
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [Security] to use OpenPGP Cryptography (GnuPG) to encrypt/decrypt/sign/verify/import-key/export-key.  "
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Security",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_master_security.json')"
           ]
         }
       }
@@ -362,6 +332,40 @@
 					}
 				}
 			}
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Click [Security] to use OpenPGP Cryptography (GnuPG) to encrypt/decrypt/sign/verify/import-key/export-key.  "
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Security",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "JavaScript",
+          "script_list": [
+            "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master_security.json')"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
     }
 
   ]
