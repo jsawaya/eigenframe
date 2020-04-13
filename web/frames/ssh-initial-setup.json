@@ -36,7 +36,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Initial Setup of Termux Host"
+        "text": "Termux Setup Instructions"
       }
     },
     {
@@ -72,7 +72,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "SecureShell (SSH) Settings"
+        "text": "SecureShell (SSH) Settings - Connect with Termux (sshd)"
       }
     },
     {
@@ -132,7 +132,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Ruby Installation"
+        "text": "Ruby Installation - System Interface / Integration"
       }
     },
     {
@@ -162,7 +162,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Prolog Installation (swi-prolog)"
+        "text": "Prolog Installation (swi-prolog) - Inference Engine"
       }
     },
     {
@@ -177,7 +177,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Prolog Installation (swi-prolog)",
+        "text": "Prolog Installation",
         "icon": {
           "name": "file_download.",
           "location": "top"
@@ -200,14 +200,14 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "PGP Installation (gnupg)"
+        "text": "OpenPGP Installation (gnupg) - Security / Cryptography"
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "PGP Installation (gnupg)",
+        "text": "OpenPGP Installation",
         "icon": {
           "name": "file_download.",
           "location": "top"
@@ -230,7 +230,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Apache2 Installation"
+        "text": "Apache2 Installation - HTTP/CGI Services"
       }
     },
     {
