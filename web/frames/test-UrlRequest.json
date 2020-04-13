@@ -34,7 +34,7 @@
         "type": "UrlRequest",
         "id": 5001,
         "is_eigen_response": false,
-        "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=.",
+        "url": "http://localhost:8080/cgi-bin/cgi-directory-listview.rb?dirpath=.",
         "on_complete": {
           "type": "Clone",
           "name": "PopupScreenDefault",
@@ -82,7 +82,7 @@
             {
               "type": "UrlRequest",
               "is_eigen_response": true,
-              "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb?dirpath=."
+              "url": "http://localhost:8080/cgi-bin/cgi-directory-listview.rb?dirpath=."
             }
           ]
         }
@@ -104,7 +104,7 @@
         "type": "UrlRequest",
         "id": 5002,
         "is_eigen_response": false,
-        "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
+        "url": "http://localhost:8080/cgi-bin/cgi-directory-listview.rb",
         "parameter_list": [
           {
             "name": "dirpath",
@@ -153,7 +153,7 @@
         "type": "UrlRequest",
         "id": 5003,
         "is_eigen_response": false,
-        "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
+        "url": "http://localhost:8080/cgi-bin/cgi-directory-listview.rb",
         "parameter_list": [
           {
             "name": "dirpath",
@@ -207,7 +207,7 @@
             {
               "type": "UrlRequest",
               "is_eigen_response": true,
-              "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
+              "url": "http://localhost:8080/cgi-bin/cgi-directory-listview.rb",
               "parameter_list": [
                 {
                   "name": "dirpath",

@@ -17,7 +17,7 @@
 {
     "type": "UrlRequest",
     "is_eigen_response": true,
-    "url": "http://localhost:8080/cgi-bin/sys-directory-listview.rb",
+    "url": "http://localhost:8080/cgi-bin/cgi-directory-listview.rb",
     "parameter_list": 
     [
       {
