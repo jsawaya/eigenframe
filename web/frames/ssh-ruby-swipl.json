@@ -18,7 +18,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Prolog Applications"
+					"text": "Execute Prolog Inference Engine"
 				}
 			},
 			{
@@ -26,23 +26,11 @@
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred from a knowledge base (kb) using backward chaining algorithms. "
-					]
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"Execute any prolog file // goal:",
+						"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred from a knowledge base (kb) using backward chaining algorithms. ",
+						"Execute prolog file // goal:",
 						" 1) Select a prolog file, knowledge-base (kb)",
 						" 2) Define your prolog proposition (goal)",
-						" 3) Execute the inference engine"
+						" 3) Execute prolog inference engine"
 					]
 				}
 			},
@@ -81,11 +69,9 @@
 			},
 			{
 				"type": "Clone",
-				"name": "TextViewDetail",
+				"name": "TextViewLabel",
 				"attributes": {
-					"text_list": [
-						"Route Planning Example"
-					]
+					"text": "Route Planning Example"
 				}
 			},
 			{
@@ -211,11 +197,9 @@
 			},
 			{
 				"type": "Clone",
-				"name": "TextViewDetail",
+				"name": "TextViewLabel",
 				"attributes": {
-					"text_list": [
-						"Relational example"
-					]
+					"text": "Relationships"
 				}
 			},
 			{
@@ -386,10 +370,16 @@
 			},
 			{
 				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Einstein Zebra Puzzle"
+				}
+			},
+			{
+				"type": "Clone",
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"Einstein Zebra Puzzle:",
 						"source http://en.wikipedia.org/wiki/Zebra_Puzzle",
 						" 1) Five colored houses in a row, each with an owner, a pet, cigarettes, and a drink.",
 						" 2) The English lives in the red house.",
@@ -572,11 +562,9 @@
 			},
 			{
 				"type": "Clone",
-				"name": "TextViewDetail",
+				"name": "TextViewLabel",
 				"attributes": {
-					"text_list": [
-						"List manipulation example"
-					]
+					"text": "List Handling"
 				}
 			},
 			{
@@ -660,6 +648,13 @@
 			{
 				"type": "Clone",
 				"name": "HorizontalLine"
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewLabel",
+				"attributes": {
+					"text": "Sudoku"
+				}
 			},
 			{
 				"type": "Clone",
@@ -763,15 +758,6 @@
 			{
 				"type": "Clone",
 				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"TO DO: more examples"
-					]
-				}
 			}
 		]
 	}
