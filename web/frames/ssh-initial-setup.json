@@ -9,6 +9,33 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
+        "text": "Install EigenFrame Services"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "1. Termux Setup Instructions (below)",
+          "2. SecureShell Settings",
+          "   - enables remote control of Termux App",
+          "3. GIT - EigenFrame GitHub repository",
+          "4. Ruby - system integration",
+          "5. Prolog - inference engine",
+          "6. OpenPGP - cryptography and security",
+          "7. Apache2 - http/cgi support (optional)"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
         "text": "Initial Setup of Termux Host"
       }
     },
