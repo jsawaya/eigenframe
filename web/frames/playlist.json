@@ -421,7 +421,7 @@
       "attributes": {
         "text": "Apache",
         "icon": {
-          "name": "security.",
+          "name": "apache_logo.",
           "location": "top"
         },
         "on_click": {
