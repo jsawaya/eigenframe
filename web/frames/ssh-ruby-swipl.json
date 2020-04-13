@@ -28,9 +28,9 @@
 					"text_list": [
 						"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred from a knowledge base (kb) using backward chaining algorithms. ",
 						"Execute prolog file // goal:",
-						" 1) Select a prolog file, knowledge-base (kb)",
+						" 1) Select prolog knowlege-base file",
 						" 2) Define your prolog proposition (goal)",
-						" 3) Execute prolog inference engine"
+						" 3) Execute the prolog inference engine"
 					]
 				}
 			},

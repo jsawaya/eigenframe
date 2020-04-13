@@ -496,7 +496,7 @@
 											"type": "Clone",
 											"name": "ButtonDefault",
 											"attributes": {
-												"text": "Execute Ruby Script",
+												"text": "Execute Ruby Script\nProduce PlainText",
 												"icon": {
 													"name": "open_browser.",
 													"location": "top"
@@ -534,6 +534,48 @@
 												}
 											}
 										},
+										{
+											"type": "Clone",
+											"name": "ButtonDefault",
+											"attributes": {
+												"text": "Execute Ruby Script\nProduce EigenFrame",
+												"icon": {
+													"name": "open_browser.",
+													"location": "top"
+												},
+												"on_click": 
+												{
+													"type": "Clone",
+													"name": "PopupScreenDefault",
+													"attributes": {
+														"title": "Dynamic Ruby EigenFrame",
+														"component_list": [
+															{
+																"type": "LinearLayout",
+																"orientation": "vertical",
+																"gravity": "center",
+																"layout_width": "match_parent",
+																"layout_height": "match_parent",
+																"component_list": [
+																	{
+																		"type": "SecureShell",
+																		"is_eigen_response": true,
+																		"ssh_script_list": [
+																			"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+																			"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+																			"rubyfilepath = eigenFragment.getViewState(targetVid)",
+																			"rubyargs = eigenFragment.getViewState(976001) ",
+																			"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+																		]
+																	}
+																]
+															}
+														]
+													}
+												}
+											}
+										},
+
 										{
 											"type": "Clone",
 											"name": "HorizontalLine"

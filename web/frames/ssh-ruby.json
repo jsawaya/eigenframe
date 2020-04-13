@@ -15,7 +15,7 @@
         "type": "Clone",
         "name": "TextViewLabel",
         "attributes": {
-          "text": "Launch dynamic ruby apps using ssh"
+          "text": "Execute Ruby using ssh"
         }
       },
       {
@@ -23,12 +23,43 @@
         "name": "TextViewDetail",
         "attributes": {
           "text_list": [
-            "These methods use ssh to invoke Ruby",
-            " - which may return plain text (default)",
-            " - or may return dynamic EigenFrame components (is_eigen_response: true)"
+            "The return value may be handled either as plain text, or as an EigenFrame component (json)"
           ]
         }
       },
+      {
+        "type": "Clone",
+        "name": "HorizontalLine"
+      },
+			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Ruby File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999721)"
+				]
+			},
+			{
+				"type": "Clone",
+				"name": "JavaScriptSelectFilePath"
+			},
+			{
+				"type": "Clone",
+				"name": "ButtonDefault",
+				"attributes": {
+					"text": "Edit/Exec Remote Ruby File",
+					"icon": {
+						"name": "open_browser.",
+						"location": "top"
+					},
+					"on_click": {
+						"type": "Clone",
+						"name": "GetRemoteFilePopupScreenEditRuby"
+					}
+				}
+			},
       {
         "type": "Clone",
         "name": "HorizontalLine"
@@ -143,39 +174,6 @@
           }
         }
       },
-      {
-        "type": "Clone",
-        "name": "HorizontalLine"
-      },
-			{
-				"type": "JavaScript",
-				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Ruby File')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999721)"
-				]
-			},
-			{
-				"type": "Clone",
-				"name": "JavaScriptSelectFilePath"
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Edit/Exec Remote Ruby File",
-					"icon": {
-						"name": "open_browser.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditRuby"
-					}
-				}
-			},
       {
         "type": "Clone",
         "name": "HorizontalLine"
