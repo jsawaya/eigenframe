@@ -15,7 +15,7 @@
         "type": "Clone",
         "name": "TextViewLabel",
         "attributes": {
-          "text": "Edit Remote Text File"
+          "text": "Edit/Execute EigenFrame"
         }
       },
       {
@@ -23,7 +23,7 @@
         "name": "TextViewDetail",
         "attributes": {
           "text_list": [
-            "Edit Remote Text File"
+            "View/Edit EigenFrame components"
           ]
         }
       },
@@ -34,11 +34,11 @@
 			{
 				"type": "JavaScript",
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File')",
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote EigenFrame')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/frames')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999723)"
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999722)"
 				]
 			},
 			{
@@ -49,14 +49,14 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Edit Remote Text File",
+					"text": "Edit/Exec Remote EigenFrame",
 					"icon": {
 						"name": "open_browser.",
 						"location": "top"
 					},
 					"on_click": {
 						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditFile"
+						"name": "GetRemoteFilePopupScreenEditFrame"
 					}
 				}
 			},
