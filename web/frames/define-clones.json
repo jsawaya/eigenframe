@@ -236,58 +236,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "ButtonExecutePrologFile",
-			"component": {
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Execute Prolog File",
-					"icon": {
-						"name": "play.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "SecureFtp",
-						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'put EditText:999000 ' + filename"
-						],
-						"on_complete": {
-							"type": "Clone",
-							"name": "PopupScreenDefault",
-							"attributes": {
-								"title": "Shell Command Output",
-								"component_list": [
-									{
-										"type": "Clone",
-										"name": "LayoutVerticalScrollable",
-										"attributes": {
-											"component_list": [
-												{
-													"type": "Clone",
-													"name": "TextViewDetail",
-													"attributes": {
-														"text_size": "10",
-														"ssh_script_list": [
-															"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-															"var filename = eigenFragment.getViewState(targetVid)",
-															"'cd /data/data/com.termux/files/home; ruby ssh_swipl.rb \"'+filename+'\", \"houses(Houses), write(Houses), false\" '"
-														]
-													}
-												}
-											]
-										}
-									}
-								]
-							}
-						}
-					}
-				}
-			}
-		},
-		{
-			"type": "Define",
 			"name": "ButtonExecuteRubyFile",
 			"component": {
 				"type": "Clone",
@@ -477,10 +425,6 @@
 									},
 									{
 										"type": "Clone",
-										"name": "ButtonExecutePrologFile"
-									},
-									{
-										"type": "Clone",
 										"name": "HorizontalLine"
 									},
 									{
@@ -527,10 +471,6 @@
 										{
 											"type": "Clone",
 											"name": "ButtonCancelLocalEdits"
-										},
-										{
-											"type": "Clone",
-											"name": "ButtonExecutePrologFile"
 										},
 										{
 											"type": "Clone",
