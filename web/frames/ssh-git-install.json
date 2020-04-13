@@ -123,6 +123,41 @@
       },
       {
         "type": "Clone",
+        "name": "ButtonDefault",
+        "attributes": {
+          "text": "Clear git-repos/eigenframe directory\nif it already exists",
+          "on_click": {
+            "type": "Clone",
+            "name": "PopupScreenDefault",
+            "attributes": {
+              "title": "Clear /git-repos directory",
+              "component_list": [
+                {
+                  "type": "Clone",
+                  "name": "LayoutVerticalScrollable",
+                  "attributes": {
+                    "component_list": [
+                      {
+                        "type": "Clone",
+                        "name": "TextViewDetail",
+                        "attributes": {
+                          "text_size": "10",
+                          "ssh_list": [
+                            "echo //rm -rf ~/git-repos/eigenframe",
+                            "rm -rf ~/git-repos/eigenframe"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "Clone",
         "name": "HorizontalLine"
       },
       {
