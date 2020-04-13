@@ -582,6 +582,13 @@
 										},
 										{
 											"type": "Clone",
+											"name": "TextViewLabel",
+											"attributes": {
+												"text": "Ruby Script:"
+											}
+										},
+										{
+											"type": "Clone",
 											"name": "EditTextLocalFileCache"
 										}
 									]

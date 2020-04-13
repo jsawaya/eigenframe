@@ -15,7 +15,7 @@
         "type": "Clone",
         "name": "TextViewLabel",
         "attributes": {
-          "text": "Execute Ruby using ssh"
+          "text": "Execute Ruby Script (via ssh)"
         }
       },
       {
@@ -23,7 +23,7 @@
         "name": "TextViewDetail",
         "attributes": {
           "text_list": [
-            "The return value may be handled either as plain text, or as an EigenFrame component (json)"
+            "The return value may be handled either as plain text, or as a dynamic EigenFrame component (json)"
           ]
         }
       },
@@ -76,8 +76,7 @@
         "name": "TextViewDetail",
         "attributes": {
           "text_list": [
-            "Enter ruby command",
-            "example: EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s"
+            "Enter ruby command"
           ]
         }
       },
@@ -92,16 +91,9 @@
       },
       {
         "type": "Clone",
-        "name": "TextViewDetail",
-        "attributes": {
-          "text": "Click [Execute Ruby Command Line] to execute the ruby command and return the result as plain text"
-        }
-      },
-      {
-        "type": "Clone",
         "name": "ButtonDefault",
         "attributes": {
-          "text": "Execute Ruby Command Line",
+          "text": "Execute Ruby Command Line\nReturn value as PlainText",
           "icon": {
             "name": "play.",
             "location": "top"
@@ -135,16 +127,9 @@
       },
       {
         "type": "Clone",
-        "name": "TextViewDetail",
-        "attributes": {
-          "text": "Click [Execute Ruby Command Line - Return EigenFrame] to execute the ruby command and return the result as an EigenFrame component"
-        }
-      },
-      {
-        "type": "Clone",
         "name": "ButtonDefault",
         "attributes": {
-          "text": "Execute Ruby Command Line - Return EigenFrame",
+          "text": "Execute Ruby Command Line\nReturn Dynamic EigenFrame",
           "icon": {
             "name": "play.",
             "location": "top"
@@ -153,7 +138,7 @@
             "type": "Clone",
             "name": "PopupScreenDefault",
             "attributes": {
-              "title": "Ruby Produced EigenFrame",
+              "title": "Ruby Produced Dynamic EigenFrame",
               "component_list": [
                 {
                   "type": "LinearLayout",
