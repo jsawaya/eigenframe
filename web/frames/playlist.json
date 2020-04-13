@@ -173,9 +173,27 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Edit Remote File"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Edit] to view / edit remote configuration files, documentation, ..."
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Edit Remote File",
+        "text": "Edit",
         "icon": {
           "name": "edit.",
           "location": "top"
@@ -184,7 +202,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Edit Remote File",
+            "title": "Edit",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
           }
         }
@@ -192,9 +210,27 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Execute Remote Shell Files"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Shell] to view, edit and execute remote shell (bash) files"
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Shell Edit/Exec",
+        "text": "Shell",
         "icon": {
           "name": "play.",
           "location": "top"
@@ -211,9 +247,27 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Render EigenFrame Files"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [EigenFrame] to view, edit and render frames"
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "EigenFrame Edit/Exec",
+        "text": "EigenFrame",
         "icon": {
           "name": "ic_launcher_round.",
           "location": "top"
@@ -222,7 +276,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "EigenFrame Edit/Exec",
+            "title": "EigenFrame",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-frame.json'"
           }
         }
@@ -230,9 +284,27 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Execute Remote Ruby Files"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Ruby] to view, edit and execute remote Ruby files"
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Ruby Edit/Exec",
+        "text": "Ruby",
         "icon": {
           "name": "ruby_logo.",
           "location": "top"
@@ -241,7 +313,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Ruby Edit/Exec",
+            "title": "Ruby",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
           }
         }
@@ -249,9 +321,27 @@
     },
     {
       "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Execute Remote Prolog Files"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Prolog] to view, edit and execute remote Prolog files"
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Prolog Edit/Exec",
+        "text": "Prolog",
         "icon": {
           "name": "swi_prolog.",
           "location": "top"
@@ -260,7 +350,7 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Prolog Edit/Exec",
+            "title": "Prolog",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl.json'"
           }
         }
@@ -282,7 +372,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [OpenPGP Cryptography] to use GnuPG to encrypt/decrypt/sign/verify/import-keys/export-keys.  "
+          "Click [OpenPGP Cryptography] to use GnuPG to perform encryption, decryption, digital-signatures, verification, import-keys, and export-keys.  "
         ]
       }
     },
