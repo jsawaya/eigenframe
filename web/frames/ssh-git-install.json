@@ -125,7 +125,7 @@
         "type": "Clone",
         "name": "ButtonDefault",
         "attributes": {
-          "text": "Clear git-repos/eigenframe directory\nif it already exists",
+          "text": "Remove git-repos/eigenframe directory\n(if it already exists)",
           "on_click": {
             "type": "Clone",
             "name": "PopupScreenDefault",
@@ -226,7 +226,7 @@
 				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
-						"Click [Checkout EigenFrame Beta Branch] to activate your local beta branch - so you can pull beta updates from EigenFrame GitHub"
+						"Click [Checkout Beta Branch] to activate your local beta branch - so you can pull beta updates from EigenFrame GitHub"
 					]
 				}
 			},
@@ -234,12 +234,12 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Checkout EigenFrame Beta Branch",
+					"text": "Checkout Beta Branch",
 					"on_click": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Checkout EigenFrame Beta Branch",
+							"title": "Checkout Beta Branch",
 							"component_list": [
 								{
 									"type": "Clone",
@@ -272,12 +272,12 @@
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Checkout EigenFrame GitHub Master Branch",
+					"text": "Checkout Master Branch",
 					"on_click": {
 						"type": "Clone",
 						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Checkout EigenFrame GitHub Master Branch",
+							"title": "Checkout Master Branch",
 							"component_list": [
 								{
 									"type": "Clone",
