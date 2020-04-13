@@ -218,7 +218,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Select Branch from EigenFrame GitHub"
+					"text": "EigenFrame GitHub Branch"
 				}
 			},
 			{
