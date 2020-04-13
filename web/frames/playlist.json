@@ -140,19 +140,33 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Secure File Transfer Protocol (SFTP) - Examples"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [SFTP] perform remote file management."
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "GitHub",
+        "text": "SFTP",
         "icon": {
-          "name": "github_logo.",
+          "name": "import_export.",
           "location": "top"
         },
         "on_click": {
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "GitHub",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
+            "title": "SFTP",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json.json'"
           }
         }
       }
@@ -329,6 +343,10 @@
           }
         }
       }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
     },
     {
       "type": "Clone",
