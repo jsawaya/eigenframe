@@ -66,6 +66,48 @@
     },
     {
       "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Install",
+        "icon": {
+          "name": "playlist_check.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Install",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-initial-setup.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "GitHub",
+        "icon": {
+          "name": "github_logo.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "GitHub",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
         "text": "EigenFrame GitHub Gallery"
