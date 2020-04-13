@@ -18,7 +18,7 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "Refresh EigenFrame from GitHub"
+					"text": "Download Updates from EigenFrame GitHub Repository"
 				}
 			},
 			{
