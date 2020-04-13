@@ -419,7 +419,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Apache",
+        "text": "Apache2",
         "icon": {
           "name": "apache_logo.",
           "location": "top"
