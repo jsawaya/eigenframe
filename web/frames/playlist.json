@@ -75,7 +75,7 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Install] to prepare Termux App for EigenFrame services."
+        "text": "Click [Install] to prepare Termux App for EigenFrame service."
       }
     },
     {
@@ -105,7 +105,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "EigenFrame GitHub Repository Administration"
+        "text": "EigenFrame GitHub Repository"
       }
     },
     {
@@ -142,7 +142,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Secure File Transfer Protocol (SFTP) - Examples"
+        "text": "Secure File Transfer Protocol (SFTP)"
       }
     },
     {
@@ -166,7 +166,7 @@
           "name": "PopupScreenDefault",
           "attributes": {
             "title": "SFTP",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json.json'"
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json'"
           }
         }
       }
