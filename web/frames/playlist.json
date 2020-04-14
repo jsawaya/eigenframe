@@ -422,8 +422,12 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Apache2] to use http/cgi, as an alternative to ssh.",
-          "There are pros/cons regarding cgi: ."
+          "Click [Apache2] to use http/cgi, as a faster alternative to ssh.",
+          "1) HTTP/CGI is much quicker, see [Show Apache2 Error Log].",
+          "2) UrlRequest representation embeds Ruby script with post-method - parsimonious and elegant.",
+          "Compare [OpenPGP Cryptography] support via ssh vs. http/cgi.",
+          "The ssh approach does require separate Ruby files for each action: Encrypt, Sign, ...",
+          "Click [Start Apache2 HTTP/CGI Services] before using localhost:8080 UrlRequest"
         ]
       }
     },
