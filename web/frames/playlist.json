@@ -216,14 +216,14 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Execute Remote Shell Files"
+        "text": "Execute Remote Shell File"
       }
     },
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Shell] to view, edit and execute remote shell (bash) files"
+        "text": "Click [Shell] to view, edit and execute remote shell (bash) file"
       }
     },
     {
@@ -253,7 +253,7 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Render Static EigenFrame Files"
+        "text": "Render Static EigenFrame File"
       }
     },
     {
@@ -290,14 +290,14 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Execute Remote Ruby Files"
+        "text": "Execute Remote Ruby File"
       }
     },
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Ruby] to view, edit and execute remote Ruby files"
+        "text": "Click [Ruby] to view, edit and execute remote Ruby file"
       }
     },
     {
@@ -327,14 +327,14 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Execute Remote Prolog Files"
+        "text": "Execute Remote Prolog Knowlege-Base Inference"
       }
     },
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Prolog] to view, edit and execute remote Prolog files"
+        "text": "Click [Prolog] to view, edit and execute remote Prolog Knowlege-Base Inference"
       }
     },
     {
@@ -422,7 +422,8 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Apache2] to use cgi as an alternative to ssh."
+          "Click [Apache2] to use http/cgi, as an alternative to ssh.",
+          "There are pros/cons regarding cgi: ."
         ]
       }
     },

@@ -23,7 +23,7 @@
         "name": "TextViewDetail",
         "attributes": {
           "text_list": [
-            "Edit Remote Text File"
+            "Select the remote file, or just type the file path, then click [Edit Remote Text File]"
           ]
         }
       },
