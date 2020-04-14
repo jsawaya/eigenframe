@@ -243,19 +243,46 @@
           }
         }
       },
+
+
+
       {
         "type": "Clone",
         "name": "ButtonDefault",
         "attributes": {
           "text": "Show Apache2 Error Log (using HTTP/CGI)",
+          "icon": {
+            "name": "open_with.",
+            "location": "top"
+          },
           "on_click": {
-            "type": "PopupTextView",
-            "title": "Show Apache2 Error Log (using HTTP/CGI)",
-            "font": "font/droid-sans-mono/DroidSansMono.ttf",
-            "url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
+            "type": "Clone",
+            "name": "PopupScreenDefault",
+            "attributes": {
+              "title": "Apache2 Error Log",
+              "component_list": [
+                {
+                  "type": "Clone",
+                  "name": "LayoutVerticalScrollable",
+                  "attributes": {
+                    "component_list": [
+                      {
+                        "type": "Clone",
+                        "name": "TextViewDetail",
+                        "attributes": {
+                          "text_size": "10",
+                          "url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
           }
         }
       },
+
       {
         "type": "Clone",
         "name": "HorizontalLine"
