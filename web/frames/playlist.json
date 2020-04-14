@@ -426,7 +426,7 @@
           "1) HTTP/CGI is much quicker, see [Show Apache2 Error Log].",
           "2) UrlRequest representation embeds Ruby script with post-method - parsimonious and elegant.",
           "Compare [OpenPGP Cryptography] support via ssh vs. http/cgi.",
-          "The ssh approach does require separate a Ruby file for each action: (ssh-gpg-decrypt.rb, ...)",
+          "The ssh approach does require a separate Ruby file for each action: (ssh-gpg-decrypt.rb, ...)",
           "Remember to click [Start Apache2 HTTP/CGI Services] before using a localhost:8080 UrlRequest"
         ]
       }
