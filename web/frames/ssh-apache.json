@@ -114,23 +114,46 @@
           "text": "Apache2 Testing"
         }
       },
+
       {
         "type": "Clone",
         "name": "ButtonDefault",
         "attributes": {
           "text": "Test Apache2 CGI Service",
           "icon": {
-            "name": "info.",
+            "name": "open_with.",
             "location": "top"
           },
           "on_click": {
-            "type": "PopupTextView",
-            "font": "font/droid-sans-mono/DroidSansMono.ttf",
-            "title": "Test Apache2 CGI Service",
-            "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+            "type": "Clone",
+            "name": "PopupScreenDefault",
+            "attributes": {
+              "title": "Test Apache2 CGI Service",
+              "component_list": [
+                {
+                  "type": "Clone",
+                  "name": "LayoutVerticalScrollable",
+                  "attributes": {
+                    "component_list": [
+                      {
+                        "type": "Clone",
+                        "name": "TextViewDetail",
+                        "attributes": {
+                          "text_size": "10",
+                          "url": "http://localhost:8080/cgi-bin/sys-test.sh"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
           }
         }
       },
+
+
+
       {
         "type": "Clone",
         "name": "ButtonDefault",
