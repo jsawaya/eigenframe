@@ -19,32 +19,52 @@
 				"type": "Clone",
 				"name": "TextViewLabel",
 				"attributes": {
-					"text": "SecureShell (SSH) Settings"
+          "text": "Execute Shell Script (via ssh)"
 				}
+			},
+			{
+				"type": "Clone",
+				"name": "TextViewDetail",
+				"attributes": {
+					"text_list": [
+						"EigenFrame SecureShell provides capability to execute a remote command line interface (with Termux, for example)"
+					]
+				}
+			},
+			{
+				"type": "JavaScript",
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Shell File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999720)"
+				]
+			},
+			{
+				"type": "Clone",
+				"name": "JavaScriptSelectFilePath"
 			},
 			{
 				"type": "Clone",
 				"name": "ButtonDefault",
 				"attributes": {
-					"text": "SecureShell Settings",
+					"text": "Edit/Exec Remote Shell File",
 					"icon": {
-						"name": "settings.",
+						"name": "open_browser.",
 						"location": "top"
 					},
 					"on_click": {
 						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "SecureShell Settings",
-							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
-						}
+						"name": "GetRemoteFilePopupScreenEditShell"
 					}
 				}
 			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
+
+      {
+        "type": "Clone",
+        "name": "HorizontalLine"
+      },
 			{
 				"type": "Clone",
 				"name": "TextViewLabel",
@@ -106,39 +126,6 @@
 					}
 				}
 			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "JavaScript",
-				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Shell File')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999720)"
-				]
-			},
-			{
-				"type": "Clone",
-				"name": "JavaScriptSelectFilePath"
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Edit/Exec Remote Shell File",
-					"icon": {
-						"name": "open_browser.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditShell"
-					}
-				}
-			}
 
 		]
 	}
