@@ -1,0 +1,96 @@
+{
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Edit Local Text File"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_list": [
+          "Select the local file, or just type the file path, then click [Edit Local Text File]"
+        ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "JavaScript",
+      "script_list": [
+        "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Local File')",
+        "eigenFragment.setCacheString('SelectedPathLocal', '')",
+        "eigenFragment.setCacheString('SelectedFileLocal', '')",
+        "eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
+      ]
+    },
+    {
+      "type": "Clone",
+      "name": "SelectFilePathLocal"
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Edit Local Text File",
+        "icon": {
+          "name": "open_browser.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "id": 999099,
+            "title_script_list": [
+              "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+              "var filename = eigenFragment.getViewState(targetVid2)",
+              "'Local File: ' + filename"
+            ],
+            "component_list": [
+              {
+                "type": "Clone",
+                "name": "LayoutVerticalScrollable",
+                "attributes": {
+                  "component_list": [
+                    {
+                      "type": "Clone",
+                      "name": "ButtonSaveEditsToRemoteFile"
+                    },
+                    {
+                      "type": "Clone",
+                      "name": "ButtonCancelLocalEdits"
+                    },
+                    {
+                      "type": "Clone",
+                      "name": "HorizontalLine"
+                    },
+                    {
+                      "type": "Clone",
+                      "name": "EditTextLocalFileCache"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    }
+  ]
+}
