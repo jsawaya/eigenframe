@@ -1189,6 +1189,19 @@
 		},
 		{
 			"type": "Define",
+			"name": "PopupScreenSelectFilePathLocal",
+			"component": {
+				"type": "Clone",
+				"name": "PopupScreenDefault",
+				"attributes": {
+					"id": 991005,
+					"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath-local.json'"
+				}
+			}
+		},
+		{
+			"type": "Define",
 			"name": "JavaScriptSetFullPathLocal",
 			"component": {
 				"type": "JavaScript",
