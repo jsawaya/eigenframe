@@ -1233,7 +1233,7 @@
 							"text_color": "#ffffff",
 							"background_color": "#111111",
 							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
+							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview-local.json'"
 						}
 					]
 				}
