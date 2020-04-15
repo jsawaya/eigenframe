@@ -22,7 +22,7 @@
 			},
 			{
 				"type": "Clone",
-				"name": "JavaScriptSelectFilePath"
+				"name": "SelectFilePathRemote"
 			},
 			{
 				"type": "Button",

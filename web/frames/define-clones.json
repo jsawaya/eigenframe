@@ -997,20 +997,20 @@
 		},
 		{
 			"type": "Define",
-			"name": "PopupScreenSelectFilePath",
+			"name": "PopupScreenSelectFilePathRemote",
 			"component": {
 				"type": "Clone",
 				"name": "PopupScreenDefault",
 				"attributes": {
 					"id": 991005,
 					"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath.json'"
+					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath-remote.json'"
 				}
 			}
 		},
 		{
 			"type": "Define",
-			"name": "JavaScriptSelectFilePath",
+			"name": "SelectFilePathRemote",
 			"component": {
 				"type": "Clone",
 				"name": "LayoutVerticalScrollable",
@@ -1052,7 +1052,7 @@
 										},
 										{
 											"type": "Clone",
-											"name": "PopupScreenSelectFilePath"
+											"name": "PopupScreenSelectFilePathRemote"
 										}
 									]
 								}
@@ -1154,7 +1154,7 @@
 		},
 		{
 			"type": "Define",
-			"name": "ListViewPopupScreenAfterSecureFtp",
+			"name": "ListViewPopupScreenAfterSecureFtpDirectory",
 			"component": {
 				"type": "SecureFtp",
 				"id": 991004,
@@ -1175,6 +1175,45 @@
 						{
 							"type": "PopupScreen",
 							"condition_script": "!!eigenFragment.getCacheString('SecureFtp',991004,'') ",
+							"layout_width": "match_parent",
+							"layout_height": "wrap_content",
+							"text_size": "14",
+							"text_color": "#ffffff",
+							"background_color": "#111111",
+							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "Define",
+			"name": "JavaScriptSetFullPathLocal",
+			"component": {
+				"type": "JavaScript",
+				"script_list": [
+					"var home_dir = '/storage/emulated/0/Android/data/com.sawaya.eigenframe' ",
+					"var selected_path = eigenFragment.getCacheString('SelectedPathLocal', 0, '')",
+					"var full_path = eigenFragment.concatPaths(home_dir, selected_path)",
+					"eigenFragment.setCacheString('FullPathLocal', full_path)",
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId2')",
+					"eigenFragment.setViewState(targetVid, full_path)"
+				]
+			}
+		},
+		{
+			"type": "Define",
+			"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal",
+			"component": {
+				"type": "SecureFtp",
+				"id": 991014,
+				"sftp_script": "'directory_local ' +  eigenFragment.getCacheString('FullPathLocal')",
+				"on_complete": {
+					"type": "ActionList",
+					"component_list": [
+						{
+							"type": "PopupScreen",
 							"layout_width": "match_parent",
 							"layout_height": "wrap_content",
 							"text_size": "14",
