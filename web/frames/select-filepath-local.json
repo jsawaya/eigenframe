@@ -13,7 +13,7 @@
 			"type": "Clone",
 			"name": "TextViewLabel",
 			"attributes": {
-				"text": "Home Directory (sftp):"
+				"text": "Local Directory:"
 			}
 		},
 		{
