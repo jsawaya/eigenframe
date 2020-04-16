@@ -77,8 +77,13 @@
                       "name": "HorizontalLine"
                     },
                     {
-                      "type": "Clone",
-                      "name": "EditTextLocalFileCacheLocal"
+                      "type": "EditText",
+                      "url_script": "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ; 'file://' + eigenFragment.getViewState(targetVid2) ",
+                      "id": 999010,
+                      "gravity": "left",
+                      "layout_width": "match_parent",
+                      "text_color": "#ffffff",
+                      "background_color": "#000000"
                     }
                   ]
                 }
