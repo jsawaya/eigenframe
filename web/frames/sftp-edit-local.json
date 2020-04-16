@@ -70,11 +70,24 @@
                   "component_list": [
                     {
                       "type": "Clone",
-                      "name": "ButtonSaveEditsToRemoteFile"
-                    },
-                    {
-                      "type": "Clone",
-                      "name": "ButtonCancelLocalEdits"
+                      "name": "ButtonDefault",
+                      "attributes": {
+                        "text": "Save Edits to Local File",
+                        "icon": {
+                          "name": "save.",
+                          "location": "top"
+                        },
+                        "on_click": {
+                          "type": "JavaScript",
+                          "script_list": [
+                            "var filename1 = eigenFragment.getCacheFilePath('EditText:999010') ",
+                            "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ",
+                            "var filename2 = eigenFragment.getViewState(targetVid2) ",
+                            "eigenFragment.copyFile(filename1, filename2)",
+                            "eigenFragment.closePopupScreen(999099)"
+                          ]
+                        }
+                      }
                     },
                     {
                       "type": "Clone",
