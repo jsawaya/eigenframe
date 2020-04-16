@@ -137,7 +137,7 @@
 				"type": "ActionList",
 				"component_list": [
 					{
-						"x-type": "JavaScript",
+						"type": "JavaScript",
 						"script": "clearCacheFile('EditText:999000')"
 					},
 					{
@@ -178,7 +178,7 @@
 						"on_complete": {
 							"type": "JavaScript",
 							"script_list": [
-								"var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+								"eigenFragment.clearCacheFile('EditText:999000')",
 								"eigenFragment.closePopupScreen(999099)"
 							]
 						}
@@ -201,7 +201,7 @@
 					"on_click": {
 						"type": "JavaScript",
 						"script_list": [
-							"var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+							"eigenFragment.clearCacheFile('EditText:999000')",
 							"eigenFragment.closePopupScreen(999099)"
 						]
 					}
