@@ -78,7 +78,7 @@
                     },
                     {
                       "type": "Clone",
-                      "name": "EditTextLocalFileCache"
+                      "name": "EditTextLocalFileCacheLocal"
                     }
                   ]
                 }

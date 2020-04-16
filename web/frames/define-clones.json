@@ -122,6 +122,19 @@
 			"name": "EditTextLocalFileCache",
 			"component": {
 				"type": "EditText",
+				"url_script": "'file://' + eigenFragment.getCacheFilePath('EditText:999000') ",
+				"id": 999000,
+				"gravity": "left",
+				"layout_width": "match_parent",
+				"text_color": "#ffffff",
+				"background_color": "#000000"
+			}
+		},
+		{
+			"type": "Define",
+			"name": "EditTextLocalFileCacheLocal",
+			"component": {
+				"type": "EditText",
 				"url_script_list": [
 					"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
 					"var filename = eigenFragment.getViewState(targetVid2)",
