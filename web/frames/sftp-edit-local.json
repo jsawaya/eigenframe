@@ -60,6 +60,10 @@
             ],
             "component_list": [
               {
+                "type": "JavaScript",
+                "script": "eigenFragment.clearCacheFile('EditText:999010')"
+              },
+              {
                 "type": "Clone",
                 "name": "LayoutVerticalScrollable",
                 "attributes": {
@@ -75,10 +79,6 @@
                     {
                       "type": "Clone",
                       "name": "HorizontalLine"
-                    },
-                    {
-                      "type": "JavaScript",
-                      "script": "eigenFragment.clearCacheFile('EditText:999010')"
                     },
                     {
                       "type": "EditText",
