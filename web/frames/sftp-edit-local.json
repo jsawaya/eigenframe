@@ -77,6 +77,10 @@
                       "name": "HorizontalLine"
                     },
                     {
+                      "type": "JavaScript",
+                      "script": "eigenFragment.clearCacheFile('EditText:999010'))"
+                    },
+                    {
                       "type": "EditText",
                       "url_script": "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ; 'file://' + eigenFragment.getViewState(targetVid2) ",
                       "id": 999010,
