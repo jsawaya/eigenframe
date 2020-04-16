@@ -18,7 +18,8 @@
 		},
 		{
 			"type": "TextView",
-			"text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe",
+			"x-text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe",
+			"text": "/data/data/com.sawaya.eigenframe",			
 			"layout_width": "match_parent",
 			"text_color": "#ffffff",
 			"text_size": "20",

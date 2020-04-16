@@ -1206,7 +1206,9 @@
 			"component": {
 				"type": "JavaScript",
 				"script_list": [
-					"var home_dir = '/storage/emulated/0/Android/data/com.sawaya.eigenframe' ",
+					"var home_dir0 = '/storage/emulated/0/Android/data/com.sawaya.eigenframe' ",
+					"var home_dir = '/data/data/com.sawaya.eigenframe' ",
+
 					"var selected_path = eigenFragment.getCacheString('SelectedPathLocal', 0, '')",
 					"var full_path = eigenFragment.concatPaths(home_dir, selected_path)",
 					"eigenFragment.setCacheString('FullPathLocal', full_path)",
