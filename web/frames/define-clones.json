@@ -1195,7 +1195,7 @@
 				"name": "PopupScreenDefault",
 				"attributes": {
 					"id": 991005,
-					"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+					"title_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')",
 					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath-local.json'"
 				}
 			}
@@ -1232,7 +1232,7 @@
 							"text_size": "14",
 							"text_color": "#ffffff",
 							"background_color": "#111111",
-							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+							"title_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')",
 							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview-local.json'"
 						}
 					]
@@ -1255,14 +1255,14 @@
 							"type": "Clone",
 							"name": "TextViewLabel",
 							"attributes": {
-								"text_script": "''+eigenFragment.getCacheString('SelectFilePrompt')"
+								"text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')"
 							}
 						},
 						{
 							"type": "Clone",
 							"name": "ButtonDefault",
 							"attributes": {
-								"text_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
+								"text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')",
 								"icon": {
 									"name": "open_with.",
 									"location": "top"

@@ -29,7 +29,7 @@
     {
       "type": "JavaScript",
       "script_list": [
-        "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Local File')",
+        "eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local File')",
         "eigenFragment.setCacheString('SelectedPathLocal', '')",
         "eigenFragment.setCacheString('SelectedFileLocal', '')",
         "eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
