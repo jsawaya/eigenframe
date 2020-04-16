@@ -55,7 +55,7 @@
 							},
 							{
 								"type": "Clone",
-								"name": "JavaScriptSetFullPath"
+								"name": "JavaScriptSetFullPathLocal"
 							},
 							{
 								"type": "JavaScript",
@@ -174,7 +174,7 @@
 							},
 							{
 								"type": "Clone",
-								"name": "JavaScriptSetFullPath"
+								"name": "JavaScriptSetFullPathLocal"
 							},
 							{
 								"type": "JavaScript",
