@@ -400,7 +400,7 @@
 										{
 											"type": "JavaScript",
 											"script_list": [
-												"var initial_value = eigenFragment.getCacheString('EditText:976000)",
+												"var initial_value = eigenFragment.getCacheString('EditText:976000')",
 												"if (!initial_value) eigenFragment.setViewState('EditText:976000', 'goal(X)')"
 											]
 										},
