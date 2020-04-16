@@ -141,16 +141,15 @@
 						"script_list": [
 							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
 							"var filename = eigenFragment.getViewState(targetVid2)",
-							"eigenActivity.showToast('selected filename:'+ filename)"
+							"eigenActivity.showToast('selected filename:'+ filename)",
+							"java.io.File file1 = new java.io.File(filename)",
+							"java.io.File file2 = new java.io.File(eigenFragment.getCacheFilePath('EditText:999000'))",
+							"eigenActivity.copyFile(file1, file2)"
 						]
 					},
 					{
 						"type": "EditText",
-						"url_script_list": [
-							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-							"var filename = eigenFragment.getViewState(targetVid2)",
-							"'file://' +filename "
-						],
+						"url_script": "'file://' + eigenFragment.getCacheFilePath('EditText:999000') ",
 						"id": 999000,
 						"gravity": "left",
 						"layout_width": "match_parent",
