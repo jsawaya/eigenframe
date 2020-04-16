@@ -78,7 +78,7 @@
                     },
                     {
                       "type": "JavaScript",
-                      "script": "eigenFragment.clearCacheFile('EditText:999010'))"
+                      "script": "eigenFragment.clearCacheFile('EditText:999010')"
                     },
                     {
                       "type": "EditText",
