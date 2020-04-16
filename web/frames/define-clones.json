@@ -137,20 +137,24 @@
 				"type": "ActionList",
 				"component_list": [
 					{
-						"type": "JavaScript",
+						"x-type": "JavaScript",
 						"script_list": [
 							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
 							"var filename = eigenFragment.getViewState(targetVid2)",
 							"eigenActivity.showToast('selected filename:'+ filename)",
 							"java.io.File file1 = new java.io.File(filename)",
-							"java.io.File file2 = new java.io.File(eigenFragment.getCacheFilePath('EditText:999000'))",
+							"java.io.File file2 = new java.io.File(eigenFragment.getCacheFilePath('EditText:999010'))",
 							"eigenActivity.copyFile(file1, file2)"
 						]
 					},
 					{
 						"type": "EditText",
-						"url_script": "'file://' + eigenFragment.getCacheFilePath('EditText:999000') ",
-						"id": 999000,
+						"url_script_list": [
+							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+							"var filename = eigenFragment.getViewState(targetVid2)",
+							" 'file://' + filename "
+						],
+						"id": 999010,
 						"gravity": "left",
 						"layout_width": "match_parent",
 						"text_color": "#ffffff",
