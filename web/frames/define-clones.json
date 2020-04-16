@@ -137,15 +137,18 @@
 				"type": "ActionList",
 				"component_list": [
 					{
-						"x-type": "JavaScript",
-						"script": "eigenFragment.clearCacheFile('EditText:999000')"
+						"type": "JavaScript",
+						"script_list": [
+							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+							"var filename = eigenFragment.getViewState(targetVid2)",
+							"eigenActivity.showToast('selected filename:\n'+ filename)"
+						]
 					},
 					{
 						"type": "EditText",
 						"url_script_list": [
 							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
 							"var filename = eigenFragment.getViewState(targetVid2)",
-							"eigenActivity.showToast('selected filename:\n'+ filename)",
 							"'file://' +filename "
 						],
 						"id": 999000,
