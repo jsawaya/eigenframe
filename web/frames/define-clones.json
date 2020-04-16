@@ -134,17 +134,26 @@
 			"type": "Define",
 			"name": "EditTextLocalFileCacheLocal",
 			"component": {
-				"type": "EditText",
-				"url_script_list": [
-					"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-					"var filename = eigenFragment.getViewState(targetVid2)",
-					"'file://' +filename "
-				],
-				"id": 999000,
-				"gravity": "left",
-				"layout_width": "match_parent",
-				"text_color": "#ffffff",
-				"background_color": "#000000"
+				"type": "ActionList",
+				"component_list": [
+					{
+						"x-type": "JavaScript",
+						"script": "clearCacheFile('EditText:999000')"
+					},
+					{
+						"type": "EditText",
+						"url_script_list": [
+							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+							"var filename = eigenFragment.getViewState(targetVid2)",
+							"'file://' +filename "
+						],
+						"id": 999000,
+						"gravity": "left",
+						"layout_width": "match_parent",
+						"text_color": "#ffffff",
+						"background_color": "#000000"
+					}
+				]
 			}
 		},
 		{
@@ -392,13 +401,14 @@
 										{
 											"type": "EditText",
 											"id": 976000,
+											"text": "undefined",
 											"layout_width": "match_parent",
 											"layout_height": "wrap_content",
 											"text_color": "#ffffff",
 											"background_color": "#000000"
 										},
 										{
-											"type": "JavaScript",
+											"x-type": "JavaScript",
 											"script_list": [
 												"var initial_value = eigenFragment.getCacheString('EditText:976000')",
 												"if (!initial_value) eigenFragment.setViewState('EditText:976000', 'goal(X)')"
