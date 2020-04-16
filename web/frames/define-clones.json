@@ -141,7 +141,7 @@
 						"script_list": [
 							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
 							"var filename = eigenFragment.getViewState(targetVid2)",
-							"eigenActivity.showToast('selected filename:\n'+ filename)"
+							"eigenActivity.showToast('selected filename:'+ filename)"
 						]
 					},
 					{
