@@ -138,7 +138,7 @@
 				"component_list": [
 					{
 						"type": "JavaScript",
-						"script": "clearCacheFile('EditText:999000')"
+						"script": "eigenFragment.clearCacheFile('EditText:999000')"
 					},
 					{
 						"type": "EditText",
