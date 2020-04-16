@@ -122,7 +122,11 @@
 			"name": "EditTextLocalFileCache",
 			"component": {
 				"type": "EditText",
-				"url_script": "'file://' + eigenFragment.getCacheFilePath('EditText:999000') ",
+				"url_script_list": [
+					"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+					"var filename = eigenFragment.getViewState(targetVid2)",
+					"'file://' +filename "
+				],
 				"id": 999000,
 				"gravity": "left",
 				"layout_width": "match_parent",
@@ -543,8 +547,7 @@
 													"name": "open_browser.",
 													"location": "top"
 												},
-												"on_click": 
-												{
+												"on_click": {
 													"type": "Clone",
 													"name": "PopupScreenDefault",
 													"attributes": {
@@ -575,7 +578,6 @@
 												}
 											}
 										},
-
 										{
 											"type": "Clone",
 											"name": "HorizontalLine"
@@ -1301,7 +1303,6 @@
 				}
 			}
 		}
-
 	],
 	"on_complete": {
 		"type": "UrlRequest",
