@@ -112,7 +112,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Show Remote Image File",
+				"text": "Show Remote Image File (via sftp)",
 				"icon": {
 					"name": "image.",
 					"location": "top"

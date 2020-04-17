@@ -95,7 +95,53 @@
 					]
 				}
 			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "JavaScript",
+			"script_list": [
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Drawing File')",
+				"eigenFragment.setCacheString('WorkingDirectory', '')",
+				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/draw')",
+				"eigenFragment.setCacheString('SelectedFile', '')",
+				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999725)"
+			]
+		},
+		{
+			"type": "Clone",
+			"name": "SelectFilePathRemote"
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Show Remote Dawing File (via sftp)",
+				"icon": {
+					"name": "image.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "SecureFtp",
+					"sftp_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"'get ' + filename + ' DrawingFile'"
+					],
+					"on_complete": {
+						"type": "JavaScript",
+						"script_list": [
+							"var drawingFilePath = eigenFragment.getCacheString('DrawingFile')",
+							"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+							"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
+						]
+					}
+				}
+			}
 		}
+
 	]
 }
 
