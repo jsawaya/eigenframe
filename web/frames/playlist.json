@@ -66,6 +66,67 @@
     },
     {
       "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "JavaScript Support",
+        "icon": {
+          "name": "play.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "JavaScript Support",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/script-cmd.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Drawing Support",
+        "icon": {
+          "name": "edit.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Drawing Support",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/script-drawing.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Camera Support",
+        "icon": {
+          "name": "camera.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Camera Support",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/script-photo.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
         "text": "Install EigenFrame Services"
