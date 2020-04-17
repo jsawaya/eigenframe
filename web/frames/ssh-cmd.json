@@ -83,10 +83,6 @@
 												},
 												{
 													"type": "Clone",
-													"name": "ButtonCancelLocalEdits"
-												},
-												{
-													"type": "Clone",
 													"name": "ButtonDefault",
 													"attributes": {
 														"text": "Execute Shell File",

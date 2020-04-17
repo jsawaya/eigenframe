@@ -83,13 +83,9 @@
                         },
                         {
                           "type": "Clone",
-                          "name": "ButtonCancelLocalEdits"
-                        },
-                        {
-                          "type": "Clone",
                           "name": "ButtonDefault",
                           "attributes": {
-                            "text": "Popup Remote EigenFrame",
+                            "text": "Render EigenFrame",
                             "icon": {
                               "name": "play.",
                               "location": "top"
@@ -105,7 +101,7 @@
                                 "type": "Clone",
                                 "name": "PopupScreenDefault",
                                 "attributes": {
-                                  "title": "Popup Remote EigenFrame",
+                                  "title": "Render EigenFrame",
                                   "component_list": [
                                     {
                                       "type": "SecureShell",

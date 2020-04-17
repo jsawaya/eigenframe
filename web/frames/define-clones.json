@@ -162,28 +162,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "ButtonCancelLocalEdits",
-			"component": {
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Cancel Local Edits",
-					"icon": {
-						"name": "cancel.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "JavaScript",
-						"script_list": [
-							"eigenFragment.clearCacheFile('EditText:999000')",
-							"eigenFragment.closePopupScreen(999099)"
-						]
-					}
-				}
-			}
-		},
-		{
-			"type": "Define",
 			"name": "GetRemoteFilePopupScreenEditProlog",
 			"component": {
 				"type": "SecureFtp",
@@ -211,10 +189,6 @@
 										{
 											"type": "Clone",
 											"name": "ButtonSaveEditsToRemoteFile"
-										},
-										{
-											"type": "Clone",
-											"name": "ButtonCancelLocalEdits"
 										},
 										{
 											"type": "Clone",
