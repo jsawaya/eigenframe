@@ -122,7 +122,7 @@
       "attributes": {
         "text": "Camera Support",
         "icon": {
-          "name": "camera.",
+          "name": "photo.",
           "location": "top"
         },
         "on_click": {
