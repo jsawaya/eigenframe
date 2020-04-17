@@ -1,115 +1,16 @@
 {
-	"type": "LinearLayout",
-	"scrollable": true,
-	"orientation": "vertical",
-	"gravity": "center_horizontal",
-	"layout_width": "match_parent",
-	"layout_height": "wrap_content",
-	"component_list": [
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "Drawing, Rendering Data Graphs"
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text_list": [
-					"JavaScript provides capability to create and render data graphically..."
-				]
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Edit Current Drawing",
-				"icon": {
-					"name": "create.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "JavaScript",
-					"script_list": [
-						"var drawingFilePath = eigenFragment.getCacheString('DrawingFilePath')",
-						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
-						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
-					]
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Create New Drawing",
-				"icon": {
-					"name": "create.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "JavaScript",
-					"script_list": [
-						"var drawingFilePath = ''",
-						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
-						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
-					]
-				}
-			}
-		},
-		{
-			"type": "Button",
-			"text": "Show Sample Drawing From Github",
-			"layout_width": "wrap_content",
-			"layout_height": "wrap_content",
-			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"icon": {
-				"name": "open_browser.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "UrlRequest",
-				"id": 801,
-				"is_eigen_response": false,
-				"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/draw/tictactoe.draw",
-				"on_complete": {
-					"type": "JavaScript",
-					"script_list": [
-						"var drawingFilePath = eigenFragment.getCacheFilePath('UrlRequest:801') ",
-						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
-						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
-					]
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-
-
-
-
-
+  "type": "LinearLayout",
+  "scrollable": true,
+  "orientation": "vertical",
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "layout_height": "wrap_content",
+  "component_list": [
     {
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Edit Local Drawing File"
+        "text": "Edit Local Text File"
       }
     },
     {
@@ -117,7 +18,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Select the local drawing file, or just type the file path, then click [Edit Local Drawing]"
+          "Select the local file, or just type the file path, then click [Edit Local Text File]"
         ]
       }
     },
@@ -128,7 +29,7 @@
     {
       "type": "JavaScript",
       "script_list": [
-        "eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local Drawing File')",
+        "eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local File')",
         "eigenFragment.setCacheString('SelectedPathLocal', '')",
         "eigenFragment.setCacheString('SelectedFileLocal', '')",
         "eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
@@ -285,71 +186,6 @@
     {
       "type": "Clone",
       "name": "HorizontalLine"
-    },
-
-
-
-
-		{
-			"type": "JavaScript",
-			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Drawing File')",
-				"eigenFragment.setCacheString('WorkingDirectory', '')",
-				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/draw')",
-				"eigenFragment.setCacheString('SelectedFile', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999725)"
-			]
-		},
-		{
-			"type": "Clone",
-			"name": "SelectFilePathRemote"
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Show/Edit Remote Drawing File (via sftp)",
-				"icon": {
-					"name": "image.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "SecureFtp",
-					"sftp_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var filename = eigenFragment.getViewState(targetVid)",
-						"eigenActivity.showToast('load filename: '+filename )",
-						"'get ' + filename + ' RemoteDrawingFileCopy'"
-					],
-					"on_complete": {
-						"type": "JavaScript",
-						"script_list": [
-							"var drawingFilePath = eigenFragment.getCacheFilePath('RemoteDrawingFileCopy')",
-							"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)"
-						]
-					}
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Save Changes back to Remote Drawing File (via sftp)",
-				"icon": {
-					"name": "image.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "SecureFtp",
-					"sftp_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var filename = eigenFragment.getViewState(targetVid)",
-						"eigenActivity.showToast('save filename: '+filename )",
-						"'put RemoteDrawingFileCopy ' + filename "
-					]
-				}
-			}
-		}
-	]
+    }
+  ]
 }
