@@ -469,8 +469,28 @@
       }
     },
     {
-      "type": "Clone",
-      "name": "SetIsMasterBranchButton"
+      "type": "ToggleButton",
+      "id": 999200,
+      "checked_script": " 'master'.equals(eigenFragment.getCacheString('GithubBranch')) ",
+      "text_on": "Master Branch Enabled",
+      "text_off": "Beta Branch Enabled",
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
+      "on_click": {
+        "type": "JavaScript",
+        "script_list": [
+          "var b1 = eigenFragment.getViewState(999200) == 1",
+          "if (b1) eigenFragment.setCacheString('GithubBranch', 'master')",
+          "else eigenFragment.setCacheString('GithubBranch', 'beta')",
+          "eigenActivity.showToast('GithubBranch: ' + eigenFragment.getCacheString('GithubBranch') )"
+        ]
+      }
     },
     {
       "type": "Clone",
@@ -648,6 +668,5 @@
       "type": "Clone",
       "name": "HorizontalLine"
     }
-
   ]
 }

@@ -37,7 +37,60 @@
     },
     {
       "type": "Clone",
-      "name": "SelectFilePathLocal"
+      "name": "LayoutVerticalScrollable",
+      "attributes": {
+        "component_list": [
+          {
+            "type": "Clone",
+            "name": "HorizontalLine"
+          },
+          {
+            "type": "Clone",
+            "name": "TextViewLabel",
+            "attributes": {
+              "text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')"
+            }
+          },
+          {
+            "type": "Clone",
+            "name": "ButtonDefault",
+            "attributes": {
+              "text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')",
+              "icon": {
+                "name": "open_with.",
+                "location": "top"
+              },
+              "on_click": {
+                "type": "ActionList",
+                "component_list": [
+                  {
+                    "type": "Clone",
+                    "name": "JavaScriptSetFullPathLocal"
+                  },
+                  {
+                    "type": "Clone",
+                    "name": "PopupScreenSelectFilePathLocal"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "EditText",
+            "id_script": "eigenFragment.getIntegerVariable('TargetViewId2')",
+            "max_length": 200,
+            "is_single_line": true,
+            "layout_width": "match_parent",
+            "text_color": "#ffffff",
+            "background_color": "#000000",
+            "text": "undefined"
+          },
+          {
+            "type": "Clone",
+            "name": "HorizontalLine"
+          }
+        ]
+      }
     },
     {
       "type": "Clone",

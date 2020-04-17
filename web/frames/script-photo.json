@@ -55,7 +55,38 @@
 				},
 				"on_click": {
 					"type": "Clone",
-					"name": "PopupScreenCameraImage"
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title_script_list": [
+							"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
+							"'Camera Image: '+jpg_filename"
+						],
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVertical",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "ImageView",
+											"rotation": 90,
+											"url_script_list": [
+												"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
+												"'file://'+jpg_filename"
+											],
+											"layout_width": "match_parent",
+											"layout_height": "match_parent",
+											"background_color": "#123456",
+											"on_click": {
+												"type": "JavaScript",
+												"script": "eigenActivity.showToast('image click eigenframe')"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
 				}
 			}
 		},
@@ -87,8 +118,44 @@
 					"location": "top"
 				},
 				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenImageRemoteFile"
+					"type": "SecureFtp",
+					"sftp_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"'get ' + filename + ' ImageView.png'"
+					],
+					"on_complete": {
+						"type": "Clone",
+						"name": "PopupScreenDefault",
+						"attributes": {
+							"title_script_list": [
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+								"var filename = eigenFragment.getViewState(targetVid)",
+								"'Remote Image: '+filename"
+							],
+							"component_list": [
+								{
+									"type": "Clone",
+									"name": "LayoutVerticalScrollable",
+									"attributes": {
+										"component_list": [
+											{
+												"type": "ImageView",
+												"url_script": "'file://'+ eigenFragment.getCacheFilePath('ImageView.png')",
+												"layout_width": "match_parent",
+												"layout_height": "match_parent",
+												"background_color": "#123456",
+												"on_click": {
+													"type": "JavaScript",
+													"script": "eigenActivity.showToast('image click eigenframe')"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
 				}
 			}
 		}
