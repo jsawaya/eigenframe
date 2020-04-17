@@ -2,24 +2,6 @@
   "type": "EigenFrame",
   "is_secure_window": "false",
   "tab_list": [
-		{
-			"name": "JavaScript",
-			"type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/script-cmd.json"
-		},
-		{
-			"icon_name": "photo.",
-			"name": "Camera",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/script-photo.json"
-		},
-		{
-			"icon_name": "create.",
-			"name": "Drawing",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/script-drawing.json"
-		},
     {
       "name": "Button",
       "type": "EigenFragment",

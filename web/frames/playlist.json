@@ -66,6 +66,20 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Embedded JavaScript Support"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "JavaScript support is embedded within EigenFrame; here are some examples."
+      }
+    },
+    {
+      "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
         "text": "JavaScript Support",

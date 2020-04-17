@@ -15,11 +15,6 @@
 			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
 		},
 		{
-			"name": "SFTP-GET",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-get.json"
-		},
-		{
 			"name": "SFTP-EDIT-LOCAL",
 			"type": "EigenFragment",
 			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-edit-local.json"
