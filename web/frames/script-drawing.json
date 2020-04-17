@@ -40,6 +40,7 @@
 					"script_list": [
 						"var drawingFilePath = eigenFragment.getCacheString('DrawingFilePath')",
 						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenActivity.showToast('Current Drawing: '+ drawingFilePath )",
 						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
 					]
 				}
@@ -59,6 +60,7 @@
 					"script_list": [
 						"var drawingFilePath = ''",
 						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenActivity.showToast('New Drawing: '+ drawingFilePath )",
 						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
 					]
 				}
@@ -91,6 +93,7 @@
 					"script_list": [
 						"var drawingFilePath = eigenFragment.getCacheFilePath('UrlRequest:801') ",
 						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
+						"eigenActivity.showToast('Current Drawing: '+ drawingFilePath )",
 						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
 					]
 				}
@@ -191,26 +194,6 @@
         ]
       }
     },
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Edit Local Drawing",
-				"icon": {
-					"name": "create.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "JavaScript",
-					"script_list": [
-            "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-            "var filename = eigenFragment.getViewState(targetVid2)",
-						"eigenActivity.editDrawing(filename)",
-						"eigenFragment.setCacheString('DrawingFilePath', filename)"
-					]
-				}
-			}
-		},
     {
       "type": "Clone",
       "name": "ButtonDefault",
@@ -282,6 +265,26 @@
         }
       }
     },
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Show/Edit Local Drawing",
+				"icon": {
+					"name": "create.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "JavaScript",
+					"script_list": [
+            "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+            "var filename = eigenFragment.getViewState(targetVid2)",
+						"eigenActivity.editDrawing(filename)",
+						"eigenFragment.setCacheString('DrawingFilePath', filename)"
+					]
+				}
+			}
+		},
     {
       "type": "Clone",
       "name": "HorizontalLine"
