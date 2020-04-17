@@ -118,7 +118,7 @@
 			"type": "Clone",
 			"name": "ButtonDefault",
 			"attributes": {
-				"text": "Show Remote Dawing File (via sftp)",
+				"text": "Show/Edit Remote Drawing File (via sftp)",
 				"icon": {
 					"name": "image.",
 					"location": "top"
@@ -132,26 +132,32 @@
 						"'get ' + filename + ' RemoteDrawingFileCopy'"
 					],
 					"on_complete": {
-						"type": "ActionList",
-						"component_list": [
-							{
-								"type": "JavaScript",
-								"script_list": [
-									"var drawingFilePath = eigenFragment.getCacheFilePath('RemoteDrawingFileCopy')",
-									"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)"
-								]
-							},
-							{
-								"type": "SecureFtp",
-								"sftp_script_list": [
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-									"var filename = eigenFragment.getViewState(targetVid)",
-									"eigenActivity.showToast('save filename: '+filename )",
-									"'put RemoteDrawingFileCopy ' + filename "
-								]
-							}
+						"type": "JavaScript",
+						"script_list": [
+							"var drawingFilePath = eigenFragment.getCacheFilePath('RemoteDrawingFileCopy')",
+							"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)"
 						]
 					}
+				}
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Save Changes back to Remote Drawing File (via sftp)",
+				"icon": {
+					"name": "image.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "SecureFtp",
+					"sftp_script_list": [
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+						"var filename = eigenFragment.getViewState(targetVid)",
+						"eigenActivity.showToast('save filename: '+filename )",
+						"'put RemoteDrawingFileCopy ' + filename "
+					]
 				}
 			}
 		}
