@@ -101,7 +101,7 @@
 		},
 		{
 			"type": "Clone",
-			"name": "HorizontalLine"
+			"name": "HorizontalLineWide"
 		},
 
 
@@ -132,7 +132,7 @@
       "type": "JavaScript",
       "script_list": [
         "eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local Drawing File')",
-        "eigenFragment.setCacheString('SelectedPathLocal', '')",
+        "eigenFragment.setCacheString('SelectedPathLocal', 'files')",
         "eigenFragment.setCacheString('SelectedFileLocal', '')",
         "eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
       ]
@@ -287,7 +287,7 @@
 		},
     {
       "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLineWide"
     },
 
 
