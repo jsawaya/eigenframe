@@ -128,22 +128,32 @@
 					"sftp_script_list": [
 						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 						"var filename = eigenFragment.getViewState(targetVid)",
-						"eigenActivity.showToast('filename: '+filename )",
-						"'get ' + filename + ' DrawingFile'"
+						"eigenActivity.showToast('load filename: '+filename )",
+						"'get ' + filename + ' RemoteDrawingFileCopy'"
 					],
 					"on_complete": {
-						"type": "JavaScript",
-						"script_list": [
-							"var drawingFilePath = eigenFragment.getCacheFilePath('DrawingFile')",
-							"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
-							"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
+						"type": "ActionList",
+						"component_list": [
+							{
+								"type": "JavaScript",
+								"script_list": [
+									"var drawingFilePath = eigenFragment.getCacheFilePath('RemoteDrawingFileCopy')",
+									"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)"
+								]
+							},
+							{
+								"type": "SecureFtp",
+								"sftp_script_list": [
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+									"var filename = eigenFragment.getViewState(targetVid)",
+									"eigenActivity.showToast('save filename: '+filename )",
+									"'put RemoteDrawingFileCopy ' + filename "
+								]
+							}
 						]
 					}
 				}
 			}
 		}
-
 	]
 }
-
-
