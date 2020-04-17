@@ -101,170 +101,168 @@
 		},
 		{
 			"type": "Clone",
-			"name": "HorizontalLineWide"
+			"name": "HorizontalLine",
+			"attributes": {
+				"color": "#8aec81"
+			}
 		},
-
-
-
-
-
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Edit Local Drawing File"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Select the local drawing file, or just type the file path, then click [Edit Local Drawing]"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "JavaScript",
-      "script_list": [
-        "eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local Drawing File')",
-        "eigenFragment.setCacheString('SelectedPathLocal', 'files')",
-        "eigenFragment.setCacheString('SelectedFileLocal', '')",
-        "eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
-      ]
-    },
-    {
-      "type": "Clone",
-      "name": "LayoutVerticalScrollable",
-      "attributes": {
-        "component_list": [
-          {
-            "type": "Clone",
-            "name": "HorizontalLine"
-          },
-          {
-            "type": "Clone",
-            "name": "TextViewLabel",
-            "attributes": {
-              "text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')"
-            }
-          },
-          {
-            "type": "Clone",
-            "name": "ButtonDefault",
-            "attributes": {
-              "text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')",
-              "icon": {
-                "name": "open_with.",
-                "location": "top"
-              },
-              "on_click": {
-                "type": "ActionList",
-                "component_list": [
-                  {
-                    "type": "Clone",
-                    "name": "JavaScriptSetFullPathLocal"
-                  },
-                  {
-                    "type": "Clone",
-                    "name": "PopupScreenSelectFilePathLocal"
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "type": "EditText",
-            "id_script": "eigenFragment.getIntegerVariable('TargetViewId2')",
-            "max_length": 200,
-            "is_single_line": true,
-            "layout_width": "match_parent",
-            "text_color": "#ffffff",
-            "background_color": "#000000",
-            "text": "undefined"
-          },
-          {
-            "type": "Clone",
-            "name": "HorizontalLine"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Edit Local Text File",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "id": 999099,
-            "title_script_list": [
-              "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-              "var filename = eigenFragment.getViewState(targetVid2)",
-              "'Local File: ' + filename"
-            ],
-            "component_list": [
-              {
-                "type": "JavaScript",
-                "script": "eigenFragment.clearCacheFile('EditText:999010')"
-              },
-              {
-                "type": "Clone",
-                "name": "LayoutVerticalScrollable",
-                "attributes": {
-                  "component_list": [
-                    {
-                      "type": "Clone",
-                      "name": "ButtonDefault",
-                      "attributes": {
-                        "text": "Save Edits to Local File",
-                        "icon": {
-                          "name": "save.",
-                          "location": "top"
-                        },
-                        "on_click": {
-                          "type": "JavaScript",
-                          "script_list": [
-                            "var filename1 = eigenFragment.getCacheFilePath('EditText:999010') ",
-                            "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ",
-                            "var filename2 = eigenFragment.getViewState(targetVid2) ",
-                            "eigenFragment.copyFile(filename1, filename2)",
-                            "eigenFragment.closePopupScreen(999099)"
-                          ]
-                        }
-                      }
-                    },
-                    {
-                      "type": "Clone",
-                      "name": "HorizontalLine"
-                    },
-                    {
-                      "type": "EditText",
-                      "url_script": "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ; 'file://' + eigenFragment.getViewState(targetVid2) ",
-                      "id": 999010,
-                      "gravity": "left",
-                      "layout_width": "match_parent",
-                      "text_color": "#ffffff",
-                      "background_color": "#000000"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
+		{
+			"type": "Clone",
+			"name": "TextViewLabel",
+			"attributes": {
+				"text": "Edit Local Drawing File"
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "TextViewDetail",
+			"attributes": {
+				"text_list": [
+					"Select the local drawing file, or just type the file path, then click [Edit Local Drawing]"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
+		{
+			"type": "JavaScript",
+			"script_list": [
+				"eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local Drawing File')",
+				"eigenFragment.setCacheString('SelectedPathLocal', 'files')",
+				"eigenFragment.setCacheString('SelectedFileLocal', '')",
+				"eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
+			]
+		},
+		{
+			"type": "Clone",
+			"name": "LayoutVerticalScrollable",
+			"attributes": {
+				"component_list": [
+					{
+						"type": "Clone",
+						"name": "HorizontalLine"
+					},
+					{
+						"type": "Clone",
+						"name": "TextViewLabel",
+						"attributes": {
+							"text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')"
+						}
+					},
+					{
+						"type": "Clone",
+						"name": "ButtonDefault",
+						"attributes": {
+							"text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')",
+							"icon": {
+								"name": "open_with.",
+								"location": "top"
+							},
+							"on_click": {
+								"type": "ActionList",
+								"component_list": [
+									{
+										"type": "Clone",
+										"name": "JavaScriptSetFullPathLocal"
+									},
+									{
+										"type": "Clone",
+										"name": "PopupScreenSelectFilePathLocal"
+									}
+								]
+							}
+						}
+					},
+					{
+						"type": "EditText",
+						"id_script": "eigenFragment.getIntegerVariable('TargetViewId2')",
+						"max_length": 200,
+						"is_single_line": true,
+						"layout_width": "match_parent",
+						"text_color": "#ffffff",
+						"background_color": "#000000",
+						"text": "undefined"
+					},
+					{
+						"type": "Clone",
+						"name": "HorizontalLine"
+					}
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "ButtonDefault",
+			"attributes": {
+				"text": "Edit Local Text File",
+				"icon": {
+					"name": "open_browser.",
+					"location": "top"
+				},
+				"on_click": {
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"id": 999099,
+						"title_script_list": [
+							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+							"var filename = eigenFragment.getViewState(targetVid2)",
+							"'Local File: ' + filename"
+						],
+						"component_list": [
+							{
+								"type": "JavaScript",
+								"script": "eigenFragment.clearCacheFile('EditText:999010')"
+							},
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "ButtonDefault",
+											"attributes": {
+												"text": "Save Edits to Local File",
+												"icon": {
+													"name": "save.",
+													"location": "top"
+												},
+												"on_click": {
+													"type": "JavaScript",
+													"script_list": [
+														"var filename1 = eigenFragment.getCacheFilePath('EditText:999010') ",
+														"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ",
+														"var filename2 = eigenFragment.getViewState(targetVid2) ",
+														"eigenFragment.copyFile(filename1, filename2)",
+														"eigenFragment.closePopupScreen(999099)"
+													]
+												}
+											}
+										},
+										{
+											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "EditText",
+											"url_script": "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ; 'file://' + eigenFragment.getViewState(targetVid2) ",
+											"id": 999010,
+											"gravity": "left",
+											"layout_width": "match_parent",
+											"text_color": "#ffffff",
+											"background_color": "#000000"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			}
+		},
 		{
 			"type": "Clone",
 			"name": "ButtonDefault",
@@ -277,22 +275,21 @@
 				"on_click": {
 					"type": "JavaScript",
 					"script_list": [
-            "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-            "var filename = eigenFragment.getViewState(targetVid2)",
+						"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+						"var filename = eigenFragment.getViewState(targetVid2)",
 						"eigenActivity.editDrawing(filename)",
 						"eigenFragment.setCacheString('DrawingFilePath', filename)"
 					]
 				}
 			}
 		},
-    {
-      "type": "Clone",
-      "name": "HorizontalLineWide"
-    },
-
-
-
-
+		{
+			"type": "Clone",
+			"name": "HorizontalLine",
+			"attributes": {
+				"color": "#8aec81"
+			}
+		},
 		{
 			"type": "JavaScript",
 			"script_list": [

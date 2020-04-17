@@ -27,15 +27,6 @@
 		},
 		{
 			"type": "Define",
-			"name": "HorizontalLineWide",
-			"component": {
-				"type": "HorizontalLine",
-				"size": 10,
-				"color": "##8aec81"
-			}
-		},
-		{
-			"type": "Define",
 			"name": "VerticalLine",
 			"component": {
 				"type": "VerticalLine",
