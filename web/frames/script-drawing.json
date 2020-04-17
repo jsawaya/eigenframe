@@ -134,7 +134,7 @@
 					"on_complete": {
 						"type": "JavaScript",
 						"script_list": [
-							"var drawingFilePath = eigenFragment.getCacheString('DrawingFile')",
+							"var drawingFilePath = eigenFragment.getCacheFilePath('DrawingFile')",
 							"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
 							"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
 						]
