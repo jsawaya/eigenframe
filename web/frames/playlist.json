@@ -576,12 +576,8 @@
     },
     {
       "type": "Spinner",
-      "x-title": "Select Branch",
       "id": 999100,
-      "x-icon": {
-        "name": "share."
-      },
-      "checked_option": 0,
+      "checked_option": 1,
       "option_list": [
         "master",
         "beta",
@@ -589,17 +585,10 @@
       ],
       "text_color": "#ffffff",
       "background_color": "#654321",
-      "gravity": "center",
-      "x-margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "selected_option = eigenFragment.getViewState('Spinner:999100')",
+          "selected_option = eigenFragment.getViewState(999100)",
           "if (selected_option == '0') eigenFragment.setCacheString('GithubBranch', 'master')",
           "if (selected_option == '1') eigenFragment.setCacheString('GithubBranch', 'beta')",
           "if (selected_option == '2') eigenFragment.setCacheString('GithubBranch', '1.3')",
