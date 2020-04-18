@@ -587,6 +587,16 @@
         "beta",
         "1.3"
       ],
+      "text_color": "#ffffff",
+      "background_color": "#654321",
+      "gravity": "center",
+      "layout_width": "match_parent",
+      "margin": {
+        "left": 10,
+        "top": 10,
+        "right": 10,
+        "bottom": 10
+      },
       "on_click": {
         "type": "ActionList",
         "component_list": [
@@ -601,11 +611,11 @@
             ]
           },
           {
-            "x-type": "Clone",
+            "type": "Clone",
             "name": "JavaScriptSetRootUrl"
           },
           {
-            "x-type": "JavaScript",
+            "type": "JavaScript",
             "script_list": [
               "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'/web/apps/app_github_master.json')"
             ]
