@@ -593,12 +593,52 @@
           "if (selected_option == '1') eigenFragment.setCacheString('GithubBranch', 'beta')",
           "if (selected_option == '2') eigenFragment.setCacheString('GithubBranch', '1.3')",
           "github_branch = eigenFragment.getCacheString('GithubBranch')",
-          "eigenActivity.showToast('GithubBranch: ' + github_branch )",
           "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
           "eigenFragment.setCacheString('RootUrl', root_url)",
-          "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master.json')",
+          "eigenActivity.showToast('root_url: ' + root_url )",
+          "eigenActivity.launch(root_url+'apps/app_github_master.json')",
           "eigenActivity.finish()"
         ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Select Branch",
+        "text_color": "#ffffff",
+        "background_color": "#654321",
+        "on_click": {
+          "type": "SelectDialog",
+          "title": "Select Branch",
+          "icon": {
+            "name": "share."
+          },
+          "id": 999101,
+          "checked_option": 0,
+          "option_list": [
+            "option 0",
+            "option 1",
+            "option 2"
+          ],
+          "on_click": {
+            "type": "JavaScript",
+            "script_list": [
+              "position = eigenFragment.getOptionPosition()",
+              "eigenActivity.showToast('position: '+ position )",
+              "selected_option = eigenFragment.getViewState(999100)",
+              "if (position == 0) eigenFragment.setCacheString('GithubBranch', 'master')",
+              "if (position == 1) eigenFragment.setCacheString('GithubBranch', 'beta')",
+              "if (position == 2) eigenFragment.setCacheString('GithubBranch', '1.3')",
+              "github_branch = eigenFragment.getCacheString('GithubBranch')",
+              "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+              "eigenFragment.setCacheString('RootUrl', root_url)",
+              "eigenActivity.showToast('root_url: ' + root_url )",
+              "eigenActivity.launch(root_url+'apps/app_github_master.json')",
+              "eigenActivity.finish()"
+            ]
+          }
+        }
       }
     },
     {
