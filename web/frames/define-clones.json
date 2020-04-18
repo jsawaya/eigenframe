@@ -5,11 +5,11 @@
 			"type": "JavaScript",
 			"comment": [
 				"Initialize cache (GithubBranch)",
-				" - get cache string (GithubBranch), if empty then initialize to 'beta' ",
+				" - get cache string (GithubBranch), if empty then initialize to 'master' ",
 				" - set cache string (GithubBranch), initialized or left unchanged "
 			],
 			"script_list": [
-				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'beta')",
+				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'master')",
 				"eigenFragment.setCacheString('GithubBranch', github_branch)"
 			]
 		},
