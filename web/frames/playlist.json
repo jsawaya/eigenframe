@@ -576,9 +576,9 @@
     },
     {
       "type": "Spinner",
-      "title": "Select Branch",
+      "x-title": "Select Branch",
       "id": 999100,
-      "icon": {
+      "x-icon": {
         "name": "share."
       },
       "checked_option": 0,
@@ -590,8 +590,7 @@
       "text_color": "#ffffff",
       "background_color": "#654321",
       "gravity": "center",
-      "layout_width": "match_parent",
-      "margin": {
+      "x-margin": {
         "left": 10,
         "top": 10,
         "right": 10,
