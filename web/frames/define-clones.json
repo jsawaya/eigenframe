@@ -4,13 +4,12 @@
 		{
 			"type": "JavaScript",
 			"comment": [
-				"Set root_url for github branch: remember to include the trailing '/' ",
-				"https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/",
-				"https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/",
-				"https://raw.githubusercontent.com/jsawaya/eigenframe/test/web/"
+				"Initialize cache (GithubBranch)",
+				" - get cache string (GithubBranch), if empty then initialize to 'master' ",
+				" - set cache string (GithubBranch), initialized or left unchanged "
 			],
 			"script_list": [
-				"var github_branch = 'beta'",
+				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'master')",
 				"eigenFragment.setCacheString('GithubBranch', github_branch)",
 				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
 				"eigenFragment.setCacheString('RootUrl', root_url)"

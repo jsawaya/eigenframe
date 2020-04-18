@@ -21,6 +21,20 @@
     },
     {
       "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_script": "'GitHub Branch: '+eigenFragment.getCacheString('GithubBranch')"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text_script": "'Root URL: '+eigenFragment.getCacheString('RootUrl')"
+      }
+    },
+    {
+      "type": "Clone",
       "name": "HorizontalLine"
     },
     {
@@ -565,6 +579,44 @@
           "else eigenFragment.setCacheString('GithubBranch', 'beta')",
           "eigenActivity.showToast('GithubBranch: ' + eigenFragment.getCacheString('GithubBranch') )"
         ]
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Select Branch",
+        "text_color": "#ffffff",
+        "background_color": "#654321",
+        "on_click": {
+          "type": "SelectDialog",
+          "title": "Select Branch",
+          "icon": {
+            "name": "share."
+          },
+          "id": 999101,
+          "checked_option": 0,
+          "option_list": [
+            "master",
+            "beta - initial deployment",
+            "version 1.3"
+          ],
+          "on_click": {
+            "type": "JavaScript",
+            "script_list": [
+              "position = eigenFragment.getOptionPosition()",
+              "eigenActivity.showToast('position: '+ position )",
+              "github_branch = 'master' ",
+              "if (position == 1) github_branch = 'beta' ",
+              "if (position == 2) github_branch = '1.3' ",
+              "eigenFragment.setCacheString('GithubBranch', github_branch)",
+              "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+              "eigenFragment.setCacheString('RootUrl', root_url)",
+              "eigenActivity.showToast('root_url: ' + root_url )",
+              "eigenActivity.launch(root_url+'apps/app_github_master.json')"
+            ]
+          }
+        }
       }
     },
     {
