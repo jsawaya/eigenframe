@@ -23,6 +23,13 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
+        "text_script": "'GitHub Branch: '+eigenFragment.getCacheString('GithubBranch')"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
         "text_script": "'Root URL: '+eigenFragment.getCacheString('RootUrl')"
       }
     },
@@ -599,15 +606,13 @@
             "script_list": [
               "position = eigenFragment.getOptionPosition()",
               "eigenActivity.showToast('position: '+ position )",
-              "selected_option = eigenFragment.getViewState(999100)",
               "github_branch = 'master' ",
               "if (position == 1) github_branch = 'beta' ",
               "if (position == 2) github_branch = '1.3' ",
               "eigenFragment.setCacheString('GithubBranch', github_branch)",
               "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
               "eigenFragment.setCacheString('RootUrl', root_url)",
-              "eigenActivity.showToast('root_url: ' + root_url )",
-              "eigenActivity.launch(root_url+'apps/app_github_master.json')"
+              "eigenActivity.showToast('root_url: ' + root_url )"
             ]
           }
         }
