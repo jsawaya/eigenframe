@@ -171,10 +171,29 @@
 					"location": "left"
 				},
 				"on_click": {
-					"type": "PopupTextView",
-					"title": "ps -eo cmd",
-					"font": "font/droid-sans-mono/DroidSansMono.ttf",
-					"ssh": "ps -eo cmd"
+					"type": "Clone",
+					"name": "PopupScreenDefault",
+					"attributes": {
+						"title": "Show Processes (ps -eo cmd)",
+						"component_list": [
+							{
+								"type": "Clone",
+								"name": "LayoutVerticalScrollable",
+								"attributes": {
+									"component_list": [
+										{
+											"type": "Clone",
+											"name": "TextViewDetail",
+											"attributes": {
+												"text_size": "10",
+												"ssh": "ps -eo cmd"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
 				}
 			}
 		},

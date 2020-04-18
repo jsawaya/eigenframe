@@ -13,7 +13,7 @@
 			"type": "Clone",
 			"name": "TextViewDetail",
 			"attributes": {
-				"text_script": "''+eigenFragment.getCacheString('FullPath')"
+				"text_script": "''+eigenFragment.getCacheString('FullPathLocal')"
 			}
 		},
 		{
@@ -47,15 +47,15 @@
 								"type": "JavaScript",
 								"comment": "find the parent directory of the SelectedPath",
 								"script_list": [
-									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+									"var selected_path = eigenFragment.getCacheString('SelectedPathLocal')",
 									"selected_path = eigenFragment.parentPath(selected_path)",
-									"eigenFragment.setCacheString('SelectedPath', selected_path)",
-									"eigenFragment.setCacheString('SelectedFile', '')"
+									"eigenFragment.setCacheString('SelectedPathLocal', selected_path)",
+									"eigenFragment.setCacheString('SelectedFileLocal', '')"
 								]
 							},
 							{
 								"type": "Clone",
-								"name": "JavaScriptSetFullPath"
+								"name": "JavaScriptSetFullPathLocal"
 							},
 							{
 								"type": "JavaScript",
@@ -63,7 +63,7 @@
 							},
 							{
 								"type": "Clone",
-								"name": "ListViewPopupScreenAfterSecureFtpDirectory"
+								"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal"
 							}
 						]
 					}
@@ -90,20 +90,20 @@
 								"type": "JavaScript",
 								"comment": "selected directory, not file",
 								"script_list": [
-									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"eigenFragment.setCacheString('SelectedFile', '')"
+									"var selected_path = eigenFragment.getCacheString('SelectedPathLocal')",
+									"eigenFragment.setCacheString('SelectedFileLocal', '')"
 								]
 							},
 							{
 								"type": "Clone",
-								"name": "JavaScriptSetFullPath"
+								"name": "JavaScriptSetFullPathLocal"
 							},
 							{
 								"type": "JavaScript",
 								"comment": "selected directory - not file",
 								"script_list": [
 									"eigenFragment.closePopupWindow()",
-									"eigenFragment.closePopupScreen(991005)"
+									"eigenFragment.closePopupScreen(991015)"
 								]
 							}
 						]
@@ -156,7 +156,7 @@
 					"layout_height": "match_parent",
 					"layout_weight": "1",
 					"background_color": "#123456",
-					"cached_filename": "SecureFtp:991004",
+					"cached_filename": "SecureFtp:991014",
 					"dir_type": "subdir",
 					"on_click": {
 						"type": "ActionList",
@@ -166,15 +166,15 @@
 								"comment": "selected directory, append to selected path",
 								"script_list": [
 									"var selected_dir = eigenFragment.getOptionLabel()",
-									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
+									"var selected_path = eigenFragment.getCacheString('SelectedPathLocal')",
 									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
-									"eigenFragment.setCacheString('SelectedPath', selected_path)",
-									"eigenFragment.setCacheString('SelectedFile', '')"
+									"eigenFragment.setCacheString('SelectedPathLocal', selected_path)",
+									"eigenFragment.setCacheString('SelectedFileLocal', '')"
 								]
 							},
 							{
 								"type": "Clone",
-								"name": "JavaScriptSetFullPath"
+								"name": "JavaScriptSetFullPathLocal"
 							},
 							{
 								"type": "JavaScript",
@@ -182,7 +182,7 @@
 							},
 							{
 								"type": "Clone",
-								"name": "ListViewPopupScreenAfterSecureFtpDirectory"
+								"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal"
 							}
 						]
 					},
@@ -218,26 +218,21 @@
 					"layout_height": "match_parent",
 					"layout_weight": "1",
 					"background_color": "#123456",
-					"cached_filename": "SecureFtp:991004",
+					"cached_filename": "SecureFtp:991014",
 					"dir_type": "files",
 					"on_click": {
 						"type": "ActionList",
 						"component_list": [
 							{
 								"type": "JavaScript",
-								"comment": [
-									"selected_file: file name selected by the user",
-									"full_path: /home/git-repo/git-path",
-									"full_path += selected_file"
-								],
 								"script_list": [
 									"var selected_file = eigenFragment.getOptionLabel()",
-									"eigenFragment.setCacheString('SelectedFile', selected_file)",
-									"var full_path = eigenFragment.getCacheString('FullPath')",
+									"eigenFragment.setCacheString('SelectedFileLocal', selected_file)",
+									"var full_path = eigenFragment.getCacheString('FullPathLocal')",
 									"var full_path_file = eigenFragment.concatPaths(full_path, selected_file)",
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId2')",
 									"eigenFragment.setViewState(targetVid, full_path_file)",
-									"eigenFragment.closePopupScreen(991005)",
+									"eigenFragment.closePopupScreen(991015)",
 									"eigenFragment.closePopupWindow()"
 								]
 							}

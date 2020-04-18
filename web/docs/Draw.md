@@ -60,39 +60,3 @@ Example:
 }
 ```
 
-Example - show eigenframe drawing:
-```json
-		{
-			"type": "Button",
-			"text": "Show EigenFrame Drawing",
-			"layout_width": "wrap_content",
-			"layout_height": "wrap_content",
-			"text_color": "#ffffff",
-			"background_color": "#654321",
-			"icon": {
-				"name": "info.",
-				"location": "top"
-			},
-			"margin": {
-				"left": 10,
-				"top": 10,
-				"right": 10,
-				"bottom": 10
-			},
-			"on_click": {
-				"type": "UrlRequest",
-				"id": 801,
-				"is_eigen_response": false,
-				"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/draw/tictactoe.draw",
-				"on_complete": {
-					"type": "JavaScript",
-					"script_list": [
-						"var drawingFilePath = eigenFragment.getCacheFilePath('UrlRequest:801') ",
-						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
-						"eigenFragment.setCacheString('DrawingFile', drawingFilePath)"
-					]
-				}
-			}
-		}
-```
-

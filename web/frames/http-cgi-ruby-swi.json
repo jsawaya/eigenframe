@@ -53,28 +53,13 @@
 		},
 		{
 			"type": "Clone",
-			"name": "JavaScriptSelectFilePath"
+			"name": "SelectFilePathRemote"
 		},
 		{
 			"type": "Clone",
 			"name": "LayoutVerticalScrollable",
 			"attributes": {
 				"component_list": [
-					{
-						"type": "Clone",
-						"name": "ButtonDefault",
-						"attributes": {
-							"text": "Show Prolog Remote File",
-							"icon": {
-								"name": "open_browser.",
-								"location": "top"
-							},
-							"on_click": {
-								"type": "Clone",
-								"name": "PopupScreenShowRemoteFile"
-							}
-						}
-					},
 					{
 						"type": "Clone",
 						"name": "ButtonDefault",

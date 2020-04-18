@@ -43,7 +43,7 @@
 			},
 			{
 				"type": "Clone",
-				"name": "JavaScriptSelectFilePath"
+				"name": "SelectFilePathRemote"
 			},
 			{
 				"type": "Clone",
@@ -55,9 +55,155 @@
 						"location": "top"
 					},
 					"on_click": {
-						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditRuby"
-					}
+            "type": "SecureFtp",
+            "sftp_script_list": [
+              "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+              "var filename = eigenFragment.getViewState(targetVid)",
+              "'get ' + filename + ' EditText:999000'"
+            ],
+            "on_complete": {
+              "type": "Clone",
+              "name": "PopupScreenDefault",
+              "attributes": {
+                "id": 999099,
+                "title_script_list": [
+                  "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+                  "var filename = eigenFragment.getViewState(targetVid)",
+                  "'Remote File: ' + filename"
+                ],
+                "component_list": [
+                  {
+                    "type": "Clone",
+                    "name": "LayoutVerticalScrollable",
+                    "attributes": {
+                      "component_list": [
+                        {
+                          "type": "Clone",
+                          "name": "ButtonSaveEditsToRemoteFile"
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "HorizontalLine"
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "TextViewLabel",
+                          "attributes": {
+                            "text": "Ruby Arguments:"
+                          }
+                        },
+                        {
+                          "type": "EditText",
+                          "id": 976001,
+                          "layout_width": "match_parent",
+                          "layout_height": "wrap_content",
+                          "text_color": "#ffffff",
+                          "background_color": "#000000"
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "ButtonDefault",
+                          "attributes": {
+                            "text": "Execute Ruby Script\nProduce PlainText",
+                            "icon": {
+                              "name": "open_browser.",
+                              "location": "top"
+                            },
+                            "on_click": {
+                              "type": "Clone",
+                              "name": "PopupScreenDefault",
+                              "attributes": {
+                                "title": "Ruby Output Console",
+                                "component_list": [
+                                  {
+                                    "type": "Clone",
+                                    "name": "LayoutVerticalScrollable",
+                                    "attributes": {
+                                      "component_list": [
+                                        {
+                                          "type": "Clone",
+                                          "name": "TextViewDetail",
+                                          "attributes": {
+                                            "text_size": "10",
+                                            "ssh_script_list": [
+                                              "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+                                              "var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+                                              "rubyfilepath = eigenFragment.getViewState(targetVid)",
+                                              "rubyargs = eigenFragment.getViewState(976001) ",
+                                              "'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "ButtonDefault",
+                          "attributes": {
+                            "text": "Execute Ruby Script\nProduce EigenFrame",
+                            "icon": {
+                              "name": "open_browser.",
+                              "location": "top"
+                            },
+                            "on_click": {
+                              "type": "Clone",
+                              "name": "PopupScreenDefault",
+                              "attributes": {
+                                "title": "Dynamic Ruby EigenFrame",
+                                "component_list": [
+                                  {
+                                    "type": "LinearLayout",
+                                    "orientation": "vertical",
+                                    "gravity": "center",
+                                    "layout_width": "match_parent",
+                                    "layout_height": "match_parent",
+                                    "component_list": [
+                                      {
+                                        "type": "SecureShell",
+                                        "is_eigen_response": true,
+                                        "ssh_script_list": [
+                                          "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+                                          "var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+                                          "rubyfilepath = eigenFragment.getViewState(targetVid)",
+                                          "rubyargs = eigenFragment.getViewState(976001) ",
+                                          "'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "HorizontalLine"
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "TextViewLabel",
+                          "attributes": {
+                            "text": "Ruby Script:"
+                          }
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "EditTextLocalFileCache"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
 				}
 			},
       {

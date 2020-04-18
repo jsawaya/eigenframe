@@ -43,7 +43,7 @@
 			},
 			{
 				"type": "Clone",
-				"name": "JavaScriptSelectFilePath"
+				"name": "SelectFilePathRemote"
 			},
 			{
 				"type": "Clone",
@@ -55,9 +55,84 @@
 						"location": "top"
 					},
 					"on_click": {
-						"type": "Clone",
-						"name": "GetRemoteFilePopupScreenEditFrame"
-					}
+            "type": "SecureFtp",
+            "sftp_script_list": [
+              "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+              "var filename = eigenFragment.getViewState(targetVid)",
+              "'get ' + filename + ' EditText:999000'"
+            ],
+            "on_complete": {
+              "type": "Clone",
+              "name": "PopupScreenDefault",
+              "attributes": {
+                "id": 999099,
+                "title_script_list": [
+                  "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+                  "var filename = eigenFragment.getViewState(targetVid)",
+                  "'Remote File: ' + filename"
+                ],
+                "component_list": [
+                  {
+                    "type": "Clone",
+                    "name": "LayoutVerticalScrollable",
+                    "attributes": {
+                      "component_list": [
+                        {
+                          "type": "Clone",
+                          "name": "ButtonSaveEditsToRemoteFile"
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "ButtonDefault",
+                          "attributes": {
+                            "text": "Render EigenFrame",
+                            "icon": {
+                              "name": "play.",
+                              "location": "top"
+                            },
+                            "on_click": {
+                              "type": "SecureFtp",
+                              "sftp_script_list": [
+                                "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+                                "var filename = eigenFragment.getViewState(targetVid)",
+                                "'put EditText:999000 ' + filename"
+                              ],
+                              "on_complete": {
+                                "type": "Clone",
+                                "name": "PopupScreenDefault",
+                                "attributes": {
+                                  "title": "Render EigenFrame",
+                                  "component_list": [
+                                    {
+                                      "type": "SecureShell",
+                                      "is_eigen_response": true,
+                                      "ssh_script_list": [
+                                        "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+                                        "var filename = eigenFragment.getViewState(targetVid)",
+                                        "'cd /data/data/com.termux/files/home; cat '+filename "
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "HorizontalLine"
+                        },
+                        {
+                          "type": "Clone",
+                          "name": "EditTextLocalFileCache"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
 				}
 			},
       {

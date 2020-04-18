@@ -9,7 +9,7 @@ Termux, ssh, sftp, javascript, apache http/cgi, ruby, and pgp, using json specs.
  * Added Drawing Javascript and Json Format see [doc](Draw.md)
  * Added support for URL post-method (which enables simple integration with GnuPG, Prolog, ...) see [doc](UrlRequest.md)
  * Added support for OpenPGP (ruby interface to GnuPG, many post-method examples) see [example](http-cgi-ruby-pgp.json)
- * Added new 'condition' attribute to all components, layouts and actions. see [example](select-filepath.json)
+ * Added new 'condition' attribute to all components, layouts and actions. 
  		- provides an easy way to assert the required conditions (context dependencies) for any EigenFrame element.
  		- example: {... "condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)" }
  * Playstore update now refreshes 'app.json', but does not change any existing 'home-url.txt' - so your eigenframe apps remain active.
