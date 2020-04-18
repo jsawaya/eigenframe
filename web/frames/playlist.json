@@ -590,7 +590,6 @@
       "text_color": "#ffffff",
       "background_color": "#654321",
       "gravity": "center",
-      "layout_width": "match_parent",
       "margin": {
         "left": 10,
         "top": 10,
