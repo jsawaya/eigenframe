@@ -616,9 +616,7 @@
           },
           {
             "type": "JavaScript",
-            "script_list": [
-              "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'/web/apps/app_github_master.json')"
-            ]
+            "script": "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master.json')"
           }
         ]
       }
