@@ -23,6 +23,13 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
+        "text_script": "'GitHub Branch: '+eigenFragment.getCacheString('GithubBranch')"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
         "text_script": "'Root URL: '+eigenFragment.getCacheString('RootUrl')"
       }
     },
@@ -599,7 +606,6 @@
             "script_list": [
               "position = eigenFragment.getOptionPosition()",
               "eigenActivity.showToast('position: '+ position )",
-              "selected_option = eigenFragment.getViewState(999100)",
               "github_branch = 'master' ",
               "if (position == 1) github_branch = 'beta' ",
               "if (position == 2) github_branch = '1.3' ",
