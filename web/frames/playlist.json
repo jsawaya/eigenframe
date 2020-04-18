@@ -612,8 +612,7 @@
               "eigenFragment.setCacheString('GithubBranch', github_branch)",
               "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
               "eigenFragment.setCacheString('RootUrl', root_url)",
-              "eigenActivity.showToast('root_url: ' + root_url )",
-              "eigenActivity.launch(root_url+'apps/app_github_master.json')"
+              "eigenActivity.showToast('root_url: ' + root_url )"
             ]
           }
         }
