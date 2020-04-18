@@ -4,17 +4,36 @@
 		{
 			"type": "JavaScript",
 			"comment": [
-				"Set root_url for github branch: remember to include the trailing '/' ",
-				"https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/",
-				"https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/",
-				"https://raw.githubusercontent.com/jsawaya/eigenframe/test/web/"
+				"Initialize cache (GithubBranch)",
+				" - get cache string (GithubBranch), if empty then initialize to 'beta' ",
+				" - set cache string (GithubBranch), initialized or left unchanged "
 			],
 			"script_list": [
-				"var github_branch = 'beta'",
-				"eigenFragment.setCacheString('GithubBranch', github_branch)",
-				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
-				"eigenFragment.setCacheString('RootUrl', root_url)"
+				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'beta')",
+				"eigenFragment.setCacheString('GithubBranch', github_branch)"
 			]
+		},
+		{
+			"type": "Define",
+			"name": "JavaScriptSetRootUrl",
+			"component": {
+				"type": "JavaScript",
+				"comment": [
+					"get cache string (GithubBranch) ",
+					"Set root_url for github branch: remember to include the trailing '/' ",
+					"https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/",
+					"https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/"
+				],
+				"script_list": [
+					"github_branch = eigenFragment.getCacheString('GithubBranch')",
+					"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+					"eigenFragment.setCacheString('RootUrl', root_url)"
+				]
+			}
+		},
+		{
+			"type": "Clone",
+			"name": "JavaScriptSetRootUrl"
 		},
 		{
 			"type": "Define",
