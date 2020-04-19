@@ -1,21 +1,17 @@
 {
 	"type": "EigenFrame",
-	"script_list": [
-		"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'master');",
-		"eigenFragment.setCacheString('GithubBranch', github_branch);"
-	],
 	"is_secure_window": "true",
 	"tab_list": [
 		{
 			"type": "EigenFragment",
-			"name_script": " ''+eigenActivity.getCacheString('GithubBranch') ",
-			"url_script": "'https://raw.githubusercontent.com/jsawaya/eigenframe/'+eigenActivity.getCacheString('GithubBranch')+'/web/frames/define-clones.json'",
+			"name": "1.3",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/define-clones.json",
 			"icon_name": "ic_launcher_round."
 		},
 		{
 			"type": "EigenFragment",
 			"name": "About",
-			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/about.json",
 			"icon_name": "info."
 		}
 	]

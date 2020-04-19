@@ -111,8 +111,37 @@
 			}
 		},
 		{
-			"type": "Clone",
-			"name": "SetIsSourceButton"
+			"type": "Switch",
+			"id": 999300,
+			"text": "Enable Source Button",
+			"checked_script": "eigenFragment.getBooleanVariable('IsSourceButton', 0, true)",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "pageview.",
+				"location": "top"
+			},
+			"margin": {
+				"left": 10,
+				"top": 10,
+				"right": 10,
+				"bottom": 10
+			},
+			"padding": {
+				"left": 30,
+				"top": 30,
+				"right": 30,
+				"bottom": 30
+			},
+			"on_click": {
+				"type": "JavaScript",
+				"script_list": [
+					"var b1 = eigenFragment.getViewState(999300) == 1",
+					"eigenFragment.setBooleanVariable('IsSourceButton', 0, b1)",
+					"eigenActivity.finish()",
+					"eigenActivity.launch(eigenActivity.appUrlString)"
+				]
+			}
 		},
 		{
 			"type": "Clone",
