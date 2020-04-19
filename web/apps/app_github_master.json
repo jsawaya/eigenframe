@@ -4,13 +4,9 @@
 	"tab_list": [
 		{
 			"type": "EigenFragment",
-			"name_script_list": 
-			[
-				"var github_branch = eigenActivity.getCacheString('GithubBranch', 0, 'master');",
-				"eigenActivity.setCacheString('GithubBranch', github_branch);",
-				"'' + github_branch);"
-			],
-			"url_script_list": [
+			"name_script": " ''+eigenActivity.getCacheString('GithubBranch') ",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/define-clones.json",
+			"x-url_script_list": [
 				"var github_branch = eigenActivity.getCacheString('GithubBranch');",
 				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
 				"eigenActivity.showToast('root_url: ' + root_url );",
