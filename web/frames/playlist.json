@@ -275,14 +275,14 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Edit] to view / edit remote configuration files, documentation, ..."
+        "text": "Click [Edit Remote] to view / edit remote configuration files, documentation, ..."
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Edit",
+        "text": "Edit Remote",
         "icon": {
           "name": "edit.",
           "location": "top"
@@ -291,8 +291,45 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Edit",
+            "title": "Edit Remote",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Edit Local File"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Edit Local] to view / edit local cache files"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Edit Local",
+        "icon": {
+          "name": "edit.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Edit Local",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-local.json'"
           }
         }
       }
@@ -558,30 +595,6 @@
       }
     },
     {
-      "type": "ToggleButton",
-      "id": 999200,
-      "checked_script": " 'master'.equals(eigenFragment.getCacheString('GithubBranch')) ",
-      "text_on": "Master Branch Enabled",
-      "text_off": "Beta Branch Enabled",
-      "text_color": "#ffffff",
-      "background_color": "#654321",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "var b1 = eigenFragment.getViewState(999200) == 1",
-          "if (b1) eigenFragment.setCacheString('GithubBranch', 'master')",
-          "else eigenFragment.setCacheString('GithubBranch', 'beta')",
-          "eigenActivity.showToast('GithubBranch: ' + eigenFragment.getCacheString('GithubBranch') )"
-        ]
-      }
-    },
-    {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
@@ -690,7 +703,8 @@
           "script_list": [
             "eigenFragment.setCacheString('GithubBranch', 'master')",
             "eigenFragment.setViewState(999200, '1')",
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')"
+            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
+            "eigenActivity.finish()"
           ]
         }
       }
