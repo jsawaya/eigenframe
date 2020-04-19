@@ -9,7 +9,7 @@
 		{
 			"type": "EigenFragment",
 			"name_script": " ''+eigenActivity.getCacheString('GithubBranch') ",
-			"url_script": "'https://raw.githubusercontent.com/jsawaya/eigenframe/'+eigenActivity.getCacheString('GithubBranch')+'/web/'",
+			"url_script": "'https://raw.githubusercontent.com/jsawaya/eigenframe/'+eigenActivity.getCacheString('GithubBranch')+'/web/apps/app_github_master.json'",
 			"icon_name": "ic_launcher_round."
 		},
 		{
