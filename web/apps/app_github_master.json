@@ -3,16 +3,26 @@
 	"is_secure_window": "true",
 	"tab_list": [
 		{
-			"icon_name": "ic_launcher_round.",
-			"name": "Master",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/define-clones.json"
+			"name_script_list": 
+			[
+				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'master');",
+				"eigenFragment.setCacheString('GithubBranch', github_branch);",
+				"'' + github_branch);"
+			],
+			"url_script_list": [
+				"var github_branch = eigenFragment.getCacheString('GithubBranch');",
+				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
+				"eigenActivity.showToast('root_url: ' + root_url );",
+				"eigenFragment.setCacheString('RootUrl', root_url);"
+			],
+			"icon_name": "ic_launcher_round."
 		},
 		{
-			"icon_name": "info.",
-			"name": "About",
 			"type": "EigenFragment",
-			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
+			"name": "About",
+			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json",
+			"icon_name": "info."
 		}
 	]
 }
