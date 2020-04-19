@@ -12,7 +12,7 @@ Attributes:
 * type: "ActionList"
 * component_list: sequence of actions to perform
 * on_complete (optional): event listener to call layout, component, or action that may produce an eigen-response
-  - example:
+  - Here is an example at the end of define-clones.json where "on_complete" loads a UrlRequest.
 ```json
   "on_complete": {
     "type": "UrlRequest",
