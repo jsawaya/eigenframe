@@ -618,7 +618,7 @@
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
-          "Click [Master Branch Shortcut] to create a shortcut on your home screen to launch the EigenFrame app from the github master branch"
+          "Click [Gallery Shortcut] to create a shortcut on your home screen to launch the EigenFrame Gallery app"
         ]
       }
     },
