@@ -5,13 +5,13 @@
 		{
 			"type": "EigenFragment",
 			"name": "1.3",
-			"url": "'https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/define-clones.json'",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/define-clones.json",
 			"icon_name": "ic_launcher_round."
 		},
 		{
 			"type": "EigenFragment",
 			"name": "About",
-			"url": "'https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/about.json'",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/about.json",
 			"icon_name": "info."
 		}
 	]
