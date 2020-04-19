@@ -275,14 +275,14 @@
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Edit] to view / edit remote configuration files, documentation, ..."
+        "text": "Click [Edit Remote] to view / edit remote configuration files, documentation, ..."
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Edit",
+        "text": "Edit Remote",
         "icon": {
           "name": "edit.",
           "location": "top"
@@ -291,8 +291,45 @@
           "type": "Clone",
           "name": "PopupScreenDefault",
           "attributes": {
-            "title": "Edit",
+            "title": "Edit Remote",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
+          }
+        }
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "HorizontalLine"
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewLabel",
+      "attributes": {
+        "text": "Edit Local File"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "TextViewDetail",
+      "attributes": {
+        "text": "Click [Edit Local] to view / edit local cache files"
+      }
+    },
+    {
+      "type": "Clone",
+      "name": "ButtonDefault",
+      "attributes": {
+        "text": "Edit Local",
+        "icon": {
+          "name": "edit.",
+          "location": "top"
+        },
+        "on_click": {
+          "type": "Clone",
+          "name": "PopupScreenDefault",
+          "attributes": {
+            "title": "Edit Local",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-local.json'"
           }
         }
       }
@@ -547,86 +584,6 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "EigenFrame GitHub Branch Selection"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text": "GitHub UrlRequests may target the master branch or the beta branch."
-      }
-    },
-    {
-      "type": "ToggleButton",
-      "id": 999200,
-      "checked_script": " 'master'.equals(eigenFragment.getCacheString('GithubBranch')) ",
-      "text_on": "Master Branch Enabled",
-      "text_off": "Beta Branch Enabled",
-      "text_color": "#ffffff",
-      "background_color": "#654321",
-      "margin": {
-        "left": 10,
-        "top": 10,
-        "right": 10,
-        "bottom": 10
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "var b1 = eigenFragment.getViewState(999200) == 1",
-          "if (b1) eigenFragment.setCacheString('GithubBranch', 'master')",
-          "else eigenFragment.setCacheString('GithubBranch', 'beta')",
-          "eigenActivity.showToast('GithubBranch: ' + eigenFragment.getCacheString('GithubBranch') )"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Select Branch",
-        "text_color": "#ffffff",
-        "background_color": "#654321",
-        "on_click": {
-          "type": "SelectDialog",
-          "title": "Select Branch",
-          "icon": {
-            "name": "share."
-          },
-          "id": 999101,
-          "checked_option": 0,
-          "option_list": [
-            "master",
-            "beta - initial deployment",
-            "version 1.3"
-          ],
-          "on_click": {
-            "type": "JavaScript",
-            "script_list": [
-              "position = eigenFragment.getOptionPosition()",
-              "eigenActivity.showToast('position: '+ position )",
-              "github_branch = 'master' ",
-              "if (position == 1) github_branch = 'beta' ",
-              "if (position == 2) github_branch = '1.3' ",
-              "eigenFragment.setCacheString('GithubBranch', github_branch)",
-              "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
-              "eigenFragment.setCacheString('RootUrl', root_url)",
-              "eigenActivity.showToast('root_url: ' + root_url )",
-              "eigenActivity.launch(root_url+'apps/app_github_master.json')"
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
         "text": "EigenFrame GitHub Gallery"
       }
     },
@@ -658,46 +615,6 @@
     },
     {
       "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "EigenFrame GitHub Master Branch"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [Launch GitHub Master Branch] to run EigenFrame apps as Termux services.",
-          "Administer SSH/SFTP, GIT, Bash, Ruby, Prolog, PGP, Apache2, ..."
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Launch GitHub Master Branch",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenFragment.setCacheString('GithubBranch', 'master')",
-            "eigenFragment.setViewState(999200, '1')",
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')"
-          ]
-        }
-      }
-    },
-    {
-      "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
         "text_list": [
@@ -709,7 +626,7 @@
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Master Branch Shortcut",
+        "text": "Gallery Shortcut",
         "background_color": "#123456",
         "icon": {
           "name": "save.",
@@ -718,7 +635,7 @@
         "on_click": {
           "type": "JavaScript",
           "script_list": [
-            "eigenActivity.addShortcut('Master', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master.json')",
+            "eigenActivity.addShortcut('Gallery', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')",
             "eigenActivity.finish()"
           ]
         }
@@ -732,62 +649,51 @@
       "type": "Clone",
       "name": "TextViewLabel",
       "attributes": {
-        "text": "Beta Branch Features"
+        "text": "EigenFrame GitHub Branch Selection"
       }
     },
     {
       "type": "Clone",
       "name": "TextViewDetail",
       "attributes": {
-        "text_list": [
-          "Click [Launch GitHub Beta Branch] for pre-release features (in development)"
-        ]
+        "text": "GitHub UrlRequests may target the master branch or the beta branch."
       }
     },
     {
       "type": "Clone",
       "name": "ButtonDefault",
       "attributes": {
-        "text": "Launch GitHub Beta Branch",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
+        "text": "Select Branch",
+        "text_color": "#ffffff",
+        "background_color": "#654321",
         "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenFragment.setCacheString('GithubBranch', 'beta')",
-            "eigenFragment.setViewState(999200, '0')",
-            "eigenActivity.launch('https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')"
-          ]
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [Beta Shortcut] to create a shortcut on your home screen to launch the EigenFrame app from the github beta branch"
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Beta Shortcut",
-        "background_color": "#123456",
-        "icon": {
-          "name": "save.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenActivity.addShortcut('Beta', 'https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/apps/app_github_beta.json')",
-            "eigenActivity.finish()"
-          ]
+          "type": "SelectDialog",
+          "title": "Select Branch",
+          "icon": {
+            "name": "share."
+          },
+          "id": 999101,
+          "checked_option": 0,
+          "option_list": [
+            "master",
+            "beta - initial deployment",
+            "version 1.3"
+          ],
+          "on_click": {
+            "type": "JavaScript",
+            "script_list": [
+              "position = eigenFragment.getOptionPosition()",
+              "github_branch = 'master' ",
+              "if (position == 1) github_branch = 'beta' ",
+              "if (position == 2) github_branch = '1.3' ",
+              "eigenFragment.setCacheString('GithubBranch', github_branch)",
+              "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+              "eigenFragment.setCacheString('RootUrl', root_url)",
+              "eigenActivity.showToast('root_url: ' + root_url )",
+              "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master.json')",
+              "eigenActivity.finish()"
+            ]
+          }
         }
       }
     },

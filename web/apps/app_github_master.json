@@ -3,16 +3,16 @@
 	"is_secure_window": "true",
 	"tab_list": [
 		{
-			"icon_name": "ic_launcher_round.",
-			"name": "Master",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/define-clones.json"
+			"name": "1.3",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/define-clones.json",
+			"icon_name": "ic_launcher_round."
 		},
 		{
-			"icon_name": "info.",
-			"name": "About",
 			"type": "EigenFragment",
-			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
+			"name": "About",
+			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/about.json",
+			"icon_name": "info."
 		}
 	]
 }
