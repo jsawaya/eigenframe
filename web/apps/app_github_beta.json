@@ -1,23 +1,22 @@
 {
 	"type": "EigenFrame",
-	"is_secure_window": "false",
+	"script_list": [
+		"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'beta');",
+		"eigenFragment.setCacheString('GithubBranch', github_branch);"
+	],
+	"is_secure_window": "true",
 	"tab_list": [
 		{
-			"icon_name": "ic_launcher_round.",
-			"name": "Beta",
 			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/define-clones.json"
+			"name_script": " ''+eigenActivity.getCacheString('GithubBranch') ",
+			"url_script": "'https://raw.githubusercontent.com/jsawaya/eigenframe/'+eigenActivity.getCacheString('GithubBranch')+'/web/frames/define-clones.json'",
+			"icon_name": "ic_launcher_round."
 		},
 		{
-			"icon_name": "info.",
+			"type": "EigenFragment",
 			"name": "About",
-			"type": "EigenFragment",
-			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
-		},
-		{
-			"name": "SFTP-EDIT-LOCAL",
-			"type": "EigenFragment",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/sftp-edit-local.json"
+			"url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json",
+			"icon_name": "info."
 		}
 	]
 }
