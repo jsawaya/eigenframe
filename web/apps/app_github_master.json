@@ -1,17 +1,15 @@
 {
 	"type": "EigenFrame",
+	"script_list": [
+		"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'master');",
+		"eigenFragment.setCacheString('GithubBranch', github_branch);"
+	],
 	"is_secure_window": "true",
 	"tab_list": [
 		{
 			"type": "EigenFragment",
 			"name_script": " ''+eigenActivity.getCacheString('GithubBranch') ",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/beta/web/frames/define-clones.json",
-			"x-url_script_list": [
-				"var github_branch = eigenActivity.getCacheString('GithubBranch');",
-				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
-				"eigenActivity.showToast('root_url: ' + root_url );",
-				"eigenActivity.setCacheString('RootUrl', root_url);"
-			],
+			"url_script": "'https://raw.githubusercontent.com/jsawaya/eigenframe/'+eigenActivity.getCacheString('GithubBranch')+'/web/'",
 			"icon_name": "ic_launcher_round."
 		},
 		{
