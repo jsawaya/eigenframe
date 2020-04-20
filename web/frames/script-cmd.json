@@ -18,7 +18,7 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"JavaScript can invoke dynamic attributes and actions (no additional services required)"
+					"JavaScript can invoke dynamic attributes and actions (no services required)"
 				]
 			}
 		},
