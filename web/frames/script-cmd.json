@@ -18,37 +18,36 @@
 			"name": "TextViewDetail",
 			"attributes": {
 				"text_list": [
-					"JavaScript can invoke dynamic attributes and actions (no additional services required)"
+					"JavaScript can invoke dynamic attributes and actions (no services required)"
 				]
 			}
 		},
-    {
-      "type": "Button",
-      "text": [
-        "JavaScript using script_list: ",
-        "x = 8*5; eigenActivity.showToast('var x: '+x); x;"
-      ],
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_color": "#ffffff",
-      "background_color": "#654321",
-      "icon": {
-        "name": "play.",
-        "location": "top"
-      },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "x = 8*5",
-          "eigenActivity.showToast('var x: '+x)"
-        ]
-      }
+		{
+			"type": "Button",
+			"text": [
+				"JavaScript using script_list: ",
+				"x = 8*5; eigenActivity.showToast('var x: '+x); x;"
+			],
+			"layout_width": "wrap_content",
+			"layout_height": "wrap_content",
+			"text_color": "#ffffff",
+			"background_color": "#654321",
+			"icon": {
+				"name": "play.",
+				"location": "top"
+			},
+			"on_click": {
+				"type": "JavaScript",
+				"script_list": [
+					"x = 8*5",
+					"eigenActivity.showToast('var x: '+x)"
+				]
+			}
 		},
-		
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
+		{
+			"type": "Clone",
+			"name": "HorizontalLine"
+		},
 		{
 			"type": "Clone",
 			"name": "TextViewLabel",
@@ -116,5 +115,3 @@
 		}
 	]
 }
-
-
