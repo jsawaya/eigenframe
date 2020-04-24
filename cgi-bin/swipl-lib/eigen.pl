@@ -1,49 +1,46 @@
-eigen_type('EigenFrame').
-eigen_type('EigenFragment').
-eigen_type('Draw').
+has_type('EigenFrame').
+has_type('EigenFragment').
+has_type('Draw').
 
-eigen_type('LinearLayout').
-eigen_type('Button'). 
-eigen_type('CheckBox').
-eigen_type('Define').
-eigen_type('EditText').
-eigen_type('HorizontalLine').
-eigen_type('HtmlView').
-eigen_type('ImageView').
-eigen_type('ListView').
-eigen_type('PopupHtmlView').
-eigen_type('PopupTextView').
-eigen_type('RadioButton').
-eigen_type('Spinner').
-eigen_type('Switch').
-eigen_type('TextView').
-eigen_type('ToastMessage').
-eigen_type('ToggleButton').
-eigen_type('Variable').
-eigen_type('VerticalLine').
-eigen_type('WebView').
-%eigen_type('Cache'). 
-%eigen_type('ConstraintLayout').
-%eigen_type('RelativeLayout').
-%eigen_type('RubyScript').
-eigen_type('ActionList').
-eigen_type('AlertDialog').
-eigen_type('Clone').
-eigen_type('JavaScript').
-eigen_type('PopupScreen').
-eigen_type('SecureFtp').
-eigen_type('SecureShell').
-eigen_type('SelectDialog').
-eigen_type('UrlRequest').
+has_type('LinearLayout').
+has_type('Button'). 
+has_type('CheckBox').
+has_type('Define').
+has_type('EditText').
+has_type('HorizontalLine').
+has_type('HtmlView').
+has_type('ImageView').
+has_type('ListView').
+has_type('PopupHtmlView').
+has_type('PopupTextView').
+has_type('RadioButton').
+has_type('Spinner').
+has_type('Switch').
+has_type('TextView').
+has_type('ToastMessage').
+has_type('ToggleButton').
+has_type('Variable').
+has_type('VerticalLine').
+has_type('WebView').
+%has_type('Cache'). 
+%has_type('ConstraintLayout').
+%has_type('RelativeLayout').
+%has_type('RubyScript').
+has_type('ActionList').
+has_type('AlertDialog').
+has_type('Clone').
+has_type('JavaScript').
+has_type('PopupScreen').
+has_type('SecureFtp').
+has_type('SecureShell').
+has_type('SelectDialog').
+has_type('UrlRequest').
 
 
 action('ActionList').
 action('AlertDialog').
-%action('Cache'). 
-action('Clone').
 action('Define').
 action('JavaScript').
-action('ListView').
 action('PopupHtmlView').
 action('PopupScreen').
 action('PopupTextView').
@@ -53,23 +50,11 @@ action('SelectDialog').
 action('ToastMessage').
 action('UrlRequest').
 action('Variable').
-action('VerticalLine').
+%action('Cache'). 
 %action('RubyScript').
 
-async('ActionList').
-async('AlertDialog').
-async('Clone').
-async('ListView').
-async('PopupHtmlView').
-async('PopupScreen').
-async('PopupTextView').
-async('SecureFtp').
-async('SecureShell').
-async('SelectDialog').
-async('ToastMessage').
-async('UrlRequest').
+%action(X) :- has_type('Clone'),has_ssh(X).
 
-layout_container('Define').
 layout_container('LinearLayout').
 layout_container('ListView').
 layout_container('PopupScreen').
@@ -78,8 +63,11 @@ layout_container('SecureShell').
 layout_container('UrlRequest').
 %layout_container('ConstraintLayout').
 %layout_container('RelativeLayout').
-layout_container('ActionList').
-layout_container('Clone').
+%layout_container('ActionList').
+%layout_container('Clone').
+%layout_container('Define').
+
+has_component_list('ActionList')
 
 layout_component('Button'). 
 layout_component('CheckBox').
@@ -111,7 +99,7 @@ layout_component('WebView').
 %layout_component('ConstraintLayout').
 %layout_component('RelativeLayout').
 %layout_component('RubyScript').
-layout_component('ActionList').
+layout_component('ActionList'). /*maybe visible_component*/
 layout_component('AlertDialog').
 layout_component('Clone').
 
@@ -152,38 +140,36 @@ has_title('PopupHtmlView').
 has_title('PopupTextView').
 has_title('SelectDialog').
 
-can_have_icon('EigenFragment').
-can_have_icon('AlertDialog').
-can_have_icon('PopupScreen').
-can_have_icon('SelectDialog').
-can_have_icon('SelectDialog').
-can_have_icon('CheckBox').
-can_have_icon('Switch').
-can_have_icon('Button').
-can_have_icon('SelectDialog').
-can_have_icon('ToggleButton').
+may_have_icon('EigenFragment').
+may_have_icon('AlertDialog').
+may_have_icon('PopupScreen').
+may_have_icon('SelectDialog').
+may_have_icon('SelectDialog').
+may_have_icon('CheckBox').
+may_have_icon('Switch').
+may_have_icon('Button').
+may_have_icon('SelectDialog').
+may_have_icon('ToggleButton').
 
-can_source_url('EigenFragment').
-can_source_url('PopupScreen').
-can_source_url('WebView').
-can_source_url('HtmlView').
-can_source_url('EditText').
-can_source_url('ImageView').
-can_source_url('UrlRequest').
-can_source_url('TextView').
-can_source_url('ListView').
+may_have_url('EigenFragment').
+may_have_url('PopupScreen').
+may_have_url('WebView').
+may_have_url('HtmlView').
+may_have_url('EditText').
+may_have_url('ImageView').
+may_have_url('UrlRequest').
+may_have_url('TextView').
+may_have_url('ListView').
 
-can_source_ssh('SecureShell').
-%can_source_ssh('HtmlView').
-can_source_ssh('TextView').
-can_source_ssh('EditText').
-can_source_ssh('PopupHtmlView').
-can_source_ssh('PopupTextView').
+may_have_ssh('SecureShell').
+%may_have_ssh('HtmlView').
+may_have_ssh('TextView').
+may_have_ssh('EditText').
+may_have_ssh('PopupHtmlView').
+may_have_ssh('PopupTextView').
 
-can_source_sftp('EditText').
-can_source_sftp('TextView').
-can_source_sftp('SecureFtp').
-can_source_sftp('ListView').
+may_have_sftp('EditText').
+may_have_sftp('TextView').
+may_have_sftp('SecureFtp').
+may_have_sftp('ListView').
 
-put_ancestor(A, B) :-
-    write('{\"'),write(A),write(' is an ancestor of '),write(B),write('\"}'),nl.
