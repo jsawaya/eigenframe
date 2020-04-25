@@ -4,7 +4,7 @@
 * type = "ImageView"
 * url
 * id = define unique view id, 
-  puts contents into cache TextView:{id} 
+  puts contents into cache ImageView:{id} 
 
 * layout_width
 * layout_height

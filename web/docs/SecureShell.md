@@ -4,9 +4,9 @@
 * type = "SecureShell"
 * id : saves ssh response to cache SecureShell:{id}
 * ssh | ssh_list
-** is_eigen_response : true | false (default)
+* is_eigen_response : true | false (default)
 * is_toast = true | false (default)
-* on_complete : action script begins when url response is available 
+* on_complete : action script begins when ssh response is available 
 
 Related:
 [PopupTextView](PopupTextView.md) 

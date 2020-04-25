@@ -2,6 +2,7 @@
 ## schema pattern
 
  * type = "JavaScript"
+ * id = ID reference to capture the result of script_script
 
 One of the following:
  * script - a javascript string to evaluate.
