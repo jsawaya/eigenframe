@@ -9,68 +9,320 @@
 %open_this_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
 open_this_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
 
-%open_this_url(URL), get_json_data(URL, Data), parse_eigenframe(Data).
+parse_eigenframe_url :-
+	open_this_url(URL), get_json_url(URL, Data), parse_eigenframe(Data).
 
-get_json_data(URL, Data) :-
+get_json_url(URL, Data) :-
 	setup_call_cleanup(
 		http_open(URL, In, [request_header('Accept'='application/json')]),
 		json_read_dict(In, Data, [tag(json), value_string_as(atom)]),
 		close(In)
 	).
 
+
+%open_this_file(FPath), get_json_file(FPath,Data).
+
+open_this_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+
+get_json_file(FPath, Data) :-
+	open(FPath, read, Stream), 
+	json_read_dict(Stream, Data, [tag(json), value_string_as(atom)]),
+	close(Stream),
+	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
+
+save_this_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd2.json').
+
+save_json_file(FPath, Data) :-
+	open(FPath, write, Stream), 
+	json_write(Stream, Data, [tag(json), value_string_as(atom)]),
+	close(Stream).
+
+
 parse_eigenframe(Data) :- 
-	Type = Data.get(type),
+	parse_eigenframe_type(Data, Type),
 	Type == 'EigenFrame',
   format(" ~w~n", [Type]),
+	parse_eigenframe_is_secure_window(Data),
+	parse_eigenframe_script_sources(Data),
 	X = Data.get(tab_list),
 	parse_eigenframe_list(X).
 
 parse_eigenframe(Data) :- 
-	Type = Data.get(type),
+	parse_eigenframe_type(Data, Type),
 	Type == 'EigenFragment',
   format(" ~w~n", [Type]),
-	URL = Data.get(url),
-	get_json_data(URL, FragmentData),
-	parse_eigenframe(FragmentData).
+	parse_eigenframe_name(Data), 
+	parse_eigenframe_icon_name(Data), 
+	parse_eigenframe_url(Data).
 
 parse_eigenframe(Data) :- 
-	Type = Data.get(type),
-	Type == 'SecureFtp',
+	parse_eigenframe_type(Data, Type),
+	Type == 'ActionList',
   format(" ~w~n", [Type]),
-	X = Data.get(on_complete),
+	parse_eigenframe_component_list(Data),
+	parse_eigenframe_on_complete(Data).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'AlertDialog',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'Button',
+  format(" ~w~n", [Type]),
+	X = Data.get(on_click),
 	parse_eigenframe(X).
 
 parse_eigenframe(Data) :- 
-	Type = Data.get(type),
-	Type == 'LinearLayout',
+	parse_eigenframe_type(Data, Type),
+	Type == 'CheckBox',
   format(" ~w~n", [Type]),
-	X = Data.get(component_list),
-	parse_eigenframe_list(X).
+	X = Data.get(on_click),
+	parse_eigenframe(X).
 
 parse_eigenframe(Data) :- 
-	Type = Data.get(type),
-  format(" Undefined: ~w~n", [Type]).
+	parse_eigenframe_type(Data, Type),
+	Type == 'Clone',
+  format(" ~w~n", [Type]),
+	parse_eigenframe_name(Data).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'Define',
+  format(" ~w~n", [Type]),
+	parse_eigenframe_name(Data).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'EditText',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'HorizontalLine',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'HtmlView',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'ImageView',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'JavaScript',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'LinearLayout',
+  format(" ~w~n", [Type]),
+	parse_eigenframe_component_list(Data).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'ListView',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'PopupHtmlView',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'PopupScreen',
+  format(" ~w~n", [Type]),
+	parse_eigenframe_component_list(Data).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'PopupTextView',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'RadioButton',
+  format(" ~w~n", [Type]),
+	X = Data.get(on_click),
+	parse_eigenframe(X).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'SecureFtp',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'SecureShell',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'SelectDialog',
+  format(" ~w~n", [Type]),
+	X = Data.get(on_click),
+	parse_eigenframe(X).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'Spinner',
+  format(" ~w~n", [Type]),
+	X = Data.get(on_click),
+	parse_eigenframe(X).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'Switch',
+  format(" ~w~n", [Type]),
+	X = Data.get(on_click),
+	parse_eigenframe(X).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'TextView',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'ToastMessage',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'ToggleButton',
+  format(" ~w~n", [Type]),
+	X = Data.get(on_click),
+	parse_eigenframe(X).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'UrlRequest',
+  format(" ~w~n", [Type]),
+	(
+		parse_eigenframe_url_sources(Data);
+		parse_eigenframe_on_complete(Data)
+	).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'Variable',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'VerticalLine',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+	Type == 'WebView',
+  format(" ~w~n", [Type]).
+
+parse_eigenframe(Data) :- 
+	parse_eigenframe_type(Data, Type),
+  format(" Undefined: ~w~n", [Type]),
+	writeln(Data).
+
+parse_eigenframe_component_list(Data) :- 
+	X = Data.get(component_list),
+  writeln(" Found component_list..."), 
+	parse_eigenframe_list(X).
+
 
 parse_eigenframe_list([]).
 parse_eigenframe_list([H|T]) :-
 	parse_eigenframe(H),
   parse_eigenframe_list(T).
 
+parse_eigenframe_type(Data, Type) :- 
+	Type = Data.get(type).
 
-frame([
-	type('EigenFrame'),
-	script(_),
-	script_list([_]),
-	is_secure_window(_),
-	tab_list([_])  				/* list of fragments */
-]).
 
-frame([
-	type('EigenFragment'),
-  name(_),
-  icon_name(_),
-  source_url(_)
-]).
+parse_eigenframe_url_sources(Data) :- 
+	(
+		parse_eigenframe_url(Data);
+		parse_eigenframe_url_script(Data);
+		parse_eigenframe_url_script_list(Data)
+	).
+
+parse_eigenframe_url(Data) :- 
+	URL = Data.get(url),
+  write(" Found url: "), 
+	writeln(URL),
+	get_json_url(URL, FrameData),
+	parse_eigenframe(FrameData).
+
+parse_eigenframe_url_script(Data) :- 
+	X = Data.get(url_script),
+  write(" Found url_script: "), 
+	writeln(X).
+
+parse_eigenframe_url_script_list(Data) :- 
+	X = Data.get(url_script_list),
+  write(" Found url_script_list: "), 
+	writeln(X).
+
+
+parse_eigenframe_script_sources(Data) :- 
+	(
+		parse_eigenframe_script(Data);
+		parse_eigenframe_script_list(Data);
+		true
+	).
+
+parse_eigenframe_script(Data) :- 
+	X = Data.get(script),
+  write(" Found script: "), 
+	writeln(X).
+
+parse_eigenframe_script_list(Data) :- 
+	X = Data.get(script_list),
+  write(" Found script_list: "), 
+	writeln(X).
+
+
+parse_eigenframe_on_click(Data) :- 
+	Frame = Data.get(on_click),
+  write(" Found on_click: "), 
+	writeln(Frame),
+	parse_eigenframe(Frame).
+
+parse_eigenframe_on_complete(Data) :- 
+	Frame = Data.get(on_complete),
+  write(" Found on_complete: "), 
+	writeln(Frame),
+	parse_eigenframe(Frame).
+
+
+parse_eigenframe_is_secure_window(Data) :- 
+	(
+		X = Data.get(is_secure_window),
+ 		write(" Found is_secure_window: "), 
+		writeln(X)
+	);
+	true.
+
+parse_eigenframe_name(Data) :- 
+	(
+		X = Data.get(name),
+ 		write(" Found name: "), 
+		writeln(X)
+	);
+	true.
+
+parse_eigenframe_icon_name(Data) :- 
+	(
+		X = Data.get(icon_name),
+ 		write(" Found icon_name: "), 
+		writeln(X)
+	);
+	true.
 
 frame([
 	type('ActionList'),
