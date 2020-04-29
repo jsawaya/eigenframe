@@ -93,32 +93,35 @@ parse_eigenframe(Data) :-
 	parse_eigenframe_type(Data, Type),
 	Type == 'Button',
   format(" ~w~n", [Type]),
-	X = Data.get(on_click),
-	parse_eigenframe(X).
+	(parse_eigenframe_text_sources(Data); true),
+	parse_eigenframe_on_click(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'CheckBox',
   format(" ~w~n", [Type]),
-	X = Data.get(on_click),
-	parse_eigenframe(X).
+	(parse_eigenframe_text_sources(Data); true),
+	parse_eigenframe_on_click(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'Clone',
   format(" ~w~n", [Type]),
-	parse_eigenframe_name(Data).
+	parse_eigenframe_name(Data),
+	parse_eigenframe_attributes(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'Define',
   format(" ~w~n", [Type]),
-	parse_eigenframe_name(Data).
+	parse_eigenframe_name(Data),
+	parse_eigenframe_component(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'EditText',
-  format(" ~w~n", [Type]).
+  format(" ~w~n", [Type]),
+	parse_eigenframe_text_sources(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
@@ -165,14 +168,14 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'PopupTextView',
-  format(" ~w~n", [Type]).
+  format(" ~w~n", [Type]),
+	(parse_eigenframe_text_sources(Data); true).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'RadioButton',
   format(" ~w~n", [Type]),
-	X = Data.get(on_click),
-	parse_eigenframe(X).
+	parse_eigenframe_on_click(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
@@ -192,27 +195,26 @@ parse_eigenframe(Data) :-
 	parse_eigenframe_type(Data, Type),
 	Type == 'SelectDialog',
   format(" ~w~n", [Type]),
-	X = Data.get(on_click),
-	parse_eigenframe(X).
+	parse_eigenframe_on_click(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'Spinner',
   format(" ~w~n", [Type]),
-	X = Data.get(on_click),
-	parse_eigenframe(X).
-
+	parse_eigenframe_on_click(Data).
+	
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'Switch',
   format(" ~w~n", [Type]),
-	X = Data.get(on_click),
-	parse_eigenframe(X).
-
+	(parse_eigenframe_text_sources(Data); true),
+	parse_eigenframe_on_click(Data).
+	
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'TextView',
-  format(" ~w~n", [Type]).
+  format(" ~w~n", [Type]),
+	(parse_eigenframe_text_sources(Data); true).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
@@ -223,8 +225,7 @@ parse_eigenframe(Data) :-
 	parse_eigenframe_type(Data, Type),
 	Type == 'ToggleButton',
   format(" ~w~n", [Type]),
-	X = Data.get(on_click),
-	parse_eigenframe(X).
+	parse_eigenframe_on_click(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
@@ -258,16 +259,29 @@ parse_eigenframe_component_list(Data) :-
   writeln(" Found component_list..."), 
 	parse_eigenframe_list(X).
 
+parse_eigenframe_component(Data) :- 
+	X = Data.get(component),
+  writeln(" Found component"), 
+	parse_eigenframe(X).
+
+parse_eigenframe_attributes(Data) :- 
+	X = Data.get(attributes),
+  write(" Found attributes: "), 
+  writeln(X).
 
 parse_eigenframe_list([]).
 parse_eigenframe_list([H|T]) :-
 	parse_eigenframe(H),
   parse_eigenframe_list(T).
 
+%-----------------------------------------------
+% should always succeed for any valid EigenFrame
+
 parse_eigenframe_type(Data, Type) :- 
 	Type = Data.get(type).
 
 %-----------------------------------------------
+% will succeed - if frame has url source
 
 parse_eigenframe_url_sources(Data) :- 
 	(
@@ -343,7 +357,6 @@ parse_eigenframe_sftp_script_list(Data) :-
 
 %-----------------------------------------------
 
-
 parse_eigenframe_script_sources(Data) :- 
 	(
 		parse_eigenframe_script(Data);
@@ -360,11 +373,42 @@ parse_eigenframe_script_list(Data) :-
   write(" Found script_list: "), 
 	writeln(X).
 
+%-----------------------------------------------
+
+parse_eigenframe_text_sources(Data) :- 
+	(
+		parse_eigenframe_text(Data);
+		parse_eigenframe_text_list(Data);
+		parse_eigenframe_text_script(Data);
+		parse_eigenframe_text_script_list(Data)
+	).
+
+parse_eigenframe_text(Data) :- 
+	X = Data.get(text),
+  write(" Found text: "), 
+	writeln(X).
+
+parse_eigenframe_text_list(Data) :- 
+	X = Data.get(text_list),
+  write(" Found text_list: "), 
+	writeln(X).
+
+parse_eigenframe_text_script(Data) :- 
+	X = Data.get(text_script),
+  write(" Found text_script: "), 
+	writeln(X).
+
+parse_eigenframe_text_script_list(Data) :- 
+	X = Data.get(text_script_list),
+  write(" Found text_script_list: "), 
+	writeln(X).
+
+%-----------------------------------------------
 
 parse_eigenframe_on_click(Data) :- 
 	Frame = Data.get(on_click),
   write(" Found on_click: "), 
-	writeln(Frame),
+%	writeln(Frame),
 	parse_eigenframe(Frame).
 
 parse_eigenframe_on_complete(Data) :- 
@@ -389,34 +433,9 @@ parse_eigenframe_icon_name(Data) :-
 	write(" Found icon_name: "), 
 	writeln(X).
 
-frame([
-	type('ActionList'),
-	component_list([_]), 
-	on_complete(_)
-	]).
+%-----------------------------------------------
 
-frame([
-	type('AlertDialog'),
-	title(_),
-	icon(_),
-	positive(option(_), on_click(_)), 
-	negative(option(_), on_click(_)), 
-	neutral(option(_), on_click(_))
-	]).
 
-frame([
-	type('Button'),
-	source_text(_),
-	text_color(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	icon(_),
-	padding(_),
-	margin(_),
-	on_click(_)
-	]).
 
 frame([
 	type('CheckBox'),
@@ -747,3 +766,13 @@ frame([
 	layout_height(_),
 	is_javascript_enabled(_)
 	]).
+
+frame([
+	type('AlertDialog'),
+	title(_),
+	icon(_),
+	positive(option(_), on_click(_)), 
+	negative(option(_), on_click(_)), 
+	neutral(option(_), on_click(_))
+	]).
+
