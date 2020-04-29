@@ -6,10 +6,10 @@
 
 %open_this_url("http://api.open-notify.org/iss-now.json").
 %open_this_url("https://jsonplaceholder.typicode.com/users/").
-open_this_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
-%open_this_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
+select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
+select_app_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
 
-% open_this_url(URL), read_eigenframe_url(URL).
+% select_app_url(URL), read_eigenframe_url(URL).
 
 read_eigenframe_url(URL) :-
 	read_json_url(URL, Data), parse_eigenframe(Data).
@@ -21,11 +21,10 @@ read_json_url(URL, Data) :-
 		close(In)
 	).
 
-% open_this_url(URL), show_eigenframe_url(URL).
+% select_app_url(URL), show_eigenframe_url(URL).
 
 show_eigenframe_url(URL) :-
 	read_json_url(URL, Data), show_json(Data).
-
 
 
 open_this_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
@@ -108,7 +107,7 @@ parse_eigenframe(Data) :-
 	Type == 'Clone',
   format(" ~w~n", [Type]),
 	parse_eigenframe_name(Data),
-	parse_eigenframe_attributes(Data).
+	(parse_eigenframe_attributes(Data);true).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
