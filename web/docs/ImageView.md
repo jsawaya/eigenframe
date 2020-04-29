@@ -3,6 +3,7 @@
 
 * type = "ImageView"
 * url
+* rotation [-270, -180, -90, 0, 90, 180, 270]
 * id = define unique view id, 
   puts contents into cache ImageView:{id} 
 

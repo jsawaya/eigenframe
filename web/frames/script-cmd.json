@@ -99,6 +99,10 @@
 										},
 										{
 											"type": "Clone",
+											"name": "HorizontalLine"
+										},
+										{
+											"type": "Clone",
 											"name": "TextViewDetail",
 											"attributes": {
 												"text_size": "10",

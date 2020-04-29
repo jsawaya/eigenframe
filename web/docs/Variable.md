@@ -5,9 +5,8 @@
 * name
 * id (optional)
 * method = "set" 
- class = boolean | integer | long | string
- value 
-
+ - class = boolean | integer | long | string
+ - value  
 * method = "toast" - shows the value as a transient toast message 
 
 Related:
