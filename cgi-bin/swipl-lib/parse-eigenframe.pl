@@ -6,44 +6,66 @@
 
 %open_this_url("http://api.open-notify.org/iss-now.json").
 %open_this_url("https://jsonplaceholder.typicode.com/users/").
-%open_this_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
-open_this_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
+open_this_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
+%open_this_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
 
-parse_eigenframe_url :-
-	open_this_url(URL), get_json_url(URL, Data), parse_eigenframe(Data).
+% open_this_url(URL), read_eigenframe_url(URL).
 
-get_json_url(URL, Data) :-
+read_eigenframe_url(URL) :-
+	read_json_url(URL, Data), parse_eigenframe(Data).
+
+read_json_url(URL, Data) :-
 	setup_call_cleanup(
 		http_open(URL, In, [request_header('Accept'='application/json')]),
 		json_read_dict(In, Data, [tag(json), value_string_as(atom)]),
 		close(In)
 	).
 
+% open_this_url(URL), show_eigenframe_url(URL).
 
-%open_this_file(FPath), get_json_file(FPath,Data).
+show_eigenframe_url(URL) :-
+	read_json_url(URL, Data), show_json(Data).
+
+
 
 open_this_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 
-get_json_file(FPath, Data) :-
+% open_this_file(FPath), read_eigenframe_file(FPath).
+
+read_eigenframe_file(FPath) :-
+	open_this_file(FPath), read_json_file(FPath, Data), parse_eigenframe(Data).
+
+read_json_file(FPath, Data) :-
 	open(FPath, read, Stream), 
 	json_read_dict(Stream, Data, [tag(json), value_string_as(atom)]),
-	close(Stream),
-	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
+	close(Stream).
 
-save_this_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd2.json').
+% open_this_file(FPath), organize_eigenframe_file(FPath).
+
+organize_eigenframe_file(FPath) :-
+	read_json_file(FPath, Data), save_json_file(FPath, Data).
 
 save_json_file(FPath, Data) :-
 	open(FPath, write, Stream), 
 	json_write(Stream, Data, [tag(json), value_string_as(atom)]),
 	close(Stream).
 
+% open_this_file(FPath), show_eigenframe_file(FPath).
+
+show_eigenframe_file(FPath) :-
+	read_json_file(FPath, Data), show_json(Data).
+
+show_json(Data) :-
+	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
+
+
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'EigenFrame',
   format(" ~w~n", [Type]),
-	parse_eigenframe_is_secure_window(Data),
-	parse_eigenframe_script_sources(Data),
+	(parse_eigenframe_is_secure_window(Data);true),
+	(parse_eigenframe_script_sources(Data);true),
 	X = Data.get(tab_list),
 	parse_eigenframe_list(X).
 
@@ -51,15 +73,15 @@ parse_eigenframe(Data) :-
 	parse_eigenframe_type(Data, Type),
 	Type == 'EigenFragment',
   format(" ~w~n", [Type]),
-	parse_eigenframe_name(Data), 
-	parse_eigenframe_icon_name(Data), 
+	(parse_eigenframe_name(Data);true), 
+	(parse_eigenframe_icon_name(Data);true), 
 	parse_eigenframe_url(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'ActionList',
   format(" ~w~n", [Type]),
-	parse_eigenframe_component_list(Data),
+	(parse_eigenframe_component_list(Data);true),
 	parse_eigenframe_on_complete(Data).
 
 parse_eigenframe(Data) :- 
@@ -155,12 +177,16 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'SecureFtp',
-  format(" ~w~n", [Type]).
+  format(" ~w~n", [Type]),
+	(parse_eigenframe_sftp_sources(Data); true),
+	parse_eigenframe_on_complete(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
 	Type == 'SecureShell',
-  format(" ~w~n", [Type]).
+  format(" ~w~n", [Type]),
+	(parse_eigenframe_ssh_sources(Data); true),
+	parse_eigenframe_on_complete(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
@@ -204,10 +230,8 @@ parse_eigenframe(Data) :-
 	parse_eigenframe_type(Data, Type),
 	Type == 'UrlRequest',
   format(" ~w~n", [Type]),
-	(
-		parse_eigenframe_url_sources(Data);
-		parse_eigenframe_on_complete(Data)
-	).
+	(parse_eigenframe_url_sources(Data); true),
+	parse_eigenframe_on_complete(Data).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
@@ -243,6 +267,7 @@ parse_eigenframe_list([H|T]) :-
 parse_eigenframe_type(Data, Type) :- 
 	Type = Data.get(type).
 
+%-----------------------------------------------
 
 parse_eigenframe_url_sources(Data) :- 
 	(
@@ -255,7 +280,7 @@ parse_eigenframe_url(Data) :-
 	URL = Data.get(url),
   write(" Found url: "), 
 	writeln(URL),
-	get_json_url(URL, FrameData),
+	read_json_url(URL, FrameData),
 	parse_eigenframe(FrameData).
 
 parse_eigenframe_url_script(Data) :- 
@@ -268,12 +293,61 @@ parse_eigenframe_url_script_list(Data) :-
   write(" Found url_script_list: "), 
 	writeln(X).
 
+%-----------------------------------------------
+
+parse_eigenframe_ssh_sources(Data) :- 
+	(
+		parse_eigenframe_ssh(Data);
+		parse_eigenframe_ssh_script(Data);
+		parse_eigenframe_ssh_script_list(Data)
+	).
+
+parse_eigenframe_ssh(Data) :- 
+	X = Data.get(ssh),
+  write(" Found ssh: "), 
+	writeln(X).
+
+parse_eigenframe_ssh_script(Data) :- 
+	X = Data.get(ssh_script),
+  write(" Found ssh_script: "), 
+	writeln(X).
+
+parse_eigenframe_ssh_script_list(Data) :- 
+	X = Data.get(ssh_script_list),
+  write(" Found ssh_script_list: "), 
+	writeln(X).
+
+%-----------------------------------------------
+
+parse_eigenframe_sftp_sources(Data) :- 
+	(
+		parse_eigenframe_sftp(Data);
+		parse_eigenframe_sftp_script(Data);
+		parse_eigenframe_sftp_script_list(Data)
+	).
+
+parse_eigenframe_sftp(Data) :- 
+	X = Data.get(sftp),
+  write(" Found sftp: "), 
+	writeln(X).
+
+parse_eigenframe_sftp_script(Data) :- 
+	X = Data.get(sftp_script),
+  write(" Found sftp_script: "), 
+	writeln(X).
+
+parse_eigenframe_sftp_script_list(Data) :- 
+	X = Data.get(sftp_script_list),
+  write(" Found sftp_script_list: "), 
+	writeln(X).
+
+%-----------------------------------------------
+
 
 parse_eigenframe_script_sources(Data) :- 
 	(
 		parse_eigenframe_script(Data);
-		parse_eigenframe_script_list(Data);
-		true
+		parse_eigenframe_script_list(Data)
 	).
 
 parse_eigenframe_script(Data) :- 
@@ -296,33 +370,24 @@ parse_eigenframe_on_click(Data) :-
 parse_eigenframe_on_complete(Data) :- 
 	Frame = Data.get(on_complete),
   write(" Found on_complete: "), 
-	writeln(Frame),
+%	writeln(Frame),
 	parse_eigenframe(Frame).
 
 
 parse_eigenframe_is_secure_window(Data) :- 
-	(
-		X = Data.get(is_secure_window),
- 		write(" Found is_secure_window: "), 
-		writeln(X)
-	);
-	true.
+	X = Data.get(is_secure_window),
+ 	write(" Found is_secure_window: "), 
+	writeln(X).
 
 parse_eigenframe_name(Data) :- 
-	(
-		X = Data.get(name),
- 		write(" Found name: "), 
-		writeln(X)
-	);
-	true.
+	X = Data.get(name),
+	write(" Found name: "), 
+	writeln(X).
 
 parse_eigenframe_icon_name(Data) :- 
-	(
-		X = Data.get(icon_name),
- 		write(" Found icon_name: "), 
-		writeln(X)
-	);
-	true.
+	X = Data.get(icon_name),
+	write(" Found icon_name: "), 
+	writeln(X).
 
 frame([
 	type('ActionList'),
