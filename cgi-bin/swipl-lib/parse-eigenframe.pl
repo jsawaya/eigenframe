@@ -212,7 +212,16 @@ parse_eigenframe(Data) :-
 	parse_eigenframe_component_list(Data).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'ListView').
+	select_eigenframe_type(Data, 'ListView'),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_option_list(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_item_layout(Data,_);true),
+	(parse_eigenframe_checked_option(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupHtmlView').
@@ -667,30 +676,25 @@ parse_eigenframe_orientation(Data, X) :-
 	write("  orientation: "), 
 	writeln(X).
 
+%parse_eigenframe_option_list(+Data, -X) 
+parse_eigenframe_option_list(Data, X) :- 
+	X = Data.get(option_list),
+	write("  option_list: "), 
+	writeln(X).
+
+%parse_eigenframe_item_layout(+Data, -X) 
+parse_eigenframe_item_layout(Data, X) :- 
+	X = Data.get(item_layout),
+	write("  item_layout: "), 
+	writeln(X).
+
+%parse_eigenframe_checked_option(+Data, -X) 
+parse_eigenframe_checked_option(Data, X) :- 
+	X = Data.get(checked_option),
+	write("  checked_option: "), 
+	writeln(X).
+
 %-----------------------------------------------
-
-frame([
-	type('LinearLayout'),
-	scrollable(_),
-	layout_width(_),
-	layout_height(_),
-	orientation(_),
-	gravity(_),
-	component_list([_])
-	]).
-
-frame([
-	type('ListView'),
-	option_list([_]),
-	id(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	item_layout(_),
-	checked_option(_),
-	on_click(_)
-	]).
 
 frame([
 	type('ListView'),
