@@ -1,510 +1,460 @@
 {
-	"type": "ActionList",
-	"component_list": [
-		{
-			"type": "JavaScript",
-			"comment": [
-				"Initialize cache (GithubBranch)",
-				" - get cache string (GithubBranch), if empty then initialize to '' ",
-				" - set cache string (GithubBranch), initialized or left unchanged "
-			],
-			"script_list": [
-				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString())",
-				"eigenFragment.setCacheString('GithubBranch', github_branch)",
-				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
-				"eigenFragment.setCacheString('RootUrl', root_url)"
-			]
-		},
-		{
-			"type": "Define",
-			"name": "HorizontalLine",
-			"component": {
-				"type": "HorizontalLine",
-				"size": 3,
-				"color": "#666666"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "VerticalLine",
-			"component": {
-				"type": "VerticalLine",
-				"size": 3,
-				"color": "#666666"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "TextViewLabel",
-			"component": {
-				"type": "TextView",
-				"layout_width": "match_parent",
-				"gravity": "left",
-				"text_color": "#8aec81",
-				"text_size": "22"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "TextViewDetail",
-			"component": {
-				"type": "TextView",
-				"layout_width": "match_parent",
-				"gravity": "left",
-				"font": "font/droid-sans-mono/DroidSansMono.ttf",
-				"text_color": "#ffffff",
-				"text_size": "14"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "PopupScreenDefault",
-			"component": {
-				"type": "PopupScreen",
-				"layout_width": "match_parent",
-				"text_size": "14",
-				"text_color": "#ffffff",
-				"background_color": "#222222"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "ButtonDefault",
-			"component": {
-				"type": "Button",
-				"text_color": "#ffffff",
-				"background_color": "#654321",
-				"gravity": "center",
-				"layout_width": "match_parent",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "LayoutVertical",
-			"component": {
-				"type": "LinearLayout",
-				"orientation": "vertical",
-				"gravity": "center_horizontal",
-				"layout_width": "match_parent"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "LayoutVerticalScrollable",
-			"component": {
-				"type": "LinearLayout",
-				"scrollable": true,
-				"orientation": "vertical",
-				"gravity": "center_horizontal",
-				"layout_width": "match_parent"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "LayoutHorizontalScrollable",
-			"component": {
-				"type": "LinearLayout",
-				"scrollable": true,
-				"orientation": "horizontal",
-				"gravity": "center_vertical",
-				"layout_width": "match_parent"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "EditTextLocalFileCache",
-			"component": {
-				"type": "EditText",
-				"url_script": "'file://' + eigenFragment.getCacheFilePath('EditText:999000') ",
-				"id": 999000,
-				"gravity": "left",
-				"layout_width": "match_parent",
-				"text_color": "#ffffff",
-				"background_color": "#000000"
-			}
-		},
-		{
-			"type": "Define",
-			"name": "ButtonSaveEditsToRemoteFile",
-			"component": {
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Save Edits to Remote File",
-					"icon": {
-						"name": "save.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "SecureFtp",
-						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'put EditText:999000 ' + filename"
-						],
-						"on_complete": {
-							"type": "JavaScript",
-							"script_list": [
-								"eigenFragment.clearCacheFile('EditText:999000')",
-								"eigenFragment.closePopupScreen(999099)"
-							]
-						}
-					}
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "GetRemoteFilePopupScreenEditProlog",
-			"component": {
-				"type": "SecureFtp",
-				"sftp_script_list": [
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-					"var filename = eigenFragment.getViewState(targetVid)",
-					"'get ' + filename + ' EditText:999000'"
-				],
-				"on_complete": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"id": 999099,
-						"title_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'Remote File: ' + filename"
-						],
-						"component_list": [
-							{
-								"type": "Clone",
-								"name": "LayoutVerticalScrollable",
-								"attributes": {
-									"component_list": [
-										{
-											"type": "Clone",
-											"name": "ButtonSaveEditsToRemoteFile"
-										},
-										{
-											"type": "Clone",
-											"name": "HorizontalLine"
-										},
-										{
-											"type": "Clone",
-											"name": "TextViewLabel",
-											"attributes": {
-												"text": "Prolog Proposition (Goal):"
-											}
-										},
-										{
-											"type": "EditText",
-											"id": 976000,
-											"text": "undefined",
-											"layout_width": "match_parent",
-											"layout_height": "wrap_content",
-											"text_color": "#ffffff",
-											"background_color": "#000000"
-										},
-										{
-											"x-type": "JavaScript",
-											"script_list": [
-												"var initial_value = eigenFragment.getCacheString('EditText:976000')",
-												"if (!initial_value) eigenFragment.setViewState('EditText:976000', 'goal(X)')"
-											]
-										},
-										{
-											"type": "Clone",
-											"name": "ButtonDefault",
-											"attributes": {
-												"text": "Execute Inference Engine",
-												"icon": {
-													"name": "open_browser.",
-													"location": "top"
-												},
-												"on_click": {
-													"type": "Clone",
-													"name": "PopupScreenDefault",
-													"attributes": {
-														"title": "Prolog",
-														"component_list": [
-															{
-																"type": "Clone",
-																"name": "LayoutVerticalScrollable",
-																"attributes": {
-																	"component_list": [
-																		{
-																			"type": "Clone",
-																			"name": "TextViewDetail",
-																			"attributes": {
-																				"text_size": "10",
-																				"ssh_script_list": [
-																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-																					"swipl_path = eigenFragment.getViewState(targetVid)",
-																					"swipl_goal = eigenFragment.getViewState(976000) ",
-																					"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
-																				]
-																			}
-																		}
-																	]
-																}
-															}
-														]
-													}
-												}
-											}
-										},
-										{
-											"type": "Clone",
-											"name": "HorizontalLine"
-										},
-										{
-											"type": "Clone",
-											"name": "EditTextLocalFileCache"
-										}
-									]
-								}
-							}
-						]
-					}
-				}
-			}
-		},
-		{
-			"type": "JavaScript",
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File...')"
-		},
-		{
-			"type": "Define",
-			"name": "JavaScriptSetFullPath",
-			"component": {
-				"type": "JavaScript",
-				"script_list": [
-					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '')",
-					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '')",
-					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '')",
-					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
-					"eigenFragment.setCacheString('FullPath', full_path)",
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-					"eigenFragment.setViewState(targetVid, full_path)"
-				]
-			}
-		},
-		{
-			"type": "Define",
-			"name": "PopupScreenSelectFilePathRemote",
-			"component": {
-				"type": "Clone",
-				"name": "PopupScreenDefault",
-				"attributes": {
-					"id": 991005,
-					"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath-remote.json'"
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "SelectFilePathRemote",
-			"component": {
-				"type": "Clone",
-				"name": "LayoutVerticalScrollable",
-				"attributes": {
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "HorizontalLine"
-						},
-						{
-							"type": "Clone",
-							"name": "TextViewLabel",
-							"attributes": {
-								"text_script": "''+eigenFragment.getCacheString('SelectFilePrompt')"
-							}
-						},
-						{
-							"type": "Clone",
-							"name": "ButtonDefault",
-							"attributes": {
-								"text_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-								"icon": {
-									"name": "open_with.",
-									"location": "top"
-								},
-								"on_click": {
-									"type": "ActionList",
-									"component_list": [
-										{
-											"type": "Clone",
-											"name": "JavaScriptSetFullPath"
-										},
-										{
-											"type": "JavaScript",
-											"script_list": [
-												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,true)",
-												"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
-											]
-										},
-										{
-											"type": "Clone",
-											"name": "PopupScreenSelectFilePathRemote"
-										}
-									]
-								}
-							}
-						},
-						{
-							"type": "EditText",
-							"id_script": "eigenFragment.getIntegerVariable('TargetViewId')",
-							"max_length": 200,
-							"is_single_line": true,
-							"layout_width": "match_parent",
-							"text_color": "#ffffff",
-							"background_color": "#000000",
-							"text": "undefined"
-						},
-						{
-							"type": "Clone",
-							"name": "HorizontalLine"
-						}
-					]
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "EditTextPgpPassword6606",
-			"component": {
-				"type": "Clone",
-				"name": "LayoutVerticalScrollable",
-				"attributes": {
-					"component_list": [
-						{
-							"type": "Clone",
-							"name": "HorizontalLine"
-						},
-						{
-							"type": "Clone",
-							"name": "TextViewLabel",
-							"attributes": {
-								"text": "Private Key Passphrase:"
-							}
-						},
-						{
-							"type": "EditText",
-							"id": 6606,
-							"is_password": true,
-							"layout_width": "match_parent",
-							"layout_height": "wrap_content",
-							"text_color": "#ffffff",
-							"background_color": "#000000",
-							"text": "password"
-						},
-						{
-							"type": "Clone",
-							"name": "HorizontalLine"
-						}
-					]
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "ListViewPopupScreenAfterSecureFtpDirectory",
-			"component": {
-				"type": "SecureFtp",
-				"id": 991004,
-				"sftp_script": "'directory ' +  eigenFragment.getCacheString('FullPath')",
-				"on_complete": {
-					"type": "ActionList",
-					"component_list": [
-						{
-							"type": "PopupTextView",
-							"condition_script": "!eigenFragment.getCacheString('SecureFtp',991004,'') ",
-							"title": "Warning",
-							"font": "font/droid-sans-mono/DroidSansMono.ttf",
-							"text_list": [
-								"SecureShell (ssh) is not enabled.\n",
-								"Open Termux, enter:  sshd"
-							]
-						},
-						{
-							"type": "PopupScreen",
-							"condition_script": "!!eigenFragment.getCacheString('SecureFtp',991004,'') ",
-							"layout_width": "match_parent",
-							"layout_height": "wrap_content",
-							"text_size": "14",
-							"text_color": "#ffffff",
-							"background_color": "#111111",
-							"title_script": "''+eigenFragment.getCacheString('SelectFilePrompt')",
-							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
-						}
-					]
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "PopupScreenSelectFilePathLocal",
-			"component": {
-				"type": "Clone",
-				"name": "PopupScreenDefault",
-				"attributes": {
-					"id": 991015,
-					"title_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')",
-					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/select-filepath-local.json'"
-				}
-			}
-		},
-		{
-			"type": "Define",
-			"name": "JavaScriptSetFullPathLocal",
-			"component": {
-				"type": "JavaScript",
-				"script_list": [
-					"var home_dir0 = '/storage/emulated/0/Android/data/com.sawaya.eigenframe' ",
-					"var home_dir = '/data/data/com.sawaya.eigenframe' ",
-					"var selected_path = eigenFragment.getCacheString('SelectedPathLocal', 0, '')",
-					"var full_path = eigenFragment.concatPaths(home_dir, selected_path)",
-					"eigenFragment.setCacheString('FullPathLocal', full_path)",
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId2')",
-					"eigenFragment.setViewState(targetVid, full_path)"
-				]
-			}
-		},
-		{
-			"type": "Define",
-			"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal",
-			"component": {
-				"type": "SecureFtp",
-				"id": 991014,
-				"sftp_script": "'directory_local ' +  eigenFragment.getCacheString('FullPathLocal')",
-				"on_complete": {
-					"type": "ActionList",
-					"component_list": [
-						{
-							"type": "PopupScreen",
-							"layout_width": "match_parent",
-							"layout_height": "wrap_content",
-							"text_size": "14",
-							"text_color": "#ffffff",
-							"background_color": "#111111",
-							"title_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')",
-							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview-local.json'"
-						}
-					]
-				}
-			}
-		}
-	],
+  "component_list": [
+    {
+      "comment": [
+	"Initialize cache (GithubBranch)",
+	" - get cache string (GithubBranch), if empty then initialize to '' ",
+	" - set cache string (GithubBranch), initialized or left unchanged "
+      ],
+      "script_list": [
+	"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString())",
+	"eigenFragment.setCacheString('GithubBranch', github_branch)",
+	"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+	"eigenFragment.setCacheString('RootUrl', root_url)"
+      ],
+      "type":"JavaScript"
+    },
+    {
+      "component": {"color":"#666666", "size":3, "type":"HorizontalLine"},
+      "name":"HorizontalLine",
+      "type":"Define"
+    },
+    {
+      "component": {"color":"#666666", "size":3, "type":"VerticalLine"},
+      "name":"VerticalLine",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"gravity":"left",
+	"layout_width":"match_parent",
+	"text_color":"#8aec81",
+	"text_size":"22",
+	"type":"TextView"
+      },
+      "name":"TextViewLabel",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"font":"font/droid-sans-mono/DroidSansMono.ttf",
+	"gravity":"left",
+	"layout_width":"match_parent",
+	"text_color":"#ffffff",
+	"text_size":"14",
+	"type":"TextView"
+      },
+      "name":"TextViewDetail",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"background_color":"#222222",
+	"layout_width":"match_parent",
+	"text_color":"#ffffff",
+	"text_size":"14",
+	"type":"PopupScreen"
+      },
+      "name":"PopupScreenDefault",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"background_color":"#654321",
+	"gravity":"center",
+	"layout_width":"match_parent",
+	"margin": {"bottom":10, "left":10, "right":10, "top":10},
+	"text_color":"#ffffff",
+	"type":"Button"
+      },
+      "name":"ButtonDefault",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"gravity":"center_horizontal",
+	"layout_width":"match_parent",
+	"orientation":"vertical",
+	"type":"LinearLayout"
+      },
+      "name":"LayoutVertical",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"gravity":"center_horizontal",
+	"layout_width":"match_parent",
+	"orientation":"vertical",
+	"scrollable":"true",
+	"type":"LinearLayout"
+      },
+      "name":"LayoutVerticalScrollable",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"gravity":"center_vertical",
+	"layout_width":"match_parent",
+	"orientation":"horizontal",
+	"scrollable":"true",
+	"type":"LinearLayout"
+      },
+      "name":"LayoutHorizontalScrollable",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"background_color":"#000000",
+	"gravity":"left",
+	"id":999000,
+	"layout_width":"match_parent",
+	"text_color":"#ffffff",
+	"type":"EditText",
+	"url_script":"'file://' + eigenFragment.getCacheFilePath('EditText:999000') "
+      },
+      "name":"EditTextLocalFileCache",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"attributes": {
+	  "icon": {"location":"top", "name":"save."},
+	  "on_click": {
+	    "on_complete": {
+	      "script_list": [
+		"eigenFragment.clearCacheFile('EditText:999000')",
+		"eigenFragment.closePopupScreen(999099)"
+	      ],
+	      "type":"JavaScript"
+	    },
+	    "sftp_script_list": [
+	      "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+	      "var filename = eigenFragment.getViewState(targetVid)",
+	      "'put EditText:999000 ' + filename"
+	    ],
+	    "type":"SecureFtp"
+	  },
+	  "text":"Save Edits to Remote File"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      "name":"ButtonSaveEditsToRemoteFile",
+      "type":"Define"
+    },
+    {
+      "component": {
 	"on_complete": {
-		"type": "UrlRequest",
-		"is_eigen_response": true,
-		"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/playlist.json'"
-	}
+	  "attributes": {
+	    "component_list": [
+	      {
+		"attributes": {
+		  "component_list": [
+		    {
+		      "name":"ButtonSaveEditsToRemoteFile",
+		      "type":"Clone"
+		    },
+		    {"name":"HorizontalLine", "type":"Clone"},
+		    {
+		      "attributes": {"text":"Prolog Proposition (Goal):"},
+		      "name":"TextViewLabel",
+		      "type":"Clone"
+		    },
+		    {
+		      "background_color":"#000000",
+		      "id":976000,
+		      "layout_height":"wrap_content",
+		      "layout_width":"match_parent",
+		      "text":"undefined",
+		      "text_color":"#ffffff",
+		      "type":"EditText"
+		    },
+		    {
+		      "script_list": [
+			"var initial_value = eigenFragment.getCacheString('EditText:976000')",
+			"if (!initial_value) eigenFragment.setViewState('EditText:976000', 'goal(X)')"
+		      ],
+		      "x-type":"JavaScript"
+		    },
+		    {
+		      "attributes": {
+			"icon": {"location":"top", "name":"open_browser."},
+			"on_click": {
+			  "attributes": {
+			    "component_list": [
+			      {
+				"attributes": {
+				  "component_list": [
+				    {
+				      "attributes": {
+					"ssh_script_list": [
+					  "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+					  "var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+					  "swipl_path = eigenFragment.getViewState(targetVid)",
+					  "swipl_goal = eigenFragment.getViewState(976000) ",
+					  "'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
+					],
+					"text_size":"10"
+				      },
+				      "name":"TextViewDetail",
+				      "type":"Clone"
+				    }
+				  ]
+				},
+				"name":"LayoutVerticalScrollable",
+				"type":"Clone"
+			      }
+			    ],
+			    "title":"Prolog"
+			  },
+			  "name":"PopupScreenDefault",
+			  "type":"Clone"
+			},
+			"text":"Execute Inference Engine"
+		      },
+		      "name":"ButtonDefault",
+		      "type":"Clone"
+		    },
+		    {"name":"HorizontalLine", "type":"Clone"},
+		    {"name":"EditTextLocalFileCache", "type":"Clone"}
+		  ]
+		},
+		"name":"LayoutVerticalScrollable",
+		"type":"Clone"
+	      }
+	    ],
+	    "id":999099,
+	    "title_script_list": [
+	      "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+	      "var filename = eigenFragment.getViewState(targetVid)",
+	      "'Remote File: ' + filename"
+	    ]
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"sftp_script_list": [
+	  "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+	  "var filename = eigenFragment.getViewState(targetVid)",
+	  "'get ' + filename + ' EditText:999000'"
+	],
+	"type":"SecureFtp"
+      },
+      "name":"GetRemoteFilePopupScreenEditProlog",
+      "type":"Define"
+    },
+    {
+      "script":"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File...')",
+      "type":"JavaScript"
+    },
+    {
+      "component": {
+	"script_list": [
+	  "var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
+	  "var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '')",
+	  "var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '')",
+	  "var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '')",
+	  "var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
+	  "eigenFragment.setCacheString('FullPath', full_path)",
+	  "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+	  "eigenFragment.setViewState(targetVid, full_path)"
+	],
+	"type":"JavaScript"
+      },
+      "name":"JavaScriptSetFullPath",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"attributes": {
+	  "id":991005,
+	  "title_script":"''+eigenFragment.getCacheString('SelectFilePrompt')",
+	  "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/select-filepath-remote.json'"
+	},
+	"name":"PopupScreenDefault",
+	"type":"Clone"
+      },
+      "name":"PopupScreenSelectFilePathRemote",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"attributes": {
+	  "component_list": [
+	    {"name":"HorizontalLine", "type":"Clone"},
+	    {
+	      "attributes": {
+		"text_script":"''+eigenFragment.getCacheString('SelectFilePrompt')"
+	      },
+	      "name":"TextViewLabel",
+	      "type":"Clone"
+	    },
+	    {
+	      "attributes": {
+		"icon": {"location":"top", "name":"open_with."},
+		"on_click": {
+		  "component_list": [
+		    {"name":"JavaScriptSetFullPath", "type":"Clone"},
+		    {
+		      "script_list": [
+			"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,true)",
+			"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
+		      ],
+		      "type":"JavaScript"
+		    },
+		    {
+		      "name":"PopupScreenSelectFilePathRemote",
+		      "type":"Clone"
+		    }
+		  ],
+		  "type":"ActionList"
+		},
+		"text_script":"''+eigenFragment.getCacheString('SelectFilePrompt')"
+	      },
+	      "name":"ButtonDefault",
+	      "type":"Clone"
+	    },
+	    {
+	      "background_color":"#000000",
+	      "id_script":"eigenFragment.getIntegerVariable('TargetViewId')",
+	      "is_single_line":"true",
+	      "layout_width":"match_parent",
+	      "max_length":200,
+	      "text":"undefined",
+	      "text_color":"#ffffff",
+	      "type":"EditText"
+	    },
+	    {"name":"HorizontalLine", "type":"Clone"}
+	  ]
+	},
+	"name":"LayoutVerticalScrollable",
+	"type":"Clone"
+      },
+      "name":"SelectFilePathRemote",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"attributes": {
+	  "component_list": [
+	    {"name":"HorizontalLine", "type":"Clone"},
+	    {
+	      "attributes": {"text":"Private Key Passphrase:"},
+	      "name":"TextViewLabel",
+	      "type":"Clone"
+	    },
+	    {
+	      "background_color":"#000000",
+	      "id":6606,
+	      "is_password":"true",
+	      "layout_height":"wrap_content",
+	      "layout_width":"match_parent",
+	      "text":"password",
+	      "text_color":"#ffffff",
+	      "type":"EditText"
+	    },
+	    {"name":"HorizontalLine", "type":"Clone"}
+	  ]
+	},
+	"name":"LayoutVerticalScrollable",
+	"type":"Clone"
+      },
+      "name":"EditTextPgpPassword6606",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"id":991004,
+	"on_complete": {
+	  "component_list": [
+	    {
+	      "condition_script":"!eigenFragment.getCacheString('SecureFtp',991004,'') ",
+	      "font":"font/droid-sans-mono/DroidSansMono.ttf",
+	      "text_list": [
+		"SecureShell (ssh) is not enabled.\n",
+		"Open Termux, enter:  sshd"
+	      ],
+	      "title":"Warning",
+	      "type":"PopupTextView"
+	    },
+	    {
+	      "background_color":"#111111",
+	      "condition_script":"!!eigenFragment.getCacheString('SecureFtp',991004,'') ",
+	      "layout_height":"wrap_content",
+	      "layout_width":"match_parent",
+	      "text_color":"#ffffff",
+	      "text_size":"14",
+	      "title_script":"''+eigenFragment.getCacheString('SelectFilePrompt')",
+	      "type":"PopupScreen",
+	      "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview.json'"
+	    }
+	  ],
+	  "type":"ActionList"
+	},
+	"sftp_script":"'directory ' +  eigenFragment.getCacheString('FullPath')",
+	"type":"SecureFtp"
+      },
+      "name":"ListViewPopupScreenAfterSecureFtpDirectory",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"attributes": {
+	  "id":991015,
+	  "title_script":"''+eigenFragment.getCacheString('SelectFilePromptLocal')",
+	  "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/select-filepath-local.json'"
+	},
+	"name":"PopupScreenDefault",
+	"type":"Clone"
+      },
+      "name":"PopupScreenSelectFilePathLocal",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"script_list": [
+	  "var home_dir0 = '/storage/emulated/0/Android/data/com.sawaya.eigenframe' ",
+	  "var home_dir = '/data/data/com.sawaya.eigenframe' ",
+	  "var selected_path = eigenFragment.getCacheString('SelectedPathLocal', 0, '')",
+	  "var full_path = eigenFragment.concatPaths(home_dir, selected_path)",
+	  "eigenFragment.setCacheString('FullPathLocal', full_path)",
+	  "var targetVid = eigenFragment.getIntegerVariable('TargetViewId2')",
+	  "eigenFragment.setViewState(targetVid, full_path)"
+	],
+	"type":"JavaScript"
+      },
+      "name":"JavaScriptSetFullPathLocal",
+      "type":"Define"
+    },
+    {
+      "component": {
+	"id":991014,
+	"on_complete": {
+	  "component_list": [
+	    {
+	      "background_color":"#111111",
+	      "layout_height":"wrap_content",
+	      "layout_width":"match_parent",
+	      "text_color":"#ffffff",
+	      "text_size":"14",
+	      "title_script":"''+eigenFragment.getCacheString('SelectFilePromptLocal')",
+	      "type":"PopupScreen",
+	      "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/explore-filesystem-listview-local.json'"
+	    }
+	  ],
+	  "type":"ActionList"
+	},
+	"sftp_script":"'directory_local ' +  eigenFragment.getCacheString('FullPathLocal')",
+	"type":"SecureFtp"
+      },
+      "name":"ListViewPopupScreenAfterSecureFtpDirectoryLocal",
+      "type":"Define"
+    }
+  ],
+  "on_complete": {
+    "is_eigen_response":"true",
+    "type":"UrlRequest",
+    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/playlist.json'"
+  },
+  "type":"ActionList"
 }

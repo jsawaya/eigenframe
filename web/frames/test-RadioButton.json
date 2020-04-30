@@ -1,90 +1,74 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Test RadioButton",
-      "text_size": "14",
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text_color": "#ffffff",
-      "icon": {
-        "name": "ic_launcher_round.",
-        "location": "top"
-      }
+      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {"location":"top", "name":"ic_launcher_round."},
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text":"Test RadioButton",
+      "text_color":"#ffffff",
+      "text_size":"14",
+      "type":"TextView"
     },
+    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "RadioButton",
-      "id": 500,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "orientation": "vertical",
-      "background_color": "#ff00ff",
-      "checked_option": 1,
-      "option_list": [
-        "option 0",
-        "option 1",
-        "option 2"
-      ],
+      "background_color":"#ff00ff",
+      "checked_option":1,
+      "id":500,
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500))"
+	],
+	"type":"JavaScript"
+      },
+      "option_list": ["option 0", "option 1", "option 2" ],
+      "orientation":"vertical",
+      "type":"RadioButton"
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "getViewState RadioButton:500",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color":"#ff00ff",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(500))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(500))"
+	],
+	"type":"JavaScript"
+      },
+      "text":"getViewState RadioButton:500",
+      "text_color":"#ffffff",
+      "type":"Button"
     },
     {
-      "type": "RadioButton",
-      "id": 510,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "orientation": "vertical",
-      "background_color": "#ff00ff",
-      "option_list": [
-        "option 0",
-        "option 1",
-        "option 2",
-        "option 3",
-        "option 4"
-      ]
+      "background_color":"#ff00ff",
+      "id":510,
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "option_list": ["option 0", "option 1", "option 2", "option 3", "option 4" ],
+      "orientation":"vertical",
+      "type":"RadioButton"
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "getViewState RadioButton:510",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color":"#ff00ff",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(510))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(510))"
+	],
+	"type":"JavaScript"
+      },
+      "text":"getViewState RadioButton:510",
+      "text_color":"#ffffff",
+      "type":"Button"
     }
-  ]
+  ],
+  "gravity":"center_horizontal",
+  "layout_height":"wrap_content",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }

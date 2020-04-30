@@ -1,129 +1,83 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Test CheckBox",
-      "text_size": "14",
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text_color": "#ffffff",
-      "icon": {
-        "name": "ic_launcher_round.",
-        "location": "top"
-      }
+      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {"location":"top", "name":"ic_launcher_round."},
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text":"Test CheckBox",
+      "text_color":"#ffffff",
+      "text_size":"14",
+      "type":"TextView"
     },
+    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "CheckBox",
-      "id": 200,
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "This is CheckBox:200",
-      "checked": true,
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "padding": {
-        "left": 20,
-        "top": 20,
-        "right": 20,
-        "bottom": 20
-      },
-      "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      },
+      "background_color":"#ff00ff",
+      "checked":"true",
+      "id":200,
+      "layout_height":"wrap_content",
+      "layout_width":"wrap_content",
+      "margin": {"bottom":40, "left":40, "right":40, "top":40},
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewState(200))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewState(200))"
+	],
+	"type":"JavaScript"
+      },
+      "padding": {"bottom":20, "left":20, "right":20, "top":20},
+      "text":"This is CheckBox:200",
+      "text_color":"#ffffff",
+      "type":"CheckBox"
     },
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "getViewState of CheckBox:200",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "padding": {
-        "left": 20,
-        "top": 20,
-        "right": 20,
-        "bottom": 20
-      },
-      "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      },
+      "background_color":"#ff00ff",
+      "layout_height":"wrap_content",
+      "layout_width":"wrap_content",
+      "margin": {"bottom":40, "left":40, "right":40, "top":40},
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewState(200))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewState(200))"
+	],
+	"type":"JavaScript"
+      },
+      "padding": {"bottom":20, "left":20, "right":20, "top":20},
+      "text":"getViewState of CheckBox:200",
+      "text_color":"#ffffff",
+      "type":"Button"
     },
     {
-      "type": "CheckBox",
-      "id": 201,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "This is CheckBox:201",
-      "checked": true,
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "padding": {
-        "left": 20,
-        "top": 20,
-        "right": 20,
-        "bottom": 20
-      },
-      "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      }
+      "background_color":"#ff00ff",
+      "checked":"true",
+      "id":201,
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "margin": {"bottom":40, "left":40, "right":40, "top":40},
+      "padding": {"bottom":20, "left":20, "right":20, "top":20},
+      "text":"This is CheckBox:201",
+      "text_color":"#ffffff",
+      "type":"CheckBox"
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "getViewState of CheckBox:201",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "padding": {
-        "left": 20,
-        "top": 20,
-        "right": 20,
-        "bottom": 20
-      },
-      "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      },
+      "background_color":"#ff00ff",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "margin": {"bottom":40, "left":40, "right":40, "top":40},
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('eigenFragment.getViewState(201): '+eigenFragment.getViewState(201))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('eigenFragment.getViewState(201): '+eigenFragment.getViewState(201))"
+	],
+	"type":"JavaScript"
+      },
+      "padding": {"bottom":20, "left":20, "right":20, "top":20},
+      "text":"getViewState of CheckBox:201",
+      "text_color":"#ffffff",
+      "type":"Button"
     }
-  ]
+  ],
+  "gravity":"center_horizontal",
+  "layout_height":"wrap_content",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }

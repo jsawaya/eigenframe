@@ -1,141 +1,121 @@
 {
-	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
-	"id": 411000,
-	"sftp_script": "'pwd'",
-	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
-		"component_list": [
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+  "comment":"set the HomeDirectory from sftp pwd",
+  "id":411000,
+  "on_complete": {
+    "component_list": [
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"attributes": {"text":"Encrypt File"},
+	"name":"TextViewLabel",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "text_list": [
+	    "After a public key file has been imported, you can create an OpenPGP encryption file for a particular file to ensure it's privacy"
+	  ]
+	},
+	"name":"TextViewDetail",
+	"type":"Clone"
+      },
+      {
+	"script_list": [
+	  "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to Encrypt')",
+	  "eigenFragment.setCacheString('WorkingDirectory', '')",
+	  "eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+	  "eigenFragment.setCacheString('SelectedFile', '')",
+	  "eigenFragment.setIntegerVariable('TargetViewId', 0, 999714)"
+	],
+	"type":"JavaScript"
+      },
+      {"name":"SelectFilePathRemote", "type":"Clone"},
+      {
+	"attributes": {"text":"Private KeyId:"},
+	"name":"TextViewLabel",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "text_list": ["Try the demo-private-key KeyId: 5C91FC661620EAFA" ]
+	},
+	"name":"TextViewDetail",
+	"type":"Clone"
+      },
+      {
+	"background_color":"#000000",
+	"id":6607,
+	"is_single_line":"true",
+	"layout_width":"match_parent",
+	"text":"5C91FC661620EAFA",
+	"text_color":"#ffffff",
+	"type":"EditText"
+      },
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"attributes": {"text":"Format: asc (ASCII Armor) | pgp (Binary)"},
+	"name":"TextViewLabel",
+	"type":"Clone"
+      },
+      {
+	"background_color":"#000000",
+	"id":6608,
+	"is_single_line":"true",
+	"layout_width":"match_parent",
+	"text":"asc",
+	"text_color":"#ffffff",
+	"type":"EditText"
+      },
+      {
+	"background_color":"#654321",
+	"icon": {"location":"top", "name":"info."},
+	"on_click": {
+	  "id":6605,
+	  "is_eigen_response":"false",
+	  "on_complete": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "url":"file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
 			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Encrypt File"
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"After a public key file has been imported, you can create an OpenPGP encryption file for a particular file to ensure it's privacy"
-					]
-				}
-			},
-			{
-				"type": "JavaScript",
-				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to Encrypt')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999714)"
-				]
-			},
-			{
-				"type": "Clone",
-				"name": "SelectFilePathRemote"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Private KeyId:"
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"Try the demo-private-key KeyId: 5C91FC661620EAFA"
-					]
-				}
-			},
-			{
-				"type": "EditText",
-				"id": 6607,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"text_color": "#ffffff",
-				"background_color": "#000000",
-				"text": "5C91FC661620EAFA"
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Format: asc (ASCII Armor) | pgp (Binary)"
-				}
-			},
-			{
-				"type": "EditText",
-				"id": 6608,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"text_color": "#ffffff",
-				"background_color": "#000000",
-				"text": "asc"
-			},
-			{
-				"type": "Button",
-				"text": "Create OpenPGP Encryption File",
-				"text_color": "#ffffff",
-				"background_color": "#654321",
-				"icon": {
-					"name": "info.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "SecureShell",
-					"id": 6605,
-					"is_eigen_response": false,
-					"ssh_script_list": [
-						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var input_file = eigenFragment.getViewState(targetVid)",
-						"var keyid = eigenFragment.getViewState(6607)",
-						"var fmt = eigenFragment.getViewState(6608)",
-						"dir + 'ruby ssh-gpg-encrypt.rb ' + keyid + ' ' + input_file + ' ' + fmt"
-					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Encrypt File",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			}
-		]
-	}
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"Encrypt File"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "ssh_script_list": [
+	    "var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
+	    "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+	    "var input_file = eigenFragment.getViewState(targetVid)",
+	    "var keyid = eigenFragment.getViewState(6607)",
+	    "var fmt = eigenFragment.getViewState(6608)",
+	    "dir + 'ruby ssh-gpg-encrypt.rb ' + keyid + ' ' + input_file + ' ' + fmt"
+	  ],
+	  "type":"SecureShell"
+	},
+	"text":"Create OpenPGP Encryption File",
+	"text_color":"#ffffff",
+	"type":"Button"
+      }
+    ],
+    "gravity":"center_horizontal",
+    "layout_width":"match_parent",
+    "orientation":"vertical",
+    "scrollable":"true",
+    "type":"LinearLayout"
+  },
+  "sftp_script":"'pwd'",
+  "type":"SecureFtp"
 }

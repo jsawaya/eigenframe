@@ -1,81 +1,70 @@
 {
-	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
-	"id": 411000,
-	"sftp": "pwd",
-	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
-		"layout_height": "wrap_content",
-		"component_list": [
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Prolog Installation"
-				}
+  "comment":"set the HomeDirectory from sftp pwd",
+  "id":411000,
+  "on_complete": {
+    "component_list": [
+      {
+	"attributes": {"text":"Prolog Installation"},
+	"name":"TextViewLabel",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "text_list": [
+	    "Click [Prolog Installation] - if you plan to use an inference engine in your app",
+	    "Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition can be inferred from a knowledge base (rules) using backward chaining algorithms. "
+	  ]
+	},
+	"name":"TextViewDetail",
+	"type":"Clone"
+      },
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"file_download."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "is_toast":"true",
+			  "ssh_list": [
+			    "echo pkg install swi-prolog",
+			    "echo y | pkg install swi-prolog"
+			  ],
+			  "text_size":"10"
 			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"Click [Prolog Installation] - if you plan to use an inference engine in your app",
-						"Prolog (Programming in Logic) a language based on predicate calculus to evaluate if a certain proposition can be inferred from a knowledge base (rules) using backward chaining algorithms. "
-					]
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Prolog Installation (swi-prolog)",
-					"icon": {
-						"name": "file_download.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Prolog Installation (swi-prolog)",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"is_toast": true,
-													"ssh_list": [
-														"echo pkg install swi-prolog",
-														"echo y | pkg install swi-prolog"
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			}
-		]
-	}
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"Prolog Installation (swi-prolog)"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"Prolog Installation (swi-prolog)"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {"name":"HorizontalLine", "type":"Clone"}
+    ],
+    "gravity":"center_horizontal",
+    "layout_height":"wrap_content",
+    "layout_width":"match_parent",
+    "orientation":"vertical",
+    "scrollable":"true",
+    "type":"LinearLayout"
+  },
+  "sftp":"pwd",
+  "type":"SecureFtp"
 }

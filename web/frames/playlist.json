@@ -1,705 +1,569 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "HtmlView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "gravity": "center",
-      "text_color": "#ffffff",
+      "gravity":"center",
       "html_list": [
-        "<img src='ic_launcher.'>",
-        "<h1><font color=\"#8aec81\">EigenFrame: </font></h1>",
-        "<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps</font></h4>",
-        "{Specification, Deployment, Rendering, Execution}"
-      ]
+	"<img src='ic_launcher.'>",
+	"<h1><font color=\"#8aec81\">EigenFrame: <\/font><\/h1>",
+	"<h4><font color=\"#8aec81\">Framework for Dynamic Android Apps<\/font><\/h4>",
+	"{Specification, Deployment, Rendering, Execution}"
+      ],
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text_color":"#ffffff",
+      "type":"HtmlView"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text_script": "'GitHub Branch: '+eigenFragment.getCacheString('GithubBranch')"
-      }
+	"text_script":"'GitHub Branch: '+eigenFragment.getCacheString('GithubBranch')"
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text_script": "'Root URL: '+eigenFragment.getCacheString('RootUrl')"
-      }
+	"text_script":"'Root URL: '+eigenFragment.getCacheString('RootUrl')"
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Launch an app from a local file..."},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Launch an app from a local file..."
-      }
+	"text":"The following demonstrates how to launch an app from your local shared directory:"
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text": "The following demonstrates how to launch an app from your local shared directory:"
-      }
+	"text":"/storage/emulated/0/Android/data/com.sawaya.eigenframe/files",
+	"text_size":"10"
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text_size": "10",
-        "text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
-      }
+	"icon": {"location":"top", "name":"open_browser."},
+	"on_click": {
+	  "script":"eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json')",
+	  "type":"JavaScript"
+	},
+	"text":"Hello World"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Embedded JavaScript Support"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Hello World",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json')"
-        }
-      }
+	"text":"JavaScript support is embedded within EigenFrame; here are some examples."
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Embedded JavaScript Support"
-      }
+	"icon": {"location":"top", "name":"play."},
+	"on_click": {
+	  "attributes": {
+	    "title":"JavaScript Support",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/script-cmd.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"JavaScript Support"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text": "JavaScript support is embedded within EigenFrame; here are some examples."
-      }
+	"icon": {"location":"top", "name":"edit."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Drawing Support",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/script-drawing.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Drawing Support"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "JavaScript Support",
-        "icon": {
-          "name": "play.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "JavaScript Support",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/script-cmd.json'"
-          }
-        }
-      }
+	"icon": {"location":"top", "name":"photo."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Camera Support",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/script-photo.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Camera Support"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Install EigenFrame Services"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Drawing Support",
-        "icon": {
-          "name": "edit.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Drawing Support",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/script-drawing.json'"
-          }
-        }
-      }
+	"text":"Click [Install] to prepare Termux App for EigenFrame service."
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Camera Support",
-        "icon": {
-          "name": "photo.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Camera Support",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/script-photo.json'"
-          }
-        }
-      }
+	"icon": {"location":"top", "name":"playlist_check."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Install",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-initial-setup.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Install"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"EigenFrame GitHub Repository"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Install EigenFrame Services"
-      }
+	"text":"Click [GitHub] to download the latest updates from EigenFrame GitHub Repository."
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Install] to prepare Termux App for EigenFrame service."
-      }
+	"icon": {"location":"top", "name":"github_logo."},
+	"on_click": {
+	  "attributes": {
+	    "title":"GitHub",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"GitHub"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Secure File Transfer Protocol (SFTP)"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
+      "attributes": {"text":"Click [SFTP] perform remote file management."},
+      "name":"TextViewDetail",
+      "type":"Clone"
+    },
+    {
       "attributes": {
-        "text": "Install",
-        "icon": {
-          "name": "playlist_check.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Install",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-initial-setup.json'"
-          }
-        }
-      }
+	"icon": {"location":"top", "name":"import_export."},
+	"on_click": {
+	  "attributes": {
+	    "title":"SFTP",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"SFTP"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Edit Remote File"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "EigenFrame GitHub Repository"
-      }
+	"text":"Click [Edit Remote] to view / edit remote configuration files, documentation, ..."
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [GitHub] to download the latest updates from EigenFrame GitHub Repository."
-      }
+	"icon": {"location":"top", "name":"edit."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Edit Remote",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Edit Remote"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Edit Local File"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
+      "attributes": {"text":"Click [Edit Local] to view / edit local cache files"},
+      "name":"TextViewDetail",
+      "type":"Clone"
+    },
+    {
       "attributes": {
-        "text": "GitHub",
-        "icon": {
-          "name": "github_logo.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "GitHub",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
-          }
-        }
-      }
+	"icon": {"location":"top", "name":"edit."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Edit Local",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-local.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Edit Local"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Execute Remote Shell File"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Secure File Transfer Protocol (SFTP)"
-      }
+	"text":"Click [Shell] to view, edit and execute remote shell (bash) file"
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [SFTP] perform remote file management."
-      }
+	"icon": {"location":"top", "name":"play."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Shell",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Shell"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Render Static EigenFrame File"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "SFTP",
-        "icon": {
-          "name": "import_export.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "SFTP",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-gallery.json'"
-          }
-        }
-      }
+	"text":"Click [EigenFrame] to view, edit and render EigenFrame File"
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Edit Remote File"
-      }
+	"icon": {"location":"top", "name":"ic_launcher_round."},
+	"on_click": {
+	  "attributes": {
+	    "title":"EigenFrame",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-frame.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"EigenFrame"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Execute Remote Ruby File"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Edit Remote] to view / edit remote configuration files, documentation, ..."
-      }
+	"text":"Click [Ruby] to view, edit and execute remote Ruby file"
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Edit Remote",
-        "icon": {
-          "name": "edit.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Edit Remote",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit.json'"
-          }
-        }
-      }
+	"icon": {"location":"top", "name":"ruby_logo."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Ruby",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Ruby"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Execute Remote Prolog Knowlege-Base Inference"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Edit Local File"
-      }
+	"text":"Click [Prolog] to view, edit and execute remote Prolog Knowlege-Base Inference"
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text": "Click [Edit Local] to view / edit local cache files"
-      }
+	"icon": {"location":"top", "name":"swi_prolog."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Prolog",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Prolog"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"OpenPGP Cryptography"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Edit Local",
-        "icon": {
-          "name": "edit.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Edit Local",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-local.json'"
-          }
-        }
-      }
+	"text_list": [
+	  "Click [OpenPGP Cryptography] to use GnuPG to perform encryption, decryption, digital-signatures, verification, import-keys, and export-keys.  "
+	]
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Execute Remote Shell File"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text": "Click [Shell] to view, edit and execute remote shell (bash) file"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Shell",
-        "icon": {
-          "name": "play.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Shell",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Render Static EigenFrame File"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text": "Click [EigenFrame] to view, edit and render EigenFrame File"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "EigenFrame",
-        "icon": {
-          "name": "ic_launcher_round.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "EigenFrame",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/sftp-edit-frame.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Execute Remote Ruby File"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text": "Click [Ruby] to view, edit and execute remote Ruby file"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Ruby",
-        "icon": {
-          "name": "ruby_logo.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Ruby",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Execute Remote Prolog Knowlege-Base Inference"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text": "Click [Prolog] to view, edit and execute remote Prolog Knowlege-Base Inference"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Prolog",
-        "icon": {
-          "name": "swi_prolog.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Prolog",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "OpenPGP Cryptography"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-          "Click [OpenPGP Cryptography] to use GnuPG to perform encryption, decryption, digital-signatures, verification, import-keys, and export-keys.  "
-        ]
-      }
-    },
-    {
-      "type": "ImageView",
-      "x-url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/eigenframe.png",
-      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/gnupg.jpg'",
-      "layout_width": "match_parent",
-      "layout_height": "100",
+      "layout_height":"100",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "Clone",
-        "name": "PopupScreenDefault",
-        "attributes": {
-          "title": "OpenPGP Cryptography",
-          "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp.json'"
-        }
-      }
+	"attributes": {
+	  "title":"OpenPGP Cryptography",
+	  "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp.json'"
+	},
+	"name":"PopupScreenDefault",
+	"type":"Clone"
+      },
+      "type":"ImageView",
+      "url_script":"eigenFragment.getCacheString('RootUrl')+'res/images/gnupg.jpg'",
+      "x-url":"file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/eigenframe.png"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "OpenPGP Cryptography",
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "OpenPGP Cryptography",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp.json'"
-          }
-        }
-      }
+	"on_click": {
+	  "attributes": {
+	    "title":"OpenPGP Cryptography",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-pgp.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"OpenPGP Cryptography"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Apache2 HTTP/CGI (Common Gateway Interface)"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Apache2 HTTP/CGI (Common Gateway Interface)"
-      }
+	"text_list": [
+	  "Click [Apache2] to use http/cgi, as a better alternative to ssh.",
+	  "1) HTTP/CGI is much quicker, see [Show Apache2 Error Log].",
+	  "2) UrlRequest representation embeds Ruby script with post-method - parsimonious and elegant.",
+	  "Compare [OpenPGP Cryptography] support via ssh vs. http/cgi.",
+	  "The ssh approach does require a separate Ruby file for each action: (ssh-gpg-decrypt.rb, ...)",
+	  "Remember to click [Start Apache2 HTTP/CGI Services] before using a localhost:8080 UrlRequest"
+	]
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text_list": [
-          "Click [Apache2] to use http/cgi, as a better alternative to ssh.",
-          "1) HTTP/CGI is much quicker, see [Show Apache2 Error Log].",
-          "2) UrlRequest representation embeds Ruby script with post-method - parsimonious and elegant.",
-          "Compare [OpenPGP Cryptography] support via ssh vs. http/cgi.",
-          "The ssh approach does require a separate Ruby file for each action: (ssh-gpg-decrypt.rb, ...)",
-          "Remember to click [Start Apache2 HTTP/CGI Services] before using a localhost:8080 UrlRequest"
-        ]
-      }
+	"icon": {"location":"top", "name":"apache_logo."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Apache2",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Apache2"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"EigenFrame GitHub Gallery"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Apache2",
-        "icon": {
-          "name": "apache_logo.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Apache2",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
-          }
-        }
-      }
+	"text_list": [
+	  "Click [Gallery] to see a cloud-based gallery of eigenframe layouts, components and actions;  use tabs to select, or drag left, then click source button to see examples"
+	]
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "EigenFrame GitHub Gallery"
-      }
+	"icon": {"location":"top", "name":"open_browser."},
+	"on_click": {
+	  "script_list": [
+	    "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master_gallery.json')"
+	  ],
+	  "type":"JavaScript"
+	},
+	"text":"Gallery"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text_list": [
-          "Click [Gallery] to see a cloud-based gallery of eigenframe layouts, components and actions;  use tabs to select, or drag left, then click source button to see examples"
-        ]
-      }
+	"text_list": [
+	  "Click [Gallery Shortcut] to create a shortcut on your home screen to launch the EigenFrame Gallery app"
+	]
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Gallery",
-        "icon": {
-          "name": "open_browser.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master_gallery.json')"
-          ]
-        }
-      }
+	"background_color":"#123456",
+	"icon": {"location":"top", "name":"save."},
+	"on_click": {
+	  "script_list": [
+	    "eigenActivity.addShortcut('Gallery', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')",
+	    "eigenActivity.finish()"
+	  ],
+	  "type":"JavaScript"
+	},
+	"text":"Gallery Shortcut"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"EigenFrame GitHub Branch Selection"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text_list": [
-          "Click [Gallery Shortcut] to create a shortcut on your home screen to launch the EigenFrame Gallery app"
-        ]
-      }
+	"text":"GitHub UrlRequests may target the master branch or the beta branch."
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Gallery Shortcut",
-        "background_color": "#123456",
-        "icon": {
-          "name": "save.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "JavaScript",
-          "script_list": [
-            "eigenActivity.addShortcut('Gallery', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')",
-            "eigenActivity.finish()"
-          ]
-        }
-      }
+	"background_color":"#654321",
+	"on_click": {
+	  "checked_option":0,
+	  "icon": {"name":"share."},
+	  "id":999101,
+	  "on_click": {
+	    "script_list": [
+	      "position = eigenFragment.getOptionPosition()",
+	      "github_branch = 'master' ",
+	      "if (position == 1) github_branch = 'beta' ",
+	      "if (position == 2) github_branch = '1.3' ",
+	      "eigenFragment.setCacheString('GithubBranch', github_branch)",
+	      "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
+	      "eigenFragment.setCacheString('RootUrl', root_url)",
+	      "eigenActivity.showToast('root_url: ' + root_url )",
+	      "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master.json')",
+	      "eigenActivity.finish()"
+	    ],
+	    "type":"JavaScript"
+	  },
+	  "option_list": ["master", "beta - initial deployment", "version 1.3" ],
+	  "title":"Select Branch",
+	  "type":"SelectDialog"
+	},
+	"text":"Select Branch",
+	"text_color":"#ffffff"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
     },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "EigenFrame GitHub Branch Selection"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text": "GitHub UrlRequests may target the master branch or the beta branch."
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Select Branch",
-        "text_color": "#ffffff",
-        "background_color": "#654321",
-        "on_click": {
-          "type": "SelectDialog",
-          "title": "Select Branch",
-          "icon": {
-            "name": "share."
-          },
-          "id": 999101,
-          "checked_option": 0,
-          "option_list": [
-            "master",
-            "beta - initial deployment",
-            "version 1.3"
-          ],
-          "on_click": {
-            "type": "JavaScript",
-            "script_list": [
-              "position = eigenFragment.getOptionPosition()",
-              "github_branch = 'master' ",
-              "if (position == 1) github_branch = 'beta' ",
-              "if (position == 2) github_branch = '1.3' ",
-              "eigenFragment.setCacheString('GithubBranch', github_branch)",
-              "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
-              "eigenFragment.setCacheString('RootUrl', root_url)",
-              "eigenActivity.showToast('root_url: ' + root_url )",
-              "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master.json')",
-              "eigenActivity.finish()"
-            ]
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    }
-  ]
+    {"name":"HorizontalLine", "type":"Clone"}
+  ],
+  "gravity":"center_horizontal",
+  "layout_height":"wrap_content",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }
