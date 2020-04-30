@@ -239,17 +239,17 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe_component(Data) :- 
 	X = Data.get(component),
-  writeln(" Found component"), 
+  writeln("  component:"), 
 	parse_eigenframe(X).
 
 parse_eigenframe_attributes(Data) :- 
 	X = Data.get(attributes),
-  write(" Found attributes: "), 
+  write("  attributes: "), 
   writeln(X).
 
 parse_eigenframe_component_list(Data) :- 
 	X = Data.get(component_list),
-  writeln(" Found component_list..."), 
+  writeln("  component_list..."), 
 	parse_eigenframe_list(X).
 
 parse_eigenframe_list([]).
@@ -261,32 +261,32 @@ parse_eigenframe_list([H|T]) :-
 %	should always succeed for any valid EigenFrame
 parse_eigenframe_type(Data, Type) :- 
 	Type = Data.get(type),
-  write(" Found type: "), 
+  write("  type: "), 
 	writeln(Type).
 
 %select_eigenframe_type(+Data, +Type)
 select_eigenframe_type(Data, Type) :- 
 	Type == Data.get(type),
-  write(" Select type: "), 
+  write("= Select type: "), 
 	writeln(Type).
 
 %-----------------------------------------------
 
 parse_eigenframe_url(Data) :- 
 	URL = Data.get(url),
-  write(" Found url: "), 
+  write("  url: "), 
 	writeln(URL),
 	read_json_url(URL, FrameData),
 	parse_eigenframe(FrameData).
 
 parse_eigenframe_url_script(Data) :- 
 	X = Data.get(url_script),
-  write(" Found url_script: "), 
+  write("  url_script: "), 
 	writeln(X).
 
 parse_eigenframe_url_script_list(Data) :- 
 	X = Data.get(url_script_list),
-  write(" Found url_script_list: "), 
+  write("  url_script_list: "), 
 	writeln(X).
 
 % will succeed - if frame has url source
@@ -301,17 +301,17 @@ parse_eigenframe_url_sources(Data) :-
 
 parse_eigenframe_ssh(Data) :- 
 	X = Data.get(ssh),
-  write(" Found ssh: "), 
+  write("  ssh: "), 
 	writeln(X).
 
 parse_eigenframe_ssh_script(Data) :- 
 	X = Data.get(ssh_script),
-  write(" Found ssh_script: "), 
+  write("  ssh_script: "), 
 	writeln(X).
 
 parse_eigenframe_ssh_script_list(Data) :- 
 	X = Data.get(ssh_script_list),
-  write(" Found ssh_script_list: "), 
+  write("  ssh_script_list: "), 
 	writeln(X).
 
 parse_eigenframe_ssh_sources(Data) :- 
@@ -325,17 +325,17 @@ parse_eigenframe_ssh_sources(Data) :-
 
 parse_eigenframe_sftp(Data) :- 
 	X = Data.get(sftp),
-  write(" Found sftp: "), 
+  write("  sftp: "), 
 	writeln(X).
 
 parse_eigenframe_sftp_script(Data) :- 
 	X = Data.get(sftp_script),
-  write(" Found sftp_script: "), 
+  write("  sftp_script: "), 
 	writeln(X).
 
 parse_eigenframe_sftp_script_list(Data) :- 
 	X = Data.get(sftp_script_list),
-  write(" Found sftp_script_list: "), 
+  write("  sftp_script_list: "), 
 	writeln(X).
 
 parse_eigenframe_sftp_sources(Data) :- 
@@ -349,12 +349,12 @@ parse_eigenframe_sftp_sources(Data) :-
 
 parse_eigenframe_script(Data) :- 
 	X = Data.get(script),
-  write(" Found script: "), 
+  write("  script: "), 
 	writeln(X).
 
 parse_eigenframe_script_list(Data) :- 
 	X = Data.get(script_list),
-  write(" Found script_list: "), 
+  write("  script_list: "), 
 	writeln(X).
 
 parse_eigenframe_script_sources(Data) :- 
@@ -367,22 +367,22 @@ parse_eigenframe_script_sources(Data) :-
 
 parse_eigenframe_text(Data) :- 
 	X = Data.get(text),
-  write(" Found text: "), 
+  write("  text: "), 
 	writeln(X).
 
 parse_eigenframe_text_list(Data) :- 
 	X = Data.get(text_list),
-  write(" Found text_list: "), 
+  write("  text_list: "), 
 	writeln(X).
 
 parse_eigenframe_text_script(Data) :- 
 	X = Data.get(text_script),
-  write(" Found text_script: "), 
+  write("  text_script: "), 
 	writeln(X).
 
 parse_eigenframe_text_script_list(Data) :- 
 	X = Data.get(text_script_list),
-  write(" Found text_script_list: "), 
+  write("  text_script_list: "), 
 	writeln(X).
 
 parse_eigenframe_text_sources(Data) :- 
@@ -398,19 +398,19 @@ parse_eigenframe_text_sources(Data) :-
 %parse_eigenframe_id(+Data, -X) 
 parse_eigenframe_id(Data, X) :- 
 	X = Data.get(id),
-	write(" Found id: "), 
+	write("  id: "), 
 	writeln(X).
 
 %parse_eigenframe_id_script(+Data, -X) 
 parse_eigenframe_id_script(Data, X) :- 
 	X = Data.get(id_script),
-	write(" Found id_script: "), 
+	write("  id_script: "), 
 	writeln(X).
 
 %parse_eigenframe_id_script_list(+Data, -X) 
 parse_eigenframe_id_script_list(Data, X) :- 
 	X = Data.get(id_script_list),
-	write(" Found id_script_list: "), 
+	write("  id_script_list: "), 
 	writeln(X).
 
 parse_eigenframe_id_sources(Data) :- 
@@ -424,83 +424,83 @@ parse_eigenframe_id_sources(Data) :-
 
 parse_eigenframe_on_click(Data, Frame) :- 
 	Frame = Data.get(on_click),
-  writeln(" Found on_click..."), 
+  writeln("  on_click..."), 
 	parse_eigenframe(Frame).
 
 parse_eigenframe_on_complete(Data) :- 
 	Frame = Data.get(on_complete),
-  write(" Found on_complete..."), 
+  write("  on_complete..."), 
 	parse_eigenframe(Frame).
 
 parse_eigenframe_is_secure_window(Data, X) :- 
 	X = Data.get(is_secure_window),
- 	write(" Found is_secure_window: "), 
+ 	write("  is_secure_window: "), 
 	writeln(X).
 
 %parse_eigenframe_name(+Data, -X) 
 parse_eigenframe_name(Data,X) :- 
 	X = Data.get(name),
-	write(" Found name: "), 
+	write("  name: "), 
 	writeln(X).
 
 %parse_eigenframe_icon_name(+Data, -X) 
 parse_eigenframe_icon_name(Data,X) :- 
 	X = Data.get(icon_name),
-	write(" Found icon_name: "), 
+	write("  icon_name: "), 
 	writeln(X).
 
 %parse_eigenframe_checked(+Data, -X) 
 parse_eigenframe_checked(Data, X) :- 
 	X = Data.get(checked),
-	write(" Found checked: "), 
+	write("  checked: "), 
 	writeln(X).
 
 %parse_eigenframe_text_color(+Data, -X) 
 parse_eigenframe_text_color(Data, X) :- 
 	X = Data.get(text_color),
-	write(" Found text_color: "), 
+	write("  text_color: "), 
 	writeln(X).
 
 %parse_eigenframe_layout_width(+Data, -X) 
 parse_eigenframe_layout_width(Data, X) :- 
 	X = Data.get(layout_width),
-	write(" Found layout_width: "), 
+	write("  layout_width: "), 
 	writeln(X).
 
 %parse_eigenframe_layout_height(+Data, -X) 
 parse_eigenframe_layout_height(Data, X) :- 
 	X = Data.get(layout_height),
-	write(" Found layout_height: "), 
+	write("  layout_height: "), 
 	writeln(X).
 
 %parse_eigenframe_gravity(+Data, -X) 
 parse_eigenframe_gravity(Data, X) :- 
 	X = Data.get(gravity),
-	write(" Found gravity: "), 
+	write("  gravity: "), 
 	writeln(X).
 
 %parse_eigenframe_background_color(+Data, -X) 
 parse_eigenframe_background_color(Data, X) :- 
 	X = Data.get(background_color),
-	write(" Found background_color: "), 
+	write("  background_color: "), 
 	writeln(X).
 
 %parse_eigenframe_icon(+Data, -X) 
 parse_eigenframe_icon(Data, X) :- 
 	X = Data.get(icon),
-	write(" Found icon: "), 
+	write("  icon: "), 
 	writeln(X).
 
 %parse_eigenframe_padding(+Data, -X) 
 parse_eigenframe_padding(Data, X) :- 
 	X = Data.get(padding),
-	write(" Found padding: "), 
+	write("  padding: "), 
 	writeln(X).
 
 %parse_eigenframe_margin(+Data, -X) 
 parse_eigenframe_margin(Data, X) :- 
 	X = Data.get(margin),
-	write(" Found margin: "), 
+	write("  margin: "), 
 	writeln(X).
 
 %-----------------------------------------------
