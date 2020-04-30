@@ -166,19 +166,49 @@ parse_eigenframe(Data) :-
 	(parse_eigenframe_margin(Data,_);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'HorizontalLine').
+	select_eigenframe_type(Data, 'HorizontalLine'),
+	(parse_eigenframe_size(Data,_);true),
+	(parse_eigenframe_color(Data,_);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'HtmlView').
+	select_eigenframe_type(Data, 'HtmlView'),
+	(parse_eigenframe_html_sources(Data);true),
+	(parse_eigenframe_url_sources(Data);true),
+	(parse_eigenframe_id(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'ImageView').
+	select_eigenframe_type(Data, 'ImageView'),
+	(parse_eigenframe_image_url_sources(Data);true),
+	(parse_eigenframe_rotation(Data,_);true),
+	(parse_eigenframe_id(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'JavaScript').
+	select_eigenframe_type(Data, 'JavaScript'),
+	(parse_eigenframe_script_sources(Data); true),
+	(parse_eigenframe_id_sources(Data); true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'LinearLayout'),
+	(parse_eigenframe_scrollable(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_orientation(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
 	parse_eigenframe_component_list(Data).
 
 parse_eigenframe(Data) :- 
@@ -242,7 +272,9 @@ parse_eigenframe(Data) :-
 	select_eigenframe_type(Data, 'Variable').
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'VerticalLine').
+	select_eigenframe_type(Data, 'VerticalLine'),
+	(parse_eigenframe_size(Data,_);true),
+	(parse_eigenframe_color(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'WebView').
@@ -312,6 +344,31 @@ parse_eigenframe_url_sources(Data) :-
 		parse_eigenframe_url(Data);
 		parse_eigenframe_url_script(Data);
 		parse_eigenframe_url_script_list(Data)
+	).
+
+%-----------------------------------------------
+
+parse_eigenframe_image_url(Data) :- 
+	URL = Data.get(url),
+  write("  image_url: "), 
+	writeln(URL).
+
+parse_eigenframe_image_url_script(Data) :- 
+	X = Data.get(url_script),
+  write("  image_url_script: "), 
+	writeln(X).
+
+parse_eigenframe_image_url_script_list(Data) :- 
+	X = Data.get(url_script_list),
+  write("  image_url_script_list: "), 
+	writeln(X).
+
+% will succeed - if frame has url source
+parse_eigenframe_image_url_sources(Data) :- 
+	(
+		parse_eigenframe_image_url(Data);
+		parse_eigenframe_image_url_script(Data);
+		parse_eigenframe_image_url_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -408,6 +465,36 @@ parse_eigenframe_text_sources(Data) :-
 		parse_eigenframe_text_list(Data);
 		parse_eigenframe_text_script(Data);
 		parse_eigenframe_text_script_list(Data)
+	).
+
+%-----------------------------------------------
+
+parse_eigenframe_html(Data) :- 
+	X = Data.get(html),
+  write("  html: "), 
+	writeln(X).
+
+parse_eigenframe_html_list(Data) :- 
+	X = Data.get(html_list),
+  write("  html_list: "), 
+	writeln(X).
+
+parse_eigenframe_html_script(Data) :- 
+	X = Data.get(html_script),
+  write("  html_script: "), 
+	writeln(X).
+
+parse_eigenframe_html_script_list(Data) :- 
+	X = Data.get(html_script_list),
+  write("  html_script_list: "), 
+	writeln(X).
+
+parse_eigenframe_html_sources(Data) :- 
+	(
+		parse_eigenframe_html(Data);
+		parse_eigenframe_html_list(Data);
+		parse_eigenframe_html_script(Data);
+		parse_eigenframe_html_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -550,50 +637,37 @@ parse_eigenframe_filter(Data, X) :-
 	write("  filter: "), 
 	writeln(X).
 
+%parse_eigenframe_size(+Data, -X) 
+parse_eigenframe_size(Data, X) :- 
+	X = Data.get(size),
+	write("  size: "), 
+	writeln(X).
+
+%parse_eigenframe_color(+Data, -X) 
+parse_eigenframe_color(Data, X) :- 
+	X = Data.get(color),
+	write("  color: "), 
+	writeln(X).
+
+%parse_eigenframe_rotation(+Data, -X) 
+parse_eigenframe_rotation(Data, X) :- 
+	X = Data.get(rotation),
+	write("  rotation: "), 
+	writeln(X).
+
+%parse_eigenframe_scrollable(+Data, -X) 
+parse_eigenframe_scrollable(Data, X) :- 
+	X = Data.get(scrollable),
+	write("  scrollable: "), 
+	writeln(X).
+
+%parse_eigenframe_orientation(+Data, -X) 
+parse_eigenframe_orientation(Data, X) :- 
+	X = Data.get(orientation),
+	write("  orientation: "), 
+	writeln(X).
+
 %-----------------------------------------------
-
-
-
-frame([
-	type('HorizontalLine'),
-	size(_),
-	color(_)
-	]).
-
-frame([
-	type('HtmlView'),
-	source_html(_),
-	source_url(_),
-	id(_),
-	text_color(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	icon(_),
-	padding(_),
-	margin(_)
-	]).
-
-frame([
-	type('ImageView'),
-	source_url(_),
-	rotation(_),
-	id(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	padding(_),
-	margin(_),
-	on_click(_)
-	]).
-
-frame([
-	type('JavaScript'),
-	source_script(_),
-	id(_)
-	]).
 
 frame([
 	type('LinearLayout'),
@@ -817,12 +891,6 @@ frame([
 	id(_),
 	method(_), 
 	class(_)
-	]).
-
-frame([
-	type('VerticalLine'),
-	size(_),
-	color(_)
 	]).
 
 frame([
