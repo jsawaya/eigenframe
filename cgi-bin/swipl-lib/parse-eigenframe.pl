@@ -108,6 +108,7 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'ActionList'),
+	(parse_eigenframe_comment(Data,_); true),
 	(parse_eigenframe_component_list(Data);true),
 	parse_eigenframe_on_complete(Data).
 
@@ -199,8 +200,9 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'JavaScript'),
-	(parse_eigenframe_script_sources(Data); true),
-	(parse_eigenframe_id_sources(Data); true).
+	(parse_eigenframe_comment(Data,_); true),
+	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_script_sources(Data); true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'LinearLayout'),
@@ -214,6 +216,8 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'ListView'),
 	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_cached_filename(Data,_);true),
+	(parse_eigenframe_dir_type(Data,_);true),
 	(parse_eigenframe_option_list(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
@@ -222,6 +226,7 @@ parse_eigenframe(Data) :-
 	(parse_eigenframe_item_layout(Data,_);true),
 	(parse_eigenframe_checked_option(Data,_);true),
 	(parse_eigenframe_on_click(Data,_);true).
+
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupHtmlView').
@@ -692,6 +697,24 @@ parse_eigenframe_item_layout(Data, X) :-
 parse_eigenframe_checked_option(Data, X) :- 
 	X = Data.get(checked_option),
 	write("  checked_option: "), 
+	writeln(X).
+
+%parse_eigenframe_cached_filename(+Data, -X) 
+parse_eigenframe_cached_filename(Data, X) :- 
+	X = Data.get(cached_filename),
+	write("  cached_filename: "), 
+	writeln(X).
+
+%parse_eigenframe_dir_type(+Data, -X) 
+parse_eigenframe_dir_type(Data, X) :- 
+	X = Data.get(dir_type),
+	write("  dir_type: "), 
+	writeln(X).
+
+%parse_eigenframe_comment(+Data, -X) 
+parse_eigenframe_comment(Data, X) :- 
+	X = Data.get(comment),
+	write("  comment: "), 
 	writeln(X).
 
 %-----------------------------------------------

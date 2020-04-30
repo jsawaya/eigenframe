@@ -1,74 +1,90 @@
 {
   "component_list": [
     {
-      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "icon": {"location":"top", "name":"ic_launcher_round."},
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test RadioButton",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "background_color":"#ff00ff",
-      "checked_option":1,
-      "id":500,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500))"
-	],
-	"type":"JavaScript"
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {
+        "location": "top",
+        "name": "ic_launcher_round."
       },
-      "option_list": ["option 0", "option 1", "option 2" ],
-      "orientation":"vertical",
-      "type":"RadioButton"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test RadioButton",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
     {
-      "background_color":"#ff00ff",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#ff00ff",
+      "checked_option": 1,
+      "id": 500,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
       "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(500))"
-	],
-	"type":"JavaScript"
+        "script_list": [
+          "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500))"
+        ],
+        "type": "JavaScript"
       },
-      "text":"getViewState RadioButton:500",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "option_list": [
+        "option 0",
+        "option 1",
+        "option 2"
+      ],
+      "orientation": "vertical",
+      "type": "RadioButton"
     },
     {
-      "background_color":"#ff00ff",
-      "id":510,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "option_list": ["option 0", "option 1", "option 2", "option 3", "option 4" ],
-      "orientation":"vertical",
-      "type":"RadioButton"
-    },
-    {
-      "background_color":"#ff00ff",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
       "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(510))"
-	],
-	"type":"JavaScript"
+        "script_list": [
+          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(500))"
+        ],
+        "type": "JavaScript"
       },
-      "text":"getViewState RadioButton:510",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "text": "getViewState RadioButton:500",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "background_color": "#ff00ff",
+      "id": 510,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "option_list": [
+        "option 0",
+        "option 1",
+        "option 2",
+        "option 3",
+        "option 4"
+      ],
+      "orientation": "vertical",
+      "type": "RadioButton"
+    },
+    {
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "on_click": {
+        "script_list": [
+          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(510))"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "getViewState RadioButton:510",
+      "text_color": "#ffffff",
+      "type": "Button"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

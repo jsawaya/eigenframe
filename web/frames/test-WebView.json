@@ -1,40 +1,40 @@
 {
   "component_list": [
     {
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test for WebView",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test for WebView",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
     {
       "component_list": [
-	{
-	  "html":"<html><body><h1>WebView - inline html specified<\/h1><\/body><\/html>",
-	  "layout_height":"wrap_content",
-	  "layout_width":"match_parent",
-	  "type":"WebView"
-	},
-	{
-	  "is_javascript_enabled":"true",
-	  "layout_height":"wrap_content",
-	  "layout_width":"match_parent",
-	  "type":"WebView",
-	  "url":"https://github.com/jsawaya/eigenframe/blob/master/README.md"
-	}
+        {
+          "html": "<html><body><h1>WebView - inline html specified<\/h1><\/body><\/html>",
+          "layout_height": "wrap_content",
+          "layout_width": "match_parent",
+          "type": "WebView"
+        },
+        {
+          "is_javascript_enabled": "true",
+          "layout_height": "wrap_content",
+          "layout_width": "match_parent",
+          "type": "WebView",
+          "url": "https://github.com/jsawaya/eigenframe/blob/master/README.md"
+        }
       ],
-      "gravity":"center_horizontal",
-      "layout_height":"match_parent",
-      "layout_width":"match_parent",
-      "orientation":"vertical",
-      "scrollable":"true",
-      "type":"LinearLayout"
+      "gravity": "center_horizontal",
+      "layout_height": "match_parent",
+      "layout_width": "match_parent",
+      "orientation": "vertical",
+      "scrollable": "true",
+      "type": "LinearLayout"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"match_parent",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "match_parent",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "type": "LinearLayout"
 }

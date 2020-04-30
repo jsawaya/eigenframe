@@ -1,102 +1,138 @@
 {
   "component_list": [
     {
-      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "icon": {"location":"top", "name":"ic_launcher_round."},
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test ToggleButton",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "background_color":"#654321",
-      "checked":"false",
-      "id":400,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "margin": {"bottom":10, "left":10, "right":10, "top":10},
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(400))"
-	],
-	"type":"JavaScript"
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {
+        "location": "top",
+        "name": "ic_launcher_round."
       },
-      "text_color":"#ffffff",
-      "type":"ToggleButton"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test ToggleButton",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
     {
-      "background_color":"#654321",
-      "margin": {"bottom":10, "left":10, "right":10, "top":10},
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(400))"
-	],
-	"type":"JavaScript"
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#654321",
+      "checked": "false",
+      "id": 400,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "margin": {
+        "bottom": 10,
+        "left": 10,
+        "right": 10,
+        "top": 10
       },
-      "text":"getViewState ToggleButton:400",
-      "text_color":"#ffffff",
-      "type":"Button"
-    },
-    {
-      "background_color":"#654321",
-      "checked":"false",
-      "id":409,
-      "margin": {"bottom":10, "left":10, "right":10, "top":10},
-      "text_color":"#ffffff",
-      "type":"ToggleButton"
-    },
-    {
-      "background_color":"#654321",
-      "margin": {"bottom":10, "left":10, "right":10, "top":10},
       "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(409))"
-	],
-	"type":"JavaScript"
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(400))"
+        ],
+        "type": "JavaScript"
       },
-      "text":"getViewState ToggleButton:409",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "text_color": "#ffffff",
+      "type": "ToggleButton"
     },
     {
-      "background_color":"#654321",
-      "checked":"true",
-      "id":408,
-      "margin": {"bottom":10, "left":10, "right":10, "top":10},
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(408))"
-	],
-	"type":"JavaScript"
+      "background_color": "#654321",
+      "margin": {
+        "bottom": 10,
+        "left": 10,
+        "right": 10,
+        "top": 10
       },
-      "text_color":"#ffffff",
-      "text_off":"Beta",
-      "text_on":"Master",
-      "type":"ToggleButton"
+      "on_click": {
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(400))"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "getViewState ToggleButton:400",
+      "text_color": "#ffffff",
+      "type": "Button"
     },
     {
-      "background_color":"#654321",
-      "checked":"true",
-      "margin": {"bottom":10, "left":10, "right":10, "top":10},
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('ToggleButton NO-id getViewState: '+eigenFragment.getViewState())"
-	],
-	"type":"JavaScript"
+      "background_color": "#654321",
+      "checked": "false",
+      "id": 409,
+      "margin": {
+        "bottom": 10,
+        "left": 10,
+        "right": 10,
+        "top": 10
       },
-      "text_color":"#ffffff",
-      "text_off":"Beta",
-      "text_on":"Master",
-      "type":"ToggleButton"
+      "text_color": "#ffffff",
+      "type": "ToggleButton"
+    },
+    {
+      "background_color": "#654321",
+      "margin": {
+        "bottom": 10,
+        "left": 10,
+        "right": 10,
+        "top": 10
+      },
+      "on_click": {
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(409))"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "getViewState ToggleButton:409",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "background_color": "#654321",
+      "checked": "true",
+      "id": 408,
+      "margin": {
+        "bottom": 10,
+        "left": 10,
+        "right": 10,
+        "top": 10
+      },
+      "on_click": {
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton getViewState: '+eigenFragment.getViewState(408))"
+        ],
+        "type": "JavaScript"
+      },
+      "text_color": "#ffffff",
+      "text_off": "Beta",
+      "text_on": "Master",
+      "type": "ToggleButton"
+    },
+    {
+      "background_color": "#654321",
+      "checked": "true",
+      "margin": {
+        "bottom": 10,
+        "left": 10,
+        "right": 10,
+        "top": 10
+      },
+      "on_click": {
+        "script_list": [
+          "eigenActivity.showToast('ToggleButton NO-id getViewState: '+eigenFragment.getViewState())"
+        ],
+        "type": "JavaScript"
+      },
+      "text_color": "#ffffff",
+      "text_off": "Beta",
+      "text_on": "Master",
+      "type": "ToggleButton"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

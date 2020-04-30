@@ -1,67 +1,73 @@
 {
   "component_list": [
     {
-      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "icon": {"location":"top", "name":"ic_launcher_round."},
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test EditText",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "background_color":"#11ff0000",
-      "id":100,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"edit text",
-      "text_color":"#ffffff",
-      "type":"EditText"
-    },
-    {
-      "background_color":"#ff00ff",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
-	],
-	"type":"JavaScript"
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {
+        "location": "top",
+        "name": "ic_launcher_round."
       },
-      "text":"Access EditText",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test EditText",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
     {
-      "background_color":"#11ff0000",
-      "id":101,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"edit text 101",
-      "text_color":"#ffffff",
-      "type":"EditText"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "background_color":"#ff00ff",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
+      "background_color": "#11ff0000",
+      "id": 100,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "edit text",
+      "text_color": "#ffffff",
+      "type": "EditText"
+    },
+    {
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
       "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
-	],
-	"type":"JavaScript"
+        "script_list": [
+          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
+        ],
+        "type": "JavaScript"
       },
-      "text":"Access EditText",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "text": "Access EditText",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "background_color": "#11ff0000",
+      "id": 101,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "edit text 101",
+      "text_color": "#ffffff",
+      "type": "EditText"
+    },
+    {
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "on_click": {
+        "script_list": [
+          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "Access EditText",
+      "text_color": "#ffffff",
+      "type": "Button"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

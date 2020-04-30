@@ -1,269 +1,314 @@
 {
-  "component_list": [
-    {
-      "attributes": {"text":"Secure Shell (SSH) Settings"},
-      "name":"TextViewLabel",
-      "type":"Clone"
-    },
-    {
-      "attributes": {"text":"SSH User-id (optional for Termux):"},
-      "name":"TextViewDetail",
-      "type":"Clone"
-    },
-    {
-      "background_color":"#000000",
-      "filter":"no-whitespace",
-      "id":88800,
-      "is_single_line":"true",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "max_length":40,
-      "text_color":"#ffffff",
-      "type":"EditText"
-    },
-    {
-      "attributes": {
-	"text":"SSH Passphrase (required)\nEnter same password you typed in Termux with passwd"
-      },
-      "name":"TextViewDetail",
-      "type":"Clone"
-    },
-    {
-      "background_color":"#000000",
-      "id":88801,
-      "is_password":"true",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"abc",
-      "text_color":"#ffffff",
-      "type":"EditText"
-    },
-    {
-      "attributes": {"text":"SSH Host (name/ip):"},
-      "name":"TextViewDetail",
-      "type":"Clone"
-    },
-    {
-      "background_color":"#000000",
-      "filter":"no-whitespace",
-      "id":88802,
-      "is_single_line":"true",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "max_length":40,
-      "text":"localhost",
-      "text_color":"#ffffff",
-      "type":"EditText"
-    },
-    {
-      "attributes": {"text":"SSH Port (8822 for Termux):"},
-      "name":"TextViewDetail",
-      "type":"Clone"
-    },
-    {
-      "background_color":"#000000",
-      "filter":"digits",
-      "id":88803,
-      "is_single_line":"true",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "max_length":6,
-      "text":"8022",
-      "text_color":"#ffffff",
-      "type":"EditText"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "attributes": {"text":"Verify SecureShell Connection"},
-      "name":"TextViewLabel",
-      "type":"Clone"
-    },
-    {
-      "attributes": {
-	"icon": {"location":"left", "name":"info."},
-	"on_click": {
-	  "comment":"set the HomeDirectory from sftp pwd",
-	  "id":411000,
-	  "on_complete": {
-	    "component_list": [
-	      {
-		"condition_script":"eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
-		"font":"font/droid-sans-mono/DroidSansMono.ttf",
-		"text_list": [
-		  "SecureShell (ssh) is not enabled.\n",
-		  "Open Termux, enter:  sshd"
-		],
-		"title":"Warning",
-		"type":"PopupTextView"
-	      },
-	      {
-		"condition_script":"!(eigenFragment.getCacheString('SecureFtp',411000,'') == '')",
-		"font":"font/droid-sans-mono/DroidSansMono.ttf",
-		"text_script":"''+eigenFragment.getCacheString('SecureFtp:411000')",
-		"title":"SecureShell HomeDirectory",
-		"type":"PopupTextView"
-	      }
-	    ],
-	    "type":"ActionList"
-	  },
-	  "sftp":"pwd",
-	  "type":"SecureFtp"
-	},
-	"text":"Open SSH Home Directory (pwd)"
-      },
-      "name":"ButtonDefault",
-      "type":"Clone"
-    },
-    {
-      "attributes": {
-	"text_list": [
-	  "If you are unable to connect - ",
-	  "Make sure sshd is running!\n",
-	  "Open Termux, enter:  ps -e",
-	  "if sshd is NOT listed, enter: sshd\n",
-	  "With an Auth error, maybe you entered the wrong password?",
-	  "or maybe openssh was upgraded, try restarting your device"
-	]
-      },
-      "name":"TextViewDetail",
-      "type":"Clone"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "attributes": {"text":"Secure Shell Gallery"},
-      "name":"TextViewLabel",
-      "type":"Clone"
-    },
-    {
-      "attributes": {
-	"icon": {"location":"left", "name":"info."},
-	"on_click": {
-	  "attributes": {
-	    "component_list": [
-	      {
-		"attributes": {
-		  "component_list": [
-		    {
-		      "attributes": {"ssh":"ps -eo cmd", "text_size":"10"},
-		      "name":"TextViewDetail",
-		      "type":"Clone"
-		    }
-		  ]
+	"component_list": [
+		{
+			"attributes": {
+				"text": "Secure Shell (SSH) Settings"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
 		},
-		"name":"LayoutVerticalScrollable",
-		"type":"Clone"
-	      }
-	    ],
-	    "title":"Show Processes (ps -eo cmd)"
-	  },
-	  "name":"PopupScreenDefault",
-	  "type":"Clone"
-	},
-	"text":"Show Processes (ps -eo cmd)"
-      },
-      "name":"ButtonDefault",
-      "type":"Clone"
-    },
-    {
-      "attributes": {
-	"icon": {"location":"left", "name":"info."},
-	"on_click": {
-	  "attributes": {
-	    "component_list": [
-	      {
-		"attributes": {
-		  "component_list": [
-		    {
-		      "attributes": {"ssh":"df", "text_size":"10"},
-		      "name":"TextViewDetail",
-		      "type":"Clone"
-		    }
-		  ]
+		{
+			"attributes": {
+				"text": "SSH User-id (optional for Termux):"
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
 		},
-		"name":"LayoutVerticalScrollable",
-		"type":"Clone"
-	      }
-	    ],
-	    "title":"df (display filesystem)"
-	  },
-	  "name":"PopupScreenDefault",
-	  "type":"Clone"
-	},
-	"text":"Display Filesystem (df)"
-      },
-      "name":"ButtonDefault",
-      "type":"Clone"
-    },
-    {
-      "attributes": {
-	"icon": {"location":"left", "name":"info."},
-	"on_click": {
-	  "attributes": {
-	    "component_list": [
-	      {
-		"attributes": {
-		  "component_list": [
-		    {
-		      "attributes": {"ssh":"ifconfig", "text_size":"10"},
-		      "name":"TextViewDetail",
-		      "type":"Clone"
-		    }
-		  ]
+		{
+			"background_color": "#000000",
+			"filter": "no-whitespace",
+			"id": 88800,
+			"is_single_line": "true",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"max_length": 40,
+			"text_color": "#ffffff",
+			"type": "EditText"
 		},
-		"name":"LayoutVerticalScrollable",
-		"type":"Clone"
-	      }
-	    ],
-	    "title":"ifconfig (network ip address)"
-	  },
-	  "name":"PopupScreenDefault",
-	  "type":"Clone"
-	},
-	"text":"Network IP Addresses (ifconfig)"
-      },
-      "name":"ButtonDefault",
-      "type":"Clone"
-    },
-    {
-      "attributes": {
-	"icon": {"location":"left", "name":"file_download."},
-	"on_click": {
-	  "attributes": {
-	    "component_list": [
-	      {
-		"attributes": {
-		  "component_list": [
-		    {
-		      "attributes": {
-			"is_toast":"true",
-			"ssh":"echo y | pkg upgrade",
-			"text_size":"10"
-		      },
-		      "name":"TextViewDetail",
-		      "type":"Clone"
-		    }
-		  ]
+		{
+			"attributes": {
+				"text": "SSH Passphrase (required)\nEnter same password you typed in Termux with passwd"
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
 		},
-		"name":"LayoutVerticalScrollable",
-		"type":"Clone"
-	      }
-	    ],
-	    "title":"Termux Package Upgrade"
-	  },
-	  "name":"PopupScreenDefault",
-	  "type":"Clone"
-	},
-	"text":"Termux Package Upgrade (may take a while)"
-      },
-      "name":"ButtonDefault",
-      "type":"Clone"
-    },
-    {"name":"HorizontalLine", "type":"Clone"}
-  ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+		{
+			"background_color": "#000000",
+			"id": 88801,
+			"is_password": "true",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"text": "abc",
+			"text_color": "#ffffff",
+			"type": "EditText"
+		},
+		{
+			"attributes": {
+				"text": "SSH Host (name/ip):"
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"background_color": "#000000",
+			"filter": "no-whitespace",
+			"id": 88802,
+			"is_single_line": "true",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"max_length": 40,
+			"text": "localhost",
+			"text_color": "#ffffff",
+			"type": "EditText"
+		},
+		{
+			"attributes": {
+				"text": "SSH Port (8822 for Termux):"
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"background_color": "#000000",
+			"filter": "digits",
+			"id": 88803,
+			"is_single_line": "true",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"max_length": 6,
+			"text": "8022",
+			"text_color": "#ffffff",
+			"type": "EditText"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "Verify SecureShell Connection"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "left",
+					"name": "info."
+				},
+				"on_click": {
+					"comment": "set the HomeDirectory from sftp pwd",
+					"id": 411000,
+					"on_complete": {
+						"component_list": [
+							{
+								"condition_script": "eigenFragment.getCacheString('SecureFtp',411000,'') == '' ",
+								"font": "font/droid-sans-mono/DroidSansMono.ttf",
+								"text_list": [
+									"SecureShell (ssh) is not enabled.\n",
+									"Open Termux, enter:  sshd"
+								],
+								"title": "Warning",
+								"type": "PopupTextView"
+							},
+							{
+								"condition_script": "!(eigenFragment.getCacheString('SecureFtp',411000,'') == '')",
+								"font": "font/droid-sans-mono/DroidSansMono.ttf",
+								"text_script": "''+eigenFragment.getCacheString('SecureFtp:411000')",
+								"title": "SecureShell HomeDirectory",
+								"type": "PopupTextView"
+							}
+						],
+						"type": "ActionList"
+					},
+					"sftp": "pwd",
+					"type": "SecureFtp"
+				},
+				"text": "Open SSH Home Directory (pwd)"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text_list": [
+					"If you are unable to connect - ",
+					"Make sure sshd is running!\n",
+					"Open Termux, enter:  ps -e",
+					"if sshd is NOT listed, enter: sshd\n",
+					"With an Auth error, maybe you entered the wrong password?",
+					"or maybe openssh was upgraded, try restarting your device"
+				]
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "Secure Shell Gallery"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "left",
+					"name": "info."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh": "ps -eo cmd",
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Show Processes (ps -eo cmd)"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Show Processes (ps -eo cmd)"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "left",
+					"name": "info."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh": "df",
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "df (display filesystem)"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Display Filesystem (df)"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "left",
+					"name": "info."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh": "ifconfig",
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "ifconfig (network ip address)"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Network IP Addresses (ifconfig)"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "left",
+					"name": "file_download."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"is_toast": "true",
+												"ssh": "echo y | pkg upgrade",
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Termux Package Upgrade"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Termux Package Upgrade (may take a while)"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		}
+	],
+	"gravity": "center_horizontal",
+	"layout_height": "wrap_content",
+	"layout_width": "match_parent",
+	"orientation": "vertical",
+	"scrollable": "true",
+	"type": "LinearLayout"
 }

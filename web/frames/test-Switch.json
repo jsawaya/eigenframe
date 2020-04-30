@@ -1,77 +1,93 @@
 {
   "component_list": [
     {
-      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "icon": {"location":"top", "name":"ic_launcher_round."},
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test Switch",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "background_color":"#ff00ff",
-      "checked":"true",
-      "id":300,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
-	],
-	"type":"JavaScript"
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {
+        "location": "top",
+        "name": "ic_launcher_round."
       },
-      "padding": {"bottom":40, "left":40, "right":40, "top":40},
-      "text":"This is Switch:300",
-      "text_color":"#ffffff",
-      "type":"Switch"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test Switch",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
     {
-      "background_color":"#ff00ff",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#ff00ff",
+      "checked": "true",
+      "id": 300,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
       "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
-	],
-	"type":"JavaScript"
+        "script_list": [
+          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
+        ],
+        "type": "JavaScript"
       },
-      "text":"getViewState of Switch:300",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "padding": {
+        "bottom": 40,
+        "left": 40,
+        "right": 40,
+        "top": 40
+      },
+      "text": "This is Switch:300",
+      "text_color": "#ffffff",
+      "type": "Switch"
     },
     {
-      "background_color":"#ff00ff",
-      "checked":"true",
-      "id":301,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "margin": {"bottom":40, "left":40, "right":40, "top":40},
-      "text":"This is Switch:301",
-      "text_color":"#ffffff",
-      "type":"Switch"
-    },
-    {
-      "background_color":"#ff00ff",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
       "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(301))"
-	],
-	"type":"JavaScript"
+        "script_list": [
+          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
+        ],
+        "type": "JavaScript"
       },
-      "text":"getViewState of Switch:301",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "text": "getViewState of Switch:300",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "background_color": "#ff00ff",
+      "checked": "true",
+      "id": 301,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "margin": {
+        "bottom": 40,
+        "left": 40,
+        "right": 40,
+        "top": 40
+      },
+      "text": "This is Switch:301",
+      "text_color": "#ffffff",
+      "type": "Switch"
+    },
+    {
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "on_click": {
+        "script_list": [
+          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(301))"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "getViewState of Switch:301",
+      "text_color": "#ffffff",
+      "type": "Button"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

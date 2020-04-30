@@ -1,119 +1,141 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {
-	"script_list": [
-	  "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Directory')",
-	  "eigenFragment.setCacheString('WorkingDirectory', '')",
-	  "eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/ruby-lib')",
-	  "eigenFragment.setCacheString('SelectedFile', '')",
-	  "eigenFragment.setIntegerVariable('TargetViewId', 0, 999709)"
-	],
-	"type":"JavaScript"
-      },
-      {"name":"SelectFilePathRemote", "type":"Clone"},
-      {
-	"background_color":"#654321",
-	"icon": {"location":"top", "name":"info."},
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "attributes": {
-	    "component_list": [
-	      {
-		"is_eigen_response":"true",
-		"parameter_list": [
-		  {
-		    "name":"dirpath",
-		    "value_script":"''+eigenFragment.getCacheString('FullPath')"
-		  },
-		  {
-		    "name":"ruby",
-		    "value_list": [
-		      "dirpath = cgi.params['dirpath'][0]",
-		      "EigenFrame.new.eigen_directory_listview_http_cgi(dirpath).to_json.to_s"
-		    ]
-		  }
-		],
-		"type":"UrlRequest",
-		"url":"http://localhost:8080/cgi-bin/cgi_ruby.rb"
-	      }
-	    ],
-	    "title":"eigen_directory_listview_http_cgi"
-	  },
-	  "name":"PopupScreenDefault",
-	  "type":"Clone"
-	},
-	"text":"eigen_directory_listview_http_cgi",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {
-	"background_color":"#654321",
-	"icon": {"location":"top", "name":"info."},
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "id":6601,
-	  "is_eigen_response":"false",
-	  "on_complete": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "url":"file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6601"
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Directory')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/ruby-lib')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999709)"
+				],
+				"type": "JavaScript"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"Directory HashMap Json"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "parameter_list": [
-	    {
-	      "name":"dirpath",
-	      "value_script":"'' + eigenFragment.getCacheString('FullPath')"
-	    },
-	    {
-	      "name":"ruby",
-	      "value_list": [
-		"dirpath = cgi.params['dirpath'][0]",
-		"Dir.chdir dirpath",
-		"h = directory_hash()",
-		"h.to_json.to_s"
-	      ]
-	    }
-	  ],
-	  "type":"UrlRequest",
-	  "url":"http://localhost:8080/cgi-bin/cgi_ruby.rb"
+			{
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#654321",
+				"icon": {
+					"location": "top",
+					"name": "info."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"is_eigen_response": "true",
+								"parameter_list": [
+									{
+										"name": "dirpath",
+										"value_script": "''+eigenFragment.getCacheString('FullPath')"
+									},
+									{
+										"name": "ruby",
+										"value_list": [
+											"dirpath = cgi.params['dirpath'][0]",
+											"EigenFrame.new.eigen_directory_listview_http_cgi(dirpath).to_json.to_s"
+										]
+									}
+								],
+								"type": "UrlRequest",
+								"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
+							}
+						],
+						"title": "eigen_directory_listview_http_cgi"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "eigen_directory_listview_http_cgi",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"background_color": "#654321",
+				"icon": {
+					"location": "top",
+					"name": "info."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"id": 6601,
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6601"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Directory HashMap Json"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"parameter_list": [
+						{
+							"name": "dirpath",
+							"value_script": "'' + eigenFragment.getCacheString('FullPath')"
+						},
+						{
+							"name": "ruby",
+							"value_list": [
+								"dirpath = cgi.params['dirpath'][0]",
+								"Dir.chdir dirpath",
+								"h = directory_hash()",
+								"h.to_json.to_s"
+							]
+						}
+					],
+					"type": "UrlRequest",
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
+				},
+				"text": "directory_hash",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"text":"directory_hash",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {"name":"HorizontalLine", "type":"Clone"}
-    ],
-    "gravity":"center_horizontal",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp_script":"'pwd'",
-  "type":"SecureFtp"
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }

@@ -1,93 +1,109 @@
 {
-  "component_list": [
-    {
-      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "icon": {"location":"top", "name":"ic_launcher_round."},
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test ListView",
-      "text_color":"#ffffff",
-      "text_size":"22",
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "background_color":"#654321",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('ListView getViewState: '+eigenFragment.getViewState(700))"
-	],
-	"type":"JavaScript"
-      },
-      "text":"ListView getViewState(700)",
-      "text_color":"#ffffff",
-      "type":"Button"
-    },
-    {
-      "background_color":"#123456",
-      "checked_option":1,
-      "id":700,
-      "item_layout": {
 	"component_list": [
-	  {
-	    "background_color":"#123456",
-	    "layout_height":"wrap_content",
-	    "layout_width":"wrap_content",
-	    "margin": {"bottom":40, "left":40, "right":40, "top":40},
-	    "on_click": {
-	      "script_list": [
-		"var pos = eigenFragment.getOptionPosition()",
-		"var opt = eigenFragment.getOptionLabel()",
-		"eigenActivity.showToast('Button selected: '+ pos + ': ' + opt)"
-	      ],
-	      "type":"JavaScript"
-	    },
-	    "padding": {"bottom":20, "left":20, "right":20, "top":20},
-	    "text_color":"#ffffff",
-	    "text_script_list": [
-	      "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
-	    ],
-	    "type":"Button"
-	  }
+		{
+			"gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+			"icon": {
+				"location": "top",
+				"name": "ic_launcher_round."
+			},
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"text": "Test ListView",
+			"text_color": "#ffffff",
+			"text_size": "22",
+			"type": "TextView"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"background_color": "#654321",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"on_click": {
+				"script_list": [
+					"eigenActivity.showToast('ListView getViewState: '+eigenFragment.getViewState(700))"
+				],
+				"type": "JavaScript"
+			},
+			"text": "ListView getViewState(700)",
+			"text_color": "#ffffff",
+			"type": "Button"
+		},
+		{
+			"background_color": "#123456",
+			"checked_option": 1,
+			"id": 700,
+			"item_layout": {
+				"component_list": [
+					{
+						"background_color": "#123456",
+						"layout_height": "wrap_content",
+						"layout_width": "wrap_content",
+						"margin": {
+							"bottom": 40,
+							"left": 40,
+							"right": 40,
+							"top": 40
+						},
+						"on_click": {
+							"script_list": [
+								"var pos = eigenFragment.getOptionPosition()",
+								"var opt = eigenFragment.getOptionLabel()",
+								"eigenActivity.showToast('Button selected: '+ pos + ': ' + opt)"
+							],
+							"type": "JavaScript"
+						},
+						"padding": {
+							"bottom": 20,
+							"left": 20,
+							"right": 20,
+							"top": 20
+						},
+						"text_color": "#ffffff",
+						"text_script_list": [
+							"eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
+						],
+						"type": "Button"
+					}
+				],
+				"gravity": "center_vertical",
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"orientation": "horizontal",
+				"type": "LinearLayout"
+			},
+			"layout_height": "match_parent",
+			"layout_width": "match_parent",
+			"on_click": {
+				"script_list": [
+					"var pos = eigenFragment.getOptionPosition()",
+					"var opt = eigenFragment.getOptionLabel()",
+					"eigenActivity.showToast('ListView row selected: '+ pos + ': ' + opt)"
+				],
+				"type": "JavaScript"
+			},
+			"option_list": [
+				"test1.txt.asc",
+				"test1.json",
+				"test1.zip",
+				"test1.pdf",
+				"test2.txt.asc",
+				"test2.json",
+				"test3.zip",
+				"test4.pdf",
+				"test4.txt.asc",
+				"test5.json",
+				"test5.zip",
+				"test5.pdf"
+			],
+			"type": "ListView"
+		}
 	],
-	"gravity":"center_vertical",
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"orientation":"horizontal",
-	"type":"LinearLayout"
-      },
-      "layout_height":"match_parent",
-      "layout_width":"match_parent",
-      "on_click": {
-	"script_list": [
-	  "var pos = eigenFragment.getOptionPosition()",
-	  "var opt = eigenFragment.getOptionLabel()",
-	  "eigenActivity.showToast('ListView row selected: '+ pos + ': ' + opt)"
-	],
-	"type":"JavaScript"
-      },
-      "option_list": [
-	"test1.txt.asc",
-	"test1.json",
-	"test1.zip",
-	"test1.pdf",
-	"test2.txt.asc",
-	"test2.json",
-	"test3.zip",
-	"test4.pdf",
-	"test4.txt.asc",
-	"test5.json",
-	"test5.zip",
-	"test5.pdf"
-      ],
-      "type":"ListView"
-    }
-  ],
-  "gravity":"center_horizontal",
-  "layout_height":"match_parent",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "type":"LinearLayout"
+	"gravity": "center_horizontal",
+	"layout_height": "match_parent",
+	"layout_width": "match_parent",
+	"orientation": "vertical",
+	"type": "LinearLayout"
 }

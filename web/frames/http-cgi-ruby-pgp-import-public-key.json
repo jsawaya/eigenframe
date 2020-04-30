@@ -1,101 +1,117 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Import Public Key File (OpenPGP)"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "Import a recipient's public key file",
-	    "- this enables you to encrypt files for that recipient",
-	    "- try importing photopgp-public-key: ",
-	    "/data/data/com.termux/files/home/git-repos/eigenframe/web/pubkeys/photopgp-public-key.asc"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"script_list": [
-	  "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Public Key File')",
-	  "eigenFragment.setCacheString('WorkingDirectory', '')",
-	  "eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
-	  "eigenFragment.setCacheString('SelectedFile', '')",
-	  "eigenFragment.setIntegerVariable('TargetViewId', 0, 999705)"
-	],
-	"type":"JavaScript"
-      },
-      {"name":"SelectFilePathRemote", "type":"Clone"},
-      {
-	"background_color":"#654321",
-	"icon": {"location":"top", "name":"import_export."},
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "id":6604,
-	  "is_eigen_response":"false",
-	  "on_complete": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "url":"file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6604"
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"Import Public Key File"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "parameter_list": [
-	    {
-	      "name":"keyfile",
-	      "value_script_list": [
-		"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-		"var keyfile = eigenFragment.getViewState(targetVid)",
-		"'' + keyfile"
-	      ]
-	    },
-	    {
-	      "name":"ruby",
-	      "value_list": [
-		"keyfile = cgi.params['keyfile'][0]",
-		"gpg_import_public_key(keyfile).to_json.to_s"
-	      ]
-	    }
-	  ],
-	  "type":"UrlRequest",
-	  "url":"http://localhost:8080/cgi-bin/cgi_ruby.rb"
+			{
+				"attributes": {
+					"text": "Import Public Key File (OpenPGP)"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Import a recipient's public key file",
+						"- this enables you to encrypt files for that recipient",
+						"- try importing photopgp-public-key: ",
+						"/data/data/com.termux/files/home/git-repos/eigenframe/web/pubkeys/photopgp-public-key.asc"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Public Key File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999705)"
+				],
+				"type": "JavaScript"
+			},
+			{
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#654321",
+				"icon": {
+					"location": "top",
+					"name": "import_export."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"id": 6604,
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6604"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Import Public Key File"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"parameter_list": [
+						{
+							"name": "keyfile",
+							"value_script_list": [
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+								"var keyfile = eigenFragment.getViewState(targetVid)",
+								"'' + keyfile"
+							]
+						},
+						{
+							"name": "ruby",
+							"value_list": [
+								"keyfile = cgi.params['keyfile'][0]",
+								"gpg_import_public_key(keyfile).to_json.to_s"
+							]
+						}
+					],
+					"type": "UrlRequest",
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
+				},
+				"text": "Import Public Key File",
+				"text_color": "#ffffff",
+				"type": "Button"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"text":"Import Public Key File",
-	"text_color":"#ffffff",
-	"type":"Button"
-      }
-    ],
-    "gravity":"center_horizontal",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp_script":"'pwd'",
-  "type":"SecureFtp"
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }

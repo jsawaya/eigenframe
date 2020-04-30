@@ -1,35 +1,44 @@
 {
   "component_list": [
     {
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test EigenScript",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test EigenScript",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
-    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "background_color":"#ff0000",
-      "icon": {"location":"left", "name":"info."},
-      "layout_height":"wrap_content",
-      "layout_width":"wrap_content",
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#ff0000",
+      "icon": {
+        "location": "left",
+        "name": "info."
+      },
+      "layout_height": "wrap_content",
+      "layout_width": "wrap_content",
       "on_click": {
-	"script_list": ["x = 8*5", "eigenActivity.showToast('var x: '+x)" ],
-	"type":"JavaScript"
+        "script_list": [
+          "x = 8*5",
+          "eigenActivity.showToast('var x: '+x)"
+        ],
+        "type": "JavaScript"
       },
       "text": [
-	"JavaScript using script_list: ",
-	"x = 8*5; eigenActivity.showToast('var x: '+x); x;"
+        "JavaScript using script_list: ",
+        "x = 8*5; eigenActivity.showToast('var x: '+x); x;"
       ],
-      "text_color":"#ffffff",
-      "type":"Button"
+      "text_color": "#ffffff",
+      "type": "Button"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

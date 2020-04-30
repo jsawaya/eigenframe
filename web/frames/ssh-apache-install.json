@@ -1,133 +1,153 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {
-	"attributes": {"text":"Apache2 Installation"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "Apache2 provides a common gateway interface (CGI) to call ruby eigenframe transforms.",
-	    "This Termux service is started by EigenFrame using ssh to run httpd - see Apache2 Administration",
-	    "Note: eigenframe configuration (etc-apache2/httpd.conf) enables CGI and only allows localhost requests (from EigenFrame)"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"file_download."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "is_toast":"true",
-			  "ssh_list": [
-			    "echo pkg install apache2",
-			    "echo y | pkg install apache2"
-			  ],
-			  "text_size":"10"
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"attributes": {
+					"text": "Apache2 Installation"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"Install apache2 package"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"Install apache2 package"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"settings."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "ssh_list": [
-			    "echo ",
-			    "cd ~/../usr/etc/apache2/",
-			    "cp -f --backup=numbered httpd.conf httpd.conf",
-			    "echo ",
-			    "echo install apache2 configuration from eigenframe/etc-apache2/httpd.conf",
-			    "cp ~/git-repos/eigenframe/etc-apache2/httpd.conf .",
-			    "echo ",
-			    "echo enable execution of cgi-bin directory files",
-			    "cd ~/git-repos/eigenframe/cgi-bin",
-			    "chmod 755 *.sh",
-			    "chmod 755 *.rb"
-			  ],
-			  "text_size":"10"
+			{
+				"attributes": {
+					"text_list": [
+						"Apache2 provides a common gateway interface (CGI) to call ruby eigenframe transforms.",
+						"This Termux service is started by EigenFrame using ssh to run httpd - see Apache2 Administration",
+						"Note: eigenframe configuration (etc-apache2/httpd.conf) enables CGI and only allows localhost requests (from EigenFrame)"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"Import eigenframe apache2 configuration, and cgi scripts"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"Import eigenframe apache2 configuration, and cgi scripts"
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "file_download."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"is_toast": "true",
+													"ssh_list": [
+														"echo pkg install apache2",
+														"echo y | pkg install apache2"
+													],
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Install apache2 package"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Install apache2 package"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "settings."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"ssh_list": [
+														"echo ",
+														"cd ~/../usr/etc/apache2/",
+														"cp -f --backup=numbered httpd.conf httpd.conf",
+														"echo ",
+														"echo install apache2 configuration from eigenframe/etc-apache2/httpd.conf",
+														"cp ~/git-repos/eigenframe/etc-apache2/httpd.conf .",
+														"echo ",
+														"echo enable execution of cgi-bin directory files",
+														"cd ~/git-repos/eigenframe/cgi-bin",
+														"chmod 755 *.sh",
+														"chmod 755 *.rb"
+													],
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Import eigenframe apache2 configuration, and cgi scripts"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Import eigenframe apache2 configuration, and cgi scripts"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "file_download."
+					},
+					"on_click": {
+						"attributes": {
+							"title": "Apache2 Administration",
+							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Apache2 Administration"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_height": "wrap_content",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"file_download."},
-	  "on_click": {
-	    "attributes": {
-	      "title":"Apache2 Administration",
-	      "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache.json'"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"Apache2 Administration"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"}
-    ],
-    "gravity":"center_horizontal",
-    "layout_height":"wrap_content",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp":"pwd",
-  "type":"SecureFtp"
+	"sftp": "pwd",
+	"type": "SecureFtp"
 }

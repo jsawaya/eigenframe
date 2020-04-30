@@ -1,43 +1,55 @@
 {
   "component_list": [
     {
-      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "icon": {"location":"top", "name":"ic_launcher_round."},
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test SelectDialog",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "background_color":"#22ff0000",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "on_click": {
-	"checked_option":1,
-	"icon": {"name":"info."},
-	"id":111,
-	"on_click": {
-	  "script_list": [
-	    "eigenActivity.showToast('SelectDialog: option: '+eigenFragment.getOptionLabel() + ', position: '+eigenFragment.getOptionPosition() )"
-	  ],
-	  "type":"JavaScript"
-	},
-	"option_list": ["option 0", "option 1", "option 2" ],
-	"title":"Test SelectDialog",
-	"type":"SelectDialog"
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {
+        "location": "top",
+        "name": "ic_launcher_round."
       },
-      "text":"Test SelectDialog",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test SelectDialog",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
+    },
+    {
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#22ff0000",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "on_click": {
+        "checked_option": 1,
+        "icon": {
+          "name": "info."
+        },
+        "id": 111,
+        "on_click": {
+          "script_list": [
+            "eigenActivity.showToast('SelectDialog: option: '+eigenFragment.getOptionLabel() + ', position: '+eigenFragment.getOptionPosition() )"
+          ],
+          "type": "JavaScript"
+        },
+        "option_list": [
+          "option 0",
+          "option 1",
+          "option 2"
+        ],
+        "title": "Test SelectDialog",
+        "type": "SelectDialog"
+      },
+      "text": "Test SelectDialog",
+      "text_color": "#ffffff",
+      "type": "Button"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

@@ -1,145 +1,171 @@
 {
-  "component_list": [
-    {
-      "attributes": {"text":"Edit Local Text File"},
-      "name":"TextViewLabel",
-      "type":"Clone"
-    },
-    {
-      "attributes": {
-	"text_list": [
-	  "Select the local file, or just type the file path, then click [Edit Local Text File]"
-	]
-      },
-      "name":"TextViewDetail",
-      "type":"Clone"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "script_list": [
-	"eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local File')",
-	"eigenFragment.setCacheString('SelectedPathLocal', '')",
-	"eigenFragment.setCacheString('SelectedFileLocal', '')",
-	"eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
-      ],
-      "type":"JavaScript"
-    },
-    {
-      "attributes": {
 	"component_list": [
-	  {"name":"HorizontalLine", "type":"Clone"},
-	  {
-	    "attributes": {
-	      "text_script":"''+eigenFragment.getCacheString('SelectFilePromptLocal')"
-	    },
-	    "name":"TextViewLabel",
-	    "type":"Clone"
-	  },
-	  {
-	    "attributes": {
-	      "icon": {"location":"top", "name":"open_with."},
-	      "on_click": {
-		"component_list": [
-		  {
-		    "name":"JavaScriptSetFullPathLocal",
-		    "type":"Clone"
-		  },
-		  {
-		    "name":"PopupScreenSelectFilePathLocal",
-		    "type":"Clone"
-		  }
-		],
-		"type":"ActionList"
-	      },
-	      "text_script":"''+eigenFragment.getCacheString('SelectFilePromptLocal')"
-	    },
-	    "name":"ButtonDefault",
-	    "type":"Clone"
-	  },
-	  {
-	    "background_color":"#000000",
-	    "id_script":"eigenFragment.getIntegerVariable('TargetViewId2')",
-	    "is_single_line":"true",
-	    "layout_width":"match_parent",
-	    "max_length":200,
-	    "text":"undefined",
-	    "text_color":"#ffffff",
-	    "type":"EditText"
-	  },
-	  {"name":"HorizontalLine", "type":"Clone"}
-	]
-      },
-      "name":"LayoutVerticalScrollable",
-      "type":"Clone"
-    },
-    {
-      "attributes": {
-	"icon": {"location":"top", "name":"open_browser."},
-	"on_click": {
-	  "attributes": {
-	    "component_list": [
-	      {
-		"script":"eigenFragment.clearCacheFile('EditText:999010')",
-		"type":"JavaScript"
-	      },
-	      {
-		"attributes": {
-		  "component_list": [
-		    {
-		      "attributes": {
-			"icon": {"location":"top", "name":"save."},
-			"on_click": {
-			  "script_list": [
-			    "var filename1 = eigenFragment.getCacheFilePath('EditText:999010') ",
-			    "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ",
-			    "var filename2 = eigenFragment.getViewState(targetVid2) ",
-			    "eigenFragment.copyFile(filename1, filename2)",
-			    "eigenFragment.closePopupScreen(999099)"
-			  ],
-			  "type":"JavaScript"
+		{
+			"attributes": {
+				"text": "Edit Local Text File"
 			},
-			"text":"Save Edits to Local File"
-		      },
-		      "name":"ButtonDefault",
-		      "type":"Clone"
-		    },
-		    {"name":"HorizontalLine", "type":"Clone"},
-		    {
-		      "background_color":"#000000",
-		      "gravity":"left",
-		      "id":999010,
-		      "layout_width":"match_parent",
-		      "text_color":"#ffffff",
-		      "type":"EditText",
-		      "url_script":"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ; 'file://' + eigenFragment.getViewState(targetVid2) "
-		    }
-		  ]
+			"name": "TextViewLabel",
+			"type": "Clone"
 		},
-		"name":"LayoutVerticalScrollable",
-		"type":"Clone"
-	      }
-	    ],
-	    "id":999099,
-	    "title_script_list": [
-	      "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-	      "var filename = eigenFragment.getViewState(targetVid2)",
-	      "'Local File: ' + filename"
-	    ]
-	  },
-	  "name":"PopupScreenDefault",
-	  "type":"Clone"
-	},
-	"text":"Edit Local Text File"
-      },
-      "name":"ButtonDefault",
-      "type":"Clone"
-    },
-    {"name":"HorizontalLine", "type":"Clone"}
-  ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+		{
+			"attributes": {
+				"text_list": [
+					"Select the local file, or just type the file path, then click [Edit Local Text File]"
+				]
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"script_list": [
+				"eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local File')",
+				"eigenFragment.setCacheString('SelectedPathLocal', '')",
+				"eigenFragment.setCacheString('SelectedFileLocal', '')",
+				"eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
+			],
+			"type": "JavaScript"
+		},
+		{
+			"attributes": {
+				"component_list": [
+					{
+						"name": "HorizontalLine",
+						"type": "Clone"
+					},
+					{
+						"attributes": {
+							"text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')"
+						},
+						"name": "TextViewLabel",
+						"type": "Clone"
+					},
+					{
+						"attributes": {
+							"icon": {
+								"location": "top",
+								"name": "open_with."
+							},
+							"on_click": {
+								"component_list": [
+									{
+										"name": "JavaScriptSetFullPathLocal",
+										"type": "Clone"
+									},
+									{
+										"name": "PopupScreenSelectFilePathLocal",
+										"type": "Clone"
+									}
+								],
+								"type": "ActionList"
+							},
+							"text_script": "''+eigenFragment.getCacheString('SelectFilePromptLocal')"
+						},
+						"name": "ButtonDefault",
+						"type": "Clone"
+					},
+					{
+						"background_color": "#000000",
+						"id_script": "eigenFragment.getIntegerVariable('TargetViewId2')",
+						"is_single_line": "true",
+						"layout_width": "match_parent",
+						"max_length": 200,
+						"text": "undefined",
+						"text_color": "#ffffff",
+						"type": "EditText"
+					},
+					{
+						"name": "HorizontalLine",
+						"type": "Clone"
+					}
+				]
+			},
+			"name": "LayoutVerticalScrollable",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"script": "eigenFragment.clearCacheFile('EditText:999010')",
+								"type": "JavaScript"
+							},
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"icon": {
+													"location": "top",
+													"name": "save."
+												},
+												"on_click": {
+													"script_list": [
+														"var filename1 = eigenFragment.getCacheFilePath('EditText:999010') ",
+														"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ",
+														"var filename2 = eigenFragment.getViewState(targetVid2) ",
+														"eigenFragment.copyFile(filename1, filename2)",
+														"eigenFragment.closePopupScreen(999099)"
+													],
+													"type": "JavaScript"
+												},
+												"text": "Save Edits to Local File"
+											},
+											"name": "ButtonDefault",
+											"type": "Clone"
+										},
+										{
+											"name": "HorizontalLine",
+											"type": "Clone"
+										},
+										{
+											"background_color": "#000000",
+											"gravity": "left",
+											"id": 999010,
+											"layout_width": "match_parent",
+											"text_color": "#ffffff",
+											"type": "EditText",
+											"url_script": "var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ; 'file://' + eigenFragment.getViewState(targetVid2) "
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"id": 999099,
+						"title_script_list": [
+							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
+							"var filename = eigenFragment.getViewState(targetVid2)",
+							"'Local File: ' + filename"
+						]
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Edit Local Text File"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		}
+	],
+	"gravity": "center_horizontal",
+	"layout_height": "wrap_content",
+	"layout_width": "match_parent",
+	"orientation": "vertical",
+	"scrollable": "true",
+	"type": "LinearLayout"
 }

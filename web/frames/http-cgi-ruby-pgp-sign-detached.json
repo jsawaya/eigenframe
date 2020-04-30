@@ -1,133 +1,153 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Create Detached Digital Signature"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "After your private key file has been imported, you can create a detached digital signature for any particular file to ensure it's authenticity and that it has not been modified since it was signed"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"script_list": [
-	  "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to be Signed')",
-	  "eigenFragment.setCacheString('WorkingDirectory', '')",
-	  "eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-	  "eigenFragment.setCacheString('SelectedFile', '')",
-	  "eigenFragment.setIntegerVariable('TargetViewId', 0, 999706)"
-	],
-	"type":"JavaScript"
-      },
-      {"name":"SelectFilePathRemote", "type":"Clone"},
-      {
-	"attributes": {"text":"Private KeyId:"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "Try the demo-private-key KeyId: 5C91FC661620EAFA",
-	    "demo-private-key passphrase: demo"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"background_color":"#000000",
-	"id":6607,
-	"is_single_line":"true",
-	"layout_height":"wrap_content",
-	"layout_width":"match_parent",
-	"text":"5C91FC661620EAFA",
-	"text_color":"#ffffff",
-	"type":"EditText"
-      },
-      {"name":"EditTextPgpPassword6606", "type":"Clone"},
-      {
-	"background_color":"#654321",
-	"icon": {"location":"top", "name":"info."},
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"on_click": {
-	  "id":6605,
-	  "is_eigen_response":"false",
-	  "on_complete": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "url":"file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"Create Detached Digital Signature"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "parameter_list": [
-	    {
-	      "name":"keyfile",
-	      "value_script_list": [
-		"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-		"var keyfile = eigenFragment.getViewState(targetVid)",
-		"'' + keyfile"
-	      ]
-	    },
-	    {
-	      "name":"keyid",
-	      "value_script_list": ["'' + eigenFragment.getViewState(6607)" ]
-	    },
-	    {
-	      "name":"password",
-	      "value_script_list": ["'' + eigenFragment.getViewState(6606)" ]
-	    },
-	    {
-	      "name":"ruby",
-	      "value_list": [
-		"keyid = cgi.params['keyid'][0]",
-		"password = cgi.params['password'][0]",
-		"keyfile = cgi.params['keyfile'][0]",
-		"gpg_sign_detached(keyid, password, keyfile).to_json.to_s"
-	      ]
-	    }
-	  ],
-	  "type":"UrlRequest",
-	  "url":"http://localhost:8080/cgi-bin/cgi_ruby.rb"
+			{
+				"attributes": {
+					"text": "Create Detached Digital Signature"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"After your private key file has been imported, you can create a detached digital signature for any particular file to ensure it's authenticity and that it has not been modified since it was signed"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to be Signed')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999706)"
+				],
+				"type": "JavaScript"
+			},
+			{
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "Private KeyId:"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Try the demo-private-key KeyId: 5C91FC661620EAFA",
+						"demo-private-key passphrase: demo"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#000000",
+				"id": 6607,
+				"is_single_line": "true",
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
+				"text": "5C91FC661620EAFA",
+				"text_color": "#ffffff",
+				"type": "EditText"
+			},
+			{
+				"name": "EditTextPgpPassword6606",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#654321",
+				"icon": {
+					"location": "top",
+					"name": "info."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"on_click": {
+					"id": 6605,
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Create Detached Digital Signature"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"parameter_list": [
+						{
+							"name": "keyfile",
+							"value_script_list": [
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+								"var keyfile = eigenFragment.getViewState(targetVid)",
+								"'' + keyfile"
+							]
+						},
+						{
+							"name": "keyid",
+							"value_script_list": [
+								"'' + eigenFragment.getViewState(6607)"
+							]
+						},
+						{
+							"name": "password",
+							"value_script_list": [
+								"'' + eigenFragment.getViewState(6606)"
+							]
+						},
+						{
+							"name": "ruby",
+							"value_list": [
+								"keyid = cgi.params['keyid'][0]",
+								"password = cgi.params['password'][0]",
+								"keyfile = cgi.params['keyfile'][0]",
+								"gpg_sign_detached(keyid, password, keyfile).to_json.to_s"
+							]
+						}
+					],
+					"type": "UrlRequest",
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
+				},
+				"text": "Create Detached Digital Signature",
+				"text_color": "#ffffff",
+				"type": "Button"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"text":"Create Detached Digital Signature",
-	"text_color":"#ffffff",
-	"type":"Button"
-      }
-    ],
-    "gravity":"center_horizontal",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp_script":"'pwd'",
-  "type":"SecureFtp"
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }

@@ -1,36 +1,42 @@
 {
   "component_list": [
     {
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test PopupHtmlView",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test PopupHtmlView",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
-    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "background_color":"#11ff0000",
-      "icon": {"location":"left", "name":"info."},
-      "layout_height":"wrap_content",
-      "layout_width":"wrap_content",
-      "on_click": {
-	"html_list": [
-	  "9/27/2019 Version 0.1<hr/>",
-	  "- Popup dynamic html with access to application-embedded icons [<img src='info.jpg'>]"
-	],
-	"title":"PopupHtmlView/html_list",
-	"type":"PopupHtmlView"
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#11ff0000",
+      "icon": {
+        "location": "left",
+        "name": "info."
       },
-      "text":"PopupHtmlView with html_list",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "layout_height": "wrap_content",
+      "layout_width": "wrap_content",
+      "on_click": {
+        "html_list": [
+          "9/27/2019 Version 0.1<hr/>",
+          "- Popup dynamic html with access to application-embedded icons [<img src='info.jpg'>]"
+        ],
+        "title": "PopupHtmlView/html_list",
+        "type": "PopupHtmlView"
+      },
+      "text": "PopupHtmlView with html_list",
+      "text_color": "#ffffff",
+      "type": "Button"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

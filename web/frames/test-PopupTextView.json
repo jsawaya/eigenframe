@@ -1,58 +1,65 @@
 {
   "component_list": [
     {
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Examples of PopupTextView",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "background_color":"#123456",
-      "layout_height":"wrap_content",
-      "layout_width":"wrap_content",
-      "on_click": {
-	"text":"this is a test",
-	"title":"Popup TextView for a single line of text",
-	"type":"PopupTextView"
-      },
-      "text":"Popup TextView for a single line of text",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Examples of PopupTextView",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
     {
-      "background_color":"#22ffff00",
-      "layout_height":"wrap_content",
-      "layout_width":"wrap_content",
-      "on_click": {
-	"text_list": ["this is line 1", "this is line 2", "this is line 3" ],
-	"title":"Popup TextView for a text_list",
-	"type":"PopupTextView"
-      },
-      "text":"Popup TextView for a text_list",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "background_color":"#22ff0000",
-      "layout_height":"wrap_content",
-      "layout_width":"wrap_content",
+      "background_color": "#123456",
+      "layout_height": "wrap_content",
+      "layout_width": "wrap_content",
       "on_click": {
-	"title":"Popup TextView for the contents of a url request (from github)",
-	"type":"PopupTextView",
-	"url_script":"eigenFragment.getCacheString('RootUrl')+'frames/test-PopupTextView.json'"
+        "text": "this is a test",
+        "title": "Popup TextView for a single line of text",
+        "type": "PopupTextView"
       },
-      "text":"Popup TextView for the contents of a url request (from github)",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "text": "Popup TextView for a single line of text",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "background_color": "#22ffff00",
+      "layout_height": "wrap_content",
+      "layout_width": "wrap_content",
+      "on_click": {
+        "text_list": [
+          "this is line 1",
+          "this is line 2",
+          "this is line 3"
+        ],
+        "title": "Popup TextView for a text_list",
+        "type": "PopupTextView"
+      },
+      "text": "Popup TextView for a text_list",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "background_color": "#22ff0000",
+      "layout_height": "wrap_content",
+      "layout_width": "wrap_content",
+      "on_click": {
+        "title": "Popup TextView for the contents of a url request (from github)",
+        "type": "PopupTextView",
+        "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/test-PopupTextView.json'"
+      },
+      "text": "Popup TextView for the contents of a url request (from github)",
+      "text_color": "#ffffff",
+      "type": "Button"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

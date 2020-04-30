@@ -1,73 +1,89 @@
 {
   "component_list": [
     {
-      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "icon": {"location":"top", "name":"ic_launcher_round."},
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test Spinner",
-      "text_color":"#ffffff",
-      "text_size":"20",
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "background_color":"#ff00ff",
-      "checked_option":2,
-      "id":600,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(600))"
-	],
-	"type":"JavaScript"
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {
+        "location": "top",
+        "name": "ic_launcher_round."
       },
-      "option_list": ["option 0", "option 1", "option 2" ],
-      "type":"Spinner"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test Spinner",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "background_color":"#ff00ff",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#ff00ff",
+      "checked_option": 2,
+      "id": 600,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
       "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(600))"
-	],
-	"type":"JavaScript"
+        "script_list": [
+          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(600))"
+        ],
+        "type": "JavaScript"
       },
-      "text":"getViewState Spinner:600",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "option_list": [
+        "option 0",
+        "option 1",
+        "option 2"
+      ],
+      "type": "Spinner"
     },
     {
-      "background_color":"#ff00ff",
-      "checked_option":0,
-      "id":610,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "option_list": ["option 0", "option 1", "option 2", "option 3", "option 4" ],
-      "type":"Spinner"
-    },
-    {
-      "background_color":"#ff00ff",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
       "on_click": {
-	"script_list": [
-	  "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(610))"
-	],
-	"type":"JavaScript"
+        "script_list": [
+          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(600))"
+        ],
+        "type": "JavaScript"
       },
-      "text":"getViewState Spinner:610",
-      "text_color":"#ffffff",
-      "type":"Button"
+      "text": "getViewState Spinner:600",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "background_color": "#ff00ff",
+      "checked_option": 0,
+      "id": 610,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "option_list": [
+        "option 0",
+        "option 1",
+        "option 2",
+        "option 3",
+        "option 4"
+      ],
+      "type": "Spinner"
+    },
+    {
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "on_click": {
+        "script_list": [
+          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(610))"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "getViewState Spinner:610",
+      "text_color": "#ffffff",
+      "type": "Button"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

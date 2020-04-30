@@ -1,107 +1,123 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Import Private Key File (OpenPGP)"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "Import your private key file",
-	    "- the private key enables you to open files that have been encrypted with your public key",
-	    "- try importing demo-private-key: ",
-	    "demo-private-key: /data/data/com.termux/files/home/git-repos/eigenframe/web/pubkeys/demo-private-key.pgp",
-	    "passphrase: demo"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"script_list": [
-	  "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Private Key File')",
-	  "eigenFragment.setCacheString('WorkingDirectory', '')",
-	  "eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
-	  "eigenFragment.setCacheString('SelectedFile', '')",
-	  "eigenFragment.setIntegerVariable('TargetViewId', 0, 999704)"
-	],
-	"type":"JavaScript"
-      },
-      {"name":"SelectFilePathRemote", "type":"Clone"},
-      {"name":"EditTextPgpPassword6606", "type":"Clone"},
-      {
-	"background_color":"#654321",
-	"icon": {"location":"top", "name":"info."},
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"on_click": {
-	  "id":6605,
-	  "is_eigen_response":"false",
-	  "on_complete": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "url":"file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"Import Private Key File"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "parameter_list": [
-	    {
-	      "name":"keyfile",
-	      "value_script_list": [
-		"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-		"var keyfile = eigenFragment.getViewState(targetVid)",
-		"'' + keyfile"
-	      ]
-	    },
-	    {
-	      "name":"password",
-	      "value_script_list": ["'' + eigenFragment.getViewState(6606)" ]
-	    },
-	    {
-	      "name":"ruby",
-	      "value_list": [
-		"keyfile = cgi.params['keyfile'][0]",
-		"password = cgi.params['password'][0]",
-		"gpg_import_private_key(keyfile,password).to_json.to_s"
-	      ]
-	    }
-	  ],
-	  "type":"UrlRequest",
-	  "url":"http://localhost:8080/cgi-bin/cgi_ruby.rb"
+			{
+				"attributes": {
+					"text": "Import Private Key File (OpenPGP)"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Import your private key file",
+						"- the private key enables you to open files that have been encrypted with your public key",
+						"- try importing demo-private-key: ",
+						"demo-private-key: /data/data/com.termux/files/home/git-repos/eigenframe/web/pubkeys/demo-private-key.pgp",
+						"passphrase: demo"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Private Key File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999704)"
+				],
+				"type": "JavaScript"
+			},
+			{
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
+			},
+			{
+				"name": "EditTextPgpPassword6606",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#654321",
+				"icon": {
+					"location": "top",
+					"name": "info."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"on_click": {
+					"id": 6605,
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Import Private Key File"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"parameter_list": [
+						{
+							"name": "keyfile",
+							"value_script_list": [
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+								"var keyfile = eigenFragment.getViewState(targetVid)",
+								"'' + keyfile"
+							]
+						},
+						{
+							"name": "password",
+							"value_script_list": [
+								"'' + eigenFragment.getViewState(6606)"
+							]
+						},
+						{
+							"name": "ruby",
+							"value_list": [
+								"keyfile = cgi.params['keyfile'][0]",
+								"password = cgi.params['password'][0]",
+								"gpg_import_private_key(keyfile,password).to_json.to_s"
+							]
+						}
+					],
+					"type": "UrlRequest",
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
+				},
+				"text": "Import Private Key File (via http post)",
+				"text_color": "#ffffff",
+				"type": "Button"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"text":"Import Private Key File (via http post)",
-	"text_color":"#ffffff",
-	"type":"Button"
-      }
-    ],
-    "gravity":"center_horizontal",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp_script":"'pwd'",
-  "type":"SecureFtp"
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }

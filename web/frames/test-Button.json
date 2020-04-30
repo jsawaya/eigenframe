@@ -1,156 +1,220 @@
 {
-  "component_list": [
-    {
-      "component_list": [
-	{
-	  "layout_height":"wrap_content",
-	  "layout_weight":"10",
-	  "layout_width":"wrap_content",
-	  "text":"Test TextView and Buttons with Icons",
-	  "text_color":"#ffffff",
-	  "text_size":"14",
-	  "type":"TextView"
-	},
-	{
-	  "background_color":"#00000000",
-	  "icon": {"location":"right", "name":"close."},
-	  "layout_height":"wrap_content",
-	  "layout_weight":"1",
-	  "layout_width":"wrap_content",
-	  "on_click": {
-	    "script_list": ["eigenActivity.finish()" ],
-	    "type":"JavaScript"
-	  },
-	  "text":" ",
-	  "type":"Button"
-	}
-      ],
-      "gravity":"center_vertical",
-      "layout_height":"100",
-      "layout_width":"match_parent",
-      "orientation":"horizontal",
-      "type":"LinearLayout"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "layout_height":"wrap_content",
-      "layout_width":"wrap_content",
-      "padding": {"bottom":43, "left":40, "right":42, "top":41},
-      "text_color":"#ffffff",
-      "text_list": ["No Icon", "attached" ],
-      "text_size":20,
-      "type":"TextView"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "component_list": [
-	{"name":"VerticalLine", "type":"Clone"},
-	{
-	  "gravity":"left",
-	  "icon": {"location":"left", "name":"info."},
-	  "layout_height":"wrap_content",
-	  "layout_weight":"1",
-	  "layout_width":"wrap_content",
-	  "text":"left",
-	  "text_color":"#ffffff",
-	  "text_size":20,
-	  "type":"TextView"
-	},
-	{"name":"VerticalLine", "type":"Clone"},
-	{
-	  "gravity":"center_horizontal",
-	  "icon": {"location":"top", "name":"info."},
-	  "layout_height":"wrap_content",
-	  "layout_weight":"1",
-	  "layout_width":"wrap_content",
-	  "text":"top",
-	  "text_color":"#ffffff",
-	  "text_size":20,
-	  "type":"TextView"
-	},
-	{"name":"VerticalLine", "type":"Clone"},
-	{
-	  "gravity":"right",
-	  "icon": {"location":"right", "name":"info."},
-	  "layout_height":"wrap_content",
-	  "layout_weight":"1",
-	  "layout_width":"wrap_content",
-	  "text":"right",
-	  "text_color":"#ffffff",
-	  "text_size":20,
-	  "type":"TextView"
-	},
-	{"name":"VerticalLine", "type":"Clone"}
-      ],
-      "gravity":"center_vertical",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "orientation":"horizontal",
-      "scrollable":"true",
-      "type":"LinearLayout"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "component_list": [
-	{"name":"VerticalLine", "type":"Clone"},
-	{
-	  "background_color":"#00ffff",
-	  "icon": {"location":"left", "name":"info."},
-	  "layout_height":"wrap_content",
-	  "layout_weight":"1",
-	  "layout_width":"wrap_content",
-	  "on_click": {
-	    "script":"eigenActivity.showToast('value: '+1)",
-	    "type":"JavaScript"
-	  },
-	  "text":"left",
-	  "text_color":"#ffffff",
-	  "type":"Button"
-	},
-	{"name":"VerticalLine", "type":"Clone"},
-	{
-	  "background_color":"#0f0f0f",
-	  "icon": {"location":"top", "name":"info."},
-	  "layout_height":"wrap_content",
-	  "layout_weight":"1",
-	  "layout_width":"wrap_content",
-	  "on_click": {
-	    "script":"eigenActivity.showToast('value: '+2)",
-	    "type":"JavaScript"
-	  },
-	  "text":"top",
-	  "text_color":"#ffffff",
-	  "type":"Button"
-	},
-	{"name":"VerticalLine", "type":"Clone"},
-	{
-	  "background_color":"#ff00ff",
-	  "icon": {"location":"right", "name":"info."},
-	  "layout_height":"wrap_content",
-	  "layout_weight":"1",
-	  "layout_width":"wrap_content",
-	  "on_click": {
-	    "script":"eigenActivity.showToast('value: '+3)",
-	    "type":"JavaScript"
-	  },
-	  "text":"right",
-	  "text_color":"#ffffff",
-	  "type":"Button"
-	},
-	{"name":"VerticalLine", "type":"Clone"}
-      ],
-      "gravity":"center_vertical",
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "orientation":"horizontal",
-      "scrollable":"true",
-      "type":"LinearLayout"
-    }
-  ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+	"component_list": [
+		{
+			"component_list": [
+				{
+					"layout_height": "wrap_content",
+					"layout_weight": "10",
+					"layout_width": "wrap_content",
+					"text": "Test TextView and Buttons with Icons",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"type": "TextView"
+				},
+				{
+					"background_color": "#00000000",
+					"icon": {
+						"location": "right",
+						"name": "close."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"on_click": {
+						"script_list": [
+							"eigenActivity.finish()"
+						],
+						"type": "JavaScript"
+					},
+					"text": " ",
+					"type": "Button"
+				}
+			],
+			"gravity": "center_vertical",
+			"layout_height": "100",
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"type": "LinearLayout"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"layout_height": "wrap_content",
+			"layout_width": "wrap_content",
+			"padding": {
+				"bottom": 43,
+				"left": 40,
+				"right": 42,
+				"top": 41
+			},
+			"text_color": "#ffffff",
+			"text_list": [
+				"No Icon",
+				"attached"
+			],
+			"text_size": 20,
+			"type": "TextView"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"component_list": [
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"gravity": "left",
+					"icon": {
+						"location": "left",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"text": "left",
+					"text_color": "#ffffff",
+					"text_size": 20,
+					"type": "TextView"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"gravity": "center_horizontal",
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"text": "top",
+					"text_color": "#ffffff",
+					"text_size": 20,
+					"type": "TextView"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"gravity": "right",
+					"icon": {
+						"location": "right",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"text": "right",
+					"text_color": "#ffffff",
+					"text_size": 20,
+					"type": "TextView"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				}
+			],
+			"gravity": "center_vertical",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"scrollable": "true",
+			"type": "LinearLayout"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"component_list": [
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"background_color": "#00ffff",
+					"icon": {
+						"location": "left",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"on_click": {
+						"script": "eigenActivity.showToast('value: '+1)",
+						"type": "JavaScript"
+					},
+					"text": "left",
+					"text_color": "#ffffff",
+					"type": "Button"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"background_color": "#0f0f0f",
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"on_click": {
+						"script": "eigenActivity.showToast('value: '+2)",
+						"type": "JavaScript"
+					},
+					"text": "top",
+					"text_color": "#ffffff",
+					"type": "Button"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"background_color": "#ff00ff",
+					"icon": {
+						"location": "right",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"on_click": {
+						"script": "eigenActivity.showToast('value: '+3)",
+						"type": "JavaScript"
+					},
+					"text": "right",
+					"text_color": "#ffffff",
+					"type": "Button"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				}
+			],
+			"gravity": "center_vertical",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"scrollable": "true",
+			"type": "LinearLayout"
+		}
+	],
+	"gravity": "center_horizontal",
+	"layout_height": "wrap_content",
+	"layout_width": "match_parent",
+	"orientation": "vertical",
+	"scrollable": "true",
+	"type": "LinearLayout"
 }

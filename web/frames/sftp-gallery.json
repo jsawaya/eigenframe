@@ -1,366 +1,427 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Home Directory for SFTP"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"info."},
-	  "on_click": {
-	    "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	    "sftp":"pwd",
-	    "title":"sftp pwd",
-	    "type":"PopupTextView"
-	  },
-	  "text":"Home Directory"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Directory Listings"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "Here is the Termux sftp home directory listing - formatted with Ruby into json, to make it more usable"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"info."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {"sftp":"directory"},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"directory [Termux sftp home]"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"Home Directory Listing"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {
-	  "text_list": [
-	    "Termux External Storage",
-	    "Here is the path that Termux can access any public Android storage -- if you enabled this with the termux-setup-storage command (see Install Tab)"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"info."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {"sftp":"directory storage"},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"directory storage"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"Termux External Storage"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {
-	  "text_list": [
-	    "EigenFrame Working Directory (in termux)",
-	    "Here is the path in termux that corresponds with github eigenframe repository -- if you installed git (see Install Tab)"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"info."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "sftp":"directory /data/data/com.termux/files/home/git-repos/eigenframe"
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"directory /data/data/com.termux/files/home/git-repos/eigenframe"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"directory /data/data/com.termux/files/home/git-repos/eigenframe"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {
-	  "text_list": [
-	    "EigenFrame App Shared Directory -- there are two ways to access the EigenFrame App public shared files",
-	    " 1) From Termux, using the public storage access (see: termux-setup-storage)",
-	    " 2) From EigenFrame, using the directory_local command"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"info."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "sftp":"directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
+			{
+				"attributes": {
+					"text": "Home Directory for SFTP"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"info."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "sftp":"directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"font": "font/droid-sans-mono/DroidSansMono.ttf",
+						"sftp": "pwd",
+						"title": "sftp pwd",
+						"type": "PopupTextView"
+					},
+					"text": "Home Directory"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {
-	  "text_list": [
-	    "EigenFrame App Private Cache Directory -- only the EigenFrame App has access to these files",
-	    "Termux can't access it directly, but EigenFrame's sftp can put these files to termux"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"info."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "sftp":"directory_local /data/user/0/com.sawaya.eigenframe/files"
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"directory_local /data/user/0/com.sawaya.eigenframe/files [private cache]"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"directory_local /data/user/0/com.sawaya.eigenframe/files [private cache]"
+			{
+				"attributes": {
+					"text": "Directory Listings"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Here is the Termux sftp home directory listing - formatted with Ruby into json, to make it more usable"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"sftp": "directory"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "directory [Termux sftp home]"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Home Directory Listing"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Termux External Storage",
+						"Here is the path that Termux can access any public Android storage -- if you enabled this with the termux-setup-storage command (see Install Tab)"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"sftp": "directory storage"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "directory storage"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Termux External Storage"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"EigenFrame Working Directory (in termux)",
+						"Here is the path in termux that corresponds with github eigenframe repository -- if you installed git (see Install Tab)"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"sftp": "directory /data/data/com.termux/files/home/git-repos/eigenframe"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "directory /data/data/com.termux/files/home/git-repos/eigenframe"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "directory /data/data/com.termux/files/home/git-repos/eigenframe"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"EigenFrame App Shared Directory -- there are two ways to access the EigenFrame App public shared files",
+						" 1) From Termux, using the public storage access (see: termux-setup-storage)",
+						" 2) From EigenFrame, using the directory_local command"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"sftp": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "directory /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"sftp": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "directory_local /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [shared files]"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"EigenFrame App Private Cache Directory -- only the EigenFrame App has access to these files",
+						"Termux can't access it directly, but EigenFrame's sftp can put these files to termux"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"sftp": "directory_local /data/user/0/com.sawaya.eigenframe/files"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "directory_local /data/user/0/com.sawaya.eigenframe/files [private cache]"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "directory_local /data/user/0/com.sawaya.eigenframe/files [private cache]"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "File Transfer (get / put)"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Get - copies a remote file (in termux app) to a local directory (in eigenframe app)",
+						"Put - copies a local file (in eigenframe app) to a remote directory (in termux app)"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"on_click": {
+						"font": "font/droid-sans-mono/DroidSansMono.ttf",
+						"sftp": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files",
+						"title": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [to shared files]",
+						"type": "PopupTextView"
+					},
+					"text": "get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [to shared files]"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Put local private cache file to the remote termux/sftp home directory",
+						" 1) the first example shows that cache filenames don't need to be fully qualified",
+						" 2) the second example shows a fully qualified filename"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"on_click": {
+						"font": "font/droid-sans-mono/DroidSansMono.ttf",
+						"sftp": "put SecureFtp:12345 .",
+						"title": "put SecureFtp:12345 [in cache] . [to sftp home directory]",
+						"type": "PopupTextView"
+					},
+					"text": "put SecureFtp:12345 [in cache] . [to sftp home directory]"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"on_click": {
+						"font": "font/droid-sans-mono/DroidSansMono.ttf",
+						"sftp": "put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 .",
+						"title": "put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 [in cache] . [to sftp home directory]",
+						"type": "PopupTextView"
+					},
+					"text": "put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 [in cache] . [to sftp home directory]"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"font": "font/droid-sans-mono/DroidSansMono.ttf",
+						"sftp": "version",
+						"title": "sftp version",
+						"type": "PopupTextView"
+					},
+					"text": "sftp version"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_height": "wrap_content",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"File Transfer (get / put)"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "Get - copies a remote file (in termux app) to a local directory (in eigenframe app)",
-	    "Put - copies a local file (in eigenframe app) to a remote directory (in termux app)"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "on_click": {
-	    "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	    "sftp":"get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files",
-	    "title":"get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [to shared files]",
-	    "type":"PopupTextView"
-	  },
-	  "text":"get git-repos/eigenframe/README.md /storage/emulated/0/Android/data/com.sawaya.eigenframe/files [to shared files]"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {
-	  "text_list": [
-	    "Put local private cache file to the remote termux/sftp home directory",
-	    " 1) the first example shows that cache filenames don't need to be fully qualified",
-	    " 2) the second example shows a fully qualified filename"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "on_click": {
-	    "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	    "sftp":"put SecureFtp:12345 .",
-	    "title":"put SecureFtp:12345 [in cache] . [to sftp home directory]",
-	    "type":"PopupTextView"
-	  },
-	  "text":"put SecureFtp:12345 [in cache] . [to sftp home directory]"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "on_click": {
-	    "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	    "sftp":"put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 .",
-	    "title":"put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 [in cache] . [to sftp home directory]",
-	    "type":"PopupTextView"
-	  },
-	  "text":"put /data/user/0/com.sawaya.eigenframe/files/SecureFtp:12345 [in cache] . [to sftp home directory]"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"info."},
-	  "on_click": {
-	    "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	    "sftp":"version",
-	    "title":"sftp version",
-	    "type":"PopupTextView"
-	  },
-	  "text":"sftp version"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      }
-    ],
-    "gravity":"center_horizontal",
-    "layout_height":"wrap_content",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp":"pwd",
-  "type":"SecureFtp"
+	"sftp": "pwd",
+	"type": "SecureFtp"
 }

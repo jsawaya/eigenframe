@@ -1,437 +1,544 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {
-	"attributes": {"text":"Execute Ruby Script (via ssh)"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "The return value may be handled either as plain text, or as a dynamic EigenFrame component (json)"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"script_list": [
-	  "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Ruby File')",
-	  "eigenFragment.setCacheString('WorkingDirectory', '')",
-	  "eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
-	  "eigenFragment.setCacheString('SelectedFile', '')",
-	  "eigenFragment.setIntegerVariable('TargetViewId', 0, 999721)"
-	],
-	"type":"JavaScript"
-      },
-      {"name":"SelectFilePathRemote", "type":"Clone"},
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"open_browser."},
-	  "on_click": {
-	    "on_complete": {
-	      "attributes": {
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
 		"component_list": [
-		  {
-		    "attributes": {
-		      "component_list": [
 			{
-			  "name":"ButtonSaveEditsToRemoteFile",
-			  "type":"Clone"
-			},
-			{"name":"HorizontalLine", "type":"Clone"},
-			{
-			  "attributes": {"text":"Ruby Arguments:"},
-			  "name":"TextViewLabel",
-			  "type":"Clone"
+				"attributes": {
+					"text": "Execute Ruby Script (via ssh)"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-			  "background_color":"#000000",
-			  "id":976001,
-			  "layout_height":"wrap_content",
-			  "layout_width":"match_parent",
-			  "text_color":"#ffffff",
-			  "type":"EditText"
+				"attributes": {
+					"text_list": [
+						"The return value may be handled either as plain text, or as a dynamic EigenFrame component (json)"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
 			{
-			  "attributes": {
-			    "icon": {"location":"top", "name":"open_browser."},
-			    "on_click": {
-			      "attributes": {
-				"component_list": [
-				  {
-				    "attributes": {
-				      "component_list": [
-					{
-					  "attributes": {
-					    "ssh_script_list": [
-					      "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-					      "var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-					      "rubyfilepath = eigenFragment.getViewState(targetVid)",
-					      "rubyargs = eigenFragment.getViewState(976001) ",
-					      "'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
-					    ],
-					    "text_size":"10"
-					  },
-					  "name":"TextViewDetail",
-					  "type":"Clone"
-					}
-				      ]
-				    },
-				    "name":"LayoutVerticalScrollable",
-				    "type":"Clone"
-				  }
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Ruby File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999721)"
 				],
-				"title":"Ruby Output Console"
-			      },
-			      "name":"PopupScreenDefault",
-			      "type":"Clone"
-			    },
-			    "text":"Execute Ruby Script\nProduce PlainText"
-			  },
-			  "name":"ButtonDefault",
-			  "type":"Clone"
+				"type": "JavaScript"
 			},
 			{
-			  "attributes": {
-			    "icon": {"location":"top", "name":"open_browser."},
-			    "on_click": {
-			      "attributes": {
-				"component_list": [
-				  {
-				    "component_list": [
-				      {
-					"is_eigen_response":"true",
-					"ssh_script_list": [
-					  "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-					  "var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-					  "rubyfilepath = eigenFragment.getViewState(targetVid)",
-					  "rubyargs = eigenFragment.getViewState(976001) ",
-					  "'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"on_complete": {
+							"attributes": {
+								"component_list": [
+									{
+										"attributes": {
+											"component_list": [
+												{
+													"name": "ButtonSaveEditsToRemoteFile",
+													"type": "Clone"
+												},
+												{
+													"name": "HorizontalLine",
+													"type": "Clone"
+												},
+												{
+													"attributes": {
+														"text": "Ruby Arguments:"
+													},
+													"name": "TextViewLabel",
+													"type": "Clone"
+												},
+												{
+													"background_color": "#000000",
+													"id": 976001,
+													"layout_height": "wrap_content",
+													"layout_width": "match_parent",
+													"text_color": "#ffffff",
+													"type": "EditText"
+												},
+												{
+													"attributes": {
+														"icon": {
+															"location": "top",
+															"name": "open_browser."
+														},
+														"on_click": {
+															"attributes": {
+																"component_list": [
+																	{
+																		"attributes": {
+																			"component_list": [
+																				{
+																					"attributes": {
+																						"ssh_script_list": [
+																							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+																							"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+																							"rubyfilepath = eigenFragment.getViewState(targetVid)",
+																							"rubyargs = eigenFragment.getViewState(976001) ",
+																							"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+																						],
+																						"text_size": "10"
+																					},
+																					"name": "TextViewDetail",
+																					"type": "Clone"
+																				}
+																			]
+																		},
+																		"name": "LayoutVerticalScrollable",
+																		"type": "Clone"
+																	}
+																],
+																"title": "Ruby Output Console"
+															},
+															"name": "PopupScreenDefault",
+															"type": "Clone"
+														},
+														"text": "Execute Ruby Script\nProduce PlainText"
+													},
+													"name": "ButtonDefault",
+													"type": "Clone"
+												},
+												{
+													"attributes": {
+														"icon": {
+															"location": "top",
+															"name": "open_browser."
+														},
+														"on_click": {
+															"attributes": {
+																"component_list": [
+																	{
+																		"component_list": [
+																			{
+																				"is_eigen_response": "true",
+																				"ssh_script_list": [
+																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
+																					"rubyfilepath = eigenFragment.getViewState(targetVid)",
+																					"rubyargs = eigenFragment.getViewState(976001) ",
+																					"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+																				],
+																				"type": "SecureShell"
+																			}
+																		],
+																		"gravity": "center",
+																		"layout_height": "match_parent",
+																		"layout_width": "match_parent",
+																		"orientation": "vertical",
+																		"type": "LinearLayout"
+																	}
+																],
+																"title": "Dynamic Ruby EigenFrame"
+															},
+															"name": "PopupScreenDefault",
+															"type": "Clone"
+														},
+														"text": "Execute Ruby Script\nProduce EigenFrame"
+													},
+													"name": "ButtonDefault",
+													"type": "Clone"
+												},
+												{
+													"name": "HorizontalLine",
+													"type": "Clone"
+												},
+												{
+													"attributes": {
+														"text": "Ruby Script:"
+													},
+													"name": "TextViewLabel",
+													"type": "Clone"
+												},
+												{
+													"name": "EditTextLocalFileCache",
+													"type": "Clone"
+												}
+											]
+										},
+										"name": "LayoutVerticalScrollable",
+										"type": "Clone"
+									}
+								],
+								"id": 999099,
+								"title_script_list": [
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+									"var filename = eigenFragment.getViewState(targetVid)",
+									"'Remote File: ' + filename"
+								]
+							},
+							"name": "PopupScreenDefault",
+							"type": "Clone"
+						},
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'get ' + filename + ' EditText:999000'"
+						],
+						"type": "SecureFtp"
+					},
+					"text": "Edit/Exec Remote Ruby File"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "Ruby Command Line"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Enter ruby command"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#000000",
+				"id": 7700,
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
+				"text": "EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
+				"text_color": "#ffffff",
+				"type": "EditText"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "play."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"ssh_script": "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'",
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Ruby Command Output"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Execute Ruby Command Line\nReturn value as PlainText"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "play."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"component_list": [
+										{
+											"is_eigen_response": "true",
+											"ssh_script": "'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'",
+											"type": "SecureShell"
+										}
+									],
+									"gravity": "center",
+									"layout_height": "match_parent",
+									"layout_width": "match_parent",
+									"orientation": "vertical",
+									"type": "LinearLayout"
+								}
+							],
+							"title": "Ruby Produced Dynamic EigenFrame"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Execute Ruby Command Line\nReturn Dynamic EigenFrame"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "Ruby EigenFrame Gallery"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#123456",
+				"gravity": "center",
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"background_color": "#111111",
+					"component_list": [
+						{
+							"gravity": "left",
+							"layout_height": "wrap_content",
+							"layout_width": "match_parent",
+							"text": "SecureShell calls ruby to generate the following components:",
+							"text_color": "#ffffff",
+							"text_size": "14",
+							"type": "TextView"
+						},
+						{
+							"is_eigen_response": "true",
+							"ssh_list": [
+								"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+								"ruby ssh-directory-listview.rb /data/data/com.termux/files/home"
+							],
+							"type": "SecureShell"
+						}
 					],
-					"type":"SecureShell"
-				      }
-				    ],
-				    "gravity":"center",
-				    "layout_height":"match_parent",
-				    "layout_width":"match_parent",
-				    "orientation":"vertical",
-				    "type":"LinearLayout"
-				  }
-				],
-				"title":"Dynamic Ruby EigenFrame"
-			      },
-			      "name":"PopupScreenDefault",
-			      "type":"Clone"
-			    },
-			    "text":"Execute Ruby Script\nProduce EigenFrame"
-			  },
-			  "name":"ButtonDefault",
-			  "type":"Clone"
-			},
-			{"name":"HorizontalLine", "type":"Clone"},
-			{
-			  "attributes": {"text":"Ruby Script:"},
-			  "name":"TextViewLabel",
-			  "type":"Clone"
+					"icon": {
+						"location": "left",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_width": "match_parent",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"title": "File system explorer",
+					"type": "PopupScreen"
+				},
+				"text": "File System Explorer (via ssh)",
+				"text_color": "#ffffff",
+				"type": "Button"
 			},
 			{
-			  "name":"EditTextLocalFileCache",
-			  "type":"Clone"
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "Ruby HTTP service (webrick)"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Ruby can be used as a simple http server:",
+						" - best for very quick light-weight ruby methods",
+						" - not as robust as Apache2 (multi-threading, etc.)"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#123456",
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"abort": 2000,
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh": "ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb > ruby-webrick.out 2> ruby-webrick.log &",
+					"title": "Start ruby webrick",
+					"type": "PopupTextView"
+				},
+				"text": "Start ruby webrick service",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"background_color": "#123456",
+				"icon": {
+					"location": "top",
+					"name": "info."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh": "ps -eo cmd | grep -n 'ruby' | grep -v 'grep'",
+					"title": "Confirm ruby webrick process",
+					"type": "PopupTextView"
+				},
+				"text": "Confirm ruby webrick process",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"background_color": "#123456",
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"title": "http://localhost:1234/test",
+					"type": "PopupTextView",
+					"url": "http://localhost:1234/test"
+				},
+				"text": "Test ruby webrick service",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"background_color": "#123456",
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-list-termux-file-contents.rb /data/data/com.termux/files/home/ruby-webrick.log",
+					"title": "Show ruby webrick log",
+					"type": "PopupTextView"
+				},
+				"text": "Show ruby webrick log",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"background_color": "#123456",
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh": "cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-list-termux-file-contents.rb /data/data/com.termux/files/home/ruby-webrick.out",
+					"title": "Show ruby webrick output",
+					"type": "PopupTextView"
+				},
+				"text": "Show ruby webrick output",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"background_color": "#123456",
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"title": "Use url to exit webrick process",
+					"type": "PopupTextView",
+					"url": "http://localhost:1234/exit"
+				},
+				"text": "Use url to exit webrick process",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"background_color": "#123456",
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh_list": [
+						"pkill ruby",
+						"ps -eo cmd"
+					],
+					"title": "use ssh to stop any ruby process",
+					"type": "PopupTextView"
+				},
+				"text": "Use ssh to stop any ruby process",
+				"text_color": "#ffffff",
+				"type": "Button"
 			}
-		      ]
-		    },
-		    "name":"LayoutVerticalScrollable",
-		    "type":"Clone"
-		  }
 		],
-		"id":999099,
-		"title_script_list": [
-		  "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-		  "var filename = eigenFragment.getViewState(targetVid)",
-		  "'Remote File: ' + filename"
-		]
-	      },
-	      "name":"PopupScreenDefault",
-	      "type":"Clone"
-	    },
-	    "sftp_script_list": [
-	      "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-	      "var filename = eigenFragment.getViewState(targetVid)",
-	      "'get ' + filename + ' EditText:999000'"
-	    ],
-	    "type":"SecureFtp"
-	  },
-	  "text":"Edit/Exec Remote Ruby File"
+		"gravity": "center_horizontal",
+		"layout_height": "wrap_content",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Ruby Command Line"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {"text_list": ["Enter ruby command" ]},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"background_color":"#000000",
-	"id":7700,
-	"layout_height":"wrap_content",
-	"layout_width":"match_parent",
-	"text":"EigenFrame.new().eigen_directory_listview_ssh('.').to_json.to_s",
-	"text_color":"#ffffff",
-	"type":"EditText"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"play."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "ssh_script":"'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'",
-			  "text_size":"10"
-			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"Ruby Command Output"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"Execute Ruby Command Line\nReturn value as PlainText"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "icon": {"location":"top", "name":"play."},
-	  "on_click": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "component_list": [
-		    {
-		      "is_eigen_response":"true",
-		      "ssh_script":"'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh_ruby.rb \"'+ eigenFragment.getViewState(7700) +'\"'",
-		      "type":"SecureShell"
-		    }
-		  ],
-		  "gravity":"center",
-		  "layout_height":"match_parent",
-		  "layout_width":"match_parent",
-		  "orientation":"vertical",
-		  "type":"LinearLayout"
-		}
-	      ],
-	      "title":"Ruby Produced Dynamic EigenFrame"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "text":"Execute Ruby Command Line\nReturn Dynamic EigenFrame"
-	},
-	"name":"ButtonDefault",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Ruby EigenFrame Gallery"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"background_color":"#123456",
-	"gravity":"center",
-	"icon": {"location":"top", "name":"open_browser."},
-	"layout_height":"wrap_content",
-	"layout_width":"match_parent",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "background_color":"#111111",
-	  "component_list": [
-	    {
-	      "gravity":"left",
-	      "layout_height":"wrap_content",
-	      "layout_width":"match_parent",
-	      "text":"SecureShell calls ruby to generate the following components:",
-	      "text_color":"#ffffff",
-	      "text_size":"14",
-	      "type":"TextView"
-	    },
-	    {
-	      "is_eigen_response":"true",
-	      "ssh_list": [
-		"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-		"ruby ssh-directory-listview.rb /data/data/com.termux/files/home"
-	      ],
-	      "type":"SecureShell"
-	    }
-	  ],
-	  "icon": {"location":"left", "name":"info."},
-	  "layout_height":"wrap_content",
-	  "layout_width":"match_parent",
-	  "text_color":"#ffffff",
-	  "text_size":"14",
-	  "title":"File system explorer",
-	  "type":"PopupScreen"
-	},
-	"text":"File System Explorer (via ssh)",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Ruby HTTP service (webrick)"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "Ruby can be used as a simple http server:",
-	    " - best for very quick light-weight ruby methods",
-	    " - not as robust as Apache2 (multi-threading, etc.)"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"background_color":"#123456",
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "abort":2000,
-	  "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	  "ssh":"ruby /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/sys-webrick.rb > ruby-webrick.out 2> ruby-webrick.log &",
-	  "title":"Start ruby webrick",
-	  "type":"PopupTextView"
-	},
-	"text":"Start ruby webrick service",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {
-	"background_color":"#123456",
-	"icon": {"location":"top", "name":"info."},
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	  "ssh":"ps -eo cmd | grep -n 'ruby' | grep -v 'grep'",
-	  "title":"Confirm ruby webrick process",
-	  "type":"PopupTextView"
-	},
-	"text":"Confirm ruby webrick process",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {
-	"background_color":"#123456",
-	"icon": {"location":"top", "name":"open_browser."},
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "title":"http://localhost:1234/test",
-	  "type":"PopupTextView",
-	  "url":"http://localhost:1234/test"
-	},
-	"text":"Test ruby webrick service",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {
-	"background_color":"#123456",
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	  "ssh":"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-list-termux-file-contents.rb /data/data/com.termux/files/home/ruby-webrick.log",
-	  "title":"Show ruby webrick log",
-	  "type":"PopupTextView"
-	},
-	"text":"Show ruby webrick log",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {
-	"background_color":"#123456",
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	  "ssh":"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ruby ssh-list-termux-file-contents.rb /data/data/com.termux/files/home/ruby-webrick.out",
-	  "title":"Show ruby webrick output",
-	  "type":"PopupTextView"
-	},
-	"text":"Show ruby webrick output",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {
-	"background_color":"#123456",
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "title":"Use url to exit webrick process",
-	  "type":"PopupTextView",
-	  "url":"http://localhost:1234/exit"
-	},
-	"text":"Use url to exit webrick process",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {
-	"background_color":"#123456",
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "font":"font/droid-sans-mono/DroidSansMono.ttf",
-	  "ssh_list": ["pkill ruby", "ps -eo cmd" ],
-	  "title":"use ssh to stop any ruby process",
-	  "type":"PopupTextView"
-	},
-	"text":"Use ssh to stop any ruby process",
-	"text_color":"#ffffff",
-	"type":"Button"
-      }
-    ],
-    "gravity":"center_horizontal",
-    "layout_height":"wrap_content",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp":"pwd",
-  "type":"SecureFtp"
+	"sftp": "pwd",
+	"type": "SecureFtp"
 }

@@ -1,107 +1,123 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"attributes": {"text":"Decrypt File"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "OpenPGP Decryption",
-	    "- your private key enables you to open files that have been encrypted with your public key",
-	    "- try decrypting a file encrypted with demo-private-key's public key: ",
-	    "passphrase: demo"
-	  ]
-	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {
-	"script_list": [
-	  "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Encrypted File')",
-	  "eigenFragment.setCacheString('WorkingDirectory', '')",
-	  "eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-	  "eigenFragment.setCacheString('SelectedFile', '')",
-	  "eigenFragment.setIntegerVariable('TargetViewId', 0, 999702)"
-	],
-	"type":"JavaScript"
-      },
-      {"name":"SelectFilePathRemote", "type":"Clone"},
-      {"name":"EditTextPgpPassword6606", "type":"Clone"},
-      {
-	"background_color":"#654321",
-	"icon": {"location":"top", "name":"info."},
-	"layout_height":"wrap_content",
-	"layout_width":"wrap_content",
-	"on_click": {
-	  "id":6605,
-	  "is_eigen_response":"false",
-	  "on_complete": {
-	    "attributes": {
-	      "component_list": [
-		{
-		  "attributes": {
-		    "component_list": [
-		      {
-			"attributes": {
-			  "url":"file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
-			"name":"TextViewDetail",
-			"type":"Clone"
-		      }
-		    ]
-		  },
-		  "name":"LayoutVerticalScrollable",
-		  "type":"Clone"
-		}
-	      ],
-	      "title":"Decrypt File"
-	    },
-	    "name":"PopupScreenDefault",
-	    "type":"Clone"
-	  },
-	  "parameter_list": [
-	    {
-	      "name":"pgpfile",
-	      "value_script_list": [
-		"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-		"var pgpfile = eigenFragment.getViewState(targetVid)",
-		"'' + pgpfile"
-	      ]
-	    },
-	    {
-	      "name":"password",
-	      "value_script_list": ["'' + eigenFragment.getViewState(6606)" ]
-	    },
-	    {
-	      "name":"ruby",
-	      "value_list": [
-		"pgpfile = cgi.params['pgpfile'][0]",
-		"output_file = pgpfile[0..(pgpfile.rindex('.')-1)]",
-		"password = cgi.params['password'][0]",
-		"gpg_decrypt(password, pgpfile, output_file).to_json.to_s"
-	      ]
-	    }
-	  ],
-	  "type":"UrlRequest",
-	  "url":"http://localhost:8080/cgi-bin/cgi_ruby.rb"
+			{
+				"attributes": {
+					"text": "Decrypt File"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"OpenPGP Decryption",
+						"- your private key enables you to open files that have been encrypted with your public key",
+						"- try decrypting a file encrypted with demo-private-key's public key: ",
+						"passphrase: demo"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"script_list": [
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Encrypted File')",
+					"eigenFragment.setCacheString('WorkingDirectory', '')",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
+					"eigenFragment.setCacheString('SelectedFile', '')",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999702)"
+				],
+				"type": "JavaScript"
+			},
+			{
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
+			},
+			{
+				"name": "EditTextPgpPassword6606",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#654321",
+				"icon": {
+					"location": "top",
+					"name": "info."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"on_click": {
+					"id": 6605,
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Decrypt File"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"parameter_list": [
+						{
+							"name": "pgpfile",
+							"value_script_list": [
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+								"var pgpfile = eigenFragment.getViewState(targetVid)",
+								"'' + pgpfile"
+							]
+						},
+						{
+							"name": "password",
+							"value_script_list": [
+								"'' + eigenFragment.getViewState(6606)"
+							]
+						},
+						{
+							"name": "ruby",
+							"value_list": [
+								"pgpfile = cgi.params['pgpfile'][0]",
+								"output_file = pgpfile[0..(pgpfile.rindex('.')-1)]",
+								"password = cgi.params['password'][0]",
+								"gpg_decrypt(password, pgpfile, output_file).to_json.to_s"
+							]
+						}
+					],
+					"type": "UrlRequest",
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
+				},
+				"text": "Decrypt File",
+				"text_color": "#ffffff",
+				"type": "Button"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"text":"Decrypt File",
-	"text_color":"#ffffff",
-	"type":"Button"
-      }
-    ],
-    "gravity":"center_horizontal",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp_script":"'pwd'",
-  "type":"SecureFtp"
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }

@@ -1,45 +1,48 @@
 {
   "component_list": [
     {
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"Test for HtmlView",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"TextView"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test for HtmlView",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
     },
     {
-      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "html":"example-links: <hr/> google.com<p/> https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP <p/>internal-icon: <img src='play.jpg'>",
-      "icon-x": {"location":"left", "name":"info.jpg"},
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text_color":"#ffffff",
-      "text_size":"14",
-      "type":"HtmlView"
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "html": "example-links: <hr/> google.com<p/> https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP <p/>internal-icon: <img src='play.jpg'>",
+      "icon-x": {
+        "location": "left",
+        "name": "info.jpg"
+      },
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "HtmlView"
     },
     {
       "component_list": [
-	{
-	  "layout_height":"wrap_content",
-	  "layout_width":"match_parent",
-	  "text_color":"#ffffff",
-	  "text_size":"14",
-	  "type":"HtmlView",
-	  "url_script":"eigenFragment.getCacheString('RootUrl')+'web/frames/about.json'"
-	}
+        {
+          "layout_height": "wrap_content",
+          "layout_width": "match_parent",
+          "text_color": "#ffffff",
+          "text_size": "14",
+          "type": "HtmlView",
+          "url_script": "eigenFragment.getCacheString('RootUrl')+'web/frames/about.json'"
+        }
       ],
-      "gravity":"center_horizontal",
-      "layout_height":"match_parent",
-      "layout_width":"match_parent",
-      "orientation":"vertical",
-      "scrollable":"true",
-      "type":"LinearLayout"
+      "gravity": "center_horizontal",
+      "layout_height": "match_parent",
+      "layout_width": "match_parent",
+      "orientation": "vertical",
+      "scrollable": "true",
+      "type": "LinearLayout"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"match_parent",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "match_parent",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "type": "LinearLayout"
 }

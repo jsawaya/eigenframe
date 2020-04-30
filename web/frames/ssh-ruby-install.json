@@ -1,76 +1,95 @@
 {
-  "comment":"set the HomeDirectory from sftp pwd",
-  "id":411000,
-  "on_complete": {
-    "component_list": [
-      {
-	"attributes": {"text":"Ruby Installation"},
-	"name":"TextViewLabel",
-	"type":"Clone"
-      },
-      {
-	"attributes": {
-	  "text_list": [
-	    "Click [Ruby Installation] - ",
-	    "Ruby is a dynamic scripting language used for server-side eigenframe transforms."
-	  ]
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"attributes": {
+					"text": "Ruby Installation"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Click [Ruby Installation] - ",
+						"Ruby is a dynamic scripting language used for server-side eigenframe transforms."
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#123456",
+				"gravity": "center",
+				"icon": {
+					"location": "top",
+					"name": "archive."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"background_color": "#111111",
+					"component_list": [
+						{
+							"component_list": [
+								{
+									"font": "font/droid-sans-mono/DroidSansMono.ttf",
+									"gravity": "left",
+									"is_toast": "true",
+									"layout_height": "wrap_content",
+									"layout_width": "match_parent",
+									"ssh_list": [
+										"echo pkg install ruby",
+										"echo y | pkg install ruby"
+									],
+									"text_color": "#ffffff",
+									"text_size": "14",
+									"type": "TextView"
+								}
+							],
+							"gravity": "center_horizontal",
+							"layout_height": "wrap_content",
+							"layout_width": "match_parent",
+							"orientation": "vertical",
+							"scrollable": "true",
+							"type": "LinearLayout"
+						}
+					],
+					"layout_height": "wrap_content",
+					"layout_width": "match_parent",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"title": "Install ruby package",
+					"type": "PopupScreen"
+				},
+				"text": "Ruby Installation",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_height": "wrap_content",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
 	},
-	"name":"TextViewDetail",
-	"type":"Clone"
-      },
-      {"name":"HorizontalLine", "type":"Clone"},
-      {
-	"background_color":"#123456",
-	"gravity":"center",
-	"icon": {"location":"top", "name":"archive."},
-	"layout_height":"wrap_content",
-	"layout_width":"match_parent",
-	"margin": {"bottom":10, "left":10, "right":10, "top":10},
-	"on_click": {
-	  "background_color":"#111111",
-	  "component_list": [
-	    {
-	      "component_list": [
-		{
-		  "font":"font/droid-sans-mono/DroidSansMono.ttf",
-		  "gravity":"left",
-		  "is_toast":"true",
-		  "layout_height":"wrap_content",
-		  "layout_width":"match_parent",
-		  "ssh_list": ["echo pkg install ruby", "echo y | pkg install ruby" ],
-		  "text_color":"#ffffff",
-		  "text_size":"14",
-		  "type":"TextView"
-		}
-	      ],
-	      "gravity":"center_horizontal",
-	      "layout_height":"wrap_content",
-	      "layout_width":"match_parent",
-	      "orientation":"vertical",
-	      "scrollable":"true",
-	      "type":"LinearLayout"
-	    }
-	  ],
-	  "layout_height":"wrap_content",
-	  "layout_width":"match_parent",
-	  "text_color":"#ffffff",
-	  "text_size":"14",
-	  "title":"Install ruby package",
-	  "type":"PopupScreen"
-	},
-	"text":"Ruby Installation",
-	"text_color":"#ffffff",
-	"type":"Button"
-      },
-      {"name":"HorizontalLine", "type":"Clone"}
-    ],
-    "gravity":"center_horizontal",
-    "layout_height":"wrap_content",
-    "layout_width":"match_parent",
-    "orientation":"vertical",
-    "scrollable":"true",
-    "type":"LinearLayout"
-  },
-  "sftp":"pwd",
-  "type":"SecureFtp"
+	"sftp": "pwd",
+	"type": "SecureFtp"
 }

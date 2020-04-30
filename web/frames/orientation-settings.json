@@ -1,87 +1,106 @@
 {
   "component_list": [
     {
-      "attributes": {"text":"Screen Orientation Settings:"},
-      "name":"TextViewLabel",
-      "type":"Clone"
+      "attributes": {
+        "text": "Screen Orientation Settings:"
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
       "attributes": {
-	"icon": {"location":"top", "name":"rotate_90."},
-	"on_click": {
-	  "script_list": ["eigenActivity.enableOrientationEventListener(true)" ],
-	  "type":"JavaScript"
-	},
-	"text":"Automatic Orientation"
+        "icon": {
+          "location": "top",
+          "name": "rotate_90."
+        },
+        "on_click": {
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(true)"
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Automatic Orientation"
       },
-      "name":"ButtonDefault",
-      "type":"Clone"
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
       "attributes": {
-	"icon": {"location":"top", "name":"arrow_up."},
-	"on_click": {
-	  "script_list": [
-	    "eigenActivity.enableOrientationEventListener(false)",
-	    "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
-	  ],
-	  "type":"JavaScript"
-	},
-	"text":"Portrait Orientation"
+        "icon": {
+          "location": "top",
+          "name": "arrow_up."
+        },
+        "on_click": {
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(false)",
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Portrait Orientation"
       },
-      "name":"ButtonDefault",
-      "type":"Clone"
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
       "attributes": {
-	"icon": {"location":"top", "name":"arrow_forward."},
-	"on_click": {
-	  "script_list": [
-	    "eigenActivity.enableOrientationEventListener(false)",
-	    "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
-	  ],
-	  "type":"JavaScript"
-	},
-	"text":"Landscape Orientation"
+        "icon": {
+          "location": "top",
+          "name": "arrow_forward."
+        },
+        "on_click": {
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(false)",
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Landscape Orientation"
       },
-      "name":"ButtonDefault",
-      "type":"Clone"
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
       "attributes": {
-	"icon": {"location":"top", "name":"arrow_down."},
-	"on_click": {
-	  "script_list": [
-	    "eigenActivity.enableOrientationEventListener(false)",
-	    "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT)"
-	  ],
-	  "type":"JavaScript"
-	},
-	"text":"Reverse-Portrait Orientation"
+        "icon": {
+          "location": "top",
+          "name": "arrow_down."
+        },
+        "on_click": {
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(false)",
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT)"
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Reverse-Portrait Orientation"
       },
-      "name":"ButtonDefault",
-      "type":"Clone"
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
       "attributes": {
-	"icon": {"location":"top", "name":"arrow_back."},
-	"on_click": {
-	  "script_list": [
-	    "eigenActivity.enableOrientationEventListener(false)",
-	    "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE)"
-	  ],
-	  "type":"JavaScript"
-	},
-	"text":"Reverse-Landscape Orientation"
+        "icon": {
+          "location": "top",
+          "name": "arrow_back."
+        },
+        "on_click": {
+          "script_list": [
+            "eigenActivity.enableOrientationEventListener(false)",
+            "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE)"
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Reverse-Landscape Orientation"
       },
-      "name":"ButtonDefault",
-      "type":"Clone"
+      "name": "ButtonDefault",
+      "type": "Clone"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

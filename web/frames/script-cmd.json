@@ -1,102 +1,121 @@
 {
   "component_list": [
     {
-      "attributes": {"text":"EigenFrame supports JavaScript"},
-      "name":"TextViewLabel",
-      "type":"Clone"
+      "attributes": {
+        "text": "EigenFrame supports JavaScript"
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
       "attributes": {
-	"text_list": [
-	  "JavaScript can invoke dynamic attributes and actions (no services required)"
-	]
+        "text_list": [
+          "JavaScript can invoke dynamic attributes and actions (no services required)"
+        ]
       },
-      "name":"TextViewDetail",
-      "type":"Clone"
+      "name": "TextViewDetail",
+      "type": "Clone"
     },
     {
-      "background_color":"#654321",
-      "icon": {"location":"top", "name":"play."},
-      "layout_height":"wrap_content",
-      "layout_width":"wrap_content",
+      "background_color": "#654321",
+      "icon": {
+        "location": "top",
+        "name": "play."
+      },
+      "layout_height": "wrap_content",
+      "layout_width": "wrap_content",
       "on_click": {
-	"script_list": ["x = 8*5", "eigenActivity.showToast('var x: '+x)" ],
-	"type":"JavaScript"
+        "script_list": [
+          "x = 8*5",
+          "eigenActivity.showToast('var x: '+x)"
+        ],
+        "type": "JavaScript"
       },
       "text": [
-	"JavaScript using script_list: ",
-	"x = 8*5; eigenActivity.showToast('var x: '+x); x;"
+        "JavaScript using script_list: ",
+        "x = 8*5; eigenActivity.showToast('var x: '+x); x;"
       ],
-      "text_color":"#ffffff",
-      "type":"Button"
-    },
-    {"name":"HorizontalLine", "type":"Clone"},
-    {
-      "attributes": {"text":"JavaScript Command Line"},
-      "name":"TextViewLabel",
-      "type":"Clone"
+      "text_color": "#ffffff",
+      "type": "Button"
     },
     {
-      "background_color":"#000000",
-      "id":7500,
-      "layout_height":"wrap_content",
-      "layout_width":"match_parent",
-      "text":"'result: '+(1+2+3+4)",
-      "text_color":"#ffffff",
-      "type":"EditText"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
       "attributes": {
-	"icon": {"location":"top", "name":"play."},
-	"on_click": {
-	  "attributes": {
-	    "component_list": [
-	      {
-		"id":7501,
-		"script_script":"''+eigenFragment.getViewState(7500)",
-		"type":"JavaScript"
-	      },
-	      {
-		"attributes": {
-		  "component_list": [
-		    {
-		      "attributes": {
-			"text_script":"''+eigenFragment.getViewState(7500)",
-			"text_size":"14"
-		      },
-		      "name":"TextViewDetail",
-		      "type":"Clone"
-		    },
-		    {"name":"HorizontalLine", "type":"Clone"},
-		    {
-		      "attributes": {
-			"text_size":"10",
-			"url":"file:///data/user/0/com.sawaya.eigenframe/files/JavaScript:7501"
-		      },
-		      "name":"TextViewDetail",
-		      "type":"Clone"
-		    }
-		  ]
-		},
-		"name":"LayoutVerticalScrollable",
-		"type":"Clone"
-	      }
-	    ],
-	    "title":"JavaScript Command Output"
-	  },
-	  "name":"PopupScreenDefault",
-	  "type":"Clone"
-	},
-	"text":"Execute JavaScript Command"
+        "text": "JavaScript Command Line"
       },
-      "name":"ButtonDefault",
-      "type":"Clone"
+      "name": "TextViewLabel",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#000000",
+      "id": 7500,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "'result: '+(1+2+3+4)",
+      "text_color": "#ffffff",
+      "type": "EditText"
+    },
+    {
+      "attributes": {
+        "icon": {
+          "location": "top",
+          "name": "play."
+        },
+        "on_click": {
+          "attributes": {
+            "component_list": [
+              {
+                "id": 7501,
+                "script_script": "''+eigenFragment.getViewState(7500)",
+                "type": "JavaScript"
+              },
+              {
+                "attributes": {
+                  "component_list": [
+                    {
+                      "attributes": {
+                        "text_script": "''+eigenFragment.getViewState(7500)",
+                        "text_size": "14"
+                      },
+                      "name": "TextViewDetail",
+                      "type": "Clone"
+                    },
+                    {
+                      "name": "HorizontalLine",
+                      "type": "Clone"
+                    },
+                    {
+                      "attributes": {
+                        "text_size": "10",
+                        "url": "file:///data/user/0/com.sawaya.eigenframe/files/JavaScript:7501"
+                      },
+                      "name": "TextViewDetail",
+                      "type": "Clone"
+                    }
+                  ]
+                },
+                "name": "LayoutVerticalScrollable",
+                "type": "Clone"
+              }
+            ],
+            "title": "JavaScript Command Output"
+          },
+          "name": "PopupScreenDefault",
+          "type": "Clone"
+        },
+        "text": "Execute JavaScript Command"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     }
   ],
-  "gravity":"center_horizontal",
-  "layout_height":"wrap_content",
-  "layout_width":"match_parent",
-  "orientation":"vertical",
-  "scrollable":"true",
-  "type":"LinearLayout"
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }
