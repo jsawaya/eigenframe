@@ -8,10 +8,16 @@
 select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
 select_app_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
 
+% select_app_url(URL), show_json_url(URL).
 % select_app_url(URL), read_eigenframe_url(URL).
 
+show_json_url(URL) :-
+	read_json_url(URL, Data), 
+	show_json(Data).
+
 read_eigenframe_url(URL) :-
-	read_json_url(URL, Data), parse_eigenframe(Data).
+	read_json_url(URL, Data), 
+	parse_eigenframe(Data).
 
 read_json_url(URL, Data) :-
 	setup_call_cleanup(
@@ -20,15 +26,20 @@ read_json_url(URL, Data) :-
 		close(In)
 	).
 
-% select_app_url(URL), show_eigenframe_url(URL).
-
-show_eigenframe_url(URL) :-
-	read_json_url(URL, Data), show_json(Data).
-
 %-----------------------------------------------
 
+select_file_checkbox('/home/john/projects/eigenframe-repository/web/frames/test-CheckBox.json').
 select_file_frame('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 select_dir_frames('/home/john/projects/eigenframe-repository/web/frames').
+
+% select_dir_frames(Dir), show_directory(Dir,Entries), show_filenames(Dir, Entries).
+% select_dir_frames(Dir), directory_files(Dir, Entries), organize_eigenframe_files(Dir, Entries).
+
+% select_file_frame(FPath), read_eigenframe_file(FPath).
+% select_file_frame(FPath), organize_eigenframe_file(FPath).
+% select_file_frame(FPath), show_json_file(FPath).
+
+% show_json_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 
 show_directory(Dir, Entries) :- 
   working_directory(CWD, CWD),
@@ -36,15 +47,6 @@ show_directory(Dir, Entries) :-
   write(" Directory: "), 	writeln(Dir),
 	directory_files(Dir, Entries),
   write(" Entries: "), 	writeln(Entries).
-
-
-% select_dir_frames(Dir), show_directory(Dir,Entries), show_filenames(Dir, Entries).
-% select_dir_frames(Dir), directory_files(Dir, Entries), organize_eigenframe_files(Dir, Entries).
-
-% select_file_frame(FPath), read_eigenframe_file(FPath).
-% select_file_frame(FPath), organize_eigenframe_file(FPath).
-% select_file_frame(FPath), show_eigenframe_file(FPath).
-
 
 read_eigenframe_file(FPath) :-
 	read_json_file(FPath, Data), parse_eigenframe(Data).
@@ -62,7 +64,7 @@ save_json_file(FPath, Data) :-
 show_json(Data) :-
 	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
 
-show_eigenframe_file(FPath) :-
+show_json_file(FPath) :-
 	read_json_file(FPath, Data), 
 	show_json(Data).
 
@@ -91,205 +93,149 @@ organize_eigenframe_files(Dir, [File|T]) :-
 
 
 %-----------------------------------------------
-
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'EigenFrame',
-  format(" ~w~n", [Type]),
-	(parse_eigenframe_is_secure_window(Data);true),
+	select_eigenframe_type(Data, 'EigenFrame'),
+	(parse_eigenframe_is_secure_window(Data,_);true),
 	(parse_eigenframe_script_sources(Data);true),
 	X = Data.get(tab_list),
 	parse_eigenframe_list(X).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'EigenFragment',
-  format(" ~w~n", [Type]),
-	(parse_eigenframe_name(Data);true), 
-	(parse_eigenframe_icon_name(Data);true), 
+	select_eigenframe_type(Data, 'EigenFragment'),
+	(parse_eigenframe_name(Data,_);true), 
+	(parse_eigenframe_icon_name(Data,_);true), 
 	parse_eigenframe_url(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'ActionList',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'ActionList'),
 	(parse_eigenframe_component_list(Data);true),
 	parse_eigenframe_on_complete(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'AlertDialog',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'AlertDialog').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'Button',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'Button'),
 	(parse_eigenframe_text_sources(Data); true),
-	parse_eigenframe_on_click(Data).
+	parse_eigenframe_on_click(Data,_).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'CheckBox',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'CheckBox'),
 	(parse_eigenframe_text_sources(Data); true),
-	parse_eigenframe_on_click(Data).
+	(parse_eigenframe_checked(Data,_); true),
+	(parse_eigenframe_id(Data,_); true),
+	(parse_eigenframe_layout_width(Data,_); true),
+	(parse_eigenframe_layout_height(Data,_); true),
+	(parse_eigenframe_gravity(Data,_); true),
+	(parse_eigenframe_background_color(Data,_); true),
+	(parse_eigenframe_icon(Data,_); true),
+	(parse_eigenframe_padding(Data,_); true),
+	(parse_eigenframe_margin(Data,_); true),
+	(parse_eigenframe_on_click(Data,_); true).
+
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'Clone',
-  format(" ~w~n", [Type]),
-	parse_eigenframe_name(Data),
+	select_eigenframe_type(Data, 'Clone'),
+	parse_eigenframe_name(Data,_),
 	(parse_eigenframe_attributes(Data);true).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'Define',
-  format(" ~w~n", [Type]),
-	parse_eigenframe_name(Data),
+	select_eigenframe_type(Data, 'Define'),
+	parse_eigenframe_name(Data,_),
 	parse_eigenframe_component(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'EditText',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'EditText'),
 	parse_eigenframe_text_sources(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'HorizontalLine',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'HorizontalLine').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'HtmlView',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'HtmlView').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'ImageView',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'ImageView').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'JavaScript',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'JavaScript').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'LinearLayout',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'LinearLayout'),
 	parse_eigenframe_component_list(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'ListView',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'ListView').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'PopupHtmlView',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'PopupHtmlView').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'PopupScreen',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'PopupScreen'),
 	parse_eigenframe_component_list(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'PopupTextView',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'PopupTextView'),
 	(parse_eigenframe_text_sources(Data); true).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'RadioButton',
-  format(" ~w~n", [Type]),
-	parse_eigenframe_on_click(Data).
+	select_eigenframe_type(Data, 'RadioButton'),
+	parse_eigenframe_on_click(Data,_).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'SecureFtp',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'SecureFtp'),
 	(parse_eigenframe_sftp_sources(Data); true),
 	parse_eigenframe_on_complete(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'SecureShell',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'SecureShell'),
 	(parse_eigenframe_ssh_sources(Data); true),
 	parse_eigenframe_on_complete(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'SelectDialog',
-  format(" ~w~n", [Type]),
-	parse_eigenframe_on_click(Data).
+	select_eigenframe_type(Data, 'SelectDialog'),
+	parse_eigenframe_on_click(Data,_).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'Spinner',
-  format(" ~w~n", [Type]),
-	parse_eigenframe_on_click(Data).
+	select_eigenframe_type(Data, 'Spinner'),
+	parse_eigenframe_on_click(Data,_).
 	
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'Switch',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'Switch'),
 	(parse_eigenframe_text_sources(Data); true),
-	parse_eigenframe_on_click(Data).
+	parse_eigenframe_on_click(Data,_).
 	
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'TextView',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'TextView'),
 	(parse_eigenframe_text_sources(Data); true).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'ToastMessage',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'ToastMessage').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'ToggleButton',
-  format(" ~w~n", [Type]),
-	parse_eigenframe_on_click(Data).
+	select_eigenframe_type(Data, 'ToggleButton'),
+	parse_eigenframe_on_click(Data,_).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'UrlRequest',
-  format(" ~w~n", [Type]),
+	select_eigenframe_type(Data, 'UrlRequest'),
 	(parse_eigenframe_url_sources(Data); true),
 	parse_eigenframe_on_complete(Data).
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'Variable',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'Variable').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'VerticalLine',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'VerticalLine').
 
 parse_eigenframe(Data) :- 
-	parse_eigenframe_type(Data, Type),
-	Type == 'WebView',
-  format(" ~w~n", [Type]).
+	select_eigenframe_type(Data, 'WebView').
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
   format(" Undefined: ~w~n", [Type]),
 	writeln(Data).
 
-parse_eigenframe_component_list(Data) :- 
-	X = Data.get(component_list),
-  writeln(" Found component_list..."), 
-	parse_eigenframe_list(X).
+%-----------------------------------------------
 
 parse_eigenframe_component(Data) :- 
 	X = Data.get(component),
@@ -301,26 +247,30 @@ parse_eigenframe_attributes(Data) :-
   write(" Found attributes: "), 
   writeln(X).
 
+parse_eigenframe_component_list(Data) :- 
+	X = Data.get(component_list),
+  writeln(" Found component_list..."), 
+	parse_eigenframe_list(X).
+
 parse_eigenframe_list([]).
 parse_eigenframe_list([H|T]) :-
 	parse_eigenframe(H),
   parse_eigenframe_list(T).
 
-%-----------------------------------------------
-% should always succeed for any valid EigenFrame
-
+%parse_eigenframe_type(+Data, -Type)
+%	should always succeed for any valid EigenFrame
 parse_eigenframe_type(Data, Type) :- 
-	Type = Data.get(type).
+	Type = Data.get(type),
+  write(" Found type: "), 
+	writeln(Type).
+
+%select_eigenframe_type(+Data, +Type)
+select_eigenframe_type(Data, Type) :- 
+	Type == Data.get(type),
+  write(" Select type: "), 
+	writeln(Type).
 
 %-----------------------------------------------
-% will succeed - if frame has url source
-
-parse_eigenframe_url_sources(Data) :- 
-	(
-		parse_eigenframe_url(Data);
-		parse_eigenframe_url_script(Data);
-		parse_eigenframe_url_script_list(Data)
-	).
 
 parse_eigenframe_url(Data) :- 
 	URL = Data.get(url),
@@ -339,14 +289,15 @@ parse_eigenframe_url_script_list(Data) :-
   write(" Found url_script_list: "), 
 	writeln(X).
 
-%-----------------------------------------------
-
-parse_eigenframe_ssh_sources(Data) :- 
+% will succeed - if frame has url source
+parse_eigenframe_url_sources(Data) :- 
 	(
-		parse_eigenframe_ssh(Data);
-		parse_eigenframe_ssh_script(Data);
-		parse_eigenframe_ssh_script_list(Data)
+		parse_eigenframe_url(Data);
+		parse_eigenframe_url_script(Data);
+		parse_eigenframe_url_script_list(Data)
 	).
+
+%-----------------------------------------------
 
 parse_eigenframe_ssh(Data) :- 
 	X = Data.get(ssh),
@@ -363,14 +314,14 @@ parse_eigenframe_ssh_script_list(Data) :-
   write(" Found ssh_script_list: "), 
 	writeln(X).
 
-%-----------------------------------------------
-
-parse_eigenframe_sftp_sources(Data) :- 
+parse_eigenframe_ssh_sources(Data) :- 
 	(
-		parse_eigenframe_sftp(Data);
-		parse_eigenframe_sftp_script(Data);
-		parse_eigenframe_sftp_script_list(Data)
+		parse_eigenframe_ssh(Data);
+		parse_eigenframe_ssh_script(Data);
+		parse_eigenframe_ssh_script_list(Data)
 	).
+
+%-----------------------------------------------
 
 parse_eigenframe_sftp(Data) :- 
 	X = Data.get(sftp),
@@ -387,13 +338,14 @@ parse_eigenframe_sftp_script_list(Data) :-
   write(" Found sftp_script_list: "), 
 	writeln(X).
 
-%-----------------------------------------------
-
-parse_eigenframe_script_sources(Data) :- 
+parse_eigenframe_sftp_sources(Data) :- 
 	(
-		parse_eigenframe_script(Data);
-		parse_eigenframe_script_list(Data)
+		parse_eigenframe_sftp(Data);
+		parse_eigenframe_sftp_script(Data);
+		parse_eigenframe_sftp_script_list(Data)
 	).
+
+%-----------------------------------------------
 
 parse_eigenframe_script(Data) :- 
 	X = Data.get(script),
@@ -405,15 +357,13 @@ parse_eigenframe_script_list(Data) :-
   write(" Found script_list: "), 
 	writeln(X).
 
-%-----------------------------------------------
-
-parse_eigenframe_text_sources(Data) :- 
+parse_eigenframe_script_sources(Data) :- 
 	(
-		parse_eigenframe_text(Data);
-		parse_eigenframe_text_list(Data);
-		parse_eigenframe_text_script(Data);
-		parse_eigenframe_text_script_list(Data)
+		parse_eigenframe_script(Data);
+		parse_eigenframe_script_list(Data)
 	).
+
+%-----------------------------------------------
 
 parse_eigenframe_text(Data) :- 
 	X = Data.get(text),
@@ -435,34 +385,122 @@ parse_eigenframe_text_script_list(Data) :-
   write(" Found text_script_list: "), 
 	writeln(X).
 
+parse_eigenframe_text_sources(Data) :- 
+	(
+		parse_eigenframe_text(Data);
+		parse_eigenframe_text_list(Data);
+		parse_eigenframe_text_script(Data);
+		parse_eigenframe_text_script_list(Data)
+	).
+
 %-----------------------------------------------
 
-parse_eigenframe_on_click(Data) :- 
+%parse_eigenframe_id(+Data, -X) 
+parse_eigenframe_id(Data, X) :- 
+	X = Data.get(id),
+	write(" Found id: "), 
+	writeln(X).
+
+%parse_eigenframe_id_script(+Data, -X) 
+parse_eigenframe_id_script(Data, X) :- 
+	X = Data.get(id_script),
+	write(" Found id_script: "), 
+	writeln(X).
+
+%parse_eigenframe_id_script_list(+Data, -X) 
+parse_eigenframe_id_script_list(Data, X) :- 
+	X = Data.get(id_script_list),
+	write(" Found id_script_list: "), 
+	writeln(X).
+
+parse_eigenframe_id_sources(Data) :- 
+	(
+		parse_eigenframe_id(Data, _);
+		parse_eigenframe_id_script(Data, _);
+		parse_eigenframe_id_script_list(Data, _)
+	).
+
+%-----------------------------------------------
+
+parse_eigenframe_on_click(Data, Frame) :- 
 	Frame = Data.get(on_click),
-  write(" Found on_click: "), 
-%	writeln(Frame),
+  writeln(" Found on_click..."), 
 	parse_eigenframe(Frame).
 
 parse_eigenframe_on_complete(Data) :- 
 	Frame = Data.get(on_complete),
-  write(" Found on_complete: "), 
-%	writeln(Frame),
+  write(" Found on_complete..."), 
 	parse_eigenframe(Frame).
 
-
-parse_eigenframe_is_secure_window(Data) :- 
+parse_eigenframe_is_secure_window(Data, X) :- 
 	X = Data.get(is_secure_window),
  	write(" Found is_secure_window: "), 
 	writeln(X).
 
-parse_eigenframe_name(Data) :- 
+%parse_eigenframe_name(+Data, -X) 
+parse_eigenframe_name(Data,X) :- 
 	X = Data.get(name),
 	write(" Found name: "), 
 	writeln(X).
 
-parse_eigenframe_icon_name(Data) :- 
+%parse_eigenframe_icon_name(+Data, -X) 
+parse_eigenframe_icon_name(Data,X) :- 
 	X = Data.get(icon_name),
 	write(" Found icon_name: "), 
+	writeln(X).
+
+%parse_eigenframe_checked(+Data, -X) 
+parse_eigenframe_checked(Data, X) :- 
+	X = Data.get(checked),
+	write(" Found checked: "), 
+	writeln(X).
+
+%parse_eigenframe_text_color(+Data, -X) 
+parse_eigenframe_text_color(Data, X) :- 
+	X = Data.get(text_color),
+	write(" Found text_color: "), 
+	writeln(X).
+
+%parse_eigenframe_layout_width(+Data, -X) 
+parse_eigenframe_layout_width(Data, X) :- 
+	X = Data.get(layout_width),
+	write(" Found layout_width: "), 
+	writeln(X).
+
+%parse_eigenframe_layout_height(+Data, -X) 
+parse_eigenframe_layout_height(Data, X) :- 
+	X = Data.get(layout_height),
+	write(" Found layout_height: "), 
+	writeln(X).
+
+%parse_eigenframe_gravity(+Data, -X) 
+parse_eigenframe_gravity(Data, X) :- 
+	X = Data.get(gravity),
+	write(" Found gravity: "), 
+	writeln(X).
+
+%parse_eigenframe_background_color(+Data, -X) 
+parse_eigenframe_background_color(Data, X) :- 
+	X = Data.get(background_color),
+	write(" Found background_color: "), 
+	writeln(X).
+
+%parse_eigenframe_icon(+Data, -X) 
+parse_eigenframe_icon(Data, X) :- 
+	X = Data.get(icon),
+	write(" Found icon: "), 
+	writeln(X).
+
+%parse_eigenframe_padding(+Data, -X) 
+parse_eigenframe_padding(Data, X) :- 
+	X = Data.get(padding),
+	write(" Found padding: "), 
+	writeln(X).
+
+%parse_eigenframe_margin(+Data, -X) 
+parse_eigenframe_margin(Data, X) :- 
+	X = Data.get(margin),
+	write(" Found margin: "), 
 	writeln(X).
 
 %-----------------------------------------------
