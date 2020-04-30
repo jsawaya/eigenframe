@@ -146,7 +146,24 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'EditText'),
-	parse_eigenframe_text_sources(Data).
+	(parse_eigenframe_text_sources(Data);true),
+	(parse_eigenframe_url_sources(Data);true),
+	(parse_eigenframe_ssh_sources(Data);true),
+	(parse_eigenframe_sftp_sources(Data);true),
+	(parse_eigenframe_is_password(Data,_);true),
+	(parse_eigenframe_is_single_line(Data,_);true),
+	(parse_eigenframe_filter(Data,_);true),
+	(parse_eigenframe_id(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_text_size(Data,_);true),
+	(parse_eigenframe_font(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'HorizontalLine').
@@ -461,6 +478,18 @@ parse_eigenframe_text_color(Data, X) :-
 	write("  text_color: "), 
 	writeln(X).
 
+%parse_eigenframe_text_size(+Data, -X) 
+parse_eigenframe_text_size(Data, X) :- 
+	X = Data.get(text_size),
+	write("  text_size: "), 
+	writeln(X).
+
+%parse_eigenframe_font(+Data, -X) 
+parse_eigenframe_font(Data, X) :- 
+	X = Data.get(font),
+	write("  font: "), 
+	writeln(X).
+
 %parse_eigenframe_layout_width(+Data, -X) 
 parse_eigenframe_layout_width(Data, X) :- 
 	X = Data.get(layout_width),
@@ -503,59 +532,27 @@ parse_eigenframe_margin(Data, X) :-
 	write("  margin: "), 
 	writeln(X).
 
+%parse_eigenframe_is_password(+Data, -X) 
+parse_eigenframe_is_password(Data, X) :- 
+	X = Data.get(is_password),
+	write("  is_password: "), 
+	writeln(X).
+
+%parse_eigenframe_is_single_line(+Data, -X) 
+parse_eigenframe_is_single_line(Data, X) :- 
+	X = Data.get(is_single_line),
+	write("  is_single_line: "), 
+	writeln(X).
+
+%parse_eigenframe_filter(+Data, -X) 
+parse_eigenframe_filter(Data, X) :- 
+	X = Data.get(filter),
+	write("  filter: "), 
+	writeln(X).
+
 %-----------------------------------------------
 
 
-
-frame([
-	type('CheckBox'),
-	source_text(_),
-	checked(_),
-	id(_),
-	text_color(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	icon(_),
-	padding(_),
-	margin(_),
-	on_click(_)
-	]).
-
-frame([
-	type('Clone'),
-	name(_),
-	attributes(_)
-	]).
-
-frame([
-	type('Define'),
-	name(_),
-	component(_)
-	]).
-
-frame([
-	type('EditText'),
-	source_text(_),
-	source_url(_),
-	source_ssh(_),
-	source_sftp(_),
-	is_password(_),
-	is_single_line(_),
-	filter(_),
-	id(_),
-	text_color(_),
-	text_size(_),
-	font(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	icon(_),
-	padding(_),
-	margin(_)
-	]).
 
 frame([
 	type('HorizontalLine'),
