@@ -67,6 +67,8 @@ show_eigenframe_file(FPath) :-
 	show_json(Data).
 
 organize_eigenframe_file(FPath) :-
+	exists_file(FPath),
+  write(" Path: "), 	writeln(FPath),
 	read_json_file(FPath, Data), 
 	save_json_file(FPath, Data).
 
@@ -83,12 +85,7 @@ show_filenames(Dir, [File|T]) :-
 organize_eigenframe_files(_, []).
 organize_eigenframe_files(Dir, [File|T]) :-
 	directory_file_path(Dir, File, Path),
-	(
-		exists_file(Path),
-	  write(" Path: "), 	writeln(Path),
-		organize_eigenframe_file(Path)
-		;true
-	),
+	(organize_eigenframe_file(Path);true),
 	organize_eigenframe_files(Dir, T).
 
 
