@@ -1,203 +1,153 @@
 {
-	"type": "LinearLayout",
-	"scrollable": true,
-	"orientation": "vertical",
-	"gravity": "center_horizontal",
-	"layout_width": "match_parent",
-	"component_list": [
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "Home Directory (sftp):"
-			}
-		},
-		{
-			"type": "TextView",
-			"text_script": "''+eigenFragment.getCacheString('SecureFtp',411000,'') ",
-			"layout_width": "match_parent",
-			"text_color": "#ffffff",
-			"text_size": "20",
-			"gravity": "left",
-			"background_color": "#000000"
-		},
-		{
-			"type": "LinearLayout",
-			"condition_script": "eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)",
-			"orientation": "vertical",
-			"layout_width": "match_parent",
-			"component_list": [
-				{
-					"type": "Clone",
-					"name": "HorizontalLine"
-				},
-				{
-					"type": "Clone",
-					"name": "TextViewLabel",
-					"attributes": {
-						"text": "Working Directory:\n(relative to sftp home)"
-					}
-				},
-				{
-					"type": "EditText",
-					"text_script": "''+eigenFragment.getCacheString('WorkingDirectory')",
-					"max_length": 200,
-					"is_single_line": true,
-					"layout_width": "match_parent",
-					"text_color": "#ffffff",
-					"text_size": "20",
-					"gravity": "left",
-					"background_color": "#000000"
-				}
-			]
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "Selected Path:"
-			}
-		},
-		{
-			"type": "EditText",
-			"text_script": "''+eigenFragment.getCacheString('SelectedPath')",
-			"max_length": 200,
-			"is_single_line": true,
-			"layout_width": "match_parent",
-			"text_color": "#ffffff",
-			"text_size": "20",
-			"gravity": "left",
-			"background_color": "#000000"
-		},
-		{
-			"type": "LinearLayout",
-			"condition_script": "eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)",
-			"orientation": "vertical",
-			"layout_width": "match_parent",
-			"component_list": [
-				{
-					"type": "Clone",
-					"name": "HorizontalLine"
-				},
-				{
-					"type": "Clone",
-					"name": "TextViewLabel",
-					"attributes": {
-						"text": "Selected Filename: "
-					}
-				},
-				{
-					"type": "EditText",
-					"max_length": 200,
-					"is_single_line": true,
-					"layout_width": "match_parent",
-					"text_script": "''+eigenFragment.getCacheString('SelectedFile')",
-					"text_color": "#ffffff",
-					"text_size": "20",
-					"gravity": "left",
-					"background_color": "#000000"
-				}
-			]
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "Explore Filesystem: "
-			}
-		},
-		{
-			"type": "LinearLayout",
-			"orientation": "horizontal",
-			"layout_width": "match_parent",
-			"gravity": "center_horizontal",
-			"component_list": [
-				{
-					"type": "Button",
-					"text": "Explore Filesystem",
-					"layout_width": "match_parent",
-					"layout_weight": 1,
-					"text_color": "#ffffff",
-					"background_color": "#123456",
-					"icon": {
-						"name": "listview.",
-						"location": "top"
-					},
-					"margin": {
-						"left": 10,
-						"top": 10,
-						"right": 10,
-						"bottom": 10
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "ListViewPopupScreenAfterSecureFtpDirectory"
-					}
-				},
-				{
-					"type": "Button",
-					"text": "Reset",
-					"text_color": "#ffffff",
-					"background_color": "#123456",
-					"gravity": "center",
-					"layout_width": "match_parent",
-					"layout_weight": 1,
-					"icon": {
-						"name": "cancel.",
-						"location": "top"
-					},
-					"margin": {
-						"left": 10,
-						"top": 10,
-						"right": 10,
-						"bottom": 10
-					},
-					"on_click": {
-						"type": "ActionList",
-						"component_list": [
-							{
-								"type": "JavaScript",
-								"script_list": [
-									"eigenFragment.setCacheString('WorkingDirectory', '')",
-									"eigenFragment.setCacheString('SelectedPath', '')",
-									"eigenFragment.setCacheString('SelectedFile', '')"
-								]
-							},
-							{
-								"type": "Clone",
-								"name": "JavaScriptSetFullPath"
-							},
-							{
-								"type": "JavaScript",
-								"script": "eigenFragment.closePopupWindow()"
-							},
-							{
-								"type": "Clone",
-								"name": "PopupScreenSelectFilePathRemote"
-							}
-						]
-					}
-				}
-			]
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		}
-	]
+  "component_list": [
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Home Directory (sftp):"},
+      "name":"TextViewLabel",
+      "type":"Clone"
+    },
+    {
+      "background_color":"#000000",
+      "gravity":"left",
+      "layout_width":"match_parent",
+      "text_color":"#ffffff",
+      "text_script":"''+eigenFragment.getCacheString('SecureFtp',411000,'') ",
+      "text_size":"20",
+      "type":"TextView"
+    },
+    {
+      "component_list": [
+	{"name":"HorizontalLine", "type":"Clone"},
+	{
+	  "attributes": {"text":"Working Directory:\n(relative to sftp home)"},
+	  "name":"TextViewLabel",
+	  "type":"Clone"
+	},
+	{
+	  "background_color":"#000000",
+	  "gravity":"left",
+	  "is_single_line":"true",
+	  "layout_width":"match_parent",
+	  "max_length":200,
+	  "text_color":"#ffffff",
+	  "text_script":"''+eigenFragment.getCacheString('WorkingDirectory')",
+	  "text_size":"20",
+	  "type":"EditText"
+	}
+      ],
+      "condition_script":"eigenFragment.getBooleanVariable('IsShowWorkingDirectory',0,false)",
+      "layout_width":"match_parent",
+      "orientation":"vertical",
+      "type":"LinearLayout"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Selected Path:"},
+      "name":"TextViewLabel",
+      "type":"Clone"
+    },
+    {
+      "background_color":"#000000",
+      "gravity":"left",
+      "is_single_line":"true",
+      "layout_width":"match_parent",
+      "max_length":200,
+      "text_color":"#ffffff",
+      "text_script":"''+eigenFragment.getCacheString('SelectedPath')",
+      "text_size":"20",
+      "type":"EditText"
+    },
+    {
+      "component_list": [
+	{"name":"HorizontalLine", "type":"Clone"},
+	{
+	  "attributes": {"text":"Selected Filename: "},
+	  "name":"TextViewLabel",
+	  "type":"Clone"
+	},
+	{
+	  "background_color":"#000000",
+	  "gravity":"left",
+	  "is_single_line":"true",
+	  "layout_width":"match_parent",
+	  "max_length":200,
+	  "text_color":"#ffffff",
+	  "text_script":"''+eigenFragment.getCacheString('SelectedFile')",
+	  "text_size":"20",
+	  "type":"EditText"
+	}
+      ],
+      "condition_script":"eigenFragment.getBooleanVariable('IsShowCurrentFilename',0,false)",
+      "layout_width":"match_parent",
+      "orientation":"vertical",
+      "type":"LinearLayout"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Explore Filesystem: "},
+      "name":"TextViewLabel",
+      "type":"Clone"
+    },
+    {
+      "component_list": [
+	{
+	  "background_color":"#123456",
+	  "icon": {"location":"top", "name":"listview."},
+	  "layout_weight":1,
+	  "layout_width":"match_parent",
+	  "margin": {"bottom":10, "left":10, "right":10, "top":10},
+	  "on_click": {
+	    "name":"ListViewPopupScreenAfterSecureFtpDirectory",
+	    "type":"Clone"
+	  },
+	  "text":"Explore Filesystem",
+	  "text_color":"#ffffff",
+	  "type":"Button"
+	},
+	{
+	  "background_color":"#123456",
+	  "gravity":"center",
+	  "icon": {"location":"top", "name":"cancel."},
+	  "layout_weight":1,
+	  "layout_width":"match_parent",
+	  "margin": {"bottom":10, "left":10, "right":10, "top":10},
+	  "on_click": {
+	    "component_list": [
+	      {
+		"script_list": [
+		  "eigenFragment.setCacheString('WorkingDirectory', '')",
+		  "eigenFragment.setCacheString('SelectedPath', '')",
+		  "eigenFragment.setCacheString('SelectedFile', '')"
+		],
+		"type":"JavaScript"
+	      },
+	      {"name":"JavaScriptSetFullPath", "type":"Clone"},
+	      {
+		"script":"eigenFragment.closePopupWindow()",
+		"type":"JavaScript"
+	      },
+	      {
+		"name":"PopupScreenSelectFilePathRemote",
+		"type":"Clone"
+	      }
+	    ],
+	    "type":"ActionList"
+	  },
+	  "text":"Reset",
+	  "text_color":"#ffffff",
+	  "type":"Button"
+	}
+      ],
+      "gravity":"center_horizontal",
+      "layout_width":"match_parent",
+      "orientation":"horizontal",
+      "type":"LinearLayout"
+    },
+    {"name":"HorizontalLine", "type":"Clone"}
+  ],
+  "gravity":"center_horizontal",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }
-
-
-

@@ -1,101 +1,88 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Test PopupScreen",
-      "text_size": "14",
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text_color": "#ffffff",
-      "icon": {
-        "name": "ic_launcher_round.",
-        "location": "top"
-      }
+      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {"location":"top", "name":"ic_launcher_round."},
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text":"Test PopupScreen",
+      "text_color":"#ffffff",
+      "text_size":"14",
+      "type":"TextView"
     },
+    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Test PopupScreen with a component_list(TextView)",
-      "text_color": "#ffffff",
-      "background_color": "#ff0000",
+      "background_color":"#ff0000",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "PopupScreen with a component_list(TextView)",
-        "icon": {
-          "name": "info.",
-          "location": "left"
-        },
-        "component_list": [
-          {
-            "type": "LinearLayout",
-            "scrollable": true,
-            "orientation": "vertical",
-            "gravity": "center_horizontal",
-            "layout_width": "match_parent",
-            "layout_height": "wrap_content",
-            "component_list": [
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text": "Example of component_list(TextView) on PopupScreen",
-                "text_size": "14",
-                "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-                "text_color": "#ffffff"
-              },
-              {
-                "type": "TextView",
-                "layout_width": "match_parent",
-                "layout_height": "wrap_content",
-                "text": "text_size:14",
-                "text_size": "14",
-                "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-                "text_color": "#ff00ff"
-              }
-            ]
-          }
-        ]
-      }
+	"background_color":"#111111",
+	"component_list": [
+	  {
+	    "component_list": [
+	      {
+		"gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
+		"layout_height":"wrap_content",
+		"layout_width":"match_parent",
+		"text":"Example of component_list(TextView) on PopupScreen",
+		"text_color":"#ffffff",
+		"text_size":"14",
+		"type":"TextView"
+	      },
+	      {
+		"gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
+		"layout_height":"wrap_content",
+		"layout_width":"match_parent",
+		"text":"text_size:14",
+		"text_color":"#ff00ff",
+		"text_size":"14",
+		"type":"TextView"
+	      }
+	    ],
+	    "gravity":"center_horizontal",
+	    "layout_height":"wrap_content",
+	    "layout_width":"match_parent",
+	    "orientation":"vertical",
+	    "scrollable":"true",
+	    "type":"LinearLayout"
+	  }
+	],
+	"icon": {"location":"left", "name":"info."},
+	"layout_height":"wrap_content",
+	"layout_width":"match_parent",
+	"text_color":"#ffffff",
+	"text_size":"14",
+	"title":"PopupScreen with a component_list(TextView)",
+	"type":"PopupScreen"
+      },
+      "text":"Test PopupScreen with a component_list(TextView)",
+      "text_color":"#ffffff",
+      "type":"Button"
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Test PopupScreen with a url(test-TextView)",
-      "text_color": "#ffffff",
-      "background_color": "#ff0000",
+      "background_color":"#ff0000",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "PopupScreen",
-        "layout_width": "match_parent",
-        "layout_height": "wrap_content",
-        "text_size": "14",
-        "text_color": "#ffffff",
-        "background_color": "#111111",
-        "title": "PopupScreen",
-        "icon": {
-          "name": "info.",
-          "location": "left"
-        },
-        "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/test-TextView.json'"
-      }
+	"background_color":"#111111",
+	"icon": {"location":"left", "name":"info."},
+	"layout_height":"wrap_content",
+	"layout_width":"match_parent",
+	"text_color":"#ffffff",
+	"text_size":"14",
+	"title":"PopupScreen",
+	"type":"PopupScreen",
+	"url_script":"eigenFragment.getCacheString('RootUrl')+'frames/test-TextView.json'"
+      },
+      "text":"Test PopupScreen with a url(test-TextView)",
+      "text_color":"#ffffff",
+      "type":"Button"
     }
-
-  ]
+  ],
+  "gravity":"center_horizontal",
+  "layout_height":"wrap_content",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }

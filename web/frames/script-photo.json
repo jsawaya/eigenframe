@@ -1,165 +1,143 @@
 {
-	"type": "LinearLayout",
-	"scrollable": true,
-	"orientation": "vertical",
-	"gravity": "center_horizontal",
-	"layout_width": "match_parent",
-	"layout_height": "wrap_content",
-	"component_list": [
-		{
-			"type": "Clone",
-			"name": "TextViewLabel",
-			"attributes": {
-				"text": "Camera"
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "Clone",
-			"name": "TextViewDetail",
-			"attributes": {
-				"text_list": [
-					"JavaScript provides access to camera hardware and image rendering..."
-				]
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Take Photo",
-				"icon": {
-					"name": "add_photo.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "JavaScript",
-					"script_list": [
-						"var jpg_filename = eigenActivity.captureCameraImage()",
-						"eigenFragment.setCacheString('CameraImage', jpg_filename)"
-					]
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "View Photo",
-				"icon": {
-					"name": "open_browser.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "Clone",
-					"name": "PopupScreenDefault",
-					"attributes": {
-						"title_script_list": [
-							"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
-							"'Camera Image: '+jpg_filename"
-						],
-						"component_list": [
-							{
-								"type": "Clone",
-								"name": "LayoutVertical",
-								"attributes": {
-									"component_list": [
-										{
-											"type": "ImageView",
-											"rotation": 90,
-											"url_script_list": [
-												"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
-												"'file://'+jpg_filename"
-											],
-											"layout_width": "match_parent",
-											"layout_height": "match_parent",
-											"background_color": "#123456",
-											"on_click": {
-												"type": "JavaScript",
-												"script": "eigenActivity.showToast('image click eigenframe')"
-											}
-										}
-									]
-								}
-							}
-						]
-					}
-				}
-			}
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "JavaScript",
-			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Image File')",
-				"eigenFragment.setCacheString('WorkingDirectory', '')",
-				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/screenshots')",
-				"eigenFragment.setCacheString('SelectedFile', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999711)"
-			]
-		},
-		{
-			"type": "Clone",
-			"name": "SelectFilePathRemote"
-		},
-		{
-			"type": "Clone",
-			"name": "ButtonDefault",
-			"attributes": {
-				"text": "Show Remote Image File (via sftp)",
-				"icon": {
-					"name": "image.",
-					"location": "top"
-				},
-				"on_click": {
-					"type": "SecureFtp",
-					"sftp_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var filename = eigenFragment.getViewState(targetVid)",
-						"'get ' + filename + ' ImageView.png'"
-					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var filename = eigenFragment.getViewState(targetVid)",
-								"'Remote Image: '+filename"
-							],
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "ImageView",
-												"url_script": "'file://'+ eigenFragment.getCacheFilePath('ImageView.png')",
-												"layout_width": "match_parent",
-												"layout_height": "match_parent",
-												"background_color": "#123456",
-												"on_click": {
-													"type": "JavaScript",
-													"script": "eigenActivity.showToast('image click eigenframe')"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			}
-		}
+  "component_list": [
+    {
+      "attributes": {"text":"Camera"},
+      "name":"TextViewLabel",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {
+	"text_list": [
+	  "JavaScript provides access to camera hardware and image rendering..."
 	]
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
+    },
+    {
+      "attributes": {
+	"icon": {"location":"top", "name":"add_photo."},
+	"on_click": {
+	  "script_list": [
+	    "var jpg_filename = eigenActivity.captureCameraImage()",
+	    "eigenFragment.setCacheString('CameraImage', jpg_filename)"
+	  ],
+	  "type":"JavaScript"
+	},
+	"text":"Take Photo"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {
+      "attributes": {
+	"icon": {"location":"top", "name":"open_browser."},
+	"on_click": {
+	  "attributes": {
+	    "component_list": [
+	      {
+		"attributes": {
+		  "component_list": [
+		    {
+		      "background_color":"#123456",
+		      "layout_height":"match_parent",
+		      "layout_width":"match_parent",
+		      "on_click": {
+			"script":"eigenActivity.showToast('image click eigenframe')",
+			"type":"JavaScript"
+		      },
+		      "rotation":90,
+		      "type":"ImageView",
+		      "url_script_list": [
+			"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
+			"'file://'+jpg_filename"
+		      ]
+		    }
+		  ]
+		},
+		"name":"LayoutVertical",
+		"type":"Clone"
+	      }
+	    ],
+	    "title_script_list": [
+	      "var jpg_filename = eigenFragment.getCacheString('CameraImage')",
+	      "'Camera Image: '+jpg_filename"
+	    ]
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"View Photo"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "script_list": [
+	"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Image File')",
+	"eigenFragment.setCacheString('WorkingDirectory', '')",
+	"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/screenshots')",
+	"eigenFragment.setCacheString('SelectedFile', '')",
+	"eigenFragment.setIntegerVariable('TargetViewId', 0, 999711)"
+      ],
+      "type":"JavaScript"
+    },
+    {"name":"SelectFilePathRemote", "type":"Clone"},
+    {
+      "attributes": {
+	"icon": {"location":"top", "name":"image."},
+	"on_click": {
+	  "on_complete": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"background_color":"#123456",
+			"layout_height":"match_parent",
+			"layout_width":"match_parent",
+			"on_click": {
+			  "script":"eigenActivity.showToast('image click eigenframe')",
+			  "type":"JavaScript"
+			},
+			"type":"ImageView",
+			"url_script":"'file://'+ eigenFragment.getCacheFilePath('ImageView.png')"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title_script_list": [
+		"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+		"var filename = eigenFragment.getViewState(targetVid)",
+		"'Remote Image: '+filename"
+	      ]
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "sftp_script_list": [
+	    "var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+	    "var filename = eigenFragment.getViewState(targetVid)",
+	    "'get ' + filename + ' ImageView.png'"
+	  ],
+	  "type":"SecureFtp"
+	},
+	"text":"Show Remote Image File (via sftp)"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    }
+  ],
+  "gravity":"center_horizontal",
+  "layout_height":"wrap_content",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }
-
-

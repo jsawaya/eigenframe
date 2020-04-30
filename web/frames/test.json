@@ -1,26 +1,23 @@
 {
-	"type": "PopupScreen",
-	"layout_width": "match_parent",
-	"text_size": "14",
-	"text_color": "#ffffff",
-	"background_color": "#222222",
-	"title": "df (display filesystem)",
+  "background_color":"#222222",
+  "component_list": [
+    {
+      "attributes": {
 	"component_list": [
-		{
-			"type": "Clone",
-			"name": "LayoutVerticalScrollable",
-			"attributes": {
-				"component_list": [
-					{
-						"type": "Clone",
-						"name": "TextViewDetail",
-						"attributes": {
-							"text_size": "10",
-							"ssh": "df"
-						}
-					}
-				]
-			}
-		}
+	  {
+	    "attributes": {"ssh":"df", "text_size":"10"},
+	    "name":"TextViewDetail",
+	    "type":"Clone"
+	  }
 	]
+      },
+      "name":"LayoutVerticalScrollable",
+      "type":"Clone"
+    }
+  ],
+  "layout_width":"match_parent",
+  "text_color":"#ffffff",
+  "text_size":"14",
+  "title":"df (display filesystem)",
+  "type":"PopupScreen"
 }

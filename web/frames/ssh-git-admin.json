@@ -1,432 +1,378 @@
 {
-	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
-	"id": 411000,
-	"sftp": "pwd",
-	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
-		"component_list": [
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+  "comment":"set the HomeDirectory from sftp pwd",
+  "id":411000,
+  "on_complete": {
+    "component_list": [
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"attributes": {"text":"Download Updates from EigenFrame GitHub Repository"},
+	"name":"TextViewLabel",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "text_list": [
+	    "Click [Pull from EigenFrame GitHub] to get the latest updates"
+	  ]
+	},
+	"name":"TextViewDetail",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"cloud_download."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "ssh_list": [
+			    "cd ~/git-repos/eigenframe",
+			    "echo //git stash",
+			    "git stash",
+			    "echo //git pull",
+			    "git pull",
+			    "cd ~/git-repos/eigenframe/cgi-bin",
+			    "chmod 755 *.sh",
+			    "chmod 755 *.rb",
+			    "git status"
+			  ],
+			  "text_size":"10"
 			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Download Updates from EigenFrame GitHub Repository"
-				}
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"Pull from EigenFrame GitHub"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"Pull from EigenFrame GitHub"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"info."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "ssh":"cd ~/git-repos/eigenframe ; git status",
+			  "text_size":"10"
 			},
-			{
-				"type": "Clone",
-				"name": "TextViewDetail",
-				"attributes": {
-					"text_list": [
-						"Click [Pull from EigenFrame GitHub] to get the latest updates"
-					]
-				}
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"git status"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"git status"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"script_list": [
+	  "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select EigenFrame File')",
+	  "eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
+	  "eigenFragment.setCacheString('SelectedPath', '')",
+	  "eigenFragment.setCacheString('SelectedFile', '')",
+	  "eigenFragment.setIntegerVariable('TargetViewId', 0, 999701)"
+	],
+	"type":"JavaScript"
+      },
+      {"name":"SelectFilePathRemote", "type":"Clone"},
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"attributes": {"text":"Check differences between selected file and master: "},
+	"name":"TextViewLabel",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"check."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "ssh_script_list": [
+			    "var selected_path = eigenFragment.getCacheString('SelectedPath')",
+			    "var selected_file = eigenFragment.getCacheString('SelectedFile')",
+			    "var git_filepath = eigenFragment.concatPaths(selected_path, selected_file)",
+			    "'cd ~/git-repos/eigenframe ; git diff master:' + git_filepath + ' -- ' + git_filepath "
+			  ],
+			  "text_size":"10"
 			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Pull from EigenFrame GitHub",
-					"icon": {
-						"name": "cloud_download.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Pull from EigenFrame GitHub",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_list": [
-														"cd ~/git-repos/eigenframe",
-														"echo //git stash",
-														"git stash",
-														"echo //git pull",
-														"git pull",
-														"cd ~/git-repos/eigenframe/cgi-bin",
-														"chmod 755 *.sh",
-														"chmod 755 *.rb",
-														"git status"
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"git diff from master"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"git diff from master"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"undo."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "ssh_script_list": [
+			    "var selected_path = eigenFragment.getCacheString('SelectedPath')",
+			    "var selected_file = eigenFragment.getCacheString('SelectedFile')",
+			    "var git_filepath = eigenFragment.concatPaths(selected_path, selected_file)",
+			    "'cd ~/git-repos/eigenframe ; git restore ' + git_filepath "
+			  ],
+			  "text_size":"10"
 			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "git status",
-					"icon": {
-						"name": "info.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "git status",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh": "cd ~/git-repos/eigenframe ; git status"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"git restore"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"git restore (revert to master)"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"attributes": {"text":"Commit Changes to GitHub (Beta Branch)"},
+	"name":"TextViewLabel",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"add."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "ssh_script":"'cd ~/git-repos/eigenframe ; git add *'",
+			  "text_size":"10"
 			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"git add *"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"git add *"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"save."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "ssh_script":"'cd ~/git-repos/eigenframe ; git commit -a -m \"testing\"'",
+			  "text_size":"10"
 			},
-			{
-				"type": "JavaScript",
-				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select EigenFrame File')",
-					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedPath', '')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999701)"
-				]
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"git commit -a m 'testing'"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"git commit -a m 'testing'"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"cloud_upload."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "ssh_script":"'cd ~/git-repos/eigenframe ; git push origin beta' ",
+			  "text_size":"10"
 			},
-			{
-				"type": "Clone",
-				"name": "SelectFilePathRemote"
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"git push origin beta"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"git push origin beta"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"attributes": {
+	  "text":"Refresh GIT Working Directory (Beta Branch) from GitHub Master: "
+	},
+	"name":"TextViewLabel",
+	"type":"Clone"
+      },
+      {
+	"attributes": {
+	  "icon": {"location":"top", "name":"cloud_download."},
+	  "on_click": {
+	    "attributes": {
+	      "component_list": [
+		{
+		  "attributes": {
+		    "component_list": [
+		      {
+			"attributes": {
+			  "ssh_list": [
+			    "cd ~/git-repos/eigenframe",
+			    "echo //git status",
+			    "git status",
+			    "echo //git checkout master",
+			    "git checkout master",
+			    "echo //git pull",
+			    "git pull",
+			    "echo //git checkout beta",
+			    "git checkout beta",
+			    "echo //git merge master",
+			    "git merge master",
+			    "echo //git status",
+			    "git status",
+			    "echo //enable execution of cgi-bin files",
+			    "cd ~/git-repos/eigenframe/cgi-bin",
+			    "chmod 755 *.sh",
+			    "chmod 755 *.rb"
+			  ],
+			  "text_size":"10"
 			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Check differences between selected file and master: "
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "git diff from master",
-					"icon": {
-						"name": "check.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "git diff from master",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_script_list": [
-														"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-														"var selected_file = eigenFragment.getCacheString('SelectedFile')",
-														"var git_filepath = eigenFragment.concatPaths(selected_path, selected_file)",
-														"'cd ~/git-repos/eigenframe ; git diff master:' + git_filepath + ' -- ' + git_filepath "
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "git restore (revert to master)",
-					"icon": {
-						"name": "undo.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "git restore",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_script_list": [
-														"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-														"var selected_file = eigenFragment.getCacheString('SelectedFile')",
-														"var git_filepath = eigenFragment.concatPaths(selected_path, selected_file)",
-														"'cd ~/git-repos/eigenframe ; git restore ' + git_filepath "
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Commit Changes to GitHub (Beta Branch)"
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "git add *",
-					"icon": {
-						"name": "add.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "git add *",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_script": "'cd ~/git-repos/eigenframe ; git add *'"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "git commit -a m 'testing'",
-					"icon": {
-						"name": "save.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "git commit -a m 'testing'",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_script": "'cd ~/git-repos/eigenframe ; git commit -a -m \"testing\"'"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "git push origin beta",
-					"icon": {
-						"name": "cloud_upload.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "git push origin beta",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_script": "'cd ~/git-repos/eigenframe ; git push origin beta' "
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Clone",
-				"name": "TextViewLabel",
-				"attributes": {
-					"text": "Refresh GIT Working Directory (Beta Branch) from GitHub Master: "
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "ButtonDefault",
-				"attributes": {
-					"text": "Pull from GitHub master\n(merge to working beta branch)",
-					"icon": {
-						"name": "cloud_download.",
-						"location": "top"
-					},
-					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Pull from GitHub master\n(merge to working beta branch)",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"text_size": "10",
-													"ssh_list": [
-														"cd ~/git-repos/eigenframe",
-														"echo //git status",
-														"git status",
-														"echo //git checkout master",
-														"git checkout master",
-														"echo //git pull",
-														"git pull",
-														"echo //git checkout beta",
-														"git checkout beta",
-														"echo //git merge master",
-														"git merge master",
-														"echo //git status",
-														"git status",
-														"echo //enable execution of cgi-bin files",
-														"cd ~/git-repos/eigenframe/cgi-bin",
-														"chmod 755 *.sh",
-														"chmod 755 *.rb"
-													]
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "HtmlView",
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"gravity": "center",
-				"x_text_size": "14",
-				"text_color": "#ffffff",
-				"html_list": [
-					"<h1><font color=\"#8aec81\">EigenFrame Github Repository</font></h1>",
-					"https://github.com/jsawaya/eigenframe"
-				]
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			}
-		]
-	}
+			"name":"TextViewDetail",
+			"type":"Clone"
+		      }
+		    ]
+		  },
+		  "name":"LayoutVerticalScrollable",
+		  "type":"Clone"
+		}
+	      ],
+	      "title":"Pull from GitHub master\n(merge to working beta branch)"
+	    },
+	    "name":"PopupScreenDefault",
+	    "type":"Clone"
+	  },
+	  "text":"Pull from GitHub master\n(merge to working beta branch)"
+	},
+	"name":"ButtonDefault",
+	"type":"Clone"
+      },
+      {"name":"HorizontalLine", "type":"Clone"},
+      {
+	"gravity":"center",
+	"html_list": [
+	  "<h1><font color=\"#8aec81\">EigenFrame Github Repository<\/font><\/h1>",
+	  "https://github.com/jsawaya/eigenframe"
+	],
+	"layout_height":"wrap_content",
+	"layout_width":"match_parent",
+	"text_color":"#ffffff",
+	"type":"HtmlView",
+	"x_text_size":"14"
+      },
+      {"name":"HorizontalLine", "type":"Clone"}
+    ],
+    "gravity":"center_horizontal",
+    "layout_width":"match_parent",
+    "orientation":"vertical",
+    "scrollable":"true",
+    "type":"LinearLayout"
+  },
+  "sftp":"pwd",
+  "type":"SecureFtp"
 }

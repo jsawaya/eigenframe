@@ -1,65 +1,58 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "text": "Examples of PopupTextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "14",
-      "text_color": "#ffffff"
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text":"Examples of PopupTextView",
+      "text_color":"#ffffff",
+      "text_size":"14",
+      "type":"TextView"
     },
+    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Popup TextView for a single line of text",
-      "text_color": "#ffffff",
-      "background_color": "#123456",
+      "background_color":"#123456",
+      "layout_height":"wrap_content",
+      "layout_width":"wrap_content",
       "on_click": {
-        "type": "PopupTextView",
-        "title": "Popup TextView for a single line of text",
-        "text": "this is a test"
-      }
+	"text":"this is a test",
+	"title":"Popup TextView for a single line of text",
+	"type":"PopupTextView"
+      },
+      "text":"Popup TextView for a single line of text",
+      "text_color":"#ffffff",
+      "type":"Button"
     },
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Popup TextView for a text_list",
-      "text_color": "#ffffff",
-      "background_color": "#22ffff00",
+      "background_color":"#22ffff00",
+      "layout_height":"wrap_content",
+      "layout_width":"wrap_content",
       "on_click": {
-        "type": "PopupTextView",
-        "title": "Popup TextView for a text_list",
-        "text_list": [
-          "this is line 1",
-          "this is line 2",
-          "this is line 3"
-        ]
-      }
+	"text_list": ["this is line 1", "this is line 2", "this is line 3" ],
+	"title":"Popup TextView for a text_list",
+	"type":"PopupTextView"
+      },
+      "text":"Popup TextView for a text_list",
+      "text_color":"#ffffff",
+      "type":"Button"
     },
     {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "Popup TextView for the contents of a url request (from github)",
-      "text_color": "#ffffff",
-      "background_color": "#22ff0000",
+      "background_color":"#22ff0000",
+      "layout_height":"wrap_content",
+      "layout_width":"wrap_content",
       "on_click": {
-        "type": "PopupTextView",
-        "title": "Popup TextView for the contents of a url request (from github)",
-				"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/test-PopupTextView.json'"
-      }
+	"title":"Popup TextView for the contents of a url request (from github)",
+	"type":"PopupTextView",
+	"url_script":"eigenFragment.getCacheString('RootUrl')+'frames/test-PopupTextView.json'"
+      },
+      "text":"Popup TextView for the contents of a url request (from github)",
+      "text_color":"#ffffff",
+      "type":"Button"
     }
-  ]
+  ],
+  "gravity":"center_horizontal",
+  "layout_height":"wrap_content",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }

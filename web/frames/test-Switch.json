@@ -1,93 +1,77 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Test Switch",
-      "text_size": "14",
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text_color": "#ffffff",
-      "icon": {
-        "name": "ic_launcher_round.",
-        "location": "top"
-      }
+      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {"location":"top", "name":"ic_launcher_round."},
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text":"Test Switch",
+      "text_color":"#ffffff",
+      "text_size":"14",
+      "type":"TextView"
     },
+    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Switch",
-      "id": 300,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "This is Switch:300",
-      "checked": true,
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "padding": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
+      "background_color":"#ff00ff",
+      "checked":"true",
+      "id":300,
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "on_click": {
+	"script_list": [
+	  "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
+	],
+	"type":"JavaScript"
       },
-      "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
-        ]
-      }
+      "padding": {"bottom":40, "left":40, "right":40, "top":40},
+      "text":"This is Switch:300",
+      "text_color":"#ffffff",
+      "type":"Switch"
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "getViewState of Switch:300",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color":"#ff00ff",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
+	],
+	"type":"JavaScript"
+      },
+      "text":"getViewState of Switch:300",
+      "text_color":"#ffffff",
+      "type":"Button"
     },
     {
-      "type": "Switch",
-      "id": 301,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "This is Switch:301",
-      "checked": true,
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
-      "margin": {
-        "left": 40,
-        "top": 40,
-        "right": 40,
-        "bottom": 40
-      }
+      "background_color":"#ff00ff",
+      "checked":"true",
+      "id":301,
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "margin": {"bottom":40, "left":40, "right":40, "top":40},
+      "text":"This is Switch:301",
+      "text_color":"#ffffff",
+      "type":"Switch"
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "getViewState of Switch:301",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color":"#ff00ff",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(301))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(301))"
+	],
+	"type":"JavaScript"
+      },
+      "text":"getViewState of Switch:301",
+      "text_color":"#ffffff",
+      "type":"Button"
     }
-  ]
+  ],
+  "gravity":"center_horizontal",
+  "layout_height":"wrap_content",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }

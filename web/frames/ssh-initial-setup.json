@@ -1,263 +1,203 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
   "component_list": [
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
+      "attributes": {"text":"Install EigenFrame Services"},
+      "name":"TextViewLabel",
+      "type":"Clone"
+    },
+    {
       "attributes": {
-        "text": "Install EigenFrame Services"
-      }
+	"text_list": [
+	  "1. Termux Setup Instructions (below)",
+	  "2. SecureShell Settings",
+	  "   - enables remote control of Termux App",
+	  "3. GIT - EigenFrame GitHub repository",
+	  "4. Ruby - system integration",
+	  "5. Prolog - inference engine",
+	  "6. OpenPGP - cryptography and security",
+	  "7. Apache2 - http/cgi support (optional)"
+	]
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Termux Setup Instructions"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text_list": [
-          "1. Termux Setup Instructions (below)",
-          "2. SecureShell Settings",
-          "   - enables remote control of Termux App",
-          "3. GIT - EigenFrame GitHub repository",
-          "4. Ruby - system integration",
-          "5. Prolog - inference engine",
-          "6. OpenPGP - cryptography and security",
-          "7. Apache2 - http/cgi support (optional)"
-        ]
-      }
+	"text_list": [
+	  "1. Install Termux from Google PlayStore",
+	  "2. Open Termux app terminal console",
+	  "3. At $ prompt, type the following:",
+	  "   $ pkg upgrade",
+	  "4. Enable Termux to share storage:",
+	  "   $ termux-setup-storage",
+	  "5. Install openssh (open secure-shell):",
+	  "   $ pkg install openssh",
+	  "6. Create a new ssh password (you will re-enter this password in [SecureShell Settings]):",
+	  "   $ passwd",
+	  "7. Start the secure-shell process:",
+	  "   $ sshd",
+	  "8. Verify you can login to secure-ftp:",
+	  "   $ sftp -P 8022 localhost",
+	  "   Connected to localhost.",
+	  "   sftp> quit",
+	  "9. Click [SecureShell Settings], enter your new ssh password, and test your ssh connection"
+	]
+      },
+      "name":"TextViewDetail",
+      "type":"Clone"
     },
+    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Termux Setup Instructions"
-      }
+	"text":"SecureShell (SSH) Settings - Connect with Termux (sshd)"
+      },
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
-        "text_list": [
-          "1. Install Termux from Google PlayStore",
-          "2. Open Termux app terminal console",
-          "3. At $ prompt, type the following:",
-          "   $ pkg upgrade",
-          "4. Enable Termux to share storage:",
-          "   $ termux-setup-storage",
-          "5. Install openssh (open secure-shell):",
-          "   $ pkg install openssh",
-          "6. Create a new ssh password (you will re-enter this password in [SecureShell Settings]):",
-          "   $ passwd",
-          "7. Start the secure-shell process:",
-          "   $ sshd",
-          "8. Verify you can login to secure-ftp:",
-          "   $ sftp -P 8022 localhost",
-          "   Connected to localhost.",
-          "   sftp> quit",
-          "9. Click [SecureShell Settings], enter your new ssh password, and test your ssh connection"
-        ]
-      }
+	"icon": {"location":"top", "name":"settings."},
+	"on_click": {
+	  "attributes": {
+	    "title":"SecureShell Settings",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"SecureShell Settings"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
     },
+    {"name":"HorizontalLine", "type":"Clone"},
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "SecureShell (SSH) Settings - Connect with Termux (sshd)"
-      }
+	"text":"GIT Installation -- Download GitHub EigenFrame Repository"
+      },
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "SecureShell Settings",
-        "icon": {
-          "name": "settings.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "SecureShell Settings",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
-          }
-        }
-      }
+	"icon": {"location":"top", "name":"file_download."},
+	"on_click": {
+	  "attributes": {
+	    "title":"GIT Installation",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-install.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"GIT Installation"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Ruby Installation - System Interface / Integration"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "GIT Installation -- Download GitHub EigenFrame Repository"
-      }
+	"icon": {"location":"top", "name":"file_download."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Ruby Installation",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-install.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Ruby Installation"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Prolog Installation (swi-prolog) - Inference Engine"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
+      "attributes": {"text_list": []},
+      "name":"TextViewDetail",
+      "type":"Clone"
+    },
+    {
       "attributes": {
-        "text": "GIT Installation",
-        "icon": {
-          "name": "file_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "GIT Installation",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-install.json'"
-          }
-        }
-      }
+	"icon": {"location":"top", "name":"file_download."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Prolog Installation",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-prolog-install.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Prolog Installation"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"OpenPGP Installation (gnupg) - Security / Cryptography"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
-        "text": "Ruby Installation - System Interface / Integration"
-      }
+	"icon": {"location":"top", "name":"file_download."},
+	"on_click": {
+	  "attributes": {
+	    "title":"PGP Installation",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-pgp-install.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"OpenPGP Installation"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "attributes": {"text":"Apache2 Installation - HTTP/CGI Services"},
+      "name":"TextViewLabel",
+      "type":"Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Ruby Installation",
-        "icon": {
-          "name": "file_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Ruby Installation",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-install.json'"
-          }
-        }
-      }
+	"icon": {"location":"top", "name":"file_download."},
+	"on_click": {
+	  "attributes": {
+	    "title":"Apache2 Installation",
+	    "url_script":"eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache-install.json'"
+	  },
+	  "name":"PopupScreenDefault",
+	  "type":"Clone"
+	},
+	"text":"Apache2 Installation"
+      },
+      "name":"ButtonDefault",
+      "type":"Clone"
     },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Prolog Installation (swi-prolog) - Inference Engine"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-        ]
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Prolog Installation",
-        "icon": {
-          "name": "file_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Prolog Installation",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-prolog-install.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "OpenPGP Installation (gnupg) - Security / Cryptography"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "OpenPGP Installation",
-        "icon": {
-          "name": "file_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "PGP Installation",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-pgp-install.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Clone",
-      "name": "TextViewLabel",
-      "attributes": {
-        "text": "Apache2 Installation - HTTP/CGI Services"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "ButtonDefault",
-      "attributes": {
-        "text": "Apache2 Installation",
-        "icon": {
-          "name": "file_download.",
-          "location": "top"
-        },
-        "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
-          "attributes": {
-            "title": "Apache2 Installation",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache-install.json'"
-          }
-        }
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    }
-  ]
+    {"name":"HorizontalLine", "type":"Clone"}
+  ],
+  "gravity":"center_horizontal",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }
-
-
-

@@ -37,11 +37,6 @@ show_directory(Dir, Entries) :-
 	directory_files(Dir, Entries),
   write(" Entries: "), 	writeln(Entries).
 
-show_filenames(_, []).
-show_filenames(Dir, [File|T]) :-
-	directory_file_path(Dir, File, Path),
-  write(" Path: "), 	writeln(Path),
-	show_filenames(Dir, T).
 
 % select_dir_frames(Dir), show_directory(Dir,Entries), show_filenames(Dir, Entries).
 % select_dir_frames(Dir), directory_files(Dir, Entries), organize_eigenframe_files(Dir, Entries).
@@ -75,11 +70,25 @@ organize_eigenframe_file(FPath) :-
 	read_json_file(FPath, Data), 
 	save_json_file(FPath, Data).
 
+show_filenames(_, []).
+show_filenames(Dir, [File|T]) :-
+	directory_file_path(Dir, File, Path),
+	(
+		exists_file(Path),
+	  write(" Path: "), 	writeln(Path)
+		;true
+	),
+	show_filenames(Dir, T).
+
 organize_eigenframe_files(_, []).
 organize_eigenframe_files(Dir, [File|T]) :-
 	directory_file_path(Dir, File, Path),
-  write(" Path: "), 	writeln(Path),
-	organize_eigenframe_file(Path),
+	(
+		exists_file(Path),
+	  write(" Path: "), 	writeln(Path),
+		organize_eigenframe_file(Path)
+		;true
+	),
 	organize_eigenframe_files(Dir, T).
 
 

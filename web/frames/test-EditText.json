@@ -1,74 +1,67 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Test EditText",
-      "text_size": "14",
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "text_color": "#ffffff",
-      "icon": {
-        "name": "ic_launcher_round.",
-        "location": "top"
-      }
+      "gravity":"CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "icon": {"location":"top", "name":"ic_launcher_round."},
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text":"Test EditText",
+      "text_color":"#ffffff",
+      "text_size":"14",
+      "type":"TextView"
+    },
+    {"name":"HorizontalLine", "type":"Clone"},
+    {
+      "background_color":"#11ff0000",
+      "id":100,
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text":"edit text",
+      "text_color":"#ffffff",
+      "type":"EditText"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "EditText",
-      "id": 100,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "edit text",
-      "text_color": "#ffffff",
-      "background_color": "#11ff0000"
-    },
-    {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Access EditText",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color":"#ff00ff",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
+	],
+	"type":"JavaScript"
+      },
+      "text":"Access EditText",
+      "text_color":"#ffffff",
+      "type":"Button"
     },
     {
-      "type": "EditText",
-      "id": 101,
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "edit text 101",
-      "text_color": "#ffffff",
-      "background_color": "#11ff0000"
+      "background_color":"#11ff0000",
+      "id":101,
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
+      "text":"edit text 101",
+      "text_color":"#ffffff",
+      "type":"EditText"
     },
     {
-      "type": "Button",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text": "Access EditText",
-      "text_color": "#ffffff",
-      "background_color": "#ff00ff",
+      "background_color":"#ff00ff",
+      "layout_height":"wrap_content",
+      "layout_width":"match_parent",
       "on_click": {
-        "type": "JavaScript",
-        "script_list": [
-          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
-        ]
-      }
+	"script_list": [
+	  "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
+	],
+	"type":"JavaScript"
+      },
+      "text":"Access EditText",
+      "text_color":"#ffffff",
+      "type":"Button"
     }
-
-  ]
+  ],
+  "gravity":"center_horizontal",
+  "layout_height":"wrap_content",
+  "layout_width":"match_parent",
+  "orientation":"vertical",
+  "scrollable":"true",
+  "type":"LinearLayout"
 }
