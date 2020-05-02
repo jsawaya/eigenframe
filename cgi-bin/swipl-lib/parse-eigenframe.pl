@@ -41,15 +41,18 @@ select_dir_frames('/home/john/projects/eigenframe-repository/web/frames').
 
 % show_json_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 
+test_parse_frame_files :- 
+	select_dir_frames(Dir), 
+	directory_files(Dir, E), 
+	sort(E,Entries), 
+	read_eigenframe_files(Dir, Entries).
+
 show_directory(Dir, Entries) :- 
   working_directory(CWD, CWD),
   write(" Current: "), 	writeln(CWD),
   write(" Directory: "), 	writeln(Dir),
 	directory_files(Dir, Entries),
   write(" Entries: "), 	writeln(Entries).
-
-read_eigenframe_file(FPath) :-
-	read_json_file(FPath, Data), parse_eigenframe(Data).
 
 read_json_file(FPath, Data) :-
 	open(FPath, read, Stream), 
@@ -68,11 +71,31 @@ show_json_file(FPath) :-
 	read_json_file(FPath, Data), 
 	show_json(Data).
 
+read_eigenframe_file(FPath) :-
+	read_json_file(FPath, Data), parse_eigenframe(Data).
+
+read_eigenframe_files(_, []).
+read_eigenframe_files(Dir, [File|T]) :-
+	directory_file_path(Dir, File, FPath),
+	(
+		exists_file(FPath),
+		read_eigenframe_file(FPath),
+	  write(" ------------------------- Path: "), 	writeln(FPath)
+		;true
+	),
+	read_eigenframe_files(Dir, T).
+
 organize_eigenframe_file(FPath) :-
 	exists_file(FPath),
   write(" Path: "), 	writeln(FPath),
 	read_json_file(FPath, Data), 
 	save_json_file(FPath, Data).
+
+organize_eigenframe_files(_, []).
+organize_eigenframe_files(Dir, [File|T]) :-
+	directory_file_path(Dir, File, Path),
+	(organize_eigenframe_file(Path);true),
+	organize_eigenframe_files(Dir, T).
 
 show_filenames(_, []).
 show_filenames(Dir, [File|T]) :-
@@ -84,33 +107,24 @@ show_filenames(Dir, [File|T]) :-
 	),
 	show_filenames(Dir, T).
 
-organize_eigenframe_files(_, []).
-organize_eigenframe_files(Dir, [File|T]) :-
-	directory_file_path(Dir, File, Path),
-	(organize_eigenframe_file(Path);true),
-	organize_eigenframe_files(Dir, T).
-
-
-
 %-----------------------------------------------
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'EigenFrame'),
+	parse_eigenframe_list(Data.get(tab_list)),
 	(parse_eigenframe_is_secure_window(Data,_);true),
-	(parse_eigenframe_script_sources(Data);true),
-	X = Data.get(tab_list),
-	parse_eigenframe_list(X).
+	(parse_eigenframe_script_sources(Data);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'EigenFragment'),
-	(parse_eigenframe_name(Data,_);true), 
-	(parse_eigenframe_icon_name(Data,_);true), 
-	parse_eigenframe_url(Data).
+	parse_eigenframe_url_expand(Data),
+	(parse_eigenframe_name_sources(Data,_);true), 
+	(parse_eigenframe_icon_name(Data,_);true). 
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'ActionList'),
 	(parse_eigenframe_comment(Data,_); true),
 	(parse_eigenframe_component_list(Data);true),
-	parse_eigenframe_on_complete(Data).
+	(parse_eigenframe_on_complete(Data);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'AlertDialog').
@@ -118,7 +132,7 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Button'),
 	(parse_eigenframe_text_sources(Data); true),
-	parse_eigenframe_on_click(Data,_).
+	(parse_eigenframe_on_click(Data,_); true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'CheckBox'),
@@ -134,6 +148,9 @@ parse_eigenframe(Data) :-
 	(parse_eigenframe_margin(Data,_); true),
 	(parse_eigenframe_on_click(Data,_); true).
 
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'Clone'),
+	parse_eigenframe_name(Data,_).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Clone'),
@@ -142,7 +159,7 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Define'),
-	parse_eigenframe_name(Data,_),
+	parse_eigenframe_name_sources(Data),
 	parse_eigenframe_component(Data).
 
 parse_eigenframe(Data) :- 
@@ -173,8 +190,20 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'HtmlView'),
-	(parse_eigenframe_html_sources(Data);true),
-	(parse_eigenframe_url_sources(Data);true),
+	parse_eigenframe_html_sources(Data),
+	(parse_eigenframe_id(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'HtmlView'),
+	parse_eigenframe_url_sources(Data),
 	(parse_eigenframe_id(Data,_);true),
 	(parse_eigenframe_text_color(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
@@ -215,10 +244,9 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'ListView'),
+	parse_eigenframe_cached_filename(Data,_),
+	parse_eigenframe_dir_type(Data,_),
 	(parse_eigenframe_id_sources(Data);true),
-	(parse_eigenframe_cached_filename(Data,_);true),
-	(parse_eigenframe_dir_type(Data,_);true),
-	(parse_eigenframe_option_list(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
@@ -227,63 +255,299 @@ parse_eigenframe(Data) :-
 	(parse_eigenframe_checked_option(Data,_);true),
 	(parse_eigenframe_on_click(Data,_);true).
 
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'ListView'),
+	parse_eigenframe_option_list(Data,_),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_item_layout(Data,_);true),
+	(parse_eigenframe_checked_option(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'PopupHtmlView').
+	select_eigenframe_type(Data, 'PopupHtmlView'),
+	parse_eigenframe_html_sources(Data),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'PopupHtmlView'),
+	parse_eigenframe_url_sources(Data),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupScreen'),
-	parse_eigenframe_component_list(Data).
+	parse_eigenframe_url_sources(Data),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_text_size(Data,_); true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'PopupScreen'),
+	parse_eigenframe_component_list(Data),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_text_size(Data,_); true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupTextView'),
-	(parse_eigenframe_text_sources(Data); true).
+	parse_eigenframe_text_sources(Data),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_text_size(Data,_); true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'PopupTextView'),
+	parse_eigenframe_url_sources(Data),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_text_size(Data,_); true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'PopupTextView'),
+	parse_eigenframe_ssh_sources(Data),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_text_size(Data,_); true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'PopupTextView'),
+	parse_eigenframe_sftp_sources(Data),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_text_size(Data,_); true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'RadioButton'),
-	parse_eigenframe_on_click(Data,_).
+	parse_eigenframe_option_list(Data,_),
+	(parse_eigenframe_checked_option(Data,_);true),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_orientation(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'SecureFtp'),
-	(parse_eigenframe_sftp_sources(Data); true),
-	parse_eigenframe_on_complete(Data).
+	parse_eigenframe_sftp_sources(Data),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_is_eigen_response(Data,_);true),
+	(parse_eigenframe_on_complete(Data);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'SecureShell'),
-	(parse_eigenframe_ssh_sources(Data); true),
-	parse_eigenframe_on_complete(Data).
+	parse_eigenframe_ssh_sources(Data),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_is_eigen_response(Data,_);true),
+	(parse_eigenframe_on_complete(Data);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'SelectDialog'),
-	parse_eigenframe_on_click(Data,_).
+	parse_eigenframe_option_list(Data,_),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_title_sources(Data);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_checked_option(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Spinner'),
-	parse_eigenframe_on_click(Data,_).
-	
+	parse_eigenframe_option_list(Data,_),
+	(parse_eigenframe_checked_option(Data,_);true),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true).
+
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Switch'),
 	(parse_eigenframe_text_sources(Data); true),
-	parse_eigenframe_on_click(Data,_).
-	
-parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'TextView'),
-	(parse_eigenframe_text_sources(Data); true).
+	(parse_eigenframe_checked(Data,_);true),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'ToastMessage').
+	select_eigenframe_type(Data, 'TextView'),
+	parse_eigenframe_text_sources(Data),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_text_size(Data,_); true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'TextView'),
+	parse_eigenframe_url_sources(Data),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_text_size(Data,_); true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'TextView'),
+	parse_eigenframe_ssh_sources(Data),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_text_size(Data,_); true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'TextView'),
+	parse_eigenframe_sftp_sources(Data),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_text_size(Data,_); true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'ToastMessage'),
+	parse_eigenframe_message_script(Data).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'ToggleButton'),
-	parse_eigenframe_on_click(Data,_).
+	parse_eigenframe_text_sources(Data),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_checked(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'ToggleButton'),
+	parse_eigenframe_text_on_sources(Data),
+	parse_eigenframe_text_off_sources(Data),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_checked(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'UrlRequest'),
-	(parse_eigenframe_url_sources(Data); true),
-	parse_eigenframe_on_complete(Data).
+	parse_eigenframe_url_sources(Data),
+	(parse_eigenframe_parameter_list(Data,_);true),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_is_eigen_response(Data,_);true),
+	(parse_eigenframe_on_complete(Data);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'Variable').
+	select_eigenframe_type(Data, 'Variable'),
+	parse_eigenframe_name_sources(Data),
+	parse_eigenframe_id_sources(Data),
+	parse_eigenframe_method(Data,_),
+	parse_eigenframe_class(Data,_).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'VerticalLine'),
@@ -291,7 +555,20 @@ parse_eigenframe(Data) :-
 	(parse_eigenframe_color(Data,_);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'WebView').
+	select_eigenframe_type(Data, 'WebView'),
+	parse_eigenframe_html_sources(Data),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_is_javascript_enabled(Data,_);true).
+
+parse_eigenframe(Data) :- 
+	select_eigenframe_type(Data, 'WebView'),
+	parse_eigenframe_url_sources(Data),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_is_javascript_enabled(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	parse_eigenframe_type(Data, Type),
@@ -302,17 +579,17 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe_component(Data) :- 
 	X = Data.get(component),
-  writeln("  component:"), 
+%  writeln("  component:"), 
 	parse_eigenframe(X).
 
 parse_eigenframe_attributes(Data) :- 
 	X = Data.get(attributes),
-  write("  attributes: "), 
+	write("  attributes: "), 
   writeln(X).
 
 parse_eigenframe_component_list(Data) :- 
 	X = Data.get(component_list),
-  writeln("  component_list..."), 
+%  writeln("  component_list..."), 
 	parse_eigenframe_list(X).
 
 parse_eigenframe_list([]).
@@ -333,14 +610,20 @@ select_eigenframe_type(Data, Type) :-
   write("= Select type: "), 
 	writeln(Type).
 
-%-----------------------------------------------
 
-parse_eigenframe_url(Data) :- 
+parse_eigenframe_url_expand(Data) :- 
 	URL = Data.get(url),
   write("  url: "), 
 	writeln(URL),
 	read_json_url(URL, FrameData),
 	parse_eigenframe(FrameData).
+
+%-----------------------------------------------
+
+parse_eigenframe_url(Data) :- 
+	URL = Data.get(url),
+  write("  url: "), 
+	writeln(URL).
 
 parse_eigenframe_url_script(Data) :- 
 	X = Data.get(url_script),
@@ -540,6 +823,139 @@ parse_eigenframe_id_sources(Data) :-
 
 %-----------------------------------------------
 
+%parse_eigenframe_title(+Data, -X) 
+parse_eigenframe_title(Data, X) :- 
+	X = Data.get(title),
+	write("  title: "), 
+	writeln(X).
+
+%parse_eigenframe_title_script(+Data, -X) 
+parse_eigenframe_title_script(Data, X) :- 
+	X = Data.get(title_script),
+	write("  title_script: "), 
+	writeln(X).
+
+%parse_eigenframe_title_script_list(+Data, -X) 
+parse_eigenframe_title_script_list(Data, X) :- 
+	X = Data.get(title_script_list),
+	write("  title_script_list: "), 
+	writeln(X).
+
+parse_eigenframe_title_sources(Data) :- 
+	(
+		parse_eigenframe_title(Data, _);
+		parse_eigenframe_title_script(Data, _);
+		parse_eigenframe_title_script_list(Data, _)
+	).
+
+%-----------------------------------------------
+
+%parse_eigenframe_name(+Data, -X) 
+parse_eigenframe_name(Data, X) :- 
+	X = Data.get(name),
+	write("  name: "), 
+	writeln(X).
+
+%parse_eigenframe_name_script(+Data, -X) 
+parse_eigenframe_name_script(Data, X) :- 
+	X = Data.get(name_script),
+	write("  name_script: "), 
+	writeln(X).
+
+%parse_eigenframe_name_script_list(+Data, -X) 
+parse_eigenframe_name_script_list(Data, X) :- 
+	X = Data.get(name_script_list),
+	write("  name_script_list: "), 
+	writeln(X).
+
+parse_eigenframe_name_sources(Data) :- 
+	(
+		parse_eigenframe_name(Data, _);
+		parse_eigenframe_name_script(Data, _);
+		parse_eigenframe_name_script_list(Data, _)
+	).
+
+%-----------------------------------------------
+
+%parse_eigenframe_condition(+Data, -X) 
+parse_eigenframe_condition(Data, X) :- 
+	X = Data.get(condition),
+	write("  condition: "), 
+	writeln(X).
+
+%parse_eigenframe_condition_script(+Data, -X) 
+parse_eigenframe_condition_script(Data, X) :- 
+	X = Data.get(condition_script),
+	write("  condition_script: "), 
+	writeln(X).
+
+%parse_eigenframe_condition_script_list(+Data, -X) 
+parse_eigenframe_condition_script_list(Data, X) :- 
+	X = Data.get(condition_script_list),
+	write("  condition_script_list: "), 
+	writeln(X).
+
+parse_eigenframe_condition_sources(Data) :- 
+	(
+		parse_eigenframe_condition(Data, _);
+		parse_eigenframe_condition_script(Data, _);
+		parse_eigenframe_condition_script_list(Data, _)
+	).
+
+%-----------------------------------------------
+%parse_eigenframe_text_on(+Data, -X) 
+parse_eigenframe_text_on(Data, X) :- 
+	X = Data.get(text_on),
+	write("  text_on: "), 
+	writeln(X).
+
+%parse_eigenframe_text_on_script(+Data, -X) 
+parse_eigenframe_text_on_script(Data, X) :- 
+	X = Data.get(text_on_script),
+	write("  text_on_script: "), 
+	writeln(X).
+
+%parse_eigenframe_text_on_script_list(+Data, -X) 
+parse_eigenframe_text_on_script_list(Data, X) :- 
+	X = Data.get(text_on_script_list),
+	write("  text_on_script_list: "), 
+	writeln(X).
+
+parse_eigenframe_text_on_sources(Data) :- 
+	(
+		parse_eigenframe_text_on(Data, _);
+		parse_eigenframe_text_on_script(Data, _);
+		parse_eigenframe_text_on_script_list(Data, _)
+	).
+
+%-----------------------------------------------
+%parse_eigenframe_text_off(+Data, -X) 
+parse_eigenframe_text_off(Data, X) :- 
+	X = Data.get(text_off),
+	write("  text_off: "), 
+	writeln(X).
+
+%parse_eigenframe_text_off_script(+Data, -X) 
+parse_eigenframe_text_off_script(Data, X) :- 
+	X = Data.get(text_off_script),
+	write("  text_off_script: "), 
+	writeln(X).
+
+%parse_eigenframe_text_off_script_list(+Data, -X) 
+parse_eigenframe_text_off_script_list(Data, X) :- 
+	X = Data.get(text_off_script_list),
+	write("  text_off_script_list: "), 
+	writeln(X).
+
+parse_eigenframe_text_off_sources(Data) :- 
+	(
+		parse_eigenframe_text_off(Data, _);
+		parse_eigenframe_text_off_script(Data, _);
+		parse_eigenframe_text_off_script_list(Data, _)
+	).
+
+%-----------------------------------------------
+
 parse_eigenframe_on_click(Data, Frame) :- 
 	Frame = Data.get(on_click),
   writeln("  on_click..."), 
@@ -553,12 +969,6 @@ parse_eigenframe_on_complete(Data) :-
 parse_eigenframe_is_secure_window(Data, X) :- 
 	X = Data.get(is_secure_window),
  	write("  is_secure_window: "), 
-	writeln(X).
-
-%parse_eigenframe_name(+Data, -X) 
-parse_eigenframe_name(Data,X) :- 
-	X = Data.get(name),
-	write("  name: "), 
 	writeln(X).
 
 %parse_eigenframe_icon_name(+Data, -X) 
@@ -717,217 +1127,43 @@ parse_eigenframe_comment(Data, X) :-
 	write("  comment: "), 
 	writeln(X).
 
+%parse_eigenframe_is_eigen_response(+Data, -X) 
+parse_eigenframe_is_eigen_response(Data, X) :- 
+	X = Data.get(is_eigen_response),
+	write("  is_eigen_response: "), 
+	writeln(X).
+
+%parse_eigenframe_message_script(+Data, -X) 
+parse_eigenframe_message_script(Data, X) :- 
+	X = Data.get(message_script),
+	write("  message_script: "), 
+	writeln(X).
+
+%parse_eigenframe_parameter_list(+Data, -X) 
+parse_eigenframe_parameter_list(Data, X) :- 
+	X = Data.get(parameter_list),
+	write("  parameter_list: "), 
+	writeln(X).
+
+%parse_eigenframe_method(+Data, -X) 
+parse_eigenframe_method(Data, X) :- 
+	X = Data.get(method),
+	write("  method: "), 
+	writeln(X).
+
+%parse_eigenframe_class(+Data, -X) 
+parse_eigenframe_class(Data, X) :- 
+	X = Data.get(class),
+	write("  class: "), 
+	writeln(X).
+
+%parse_eigenframe_is_javascript_enabled(+Data, -X) 
+parse_eigenframe_is_javascript_enabled(Data, X) :- 
+	X = Data.get(is_javascript_enabled),
+	write("  is_javascript_enabled: "), 
+	writeln(X).
+
 %-----------------------------------------------
-
-frame([
-	type('ListView'),
-	cached_filename(_),		/* "SecureFtp:{id}" */
-	dir_type(_),  				/* "subdir" | "files" | "links" */
-	id(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	item_layout(_),
-	on_click(_)
-	]).
-
-frame([
-	type('PopupHtmlView'),
-	source_html(_),
-	source_url(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	icon(_),
-	padding(_),
-	margin(_)
-	]).
-
-frame([
-	type('PopupScreen'),
-	source_url(_),
-	id(_),
-	gravity(_),
-	title(_),
-	text_size(_),
-	text_color(_),
-	background_color(_),
-	icon(_),
-	padding(_),
-	margin(_)
-	]).
-
-frame([
-	type('PopupScreen'),
-	component_list([_]),
-	id(_),
-	gravity(_),
-	title(_),
-	text_size(_),
-	text_color(_),
-	background_color(_),
-	icon(_),
-	padding(_),
-	margin(_)
-	]).
-
-frame([
-	type('PopupTextView'),
-	source_text(_),
-	source_url(_),
-	source_ssh(_),
-	source_sftp(_),
-	title(_),
-	text_size(_),
-	text_color(_),
-	background_color(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	font(_),
-	icon(_),
-	padding(_),
-	margin(_)
-	]).
-
-frame([
-	type('RadioButton'),
-	option_list([_]),
-	checked_option(_),
-	id(_),
-	layout_width(_),
-	layout_height(_),
-	background_color(_),
-	on_click(_)
-	]).
-
-frame([
-	type('SecureFtp'),
-	source_sftp(_),
-	id(_),
-	is_eigen_response(_),
-	on_complete(_)
-	]).
-
-frame([
-	type('SecureShell'),
-	source_ssh(_),
-	id(_),
-	is_eigen_response(_),
-	on_complete(_)
-	]).
-
-frame([
-	type('SelectDialog'),
-	id(_),
-	title(_),
-  icon(_),
-	checked_option(_),
-	option_list([_]),
-	on_click(_)
-	]).
-
-frame([
-	type('Spinner'),
-	id(_),
-	text_color(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-  icon(_),
-	padding(_),
-	margin(_),
-	checked_option(_),
-	option_list([_]),
-	on_click(_)
-	]).
-
-frame([
-	type('Switch'),
-	id(_),
-	source_text(_),
-	checked(_),
-	text_color(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-  icon(_),
-	padding(_),
-	margin(_),
-	on_click(_)
-	]).
-
-
-frame([
-	type('TextView'),
-	source_text(_),
-	source_url(_),
-	source_ssh(_),
-	source_sftp(_),
-	id(_),
-	text_color(_),
-	text_size(_),
-	font(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-	icon(_),
-	padding(_),
-	margin(_)
-	]).
-
-frame([
-	type('ToastMessage'),
-	message(_) ; message_script(_)
-	]).
-
-frame([
-	type('ToggleButton'),
-	id(_),
-	text_on(_),
-	text_off(_),
-	checked(_),
-	text_color(_),
-	layout_width(_),
-	layout_height(_),
-	gravity(_),
-	background_color(_),
-  icon(_),
-	padding(_),
-	margin(_),
-	on_click(_)
-	]).
-
-frame([
-	type('UrlRequest'),
-	source_url(_),
-	id(_),
-	parameter_list([_]),  /* enables post-method request */
-	is_eigen_response(_),
-	on_complete(_)
-	]).
-
-frame([
-	type('Variable'),
-	name(_),
-	id(_),
-	method(_), 
-	class(_)
-	]).
-
-frame([
-	type('WebView'),
-	source_html(_), 
-	source_url(_), 
-	layout_width(_),
-	layout_height(_),
-	is_javascript_enabled(_)
-	]).
 
 frame([
 	type('AlertDialog'),
