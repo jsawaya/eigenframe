@@ -127,7 +127,12 @@ parse_eigenframe(Data) :-
 	(parse_eigenframe_on_complete(Data);true).
 
 parse_eigenframe(Data) :- 
-	select_eigenframe_type(Data, 'AlertDialog').
+	select_eigenframe_type(Data, 'AlertDialog'),
+	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_icon(Data,_); true),
+	(parse_eigenframe_alert_dialog_positive(Data,_); true),
+	(parse_eigenframe_alert_dialog_negative(Data,_); true),
+	(parse_eigenframe_alert_dialog_neutral(Data,_); true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Button'),
@@ -1163,14 +1168,23 @@ parse_eigenframe_is_javascript_enabled(Data, X) :-
 	write("  is_javascript_enabled: "), 
 	writeln(X).
 
-%-----------------------------------------------
+%parse_eigenframe_alert_dialog_positive(+Data, -X) 
+parse_eigenframe_alert_dialog_positive(Data, X) :- 
+	X = Data.get(positive),
+	write("  positive: "), 	writeln(X),
+	write("  option: "), writeln(X.get(option)),
+	(parse_eigenframe_on_click(X,_); true).
 
-frame([
-	type('AlertDialog'),
-	title(_),
-	icon(_),
-	positive(option(_), on_click(_)), 
-	negative(option(_), on_click(_)), 
-	neutral(option(_), on_click(_))
-	]).
+%parse_eigenframe_alert_dialog_negative(+Data, -X) 
+parse_eigenframe_alert_dialog_negative(Data, X) :- 
+	X = Data.get(negative),
+	write("  negative: "), writeln(X),
+	write("  option: "), writeln(X.get(option)),
+	(parse_eigenframe_on_click(X,_); true).
 
+%parse_eigenframe_alert_dialog_neutral(+Data, -X) 
+parse_eigenframe_alert_dialog_neutral(Data, X) :- 
+	X = Data.get(neutral),
+	write("  neutral: "), writeln(X),
+	write("  option: "), writeln(X.get(option)),
+	(parse_eigenframe_on_click(X,_); true).
