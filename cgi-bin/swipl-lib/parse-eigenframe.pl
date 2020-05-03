@@ -64,14 +64,6 @@ show_json_file(FPath) :-
 show_json(Data) :-
 	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
 
-assert_json_file_test :-
-	select_file_test(X),
-	read_json_file(X, Data), 
-	assert(json_file_data(X, Data)).
-
-%json_file_data(X,Data), parse_eigenframe(Data).
-
-
 %-----------------------------------------------
 
 read_eigenframe_file_test :-
@@ -98,12 +90,11 @@ read_eigenframe_file(FPath) :-
 	read_json_file(FPath, Data), 
 	parse_eigenframe(Data).
 
-:- dynamic
-        json_file_data/2.
+:- dynamic dyn_json_file_data/2.
 
 % check dynamic assertion first
 read_json_file(FPath, Data) :-
-	json_file_data(FPath, Data).
+	dyn_json_file_data(FPath, Data).
 
 % create dynamic assertion
 read_json_file(FPath, Data) :-
@@ -111,7 +102,7 @@ read_json_file(FPath, Data) :-
 	open(FPath, read, Stream), 
 	json_read_dict(Stream, Data, [tag(json), value_string_as(atom)]),
 	close(Stream),
-	assert(json_file_data(FPath, Data)).
+	assertz(dyn_json_file_data(FPath, Data)).
 
 %-----------------------------------------------
 
@@ -141,6 +132,89 @@ save_json_file(FPath, Data) :-
 	open(FPath, write, Stream), 
 	json_write(Stream, Data, [tag(json), value_string_as(atom)]),
 	close(Stream).
+
+% -------------------------------------
+
+search_eigenframe_type_test(FPath, Type) :-
+	dyn_json_file_data(FPath, Data), 
+  write(" Try Path: "), 	writeln(FPath),
+	search_eigenframe_type(Data, Type),
+  write(" True Path: "), 	writeln(FPath).
+
+
+search_eigenframe_type_test(Type) :-
+	dyn_json_file_data(FPath, Data), 
+  write(" Try Path: "), 	writeln(FPath),
+	search_eigenframe_type(Data, Type),
+  write(" True Path: "), 	writeln(FPath).
+
+% -------------------------------------
+
+search_eigenframe_list([], _).
+search_eigenframe_list([H|T], Type) :-
+	search_eigenframe_type(H, Type);true,
+  search_eigenframe_list(T, Type).
+
+% -------------------------------------
+
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	X = Data.get(component),
+	search_eigenframe_type(X, Type).
+
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	X = Data.get(on_click),
+	search_eigenframe_type(X, Type).
+
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	X = Data.get(on_complete),
+	search_eigenframe_type(X, Type).
+
+% 'ListView' == Type
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	X = Data.get(item_layout), 
+	search_eigenframe_type(X, Type).
+
+% 'AlertDialog' == Type, positive
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	Y = Data.get(positive),
+	X = Y.get(on_complete),
+	search_eigenframe_type(X, Type).
+
+% 'AlertDialog' == Type, negative
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	Y = Data.get(negative),
+	X = Y.get(on_complete),
+	search_eigenframe_type(X, Type).
+
+% 'AlertDialog' == Type, neutral
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	Y = Data.get(neutral),
+	X = Y.get(on_complete),
+	search_eigenframe_type(X, Type).
+
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	X = Data.get(component_list),
+	search_eigenframe_list(X, Type).
+
+% 'EigenFrame' == Type
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	X = Data.get(tab_list), 
+	search_eigenframe_list(X, Type).
+
+%search_eigenframe_type(+Data, +Type)
+search_eigenframe_type(Data, Type) :- 
+	Type == Data.get(type),
+  write("\n\n= Found eigenframe type: "), writeln(Type),
+	show_json(Data).
 
 %-----------------------------------------------
 
@@ -648,9 +722,10 @@ parse_eigenframe_type(Data, Type) :-
 %select_eigenframe_type(+Data, +Type)
 select_eigenframe_type(Data, Type) :- 
 	Type == Data.get(type),
-  write("= Select type: "), 
+  write("= Select eigenframe type: "), 
 	writeln(Type).
 
+% -------------------------------------
 
 parse_eigenframe_url_expand(Data) :- 
 	URL = Data.get(url),
