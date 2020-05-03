@@ -8,8 +8,13 @@
 select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
 select_app_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
 
-% select_app_url(URL), show_json_url(URL).
-% select_app_url(URL), read_eigenframe_url(URL).
+show_json_url_test :-
+	select_app_url(URL), 
+	show_json_url(URL).
+
+read_eigenframe_url_test :-
+	select_app_url(URL), 
+	read_eigenframe_url(URL).
 
 show_json_url(URL) :-
 	read_json_url(URL, Data), 
@@ -27,52 +32,34 @@ read_json_url(URL, Data) :-
 	).
 
 %-----------------------------------------------
-
-select_file_checkbox('/home/john/projects/eigenframe-repository/web/frames/test-CheckBox.json').
-select_file_frame('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 select_dir_frames('/home/john/projects/eigenframe-repository/web/frames').
 
-% select_dir_frames(Dir), show_directory(Dir,Entries), show_filenames(Dir, Entries).
-% select_dir_frames(Dir), directory_files(Dir, Entries), organize_eigenframe_files(Dir, Entries).
+list_filenames_test :-
+	select_dir_frames(Dir), 
+	directory_files(Dir, E), 
+	sort(E,Entries), 
+	list_filenames(Dir, Entries).
 
-% select_file_frame(FPath), read_eigenframe_file(FPath).
-% select_file_frame(FPath), organize_eigenframe_file(FPath).
-% select_file_frame(FPath), show_json_file(FPath).
+list_filenames(_, []).
+list_filenames(Dir, [File|T]) :-
+	directory_file_path(Dir, File, FPath),
+	(
+		exists_file(FPath),
+	  write(" Path: "), 	writeln(FPath)
+		;true
+	),
+	list_filenames(Dir, T).
 
-% show_json_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+%-----------------------------------------------
 
-test_parse_frame_files :- 
+read_eigenframe_file_test :-
+	read_eigenframe_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+
+read_eigenframe_files_test :- 
 	select_dir_frames(Dir), 
 	directory_files(Dir, E), 
 	sort(E,Entries), 
 	read_eigenframe_files(Dir, Entries).
-
-show_directory(Dir, Entries) :- 
-  working_directory(CWD, CWD),
-  write(" Current: "), 	writeln(CWD),
-  write(" Directory: "), 	writeln(Dir),
-	directory_files(Dir, Entries),
-  write(" Entries: "), 	writeln(Entries).
-
-read_json_file(FPath, Data) :-
-	open(FPath, read, Stream), 
-	json_read_dict(Stream, Data, [tag(json), value_string_as(atom)]),
-	close(Stream).
-
-save_json_file(FPath, Data) :-
-	open(FPath, write, Stream), 
-	json_write(Stream, Data, [tag(json), value_string_as(atom)]),
-	close(Stream).
-
-show_json(Data) :-
-	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
-
-show_json_file(FPath) :-
-	read_json_file(FPath, Data), 
-	show_json(Data).
-
-read_eigenframe_file(FPath) :-
-	read_json_file(FPath, Data), parse_eigenframe(Data).
 
 read_eigenframe_files(_, []).
 read_eigenframe_files(Dir, [File|T]) :-
@@ -85,29 +72,57 @@ read_eigenframe_files(Dir, [File|T]) :-
 	),
 	read_eigenframe_files(Dir, T).
 
+read_eigenframe_file(FPath) :-
+	read_json_file(FPath, Data), 
+	parse_eigenframe(Data).
+
+read_json_file(FPath, Data) :-
+	open(FPath, read, Stream), 
+	json_read_dict(Stream, Data, [tag(json), value_string_as(atom)]),
+	close(Stream).
+
+%-----------------------------------------------
+show_json_file_test :-
+	show_json_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+
+show_json_file(FPath) :-
+	read_json_file(FPath, Data), 
+	show_json(Data).
+
+show_json(Data) :-
+	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
+
+%-----------------------------------------------
+
+organize_eigenframe_file_test :-
+	organize_eigenframe_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+
 organize_eigenframe_file(FPath) :-
 	exists_file(FPath),
   write(" Path: "), 	writeln(FPath),
 	read_json_file(FPath, Data), 
 	save_json_file(FPath, Data).
 
+% select_dir_frames(Dir), directory_files(Dir, Entries), organize_eigenframe_files(Dir, Entries).
+
 organize_eigenframe_files(_, []).
 organize_eigenframe_files(Dir, [File|T]) :-
-	directory_file_path(Dir, File, Path),
-	(organize_eigenframe_file(Path);true),
-	organize_eigenframe_files(Dir, T).
-
-show_filenames(_, []).
-show_filenames(Dir, [File|T]) :-
-	directory_file_path(Dir, File, Path),
+	directory_file_path(Dir, File, FPath),
 	(
-		exists_file(Path),
-	  write(" Path: "), 	writeln(Path)
+		exists_file(FPath),
+		organize_eigenframe_file(FPath),
+	  write(" ------------------------- Path: "), 	writeln(FPath)
 		;true
 	),
-	show_filenames(Dir, T).
+	organize_eigenframe_files(Dir, T).
+
+save_json_file(FPath, Data) :-
+	open(FPath, write, Stream), 
+	json_write(Stream, Data, [tag(json), value_string_as(atom)]),
+	close(Stream).
 
 %-----------------------------------------------
+
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'EigenFrame'),
 	parse_eigenframe_list(Data.get(tab_list)),
@@ -117,7 +132,7 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'EigenFragment'),
 	parse_eigenframe_url_expand(Data),
-	(parse_eigenframe_name_sources(Data,_);true), 
+	(parse_eigenframe_name_sources(Data);true), 
 	(parse_eigenframe_icon_name(Data,_);true). 
 
 parse_eigenframe(Data) :- 
