@@ -51,6 +51,28 @@ list_filenames(Dir, [File|T]) :-
 	list_filenames(Dir, T).
 
 %-----------------------------------------------
+select_file_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+
+show_json_file_test :-
+	select_file_test(X),
+	show_json_file(X).
+
+show_json_file(FPath) :-
+	read_json_file(FPath, Data), 
+	show_json(Data).
+
+show_json(Data) :-
+	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
+
+assert_json_file_test :-
+	select_file_test(X),
+	read_json_file(X, Data), 
+	assert(json_file_data(X, Data)).
+
+%json_file_data(X,Data), parse_eigenframe(Data).
+
+
+%-----------------------------------------------
 
 read_eigenframe_file_test :-
 	read_eigenframe_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
@@ -76,21 +98,20 @@ read_eigenframe_file(FPath) :-
 	read_json_file(FPath, Data), 
 	parse_eigenframe(Data).
 
+:- dynamic
+        json_file_data/2.
+
+% check dynamic assertion first
 read_json_file(FPath, Data) :-
+	json_file_data(FPath, Data).
+
+% create dynamic assertion
+read_json_file(FPath, Data) :-
+  write(" Read from filepath: "), 	writeln(FPath),
 	open(FPath, read, Stream), 
 	json_read_dict(Stream, Data, [tag(json), value_string_as(atom)]),
-	close(Stream).
-
-%-----------------------------------------------
-show_json_file_test :-
-	show_json_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
-
-show_json_file(FPath) :-
-	read_json_file(FPath, Data), 
-	show_json(Data).
-
-show_json(Data) :-
-	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
+	close(Stream),
+	assert(json_file_data(FPath, Data)).
 
 %-----------------------------------------------
 
