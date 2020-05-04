@@ -137,16 +137,12 @@ save_json_file(FPath, Data) :-
 
 search_eigenframe_type_test(FPath, Type) :-
 	dyn_json_file_data(FPath, Data), 
-%  write(" Try Path: "), 	writeln(FPath),
 	search_eigenframe_type(FPath, Data, Type).
-%  write(" True Path: "), 	writeln(FPath).
 
 %search_eigenframe_type_test('WebView'),false.
 search_eigenframe_type_test(Type) :-
 	dyn_json_file_data(FPath, Data), 
-%  write(" Try Path: "), 	writeln(FPath),
 	search_eigenframe_type(FPath, Data, Type).
-%  write(" True Path: "), 	writeln(FPath).
 
 % -------------------------------------
 
