@@ -135,8 +135,16 @@ show_app_url_test :-
 	select_app_url(URL), 
 	show_json_url(URL).
 
+show_app2_url_test :-
+	select_app2_url(URL), 
+	show_json_url(URL).
+
 read_app_url_test :-
 	select_app_url(URL), 
+	read_eigenframe_url(URL).
+
+read_app2_url_test :-
+	select_app2_url(URL), 
 	read_eigenframe_url(URL).
 
 show_json_url(URL) :-
