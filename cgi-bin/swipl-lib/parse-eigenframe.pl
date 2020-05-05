@@ -1,7 +1,130 @@
+:- use_module(library(filesex)).
+
 :- use_module(library(http/json)).
 :- use_module(library(http/json_convert)).
 :- use_module(library(http/http_open)).
-:- use_module(library(filesex)).
+:- use_module(library(http/http_dispatch)).
+:- use_module(library(http/html_write)).
+:- use_module(library(http/http_parameters)).
+:- use_module(library(http/http_json)).
+:- use_module(library(http/thread_httpd)).
+%:- use_module(library(http/http_session)).  % not needed
+
+%:- set_setting(http:logfile, 'my_log_file.log').
+
+:- http_handler('/hi', say_hi, []).
+:- http_handler('/time', handle_time_request, []).
+:- http_handler('/parm', handle_parameter_request, []).
+:- http_handler('/parm2', handle_parameter_request2, []).
+:- http_handler('/parm3', handle_parameter_request3, []).
+:- http_handler('/parm4', handle_parameter_request4, []).
+:- http_handler('/api', handle_api, []).
+
+:- multifile http_json/1.
+
+http_json:json_type('application/x-javascript').
+http_json:json_type('text/javascript').
+http_json:json_type('text/x-javascript').
+http_json:json_type('text/x-json').
+
+%curl --header 'Content-Type: application/json' 'http://localhost:8000/parm?data=test("this").'
+%curl --header 'Content-Type: application/json' 'http://localhost:8000/parm2?select_file=/home/john/projects/eigenframe-repository/web/frames/about.json'
+%curl --header 'Content-Type: application/json' 'http://localhost:8000/parm3?select_file=/home/john/projects/eigenframe-repository/web/frames/about.json'
+%curl --header 'Content-Type: application/json' 'http://localhost:8000/parm4?select_file=/home/john/projects/eigenframe-repository/web/frames/about.json'
+%curl --header 'Content-Type: application/json' --request POST --data '{"a": 1, "b": 2 }' 'http://localhost:8000/api'
+
+select_file_test2('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+
+% ----------------------------------------------------
+solve(_{a:X, b:Y}, _{answer:N}) :-
+	number(X),
+	number(Y),
+	N is X + Y.
+
+handle_api(Request) :-
+	http_read_json_dict(Request, Query),
+	solve(Query, Solution),
+	reply_json_dict(Solution).
+
+% ----------------------------------------------------
+handle_parameter_request4(Request) :-
+	http_parameters(Request,
+  	[	select_file(FPath, [ optional(true) ]) 
+		]),
+%	format('Content-type: application/json; charset=UTF-8~n~n', []),
+	read_json_file(FPath, Data), 
+	reply_json_dict(Data).
+
+% ----------------------------------------------------
+handle_parameter_request3(Request) :-
+	http_parameters(Request,
+  	[	select_file(FPath, [ optional(true) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	read_json_file(FPath, Data), 
+	writeln(FPath).
+
+% ----------------------------------------------------
+handle_parameter_request2(Request) :-
+	http_parameters(Request,
+  	[	select_file(FPath, [ optional(true) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	writeln(FPath).
+
+/*
+handle(Request) :-
+	http_parameters(Request,
+  	[	title(Title, [ optional(true) ]),
+			name(Name,   [ length >= 2 ]),
+			age(Age,     [ between(0, 150) ])
+		]),
+*/
+% ----------------------------------------------------
+handle_parameter_request(Request) :-
+	format('Content-type: text/html~n~n', []),
+	format('<html>~n', []),
+	format('<table border=1>~n'),
+	print_request(Request),
+	format('~n</table>~n'),
+	format('</html>~n', []).
+
+print_request([]).
+print_request([H|T]) :-
+	H =.. [Name, Value],
+	format('<tr><td>~w<td>~w~n', [Name, Value]),
+	print_request(T).
+
+% ----------------------------------------------------
+handle_time_request(_Request) :-
+	get_time(X),  % X = seconds elapsed since the epoch.
+	reply_html_page(
+		[title('Time')],
+		[h1('Time: '), p(X)]
+	).
+
+% ----------------------------------------------------
+say_hi(_Request) :-
+	format('Content-type: text/plain~n~n'),
+	format('Hello World!~n').
+
+% ----------------------------------------------------
+start_svc :- server(8000).
+
+server(Port) :-
+        http_server(http_dispatch, [port(Port)]).
+
+:- initialization(start_svc).
+
+
+
+%				http_session_data(X),
+%				writeln(X).
+
+
+
+
+
 
 %ensure_loaded('projects/eigenframe-repository/cgi-bin/swipl-lib/frame.pl')
 
@@ -98,7 +221,7 @@ read_json_file(FPath, Data) :-
 
 % create dynamic assertion
 read_json_file(FPath, Data) :-
-  write(" Read from filepath: "), 	writeln(FPath),
+%  write(" Read from filepath: "), 	writeln(FPath),
 	open(FPath, read, Stream), 
 	json_read_dict(Stream, Data, [tag(json), value_string_as(atom)]),
 	close(Stream),
