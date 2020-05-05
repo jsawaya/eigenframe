@@ -61,7 +61,6 @@ handle_parameter_request3(Request) :-
   	[	select_file(FPath, [ optional(true) ]) 
 		]),
 	format('Content-type: text/plain~n~n', []),
-	read_json_file(FPath, Data), 
 	writeln(FPath).
 
 % ----------------------------------------------------
@@ -117,25 +116,26 @@ server(Port) :-
 :- initialization(start_svc).
 
 
-
-%				http_session_data(X),
-%				writeln(X).
-
-
-
-
-
-
-%ensure_loaded('projects/eigenframe-repository/cgi-bin/swipl-lib/frame.pl')
+% ----------------------------------------------------
+ensure_loaded('projects/eigenframe-repository/cgi-bin/swipl-lib/eigen_type.pl').
 
 select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
 select_app_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
+select_app2_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_gallery.json").
 
-show_json_url_test :-
+show_frame_url_test :-
+	select_frame_url(URL), 
+	show_json_url(URL).
+
+read_frame_url_test :-
+	select_frame_url(URL), 
+	read_eigenframe_url(URL).
+
+show_app_url_test :-
 	select_app_url(URL), 
 	show_json_url(URL).
 
-read_eigenframe_url_test :-
+read_app_url_test :-
 	select_app_url(URL), 
 	read_eigenframe_url(URL).
 
@@ -395,7 +395,9 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Define'),
 	parse_eigenframe_name_sources(Data),
-	parse_eigenframe_component(Data).
+	X = Data.get(component),
+  write("  component:"), writeln(X).
+% Note: a define component may not be complete, do not parse_eigenframe_component(Data). 
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'EditText'),

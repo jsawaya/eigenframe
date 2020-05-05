@@ -598,7 +598,7 @@
         },
         "on_click": {
           "script_list": [
-            "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master_gallery.json')"
+            "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_gallery.json')"
           ],
           "type": "JavaScript"
         },
@@ -625,7 +625,7 @@
         },
         "on_click": {
           "script_list": [
-            "eigenActivity.addShortcut('Gallery', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_master_gallery.json')",
+            "eigenActivity.addShortcut('Gallery', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_gallery.json')",
             "eigenActivity.finish()"
           ],
           "type": "JavaScript"
