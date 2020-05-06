@@ -40,7 +40,6 @@
         "top": 10
       },
       "on_click": {
-        "background_color": "#654321",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "text_script": "'Version: '+eigenActivity.packageInfo.versionName",
         "title": "EigenFrame Version",
@@ -63,7 +62,6 @@
         "top": 10
       },
       "on_click": {
-        "background_color": "#654321",
         "font": "font/droid-sans-mono/DroidSansMono.ttf",
         "text_script": "'Edition: '+eigenActivity.getEdition()",
         "title": "EigenFrame Edition",

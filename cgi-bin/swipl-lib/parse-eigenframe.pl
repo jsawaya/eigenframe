@@ -1,3 +1,4 @@
+:- use_module(library(lists)).
 :- use_module(library(filesex)).
 
 :- use_module(library(http/json)).
@@ -8,6 +9,7 @@
 :- use_module(library(http/http_parameters)).
 :- use_module(library(http/http_json)).
 :- use_module(library(http/thread_httpd)).
+
 %:- use_module(library(http/http_session)).  % not needed
 
 %:- set_setting(http:logfile, 'my_log_file.log').
@@ -18,6 +20,8 @@
 :- http_handler('/parm2', handle_parameter_request2, []).
 :- http_handler('/parm3', handle_parameter_request3, []).
 :- http_handler('/parm4', handle_parameter_request4, []).
+:- http_handler('/parm5', handle_parameter_request5, []).
+:- http_handler('/parm6', handle_parameter_request6, []).
 :- http_handler('/api', handle_api, []).
 
 :- multifile http_json/1.
@@ -33,8 +37,6 @@ http_json:json_type('text/x-json').
 %curl --header 'Content-Type: application/json' 'http://localhost:8000/parm4?select_file=/home/john/projects/eigenframe-repository/web/frames/about.json'
 %curl --header 'Content-Type: application/json' --request POST --data '{"a": 1, "b": 2 }' 'http://localhost:8000/api'
 
-select_file_test2('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
-
 % ----------------------------------------------------
 solve(_{a:X, b:Y}, _{answer:N}) :-
 	number(X),
@@ -47,6 +49,30 @@ handle_api(Request) :-
 	reply_json_dict(Solution).
 
 % ----------------------------------------------------
+% http://localhost:8000/parm6?select_type=PopupHtmlView
+handle_parameter_request6(Request) :-
+	http_parameters(Request,
+  	[	select_type(Type, [ optional(true) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	writeln("Type: "), writeln(Type),
+	search_eigenframe_type_test(Type),false;
+	true.
+
+% ----------------------------------------------------
+% http://localhost:8000/parm5?select_dir=/home/john/projects/eigenframe-repository/web/frames
+handle_parameter_request5(Request) :-
+	http_parameters(Request,
+  	[	select_dir(Dir, [ optional(true) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	writeln("Directory: "), writeln(Dir),
+	directory_files(Dir, E), 
+	sort(E,Entries), 
+	read_filenames(Dir, Entries).
+
+% ----------------------------------------------------
+% show json given filepath
 handle_parameter_request4(Request) :-
 	http_parameters(Request,
   	[	select_file(FPath, [ optional(true) ]) 
@@ -165,6 +191,25 @@ read_json_url(URL, Data) :-
 %-----------------------------------------------
 select_dir_frames('/home/john/projects/eigenframe-repository/web/frames').
 
+read_filenames_test :-
+	select_dir_frames(Dir), 
+	directory_files(Dir, E), 
+	sort(E,Entries), 
+	read_filenames(Dir, Entries).
+
+read_filenames(_, []).
+read_filenames(Dir, [File|T]) :-
+	directory_file_path(Dir, File, FPath),
+	(
+		exists_file(FPath),
+	  write(" Path: "), 	writeln(FPath),
+		read_json_file(FPath, _); 
+		true
+	),
+	read_filenames(Dir, T).
+
+%-----------------------------------------------
+
 list_filenames_test :-
 	select_dir_frames(Dir), 
 	directory_files(Dir, E), 
@@ -265,22 +310,113 @@ save_json_file(FPath, Data) :-
 	close(Stream).
 
 % -------------------------------------
+% Here are examples to collect a given EigenFrame type
+%read_eigenframe_files_test.
+%collect_eigenframe_type_test('WebView'),false.
+%collect_eigenframe_type_test('PopupTextView'),false.
+%collect_eigenframe_type_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json','JavaScript'),false.
 
-search_eigenframe_type_test(FPath, Type) :-
+%collect_eigenframe_type_test(+Type, +ListIn, -ListOut)
+collect_eigenframe_type_test(Type, ListIn, ListOut) :-
 	dyn_json_file_data(FPath, Data), 
-	search_eigenframe_type(FPath, Data, Type).
+	collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut).
 
+%collect_eigenframe_type_test(+FPath, +Type, +ListIn, -ListOut)
+collect_eigenframe_type_test(FPath, Type, ListIn, ListOut) :-
+	dyn_json_file_data(FPath, Data), 
+	collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut).
+
+% -------------------------------------
+
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	X = Data.get(component),
+	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
+
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	X = Data.get(on_click),
+	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
+
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	X = Data.get(on_complete),
+	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
+
+% 'ListView' == Type
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	X = Data.get(item_layout), 
+	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
+
+% 'AlertDialog' == Type, positive
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	Y = Data.get(positive),
+	X = Y.get(on_complete),
+	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
+
+% 'AlertDialog' == Type, negative
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	Y = Data.get(negative),
+	X = Y.get(on_complete),
+	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
+
+% 'AlertDialog' == Type, neutral
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	Y = Data.get(neutral),
+	X = Y.get(on_complete),
+	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
+
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	X = Data.get(component_list),
+	collect_eigenframe_list(FPath, X, Type, ListIn, ListOut).
+
+% 'EigenFrame' == Type
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	X = Data.get(tab_list), 
+	collect_eigenframe_list(FPath, X, Type, ListIn, ListOut).
+
+%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
+collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
+	Type == Data.get(type),
+  write("\n\n= Found eigenframe type: "), writeln(Type),
+  write(" True Path: "), 	writeln(FPath),
+	show_json(Data),
+	append([Data], ListOut, ListOut),
+  write(" ListOut: "), 	writeln(ListOut).
+
+
+% -------------------------------------
+
+collect_eigenframe_list(_, [], _, [], []).
+collect_eigenframe_list(FPath, [H|T], Type, ListIn, ListOut) :-
+	collect_eigenframe_type(FPath, H, Type, ListIn, ListOut);true,
+  collect_eigenframe_list(FPath, T, Type, ListIn, ListOut).
+
+
+% -------------------------------------
+% Here are examples to search for a given EigenFrame type
+%read_eigenframe_files_test.
 %search_eigenframe_type_test('WebView'),false.
+%search_eigenframe_type_test('PopupTextView'),false.
+%search_eigenframe_type_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json','JavaScript'),false.
+
+search_eigenframe_type_count(Type) :-
+	search_eigenframe_type_test(Type),
+	false.
+
 search_eigenframe_type_test(Type) :-
 	dyn_json_file_data(FPath, Data), 
 	search_eigenframe_type(FPath, Data, Type).
 
-% -------------------------------------
-
-search_eigenframe_list(_, [], _).
-search_eigenframe_list(FPath, [H|T], Type) :-
-	search_eigenframe_type(FPath, H, Type);true,
-  search_eigenframe_list(FPath, T, Type).
+search_eigenframe_type_test(FPath, Type) :-
+	dyn_json_file_data(FPath, Data), 
+	search_eigenframe_type(FPath, Data, Type).
 
 % -------------------------------------
 
@@ -340,9 +476,17 @@ search_eigenframe_type(FPath, Data, Type) :-
 %search_eigenframe_type(FPath, +Data, +Type)
 search_eigenframe_type(FPath, Data, Type) :- 
 	Type == Data.get(type),
-  write("\n\n= Found eigenframe type: "), writeln(Type),
-  write(" True Path: "), 	writeln(FPath),
+  write("\n\n True Path: "), 	writeln(FPath),
+  write(" Found eigenframe type: "), writeln(Type),
+	write(" Data: "), 	writeln(Data),
 	show_json(Data).
+
+% -------------------------------------
+
+search_eigenframe_list(_, [], _).
+search_eigenframe_list(FPath, [H|T], Type) :-
+	search_eigenframe_type(FPath, H, Type);true,
+  search_eigenframe_list(FPath, T, Type).
 
 %-----------------------------------------------
 
