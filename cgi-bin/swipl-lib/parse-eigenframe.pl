@@ -50,13 +50,16 @@ handle_api(Request) :-
 
 % ----------------------------------------------------
 % http://localhost:8000/parm6?select_type=PopupHtmlView
+% http://localhost:8000/parm6?select_type=EditText
 handle_parameter_request6(Request) :-
 	http_parameters(Request,
   	[	select_type(Type, [ optional(true) ]) 
 		]),
-	format('Content-type: text/plain~n~n', []),
-	writeln("Type: "), writeln(Type),
+%	format('Content-type: text/plain~n~n', []),
+	format('Content-type: application/json; charset=UTF-8~n~n', []),
+	write('{"type": "'), write(Type), write('", "found": [ {}'), 
 	search_eigenframe_type_test(Type),false;
+	write("]}"),
 	true.
 
 % ----------------------------------------------------
@@ -388,10 +391,12 @@ search_eigenframe_type(FPath, Data, Type) :-
 %search_eigenframe_type(FPath, +Data, +Type)
 search_eigenframe_type(FPath, Data, Type) :- 
 	Type == Data.get(type),
-  write("\n\n True Path: "), 	writeln(FPath),
-  write(" Found eigenframe type: "), writeln(Type),
-	write(" Data: "), 	writeln(Data),
-	show_json(Data).
+  write(',\n{ "filepath": "'), 	write(FPath),	write('", "data": '), 	
+%	Data.put([file=FPath]),
+%	Data.put( _{filepath:12345678} ),
+	show_json(Data),
+  writeln("}").
+	
 
 % -------------------------------------
 
