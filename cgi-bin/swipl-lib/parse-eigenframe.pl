@@ -189,6 +189,7 @@ read_json_url(URL, Data) :-
 	).
 
 %-----------------------------------------------
+% select directory, get directory entries, sort, read (and cache) json files
 select_dir_frames('/home/john/projects/eigenframe-repository/web/frames').
 
 read_filenames_test :-
@@ -209,6 +210,7 @@ read_filenames(Dir, [File|T]) :-
 	read_filenames(Dir, T).
 
 %-----------------------------------------------
+% select directory, get directory entries, sort, list filenames
 
 list_filenames_test :-
 	select_dir_frames(Dir), 
@@ -227,6 +229,7 @@ list_filenames(Dir, [File|T]) :-
 	list_filenames(Dir, T).
 
 %-----------------------------------------------
+% Read json into prolog dict structure (sorts attributes), and write to current_output (screen)
 select_file_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 
 show_json_file_test :-
@@ -241,7 +244,7 @@ show_json(Data) :-
 	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
 
 %-----------------------------------------------
-
+% Read json into prolog dict structure (sorts attributes), and parse_eigenframe. 
 read_eigenframe_file_test :-
 	read_eigenframe_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 
@@ -262,6 +265,7 @@ read_eigenframe_files(Dir, [File|T]) :-
 	),
 	read_eigenframe_files(Dir, T).
 
+
 read_eigenframe_file(FPath) :-
 	read_json_file(FPath, Data), 
 	parse_eigenframe(Data).
@@ -281,7 +285,7 @@ read_json_file(FPath, Data) :-
 	assertz(dyn_json_file_data(FPath, Data)).
 
 %-----------------------------------------------
-
+% Read json into prolog dict structure (sorts attributes), then write back into same file. 
 organize_eigenframe_file_test :-
 	organize_eigenframe_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 
@@ -309,111 +313,19 @@ save_json_file(FPath, Data) :-
 	json_write(Stream, Data, [tag(json), value_string_as(atom)]),
 	close(Stream).
 
-% -------------------------------------
-% Here are examples to collect a given EigenFrame type
-%read_eigenframe_files_test.
-%collect_eigenframe_type_test('WebView'),false.
-%collect_eigenframe_type_test('PopupTextView'),false.
-%collect_eigenframe_type_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json','JavaScript'),false.
-
-%collect_eigenframe_type_test(+Type, +ListIn, -ListOut)
-collect_eigenframe_type_test(Type, ListIn, ListOut) :-
-	dyn_json_file_data(FPath, Data), 
-	collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut).
-
-%collect_eigenframe_type_test(+FPath, +Type, +ListIn, -ListOut)
-collect_eigenframe_type_test(FPath, Type, ListIn, ListOut) :-
-	dyn_json_file_data(FPath, Data), 
-	collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut).
 
 % -------------------------------------
+% Assert (cache) the json files as dynamic facts. 
+%read_filenames_test.
 
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	X = Data.get(component),
-	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
-
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	X = Data.get(on_click),
-	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
-
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	X = Data.get(on_complete),
-	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
-
-% 'ListView' == Type
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	X = Data.get(item_layout), 
-	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
-
-% 'AlertDialog' == Type, positive
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	Y = Data.get(positive),
-	X = Y.get(on_complete),
-	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
-
-% 'AlertDialog' == Type, negative
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	Y = Data.get(negative),
-	X = Y.get(on_complete),
-	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
-
-% 'AlertDialog' == Type, neutral
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	Y = Data.get(neutral),
-	X = Y.get(on_complete),
-	collect_eigenframe_type(FPath, X, Type, ListIn, ListOut).
-
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	X = Data.get(component_list),
-	collect_eigenframe_list(FPath, X, Type, ListIn, ListOut).
-
-% 'EigenFrame' == Type
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	X = Data.get(tab_list), 
-	collect_eigenframe_list(FPath, X, Type, ListIn, ListOut).
-
-%collect_eigenframe_type(FPath, +Data, +Type, ListIn, ListOut)
-collect_eigenframe_type(FPath, Data, Type, ListIn, ListOut) :- 
-	Type == Data.get(type),
-  write("\n\n= Found eigenframe type: "), writeln(Type),
-  write(" True Path: "), 	writeln(FPath),
-	show_json(Data),
-	append([Data], ListOut, ListOut),
-  write(" ListOut: "), 	writeln(ListOut).
-
-
-% -------------------------------------
-
-collect_eigenframe_list(_, [], _, [], []).
-collect_eigenframe_list(FPath, [H|T], Type, ListIn, ListOut) :-
-	collect_eigenframe_type(FPath, H, Type, ListIn, ListOut);true,
-  collect_eigenframe_list(FPath, T, Type, ListIn, ListOut).
-
-
-% -------------------------------------
 % Here are examples to search for a given EigenFrame type
-%read_eigenframe_files_test.
 %search_eigenframe_type_test('WebView'),false.
 %search_eigenframe_type_test('PopupTextView'),false.
-%search_eigenframe_type_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json','JavaScript'),false.
-
-search_eigenframe_type_count(Type) :-
-	search_eigenframe_type_test(Type),
-	false.
-
 search_eigenframe_type_test(Type) :-
 	dyn_json_file_data(FPath, Data), 
 	search_eigenframe_type(FPath, Data, Type).
 
+%search_eigenframe_type_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json','JavaScript'),false.
 search_eigenframe_type_test(FPath, Type) :-
 	dyn_json_file_data(FPath, Data), 
 	search_eigenframe_type(FPath, Data, Type).
