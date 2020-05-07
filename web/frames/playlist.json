@@ -253,6 +253,13 @@
     },
     {
       "attributes": {
+        "text": "Click [SecureShell Settings] to verify connectivity with ssh password, and update remote termux session."
+      },
+      "name": "TextViewDetail",
+      "type": "Clone"
+    },
+    {
+      "attributes": {
         "icon": {
           "location": "top",
           "name": "settings."
