@@ -1,7 +1,7 @@
 {
 	"type": "EigenFrame",
 	"script_list": [
-		"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'beta');",
+		"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, 'master');",
 		"eigenFragment.setCacheString('GithubBranch', github_branch);"
 	],
 	"is_secure_window": "true",

@@ -1,12 +1,33 @@
 {
   "type": "EigenFrame",
-  "is_secure_window": "false",
+  "script_list": [
+    "var github_branch = eigenFragment.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
+    "eigenFragment.setCacheString('GithubBranch', github_branch);",
+    "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
+    "eigenFragment.setCacheString('RootUrl', root_url);"
+  ],
+  "is_secure_window": "true",
   "tab_list": [
     {
-      "name": "Button",
       "type": "EigenFragment",
-      "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Button.json"
+      "name_script": " ''+eigenActivity.getCacheString('GithubBranch') ",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/define-clones.json';",
+      "icon_name": "ic_launcher_round."
+    },
+    {
+      "type": "EigenFragment",
+      "name_script": " 'About\n'+eigenActivity.getCacheString('GithubBranch') ",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/about.json';"
+    },
+    {
+      "name_script": " 'Button\n'+eigenActivity.getCacheString('GithubBranch') ",
+      "type": "EigenFragment",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-Button.json';"
+    },
+    {
+      "name_script": " 'TextView\n'+eigenActivity.getCacheString('GithubBranch') ",
+      "type": "EigenFragment",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-TextView.json'"
     },
     {
       "name": "TextView",
@@ -21,8 +42,8 @@
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView-font.json"
     },
     {
-			"name": "HtmlView",
-			"type": "EigenFragment",
+      "name": "HtmlView",
+      "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-HtmlView.json"
     },
