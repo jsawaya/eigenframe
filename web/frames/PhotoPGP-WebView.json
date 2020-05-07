@@ -1,22 +1,22 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "match_parent",
   "component_list": [
     {
-      "type": "WebView",
-      "layout_width": "match_parent",
+      "html": "<html><body><h1>PhotoPGP.com<\/h1><\/body><\/html>",
       "layout_height": "wrap_content",
-      "html": "<html><body><h1>PhotoPGP.com</h1></body></html>"
+      "layout_width": "match_parent",
+      "type": "WebView"
     },
     {
-      "type": "WebView",
-      "layout_width": "match_parent",
       "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "type": "WebView",
       "url": "http://photopgp.com/site"
     }
-  ]
+  ],
+  "gravity": "center_horizontal",
+  "layout_height": "match_parent",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

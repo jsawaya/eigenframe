@@ -1,93 +1,106 @@
 {
 	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
 	"id": 411000,
-	"sftp_script": "'pwd'",
 	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
 		"component_list": [
 			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Create Detached Digital Signature"
-				}
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
 						"After your private key file has been imported, you can create a detached digital signature for any particular file to ensure it's authenticity and that it has not been modified since it was signed"
 					]
-				}
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
 			{
-				"type": "JavaScript",
 				"script_list": [
 					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to be Signed')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
 					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999717)"
-				]
+				],
+				"type": "JavaScript"
 			},
 			{
-				"type": "Clone",
-				"name": "SelectFilePathRemote"
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Private KeyId:"
-				}
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
 						"Try the demo-private-key KeyId: 5C91FC661620EAFA",
 						"demo-private-key passphrase: demo"
 					]
-				}
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
 			{
-				"type": "EditText",
-				"id": 6607,
-				"is_single_line": true,
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
 				"background_color": "#000000",
-				"text": "5C91FC661620EAFA"
-			},
-			{
-				"type": "Clone",
-				"name": "EditTextPgpPassword6606"
-			},
-			{
-				"type": "Button",
-				"text": "Create Detached Digital Signature",
+				"id": 6607,
+				"is_single_line": "true",
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
+				"text": "5C91FC661620EAFA",
 				"text_color": "#ffffff",
+				"type": "EditText"
+			},
+			{
+				"name": "EditTextPgpPassword6606",
+				"type": "Clone"
+			},
+			{
 				"background_color": "#654321",
 				"icon": {
-					"name": "info.",
-					"location": "top"
+					"location": "top",
+					"name": "info."
 				},
 				"on_click": {
-					"type": "SecureShell",
 					"id": 6605,
-					"is_eigen_response": false,
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Create Detached Digital Signature"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
 					"ssh_script_list": [
 						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
 						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
@@ -96,32 +109,19 @@
 						"var password = eigenFragment.getViewState(6606)",
 						"dir + 'ruby ssh-gpg-sign-detached.rb '  + input_file + ' ' + keyid + ' \"' + password + '\"'"
 					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Create Detached Digital Signature",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
+					"type": "SecureShell"
+				},
+				"text": "Create Detached Digital Signature",
+				"text_color": "#ffffff",
+				"type": "Button"
 			}
-		]
-	}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
+	},
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }

@@ -1,29 +1,20 @@
 {
 	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
 	"id": 411000,
-	"sftp_script": "'pwd'",
 	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
 		"component_list": [
 			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Decrypt File"
-				}
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
 						"OpenPGP Decryption",
@@ -31,42 +22,63 @@
 						"- try decrypting a file encrypted with demo-private-key's public key: ",
 						"passphrase: demo"
 					]
-				}
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
 			{
-				"type": "JavaScript",
 				"script_list": [
 					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Encrypted File')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
 					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999702)"
-				]
+				],
+				"type": "JavaScript"
 			},
 			{
-				"type": "Clone",
-				"name": "SelectFilePathRemote"
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "EditTextPgpPassword6606"
+				"name": "EditTextPgpPassword6606",
+				"type": "Clone"
 			},
 			{
-				"type": "Button",
-				"text": "Decrypt File",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"icon": {
-					"name": "info.",
-					"location": "top"
+					"location": "top",
+					"name": "info."
 				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
 				"on_click": {
-					"type": "UrlRequest",
 					"id": 6605,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Decrypt File"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
 					"parameter_list": [
 						{
 							"name": "pgpfile",
@@ -92,32 +104,20 @@
 							]
 						}
 					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Decrypt File",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
+					"type": "UrlRequest",
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
+				},
+				"text": "Decrypt File",
+				"text_color": "#ffffff",
+				"type": "Button"
 			}
-		]
-	}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
+	},
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }

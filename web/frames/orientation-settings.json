@@ -1,108 +1,106 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
         "text": "Screen Orientation Settings:"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Automatic Orientation",
         "icon": {
-          "name": "rotate_90.",
-          "location": "top"
+          "location": "top",
+          "name": "rotate_90."
         },
         "on_click": {
-          "type": "JavaScript",
           "script_list": [
             "eigenActivity.enableOrientationEventListener(true)"
-          ]
-        }
-      }
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Automatic Orientation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Portrait Orientation",
         "icon": {
-          "name": "arrow_up.",
-          "location": "top"
+          "location": "top",
+          "name": "arrow_up."
         },
         "on_click": {
-          "type": "JavaScript",
           "script_list": [
             "eigenActivity.enableOrientationEventListener(false)",
             "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)"
-          ]
-        }
-      }
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Portrait Orientation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Landscape Orientation",
         "icon": {
-          "name": "arrow_forward.",
-          "location": "top"
+          "location": "top",
+          "name": "arrow_forward."
         },
         "on_click": {
-          "type": "JavaScript",
           "script_list": [
             "eigenActivity.enableOrientationEventListener(false)",
             "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)"
-          ]
-        }
-      }
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Landscape Orientation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Reverse-Portrait Orientation",
         "icon": {
-          "name": "arrow_down.",
-          "location": "top"
+          "location": "top",
+          "name": "arrow_down."
         },
         "on_click": {
-          "type": "JavaScript",
           "script_list": [
             "eigenActivity.enableOrientationEventListener(false)",
             "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT)"
-          ]
-        }
-      }
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Reverse-Portrait Orientation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Reverse-Landscape Orientation",
         "icon": {
-          "name": "arrow_back.",
-          "location": "top"
+          "location": "top",
+          "name": "arrow_back."
         },
         "on_click": {
-          "type": "JavaScript",
           "script_list": [
             "eigenActivity.enableOrientationEventListener(false)",
             "eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE)"
-          ]
-        }
-      }
+          ],
+          "type": "JavaScript"
+        },
+        "text": "Reverse-Landscape Orientation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     }
-  ]
+  ],
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }
-
-

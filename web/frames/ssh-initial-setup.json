@@ -1,20 +1,13 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
   "component_list": [
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
         "text": "Install EigenFrame Services"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
         "text_list": [
           "1. Termux Setup Instructions (below)",
@@ -26,22 +19,22 @@
           "6. OpenPGP - cryptography and security",
           "7. Apache2 - http/cgi support (optional)"
         ]
-      }
+      },
+      "name": "TextViewDetail",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
         "text": "Termux Setup Instructions"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewDetail",
       "attributes": {
         "text_list": [
           "1. Install Termux from Google PlayStore",
@@ -62,202 +55,205 @@
           "   sftp> quit",
           "9. Click [SecureShell Settings], enter your new ssh password, and test your ssh connection"
         ]
-      }
+      },
+      "name": "TextViewDetail",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
         "text": "SecureShell (SSH) Settings - Connect with Termux (sshd)"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "SecureShell Settings",
         "icon": {
-          "name": "settings.",
-          "location": "top"
+          "location": "top",
+          "name": "settings."
         },
         "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
           "attributes": {
             "title": "SecureShell Settings",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
-          }
-        }
-      }
+          },
+          "name": "PopupScreenDefault",
+          "type": "Clone"
+        },
+        "text": "SecureShell Settings"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-      "type": "Clone",
-      "name": "TextViewLabel",
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
       "attributes": {
         "text": "GIT Installation -- Download GitHub EigenFrame Repository"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "GIT Installation",
         "icon": {
-          "name": "file_download.",
-          "location": "top"
+          "location": "top",
+          "name": "file_download."
         },
         "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
           "attributes": {
             "title": "GIT Installation",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-install.json'"
-          }
-        }
-      }
+          },
+          "name": "PopupScreenDefault",
+          "type": "Clone"
+        },
+        "text": "GIT Installation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
         "text": "Ruby Installation - System Interface / Integration"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Ruby Installation",
         "icon": {
-          "name": "file_download.",
-          "location": "top"
+          "location": "top",
+          "name": "file_download."
         },
         "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
           "attributes": {
             "title": "Ruby Installation",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-install.json'"
-          }
-        }
-      }
+          },
+          "name": "PopupScreenDefault",
+          "type": "Clone"
+        },
+        "text": "Ruby Installation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
         "text": "Prolog Installation (swi-prolog) - Inference Engine"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
+      "attributes": {
+        "text_list": []
+      },
       "name": "TextViewDetail",
-      "attributes": {
-        "text_list": [
-        ]
-      }
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Prolog Installation",
         "icon": {
-          "name": "file_download.",
-          "location": "top"
+          "location": "top",
+          "name": "file_download."
         },
         "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
           "attributes": {
             "title": "Prolog Installation",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-prolog-install.json'"
-          }
-        }
-      }
+          },
+          "name": "PopupScreenDefault",
+          "type": "Clone"
+        },
+        "text": "Prolog Installation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
         "text": "OpenPGP Installation (gnupg) - Security / Cryptography"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "OpenPGP Installation",
         "icon": {
-          "name": "file_download.",
-          "location": "top"
+          "location": "top",
+          "name": "file_download."
         },
         "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
           "attributes": {
             "title": "PGP Installation",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-pgp-install.json'"
-          }
-        }
-      }
+          },
+          "name": "PopupScreenDefault",
+          "type": "Clone"
+        },
+        "text": "OpenPGP Installation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "TextViewLabel",
       "attributes": {
         "text": "Apache2 Installation - HTTP/CGI Services"
-      }
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "ButtonDefault",
       "attributes": {
-        "text": "Apache2 Installation",
         "icon": {
-          "name": "file_download.",
-          "location": "top"
+          "location": "top",
+          "name": "file_download."
         },
         "on_click": {
-          "type": "Clone",
-          "name": "PopupScreenDefault",
           "attributes": {
             "title": "Apache2 Installation",
             "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-apache-install.json'"
-          }
-        }
-      }
+          },
+          "name": "PopupScreenDefault",
+          "type": "Clone"
+        },
+        "text": "Apache2 Installation"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
     }
-  ]
+  ],
+  "gravity": "center_horizontal",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }
-
-
-

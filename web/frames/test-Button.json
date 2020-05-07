@@ -1,220 +1,220 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
-  "component_list": [
-    {
-      "type": "LinearLayout",
-      "orientation": "horizontal",
-      "gravity": "center_vertical",
-      "layout_width": "match_parent",
-      "layout_height": "100",
-      "component_list": [
-        {
-          "type": "TextView",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "layout_weight": "10",
-          "text_size": "14",
-          "text_color": "#ffffff",
-          "text": "Test TextView and Buttons with Icons"
-        },
-        {
-          "type": "Button",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "layout_weight": "1",
-          "text": " ",
-          "background_color": "#00000000",
-          "icon": {
-            "name": "close.",
-            "location": "right"
-          },
-          "on_click": {
-            "type": "JavaScript",
-            "script_list": [
-              "eigenActivity.finish()"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text_list": [
-        "No Icon",
-        "attached"
-      ],
-      "text_size": 20,
-      "text_color": "#ffffff",
-      "padding": {
-        "left": 40,
-        "top": 41,
-        "right": 42,
-        "bottom": 43
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "LinearLayout",
-      "scrollable": true,
-      "orientation": "horizontal",
-      "gravity": "center_vertical",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "component_list": [
-        {
-          "type": "Clone",
-          "name": "VerticalLine"
-        },
-        {
-          "type": "TextView",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "layout_weight": "1",
-          "text": "left",
-          "text_size": 20,
-          "text_color": "#ffffff",
-          "gravity": "left",
-          "icon": {
-            "name": "info.",
-            "location": "left"
-          }
-        },
-        {
-          "type": "Clone",
-          "name": "VerticalLine"
-        },
-        {
-          "type": "TextView",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "layout_weight": "1",
-          "text": "top",
-          "text_size": 20,
-          "text_color": "#ffffff",
-          "gravity": "center_horizontal",
-          "icon": {
-            "name": "info.",
-            "location": "top"
-          }
-        },
-        {
-          "type": "Clone",
-          "name": "VerticalLine"
-        },
-        {
-          "type": "TextView",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "layout_weight": "1",
-          "text": "right",
-          "text_size": 20,
-          "text_color": "#ffffff",
-          "gravity": "right",
-          "icon": {
-            "name": "info.",
-            "location": "right"
-          }
-        },
-        {
-          "type": "Clone",
-          "name": "VerticalLine"
-        }
-      ]
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "LinearLayout",
-      "scrollable": true,
-      "orientation": "horizontal",
-      "gravity": "center_vertical",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "component_list": [
-        {
-          "type": "Clone",
-          "name": "VerticalLine"
-        },
-       {
-          "type": "Button",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "layout_weight": "1",
-          "text": "left",
-          "text_color": "#ffffff",
-          "background_color": "#00ffff",
-          "icon": {
-            "name": "info.",
-            "location": "left"
-          },
-          "on_click": {
-            "type": "JavaScript",
-            "script": "eigenActivity.showToast('value: '+1)"
-          }
-        },
-        {
-          "type": "Clone",
-          "name": "VerticalLine"
-        },
-        {
-          "type": "Button",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "layout_weight": "1",
-          "text": "top",
-          "text_color": "#ffffff",
-          "background_color": "#0f0f0f",
-          "icon": {
-            "name": "info.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "JavaScript",
-            "script": "eigenActivity.showToast('value: '+2)"
-          }
-        },
-        {
-          "type": "Clone",
-          "name": "VerticalLine"
-        },
-        {
-          "type": "Button",
-          "layout_width": "wrap_content",
-          "layout_height": "wrap_content",
-          "layout_weight": "1",
-          "text": "right",
-          "text_color": "#ffffff",
-          "background_color": "#ff00ff",
-          "icon": {
-            "name": "info.",
-            "location": "right"
-          },
-          "on_click": {
-            "type": "JavaScript",
-            "script": "eigenActivity.showToast('value: '+3)"
-          }
-        },
-        {
-          "type": "Clone",
-          "name": "VerticalLine"
-        }
-      ]
-    }
-  ]
+	"component_list": [
+		{
+			"component_list": [
+				{
+					"layout_height": "wrap_content",
+					"layout_weight": "10",
+					"layout_width": "wrap_content",
+					"text": "Test TextView and Buttons with Icons",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"type": "TextView"
+				},
+				{
+					"background_color": "#00000000",
+					"icon": {
+						"location": "right",
+						"name": "close."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"on_click": {
+						"script_list": [
+							"eigenActivity.finish()"
+						],
+						"type": "JavaScript"
+					},
+					"text": " ",
+					"type": "Button"
+				}
+			],
+			"gravity": "center_vertical",
+			"layout_height": "100",
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"type": "LinearLayout"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"layout_height": "wrap_content",
+			"layout_width": "wrap_content",
+			"padding": {
+				"bottom": 43,
+				"left": 40,
+				"right": 42,
+				"top": 41
+			},
+			"text_color": "#ffffff",
+			"text_list": [
+				"No Icon",
+				"attached"
+			],
+			"text_size": 20,
+			"type": "TextView"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"component_list": [
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"gravity": "left",
+					"icon": {
+						"location": "left",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"text": "left",
+					"text_color": "#ffffff",
+					"text_size": 20,
+					"type": "TextView"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"gravity": "center_horizontal",
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"text": "top",
+					"text_color": "#ffffff",
+					"text_size": 20,
+					"type": "TextView"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"gravity": "right",
+					"icon": {
+						"location": "right",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"text": "right",
+					"text_color": "#ffffff",
+					"text_size": 20,
+					"type": "TextView"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				}
+			],
+			"gravity": "center_vertical",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"scrollable": "true",
+			"type": "LinearLayout"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"component_list": [
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"background_color": "#00ffff",
+					"icon": {
+						"location": "left",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"on_click": {
+						"script": "eigenActivity.showToast('value: '+1)",
+						"type": "JavaScript"
+					},
+					"text": "left",
+					"text_color": "#ffffff",
+					"type": "Button"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"background_color": "#0f0f0f",
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"on_click": {
+						"script": "eigenActivity.showToast('value: '+2)",
+						"type": "JavaScript"
+					},
+					"text": "top",
+					"text_color": "#ffffff",
+					"type": "Button"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				},
+				{
+					"background_color": "#ff00ff",
+					"icon": {
+						"location": "right",
+						"name": "info."
+					},
+					"layout_height": "wrap_content",
+					"layout_weight": "1",
+					"layout_width": "wrap_content",
+					"on_click": {
+						"script": "eigenActivity.showToast('value: '+3)",
+						"type": "JavaScript"
+					},
+					"text": "right",
+					"text_color": "#ffffff",
+					"type": "Button"
+				},
+				{
+					"name": "VerticalLine",
+					"type": "Clone"
+				}
+			],
+			"gravity": "center_vertical",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"scrollable": "true",
+			"type": "LinearLayout"
+		}
+	],
+	"gravity": "center_horizontal",
+	"layout_height": "wrap_content",
+	"layout_width": "match_parent",
+	"orientation": "vertical",
+	"scrollable": "true",
+	"type": "LinearLayout"
 }

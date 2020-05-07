@@ -1,95 +1,95 @@
 {
 	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
 	"id": 411000,
-	"sftp": "pwd",
 	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
-		"layout_height": "wrap_content",
 		"component_list": [
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Ruby Installation"
-				}
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
 						"Click [Ruby Installation] - ",
 						"Ruby is a dynamic scripting language used for server-side eigenframe transforms."
 					]
-				}
-			},
-			{
-				"type": "Clone",
-				"name": "HorizontalLine"
-			},
-			{
-				"type": "Button",
-				"gravity": "center",
-				"layout_width": "match_parent",
-				"layout_height": "wrap_content",
-				"text": "Ruby Installation",
-				"text_color": "#ffffff",
-				"background_color": "#123456",
-				"icon": {
-					"name": "archive.",
-					"location": "top"
 				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#123456",
+				"gravity": "center",
+				"icon": {
+					"location": "top",
+					"name": "archive."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
 				"margin": {
+					"bottom": 10,
 					"left": 10,
-					"top": 10,
 					"right": 10,
-					"bottom": 10
+					"top": 10
 				},
 				"on_click": {
-					"type": "PopupScreen",
-					"layout_width": "match_parent",
-					"layout_height": "wrap_content",
-					"text_size": "14",
-					"text_color": "#ffffff",
 					"background_color": "#111111",
-					"title": "Install ruby package",
 					"component_list": [
 						{
-							"type": "LinearLayout",
-							"scrollable": true,
-							"orientation": "vertical",
-							"gravity": "center_horizontal",
-							"layout_width": "match_parent",
-							"layout_height": "wrap_content",
 							"component_list": [
 								{
-									"type": "TextView",
-									"layout_width": "match_parent",
-									"layout_height": "wrap_content",
-									"text_size": "14",
-									"gravity": "left",
-									"text_color": "#ffffff",
 									"font": "font/droid-sans-mono/DroidSansMono.ttf",
-									"is_toast": true,
+									"gravity": "left",
+									"is_toast": "true",
+									"layout_height": "wrap_content",
+									"layout_width": "match_parent",
 									"ssh_list": [
 										"echo pkg install ruby",
 										"echo y | pkg install ruby"
-									]
+									],
+									"text_color": "#ffffff",
+									"text_size": "14",
+									"type": "TextView"
 								}
-							]
+							],
+							"gravity": "center_horizontal",
+							"layout_height": "wrap_content",
+							"layout_width": "match_parent",
+							"orientation": "vertical",
+							"scrollable": "true",
+							"type": "LinearLayout"
 						}
-					]
-				}
+					],
+					"layout_height": "wrap_content",
+					"layout_width": "match_parent",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"title": "Install ruby package",
+					"type": "PopupScreen"
+				},
+				"text": "Ruby Installation",
+				"text_color": "#ffffff",
+				"type": "Button"
 			},
 			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+				"name": "HorizontalLine",
+				"type": "Clone"
 			}
-		]
-	}
+		],
+		"gravity": "center_horizontal",
+		"layout_height": "wrap_content",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
+	},
+	"sftp": "pwd",
+	"type": "SecureFtp"
 }

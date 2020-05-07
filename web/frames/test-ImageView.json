@@ -1,87 +1,87 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
       "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test ImageView (url -> png)",
+      "text_color": "#ffffff",
       "text_size": "14",
-      "text_color": "#ffffff",
-      "text": "Test ImageView (url -> png)"
+      "type": "TextView"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
     },
     {
-      "type": "ImageView",
-      "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "on_click": {
-        "type": "JavaScript",
-        "script": "eigenActivity.showToast('image click default')"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "ImageView",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/eigenframe.png",
       "layout_width": "match_parent",
+      "on_click": {
+        "script": "eigenActivity.showToast('image click default')",
+        "type": "JavaScript"
+      },
+      "type": "ImageView"
+    },
+    {
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
       "layout_height": "100",
+      "layout_width": "match_parent",
       "on_click": {
-        "type": "JavaScript",
-        "script": "eigenActivity.showToast('image click eigenframe')"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
+        "script": "eigenActivity.showToast('image click eigenframe')",
+        "type": "JavaScript"
+      },
       "type": "ImageView",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/photopgp.png",
-      "layout_width": "match_parent",
-      "layout_height": "100",
-      "on_click": {
-        "type": "JavaScript",
-        "script": "eigenActivity.showToast('image click photopgp')"
-      }
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/eigenframe.png"
     },
     {
-      "type": "TextView",
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "layout_height": "100",
       "layout_width": "match_parent",
-      "text_color": "#ffffff",
-      "text": "Share",
+      "on_click": {
+        "script": "eigenActivity.showToast('image click photopgp')",
+        "type": "JavaScript"
+      },
+      "type": "ImageView",
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/photopgp.png"
+    },
+    {
       "icon": {
-        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/icon/white/baseline_share_white_18.png",
-        "location": "left"
-      }
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "ImageView",
-      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/photopgp.png'",
+        "location": "left",
+        "name": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/icon/white/baseline_share_white_18.png"
+      },
       "layout_width": "match_parent",
-      "layout_height": "100",
-      "on_click": {
-        "type": "JavaScript",
-        "script": "eigenActivity.showToast('image click photopgp')"
-      }
+      "text": "Share",
+      "text_color": "#ffffff",
+      "type": "TextView"
     },
     {
-      "type": "Clone",
-      "name": "HorizontalLine"
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "layout_height": "100",
+      "layout_width": "match_parent",
+      "on_click": {
+        "script": "eigenActivity.showToast('image click photopgp')",
+        "type": "JavaScript"
+      },
+      "type": "ImageView",
+      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/photopgp.png'"
+    },
+    {
+      "name": "HorizontalLine",
+      "type": "Clone"
     }
-  ]
+  ],
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

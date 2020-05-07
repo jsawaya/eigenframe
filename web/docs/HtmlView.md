@@ -1,8 +1,8 @@
 # HtmlView
 ## schema pattern
 
-* type = "TextView"
-* text | text_script
+* type = "HtmlView"
+* html
 * url
 * id = define unique view id, 
   puts contents into cache HtmlView:{id} 

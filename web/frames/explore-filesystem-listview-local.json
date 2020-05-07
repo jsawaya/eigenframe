@@ -1,168 +1,177 @@
 {
-	"type": "LinearLayout",
-	"orientation": "vertical",
-	"gravity": "center_horizontal",
-	"layout_width": "match_parent",
-	"layout_height": "wrap_content",
 	"component_list": [
 		{
-			"type": "Clone",
-			"name": "HorizontalLine"
+			"name": "HorizontalLine",
+			"type": "Clone"
 		},
 		{
-			"type": "Clone",
-			"name": "TextViewDetail",
 			"attributes": {
 				"text_script": "''+eigenFragment.getCacheString('FullPathLocal')"
-			}
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
 		},
 		{
-			"type": "Clone",
-			"name": "HorizontalLine"
+			"name": "HorizontalLine",
+			"type": "Clone"
 		},
 		{
-			"type": "LinearLayout",
-			"orientation": "horizontal",
-			"layout_width": "match_parent",
 			"component_list": [
 				{
-					"type": "Button",
-					"text": "Open Parent Directory",
-					"text_size": "14",
-					"gravity": "center_horizontal",
-					"text_color": "#ffffff",
 					"background_color": "#123456",
-					"layout_width": "match_parent",
+					"gravity": "center_horizontal",
 					"layout_weight": "1",
+					"layout_width": "match_parent",
 					"margin": {
+						"bottom": 10,
 						"left": 10,
-						"top": 10,
 						"right": 10,
-						"bottom": 10
+						"top": 10
 					},
 					"on_click": {
-						"type": "ActionList",
 						"component_list": [
 							{
-								"type": "JavaScript",
 								"comment": "find the parent directory of the SelectedPath",
 								"script_list": [
 									"var selected_path = eigenFragment.getCacheString('SelectedPathLocal')",
 									"selected_path = eigenFragment.parentPath(selected_path)",
 									"eigenFragment.setCacheString('SelectedPathLocal', selected_path)",
 									"eigenFragment.setCacheString('SelectedFileLocal', '')"
-								]
+								],
+								"type": "JavaScript"
 							},
 							{
-								"type": "Clone",
-								"name": "JavaScriptSetFullPathLocal"
+								"name": "JavaScriptSetFullPathLocal",
+								"type": "Clone"
 							},
 							{
-								"type": "JavaScript",
-								"script": "eigenFragment.closePopupWindow()"
+								"script": "eigenFragment.closePopupWindow()",
+								"type": "JavaScript"
 							},
 							{
-								"type": "Clone",
-								"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal"
+								"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal",
+								"type": "Clone"
 							}
-						]
-					}
+						],
+						"type": "ActionList"
+					},
+					"text": "Open Parent Directory",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"type": "Button"
 				},
 				{
-					"type": "Button",
-					"text": "Select This Directory",
-					"text_size": "14",
-					"gravity": "center_horizontal",
-					"text_color": "#ffffff",
 					"background_color": "#123456",
-					"layout_width": "match_parent",
+					"gravity": "center_horizontal",
 					"layout_weight": "1",
+					"layout_width": "match_parent",
 					"margin": {
+						"bottom": 10,
 						"left": 10,
-						"top": 10,
 						"right": 10,
-						"bottom": 10
+						"top": 10
 					},
 					"on_click": {
-						"type": "ActionList",
 						"component_list": [
 							{
-								"type": "JavaScript",
 								"comment": "selected directory, not file",
 								"script_list": [
 									"var selected_path = eigenFragment.getCacheString('SelectedPathLocal')",
 									"eigenFragment.setCacheString('SelectedFileLocal', '')"
-								]
+								],
+								"type": "JavaScript"
 							},
 							{
-								"type": "Clone",
-								"name": "JavaScriptSetFullPathLocal"
+								"name": "JavaScriptSetFullPathLocal",
+								"type": "Clone"
 							},
 							{
-								"type": "JavaScript",
 								"comment": "selected directory - not file",
 								"script_list": [
 									"eigenFragment.closePopupWindow()",
 									"eigenFragment.closePopupScreen(991015)"
-								]
+								],
+								"type": "JavaScript"
 							}
-						]
-					}
+						],
+						"type": "ActionList"
+					},
+					"text": "Select This Directory",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"type": "Button"
 				}
-			]
+			],
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"type": "LinearLayout"
 		},
 		{
-			"type": "LinearLayout",
-			"orientation": "horizontal",
-			"layout_width": "match_parent",
 			"component_list": [
 				{
-					"type": "TextView",
-					"text": "Sub-directories",
-					"text_size": "14",
-					"text_color": "#ffffff",
-					"layout_width": "match_parent",
-					"layout_weight": "1",
 					"background_color": "#123456",
+					"font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
 					"gravity": "center_horizontal",
-					"font": "font/open-sans/OpenSans-SemiboldItalic.ttf"
+					"layout_weight": "1",
+					"layout_width": "match_parent",
+					"text": "Sub-directories",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"type": "TextView"
 				},
 				{
-					"type": "TextView",
-					"text": "Files",
-					"text_size": "14",
-					"text_color": "#ffffff",
-					"layout_width": "match_parent",
-					"layout_weight": "1",
 					"background_color": "#123456",
+					"font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
 					"gravity": "center_horizontal",
-					"font": "font/open-sans/OpenSans-SemiboldItalic.ttf"
+					"layout_weight": "1",
+					"layout_width": "match_parent",
+					"text": "Files",
+					"text_color": "#ffffff",
+					"text_size": "14",
+					"type": "TextView"
 				}
-			]
-		},
-		{
-			"type": "Clone",
-			"name": "HorizontalLine"
-		},
-		{
-			"type": "LinearLayout",
-			"orientation": "horizontal",
+			],
 			"layout_width": "match_parent",
-			"layout_height": "wrap_content",
+			"orientation": "horizontal",
+			"type": "LinearLayout"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
 			"component_list": [
 				{
-					"type": "ListView",
-					"layout_width": "match_parent",
-					"layout_height": "match_parent",
-					"layout_weight": "1",
 					"background_color": "#123456",
 					"cached_filename": "SecureFtp:991014",
 					"dir_type": "subdir",
-					"on_click": {
-						"type": "ActionList",
+					"item_layout": {
 						"component_list": [
 							{
-								"type": "JavaScript",
+								"background_color": "#123456",
+								"margin": {
+									"bottom": 40,
+									"left": 40,
+									"right": 40,
+									"top": 40
+								},
+								"text_color": "#ffffff",
+								"text_script": "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()",
+								"type": "TextView"
+							}
+						],
+						"gravity": "center_vertical",
+						"layout_height": "wrap_content",
+						"layout_width": "wrap_content",
+						"orientation": "horizontal",
+						"type": "LinearLayout"
+					},
+					"layout_height": "match_parent",
+					"layout_weight": "1",
+					"layout_width": "match_parent",
+					"on_click": {
+						"component_list": [
+							{
 								"comment": "selected directory, append to selected path",
 								"script_list": [
 									"var selected_dir = eigenFragment.getOptionLabel()",
@@ -170,61 +179,61 @@
 									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
 									"eigenFragment.setCacheString('SelectedPathLocal', selected_path)",
 									"eigenFragment.setCacheString('SelectedFileLocal', '')"
-								]
+								],
+								"type": "JavaScript"
 							},
 							{
-								"type": "Clone",
-								"name": "JavaScriptSetFullPathLocal"
+								"name": "JavaScriptSetFullPathLocal",
+								"type": "Clone"
 							},
 							{
-								"type": "JavaScript",
-								"script": "eigenFragment.closePopupWindow()"
+								"script": "eigenFragment.closePopupWindow()",
+								"type": "JavaScript"
 							},
 							{
-								"type": "Clone",
-								"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal"
+								"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal",
+								"type": "Clone"
 							}
-						]
+						],
+						"type": "ActionList"
 					},
-					"item_layout": {
-						"type": "LinearLayout",
-						"orientation": "horizontal",
-						"layout_width": "wrap_content",
-						"layout_height": "wrap_content",
-						"gravity": "center_vertical",
-						"component_list": [
-							{
-								"type": "TextView",
-								"text_script": "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()",
-								"text_color": "#ffffff",
-								"background_color": "#123456",
-								"margin": {
-									"left": 40,
-									"top": 40,
-									"right": 40,
-									"bottom": 40
-								}
-							}
-						]
-					}
+					"type": "ListView"
 				},
 				{
-					"type": "Clone",
-					"name": "VerticalLine"
+					"name": "VerticalLine",
+					"type": "Clone"
 				},
 				{
-					"type": "ListView",
-					"layout_width": "match_parent",
-					"layout_height": "match_parent",
-					"layout_weight": "1",
 					"background_color": "#123456",
 					"cached_filename": "SecureFtp:991014",
 					"dir_type": "files",
-					"on_click": {
-						"type": "ActionList",
+					"item_layout": {
 						"component_list": [
 							{
-								"type": "JavaScript",
+								"background_color": "#123456",
+								"margin": {
+									"bottom": 40,
+									"left": 40,
+									"right": 40,
+									"top": 40
+								},
+								"text_color": "#ffffff",
+								"text_script": "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()",
+								"type": "TextView"
+							}
+						],
+						"gravity": "center_vertical",
+						"layout_height": "wrap_content",
+						"layout_width": "wrap_content",
+						"orientation": "horizontal",
+						"type": "LinearLayout"
+					},
+					"layout_height": "match_parent",
+					"layout_weight": "1",
+					"layout_width": "match_parent",
+					"on_click": {
+						"component_list": [
+							{
 								"script_list": [
 									"var selected_file = eigenFragment.getOptionLabel()",
 									"eigenFragment.setCacheString('SelectedFileLocal', selected_file)",
@@ -234,33 +243,24 @@
 									"eigenFragment.setViewState(targetVid, full_path_file)",
 									"eigenFragment.closePopupScreen(991015)",
 									"eigenFragment.closePopupWindow()"
-								]
+								],
+								"type": "JavaScript"
 							}
-						]
+						],
+						"type": "ActionList"
 					},
-					"item_layout": {
-						"type": "LinearLayout",
-						"orientation": "horizontal",
-						"layout_width": "wrap_content",
-						"layout_height": "wrap_content",
-						"gravity": "center_vertical",
-						"component_list": [
-							{
-								"type": "TextView",
-								"text_script": "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()",
-								"text_color": "#ffffff",
-								"background_color": "#123456",
-								"margin": {
-									"left": 40,
-									"top": 40,
-									"right": 40,
-									"bottom": 40
-								}
-							}
-						]
-					}
+					"type": "ListView"
 				}
-			]
+			],
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"type": "LinearLayout"
 		}
-	]
+	],
+	"gravity": "center_horizontal",
+	"layout_height": "wrap_content",
+	"layout_width": "match_parent",
+	"orientation": "vertical",
+	"type": "LinearLayout"
 }

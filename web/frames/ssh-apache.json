@@ -1,360 +1,352 @@
 {
-  "comment": "set the HomeDirectory from sftp pwd",
-  "type": "SecureFtp",
-  "id": 411000,
-  "sftp": "pwd",
-  "on_complete": {
-    "type": "LinearLayout",
-    "scrollable": true,
-    "orientation": "vertical",
-    "gravity": "center_horizontal",
-    "layout_width": "match_parent",
-    "layout_height": "wrap_content",
-    "component_list": [
-      {
-        "type": "Clone",
-        "name": "TextViewLabel",
-        "attributes": {
-          "text": "Apache2 Administration"
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Check if any HTTP processes are running",
-          "icon": {
-            "name": "info.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "PopupTextView",
-            "title": "Check if Apache2 HTTP processes are running",
-            "font": "font/droid-sans-mono/DroidSansMono.ttf",
-            "ssh_list": [
-              "ps -eo cmd"
-            ]
-          }
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Start Apache2 HTTP/CGI Services",
-          "icon": {
-            "name": "open_with.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "Start Apache2 HTTP/CGI Services",
-              "component_list": [
-                {
-                  "type": "Clone",
-                  "name": "LayoutVerticalScrollable",
-                  "attributes": {
-                    "component_list": [
-                      {
-                        "type": "Clone",
-                        "name": "TextViewDetail",
-                        "attributes": {
-                          "text_size": "10",
-                          "ssh_list": [
-                            "echo Starting Apache2 HTTP/CGI Services ...",
-                            "echo //remove httpd process id ",
-                            "rm /data/data/com.termux/files/usr/var/run/apache2/httpd.pid",
-                            "sleep 1",
-                            "httpd",
-                            "sleep 1",
-                            "echo //ps -e",
-                            "ps -e",
-                            "echo //ready to test - click [Test Apache2 CGI Service]"
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Stop Apache2 HTTP/CGI Services",
-          "icon": {
-            "name": "close.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "PopupTextView",
-            "title": "Stop Apache2 HTTP/CGI Services",
-            "font": "font/droid-sans-mono/DroidSansMono.ttf",
-            "ssh_list": [
-              "killall httpd",
-              "echo Stopped Apache2 services"
-            ]
-          }
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "HorizontalLine"
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewLabel",
-        "attributes": {
-          "text": "Apache2 Testing"
-        }
-      },
-
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Test Apache2 CGI Service",
-          "icon": {
-            "name": "open_with.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "Test Apache2 CGI Service",
-              "component_list": [
-                {
-                  "type": "Clone",
-                  "name": "LayoutVerticalScrollable",
-                  "attributes": {
-                    "component_list": [
-                      {
-                        "type": "Clone",
-                        "name": "TextViewDetail",
-                        "attributes": {
-                          "text_size": "10",
-                          "url": "http://localhost:8080/cgi-bin/sys-test.sh"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        }
-      },
-
-
-
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Test Apache2 Web Service",
-          "icon": {
-            "name": "info.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "Apache2 Web Service",
-              "component_list": [
-                {
-                  "type": "Clone",
-                  "name": "LayoutVerticalScrollable",
-                  "attributes": {
-                    "component_list": [
-                      {
-                        "type": "WebView",
-                        "layout_width": "match_parent",
-                        "url": "http://localhost:8080"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "HorizontalLine"
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewLabel",
-        "attributes": {
-          "text": "Apache2 Logs"
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewDetail",
-        "attributes": {
-          "text_list": [
-            "Click here to see any unusual activity when you are testing new scripts"
-          ]
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Show Apache2 Error Log (using SSH)",
-          "icon": {
-            "name": "open_with.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "Show Apache2 Error Log",
-              "component_list": [
-                {
-                  "type": "Clone",
-                  "name": "LayoutVerticalScrollable",
-                  "attributes": {
-                    "component_list": [
-                      {
-                        "type": "Clone",
-                        "name": "TextViewDetail",
-                        "attributes": {
-                          "text_size": "10",
-                          "ssh": "tail -n 30 ~/../usr/var/log/apache2/error_log"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        }
-      },
-
-
-
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Show Apache2 Error Log (using HTTP/CGI)",
-          "icon": {
-            "name": "open_with.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "Apache2 Error Log",
-              "component_list": [
-                {
-                  "type": "Clone",
-                  "name": "LayoutVerticalScrollable",
-                  "attributes": {
-                    "component_list": [
-                      {
-                        "type": "Clone",
-                        "name": "TextViewDetail",
-                        "attributes": {
-                          "text_size": "10",
-                          "url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        }
-      },
-
-      {
-        "type": "Clone",
-        "name": "HorizontalLine"
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewLabel",
-        "attributes": {
-          "text": "Launch apps from Apache2 HTTP/CGI service:"
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "Launch Gallery (from http localhost:8080)",
-          "icon": {
-            "name": "open_browser.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "JavaScript",
-            "script_list": [
-              "eigenActivity.launch('http://localhost:8080/apps/app_localhost_gallery.json')"
-            ]
-          }
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "HorizontalLine"
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewLabel",
-        "attributes": {
-          "text": "OpenPGP Cryptography"
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "TextViewDetail",
-        "attributes": {
-          "text_list": [
-            "Click [OpenPGP Cryptography] to use GnuPG to encrypt/decrypt/sign/verify/import-keys/export-keys.  ",
-            "These methods are different from the SecureShell methods.  These are based on http/cgi, not ssh."
-          ]
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "ButtonDefault",
-        "attributes": {
-          "text": "OpenPGP Cryptography",
-          "icon": {
-            "name": "open_browser.",
-            "location": "top"
-          },
-          "on_click": {
-            "type": "Clone",
-            "name": "PopupScreenDefault",
-            "attributes": {
-              "title": "OpenPGP Cryptography",
-              "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp.json'"
-            }
-          }
-        }
-      },
-      {
-        "type": "Clone",
-        "name": "HorizontalLine"
-      }
-    ]
-  }
+	"comment": "set the HomeDirectory from sftp pwd",
+	"id": 411000,
+	"on_complete": {
+		"component_list": [
+			{
+				"attributes": {
+					"text": "Apache2 Administration"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"font": "font/droid-sans-mono/DroidSansMono.ttf",
+						"ssh_list": [
+							"ps -eo cmd"
+						],
+						"title": "Check if Apache2 HTTP processes are running",
+						"type": "PopupTextView"
+					},
+					"text": "Check if any HTTP processes are running"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_with."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"ssh_list": [
+														"echo Starting Apache2 HTTP/CGI Services ...",
+														"echo //remove httpd process id ",
+														"rm /data/data/com.termux/files/usr/var/run/apache2/httpd.pid",
+														"sleep 1",
+														"httpd",
+														"sleep 1",
+														"echo //ps -e",
+														"ps -e",
+														"echo //ready to test - click [Test Apache2 CGI Service]"
+													],
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Start Apache2 HTTP/CGI Services"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Start Apache2 HTTP/CGI Services"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "close."
+					},
+					"on_click": {
+						"font": "font/droid-sans-mono/DroidSansMono.ttf",
+						"ssh_list": [
+							"killall httpd",
+							"echo Stopped Apache2 services"
+						],
+						"title": "Stop Apache2 HTTP/CGI Services",
+						"type": "PopupTextView"
+					},
+					"text": "Stop Apache2 HTTP/CGI Services"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "Apache2 Testing"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_with."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"text_size": "10",
+													"url": "http://localhost:8080/cgi-bin/sys-test.sh"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Test Apache2 CGI Service"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Test Apache2 CGI Service"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "info."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"layout_width": "match_parent",
+												"type": "WebView",
+												"url": "http://localhost:8080"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Apache2 Web Service"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Test Apache2 Web Service"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "Apache2 Logs"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Click here to see any unusual activity when you are testing new scripts"
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_with."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"ssh": "tail -n 30 ~/../usr/var/log/apache2/error_log",
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Show Apache2 Error Log"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Show Apache2 Error Log (using SSH)"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_with."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"text_size": "10",
+													"url": "http://localhost:8080/cgi-bin/sys-list-error-log.sh"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Apache2 Error Log"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Show Apache2 Error Log (using HTTP/CGI)"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "Launch apps from Apache2 HTTP/CGI service:"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"script_list": [
+							"eigenActivity.launch('http://localhost:8080/apps/app_localhost_gallery.json')"
+						],
+						"type": "JavaScript"
+					},
+					"text": "Launch Gallery (from http localhost:8080)"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text": "OpenPGP Cryptography"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"text_list": [
+						"Click [OpenPGP Cryptography] to use GnuPG to encrypt/decrypt/sign/verify/import-keys/export-keys.  ",
+						"These methods are different from the SecureShell methods.  These are based on http/cgi, not ssh."
+					]
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"attributes": {
+							"title": "OpenPGP Cryptography",
+							"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp.json'"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "OpenPGP Cryptography"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			}
+		],
+		"gravity": "center_horizontal",
+		"layout_height": "wrap_content",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
+	},
+	"sftp": "pwd",
+	"type": "SecureFtp"
 }

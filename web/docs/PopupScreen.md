@@ -16,8 +16,7 @@ The contents of the screen are sourced synchronously from the component_list, or
 * icon 
 * padding
 * margin
-* component_list
-* url | url_script
+* component_list | url | url_script
 
 Related:
 [LinearLayout](LinearLayout.md) 

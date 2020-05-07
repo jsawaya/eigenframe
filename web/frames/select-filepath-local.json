@@ -1,172 +1,169 @@
 {
-	"type": "LinearLayout",
-	"scrollable": true,
-	"orientation": "vertical",
-	"gravity": "center_horizontal",
-	"layout_width": "match_parent",
 	"component_list": [
 		{
-			"type": "Clone",
-			"name": "HorizontalLine"
+			"name": "HorizontalLine",
+			"type": "Clone"
 		},
 		{
-			"type": "Clone",
-			"name": "TextViewLabel",
 			"attributes": {
 				"text": "Local Directory:"
-			}
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
 		},
 		{
-			"type": "TextView",
-			"x-text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe",
-			"text": "/data/data/com.sawaya.eigenframe",			
+			"background_color": "#000000",
+			"gravity": "left",
 			"layout_width": "match_parent",
+			"text": "/data/data/com.sawaya.eigenframe",
 			"text_color": "#ffffff",
 			"text_size": "20",
-			"gravity": "left",
-			"background_color": "#000000"
+			"type": "TextView",
+			"x-text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe"
 		},
 		{
-			"type": "Clone",
-			"name": "HorizontalLine"
+			"name": "HorizontalLine",
+			"type": "Clone"
 		},
 		{
-			"type": "Clone",
-			"name": "TextViewLabel",
 			"attributes": {
 				"text": "Selected Path:"
-			}
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
 		},
 		{
-			"type": "EditText",
-			"text_script": "''+eigenFragment.getCacheString('SelectedPathLocal')",
-			"max_length": 200,
-			"is_single_line": true,
-			"layout_width": "match_parent",
-			"text_color": "#ffffff",
-			"text_size": "20",
+			"background_color": "#000000",
 			"gravity": "left",
-			"background_color": "#000000"
+			"is_single_line": "true",
+			"layout_width": "match_parent",
+			"max_length": 200,
+			"text_color": "#ffffff",
+			"text_script": "''+eigenFragment.getCacheString('SelectedPathLocal')",
+			"text_size": "20",
+			"type": "EditText"
 		},
 		{
-			"type": "LinearLayout",
-			"orientation": "vertical",
-			"layout_width": "match_parent",
 			"component_list": [
 				{
-					"type": "Clone",
-					"name": "HorizontalLine"
+					"name": "HorizontalLine",
+					"type": "Clone"
 				},
 				{
-					"type": "Clone",
-					"name": "TextViewLabel",
 					"attributes": {
 						"text": "Selected Filename: "
-					}
+					},
+					"name": "TextViewLabel",
+					"type": "Clone"
 				},
 				{
-					"type": "EditText",
-					"max_length": 200,
-					"is_single_line": true,
-					"layout_width": "match_parent",
-					"text_script": "''+eigenFragment.getCacheString('SelectedFileLocal')",
-					"text_color": "#ffffff",
-					"text_size": "20",
+					"background_color": "#000000",
 					"gravity": "left",
-					"background_color": "#000000"
+					"is_single_line": "true",
+					"layout_width": "match_parent",
+					"max_length": 200,
+					"text_color": "#ffffff",
+					"text_script": "''+eigenFragment.getCacheString('SelectedFileLocal')",
+					"text_size": "20",
+					"type": "EditText"
 				}
-			]
+			],
+			"layout_width": "match_parent",
+			"orientation": "vertical",
+			"type": "LinearLayout"
 		},
 		{
-			"type": "Clone",
-			"name": "HorizontalLine"
+			"name": "HorizontalLine",
+			"type": "Clone"
 		},
 		{
-			"type": "Clone",
-			"name": "TextViewLabel",
 			"attributes": {
 				"text": "Local Filesystem: "
-			}
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
 		},
 		{
-			"type": "LinearLayout",
-			"orientation": "horizontal",
-			"layout_width": "match_parent",
-			"gravity": "center_horizontal",
 			"component_list": [
 				{
-					"type": "Button",
-					"text": "Local Filesystem",
-					"layout_width": "match_parent",
-					"layout_weight": 1,
-					"text_color": "#ffffff",
 					"background_color": "#123456",
 					"icon": {
-						"name": "listview.",
-						"location": "top"
+						"location": "top",
+						"name": "listview."
 					},
+					"layout_weight": 1,
+					"layout_width": "match_parent",
 					"margin": {
+						"bottom": 10,
 						"left": 10,
-						"top": 10,
 						"right": 10,
-						"bottom": 10
+						"top": 10
 					},
 					"on_click": {
-						"type": "Clone",
-						"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal"
-					}
+						"name": "ListViewPopupScreenAfterSecureFtpDirectoryLocal",
+						"type": "Clone"
+					},
+					"text": "Local Filesystem",
+					"text_color": "#ffffff",
+					"type": "Button"
 				},
 				{
-					"type": "Button",
-					"text": "Reset",
-					"text_color": "#ffffff",
 					"background_color": "#123456",
 					"gravity": "center",
-					"layout_width": "match_parent",
-					"layout_weight": 1,
 					"icon": {
-						"name": "cancel.",
-						"location": "top"
+						"location": "top",
+						"name": "cancel."
 					},
+					"layout_weight": 1,
+					"layout_width": "match_parent",
 					"margin": {
+						"bottom": 10,
 						"left": 10,
-						"top": 10,
 						"right": 10,
-						"bottom": 10
+						"top": 10
 					},
 					"on_click": {
-						"type": "ActionList",
 						"component_list": [
 							{
-								"type": "JavaScript",
 								"script_list": [
 									"eigenFragment.setCacheString('SelectedPathLocal', '')",
 									"eigenFragment.setCacheString('SelectedFileLocal', '')"
-								]
+								],
+								"type": "JavaScript"
 							},
 							{
-								"type": "Clone",
-								"name": "JavaScriptSetFullPathLocal"
+								"name": "JavaScriptSetFullPathLocal",
+								"type": "Clone"
 							},
 							{
-								"type": "JavaScript",
-								"script": "eigenFragment.closePopupWindow()"
+								"script": "eigenFragment.closePopupWindow()",
+								"type": "JavaScript"
 							},
 							{
-								"type": "Clone",
-								"name": "PopupScreenSelectFilePathLocal"
+								"name": "PopupScreenSelectFilePathLocal",
+								"type": "Clone"
 							}
-						]
-					}
+						],
+						"type": "ActionList"
+					},
+					"text": "Reset",
+					"text_color": "#ffffff",
+					"type": "Button"
 				}
-			]
+			],
+			"gravity": "center_horizontal",
+			"layout_width": "match_parent",
+			"orientation": "horizontal",
+			"type": "LinearLayout"
 		},
 		{
-			"type": "Clone",
-			"name": "HorizontalLine"
+			"name": "HorizontalLine",
+			"type": "Clone"
 		}
-	]
+	],
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"orientation": "vertical",
+	"scrollable": "true",
+	"type": "LinearLayout"
 }
-
-
-

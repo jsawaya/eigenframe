@@ -4,8 +4,9 @@
 * type = "WebView"
 * layout_width
 * layout_height
-* html
-* url
+* source:
+  - html
+  - url
 ** is_javascript_enabled : true | false (default)
 
 Related:

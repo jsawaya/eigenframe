@@ -1,42 +1,42 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "wrap_content",
   "component_list": [
     {
-      "type": "TextView",
-      "text": "Test PopupHtmlView",
+      "layout_height": "wrap_content",
       "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "14",
-      "text_color": "#ffffff"
-    },
-    {
-      "type": "Clone",
-      "name": "HorizontalLine"
-    },
-    {
-      "type": "Button",
-      "layout_width": "wrap_content",
-      "layout_height": "wrap_content",
-      "text": "PopupHtmlView with html_list",
+      "text": "Test PopupHtmlView",
       "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
+    },
+    {
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
       "background_color": "#11ff0000",
       "icon": {
-        "name": "info.",
-        "location": "left"
+        "location": "left",
+        "name": "info."
       },
+      "layout_height": "wrap_content",
+      "layout_width": "wrap_content",
       "on_click": {
-        "type": "PopupHtmlView",
-        "title": "PopupHtmlView/html_list",
         "html_list": [
           "9/27/2019 Version 0.1<hr/>",
           "- Popup dynamic html with access to application-embedded icons [<img src='info.jpg'>]"
-        ]
-      }
+        ],
+        "title": "PopupHtmlView/html_list",
+        "type": "PopupHtmlView"
+      },
+      "text": "PopupHtmlView with html_list",
+      "text_color": "#ffffff",
+      "type": "Button"
     }
-  ]
+  ],
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }
