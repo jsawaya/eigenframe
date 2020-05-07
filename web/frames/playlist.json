@@ -14,15 +14,12 @@
       "type": "HtmlView"
     },
     {
-      "attributes": {
-        "text_script": "'GitHub Branch: '+eigenFragment.getCacheString('GithubBranch')"
-      },
-      "name": "TextViewDetail",
+      "name": "HorizontalLine",
       "type": "Clone"
     },
     {
       "attributes": {
-        "text_script": "'Root URL: '+eigenFragment.getCacheString('RootUrl')"
+        "text_script": "'EigenFrame GitHub Branch: '+eigenFragment.getCacheString('GithubBranch')"
       },
       "name": "TextViewDetail",
       "type": "Clone"
@@ -33,16 +30,9 @@
     },
     {
       "attributes": {
-        "text": "Launch EigenFrame App URL"
+        "text": "EigenFrame App URL"
       },
       "name": "TextViewLabel",
-      "type": "Clone"
-    },
-    {
-      "attributes": {
-        "text": "EigenFrame App URL:"
-      },
-      "name": "TextViewDetail",
       "type": "Clone"
     },
     {
@@ -57,11 +47,14 @@
     },
     {
       "attributes": {
+        "icon": {
+          "location": "top",
+          "name": "listview."
+        },
         "background_color": "#654321",
         "on_click": {
-          "checked_option": 0,
           "icon": {
-            "name": "share."
+            "name": "listview."
           },
           "id": 999103,
           "on_click": {
@@ -131,47 +124,6 @@
           "type": "JavaScript"
         },
         "text": "Create Shortcut"
-      },
-      "name": "ButtonDefault",
-      "type": "Clone"
-    },
-    {
-      "name": "HorizontalLine",
-      "type": "Clone"
-    },
-    {
-      "attributes": {
-        "text": "Launch an app from a local file..."
-      },
-      "name": "TextViewLabel",
-      "type": "Clone"
-    },
-    {
-      "attributes": {
-        "text": "The following demonstrates how to launch an app from your local shared directory:"
-      },
-      "name": "TextViewDetail",
-      "type": "Clone"
-    },
-    {
-      "attributes": {
-        "text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe/files",
-        "text_size": "10"
-      },
-      "name": "TextViewDetail",
-      "type": "Clone"
-    },
-    {
-      "attributes": {
-        "icon": {
-          "location": "top",
-          "name": "open_browser."
-        },
-        "on_click": {
-          "script": "eigenActivity.launch('file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json')",
-          "type": "JavaScript"
-        },
-        "text": "Hello World"
       },
       "name": "ButtonDefault",
       "type": "Clone"
