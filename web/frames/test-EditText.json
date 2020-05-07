@@ -64,15 +64,6 @@
       "type": "Button"
     },
     {
-      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
-      "layout_height": "wrap_content",
-      "layout_width": "match_parent",
-      "text": "Show Android/data/com.sawaya.eigenframe/files/home-url.txt",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "type": "TextView"
-    },
-    {
       "name": "HorizontalLine",
       "type": "Clone"
     },
