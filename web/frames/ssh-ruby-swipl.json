@@ -62,6 +62,169 @@
 			},
 			{
 				"attributes": {
+					"text": "EigenFrame Parser"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"ssh_list": [
+														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+														"cat swipl-lib/parse-eigenframe.pl"
+													],
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Prolog Source: parse-eigenframe.pl"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Prolog Source: parse-eigenframe.pl"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"ssh_list": [
+														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+														"swipl swipl-lib/parse-eigenframe.pl --http=8000"
+													],
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Prolog HTTP Service"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Start SWI-Prolog HTTP Service"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"attributes": {
+							"title": "Parse EigenFrame Files",
+							"url": "http://localhost:8000/files"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Parse EigenFrame Files"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"attributes": {
+							"title": "Show EigenFrame File (playlist.json)",
+							"url": "http://localhost:8000/frame?file=playlist.json"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Show EigenFrame File (playlist.json)"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"attributes": {
+							"title": "Search EigenFrame Files for Type=EditText",
+							"url": "http://localhost:8000/search?type=EditText"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Search EigenFrame Files for Type=EditText"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"background_color": "#11ff0000",
+				"icon": {
+					"location": "left",
+					"name": "cancel."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"on_click": {
+					"title": "Search EigenFrame Files for Type=EditText",
+					"url": "http://localhost:8000/halt",
+					"type": "PopupHtmlView"
+				},
+				"text": "Halt HTTP Service",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
 					"text": "Route Planning Example"
 				},
 				"name": "TextViewLabel",
