@@ -9,23 +9,26 @@
   "is_secure_window": "true",
   "tab_list": [
     {
-      "type": "EigenFragment",
       "name_script": " 'v'+eigenActivity.getCacheString('GithubBranch') ",
-      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/define-clones.json';",
-      "icon_name": "ic_launcher_round."
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/define-clones.json'",
+      "icon_name": "ic_launcher_round.",
+      "type": "EigenFragment"
     },
     {
+      "name": "About",
+      "x-name_script": " 'About\n'+eigenActivity.getCacheString('GithubBranch') ",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/about.json'",
+      "type": "EigenFragment"
+    },
+    {
+      "name": "Button",
+      "x-name_script": " 'Button\n'+eigenActivity.getCacheString('GithubBranch') ",
       "type": "EigenFragment",
-      "name_script": " 'About\n'+eigenActivity.getCacheString('GithubBranch'); ",
-      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/about.json';"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-Button.json'"
     },
     {
-      "name_script": " 'Button\n'+eigenActivity.getCacheString('GithubBranch') ",
-      "type": "EigenFragment",
-      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-Button.json';"
-    },
-    {
-      "name_script": " 'TextView\n'+eigenActivity.getCacheString('GithubBranch') ",
+      "name": "TextView",
+      "x-name_script": " 'TextView\n'+eigenActivity.getCacheString('GithubBranch') ",
       "type": "EigenFragment",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-TextView.json'"
     },
