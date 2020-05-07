@@ -15,115 +15,118 @@
       "type": "EigenFragment"
     },
     {
-      "name_script": " 'About-'+eigenActivity.getCacheString('GithubBranch') ",
+      "name": "About",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/about.json'",
+      "icon_name": "info.",
       "type": "EigenFragment"
     },
     {
-      "name_script": " 'Button-'+eigenActivity.getCacheString('GithubBranch') ",
+      "name": "Button",
       "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-Button.json'"
     },
     {
-      "name_script": " 'TextView-'+eigenActivity.getCacheString('GithubBranch') ",
+      "name": "TextView",
       "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-TextView.json'"
     },
     {
       "name": "TextView_font",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-TextView-font.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-TextView-font.json'"
     },
     {
       "name": "HtmlView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-HtmlView.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-HtmlView.json'"
     },
     {
       "name": "WebView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-WebView.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-WebView.json'"
     },
     {
       "name": "ImageView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ImageView.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-ImageView.json'"
     },
     {
       "name": "EditText",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-EditText.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-EditText.json'"
     },
     {
       "name": "CheckBox",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-CheckBox.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-CheckBox.json'"
     },
     {
       "name": "Spinner",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Spinner.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-Spinner.json'"
     },
     {
       "name": "Switch",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-Switch.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-Switch.json'"
     },
     {
       "name": "ToggleButton",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ToggleButton.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-ToggleButton.json'"
     },
     {
       "name": "RadioButton",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-RadioButton.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-RadioButton.json'"
     },
     {
       "name": "ListView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-ListView.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-ListView.json'"
     },
     {
       "name": "AlertDialog",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-AlertDialog.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-AlertDialog.json'"
     },
     {
       "name": "SelectDialog",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-SelectDialog.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-SelectDialog.json'"
     },
     {
       "name": "PopupTextView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupTextView.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-PopupTextView.json'"
     },
     {
       "name": "PopupHtmlView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupHtmlView.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-PopupHtmlView.json'"
     },
     {
       "name": "PopupScreen",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/test-PopupScreen.json"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-PopupScreen.json'"
     }
   ]
 }
