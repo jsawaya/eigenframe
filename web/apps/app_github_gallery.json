@@ -10,13 +10,13 @@
   "tab_list": [
     {
       "type": "EigenFragment",
-      "name_script": " ''+eigenActivity.getCacheString('GithubBranch') ",
+      "name_script": " 'v'+eigenActivity.getCacheString('GithubBranch') ",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/define-clones.json';",
       "icon_name": "ic_launcher_round."
     },
     {
       "type": "EigenFragment",
-      "name_script": " 'About\n'+eigenActivity.getCacheString('GithubBranch') ",
+      "name_script": " 'About\n'+eigenActivity.getCacheString('GithubBranch'); ",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/about.json';"
     },
     {
