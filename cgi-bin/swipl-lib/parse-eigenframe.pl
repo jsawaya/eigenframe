@@ -1,3 +1,5 @@
+% swipl projects/eigenframe-repository/cgi-bin/swipl-lib/parse-eigenframe.pl --http=8000
+
 :- use_module(library(lists)).
 :- use_module(library(filesex)).
 
@@ -8,7 +10,8 @@
 :- use_module(library(http/html_write)).
 :- use_module(library(http/http_parameters)).
 :- use_module(library(http/http_json)).
-:- use_module(library(http/thread_httpd)).
+%:- use_module(library(http/thread_httpd)).
+:- use_module(library(http/http_unix_daemon)).
 
 %:- use_module(library(http/http_session)).  % not needed
 
@@ -16,15 +19,36 @@
 
 :- http_handler('/hi', say_hi, []).
 :- http_handler('/time', handle_time_request, []).
-:- http_handler('/parm', handle_parameter_request, []).
+:- http_handler('/parms', handle_parms, []).
 :- http_handler('/parm2', handle_parameter_request2, []).
 :- http_handler('/parm3', handle_parameter_request3, []).
-:- http_handler('/parm4', handle_parameter_request4, []).
-:- http_handler('/parm5', handle_parameter_request5, []).
-:- http_handler('/parm6', handle_parameter_request6, []).
+:- http_handler('/frame', handle_frame, []).
+:- http_handler('/files', handle_files, []).
+:- http_handler('/search', handle_search, []).
 :- http_handler('/api', handle_api, []).
+:- http_handler('/halt', handle_halt, []).
 
 :- multifile http_json/1.
+
+% :- initialization(start_svc).
+% :- initialization(start_http).
+
+% ----------------------------------------------------
+/*
+http_daemon :- 
+	current_prolog_flag(argv, Argv),
+	argv_options(Argv, _RestArgv, Options),
+	http_daemon(Options).
+*/
+
+start_svc :- 
+	server(8000).
+
+stop_svc :- 
+	http_stop_server(8000, []).
+
+server(Port) :-
+        http_server(http_dispatch, [port(Port)]).
 
 http_json:json_type('application/x-javascript').
 http_json:json_type('text/javascript').
@@ -38,6 +62,14 @@ http_json:json_type('text/x-json').
 %curl --header 'Content-Type: application/json' --request POST --data '{"a": 1, "b": 2 }' 'http://localhost:8000/api'
 
 % ----------------------------------------------------
+handle_halt(_Request) :-
+	reply_html_page(
+		[title('SWI-Prolog')],
+		[h1('SWI-Prolog HTTP Service Halt')]
+	),
+	halt.
+
+% ----------------------------------------------------
 solve(_{a:X, b:Y}, _{answer:N}) :-
 	number(X),
 	number(Y),
@@ -49,13 +81,12 @@ handle_api(Request) :-
 	reply_json_dict(Solution).
 
 % ----------------------------------------------------
-% http://localhost:8000/parm6?select_type=PopupHtmlView
-% http://localhost:8000/parm6?select_type=EditText
-handle_parameter_request6(Request) :-
+% http://localhost:8000/search?type=PopupHtmlView
+% http://localhost:8000/search?type=EditText
+handle_search(Request) :-
 	http_parameters(Request,
-  	[	select_type(Type, [ optional(true) ]) 
+  	[	type(Type, [ optional(true) ]) 
 		]),
-%	format('Content-type: text/plain~n~n', []),
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	write('{"type": "'), write(Type), write('", "found": [ {}'), 
 	search_eigenframe_type_test(Type),false;
@@ -63,24 +94,25 @@ handle_parameter_request6(Request) :-
 	true.
 
 % ----------------------------------------------------
-% http://localhost:8000/parm5?select_dir=/home/john/projects/eigenframe-repository/web/frames
-handle_parameter_request5(Request) :-
-	http_parameters(Request,
-  	[	select_dir(Dir, [ optional(true) ]) 
-		]),
+% http://localhost:8000/files
+handle_files(_Request) :-
 	format('Content-type: text/plain~n~n', []),
+	directory_eigenframe_web_frames(Dir),
 	writeln("Directory: "), writeln(Dir),
 	directory_files(Dir, E), 
 	sort(E,Entries), 
 	read_filenames(Dir, Entries).
 
 % ----------------------------------------------------
-% show json given filepath
-handle_parameter_request4(Request) :-
+% http://localhost:8000/frame?file=TextView
+% show json frame given file
+handle_frame(Request) :-
 	http_parameters(Request,
-  	[	select_file(FPath, [ optional(true) ]) 
+  	[	file(FName, [ optional(true) ]) 
 		]),
 %	format('Content-type: application/json; charset=UTF-8~n~n', []),
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, FName, FPath),
 	read_json_file(FPath, Data), 
 	reply_json_dict(Data).
 
@@ -109,7 +141,7 @@ handle(Request) :-
 		]),
 */
 % ----------------------------------------------------
-handle_parameter_request(Request) :-
+handle_parms(Request) :-
 	format('Content-type: text/html~n~n', []),
 	format('<html>~n', []),
 	format('<table border=1>~n'),
@@ -134,69 +166,58 @@ handle_time_request(_Request) :-
 % ----------------------------------------------------
 say_hi(_Request) :-
 	format('Content-type: text/plain~n~n'),
-	format('Hello World!~n').
+	format('Hello World!~n'),
+	directory_eigenframe(Root),
+	format('root: ~w~n', [Root]),
+	directory_eigenframe_cgibin(Cgi),
+	format('cgi-bin: ~w~n', [Cgi]),
+	directory_eigenframe_web_frames(Frames),
+	format('frames: ~w~n', [Frames]).
 
 % ----------------------------------------------------
-start_svc :- server(8000).
+% directory in eigenframe repository
 
-server(Port) :-
-        http_server(http_dispatch, [port(Port)]).
+eigenframe.
 
-:- initialization(start_svc).
+select_file_test(FPath) :-
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, 'script-cmd.json', FPath).
 
+directory_eigenframe_cgibin_swipllib(CWD) :-
+	source_file(eigenframe, FPath),
+	directory_file_path(Dir, _, FPath),
+	working_directory(_,Dir),
+	working_directory(CWD,CWD).
+
+directory_eigenframe_cgibin(CWD) :-
+	directory_eigenframe_cgibin_swipllib(Dir),
+	working_directory(Dir,'..'),
+	working_directory(CWD,CWD).
+
+directory_eigenframe(CWD) :-
+	directory_eigenframe_cgibin(Dir),
+	working_directory(Dir,'..'),
+	working_directory(CWD,CWD).
+
+directory_eigenframe_web(CWD) :-
+	directory_eigenframe(Dir),
+	working_directory(Dir,'web'),
+	working_directory(CWD,CWD).
+
+directory_eigenframe_web_apps(CWD) :-
+	directory_eigenframe_web(Dir),
+	working_directory(Dir,'apps'),
+	working_directory(CWD,CWD).
+
+directory_eigenframe_web_frames(CWD) :-
+	directory_eigenframe_web(Dir),
+	working_directory(Dir,'frames'),
+	working_directory(CWD,CWD).
 
 % ----------------------------------------------------
-ensure_loaded('projects/eigenframe-repository/cgi-bin/swipl-lib/eigen_type.pl').
-
-select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
-select_app_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
-select_app2_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_gallery.json").
-
-show_frame_url_test :-
-	select_frame_url(URL), 
-	show_json_url(URL).
-
-read_frame_url_test :-
-	select_frame_url(URL), 
-	read_eigenframe_url(URL).
-
-show_app_url_test :-
-	select_app_url(URL), 
-	show_json_url(URL).
-
-show_app2_url_test :-
-	select_app2_url(URL), 
-	show_json_url(URL).
-
-read_app_url_test :-
-	select_app_url(URL), 
-	read_eigenframe_url(URL).
-
-read_app2_url_test :-
-	select_app2_url(URL), 
-	read_eigenframe_url(URL).
-
-show_json_url(URL) :-
-	read_json_url(URL, Data), 
-	show_json(Data).
-
-read_eigenframe_url(URL) :-
-	read_json_url(URL, Data), 
-	parse_eigenframe(Data).
-
-read_json_url(URL, Data) :-
-	setup_call_cleanup(
-		http_open(URL, In, [request_header('Accept'='application/json')]),
-		json_read_dict(In, Data, [tag(json), value_string_as(atom)]),
-		close(In)
-	).
-
-%-----------------------------------------------
-% select directory, get directory entries, sort, read (and cache) json files
-select_dir_frames('/home/john/projects/eigenframe-repository/web/frames').
 
 read_filenames_test :-
-	select_dir_frames(Dir), 
+	directory_eigenframe_web_frames(Dir), 
 	directory_files(Dir, E), 
 	sort(E,Entries), 
 	read_filenames(Dir, Entries).
@@ -212,11 +233,11 @@ read_filenames(Dir, [File|T]) :-
 	),
 	read_filenames(Dir, T).
 
-%-----------------------------------------------
+% ----------------------------------------------------
 % select directory, get directory entries, sort, list filenames
 
 list_filenames_test :-
-	select_dir_frames(Dir), 
+	directory_eigenframe_web_frames(Dir), 
 	directory_files(Dir, E), 
 	sort(E,Entries), 
 	list_filenames(Dir, Entries).
@@ -231,9 +252,8 @@ list_filenames(Dir, [File|T]) :-
 	),
 	list_filenames(Dir, T).
 
-%-----------------------------------------------
+% ----------------------------------------------------
 % Read json into prolog dict structure (sorts attributes), and write to current_output (screen)
-select_file_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
 
 show_json_file_test :-
 	select_file_test(X),
@@ -246,13 +266,14 @@ show_json_file(FPath) :-
 show_json(Data) :-
 	json_write(current_output, Data, [tag(json), value_string_as(atom)]).
 
-%-----------------------------------------------
+% ----------------------------------------------------
 % Read json into prolog dict structure (sorts attributes), and parse_eigenframe. 
 read_eigenframe_file_test :-
-	read_eigenframe_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+	select_file_test(FPath),
+	read_eigenframe_file(FPath).
 
 read_eigenframe_files_test :- 
-	select_dir_frames(Dir), 
+	directory_eigenframe_web_frames(Dir), 
 	directory_files(Dir, E), 
 	sort(E,Entries), 
 	read_eigenframe_files(Dir, Entries).
@@ -287,10 +308,11 @@ read_json_file(FPath, Data) :-
 	close(Stream),
 	assertz(dyn_json_file_data(FPath, Data)).
 
-%-----------------------------------------------
+% ----------------------------------------------------
 % Read json into prolog dict structure (sorts attributes), then write back into same file. 
 organize_eigenframe_file_test :-
-	organize_eigenframe_file('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json').
+	select_file_test(FPath),
+	organize_eigenframe_file(FPath).
 
 organize_eigenframe_file(FPath) :-
 	exists_file(FPath),
@@ -298,7 +320,7 @@ organize_eigenframe_file(FPath) :-
 	read_json_file(FPath, Data), 
 	save_json_file(FPath, Data).
 
-% select_dir_frames(Dir), directory_files(Dir, Entries), organize_eigenframe_files(Dir, Entries).
+% directory_eigenframe_web_frames(Dir), directory_files(Dir, Entries), organize_eigenframe_files(Dir, Entries).
 
 organize_eigenframe_files(_, []).
 organize_eigenframe_files(Dir, [File|T]) :-
@@ -317,7 +339,7 @@ save_json_file(FPath, Data) :-
 	close(Stream).
 
 
-% -------------------------------------
+% ----------------------------------------------------
 % Assert (cache) the json files as dynamic facts. 
 %read_filenames_test.
 
@@ -328,12 +350,12 @@ search_eigenframe_type_test(Type) :-
 	dyn_json_file_data(FPath, Data), 
 	search_eigenframe_type(FPath, Data, Type).
 
-%search_eigenframe_type_test('/home/john/projects/eigenframe-repository/web/frames/script-cmd.json','JavaScript'),false.
+%select_file_test(FPath), search_eigenframe_type_test(FPath,'JavaScript'),false.
 search_eigenframe_type_test(FPath, Type) :-
 	dyn_json_file_data(FPath, Data), 
 	search_eigenframe_type(FPath, Data, Type).
 
-% -------------------------------------
+% ----------------------------------------------------
 
 %search_eigenframe_type(FPath, +Data, +Type)
 search_eigenframe_type(FPath, Data, Type) :- 
@@ -397,13 +419,54 @@ search_eigenframe_type(FPath, Data, Type) :-
 	show_json(Data),
   writeln("}").
 	
-
-% -------------------------------------
-
 search_eigenframe_list(_, [], _).
 search_eigenframe_list(FPath, [H|T], Type) :-
 	search_eigenframe_type(FPath, H, Type);true,
   search_eigenframe_list(FPath, T, Type).
+
+% ----------------------------------------------------
+select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
+select_app_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
+select_app2_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_gallery.json").
+
+show_frame_url_test :-
+	select_frame_url(URL), 
+	show_json_url(URL).
+
+read_frame_url_test :-
+	select_frame_url(URL), 
+	read_eigenframe_url(URL).
+
+show_app_url_test :-
+	select_app_url(URL), 
+	show_json_url(URL).
+
+show_app2_url_test :-
+	select_app2_url(URL), 
+	show_json_url(URL).
+
+read_app_url_test :-
+	select_app_url(URL), 
+	read_eigenframe_url(URL).
+
+read_app2_url_test :-
+	select_app2_url(URL), 
+	read_eigenframe_url(URL).
+
+show_json_url(URL) :-
+	read_json_url(URL, Data), 
+	show_json(Data).
+
+read_eigenframe_url(URL) :-
+	read_json_url(URL, Data), 
+	parse_eigenframe(Data).
+
+read_json_url(URL, Data) :-
+	setup_call_cleanup(
+		http_open(URL, In, [request_header('Accept'='application/json')]),
+		json_read_dict(In, Data, [tag(json), value_string_as(atom)]),
+		close(In)
+	).
 
 %-----------------------------------------------
 
