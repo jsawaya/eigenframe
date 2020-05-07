@@ -11,6 +11,10 @@ One of the following:
  * (script_script_list is not supported)
 
 ### eigenFragment methods:
+public void copyFile(String filename1, String filename2)
+public void renameFile(String filename1, String filename2)
+public void deleteFile(String filename1)
+
 void eigenFragment.closePopupScreen(int screenId)
 void eigenFragment.closePopupWindow()
 

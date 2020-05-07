@@ -62,6 +62,86 @@
       "text": "Access EditText",
       "text_color": "#ffffff",
       "type": "Button"
+    },
+    {
+      "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Show Android/data/com.sawaya.eigenframe/files/home-url.txt",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
+    },
+    {
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "attributes": {
+        "text": "Launch EigenFrame App URL"
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
+    },
+    {
+      "attributes": {
+        "text": "EigenFrame App URL:"
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
+    },
+    {
+      "background_color": "#11ff0000",
+      "id": 102,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "EditText",
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt"
+    },
+    {
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "on_click": {
+        "script_list": [
+          "eigenFragment.setViewState(102,'file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json')"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "select home-url: [Hello-World]",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "on_click": {
+        "script_list": [
+          "eigenFragment.setViewState(102,'')"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "select home-url: [clear]",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "attributes": {
+        "icon": {
+          "location": "top",
+          "name": "open_browser."
+        },
+        "on_click": {
+          "script": "eigenActivity.launch(eigenFragment.getViewState(102))",
+          "type": "JavaScript"
+        },
+        "text": "Launch"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
     }
   ],
   "gravity": "center_horizontal",
