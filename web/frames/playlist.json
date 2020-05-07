@@ -625,7 +625,9 @@
         },
         "on_click": {
           "script_list": [
-            "eigenActivity.addShortcut('Gallery', 'https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/apps/app_github_gallery.json')",
+            "var app_url = eigenFragment.getCacheString('RootUrl')+'apps/app_github_gallery.json'",
+            "eigenActivity.showToast('app_url: ' + app_url )",
+            "eigenActivity.addShortcut('Gallery', app_url)",
             "eigenActivity.finish()"
           ],
           "type": "JavaScript"
