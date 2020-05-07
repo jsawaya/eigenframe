@@ -1,34 +1,34 @@
 {
-  "type": "LinearLayout",
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "match_parent",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text_size": "14",
+      "layout_width": "match_parent",
+      "text": "Test for TextView",
       "text_color": "#ffffff",
-      "text": "Test for TextView"
+      "text_size": "14",
+      "type": "TextView"
     },
     {
-      "type": "LinearLayout",
-      "scrollable": true,
-      "orientation": "vertical",
-      "gravity": "center_horizontal",
-      "layout_width": "match_parent",
-      "layout_height": "match_parent",
       "component_list": [
         {
-          "type": "TextView",
-          "layout_width": "match_parent",
           "layout_height": "wrap_content",
+          "layout_width": "match_parent",
           "text_color": "#ffffff",
+          "type": "TextView",
           "url": "http://photopgp.com/site"
         }
-      ]
+      ],
+      "gravity": "center_horizontal",
+      "layout_height": "match_parent",
+      "layout_width": "match_parent",
+      "orientation": "vertical",
+      "scrollable": "true",
+      "type": "LinearLayout"
     }
-  ]
+  ],
+  "gravity": "center_horizontal",
+  "layout_height": "match_parent",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "type": "LinearLayout"
 }

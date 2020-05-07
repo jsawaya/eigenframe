@@ -1,24 +1,24 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "gravity": "center_horizontal",
-  "layout_width": "match_parent",
-  "layout_height": "match_parent",
   "component_list": [
-		{
-			"type": "HtmlView",
-			"layout_width": "match_parent",
-			"gravity": "center",
-			"text_color": "#ffffff",
-			"html_list": [
-				"<img src='ic_launcher.png'>",
-				"<h1><font color=\"#8aec81\">EigenFrame Documentation: </font></h1>",
-				"<h3>README:</h3> https://github.com/jsawaya/eigenframe/blob/master/README.md",
-				"<h3>Initial Setup:</h3> https://github.com/jsawaya/eigenframe/blob/master/web/docs/initial-setup.md",
-				"<h3>Components:</h3> https://github.com/jsawaya/eigenframe/blob/master/web/docs/",
-				"<h3>Privacy Policy:</h3> https://github.com/jsawaya/eigenframe/blob/master/web/docs/privacy-policy.md"
-			]
-		}
-	]
+    {
+      "gravity": "center",
+      "html_list": [
+        "<img src='ic_launcher.png'>",
+        "<h1><font color=\"#8aec81\">EigenFrame Documentation: <\/font><\/h1>",
+        "<h3>README:<\/h3> https://github.com/jsawaya/eigenframe/blob/master/README.md",
+        "<h3>Initial Setup:<\/h3> https://github.com/jsawaya/eigenframe/blob/master/web/docs/initial-setup.md",
+        "<h3>Components:<\/h3> https://github.com/jsawaya/eigenframe/blob/master/web/docs/",
+        "<h3>Privacy Policy:<\/h3> https://github.com/jsawaya/eigenframe/blob/master/web/docs/privacy-policy.md"
+      ],
+      "layout_width": "match_parent",
+      "text_color": "#ffffff",
+      "type": "HtmlView"
+    }
+  ],
+  "gravity": "center_horizontal",
+  "layout_height": "match_parent",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

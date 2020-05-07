@@ -1,468 +1,468 @@
 {
-  "type": "LinearLayout",
-  "scrollable": true,
-  "orientation": "vertical",
-  "layout_width": "match_parent",
-  "layout_height": "match_parent",
   "component_list": [
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/alex-brush/AlexBrush-Regular.ttf",
-      "text": "font/alex-brush/AlexBrush-Regular.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/alex-brush/AlexBrush-Regular.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/droid-sans/DroidSans.ttf",
-      "text": "font/droid-sans/DroidSans.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/droid-sans/DroidSans.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/droid-sans/DroidSans-Bold.ttf",
-      "text": "font/droid-sans/DroidSans-Bold.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/droid-sans/DroidSans-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/droid-sans-mono/DroidSansMono.ttf",
-      "text": "font/droid-sans-mono/DroidSansMono.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/droid-sans-mono/DroidSansMono.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/hack/Hack-Bold.ttf",
-      "text": "font/hack/Hack-Bold.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/hack/Hack-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/hack/Hack-BoldItalic.ttf",
-      "text": "font/hack/Hack-BoldItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/hack/Hack-BoldItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/hack/Hack-Italic.ttf",
-      "text": "font/hack/Hack-Italic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/hack/Hack-Italic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/hack/Hack-Regular.ttf",
-      "text": "font/hack/Hack-Regular.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/hack/Hack-Regular.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/Lane/LANENAR_.ttf",
-      "text": "font/Lane/LANENAR_.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/Lane/LANENAR_.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/Lane/LANEPOSH.ttf",
-      "text": "font/Lane/LANEPOSH.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/Lane/LANEPOSH.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/Lane/LANEUP__.ttf",
-      "text": "font/Lane/LANEUP__.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/Lane/LANEUP__.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/lekton/Lekton-Bold.ttf",
-      "text": "font/lekton/Lekton-Bold.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/lekton/Lekton-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/lekton/Lekton-Italic.ttf",
-      "text": "font/lekton/Lekton-Italic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/lekton/Lekton-Italic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/lekton/Lekton-Regular.ttf",
-      "text": "font/lekton/Lekton-Regular.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/lekton/Lekton-Regular.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/liberation-mono/LiberationMono-Bold.ttf",
-      "text": "font/liberation-mono/LiberationMono-Bold.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/liberation-mono/LiberationMono-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/liberation-mono/LiberationMono-BoldItalic.ttf",
-      "text": "font/liberation-mono/LiberationMono-BoldItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/liberation-mono/LiberationMono-BoldItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/liberation-mono/LiberationMono-Italic.ttf",
-      "text": "font/liberation-mono/LiberationMono-Italic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/liberation-mono/LiberationMono-Italic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/liberation-mono/LiberationMono-Regular.ttf",
-      "text": "font/liberation-mono/LiberationMono-Regular.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/liberation-mono/LiberationMono-Regular.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-Bold.ttf",
-      "text": "font/open-sans/OpenSans-Bold.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-BoldItalic.ttf",
-      "text": "font/open-sans/OpenSans-BoldItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-BoldItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-ExtraBold.ttf",
-      "text": "font/open-sans/OpenSans-ExtraBold.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-ExtraBold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-ExtraBoldItalic.ttf",
-      "text": "font/open-sans/OpenSans-ExtraBoldItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-ExtraBoldItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-Italic.ttf",
-      "text": "font/open-sans/OpenSans-Italic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-Italic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-Light.ttf",
-      "text": "font/open-sans/OpenSans-Light.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-Light.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-LightItalic.ttf",
-      "text": "font/open-sans/OpenSans-LightItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-LightItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-Regular.ttf",
-      "text": "font/open-sans/OpenSans-Regular.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-Regular.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-Semibold.ttf",
-      "text": "font/open-sans/OpenSans-Semibold.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-Semibold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
-      "text": "font/open-sans/OpenSans-SemiboldItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/open-sans/OpenSans-SemiboldItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-Black.ttf",
-      "text": "font/roboto/Roboto-Black.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/roboto/Roboto-Black.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-BlackItalic.ttf",
-      "text": "font/roboto/Roboto-BlackItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/roboto/Roboto-BlackItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-Bold.ttf",
-      "text": "font/roboto/Roboto-Bold.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/roboto/Roboto-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-BoldItalic.ttf",
-      "text": "font/roboto/Roboto-BoldItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/roboto/Roboto-BoldItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-Italic.ttf",
-      "text": "font/roboto/Roboto-Italic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/roboto/Roboto-Italic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout_width": "match_parent",
-      "layout_height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-Light.ttf",
-      "text": "font/roboto/Roboto-Light.ttf"
-    },
-    {
-      "type": "TextView",
-      "layout_width": "match_parent",
       "layout_height": "wrap_content",
-      "text_size": "20",
+      "layout_width": "match_parent",
+      "text": "font/roboto/Roboto-Light.ttf",
       "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
+    },
+    {
       "font": "font/roboto/Roboto-LightItalic.ttf",
-      "text": "font/roboto/Roboto-LightItalic.ttf"
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "font/roboto/Roboto-LightItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-Medium.ttf",
-      "text": "font/roboto/Roboto-Medium.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/Roboto-Medium.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-MediumItalic.ttf",
-      "text": "font/roboto/Roboto-MediumItalic.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/Roboto-MediumItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-Regular.ttf",
-      "text": "font/roboto/Roboto-Regular.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/Roboto-Regular.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-Thin.ttf",
-      "text": "font/roboto/Roboto-Thin.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/Roboto-Thin.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/Roboto-ThinItalic.ttf",
-      "text": "font/roboto/Roboto-ThinItalic.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/Roboto-ThinItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/RobotoCondensed-Bold.ttf",
-      "text": "font/roboto/RobotoCondensed-Bold.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/RobotoCondensed-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/RobotoCondensed-BoldItalic.ttf",
-      "text": "font/roboto/RobotoCondensed-BoldItalic.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/RobotoCondensed-BoldItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/RobotoCondensed-Italic.ttf",
-      "text": "font/roboto/RobotoCondensed-Italic.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/RobotoCondensed-Italic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/RobotoCondensed-Light.ttf",
-      "text": "font/roboto/RobotoCondensed-Light.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/RobotoCondensed-Light.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/RobotoCondensed-LightItalic.ttf",
-      "text": "font/roboto/RobotoCondensed-LightItalic.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/RobotoCondensed-LightItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/roboto/RobotoCondensed-Regular.ttf",
-      "text": "font/roboto/RobotoCondensed-Regular.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/roboto/RobotoCondensed-Regular.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/space-mono/SpaceMono-Bold.ttf",
-      "text": "font/space-mono/SpaceMono-Bold.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/space-mono/SpaceMono-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/space-mono/SpaceMono-BoldItalic.ttf",
-      "text": "font/space-mono/SpaceMono-BoldItalic.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/space-mono/SpaceMono-BoldItalic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/space-mono/SpaceMono-Italic.ttf",
-      "text": "font/space-mono/SpaceMono-Italic.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/space-mono/SpaceMono-Italic.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/space-mono/SpaceMono-Regular.ttf",
-      "text": "font/space-mono/SpaceMono-Regular.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/space-mono/SpaceMono-Regular.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     },
     {
-      "type": "TextView",
-      "layout-width": "match_parent",
-      "layout-height": "wrap_content",
-      "text_size": "20",
-      "text_color": "#ffffff",
       "font": "font/Ubuntu-Titling/UbuntuTitling-Bold.ttf",
-      "text": "font/Ubuntu-Titling/UbuntuTitling-Bold.ttf"
+      "layout-height": "wrap_content",
+      "layout-width": "match_parent",
+      "text": "font/Ubuntu-Titling/UbuntuTitling-Bold.ttf",
+      "text_color": "#ffffff",
+      "text_size": "20",
+      "type": "TextView"
     }
-  ]
+  ],
+  "layout_height": "match_parent",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
 }

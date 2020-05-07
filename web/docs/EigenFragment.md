@@ -13,6 +13,7 @@ Tabs can either be selected with the user interface, or selected programmaticall
 Tabs can have a "name" attribute and/or an "icon_name" attribute to define the tab label.
 
 * type: "EigenFragment", represents a tab/fragment specification 
+* name: tab title
 * icon_name: [Internal Icons](./icon.md)
 * url: attribute to dynamically load layouts, components and actions.
 

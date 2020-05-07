@@ -1,62 +1,75 @@
 {
 	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
 	"id": 411000,
-	"sftp_script": "'pwd'",
 	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
 		"component_list": [
 			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Verify File with Detached Signature"
-				}
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
 						"You can verify a particular file with a detached digital signature to ensure that it has not been modified"
 					]
-				}
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
 			{
-				"type": "JavaScript",
 				"script_list": [
 					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File (that has Detached Signature)')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
 					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999718)"
-				]
+				],
+				"type": "JavaScript"
 			},
 			{
-				"type": "Clone",
-				"name": "SelectFilePathRemote"
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
 			},
 			{
-				"type": "Button",
-				"text": "Verify File that has a Detached Digital Signature",
-				"text_color": "#ffffff",
 				"background_color": "#654321",
 				"icon": {
-					"name": "info.",
-					"location": "top"
+					"location": "top",
+					"name": "info."
 				},
 				"on_click": {
-					"type": "SecureShell",
 					"id": 6605,
-					"is_eigen_response": false,
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Verify File that has a Detached Digital Signature"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
 					"ssh_script_list": [
 						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
 						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
@@ -64,32 +77,19 @@
 						"var sig_file = original_file+'.sig'",
 						"dir + 'ruby ssh-gpg-verify-detached.rb ' + sig_file + ' ' + original_file "
 					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Verify File that has a Detached Digital Signature",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/SecureShell:6605"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
+					"type": "SecureShell"
+				},
+				"text": "Verify File that has a Detached Digital Signature",
+				"text_color": "#ffffff",
+				"type": "Button"
 			}
-		]
-	}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
+	},
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }

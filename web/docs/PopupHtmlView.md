@@ -2,8 +2,7 @@
 ## schema pattern
 
 * type = "PopupHtmlView"
-* html | html_list
-* url
+* html | html_list | url | url_script
 * layout_width
 * layout_height
 * gravity

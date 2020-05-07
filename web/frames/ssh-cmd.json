@@ -1,279 +1,277 @@
 {
 	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
 	"id": 411000,
-	"sftp": "pwd",
 	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
-		"layout_height": "wrap_content",
 		"component_list": [
 			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
 				"attributes": {
-          "text": "Execute Shell Script (via ssh)"
-				}
+					"text": "Execute Shell Script (via ssh)"
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
 						"EigenFrame SecureShell provides capability to execute a remote command line interface (with Termux, for example)"
 					]
-				}
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
 			{
-				"type": "JavaScript",
 				"script_list": [
 					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Shell File')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
 					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999720)"
-				]
+				],
+				"type": "JavaScript"
 			},
 			{
-				"type": "Clone",
-				"name": "SelectFilePathRemote"
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Edit/Exec Remote Shell File",
 					"icon": {
-						"name": "open_browser.",
-						"location": "top"
+						"location": "top",
+						"name": "open_browser."
 					},
 					"on_click": {
-						"type": "SecureFtp",
-						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'get ' + filename + ' EditText:999000'"
-						],
 						"on_complete": {
-							"type": "Clone",
-							"name": "PopupScreenDefault",
 							"attributes": {
-								"id": 999099,
-								"title_script_list": [
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-									"var filename = eigenFragment.getViewState(targetVid)",
-									"'Remote File: ' + filename"
-								],
 								"component_list": [
 									{
-										"type": "Clone",
-										"name": "LayoutVerticalScrollable",
 										"attributes": {
 											"component_list": [
 												{
-													"type": "Clone",
-													"name": "ButtonSaveEditsToRemoteFile"
+													"name": "ButtonSaveEditsToRemoteFile",
+													"type": "Clone"
 												},
 												{
-													"type": "Clone",
-													"name": "ButtonDefault",
 													"attributes": {
-														"text": "Execute Shell File",
 														"icon": {
-															"name": "play.",
-															"location": "top"
+															"location": "top",
+															"name": "play."
 														},
 														"on_click": {
-															"type": "SecureFtp",
+															"on_complete": {
+																"attributes": {
+																	"component_list": [
+																		{
+																			"attributes": {
+																				"component_list": [
+																					{
+																						"attributes": {
+																							"ssh_script_list": [
+																								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+																								"var filename = eigenFragment.getViewState(targetVid)",
+																								"'cd /data/data/com.termux/files/home; /usr/bin/sh -s < '+filename "
+																							],
+																							"text_size": "10"
+																						},
+																						"name": "TextViewDetail",
+																						"type": "Clone"
+																					}
+																				]
+																			},
+																			"name": "LayoutVerticalScrollable",
+																			"type": "Clone"
+																		}
+																	],
+																	"title": "Shell Command Output"
+																},
+																"name": "PopupScreenDefault",
+																"type": "Clone"
+															},
 															"sftp_script_list": [
 																"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 																"var filename = eigenFragment.getViewState(targetVid)",
 																"'put EditText:999000 ' + filename"
 															],
-															"on_complete": {
-																"type": "Clone",
-																"name": "PopupScreenDefault",
-																"attributes": {
-																	"title": "Shell Command Output",
-																	"component_list": [
-																		{
-																			"type": "Clone",
-																			"name": "LayoutVerticalScrollable",
-																			"attributes": {
-																				"component_list": [
-																					{
-																						"type": "Clone",
-																						"name": "TextViewDetail",
-																						"attributes": {
-																							"text_size": "10",
-																							"ssh_script_list": [
-																								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																								"var filename = eigenFragment.getViewState(targetVid)",
-																								"'cd /data/data/com.termux/files/home; /usr/bin/sh -s < '+filename "
-																							]
-																						}
-																					}
-																				]
-																			}
-																		}
-																	]
-																}
-															}
-														}
-													}
+															"type": "SecureFtp"
+														},
+														"text": "Execute Shell File"
+													},
+													"name": "ButtonDefault",
+													"type": "Clone"
 												},
 												{
-													"type": "Clone",
-													"name": "HorizontalLine"
+													"name": "HorizontalLine",
+													"type": "Clone"
 												},
 												{
-													"type": "Clone",
-													"name": "TextViewLabel",
 													"attributes": {
 														"text": "Shell Arguments:"
-													}
+													},
+													"name": "TextViewLabel",
+													"type": "Clone"
 												},
 												{
-													"type": "EditText",
+													"background_color": "#000000",
 													"id": 976002,
-													"layout_width": "match_parent",
 													"layout_height": "wrap_content",
+													"layout_width": "match_parent",
 													"text_color": "#ffffff",
-													"background_color": "#000000"
+													"type": "EditText"
 												},
 												{
-													"type": "Clone",
-													"name": "ButtonDefault",
 													"attributes": {
-														"text": "Execute Shell Script",
 														"icon": {
-															"name": "open_browser.",
-															"location": "top"
+															"location": "top",
+															"name": "open_browser."
 														},
 														"on_click": {
-															"type": "Clone",
-															"name": "PopupScreenDefault",
 															"attributes": {
-																"title": "Shell Output Console",
 																"component_list": [
 																	{
-																		"type": "Clone",
-																		"name": "LayoutVerticalScrollable",
 																		"attributes": {
 																			"component_list": [
 																				{
-																					"type": "Clone",
-																					"name": "TextViewDetail",
 																					"attributes": {
-																						"text_size": "10",
 																						"ssh_script_list": [
 																							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
 																							"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
 																							"shellfilepath = eigenFragment.getViewState(targetVid)",
 																							"shellargs = eigenFragment.getViewState(976002) ",
 																							"'cd '+dir+'; /usr/bin/sh -s < '+shellfilepath + ' ' + shellargs"
-																						]
-																					}
+																						],
+																						"text_size": "10"
+																					},
+																					"name": "TextViewDetail",
+																					"type": "Clone"
 																				}
 																			]
-																		}
+																		},
+																		"name": "LayoutVerticalScrollable",
+																		"type": "Clone"
 																	}
-																]
-															}
-														}
-													}
+																],
+																"title": "Shell Output Console"
+															},
+															"name": "PopupScreenDefault",
+															"type": "Clone"
+														},
+														"text": "Execute Shell Script"
+													},
+													"name": "ButtonDefault",
+													"type": "Clone"
 												},
 												{
-													"type": "Clone",
-													"name": "HorizontalLine"
+													"name": "HorizontalLine",
+													"type": "Clone"
 												},
 												{
-													"type": "Clone",
-													"name": "EditTextLocalFileCache"
+													"name": "EditTextLocalFileCache",
+													"type": "Clone"
 												}
 											]
-										}
+										},
+										"name": "LayoutVerticalScrollable",
+										"type": "Clone"
 									}
+								],
+								"id": 999099,
+								"title_script_list": [
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+									"var filename = eigenFragment.getViewState(targetVid)",
+									"'Remote File: ' + filename"
 								]
-							}
-						}
-					}
-				}
+							},
+							"name": "PopupScreenDefault",
+							"type": "Clone"
+						},
+						"sftp_script_list": [
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
+							"var filename = eigenFragment.getViewState(targetVid)",
+							"'get ' + filename + ' EditText:999000'"
+						],
+						"type": "SecureFtp"
+					},
+					"text": "Edit/Exec Remote Shell File"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
 			},
-
-      {
-        "type": "Clone",
-        "name": "HorizontalLine"
-      },
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
+				"name": "HorizontalLine",
+				"type": "Clone"
+			},
+			{
 				"attributes": {
 					"text": "SecureShell Command Line"
-				}
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
 						"SecureShell (ssh) provides capability to execute a remote command line interface (with Termux, for example)"
 					]
-				}
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
 			{
-				"type": "EditText",
+				"background_color": "#000000",
 				"id": 7600,
-				"layout_width": "match_parent",
 				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
 				"text": "ls -la",
 				"text_color": "#ffffff",
-				"background_color": "#000000"
+				"type": "EditText"
 			},
 			{
-				"type": "Clone",
-				"name": "ButtonDefault",
 				"attributes": {
-					"text": "Execute Shell Command Line",
 					"icon": {
-						"name": "play.",
-						"location": "top"
+						"location": "top",
+						"name": "play."
 					},
 					"on_click": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
 						"attributes": {
-							"title": "Command Output",
 							"component_list": [
 								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
 									"attributes": {
 										"component_list": [
 											{
-												"type": "Clone",
-												"name": "TextViewDetail",
 												"attributes": {
-													"text_size": "10",
-													"ssh_script": "''+eigenFragment.getViewState(7600)"
-												}
+													"ssh_script": "''+eigenFragment.getViewState(7600)",
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
 											}
 										]
-									}
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
 								}
-							]
-						}
-					}
-				}
+							],
+							"title": "Command Output"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Execute Shell Command Line"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
 			}
-
-		]
-	}
+		],
+		"gravity": "center_horizontal",
+		"layout_height": "wrap_content",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
+	},
+	"sftp": "pwd",
+	"type": "SecureFtp"
 }

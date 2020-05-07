@@ -2,10 +2,11 @@
 ## schema pattern
 
 * type = "TextView"
-* text | text_script
-* url
-* ssh / is_toast = true | false
-* sftp
+* input source:
+  - text | text_script
+  - url
+  - ssh / is_toast = true | false
+  - sftp
 * id = define unique view id, 
   puts contents into cache TextView:{id} 
 

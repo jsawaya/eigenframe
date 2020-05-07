@@ -1,29 +1,20 @@
 {
 	"comment": "set the HomeDirectory from sftp pwd",
-	"type": "SecureFtp",
 	"id": 411000,
-	"sftp_script": "'pwd'",
 	"on_complete": {
-		"type": "LinearLayout",
-		"scrollable": true,
-		"orientation": "vertical",
-		"gravity": "center_horizontal",
-		"layout_width": "match_parent",
 		"component_list": [
 			{
-				"type": "Clone",
-				"name": "HorizontalLine"
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewLabel",
 				"attributes": {
 					"text": "Import Public Key File (OpenPGP)"
-				}
+				},
+				"name": "TextViewLabel",
+				"type": "Clone"
 			},
 			{
-				"type": "Clone",
-				"name": "TextViewDetail",
 				"attributes": {
 					"text_list": [
 						"Import a recipient's public key file",
@@ -31,44 +22,65 @@
 						"- try importing photopgp-public-key: ",
 						"/data/data/com.termux/files/home/git-repos/eigenframe/web/pubkeys/photopgp-public-key.asc"
 					]
-				}
+				},
+				"name": "TextViewDetail",
+				"type": "Clone"
 			},
 			{
-				"type": "JavaScript",
 				"script_list": [
 					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Public Key File')",
 					"eigenFragment.setCacheString('WorkingDirectory', '')",
 					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
 					"eigenFragment.setCacheString('SelectedFile', '')",
 					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999705)"
-				]
+				],
+				"type": "JavaScript"
 			},
 			{
-				"type": "Clone",
-				"name": "SelectFilePathRemote"
+				"name": "SelectFilePathRemote",
+				"type": "Clone"
 			},
 			{
-				"type": "Button",
-				"text": "Import Public Key File",
-				"layout_width": "wrap_content",
-				"layout_height": "wrap_content",
-				"text_color": "#ffffff",
 				"background_color": "#654321",
-				"margin": {
-					"left": 10,
-					"top": 10,
-					"right": 10,
-					"bottom": 10
-				},
 				"icon": {
-					"name": "import_export.",
-					"location": "top"
+					"location": "top",
+					"name": "import_export."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
 				},
 				"on_click": {
-					"type": "UrlRequest",
 					"id": 6604,
-					"is_eigen_response": false,
-					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb",
+					"is_eigen_response": "false",
+					"on_complete": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6604"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Import Public Key File"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
 					"parameter_list": [
 						{
 							"name": "keyfile",
@@ -86,32 +98,20 @@
 							]
 						}
 					],
-					"on_complete": {
-						"type": "Clone",
-						"name": "PopupScreenDefault",
-						"attributes": {
-							"title": "Import Public Key File",
-							"component_list": [
-								{
-									"type": "Clone",
-									"name": "LayoutVerticalScrollable",
-									"attributes": {
-										"component_list": [
-											{
-												"type": "Clone",
-												"name": "TextViewDetail",
-												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6604"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				}
+					"type": "UrlRequest",
+					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
+				},
+				"text": "Import Public Key File",
+				"text_color": "#ffffff",
+				"type": "Button"
 			}
-		]
-	}
+		],
+		"gravity": "center_horizontal",
+		"layout_width": "match_parent",
+		"orientation": "vertical",
+		"scrollable": "true",
+		"type": "LinearLayout"
+	},
+	"sftp_script": "'pwd'",
+	"type": "SecureFtp"
 }
