@@ -101,7 +101,7 @@
 					"type": "UrlRequest",
 					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
 				},
-				"text": "Import Public Key File",
+				"text": "Import Public Key File (via http-post/cgi/ruby)",
 				"text_color": "#ffffff",
 				"type": "Button"
 			}
