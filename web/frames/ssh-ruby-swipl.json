@@ -121,9 +121,13 @@
 											{
 												"attributes": {
 													"ssh_list": [
-														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+														"echo Starting SWI-Prolog HTTP Service ...",
+														"sleep 1",
 														"/data/data/com.termux/files/usr/bin/swipl swipl-lib/parse-eigenframe.pl --http=8000",
-														"ps -e"
+														"sleep 1",
+														"echo //ps -e",
+														"ps -e",
+														"echo //ready to test - Prolog HTTP Service"
 													],
 													"text_size": "10"
 												},
