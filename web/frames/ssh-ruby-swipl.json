@@ -70,7 +70,7 @@
 			{
 				"attributes": {
 					"icon": {
-						"location": "top",
+						"location": "left",
 						"name": "open_browser."
 					},
 					"on_click": {
@@ -107,60 +107,72 @@
 				"type": "Clone"
 			},
 			{
-				"name": "ButtonDefault",
-				"type": "Clone",
-				"attributes": {
-					"text": "Start SWI-Prolog HTTP Service",
-					"icon": {
-						"location": "top",
-						"name": "open_browser."
-					},
-					"on_click": {
-						"type": "SecureShell",
-						"id": 6610,
-						"is_eigen_response": "false",
-						"ssh_list": [
-							"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-							"/data/data/com.termux/files/usr/bin/swipl swipl-lib/parse-eigenframe.pl --http=8000"
-						],
-						"on_complete": {
-							"name": "PopupScreenDefault",
-							"type": "Clone",
-							"attributes": {
-								"title": "Process list after starting prolog http service",
-								"component_list": [
-									{
-										"name": "LayoutVerticalScrollable",
-										"type": "Clone",
-										"attributes": {
-											"component_list": [
-												{
-													"name": "TextViewDetail",
-													"type": "Clone",
-													"attributes": {
-														"ssh": "ps -e",
-														"text_size": "10"
-													}
-												}
-											]
-										}
-									}
-								]
-							}
-						}
-					}
-				}
-			},
-			{
 				"attributes": {
 					"icon": {
-						"location": "top",
+						"location": "left",
 						"name": "open_browser."
 					},
 					"on_click": {
 						"attributes": {
-							"title": "Parse EigenFrame Files",
-							"url": "http://localhost:8000/files"
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"ssh_list": [
+														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+														"/data/data/com.termux/files/usr/bin/swipl swipl-lib/parse-eigenframe.pl --http=8000",
+														"ps -e"
+													],
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Start SWI-Prolog HTTP Service"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Start SWI-Prolog HTTP Service"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "left",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "http://localhost:8000/files",
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Parse EigenFrame Files"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
@@ -173,13 +185,30 @@
 			{
 				"attributes": {
 					"icon": {
-						"location": "top",
+						"location": "left",
 						"name": "open_browser."
 					},
 					"on_click": {
 						"attributes": {
-							"title": "Show EigenFrame File (playlist.json)",
-							"url": "http://localhost:8000/frame?file=playlist.json"
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "http://localhost:8000/frame?file=playlist.json",
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Show EigenFrame File (playlist.json)"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
@@ -192,13 +221,30 @@
 			{
 				"attributes": {
 					"icon": {
-						"location": "top",
+						"location": "left",
 						"name": "open_browser."
 					},
 					"on_click": {
 						"attributes": {
-							"title": "Search EigenFrame Files for Type=EditText",
-							"url": "http://localhost:8000/search?type=EditText"
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "http://localhost:8000/search?type=EditText",
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Search EigenFrame Files for Type=EditText"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
@@ -209,21 +255,40 @@
 				"type": "Clone"
 			},
 			{
-				"background_color": "#11ff0000",
-				"icon": {
-					"location": "left",
-					"name": "cancel."
+				"attributes": {
+					"icon": {
+						"location": "left",
+						"name": "open_browser."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "http://localhost:8000/halt",
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Halt HTTP service"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Halt HTTP service"
 				},
-				"layout_height": "wrap_content",
-				"layout_width": "wrap_content",
-				"on_click": {
-					"title": "Search EigenFrame Files for Type=EditText",
-					"url": "http://localhost:8000/halt",
-					"type": "PopupHtmlView"
-				},
-				"text": "Halt HTTP Service",
-				"text_color": "#ffffff",
-				"type": "Button"
+				"name": "ButtonDefault",
+				"type": "Clone"
 			},
 			{
 				"name": "HorizontalLine",
