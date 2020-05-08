@@ -122,10 +122,8 @@
 												"attributes": {
 													"ssh_list": [
 														"echo Starting SWI-Prolog HTTP Service ...",
-														"sleep 1",
-														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-														"sh -c \"swi-http.sh\"",
-														"sleep 1",
+														"sh -c \"/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swi-http.sh\"",
+														"sleep 2",
 														"echo //ps -e",
 														"ps -e",
 														"echo //ready to test - Prolog HTTP Service"
