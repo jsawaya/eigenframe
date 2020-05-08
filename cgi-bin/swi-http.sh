@@ -2,4 +2,5 @@
 #!/usr/bin/sh
 set -f
 
-swipl -s swipl-lib/parse-eigenframe.pl --http=8000
+#swipl swipl-lib/parse-eigenframe.pl --http=8000
+/usr/bin/sh -c "swipl swipl-lib/parse-eigenframe.pl --http=8000" &

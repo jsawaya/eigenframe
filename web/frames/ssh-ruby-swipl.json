@@ -124,7 +124,7 @@
 														"echo Starting SWI-Prolog HTTP Service ...",
 														"sleep 1",
 														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-														"/usr/bin/sh -c swi-http.sh &",
+														"sh -c \"swi-http.sh\"",
 														"sleep 1",
 														"echo //ps -e",
 														"ps -e",
