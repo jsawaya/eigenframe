@@ -123,7 +123,8 @@
 													"ssh_list": [
 														"echo Starting SWI-Prolog HTTP Service ...",
 														"sleep 1",
-														"/data/data/com.termux/files/usr/bin/swipl /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib/parse-eigenframe.pl --http=8000",
+														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib",
+														"/data/data/com.termux/files/usr/bin/swipl parse-eigenframe.pl --http=8000",
 														"sleep 1",
 														"echo //ps -e",
 														"ps -e",
