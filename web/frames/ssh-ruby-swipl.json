@@ -120,14 +120,7 @@
 										"component_list": [
 											{
 												"attributes": {
-													"ssh_list": [
-														"echo Starting SWI-Prolog HTTP Service ...",
-														"sh -c \"/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swi-http.sh\"",
-														"sleep 2",
-														"echo //ps -e",
-														"ps -e",
-														"echo //ready to test - Prolog HTTP Service"
-													],
+													"ssh": "sh -c \"/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swi-http.sh\" &",
 													"text_size": "10"
 												},
 												"name": "TextViewDetail",
