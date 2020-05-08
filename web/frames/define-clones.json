@@ -57,6 +57,16 @@
 		},
 		{
 			"component": {
+				"gravity": "left",
+				"layout_width": "match_parent",
+				"text_color": "#ffffff",
+				"type": "HtmlView"
+			},
+			"name": "HtmlViewDetail",
+			"type": "Define"
+		},
+		{
+			"component": {
 				"background_color": "#222222",
 				"layout_width": "match_parent",
 				"text_color": "#ffffff",
