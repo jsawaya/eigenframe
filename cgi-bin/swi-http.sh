@@ -3,4 +3,4 @@
 set -f
 
 #swipl swipl-lib/parse-eigenframe.pl --http=8000
-/usr/bin/sh -c "swipl swipl-lib/parse-eigenframe.pl --http=8000" &
+sh -c "swipl /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib/parse-eigenframe.pl --http=8000" &
