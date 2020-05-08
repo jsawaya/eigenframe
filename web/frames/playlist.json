@@ -246,6 +246,43 @@
     },
     {
       "attributes": {
+        "text": "SecureShell (SSH) Settings - Connect with Termux (sshd)"
+      },
+      "name": "TextViewLabel",
+      "type": "Clone"
+    },
+    {
+      "attributes": {
+        "text": "Click [SecureShell Settings] to verify connectivity with ssh password, and update remote termux session."
+      },
+      "name": "TextViewDetail",
+      "type": "Clone"
+    },
+    {
+      "attributes": {
+        "icon": {
+          "location": "top",
+          "name": "settings."
+        },
+        "on_click": {
+          "attributes": {
+            "title": "SecureShell Settings",
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
+          },
+          "name": "PopupScreenDefault",
+          "type": "Clone"
+        },
+        "text": "SecureShell Settings"
+      },
+      "name": "ButtonDefault",
+      "type": "Clone"
+    },
+    {
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "attributes": {
         "text": "EigenFrame GitHub Repository"
       },
       "name": "TextViewLabel",
@@ -693,62 +730,6 @@
           "type": "JavaScript"
         },
         "text": "Gallery Shortcut"
-      },
-      "name": "ButtonDefault",
-      "type": "Clone"
-    },
-    {
-      "name": "HorizontalLine",
-      "type": "Clone"
-    },
-    {
-      "attributes": {
-        "text": "EigenFrame GitHub Branch Selection"
-      },
-      "name": "TextViewLabel",
-      "type": "Clone"
-    },
-    {
-      "attributes": {
-        "text": "GitHub UrlRequests may target the master branch or the beta branch."
-      },
-      "name": "TextViewDetail",
-      "type": "Clone"
-    },
-    {
-      "attributes": {
-        "background_color": "#654321",
-        "on_click": {
-          "checked_option": 0,
-          "icon": {
-            "name": "share."
-          },
-          "id": 999101,
-          "on_click": {
-            "script_list": [
-              "position = eigenFragment.getOptionPosition()",
-              "github_branch = 'master' ",
-              "if (position == 1) github_branch = 'beta' ",
-              "if (position == 2) github_branch = '1.3' ",
-              "eigenFragment.setCacheString('GithubBranch', github_branch)",
-              "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
-              "eigenFragment.setCacheString('RootUrl', root_url)",
-              "eigenActivity.showToast('root_url: ' + root_url )",
-              "eigenActivity.launch(eigenFragment.getCacheString('RootUrl')+'apps/app_github_master.json')",
-              "eigenActivity.finish()"
-            ],
-            "type": "JavaScript"
-          },
-          "option_list": [
-            "master",
-            "beta - initial deployment",
-            "version 1.3"
-          ],
-          "title": "Select Branch",
-          "type": "SelectDialog"
-        },
-        "text": "Select Branch",
-        "text_color": "#ffffff"
       },
       "name": "ButtonDefault",
       "type": "Clone"
