@@ -121,7 +121,6 @@
 											{
 												"attributes": {
 													"abort": 2000,
-													"x-ssh": "sh -c \"/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swi-http.sh\" &",
 													"ssh": "sh -c \"swipl /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib/parse-eigenframe.pl --http=8000\" &",
 													"text_size": "10"
 												},
