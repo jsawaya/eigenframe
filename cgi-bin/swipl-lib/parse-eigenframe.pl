@@ -56,6 +56,7 @@ http_json:json_type('text/x-json').
 % ----------------------------------------------------
 handle_halt(_Request) :-
 	reply_html_page(
+		[title('Halting SWI-Prolog HTTP Service...')],
 		[h1('SWI-Prolog HTTP Service Halted')]
 	),
 	halt.
