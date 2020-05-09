@@ -56,8 +56,7 @@ http_json:json_type('text/x-json').
 % ----------------------------------------------------
 handle_halt(_Request) :-
 	reply_html_page(
-		[title('SWI-Prolog')],
-		[h1('SWI-Prolog HTTP Service Halt')]
+		[h1('SWI-Prolog HTTP Service Halted')]
 	),
 	halt.
 
@@ -75,8 +74,8 @@ handle_api(Request) :-
 % ----------------------------------------------------
 % http://localhost:8000/search?type=PopupHtmlView
 % http://localhost:8000/search?type=EditText
-handle_search(_Request) :-
-	http_parameters(_Request,
+handle_search(Request) :-
+	http_parameters(Request,
   	[	type(Type, [ optional(true) ]) 
 		]),
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
@@ -87,8 +86,8 @@ handle_search(_Request) :-
 
 % ----------------------------------------------------
 % http://localhost:8000/parse
-handle_parse(_Request) :-
-	http_parameters(_Request,
+handle_parse(Request) :-
+	http_parameters(Request,
   	[	file(File, [ optional(false) ]) 
 		]),
 	format('Content-type: text/plain~n~n', []),
@@ -112,8 +111,8 @@ handle_files(_Request) :-
 % ----------------------------------------------------
 % http://localhost:8000/frame?file=TextView
 % show json frame given file
-handle_frame(_Request) :-
-	http_parameters(_Request,
+handle_frame(Request) :-
+	http_parameters(Request,
   	[	file(FName, [ optional(true) ]) 
 		]),
 %	format('Content-type: application/json; charset=UTF-8~n~n', []),
@@ -131,11 +130,11 @@ handle(Request) :-
 		]),
 */
 % ----------------------------------------------------
-handle_parms(_Request) :-
+handle_parms(Request) :-
 	format('Content-type: text/html~n~n', []),
 	format('<html>~n', []),
 	format('<table border=1>~n'),
-	print_request(_Request),
+	print_request(Request),
 	format('~n</table>~n'),
 	format('</html>~n', []).
 
