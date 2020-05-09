@@ -192,42 +192,6 @@
 										"component_list": [
 											{
 												"attributes": {
-													"url": "http://localhost:8000/files",
-													"text_size": "10"
-												},
-												"name": "TextViewDetail",
-												"type": "Clone"
-											}
-										]
-									},
-									"name": "LayoutVerticalScrollable",
-									"type": "Clone"
-								}
-							],
-							"title": "Parse EigenFrame Files"
-						},
-						"name": "PopupScreenDefault",
-						"type": "Clone"
-					},
-					"text": "Parse EigenFrame Files"
-				},
-				"name": "ButtonDefault",
-				"type": "Clone"
-			},
-			{
-				"attributes": {
-					"icon": {
-						"location": "top",
-						"name": "open_browser."
-					},
-					"on_click": {
-						"attributes": {
-							"component_list": [
-								{
-									"attributes": {
-										"component_list": [
-											{
-												"attributes": {
 													"url": "http://localhost:8000/search?type=EditText",
 													"text_size": "10"
 												},
@@ -276,8 +240,8 @@
 								"var position = eigenFragment.getOptionPosition()",
 								"eigenActivity.showToast('option: '+eigenFragment.getOptionLabel() + ', position: '+position )",
 								"var url = 'http://localhost:8000/'",
-								"if (position == 0) url += 'files' ",
-								"if (position == 1) url += 'frame?file=test-EditText.json' ",
+								"if (position == 0) url += 'frame?file=test-EditText.json' ",
+								"if (position == 1) url += 'parse?file=test-EditText.json' ",
 								"if (position == 2) url += 'search?type=EditText' ",
 								"if (position == 3) url += 'search?type=Switch' ",
 								"if (position == 4) url += 'search?type=ListView' ",
@@ -291,8 +255,8 @@
 							"type": "JavaScript"
 						},
 						"option_list": [
-							" 0. parse/list files",
-							" 1. show file test-EditText.json",
+							" 0. show frame test-EditText.json",
+							" 1. parse file test-EditText.json",
 							" 2. search for EditText",
 							" 3. search for Switch",
 							" 4. search for ListView",
@@ -300,7 +264,7 @@
 							" 6. search for JavaScript",
 							" 7. search for UrlRequest",
 							" 8. search for SecureShell",
-							" 9. parse test-Button.json"
+							" 9. parse file test-Button.json"
 						],
 						"title": "Select Prolog URL:",
 						"type": "SelectDialog"
