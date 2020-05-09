@@ -147,6 +147,41 @@
 				"attributes": {
 					"icon": {
 						"location": "top",
+						"name": "cancel."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"url": "http://localhost:8000/halt"
+												},
+												"name": "HtmlViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Halt HTTP service"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Halt HTTP service"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
 						"name": "open_browser."
 					},
 					"on_click": {
@@ -252,10 +287,75 @@
 				"type": "Clone"
 			},
 			{
+				"background_color": "#11ff0000",
+				"id": 999112,
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
+				"text_color": "#ffffff",
+				"text_size": "14",
+				"type": "EditText"
+			},
+			{
 				"attributes": {
 					"icon": {
 						"location": "top",
-						"name": "cancel."
+						"name": "listview."
+					},
+					"background_color": "#654321",
+					"on_click": {
+						"icon": {
+							"name": "listview."
+						},
+						"id": 999113,
+						"on_click": {
+							"script_list": [
+								"var position = eigenFragment.getOptionPosition()",
+								"eigenActivity.showToast('option: '+eigenFragment.getOptionLabel() + ', position: '+position )",
+								"var url = 'http://localhost:8000/'",
+								"if (position == 0) url += 'files' ",
+								"if (position == 1) url += 'frame?file=test-Button.json' ",
+								"if (position == 2) url += 'search?type=Button' ",
+								"if (position == 3) url += 'frame?file=test-EditText.json' ",
+								"if (position == 4) url += 'search?type=EditText' ",
+								"if (position == 5) url += 'search?type=Switch' ",
+								"if (position == 6) url += 'search?type=ListView' ",
+								"if (position == 7) url += 'search?type=SelectDialog' ",
+								"if (position == 8) url += 'search?type=JavaScript' ",
+								"if (position == 9) url += 'search?type=UrlRequest' ",
+								"if (position == 10) url += 'search?type=SecureShell' ",
+								"if (position == 11) url += 'search?type=SecureFtp' ",
+								"eigenFragment.setViewState(999112, url)"
+							],
+							"type": "JavaScript"
+						},
+						"option_list": [
+							" 0. parse/list files",
+							" 1. show file test-Button.json",
+							" 2. search for Button",
+							" 3. show file test-EditText.json",
+							" 4. search for EditText",
+							" 5. search for Switch",
+							" 6. search for ListView",
+							" 7. search for SelectDialog",
+							" 8. search for JavaScript",
+							" 9. search for UrlRequest",
+							"10. search for SecureShell",
+							"11. search for SecureFtp"
+						],
+						"title": "Select EigenFrame App URL:",
+						"type": "SelectDialog"
+					},
+					"text": "Select EigenFrame App URL",
+					"text_color": "#ffffff"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "open_browser."
 					},
 					"on_click": {
 						"attributes": {
@@ -265,9 +365,10 @@
 										"component_list": [
 											{
 												"attributes": {
-													"url": "http://localhost:8000/halt"
+													"url_script": "''+eigenFragment.getViewState(999112)",
+													"text_size": "10"
 												},
-												"name": "HtmlViewDetail",
+												"name": "TextViewDetail",
 												"type": "Clone"
 											}
 										]
@@ -276,12 +377,12 @@
 									"type": "Clone"
 								}
 							],
-							"title": "Halt HTTP service"
+							"title": "Execute Selected Prolog URL"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
 					},
-					"text": "Halt HTTP service"
+					"text": "Execute Selected Prolog URL"
 				},
 				"name": "ButtonDefault",
 				"type": "Clone"
