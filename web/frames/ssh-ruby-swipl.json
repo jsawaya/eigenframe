@@ -228,42 +228,6 @@
 										"component_list": [
 											{
 												"attributes": {
-													"url": "http://localhost:8000/frame?file=playlist.json",
-													"text_size": "10"
-												},
-												"name": "TextViewDetail",
-												"type": "Clone"
-											}
-										]
-									},
-									"name": "LayoutVerticalScrollable",
-									"type": "Clone"
-								}
-							],
-							"title": "Show EigenFrame File (playlist.json)"
-						},
-						"name": "PopupScreenDefault",
-						"type": "Clone"
-					},
-					"text": "Show EigenFrame File (playlist.json)"
-				},
-				"name": "ButtonDefault",
-				"type": "Clone"
-			},
-			{
-				"attributes": {
-					"icon": {
-						"location": "top",
-						"name": "open_browser."
-					},
-					"on_click": {
-						"attributes": {
-							"component_list": [
-								{
-									"attributes": {
-										"component_list": [
-											{
-												"attributes": {
 													"url": "http://localhost:8000/search?type=EditText",
 													"text_size": "10"
 												},

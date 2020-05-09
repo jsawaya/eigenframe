@@ -31,6 +31,26 @@
 
 % :- initialization(start_svc).
 
+:- initialization(load_all_files).
+
+load_all_files :- 
+	load_frames,
+	load_apps.
+
+load_frames :-
+	directory_eigenframe_web_frames(Dir),
+	writeln("Directory: "), writeln(Dir),
+	directory_files(Dir, E), 
+	sort(E,Entries), 
+	read_filenames(Dir, Entries).
+
+load_apps :-
+	directory_eigenframe_web_apps(Dir),
+	writeln("Directory: "), writeln(Dir),
+	directory_files(Dir, E), 
+	sort(E,Entries), 
+	read_filenames(Dir, Entries).
+
 % ----------------------------------------------------
 start_svc :- 
 	server(8000).
