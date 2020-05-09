@@ -321,6 +321,7 @@
 								"if (position == 6) url += 'search?type=JavaScript' ",
 								"if (position == 7) url += 'search?type=UrlRequest' ",
 								"if (position == 8) url += 'search?type=SecureShell' ",
+								"if (position == 9) url += 'parse?file=test-Button.json' ",
 								"eigenFragment.setViewState(999112, url)"
 							],
 							"type": "JavaScript"
@@ -334,7 +335,8 @@
 							" 5. search for SelectDialog",
 							" 6. search for JavaScript",
 							" 7. search for UrlRequest",
-							" 8. search for SecureShell"
+							" 8. search for SecureShell",
+							" 9. parse test-Button.json"
 						],
 						"title": "Select Prolog URL:",
 						"type": "SelectDialog"
