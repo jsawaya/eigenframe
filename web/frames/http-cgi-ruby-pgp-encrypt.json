@@ -149,7 +149,7 @@
 					"type": "UrlRequest",
 					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
 				},
-				"text": "Create an OpenPGP Encryption File",
+				"text": "Create an OpenPGP Encryption File (via http-post/cgi/ruby)",
 				"text_color": "#ffffff",
 				"type": "Button"
 			}

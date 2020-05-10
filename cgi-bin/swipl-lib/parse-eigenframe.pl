@@ -20,27 +20,38 @@
 :- http_handler('/hi', say_hi, []).
 :- http_handler('/time', handle_time_request, []).
 :- http_handler('/parms', handle_parms, []).
-:- http_handler('/parm2', handle_parameter_request2, []).
-:- http_handler('/parm3', handle_parameter_request3, []).
 :- http_handler('/frame', handle_frame, []).
 :- http_handler('/files', handle_files, []).
 :- http_handler('/search', handle_search, []).
+:- http_handler('/parse', handle_parse, []).
 :- http_handler('/api', handle_api, []).
 :- http_handler('/halt', handle_halt, []).
 
 :- multifile http_json/1.
 
 % :- initialization(start_svc).
-% :- initialization(start_http).
+
+:- initialization(load_all_files).
+
+load_all_files :- 
+	load_frames,
+	load_apps.
+
+load_frames :-
+	directory_eigenframe_web_frames(Dir),
+	writeln("Directory: "), writeln(Dir),
+	directory_files(Dir, E), 
+	sort(E,Entries), 
+	read_filenames(Dir, Entries).
+
+load_apps :-
+	directory_eigenframe_web_apps(Dir),
+	writeln("Directory: "), writeln(Dir),
+	directory_files(Dir, E), 
+	sort(E,Entries), 
+	read_filenames(Dir, Entries).
 
 % ----------------------------------------------------
-/*
-http_daemon :- 
-	current_prolog_flag(argv, Argv),
-	argv_options(Argv, _RestArgv, Options),
-	http_daemon(Options).
-*/
-
 start_svc :- 
 	server(8000).
 
@@ -55,17 +66,18 @@ http_json:json_type('text/javascript').
 http_json:json_type('text/x-javascript').
 http_json:json_type('text/x-json').
 
-%curl --header 'Content-Type: application/json' 'http://localhost:8000/parm?data=test("this").'
-%curl --header 'Content-Type: application/json' 'http://localhost:8000/parm2?select_file=/home/john/projects/eigenframe-repository/web/frames/about.json'
-%curl --header 'Content-Type: application/json' 'http://localhost:8000/parm3?select_file=/home/john/projects/eigenframe-repository/web/frames/about.json'
-%curl --header 'Content-Type: application/json' 'http://localhost:8000/parm4?select_file=/home/john/projects/eigenframe-repository/web/frames/about.json'
+%curl 'http://localhost:8000/halt'
 %curl --header 'Content-Type: application/json' --request POST --data '{"a": 1, "b": 2 }' 'http://localhost:8000/api'
+%curl --header 'Content-Type: application/json' 'http://localhost:8000/search?type=EditText'
+%curl 'http://localhost:8000/parse?file=test-Button.json'
+%curl 'http://localhost:8000/files'
+%curl 'http://localhost:8000/parms?data=test("this").'
 
 % ----------------------------------------------------
 handle_halt(_Request) :-
 	reply_html_page(
-		[title('SWI-Prolog')],
-		[h1('SWI-Prolog HTTP Service Halt')]
+		[title('Halting SWI-Prolog HTTP Service...')],
+		[h1('SWI-Prolog HTTP Service Halted')]
 	),
 	halt.
 
@@ -94,6 +106,20 @@ handle_search(Request) :-
 	true.
 
 % ----------------------------------------------------
+% http://localhost:8000/parse
+handle_parse(Request) :-
+	http_parameters(Request,
+  	[	file(File, [ optional(false) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	directory_eigenframe_web_frames(Dir),
+	writeln("Directory: "), writeln(Dir),
+	directory_file_path(Dir, File, FPath),
+	exists_file(FPath),
+  write(" FilePath: "), writeln(FPath),
+	read_eigenframe_file(FPath).
+
+% ----------------------------------------------------
 % http://localhost:8000/files
 handle_files(_Request) :-
 	format('Content-type: text/plain~n~n', []),
@@ -115,22 +141,6 @@ handle_frame(Request) :-
 	directory_file_path(Dir, FName, FPath),
 	read_json_file(FPath, Data), 
 	reply_json_dict(Data).
-
-% ----------------------------------------------------
-handle_parameter_request3(Request) :-
-	http_parameters(Request,
-  	[	select_file(FPath, [ optional(true) ]) 
-		]),
-	format('Content-type: text/plain~n~n', []),
-	writeln(FPath).
-
-% ----------------------------------------------------
-handle_parameter_request2(Request) :-
-	http_parameters(Request,
-  	[	select_file(FPath, [ optional(true) ]) 
-		]),
-	format('Content-type: text/plain~n~n', []),
-	writeln(FPath).
 
 /*
 handle(Request) :-

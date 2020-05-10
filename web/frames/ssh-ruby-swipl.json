@@ -70,7 +70,7 @@
 			{
 				"attributes": {
 					"icon": {
-						"location": "left",
+						"location": "top",
 						"name": "open_browser."
 					},
 					"on_click": {
@@ -109,7 +109,7 @@
 			{
 				"attributes": {
 					"icon": {
-						"location": "left",
+						"location": "top",
 						"name": "open_browser."
 					},
 					"on_click": {
@@ -121,7 +121,6 @@
 											{
 												"attributes": {
 													"abort": 2000,
-													"x-ssh": "sh -c \"/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swi-http.sh\" &",
 													"ssh": "sh -c \"swipl /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib/parse-eigenframe.pl --http=8000\" &",
 													"text_size": "10"
 												},
@@ -147,8 +146,8 @@
 			{
 				"attributes": {
 					"icon": {
-						"location": "left",
-						"name": "open_browser."
+						"location": "top",
+						"name": "cancel."
 					},
 					"on_click": {
 						"attributes": {
@@ -158,10 +157,9 @@
 										"component_list": [
 											{
 												"attributes": {
-													"url": "http://localhost:8000/files",
-													"text_size": "10"
+													"url": "http://localhost:8000/halt"
 												},
-												"name": "TextViewDetail",
+												"name": "HtmlViewDetail",
 												"type": "Clone"
 											}
 										]
@@ -170,12 +168,12 @@
 									"type": "Clone"
 								}
 							],
-							"title": "Parse EigenFrame Files"
+							"title": "Halt HTTP service"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
 					},
-					"text": "Parse EigenFrame Files"
+					"text": "Halt HTTP service"
 				},
 				"name": "ButtonDefault",
 				"type": "Clone"
@@ -183,43 +181,7 @@
 			{
 				"attributes": {
 					"icon": {
-						"location": "left",
-						"name": "open_browser."
-					},
-					"on_click": {
-						"attributes": {
-							"component_list": [
-								{
-									"attributes": {
-										"component_list": [
-											{
-												"attributes": {
-													"url": "http://localhost:8000/frame?file=playlist.json",
-													"text_size": "10"
-												},
-												"name": "TextViewDetail",
-												"type": "Clone"
-											}
-										]
-									},
-									"name": "LayoutVerticalScrollable",
-									"type": "Clone"
-								}
-							],
-							"title": "Show EigenFrame File (playlist.json)"
-						},
-						"name": "PopupScreenDefault",
-						"type": "Clone"
-					},
-					"text": "Show EigenFrame File (playlist.json)"
-				},
-				"name": "ButtonDefault",
-				"type": "Clone"
-			},
-			{
-				"attributes": {
-					"icon": {
-						"location": "left",
+						"location": "top",
 						"name": "open_browser."
 					},
 					"on_click": {
@@ -253,9 +215,70 @@
 				"type": "Clone"
 			},
 			{
+				"background_color": "#11ff0000",
+				"id": 999112,
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
+				"text_color": "#ffffff",
+				"text_size": "14",
+				"type": "EditText"
+			},
+			{
 				"attributes": {
 					"icon": {
-						"location": "left",
+						"location": "top",
+						"name": "listview."
+					},
+					"background_color": "#654321",
+					"on_click": {
+						"icon": {
+							"name": "listview."
+						},
+						"id": 999113,
+						"on_click": {
+							"script_list": [
+								"var position = eigenFragment.getOptionPosition()",
+								"eigenActivity.showToast('option: '+eigenFragment.getOptionLabel() + ', position: '+position )",
+								"var url = 'http://localhost:8000/'",
+								"if (position == 0) url += 'frame?file=test-EditText.json' ",
+								"if (position == 1) url += 'parse?file=test-EditText.json' ",
+								"if (position == 2) url += 'search?type=EditText' ",
+								"if (position == 3) url += 'search?type=Switch' ",
+								"if (position == 4) url += 'search?type=ListView' ",
+								"if (position == 5) url += 'search?type=SelectDialog' ",
+								"if (position == 6) url += 'search?type=JavaScript' ",
+								"if (position == 7) url += 'search?type=UrlRequest' ",
+								"if (position == 8) url += 'search?type=SecureShell' ",
+								"if (position == 9) url += 'parse?file=test-Button.json' ",
+								"eigenFragment.setViewState(999112, url)"
+							],
+							"type": "JavaScript"
+						},
+						"option_list": [
+							" 0. show frame test-EditText.json",
+							" 1. parse file test-EditText.json",
+							" 2. search for EditText",
+							" 3. search for Switch",
+							" 4. search for ListView",
+							" 5. search for SelectDialog",
+							" 6. search for JavaScript",
+							" 7. search for UrlRequest",
+							" 8. search for SecureShell",
+							" 9. parse file test-Button.json"
+						],
+						"title": "Select Prolog URL:",
+						"type": "SelectDialog"
+					},
+					"text": "Select Prolog URL",
+					"text_color": "#ffffff"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
+				"attributes": {
+					"icon": {
+						"location": "top",
 						"name": "open_browser."
 					},
 					"on_click": {
@@ -266,7 +289,7 @@
 										"component_list": [
 											{
 												"attributes": {
-													"url": "http://localhost:8000/halt",
+													"url_script": "''+eigenFragment.getViewState(999112)",
 													"text_size": "10"
 												},
 												"name": "TextViewDetail",
@@ -278,12 +301,12 @@
 									"type": "Clone"
 								}
 							],
-							"title": "Halt HTTP service"
+							"title": "Execute Selected Prolog URL"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
 					},
-					"text": "Halt HTTP service"
+					"text": "Execute Selected Prolog URL"
 				},
 				"name": "ButtonDefault",
 				"type": "Clone"

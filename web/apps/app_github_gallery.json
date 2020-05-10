@@ -6,7 +6,7 @@
     "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
     "eigenFragment.setCacheString('RootUrl', root_url);"
   ],
-  "is_secure_window": "true",
+  "is_secure_window": "false",
   "tab_list": [
     {
       "name_script": " ''+eigenActivity.getCacheString('GithubBranch') ",
