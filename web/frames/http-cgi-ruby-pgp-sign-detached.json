@@ -137,7 +137,7 @@
 					"type": "UrlRequest",
 					"url": "http://localhost:8080/cgi-bin/cgi_ruby.rb"
 				},
-				"text": "Create Detached Digital Signature",
+				"text": "Create Detached Digital Signature (via http-post/cgi/ruby)",
 				"text_color": "#ffffff",
 				"type": "Button"
 			}

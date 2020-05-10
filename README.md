@@ -9,7 +9,9 @@ EigenFrame also provides asynchronous url, ssh, and sftp requests, so you can us
 
 EigenFrame - a truly extensible architecture for dynamic system integration.
 
-https://play.google.com/store/apps/details?id=com.sawaya.eigenframe
+How to get EigenFrame -- https://play.google.com/store/apps/details?id=com.sawaya.eigenframe
+
+![Alt](web/docs/SystemOverview.svg "system-overview")
 
 [Recent Changes / Change Log](./web/docs/change-log.md)
 
@@ -81,7 +83,3 @@ Attribute | Description
 [Font](./web/docs/font.md) | Available fonts (see individual licences)
 [EditText Filter](./web/docs/EditText-filter.md) | Controls valid keyboard entries
 [Icon](./web/docs/icon.md) | Icon and Branding Support
-
-
-![Alt](web/docs/EigenFrame-Overview.JPG "eigenframe")
-
