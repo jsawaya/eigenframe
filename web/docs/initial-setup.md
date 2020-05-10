@@ -29,7 +29,9 @@
 >  $ sshd
 8. Verify you can login to secure-ftp:
 >  $ sftp -P 8022 localhost
+
 >    Connected to localhost.
+
 >    sftp> quit
 9. Open EigenFrame, click [SecureShell Settings], enter your new ssh password, and test your ssh connection
 
