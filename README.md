@@ -11,7 +11,7 @@ EigenFrame - a truly extensible architecture for dynamic system integration.
 
 How to get EigenFrame -- https://play.google.com/store/apps/details?id=com.sawaya.eigenframe
 
-![Alt](web/docs/SystenOverview.svg "system-overview")
+![Alt](web/docs/SystemOverview.svg "system-overview")
 
 [Recent Changes / Change Log](./web/docs/change-log.md)
 
