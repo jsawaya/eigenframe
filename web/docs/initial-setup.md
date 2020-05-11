@@ -68,20 +68,29 @@ This is enough to for you to use EigenFrame buttons to perform the remaining set
 
 ## Advanced Setup for EigenFrame - editing the default app
 
-* Edit /storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt to install a custom app url
+* The EigenFrame App uses its version number (e.g. '1.3') to define the default app url.
+> urlString = "https://raw.githubusercontent.com/jsawaya/eigenframe/" + github_branch + "/web/apps/app_github_master.json";
 
-example:
+* The default app url can be superseded in the following ways:
+    1. use an app shortcut (which embeds a particular url) -- the playlist demonstrates how to create a new shortcut.
+    2. enter a new default app url in the 'home-url.txt' file (see below)
+    3. JavaScript can launch a new app url -- see playlist gallery examples.
+
+
+### 'Hello World' app example
+
+* App specification (yourapp.json) calls (newfile.json) and creates a new tab: Hello World
+    
+* On your Android device you can view/edit/add files in the EigenFrame Shared Directory
+> /storage/emulated/0/Android/data/com.sawaya.eigenframe/files/
+
+* Edit the file (/storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt) to enter your new custom app url.
+
+* For example -- enter a file-url in the local shared directory:
 > file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json
 
-* Restart EigenFrame - see the new tab(s)
+* Restart EigenFrame - see the new application tab(s)
 
 * Read [EigenFrame](EigenFrame.md) to understand the top-level application specification. 
 
 * Read [EigenFragment](EigenFragment.md) to understand the EigenFragment tabs.
-
-* On your Android device you can view/edit files in the EigenFrame Shared Directory
-> /storage/emulated/0/Android/data/com.sawaya.eigenframe/files/
-
-* App specification (yourapp.json) calls (newfile.json) and creates a new tab: Hello World
-    
-
