@@ -2,7 +2,9 @@
 ## schema pattern
 
 * type: "Define"
-* name 
+* name: name becomes filename in private file cache
+  - note: name does not support javascript sourcing (name_script)
+
 * component
 
 Related:

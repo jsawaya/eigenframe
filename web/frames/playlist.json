@@ -59,7 +59,6 @@
           "id": 999103,
           "on_click": {
             "script_list": [
-              "eigenActivity.showToast('SelectDialog: option: '+eigenFragment.getOptionLabel() + ', position: '+eigenFragment.getOptionPosition() )",
               "position = eigenFragment.getOptionPosition()",
               "github_branch = 'master' ",
               "if (position == 1) github_branch = 'beta' ",
@@ -70,8 +69,7 @@
               "var app_url = root_url+'apps/app_github_master.json'",
               "if (position == 3) app_url = 'file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/yourapp.json'",
               "if (position == 4) app_url = ''",
-              "eigenFragment.setViewState(999102, app_url)",
-              "eigenActivity.showToast('app_url: ' + app_url )"
+              "eigenFragment.setViewState(999102, app_url)"
             ],
             "type": "JavaScript"
           },

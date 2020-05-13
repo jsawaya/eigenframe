@@ -1,5 +1,7 @@
 % swipl projects/eigenframe-repository/cgi-bin/swipl-lib/parse-eigenframe.pl --http=8000
+% swipl projects/eigenframe-repository/cgi-bin/swipl-lib/parse-eigenframe.pl
 
+:- use_module(library(apply)).
 :- use_module(library(lists)).
 :- use_module(library(filesex)).
 
@@ -10,8 +12,8 @@
 :- use_module(library(http/html_write)).
 :- use_module(library(http/http_parameters)).
 :- use_module(library(http/http_json)).
-%:- use_module(library(http/thread_httpd)).
-:- use_module(library(http/http_unix_daemon)).
+%:- use_module(library(http/thread_httpd)).	% for testing only
+:- use_module(library(http/http_unix_daemon)). %% enable for default http service
 
 %:- use_module(library(http/http_session)).  % not needed
 
@@ -23,13 +25,14 @@
 :- http_handler('/frame', handle_frame, []).
 :- http_handler('/files', handle_files, []).
 :- http_handler('/search', handle_search, []).
+:- http_handler('/collect', handle_collect, []).
 :- http_handler('/parse', handle_parse, []).
 :- http_handler('/api', handle_api, []).
 :- http_handler('/halt', handle_halt, []).
 
 :- multifile http_json/1.
 
-% :- initialization(start_svc).
+% :- initialization(start_svc). % for testing only
 
 :- initialization(load_all_files).
 
@@ -39,14 +42,14 @@ load_all_files :-
 
 load_frames :-
 	directory_eigenframe_web_frames(Dir),
-	writeln("Directory: "), writeln(Dir),
+	write("Read Directory: "), writeln(Dir),
 	directory_files(Dir, E), 
 	sort(E,Entries), 
 	read_filenames(Dir, Entries).
 
 load_apps :-
 	directory_eigenframe_web_apps(Dir),
-	writeln("Directory: "), writeln(Dir),
+	write("Read Directory: "), writeln(Dir),
 	directory_files(Dir, E), 
 	sort(E,Entries), 
 	read_filenames(Dir, Entries).
@@ -93,6 +96,22 @@ handle_api(Request) :-
 	reply_json_dict(Solution).
 
 % ----------------------------------------------------
+% http://localhost:8000/collect?file=test-TextView.json
+handle_collect(Request) :-
+	http_parameters(Request,
+  	[	file(File, [ optional(true) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	directory_eigenframe_web_frames(Dir),
+	writeln("Directory: "), writeln(Dir),
+	directory_file_path(Dir, File, FPath),
+	exists_file(FPath),
+  write(" FilePath: "), writeln(FPath),
+	dyn_json_file_data(FPath, Data),
+	collect_data(Data, List),
+	each_write(List).
+
+% ----------------------------------------------------
 % http://localhost:8000/search?type=PopupHtmlView
 % http://localhost:8000/search?type=EditText
 handle_search(Request) :-
@@ -130,7 +149,7 @@ handle_files(_Request) :-
 	read_filenames(Dir, Entries).
 
 % ----------------------------------------------------
-% http://localhost:8000/frame?file=TextView
+% http://localhost:8000/frame?file=test-TextView.json
 % show json frame given file
 handle_frame(Request) :-
 	http_parameters(Request,
@@ -237,7 +256,7 @@ read_filenames(Dir, [File|T]) :-
 	directory_file_path(Dir, File, FPath),
 	(
 		exists_file(FPath),
-	  write(" Path: "), 	writeln(FPath),
+%	  write(" Read FilePath: "), 	writeln(FPath),
 		read_json_file(FPath, _); 
 		true
 	),
@@ -257,7 +276,7 @@ list_filenames(Dir, [File|T]) :-
 	directory_file_path(Dir, File, FPath),
 	(
 		exists_file(FPath),
-	  write(" Path: "), 	writeln(FPath)
+	  write(" List FilePath: "), 	writeln(FPath)
 		;true
 	),
 	list_filenames(Dir, T).
@@ -294,16 +313,16 @@ read_eigenframe_files(Dir, [File|T]) :-
 	(
 		exists_file(FPath),
 		read_eigenframe_file(FPath),
-	  write(" ------------------------- Path: "), 	writeln(FPath)
+	  write(" Read EigenFrame FilePath: "), writeln(FPath)
 		;true
 	),
 	read_eigenframe_files(Dir, T).
-
 
 read_eigenframe_file(FPath) :-
 	read_json_file(FPath, Data), 
 	parse_eigenframe(Data).
 
+% ----------------------------------------------------
 :- dynamic dyn_json_file_data/2.
 
 % check dynamic assertion first
@@ -319,6 +338,7 @@ read_json_file(FPath, Data) :-
 	assertz(dyn_json_file_data(FPath, Data)).
 
 % ----------------------------------------------------
+
 % Read json into prolog dict structure (sorts attributes), then write back into same file. 
 organize_eigenframe_file_test :-
 	select_file_test(FPath),
@@ -326,7 +346,7 @@ organize_eigenframe_file_test :-
 
 organize_eigenframe_file(FPath) :-
 	exists_file(FPath),
-  write(" Path: "), 	writeln(FPath),
+  write(" Organize FilePath: "), 	writeln(FPath),
 	read_json_file(FPath, Data), 
 	save_json_file(FPath, Data).
 
@@ -338,10 +358,12 @@ organize_eigenframe_files(Dir, [File|T]) :-
 	(
 		exists_file(FPath),
 		organize_eigenframe_file(FPath),
-	  write(" ------------------------- Path: "), 	writeln(FPath)
+	  write(" Organize FilePath: "), 	writeln(FPath)
 		;true
 	),
 	organize_eigenframe_files(Dir, T).
+
+% ----------------------------------------------------
 
 save_json_file(FPath, Data) :-
 	open(FPath, write, Stream), 
@@ -350,8 +372,94 @@ save_json_file(FPath, Data) :-
 
 
 % ----------------------------------------------------
-% Assert (cache) the json files as dynamic facts. 
-%read_filenames_test.
+
+collect_component(Data, List) :-
+	X = Data.get(component),
+	member(X, List). 
+
+collect_on_click(Data, List) :- 
+	X = Data.get(on_click),
+	member(X, List).
+
+collect_on_complete(Data, List) :- 
+	X = Data.get(on_complete),
+	member(X, List).
+
+collect_item_layout(Data, List) :- 
+	X = Data.get(item_layout),
+	member(X, List).
+
+collect_positive_on_complete(Data, List) :- 
+	Y = Data.get(positive),
+	X = Y.get(on_complete),
+	member(X, List).
+
+collect_negative_on_complete(Data, List) :- 
+	Y = Data.get(negative),
+	X = Y.get(on_complete),
+	member(X, List).
+
+collect_neutral_on_complete(Data, List) :- 
+	Y = Data.get(neutral),
+	X = Y.get(on_complete),
+	member(X, List).
+
+collect_component_list(Data, List) :-
+	X = Data.get(component_list),
+	each_member(X, List).
+
+collect_tab_list(Data, List) :- 
+	X = Data.get(tab_list),
+	each_member(X, List).
+
+each_member([], _List).
+each_member([H|T], List) :- 
+	collect_data(H, List); 
+	each_member(T, List).
+
+each_show([]).
+each_show([H|T]) :- 
+	show_json(H),
+	each_show(T).
+
+each_write([]).
+each_write([H|T]) :- 
+  write('\n\n = '),	write(H),	write('\n\n'), 	
+	each_write(T).
+
+is_member(E, L) :- 
+	nonvar(L), 
+	memberchk(E, L).
+
+collect_data(Data, List) :-
+	is_member(Data, List).
+
+collect_data(Data, List) :-
+	'Define' \= Data.get(type),
+	member(Data, List),
+	(collect_component(Data, List);true), % define has component
+	(collect_on_click(Data, List);true),
+	(collect_on_complete(Data, List);true),
+	(collect_item_layout(Data, List);true),
+	(collect_positive_on_complete(Data, List);true),
+	(collect_negative_on_complete(Data, List);true),
+	(collect_neutral_on_complete(Data, List);true),
+	(collect_component_list(Data, List);true),
+	(collect_tab_list(Data, List);true).
+
+% set FPath
+collect_filepath_test(FPath) :-
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, 'define-clones.json', FPath),
+  write('\nTest Path: '), writeln(FPath).
+
+test_collect(List) :-
+	collect_filepath_test(FPath), 
+	dyn_json_file_data(FPath, Data),
+	collect_data(Data, List),
+	each_write(List).
+
+% ----------------------------------------------------
 
 % Here are examples to search for a given EigenFrame type
 %search_eigenframe_type_test('WebView'),false.
@@ -420,15 +528,20 @@ search_eigenframe_type(FPath, Data, Type) :-
 	X = Data.get(tab_list), 
 	search_eigenframe_list(FPath, X, Type).
 
+% all the frame types come here 
+% if the type is the one we are looking for -- write data
 %search_eigenframe_type(FPath, +Data, +Type)
 search_eigenframe_type(FPath, Data, Type) :- 
 	Type == Data.get(type),
   write(',\n{ "filepath": "'), 	write(FPath),	write('", "data": '), 	
-%	Data.put([file=FPath]),
-%	Data.put( _{filepath:12345678} ),
 	show_json(Data),
   writeln("}").
-	
+
+% ----------------------------------------------------
+
+% +FPath is passed into recursion - constant 
+% +H|T is the recursion list of components 
+% +Type is the type of component we are searching for
 search_eigenframe_list(_, [], _).
 search_eigenframe_list(FPath, [H|T], Type) :-
 	search_eigenframe_type(FPath, H, Type);true,
@@ -527,16 +640,16 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Clone'),
-	parse_eigenframe_name(Data,_).
+	parse_eigenframe_name(Data,_),
+	parse_eigenframe_attributes(Data).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Clone'),
-	parse_eigenframe_name(Data,_),
-	(parse_eigenframe_attributes(Data);true).
+	parse_eigenframe_name(Data,_).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Define'),
-	parse_eigenframe_name_sources(Data),
+	parse_eigenframe_name(Data,_),
 	X = Data.get(component),
   write("  component:"), writeln(X).
 % Note: a define component may not be complete, do not parse_eigenframe_component(Data). 
