@@ -249,7 +249,7 @@
 								"if (position == 7) url += 'search?type=UrlRequest' ",
 								"if (position == 8) url += 'search?type=SecureShell' ",
 								"if (position == 9) url += 'parse?file=test-Button.json' ",
-								"if (position == 10) url += 'collect?file=ssh-ruby-pgp.json' ",
+								"if (position == 10) url += 'collect?file=define-clones.json' ",
 								"if (position == 11) url += 'collect?file=ssh-ruby-swipl.json' ",
 								"eigenFragment.setViewState(999112, url)"
 							],
@@ -266,7 +266,7 @@
 							" 7. search for type: UrlRequest",
 							" 8. search for type: SecureShell",
 							" 9. parse file: test-Button.json",
-							"10. collect Eigenframes from file: ssh-ruby-pgp.json",
+							"10. collect Eigenframes from file: define-clones.json",
 							"11. collect Eigenframes from file: ssh-ruby-swipl.json"
 						],
 						"title": "Select Prolog URL:",
