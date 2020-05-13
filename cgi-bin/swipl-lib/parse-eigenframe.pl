@@ -120,8 +120,7 @@ handle_search(Request) :-
 		]),
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	write('{"type": "'), write(Type), write('", "found": [ {}'), 
-	search_eigenframe_type_test(Type),false;
-	write("]}"),
+	search_eigenframe_type_test(Type),false;write("]}"),
 	true.
 
 % ----------------------------------------------------
@@ -257,15 +256,15 @@ read_filenames(Dir, [File|T]) :-
 	(
 		exists_file(FPath),
 %	  write(" Read FilePath: "), 	writeln(FPath),
-		read_json_file(FPath, _); 
-		true
+		read_json_file(FPath, _)
+		;true
 	),
 	read_filenames(Dir, T).
 
 % ----------------------------------------------------
 % select directory, get directory entries, sort, list filenames
 
-list_filenames_test :-
+list_filenames_test(Entries):-
 	directory_eigenframe_web_frames(Dir), 
 	directory_files(Dir, E), 
 	sort(E,Entries), 
@@ -275,8 +274,9 @@ list_filenames(_, []).
 list_filenames(Dir, [File|T]) :-
 	directory_file_path(Dir, File, FPath),
 	(
-		exists_file(FPath),
-	  write(" List FilePath: "), 	writeln(FPath)
+		exists_file(FPath), 
+		write(" List FilePath: "), 
+		writeln(FPath)
 		;true
 	),
 	list_filenames(Dir, T).
@@ -414,8 +414,8 @@ collect_tab_list(Data, List) :-
 
 each_member([], _List).
 each_member([H|T], List) :- 
-	collect_data(H, List); 
-	each_member(T, List).
+	collect_data(H, List)
+	;each_member(T, List).
 
 each_show([]).
 each_show([H|T]) :- 
@@ -607,36 +607,36 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'ActionList'),
-	(parse_eigenframe_comment(Data,_); true),
+	(parse_eigenframe_comment(Data,_);true),
 	(parse_eigenframe_component_list(Data);true),
 	(parse_eigenframe_on_complete(Data);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'AlertDialog'),
-	(parse_eigenframe_title_sources(Data); true),
-	(parse_eigenframe_icon(Data,_); true),
-	(parse_eigenframe_alert_dialog_positive(Data,_); true),
-	(parse_eigenframe_alert_dialog_negative(Data,_); true),
-	(parse_eigenframe_alert_dialog_neutral(Data,_); true).
+	(parse_eigenframe_title_sources(Data);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_alert_dialog_positive(Data,_);true),
+	(parse_eigenframe_alert_dialog_negative(Data,_);true),
+	(parse_eigenframe_alert_dialog_neutral(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Button'),
-	(parse_eigenframe_text_sources(Data); true),
-	(parse_eigenframe_on_click(Data,_); true).
+	(parse_eigenframe_text_sources(Data);true),
+	(parse_eigenframe_on_click(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'CheckBox'),
-	(parse_eigenframe_text_sources(Data); true),
-	(parse_eigenframe_checked(Data,_); true),
-	(parse_eigenframe_id(Data,_); true),
-	(parse_eigenframe_layout_width(Data,_); true),
-	(parse_eigenframe_layout_height(Data,_); true),
-	(parse_eigenframe_gravity(Data,_); true),
-	(parse_eigenframe_background_color(Data,_); true),
-	(parse_eigenframe_icon(Data,_); true),
-	(parse_eigenframe_padding(Data,_); true),
-	(parse_eigenframe_margin(Data,_); true),
-	(parse_eigenframe_on_click(Data,_); true).
+	(parse_eigenframe_text_sources(Data);true),
+	(parse_eigenframe_checked(Data,_);true),
+	(parse_eigenframe_id(Data,_);true),
+	(parse_eigenframe_layout_width(Data,_);true),
+	(parse_eigenframe_layout_height(Data,_);true),
+	(parse_eigenframe_gravity(Data,_);true),
+	(parse_eigenframe_background_color(Data,_);true),
+	(parse_eigenframe_icon(Data,_);true),
+	(parse_eigenframe_padding(Data,_);true),
+	(parse_eigenframe_margin(Data,_);true),
+	(parse_eigenframe_on_click(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Clone'),
@@ -721,9 +721,9 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'JavaScript'),
-	(parse_eigenframe_comment(Data,_); true),
-	(parse_eigenframe_id_sources(Data); true),
-	(parse_eigenframe_script_sources(Data); true).
+	(parse_eigenframe_comment(Data,_);true),
+	(parse_eigenframe_id_sources(Data);true),
+	(parse_eigenframe_script_sources(Data);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'LinearLayout'),
@@ -762,7 +762,7 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupHtmlView'),
 	parse_eigenframe_html_sources(Data),
-	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_title_sources(Data);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
@@ -774,7 +774,7 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupHtmlView'),
 	parse_eigenframe_url_sources(Data),
-	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_title_sources(Data);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
@@ -787,9 +787,9 @@ parse_eigenframe(Data) :-
 	select_eigenframe_type(Data, 'PopupScreen'),
 	parse_eigenframe_url_sources(Data),
 	(parse_eigenframe_id_sources(Data);true),
-	(parse_eigenframe_title_sources(Data); true),
-	(parse_eigenframe_text_size(Data,_); true),
-	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_title_sources(Data);true),
+	(parse_eigenframe_text_size(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_background_color(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
@@ -800,9 +800,9 @@ parse_eigenframe(Data) :-
 	select_eigenframe_type(Data, 'PopupScreen'),
 	parse_eigenframe_component_list(Data),
 	(parse_eigenframe_id_sources(Data);true),
-	(parse_eigenframe_title_sources(Data); true),
-	(parse_eigenframe_text_size(Data,_); true),
-	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_title_sources(Data);true),
+	(parse_eigenframe_text_size(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_background_color(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
@@ -812,14 +812,14 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupTextView'),
 	parse_eigenframe_text_sources(Data),
-	(parse_eigenframe_title_sources(Data); true),
-	(parse_eigenframe_text_size(Data,_); true),
-	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_title_sources(Data);true),
+	(parse_eigenframe_text_size(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_background_color(Data,_);true),
-	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_font(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
 	(parse_eigenframe_padding(Data,_);true),
 	(parse_eigenframe_margin(Data,_);true).
@@ -827,14 +827,14 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupTextView'),
 	parse_eigenframe_url_sources(Data),
-	(parse_eigenframe_title_sources(Data); true),
-	(parse_eigenframe_text_size(Data,_); true),
-	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_title_sources(Data);true),
+	(parse_eigenframe_text_size(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_background_color(Data,_);true),
-	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_font(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
 	(parse_eigenframe_padding(Data,_);true),
 	(parse_eigenframe_margin(Data,_);true).
@@ -842,14 +842,14 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupTextView'),
 	parse_eigenframe_ssh_sources(Data),
-	(parse_eigenframe_title_sources(Data); true),
-	(parse_eigenframe_text_size(Data,_); true),
-	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_title_sources(Data);true),
+	(parse_eigenframe_text_size(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_background_color(Data,_);true),
-	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_font(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
 	(parse_eigenframe_padding(Data,_);true),
 	(parse_eigenframe_margin(Data,_);true).
@@ -857,14 +857,14 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'PopupTextView'),
 	parse_eigenframe_sftp_sources(Data),
-	(parse_eigenframe_title_sources(Data); true),
-	(parse_eigenframe_text_size(Data,_); true),
-	(parse_eigenframe_text_color(Data,_); true),
+	(parse_eigenframe_title_sources(Data);true),
+	(parse_eigenframe_text_size(Data,_);true),
+	(parse_eigenframe_text_color(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_background_color(Data,_);true),
-	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_font(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
 	(parse_eigenframe_padding(Data,_);true),
 	(parse_eigenframe_margin(Data,_);true).
@@ -920,7 +920,7 @@ parse_eigenframe(Data) :-
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'Switch'),
-	(parse_eigenframe_text_sources(Data); true),
+	(parse_eigenframe_text_sources(Data);true),
 	(parse_eigenframe_checked(Data,_);true),
 	(parse_eigenframe_id_sources(Data);true),
 	(parse_eigenframe_text_color(Data,_);true),
@@ -937,61 +937,61 @@ parse_eigenframe(Data) :-
 	select_eigenframe_type(Data, 'TextView'),
 	parse_eigenframe_text_sources(Data),
 	(parse_eigenframe_background_color(Data,_);true),
-	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_font(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
-	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_id_sources(Data);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_margin(Data,_);true),
 	(parse_eigenframe_padding(Data,_);true),
-	(parse_eigenframe_text_color(Data,_); true),
-	(parse_eigenframe_text_size(Data,_); true).
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_text_size(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'TextView'),
 	parse_eigenframe_url_sources(Data),
 	(parse_eigenframe_background_color(Data,_);true),
-	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_font(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
-	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_id_sources(Data);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_margin(Data,_);true),
 	(parse_eigenframe_padding(Data,_);true),
-	(parse_eigenframe_text_color(Data,_); true),
-	(parse_eigenframe_text_size(Data,_); true).
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_text_size(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'TextView'),
 	parse_eigenframe_ssh_sources(Data),
 	(parse_eigenframe_background_color(Data,_);true),
-	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_font(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
-	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_id_sources(Data);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_margin(Data,_);true),
 	(parse_eigenframe_padding(Data,_);true),
-	(parse_eigenframe_text_color(Data,_); true),
-	(parse_eigenframe_text_size(Data,_); true).
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_text_size(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'TextView'),
 	parse_eigenframe_sftp_sources(Data),
 	(parse_eigenframe_background_color(Data,_);true),
-	(parse_eigenframe_font(Data,_); true),
+	(parse_eigenframe_font(Data,_);true),
 	(parse_eigenframe_gravity(Data,_);true),
 	(parse_eigenframe_icon(Data,_);true),
-	(parse_eigenframe_id_sources(Data); true),
+	(parse_eigenframe_id_sources(Data);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_margin(Data,_);true),
 	(parse_eigenframe_padding(Data,_);true),
-	(parse_eigenframe_text_color(Data,_); true),
-	(parse_eigenframe_text_size(Data,_); true).
+	(parse_eigenframe_text_color(Data,_);true),
+	(parse_eigenframe_text_size(Data,_);true).
 
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'ToastMessage'),
@@ -1049,7 +1049,7 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'WebView'),
 	parse_eigenframe_html_sources(Data),
-	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_title_sources(Data);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_is_javascript_enabled(Data,_);true).
@@ -1057,7 +1057,7 @@ parse_eigenframe(Data) :-
 parse_eigenframe(Data) :- 
 	select_eigenframe_type(Data, 'WebView'),
 	parse_eigenframe_url_sources(Data),
-	(parse_eigenframe_title_sources(Data); true),
+	(parse_eigenframe_title_sources(Data);true),
 	(parse_eigenframe_layout_width(Data,_);true),
 	(parse_eigenframe_layout_height(Data,_);true),
 	(parse_eigenframe_is_javascript_enabled(Data,_);true).
@@ -1131,9 +1131,9 @@ parse_eigenframe_url_script_list(Data) :-
 % will succeed - if frame has url source
 parse_eigenframe_url_sources(Data) :- 
 	(
-		parse_eigenframe_url(Data);
-		parse_eigenframe_url_script(Data);
-		parse_eigenframe_url_script_list(Data)
+		parse_eigenframe_url(Data)
+		;parse_eigenframe_url_script(Data)
+		;parse_eigenframe_url_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -1156,9 +1156,9 @@ parse_eigenframe_image_url_script_list(Data) :-
 % will succeed - if frame has url source
 parse_eigenframe_image_url_sources(Data) :- 
 	(
-		parse_eigenframe_image_url(Data);
-		parse_eigenframe_image_url_script(Data);
-		parse_eigenframe_image_url_script_list(Data)
+		parse_eigenframe_image_url(Data)
+		;parse_eigenframe_image_url_script(Data)
+		;parse_eigenframe_image_url_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -1180,9 +1180,9 @@ parse_eigenframe_ssh_script_list(Data) :-
 
 parse_eigenframe_ssh_sources(Data) :- 
 	(
-		parse_eigenframe_ssh(Data);
-		parse_eigenframe_ssh_script(Data);
-		parse_eigenframe_ssh_script_list(Data)
+		parse_eigenframe_ssh(Data)
+		;parse_eigenframe_ssh_script(Data)
+		;parse_eigenframe_ssh_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -1204,9 +1204,9 @@ parse_eigenframe_sftp_script_list(Data) :-
 
 parse_eigenframe_sftp_sources(Data) :- 
 	(
-		parse_eigenframe_sftp(Data);
-		parse_eigenframe_sftp_script(Data);
-		parse_eigenframe_sftp_script_list(Data)
+		parse_eigenframe_sftp(Data)
+		;parse_eigenframe_sftp_script(Data)
+		;parse_eigenframe_sftp_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -1223,8 +1223,8 @@ parse_eigenframe_script_list(Data) :-
 
 parse_eigenframe_script_sources(Data) :- 
 	(
-		parse_eigenframe_script(Data);
-		parse_eigenframe_script_list(Data)
+		parse_eigenframe_script(Data)
+		;parse_eigenframe_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -1251,10 +1251,10 @@ parse_eigenframe_text_script_list(Data) :-
 
 parse_eigenframe_text_sources(Data) :- 
 	(
-		parse_eigenframe_text(Data);
-		parse_eigenframe_text_list(Data);
-		parse_eigenframe_text_script(Data);
-		parse_eigenframe_text_script_list(Data)
+		parse_eigenframe_text(Data)
+		;parse_eigenframe_text_list(Data)
+		;parse_eigenframe_text_script(Data)
+		;parse_eigenframe_text_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -1281,10 +1281,10 @@ parse_eigenframe_html_script_list(Data) :-
 
 parse_eigenframe_html_sources(Data) :- 
 	(
-		parse_eigenframe_html(Data);
-		parse_eigenframe_html_list(Data);
-		parse_eigenframe_html_script(Data);
-		parse_eigenframe_html_script_list(Data)
+		parse_eigenframe_html(Data)
+		;parse_eigenframe_html_list(Data)
+		;parse_eigenframe_html_script(Data)
+		;parse_eigenframe_html_script_list(Data)
 	).
 
 %-----------------------------------------------
@@ -1309,9 +1309,9 @@ parse_eigenframe_id_script_list(Data, X) :-
 
 parse_eigenframe_id_sources(Data) :- 
 	(
-		parse_eigenframe_id(Data, _);
-		parse_eigenframe_id_script(Data, _);
-		parse_eigenframe_id_script_list(Data, _)
+		parse_eigenframe_id(Data, _)
+		;parse_eigenframe_id_script(Data, _)
+		;parse_eigenframe_id_script_list(Data, _)
 	).
 
 %-----------------------------------------------
@@ -1336,9 +1336,9 @@ parse_eigenframe_title_script_list(Data, X) :-
 
 parse_eigenframe_title_sources(Data) :- 
 	(
-		parse_eigenframe_title(Data, _);
-		parse_eigenframe_title_script(Data, _);
-		parse_eigenframe_title_script_list(Data, _)
+		parse_eigenframe_title(Data, _)
+		;parse_eigenframe_title_script(Data, _)
+		;parse_eigenframe_title_script_list(Data, _)
 	).
 
 %-----------------------------------------------
@@ -1363,9 +1363,9 @@ parse_eigenframe_name_script_list(Data, X) :-
 
 parse_eigenframe_name_sources(Data) :- 
 	(
-		parse_eigenframe_name(Data, _);
-		parse_eigenframe_name_script(Data, _);
-		parse_eigenframe_name_script_list(Data, _)
+		parse_eigenframe_name(Data, _)
+		;parse_eigenframe_name_script(Data, _)
+		;parse_eigenframe_name_script_list(Data, _)
 	).
 
 %-----------------------------------------------
@@ -1390,9 +1390,9 @@ parse_eigenframe_condition_script_list(Data, X) :-
 
 parse_eigenframe_condition_sources(Data) :- 
 	(
-		parse_eigenframe_condition(Data, _);
-		parse_eigenframe_condition_script(Data, _);
-		parse_eigenframe_condition_script_list(Data, _)
+		parse_eigenframe_condition(Data, _)
+		;parse_eigenframe_condition_script(Data, _)
+		;parse_eigenframe_condition_script_list(Data, _)
 	).
 
 %-----------------------------------------------
@@ -1416,9 +1416,9 @@ parse_eigenframe_text_on_script_list(Data, X) :-
 
 parse_eigenframe_text_on_sources(Data) :- 
 	(
-		parse_eigenframe_text_on(Data, _);
-		parse_eigenframe_text_on_script(Data, _);
-		parse_eigenframe_text_on_script_list(Data, _)
+		parse_eigenframe_text_on(Data, _)
+		;parse_eigenframe_text_on_script(Data, _)
+		;parse_eigenframe_text_on_script_list(Data, _)
 	).
 
 %-----------------------------------------------
@@ -1442,9 +1442,9 @@ parse_eigenframe_text_off_script_list(Data, X) :-
 
 parse_eigenframe_text_off_sources(Data) :- 
 	(
-		parse_eigenframe_text_off(Data, _);
-		parse_eigenframe_text_off_script(Data, _);
-		parse_eigenframe_text_off_script_list(Data, _)
+		parse_eigenframe_text_off(Data, _)
+		;parse_eigenframe_text_off_script(Data, _)
+		;parse_eigenframe_text_off_script_list(Data, _)
 	).
 
 %-----------------------------------------------
@@ -1661,18 +1661,18 @@ parse_eigenframe_alert_dialog_positive(Data, X) :-
 	X = Data.get(positive),
 	write("  positive: "), 	writeln(X),
 	write("  option: "), writeln(X.get(option)),
-	(parse_eigenframe_on_click(X,_); true).
+	parse_eigenframe_on_click(X,_);true.
 
 %parse_eigenframe_alert_dialog_negative(+Data, -X) 
 parse_eigenframe_alert_dialog_negative(Data, X) :- 
 	X = Data.get(negative),
 	write("  negative: "), writeln(X),
 	write("  option: "), writeln(X.get(option)),
-	(parse_eigenframe_on_click(X,_); true).
+	parse_eigenframe_on_click(X,_);true.
 
 %parse_eigenframe_alert_dialog_neutral(+Data, -X) 
 parse_eigenframe_alert_dialog_neutral(Data, X) :- 
 	X = Data.get(neutral),
 	write("  neutral: "), writeln(X),
 	write("  option: "), writeln(X.get(option)),
-	(parse_eigenframe_on_click(X,_); true).
+	parse_eigenframe_on_click(X,_);true.
