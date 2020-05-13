@@ -5,7 +5,7 @@ EigenFrame starts with a url request, but instead of getting a simple web page, 
 
 More than just a web-browser, EigenFrame has an embedded javascript interpreter with access to Android classes, methods and properties, and a secure-shell client capability to interface with a local Termux app (through openssh) to integrate your own application scripts, in *whatever* language/tool you choose (bash, git, ruby, perl, python, prolog, gpg ...). In contrast, web-browsers only have limited scripting access to the host mobile device, from inside a browser window.
 
-EigenFrame also provides asynchronous url, ssh, and sftp requests, so you can use cloud-based services, or local Termux services (like: Apache2/CGI, or Ruby Webrick) to generate dynamic EigenFrame components at runtime.
+EigenFrame also provides asynchronous url, ssh, and sftp requests, so you can use cloud-based services, or local Termux services (like: Apache2/CGI, Ruby Webrick, and SWI-Prolog) to generate dynamic EigenFrame components at runtime.
 
 EigenFrame - a truly extensible architecture for dynamic system integration.
 
@@ -14,8 +14,6 @@ How to get EigenFrame -- https://play.google.com/store/apps/details?id=com.saway
 ![Alt](web/docs/SystemOverview.svg "system-overview")
 
 [Recent Changes / Change Log](./web/docs/change-log.md)
-
-[EigenFrame App ScreenShots](./web/docs/EigenFrameApp.md)
 
 [Getting Started](./web/docs/initial-setup.md)
 
