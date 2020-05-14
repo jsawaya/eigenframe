@@ -83,7 +83,7 @@
 												"attributes": {
 													"ssh_list": [
 														"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-														"cat swipl-lib/parse-eigenframe.pl"
+														"cat swipl-lib/eigenframe.pl"
 													],
 													"text_size": "10"
 												},
@@ -96,12 +96,12 @@
 									"type": "Clone"
 								}
 							],
-							"title": "Prolog Source: parse-eigenframe.pl"
+							"title": "Prolog Source: eigenframe.pl"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
 					},
-					"text": "Prolog Source: parse-eigenframe.pl"
+					"text": "Prolog Source: eigenframe.pl"
 				},
 				"name": "ButtonDefault",
 				"type": "Clone"
@@ -121,7 +121,7 @@
 											{
 												"attributes": {
 													"abort": 2000,
-													"ssh": "sh -c \"swipl /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib/parse-eigenframe.pl --http=8000\" &",
+													"ssh": "sh -c \"swipl /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib/eigenframe-http.pl --http=8000\" &",
 													"text_size": "10"
 												},
 												"name": "TextViewDetail",
