@@ -25,7 +25,6 @@
 :- http_handler('/frame', handle_frame, []).
 :- http_handler('/files', handle_files, []).
 :- http_handler('/search', handle_search, []).
-:- http_handler('/collect', handle_collect, []).
 :- http_handler('/parse', handle_parse, []).
 :- http_handler('/api', handle_api, []).
 :- http_handler('/halt', handle_halt, []).
@@ -78,7 +77,7 @@ http_json:json_type('text/x-json').
 % ----------------------------------------------------
 handle_halt(_Request) :-
 	reply_html_page(
-		[title('Halting SWI-Prolog HTTP Service...')],
+		[title('EigenFrame')],
 		[h1('SWI-Prolog HTTP Service Halted')]
 	),
 	halt.
@@ -93,22 +92,6 @@ handle_api(Request) :-
 	http_read_json_dict(Request, Query),
 	solve(Query, Solution),
 	reply_json_dict(Solution).
-
-% ----------------------------------------------------
-% http://localhost:8000/collect?file=test-TextView.json
-handle_collect(Request) :-
-	http_parameters(Request,
-  	[	file(File, [ optional(true) ]) 
-		]),
-	format('Content-type: text/plain~n~n', []),
-	directory_eigenframe_web_frames(Dir),
-	writeln("Directory: "), writeln(Dir),
-	directory_file_path(Dir, File, FPath),
-	exists_file(FPath),
-  write(" FilePath: "), writeln(FPath),
-	dyn_json_file_data(FPath, Data),
-	collect_data(Data, List),
-	each_write(List).
 
 % ----------------------------------------------------
 % http://localhost:8000/search?type=PopupHtmlView
@@ -134,7 +117,7 @@ handle_parse(Request) :-
 	directory_file_path(Dir, File, FPath),
 	exists_file(FPath),
   write(" FilePath: "), writeln(FPath),
-	read_eigenframe_file(FPath).
+	read_eigenframe_file(FPath, List).
 
 % ----------------------------------------------------
 % http://localhost:8000/files
