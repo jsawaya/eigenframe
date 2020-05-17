@@ -165,7 +165,6 @@ select_file_test(FName, FPath) :-
 	directory_file_path(Dir, FName, FPath).
 
 read_eigenframe_file(Spec, FPath, List) :-
-	format(" ******** read_eigenframe_file: ~w~n", [FPath]),
 	read_json_file(FPath, Data), 
 	parse_eigenframe(Spec, Data, List).
 
