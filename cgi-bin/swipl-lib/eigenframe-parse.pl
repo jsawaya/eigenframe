@@ -52,7 +52,7 @@ parse_eigenframe(Spec, Data, List) :-
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Clone', Spec, Data, List),
-	parse_eigenframe_name(Spec, Data, Define_name),
+	parse_eigenframe_name(Spec, Data, _),
 	parse_eigenframe_attributes(Spec, Data).
 
 % Note: Define component is probably not be a complete parsable eigenframe type.

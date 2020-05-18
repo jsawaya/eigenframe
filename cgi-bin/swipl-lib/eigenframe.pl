@@ -152,15 +152,30 @@ define_component(Define_name, Component) :-
 	format(' assert define_component(~w, ~w)~n', [Define_name, Component]),
 	asserta(dyn_define_component(Define_name, Component)).
 
+each_clone_parse(_Spec, [], _List2).
+each_clone_parse(Spec, [Data|T], List2) :- 
+	write_type(Data),
+	(
+%		'Clone' == Data.get(type),
+%		Attributes == Data.get(attributes),
+		nominal_Clone(Data, Define_name, Attributes), 
+		define_component(Define_name, Component),
+		format(' Write Define-name: ~w~n', [Define_name]),
+%		format(' Write Component: ~w~n', [Component]),
+%		format(' Write Attributes: ~w~n', [Attributes]),
+		Clone = Component.put(Attributes),
+		format(' Write Clone: ~w~n', [Clone]),
+		member(Clone, List2),
+		parse_eigenframe(Spec, Clone, List2)
+		;true
+	),
+	each_clone_parse(Spec, T, List2).
+
+% ----------------------------------------------------
+
 each_write_type([]).
 each_write_type([H|T]) :- 
 	write_type(H),
-	(
-		nominal_Clone(H, Define_name, _), 
-		define_component(Define_name, Component),
-		format(' Clone: ~w~n ~w~n', [Define_name, Component])
-		;true
-	),
 	each_write_type(T).
 
 % ----------------------------------------------------
@@ -230,9 +245,40 @@ read_eigenframe_files_test(Spec) :-
 	directory_eigenframe_web_frames(Dir), 
 	directory_files(Dir, E), 
 	read_eigenframe_files(Spec, Dir, E, List),
-	each_write_type(List),
+	each_clone_parse(Spec, List, List2),
+	each_clone_parse(Spec, List2, List3),
+	each_clone_parse(Spec, List3, List4),
+	each_clone_parse(Spec, List4, List5),
+	each_clone_parse(Spec, List5, List6),
+	each_clone_parse(Spec, List6, List7),
+	each_clone_parse(Spec, List7, List8),
+	each_clone_parse(Spec, List8, List9),
+	each_clone_parse(Spec, List9, List10),
+	each_clone_parse(Spec, List10, List11),
+  format(" List of nested cloned objects:~n", []),
+	each_write_type(List11),
 	length(List, N),
-  format(" Length: ~w~n", [N]).
+  format(" Length: ~w~n", [N]),
+	length(List2, N2),
+  format(" Length2: ~w~n", [N2]),
+	length(List3, N3),
+  format(" Length3: ~w~n", [N3]),
+	length(List4, N4),
+  format(" Length4: ~w~n", [N4]),
+	length(List5, N5),
+  format(" Length5: ~w~n", [N5]),
+	length(List6, N6),
+  format(" Length6: ~w~n", [N6]),
+	length(List7, N7),
+  format(" Length7: ~w~n", [N7]),
+	length(List8, N8),
+  format(" Length8: ~w~n", [N8]),
+	length(List9, N9),
+  format(" Length9: ~w~n", [N9]),
+	length(List10, N10),
+  format(" Length10: ~w~n", [N10]),
+	length(List11, N11),
+  format(" Length11: ~w~n", [N11]).
 
 read_eigenframe_files(_, _, [], _List).
 read_eigenframe_files(Spec, Dir, [File|T], List) :-
