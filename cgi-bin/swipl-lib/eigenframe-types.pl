@@ -53,26 +53,31 @@ nominal_EigenFragment(Data, Tab_name, Icon_name, Url) :-
   	url: Url
 	}.
 
-nominal_Define(Define, Define_name, Component) :-
-	Define = _{
+nominal_Define(Data, Define_name, Component) :-
+	Data = _{
   	type: 'Define',
   	name: Define_name,
   	component: Component
 	}.
 
-nominal_Clone(Clone, Define_name, []) :-
-	Clone = _{
+nominal_Clone(Data, Define_name, []) :-
+	Data = _{
   	type: 'Clone',
   	name: Define_name
 	}.
 
-nominal_Clone(Clone, Define_name, Attributes) :-
-	Clone = _{
+nominal_Clone(Data, Define_name, Attributes) :-
+	Data = _{
   	type: 'Clone',
   	name: Define_name,
   	attributes: Attributes
 	}.
 
+%nominal_Clone(Data, Define_name, Attributes) :-
+% this version requires attributes, which may not be true 		
+%		'Clone' == Data.get(type),
+%		Define_name = Data.get(name),
+%		Attributes = Data.get(attributes),
 
 
 
