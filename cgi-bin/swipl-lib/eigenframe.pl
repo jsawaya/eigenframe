@@ -141,37 +141,6 @@ write_type(Data) :-
 
 
 % ----------------------------------------------------
-:- dynamic dyn_define_component/2.
-
-% check dynamic assertion first
-define_component(Define_name, Component) :-
-	dyn_define_component(Define_name, Component).
-
-% create dynamic assertion
-define_component(Define_name, Component) :-
-	format(' assert define_component(~w, ~w)~n', [Define_name, Component]),
-	asserta(dyn_define_component(Define_name, Component)).
-
-each_clone_parse(_Spec, [], _List2).
-each_clone_parse(Spec, [Data|T], List2) :- 
-	write_type(Data),
-	(
-%		'Clone' == Data.get(type),
-%		Attributes == Data.get(attributes),
-		nominal_Clone(Data, Define_name, Attributes), 
-		define_component(Define_name, Component),
-		format(' Write Define-name: ~w~n', [Define_name]),
-%		format(' Write Component: ~w~n', [Component]),
-%		format(' Write Attributes: ~w~n', [Attributes]),
-		Clone = Component.put(Attributes),
-		format(' Write Clone: ~w~n', [Clone]),
-		member(Clone, List2),
-		parse_eigenframe(Spec, Clone, List2)
-		;true
-	),
-	each_clone_parse(Spec, T, List2).
-
-% ----------------------------------------------------
 
 each_write_type([]).
 each_write_type([H|T]) :- 
@@ -253,11 +222,60 @@ read_eigenframe_files(Spec, Dir, [File|T], List) :-
 	),
 	read_eigenframe_files(Spec, Dir, T, List).
 
+% ----------------------------------------------------
+:- dynamic dyn_define_component/2.
+
+% check dynamic assertion first
+define_component(Define_name, Component) :-
+	dyn_define_component(Define_name, Component).
+
+% create dynamic assertion
+define_component(Define_name, Component) :-
+	format(' assert define_component(~w, ~w)~n', [Define_name, Component]),
+	asserta(dyn_define_component(Define_name, Component)).
+
+each_clone_parse(_Spec, [], _List2).
+each_clone_parse(Spec, [Data|T], List2) :- 
+	write_type(Data),
+	(
+%		'Clone' == Data.get(type),
+%		Attributes == Data.get(attributes),
+		nominal_Clone(Data, Define_name, Attributes), 
+		define_component(Define_name, Component),
+		format(' Write Define-name: ~w~n', [Define_name]),
+%		format(' Write Component: ~w~n', [Component]),
+%		format(' Write Attributes: ~w~n', [Attributes]),
+		Clone = Component.put(Attributes),
+%		format(' Write Clone: ~w~n', [Clone]),
+		member(Clone, List2),
+		parse_eigenframe(Spec, Clone, List2)
+		;true
+	),
+	each_clone_parse(Spec, T, List2).
+
+each_member([], _List2).
+each_member([Data|T], List2) :- 
+	member(Data, List2),
+	each_member(T, List2).
+
+recurse_each_clone_parse(_Spec, [], _List2, _List_all).
+recurse_each_clone_parse(Spec, List, List2, List_all) :-
+	length(List, N),
+  format(" Length: ~w~n", [N]),
+	each_clone_parse(Spec, List, List2),
+	each_member(List2, List_all),
+	recurse_each_clone_parse(Spec, List2, _, List_all).
+
 read_eigenframe_files_test(Spec) :- 
 	directory_eigenframe_web_frames(Dir), 
 	directory_files(Dir, E), 
 	read_eigenframe_files(Spec, Dir, E, List),
-	
+	each_member(List, List_all),
+	recurse_each_clone_parse(Spec, List, _, List_all),
+	length(List_all, N_all),
+  format(" Length2: ~w~n", [N_all]).
+
+/*
 	each_clone_parse(Spec, List, List2),
 	each_clone_parse(Spec, List2, List3),
 	each_clone_parse(Spec, List3, List4),
@@ -292,8 +310,31 @@ read_eigenframe_files_test(Spec) :-
   format(" Length10: ~w~n", [N10]),
 	length(List11, N11),
   format(" Length11: ~w~n", [N11]).
+*/
+/*
+write_type: TextView
+write_type: TextView
+write_type: LinearLayout
+write_type: Clone
+ Write Define-name: TextViewDetail
+ Write Clone: _136484{font:font/droid-sans-mono/DroidSansMono.ttf,gravity:left,layout_width:match_parent,ssh_script_list:[var targetVid = eigenFragment.getIntegerVariable('TargetViewId'),var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ,swipl_path = eigenFragment.getViewState(targetVid),swipl_goal = eigenFragment.getViewState(976000) ,'cd '+dir+'; ruby ssh_swipl.rb "'+swipl_path+'" "'+swipl_goal+'"  '],text_color: #ffffff,text_size:10,type:TextView}
+write_type: TextView
+ List of nested cloned objects:
+ Length: 818
+ Length2: 519
+ Length3: 221
+ Length4: 176
+ Length5: 95
+ Length6: 28
+ Length7: 17
+ Length8: 10
+ Length9: 3
+ Length10: 1
+ Length11: 0
+*/
 
 % ----------------------------------------------------
+
 select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
 select_app_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json").
 select_app2_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_gallery.json").
