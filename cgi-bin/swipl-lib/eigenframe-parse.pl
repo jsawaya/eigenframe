@@ -7,15 +7,15 @@ verbose_format(_, _, _).
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('EigenFrame', Spec, Data, List),
-	parse_eigenframe_list(Spec, Data.get(tab_list), List),
 	parse_eigenframe_is_secure_window(Spec, Data,_),
-	parse_eigenframe_script_sources(Spec, Data).
+	parse_eigenframe_script_sources(Spec, Data),
+	parse_eigenframe_list(Spec, Data.get(tab_list), List).
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('EigenFragment', Spec, Data, List),
-	parse_eigenframe_url_expand(Spec, Data, List),
 	parse_eigenframe_name_sources(Spec, Data), 
-	parse_eigenframe_icon_name(Spec, Data,_). 
+	parse_eigenframe_icon_name(Spec, Data,_),
+	parse_eigenframe_eigenfragment_url(Spec, Data, List).
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('ActionList', Spec, Data, List),
@@ -52,15 +52,21 @@ parse_eigenframe(Spec, Data, List) :-
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Clone', Spec, Data, List),
-	parse_eigenframe_name(Spec, Data, _),
+	parse_eigenframe_name(Spec, Data, Define_name),
 	parse_eigenframe_attributes(Spec, Data).
 
 % Note: Define component is probably not be a complete parsable eigenframe type.
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Define', Spec, Data, List),
-	parse_eigenframe_name(Spec, Data,_),
-	X = Data.get(component),
-	verbose_format(Spec, " define-component: ~w~n", X).
+	parse_eigenframe_name(Spec, Data, Define_name),
+	Component = Data.get(component),
+%	verbose_format(Spec, " define-component: ~w~n", Component),
+	(
+		define_component(Define_name, Component),
+		format(' Define: ~w~n ~w~n', [Define_name, Component])
+		;true
+	).
+
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('EditText', Spec, Data, List),
@@ -355,6 +361,12 @@ parse_eigenframe_component(Spec, Data, List) :-
 	verbose_format(Spec, " component: ~w~n", X),
 	parse_eigenframe(Spec, X, List).
 parse_eigenframe_component(_, _, _). 
+
+parse_eigenframe_eigenfragment_url(Spec, Data, List) :- 
+	URL = Data.get(url),
+	verbose_format(Spec, " url: ~w~n", URL),
+	read_json_url(URL, Frame),
+	parse_eigenframe(Spec, Frame, List).
 
 parse_eigenframe_url_expand(Spec, Data, List) :- 
 	URL = Data.get(url),

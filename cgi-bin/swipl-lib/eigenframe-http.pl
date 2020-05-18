@@ -117,7 +117,9 @@ handle_parse(Request) :-
 	directory_file_path(Dir, File, FPath),
 	exists_file(FPath),
   write(" FilePath: "), writeln(FPath),
-	read_eigenframe_file(FPath, List).
+	read_json_file(FPath, Data), 
+	parse_eigenframe(Spec, Data, List).
+
 
 % ----------------------------------------------------
 % http://localhost:8000/files

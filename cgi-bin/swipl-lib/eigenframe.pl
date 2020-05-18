@@ -139,9 +139,28 @@ write_type(Data) :-
 	Type = Data.get(type), 
 	format('write_type: ~w~n', [Type]).
 
+
+% ----------------------------------------------------
+:- dynamic dyn_define_component/2.
+
+% check dynamic assertion first
+define_component(Define_name, Component) :-
+	dyn_define_component(Define_name, Component).
+
+% create dynamic assertion
+define_component(Define_name, Component) :-
+	format(' assert define_component(~w, ~w)~n', [Define_name, Component]),
+	asserta(dyn_define_component(Define_name, Component)).
+
 each_write_type([]).
 each_write_type([H|T]) :- 
 	write_type(H),
+	(
+		nominal_Clone(H, Define_name, _), 
+		define_component(Define_name, Component),
+		format(' Clone: ~w~n ~w~n', [Define_name, Component])
+		;true
+	),
 	each_write_type(T).
 
 % ----------------------------------------------------
@@ -160,19 +179,50 @@ save_json_file(FPath, Data) :-
 
 % ----------------------------------------------------
 
-select_file_test(FName, FPath) :-
-	directory_eigenframe_web_frames(Dir),
-	directory_file_path(Dir, FName, FPath).
+app_data(FName, Data) :-
+	directory_eigenframe_web_apps(Dir),
+	directory_file_path(Dir, FName, FPath),
+	read_json_file(FPath, Data).
 
-read_eigenframe_file(Spec, FPath, List) :-
-	read_json_file(FPath, Data), 
-	parse_eigenframe(Spec, Data, List).
+frame_data(FName, Data) :-
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, FName, FPath),
+	read_json_file(FPath, Data).
 
 % Read json into prolog dict structure (sorts attributes), and parse_eigenframe. 
 read_eigenframe_file_test(Spec, FName) :-
-	select_file_test(FName, FPath),
-	read_eigenframe_file(Spec, FPath, List),
-	each_write_type(List).
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, FName, FPath),
+	read_json_file(FPath, Data), 
+	parse_eigenframe(Spec, Data, List),
+	each_write_type(List),
+	length(List, N),
+  format(" Length: ~w~n", [N]).
+
+read_frame_url_test(Spec) :-
+	select_frame_url(URL), 
+	read_json_url(URL, Data), 
+	parse_eigenframe(Spec, Data, List),
+	each_write_type(List),
+	length(List, N),
+  format(" Length: ~w~n", [N]).
+
+read_app_url_test(Spec) :-
+	select_app_url(URL), 
+	read_json_url(URL, Data), 
+	parse_eigenframe(Spec, Data, List),
+	each_write_type(List),
+	length(List, N),
+  format(" Length: ~w~n", [N]).
+
+read_app2_url_test(Spec) :-
+	select_app2_url(URL), 
+	read_json_url(URL, Data), 
+	parse_eigenframe(Spec, Data, List),
+	each_write_type(List),
+	length(List, N),
+  format(" Length: ~w~n", [N]).
+
 
 % ----------------------------------------------------
 
@@ -182,23 +232,19 @@ read_eigenframe_files_test(Spec) :-
 	read_eigenframe_files(Spec, Dir, E, List),
 	each_write_type(List),
 	length(List, N),
-  write(" Length: "), writeln(N).
+  format(" Length: ~w~n", [N]).
 
 read_eigenframe_files(_, _, [], _List).
 read_eigenframe_files(Spec, Dir, [File|T], List) :-
 	directory_file_path(Dir, File, FPath),
 	(
 		exists_file(FPath),
-		read_eigenframe_file(Spec, FPath, List),
-	  write(" Read EigenFrame FilePath: "), writeln(FPath)
+		read_json_file(FPath, Data), 
+		parse_eigenframe(Spec, Data, List),
+	  format(" Read EigenFrame FilePath: ~w~n", [FPath])
 		;true
 	),
 	read_eigenframe_files(Spec, Dir, T, List).
-
-%-----------------------------------------------
-
-filter(_{type:Type}, _Data) :-
-  write(" Type: "), writeln(Type).
 
 % ----------------------------------------------------
 select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
@@ -230,31 +276,11 @@ show_app2_url_test :-
 
 
 % ----------------------------------------------------
-
-read_eigenframe_url(Spec, URL, List) :-
-	read_json_url(URL, Data), 
-	parse_eigenframe(Spec, Data, List).
-
-read_frame_url_test :-
-	select_frame_url(URL), 
-	read_eigenframe_url(URL, List),
-	each_write_type(List).
-
-read_app_url_test :-
-	select_app_url(URL), 
-	read_eigenframe_url(URL, List),
-	each_write_type(List).
-
-read_app2_url_test :-
-	select_app2_url(URL), 
-	read_eigenframe_url(URL, List),
-	each_write_type(List).
-
-% ----------------------------------------------------
-
+/*
 % Read json into prolog dict structure (sorts attributes), then write back into same file. 
 organize_eigenframe_file_test :-
-	select_file_test(FPath),
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, FName, FPath).
 	organize_eigenframe_file(FPath).
 
 organize_eigenframe_file(FPath) :-
@@ -275,7 +301,7 @@ organize_eigenframe_files(Dir, [File|T]) :-
 		;true
 	),
 	organize_eigenframe_files(Dir, T).
-
+*/
 % ----------------------------------------------------
 
 % Here are examples to search for a given EigenFrame type
