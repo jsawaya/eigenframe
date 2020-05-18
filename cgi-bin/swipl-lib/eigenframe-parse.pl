@@ -55,18 +55,12 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_name(Spec, Data, _),
 	parse_eigenframe_attributes(Spec, Data).
 
-% Note: Define component is probably not be a complete parsable eigenframe type.
+% Note: Define component is rarely a complete parsable eigenframe type.
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Define', Spec, Data, List),
 	parse_eigenframe_name(Spec, Data, Define_name),
 	Component = Data.get(component),
-%	verbose_format(Spec, " define-component: ~w~n", Component),
-	(
-		define_component(Define_name, Component),
-		format(' Define: ~w~n ~w~n', [Define_name, Component])
-		;true
-	).
-
+	define_component(Define_name, Component).
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('EditText', Spec, Data, List),

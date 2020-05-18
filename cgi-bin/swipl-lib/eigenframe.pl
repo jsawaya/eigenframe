@@ -241,10 +241,23 @@ read_app2_url_test(Spec) :-
 
 % ----------------------------------------------------
 
+read_eigenframe_files(_, _, [], _List).
+read_eigenframe_files(Spec, Dir, [File|T], List) :-
+	directory_file_path(Dir, File, FPath),
+	(
+		exists_file(FPath),
+		read_json_file(FPath, Data), 
+		parse_eigenframe(Spec, Data, List),
+	  format(" Read EigenFrame FilePath: ~w~n", [FPath])
+		;true
+	),
+	read_eigenframe_files(Spec, Dir, T, List).
+
 read_eigenframe_files_test(Spec) :- 
 	directory_eigenframe_web_frames(Dir), 
 	directory_files(Dir, E), 
 	read_eigenframe_files(Spec, Dir, E, List),
+	
 	each_clone_parse(Spec, List, List2),
 	each_clone_parse(Spec, List2, List3),
 	each_clone_parse(Spec, List3, List4),
@@ -279,18 +292,6 @@ read_eigenframe_files_test(Spec) :-
   format(" Length10: ~w~n", [N10]),
 	length(List11, N11),
   format(" Length11: ~w~n", [N11]).
-
-read_eigenframe_files(_, _, [], _List).
-read_eigenframe_files(Spec, Dir, [File|T], List) :-
-	directory_file_path(Dir, File, FPath),
-	(
-		exists_file(FPath),
-		read_json_file(FPath, Data), 
-		parse_eigenframe(Spec, Data, List),
-	  format(" Read EigenFrame FilePath: ~w~n", [FPath])
-		;true
-	),
-	read_eigenframe_files(Spec, Dir, T, List).
 
 % ----------------------------------------------------
 select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").
