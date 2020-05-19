@@ -249,6 +249,8 @@
 								"if (position == 7) url += 'search?type=JavaScript' ",
 								"if (position == 8) url += 'search?type=UrlRequest' ",
 								"if (position == 9) url += 'search?type=SecureShell' ",
+								"if (position ==10) url += 'proxy?url=http://localhost:8000/proxy?url=https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json' ",
+								"if (position ==11) url += 'proxy?url=http://localhost:8000/proxy?url=https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/playlist.json' ",
 								"eigenFragment.setViewState(999112, url)"
 							],
 							"type": "JavaScript"
@@ -263,7 +265,9 @@
 							" 6. search for type: SelectDialog",
 							" 7. search for type: JavaScript",
 							" 8. search for type: UrlRequest",
-							" 9. search for type: SecureShell"
+							" 9. search for type: SecureShell",
+							"10. proxy url to app: app_github_master.json",
+							"11. proxy url to frame: playlist.json"
 						],
 						"title": "Select Prolog URL:",
 						"type": "SelectDialog"

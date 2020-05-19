@@ -153,7 +153,6 @@ handle_proxy(Request) :-
 	http_parameters(Request,
   	[	url(Url, [ optional(true) ]) 
 		]),
-%	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	read_json_url(Url, Data), 
 	reply_json_dict(Data).
 
@@ -164,7 +163,6 @@ handle_frame(Request) :-
 	http_parameters(Request,
   	[	file(FName, [ optional(true) ]) 
 		]),
-%	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	directory_eigenframe_web_frames(Dir),
 	directory_file_path(Dir, FName, FPath),
 	read_json_file(FPath, Data), 
