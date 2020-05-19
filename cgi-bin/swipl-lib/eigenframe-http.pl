@@ -22,12 +22,16 @@
 :- http_handler('/hi', say_hi, []).
 :- http_handler('/time', handle_time_request, []).
 :- http_handler('/parms', handle_parms, []).
+
+:- http_handler('/proxy', handle_proxy, []).
+
 :- http_handler('/frame', handle_frame, []).
-:- http_handler('/files', handle_files, []).
 :- http_handler('/search', handle_search, []).
 :- http_handler('/parse', handle_parse, []).
-:- http_handler('/api', handle_api, []).
 :- http_handler('/halt', handle_halt, []).
+
+%:- http_handler('/files', handle_files, []).
+%:- http_handler('/api', handle_api, []).
 
 :- multifile http_json/1.
 
@@ -83,17 +87,20 @@ handle_halt(_Request) :-
 	halt.
 
 % ----------------------------------------------------
-solve(_{a:X, b:Y}, _{answer:N}) :-
-	number(X),
-	number(Y),
-	N is X + Y.
+% json api example - not used
+%solve(_{a:X, b:Y}, _{answer:N}) :-
+%	number(X),
+%	number(Y),
+%	N is X + Y.
 
-handle_api(Request) :-
-	http_read_json_dict(Request, Query),
-	solve(Query, Solution),
-	reply_json_dict(Solution).
+%handle_api(Request) :-
+%	http_read_json_dict(Request, Query),
+%	solve(Query, Solution),
+%	reply_json_dict(Solution).
 
 % ----------------------------------------------------
+% search for instances of a given type
+% search is limited to static references, and non-clones
 % http://localhost:8000/search?type=PopupHtmlView
 % http://localhost:8000/search?type=EditText
 handle_search(Request) :-
@@ -106,7 +113,9 @@ handle_search(Request) :-
 	true.
 
 % ----------------------------------------------------
-% http://localhost:8000/parse
+% parse a given static file in web/frames/*
+% http://localhost:8000/parse?file=define-clones.json
+% http://localhost:8000/parse?file=playlist.json
 handle_parse(Request) :-
 	http_parameters(Request,
   	[	file(File, [ optional(false) ]) 
@@ -118,18 +127,35 @@ handle_parse(Request) :-
 	exists_file(FPath),
   write(" FilePath: "), writeln(FPath),
 	read_json_file(FPath, Data), 
-	parse_eigenframe(Spec, Data, List).
+	eigenframe_types(Spec),
+	parse_eigenframe(['Verbose'|Spec], Data, List),
+	each_write_type(List),
+	length(List, N),
+	format(" Length: ~w~n", [N]).
 
 
 % ----------------------------------------------------
 % http://localhost:8000/files
-handle_files(_Request) :-
-	format('Content-type: text/plain~n~n', []),
-	directory_eigenframe_web_frames(Dir),
-	writeln("Directory: "), writeln(Dir),
-	directory_files(Dir, E), 
-	sort(E,Entries), 
-	read_filenames(Dir, Entries).
+%handle_files(_Request) :-
+%	format('Content-type: text/plain~n~n', []),
+%	directory_eigenframe_web_frames(Dir),
+%	writeln("Directory: "), writeln(Dir),
+%	directory_files(Dir, E), 
+%	sort(E,Entries), 
+%	read_filenames(Dir, Entries).
+
+% ----------------------------------------------------
+% http://localhost:8000/proxy?url=https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/define-clones.json
+% http://localhost:8000/proxy?url=https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/apps/app_github_master.json
+
+% show json frame given url
+handle_proxy(Request) :-
+	http_parameters(Request,
+  	[	url(Url, [ optional(true) ]) 
+		]),
+%	format('Content-type: application/json; charset=UTF-8~n~n', []),
+	read_json_url(Url, Data), 
+	reply_json_dict(Data).
 
 % ----------------------------------------------------
 % http://localhost:8000/frame?file=test-TextView.json
@@ -152,6 +178,7 @@ handle(Request) :-
 			age(Age,     [ between(0, 150) ])
 		]),
 */
+
 % ----------------------------------------------------
 handle_parms(Request) :-
 	format('Content-type: text/html~n~n', []),

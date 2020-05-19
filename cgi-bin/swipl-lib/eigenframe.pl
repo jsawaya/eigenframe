@@ -360,6 +360,19 @@ show_app2_url_test :-
 	select_app2_url(URL), 
 	show_json_url(URL).
 
+app_url_parse(Spec) :-
+	select_app_url(URL), 
+	read_json_url(URL, Data), 
+	parse_eigenframe(Spec, Data, List),
+%	each_write_type(List),
+%	length(List, N),
+% format(" Length: ~w~n", [N]).
+	each_member(List, List_all),
+	recurse_each_clone_parse(Spec, List, _, List_all),
+	length(List_all, N_all),
+  format(" Length2: ~w~n", [N_all]).
+
+
 
 % ----------------------------------------------------
 /*
