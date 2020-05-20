@@ -104,6 +104,22 @@ add_eigenfragment_to_list(Data, Tab_list) :-
 
 %-----------------------------------------------
 
+nominal_LinearLayout(Data, Orientation, Scrollable, Component_list) :-
+	Data = _{
+  	type: 'LinearLayout',
+  	orientation: Orientation,
+		scrollable: Scrollable,
+  	component_list: Component_list
+	}.
+
+nominal_TextView(Data, Text, Text_size) :-
+	Data = _{
+  	type: 'TextView',
+  	text: Text,
+  	text_size: Text_size,
+		text_color: '#ffffff'
+	}.
+
 nominal_ActionList(Data, Component_list, On_complete) :-
 	Data = _{
   	type: 'ActionList',
@@ -164,14 +180,6 @@ nominal_JavaScript(Data, Script) :-
 	Data = _{
   	type: 'JavaScript',
   	script: Script
-	}.
-
-nominal_LinearLayout(Data, Orientation, Scrollable, Component_list) :-
-	Data = _{
-  	type: 'LinearLayout',
-  	orientation: Orientation,
-		scrollable: Scrollable,
-  	component_list: Component_list
 	}.
 
 nominal_ListView(Data, Option_list, On_click) :-
@@ -247,14 +255,6 @@ nominal_Switch(Data, Text, On_click) :-
   	type: 'Switch',
   	text: Text,
   	on_click: On_click
-	}.
-
-nominal_TextView(Data, Text, Text_size) :-
-	Data = _{
-  	type: 'TextView',
-  	text: Text,
-  	text_size: Text_size,
-		text_color: '#ffffff'
 	}.
 
 nominal_ToastMessage(Data, Message) :-

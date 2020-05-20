@@ -24,7 +24,9 @@
 :- http_handler('/parms', handle_parms, []).
 
 :- http_handler('/proxy', handle_proxy, []).
+
 :- http_handler('/app', handle_app, []).
+:- http_handler('/layout', handle_layout, []).
 
 :- http_handler('/frame', handle_frame, []).
 :- http_handler('/search', handle_search, []).
@@ -168,21 +170,17 @@ handle_app(_Request) :-
 %	format('Content-type: text/plain~n~n', []),
 	nominal_EigenFragment(Data1, 'button', 'info.', 'http://localhost:8000/frame?file=test-Button.json'),
 	nominal_EigenFragment(Data2, 'textview', 'info.', 'http://localhost:8000/frame?file=test-TextView.json'),
-	nominal_EigenFrame(Data, false, [Data1, Data2]),
+	nominal_EigenFragment(Data3, 'layout', 'info.', 'http://localhost:8000/layout'),
+	nominal_EigenFrame(Data, false, [Data1, Data2, Data3]),
 	show_json(Data).
 
 % ----------------------------------------------------
-% http://localhost:8000/app
-% create simple app
-handle_app(_Request) :-
-%	http_parameters(Request,
-%  	[	file(FName, [ optional(true) ]) 
-%		]),
+% http://localhost:8000/layout
+% create simple layout
+handle_layout(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
-%	format('Content-type: text/plain~n~n', []),
-	nominal_EigenFragment(Data1, 'button', 'info.', 'http://localhost:8000/frame?file=test-Button.json'),
-	nominal_EigenFragment(Data2, 'textview', 'info.', 'http://localhost:8000/frame?file=test-TextView.json'),
-	nominal_EigenFrame(Data, false, [Data1, Data2]),
+	nominal_TextView(Data1, 'this is a test', 14),
+	nominal_LinearLayout(Data, 'vertical', true, [Data1]),
 	show_json(Data).
 
 % ----------------------------------------------------
