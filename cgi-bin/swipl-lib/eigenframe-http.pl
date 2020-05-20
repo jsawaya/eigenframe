@@ -24,6 +24,7 @@
 :- http_handler('/parms', handle_parms, []).
 
 :- http_handler('/proxy', handle_proxy, []).
+:- http_handler('/app', handle_app, []).
 
 :- http_handler('/frame', handle_frame, []).
 :- http_handler('/search', handle_search, []).
@@ -155,6 +156,34 @@ handle_proxy(Request) :-
 		]),
 	read_json_url(Url, Data), 
 	reply_json_dict(Data).
+
+% ----------------------------------------------------
+% http://localhost:8000/app
+% create simple app
+handle_app(_Request) :-
+%	http_parameters(Request,
+%  	[	file(FName, [ optional(true) ]) 
+%		]),
+	format('Content-type: application/json; charset=UTF-8~n~n', []),
+%	format('Content-type: text/plain~n~n', []),
+	nominal_EigenFragment(Data1, 'button', 'info.', 'http://localhost:8000/frame?file=test-Button.json'),
+	nominal_EigenFragment(Data2, 'textview', 'info.', 'http://localhost:8000/frame?file=test-TextView.json'),
+	nominal_EigenFrame(Data, false, [Data1, Data2]),
+	show_json(Data).
+
+% ----------------------------------------------------
+% http://localhost:8000/app
+% create simple app
+handle_app(_Request) :-
+%	http_parameters(Request,
+%  	[	file(FName, [ optional(true) ]) 
+%		]),
+	format('Content-type: application/json; charset=UTF-8~n~n', []),
+%	format('Content-type: text/plain~n~n', []),
+	nominal_EigenFragment(Data1, 'button', 'info.', 'http://localhost:8000/frame?file=test-Button.json'),
+	nominal_EigenFragment(Data2, 'textview', 'info.', 'http://localhost:8000/frame?file=test-TextView.json'),
+	nominal_EigenFrame(Data, false, [Data1, Data2]),
+	show_json(Data).
 
 % ----------------------------------------------------
 % http://localhost:8000/frame?file=test-TextView.json
