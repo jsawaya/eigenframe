@@ -336,13 +336,22 @@
 				"type": "Clone"
 			},
 			{
+				"background_color": "#000000",
+				"id": 16608,
+				"x-is_single_line": "true",
+				"layout_width": "match_parent",
+				"text": "nominal_TextView(D,'test',14),show_json(D)",
+				"text_color": "#ffffff",
+				"type": "EditText"
+			},
+			{
 				"background_color": "#654321",
 				"icon": {
 					"location": "top",
 					"name": "info."
 				},
 				"on_click": {
-					"id": 6605,
+					"id": 16605,
 					"is_eigen_response": "false",
 					"on_complete": {
 						"attributes": {
@@ -352,7 +361,7 @@
 										"component_list": [
 											{
 												"attributes": {
-													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:6605"
+													"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:16605"
 												},
 												"name": "TextViewDetail",
 												"type": "Clone"
@@ -375,7 +384,7 @@
 						},
 						{
 							"name": "g",
-							"value": "nominal_TextView(D,'test',14),show_json(D)"
+							"value_script": "'' + eigenFragment.getViewState(16608)"
 						}
 					],
 					"type": "UrlRequest",
