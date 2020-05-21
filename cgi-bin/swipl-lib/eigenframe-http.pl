@@ -164,11 +164,11 @@ handle_proxy(Request) :-
 
 % ----------------------------------------------------
 % http://localhost:8000/prolog
-% http://localhost:8000/prolog?g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
-% http://localhost:8000/prolog?dbug=true&g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
-% http://localhost:8000/prolog?mime=text&dbug=true&g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
-% http://localhost:8000/prolog?mime=text&g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
-% http://localhost:8000/prolog?mime=json&g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
+% http://localhost:8000/prolog?g=nominal_TextView(D,'tst',14),show_json(D)
+% http://localhost:8000/prolog?dbug=true&g=nominal_TextView(D,'tst',14),show_json(D)
+% http://localhost:8000/prolog?mime=text&dbug=true&g=nominal_TextView(D,'tst',14),show_json(D)
+% http://localhost:8000/prolog?mime=text&g=nominal_TextView(D,%27tst%27,14),show_json(D)
+% http://localhost:8000/prolog?mime=json&g=nominal_TextView(D,%27tst%27,14),show_json(D)
 
 handle_prolog(Request) :-
 	http_parameters(Request,
