@@ -488,3 +488,13 @@ search_eigenframe_list(FPath, [H|T], Type) :-
 	search_eigenframe_type(FPath, H, Type);true,
   search_eigenframe_list(FPath, T, Type).
 
+% ----------------------------------------------------
+
+proc_list(Term, Result) :-
+    Term =.. [Proc, X],               % Assumes terms have just one argument
+    member(Proc, [listing]),         % True only on recognized terms
+    proc_list(X, R1),                 % Recursively process embedded term
+    ProcCall =.. [Proc, R1, Result],  % Construct a calling term with Result
+    call(ProcCall), !.
+proc_list(X, X).
+

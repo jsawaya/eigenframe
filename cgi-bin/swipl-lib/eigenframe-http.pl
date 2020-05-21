@@ -28,6 +28,8 @@
 :- http_handler('/app', handle_app, []).
 :- http_handler('/layout', handle_layout, []).
 
+:- http_handler('/prolog', handle_prolog, []).
+
 :- http_handler('/frame', handle_frame, []).
 :- http_handler('/search', handle_search, []).
 :- http_handler('/parse', handle_parse, []).
@@ -154,10 +156,47 @@ handle_parse(Request) :-
 % show json frame given url
 handle_proxy(Request) :-
 	http_parameters(Request,
-  	[	url(Url, [ optional(true) ]) 
+  	[	url(Url, [ optional(false) ]) 
 		]),
 	read_json_url(Url, Data), 
 	reply_json_dict(Data).
+
+
+% ----------------------------------------------------
+% http://localhost:8000/prolog
+% http://localhost:8000/prolog?g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
+% http://localhost:8000/prolog?dbug=true&g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
+% http://localhost:8000/prolog?mime=text&dbug=true&g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
+% http://localhost:8000/prolog?mime=text&g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
+% http://localhost:8000/prolog?mime=json&g=nominal_TextView(D,%27tst%27,%2014),show_json(D)
+
+handle_prolog(Request) :-
+	http_parameters(Request,
+  	[	g(GoalText, []), 
+			dbug(Dbug, [boolean,optional(true),default(false)]),
+			mime(Mime, [optional(true),default(text)])
+		]),
+	(
+		Mime == 'text',
+		format('Content-type: text/plain~n~n', [])
+		;true
+	),
+	(
+		Mime == 'json',
+		format('Content-type: application/json; charset=UTF-8~n~n', [])
+		;true
+	),
+	atom_to_term(GoalText, Term, Bindings),
+	(
+		Dbug == true,
+		Mime == 'text',
+		format('Term: ~w~n', [Term]),
+		format('Bindings: ~w~n', [Bindings])
+		;true
+	),
+	callable(Term),
+	ignore(Term).
+%	call(Term).
 
 % ----------------------------------------------------
 % http://localhost:8000/app
