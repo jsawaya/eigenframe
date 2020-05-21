@@ -561,7 +561,7 @@
         "on_click": {
           "attributes": {
             "title": "Prolog",
-            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl.json'"
+            "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-swipl.json'"
           },
           "name": "PopupScreenDefault",
           "type": "Clone"
