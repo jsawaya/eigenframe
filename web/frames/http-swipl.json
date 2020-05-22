@@ -6,7 +6,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Execute Prolog Inference Engine"
+				"text": "Prolog Inference Engine"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -69,12 +69,12 @@
 								"type": "Clone"
 							}
 						],
-						"title": "Start SWI-Prolog HTTP Service"
+						"title": "Start HTTP Service"
 					},
 					"name": "PopupScreenDefault",
 					"type": "Clone"
 				},
-				"text": "Start SWI-Prolog HTTP Service"
+				"text": "Start HTTP Service"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
@@ -121,48 +121,10 @@
 		},
 		{
 			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"url": "http://localhost:8000/search?type=EditText",
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Search EigenFrame Files for Type=EditText"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Search EigenFrame Files for Type=EditText"
+				"text": "EigenFrame Prolog HTTP Examples"
 			},
-			"name": "ButtonDefault",
+			"name": "TextViewLabel",
 			"type": "Clone"
-		},
-		{
-			"background_color": "#11ff0000",
-			"id": 999112,
-			"layout_height": "wrap_content",
-			"layout_width": "match_parent",
-			"text_color": "#ffffff",
-			"text_size": "14",
-			"type": "EditText"
 		},
 		{
 			"attributes": {
@@ -214,14 +176,24 @@
 						"12. prolog url with debug",
 						"13. prolog url to json"
 					],
-					"title": "Select Prolog URL:",
+					"title": "Select URL:",
 					"type": "SelectDialog"
 				},
-				"text": "Select Prolog URL",
+				"text": "Select URL",
 				"text_color": "#ffffff"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
+		},
+		{
+			"background_color": "#11ff0000",
+			"id": 999112,
+			"is_single_line": "true",
+			"layout_height": "wrap_content",
+			"layout_width": "match_parent",
+			"text_color": "#ffffff",
+			"text_size": "14",
+			"type": "EditText"
 		},
 		{
 			"attributes": {
@@ -249,15 +221,35 @@
 								"type": "Clone"
 							}
 						],
-						"title": "Execute Selected Prolog URL"
+						"title": "Invoke URL Request"
 					},
 					"name": "PopupScreenDefault",
 					"type": "Clone"
 				},
-				"text": "Execute Selected Prolog URL"
+				"text": "Invoke URL Request"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "EigenFrame Prolog Command Line (via http-post/prolog):"
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"background_color": "#11ff0000",
+			"id": 16608,
+			"layout_width": "match_parent",
+			"text": "nominal_TextView(D,'test',14),show_json(D)",
+			"text_color": "#ffffff",
+			"text_size": "14",
+			"type": "EditText"
 		},
 		{
 			"attributes": {
@@ -266,30 +258,44 @@
 					"name": "open_browser."
 				},
 				"on_click": {
-					"script_list": [
-						"eigenActivity.launch('http://localhost:8000/app')"
-					],
-					"type": "JavaScript"
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"url": "http://localhost:8000/search?type=EditText",
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Search EigenFrame Files for Type=EditText"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
 				},
-				"text": "Launch EigenFrame App URL"
+				"text": "Search EigenFrame Files for Type=EditText"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
 		},
 		{
-			"background_color": "#000000",
-			"id": 16608,
-			"x-is_single_line": "true",
-			"layout_width": "match_parent",
-			"text": "nominal_TextView(D,'test',14),show_json(D)",
-			"text_color": "#ffffff",
-			"type": "EditText"
+			"name": "HorizontalLine",
+			"type": "Clone"
 		},
 		{
 			"background_color": "#654321",
 			"icon": {
 				"location": "top",
-				"name": "info."
+				"name": "open_browser."
 			},
 			"on_click": {
 				"id": 16605,
@@ -331,9 +337,26 @@
 				"type": "UrlRequest",
 				"url": "http://localhost:8000/prolog"
 			},
-			"text": "Create TextView (via http-post/prolog)",
+			"text": "Create TextView (via http-post)",
 			"text_color": "#ffffff",
 			"type": "Button"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"script_list": [
+						"eigenActivity.launch('http://localhost:8000/app')"
+					],
+					"type": "JavaScript"
+				},
+				"text": "Launch Dynamic App URL (via http/prolog)"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
 		},
 		{
 			"name": "HorizontalLine",
