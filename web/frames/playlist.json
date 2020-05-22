@@ -36,16 +36,6 @@
       "type": "Clone"
     },
     {
-      "background_color": "#11ff0000",
-      "id": 999102,
-      "layout_height": "wrap_content",
-      "layout_width": "match_parent",
-      "text_color": "#ffffff",
-      "text_size": "14",
-      "type": "EditText",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt"
-    },
-    {
       "attributes": {
         "icon": {
           "location": "top",
@@ -90,7 +80,18 @@
       "type": "Clone"
     },
     {
+      "background_color": "#11ff0000",
+      "id": 999102,
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "EditText",
+      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/home-url.txt"
+    },
+    {
       "attributes": {
+        "background_color": "#225522",
         "icon": {
           "location": "top",
           "name": "open_browser."
@@ -294,11 +295,21 @@
       "type": "Clone"
     },
     {
-      "attributes": {
-        "icon": {
-          "location": "top",
-          "name": "github_logo."
+      "layout_height": "100",
+      "layout_width": "match_parent",
+      "on_click": {
+        "attributes": {
+          "title": "GitHub",
+          "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-git-admin.json'"
         },
+        "name": "PopupScreenDefault",
+        "type": "Clone"
+      },
+      "type": "ImageView",
+      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/Octocat.jpg'",
+    },
+    {
+      "attributes": {
         "on_click": {
           "attributes": {
             "title": "GitHub",
@@ -307,7 +318,7 @@
           "name": "PopupScreenDefault",
           "type": "Clone"
         },
-        "text": "GitHub"
+        "text": "Git / GitHub Repository"
       },
       "name": "ButtonDefault",
       "type": "Clone"
@@ -604,7 +615,6 @@
       },
       "type": "ImageView",
       "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/gnupg.jpg'",
-      "x-url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/image/eigenframe.png"
     },
     {
       "attributes": {
@@ -687,6 +697,7 @@
     },
     {
       "attributes": {
+        "background_color": "#225522",
         "icon": {
           "location": "top",
           "name": "open_browser."

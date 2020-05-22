@@ -321,6 +321,7 @@
 		},
 		{
 			"attributes": {
+				"background_color": "#225522",
 				"icon": {
 					"location": "top",
 					"name": "open_browser."
