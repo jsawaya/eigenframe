@@ -306,7 +306,7 @@
         "type": "Clone"
       },
       "type": "ImageView",
-      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/Octocat.jpg'",
+      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/Octocat.jpg'"
     },
     {
       "attributes": {
