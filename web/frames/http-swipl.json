@@ -237,9 +237,16 @@
 		},
 		{
 			"attributes": {
-				"text": "Prolog Command Line\n(via http-post):"
+				"text": "EigenFrame Prolog Command"
 			},
 			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "CLI (via http-post) to call predicates from eigenframe-http, eigenframe-parse, eigenframe-types, etc."
+			},
+			"name": "TextViewDetail",
 			"type": "Clone"
 		},
 		{
