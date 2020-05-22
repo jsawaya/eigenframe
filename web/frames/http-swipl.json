@@ -6,7 +6,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Prolog Inference Engine"
+				"text": "SWI-Prolog Inference Engine"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -36,7 +36,7 @@
 		},
 		{
 			"attributes": {
-				"text": "EigenFrame Prolog Services"
+				"text": "EigenFrame Prolog HTTP Service"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -237,9 +237,9 @@
 		},
 		{
 			"attributes": {
-				"text": "EigenFrame Prolog Command Line (via http-post/prolog):"
+				"text": "Prolog Command Line\n(via http-post):"
 			},
-			"name": "TextViewDetail",
+			"name": "TextViewLabel",
 			"type": "Clone"
 		},
 		{
@@ -250,6 +250,60 @@
 			"text_color": "#ffffff",
 			"text_size": "14",
 			"type": "EditText"
+		},
+		{
+			"background_color": "#654321",
+			"icon": {
+				"location": "top",
+				"name": "open_browser."
+			},
+			"on_click": {
+				"id": 16605,
+				"is_eigen_response": "false",
+				"on_complete": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:16605"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Execute Prolog Command (via http-post/prolog)"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"parameter_list": [
+					{
+						"name": "dbug",
+						"value": true
+					},
+					{
+						"name": "g",
+						"value_script": "'' + eigenFragment.getViewState(16608)"
+					}
+				],
+				"type": "UrlRequest",
+				"url": "http://localhost:8000/prolog"
+			},
+			"text": "Execute Prolog Command",
+			"text_color": "#ffffff",
+			"type": "Button"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
 		},
 		{
 			"attributes": {
@@ -290,56 +344,6 @@
 		{
 			"name": "HorizontalLine",
 			"type": "Clone"
-		},
-		{
-			"background_color": "#654321",
-			"icon": {
-				"location": "top",
-				"name": "open_browser."
-			},
-			"on_click": {
-				"id": 16605,
-				"is_eigen_response": "false",
-				"on_complete": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:16605"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Create TextView (via http-post/prolog)"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"parameter_list": [
-					{
-						"name": "dbug",
-						"value": true
-					},
-					{
-						"name": "g",
-						"value_script": "'' + eigenFragment.getViewState(16608)"
-					}
-				],
-				"type": "UrlRequest",
-				"url": "http://localhost:8000/prolog"
-			},
-			"text": "Create TextView (via http-post)",
-			"text_color": "#ffffff",
-			"type": "Button"
 		},
 		{
 			"attributes": {
