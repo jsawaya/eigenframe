@@ -314,6 +314,30 @@
 		},
 		{
 			"attributes": {
+				"text": "Dynamic Prolog EigenFrames"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"script_list": [
+						"eigenActivity.launch('http://localhost:8000/app')"
+					],
+					"type": "JavaScript"
+				},
+				"text": "Launch Dynamic App URL (via http/prolog)"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
 				"icon": {
 					"location": "top",
 					"name": "open_browser."
@@ -344,27 +368,6 @@
 					"type": "Clone"
 				},
 				"text": "Search EigenFrame Files for Type=EditText"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"name": "HorizontalLine",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"script_list": [
-						"eigenActivity.launch('http://localhost:8000/app')"
-					],
-					"type": "JavaScript"
-				},
-				"text": "Launch Dynamic App URL (via http/prolog)"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
