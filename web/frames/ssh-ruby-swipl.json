@@ -15,15 +15,14 @@
 			"attributes": {
 				"text_list": [
 					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. ",
-					" 1) Five colored houses in a row, each with an owner, a pet, cigarettes, and a drink.",
 					"",
-					"Here are some examples that demonstrate classic logic problems:",
-					" - Route Planning -- enumerate combinatorial solutions",
-					" - Relationships -- producing inferred associations",
-					" - Zebra Puzzle -- symbolic constraint satisfaction",
-					" - Sudoku -- numeric constraint satisfaction",
-					" - List Handling -- simple recursion",
-					" - KB testing -- enables prolog develpment "
+					"Some classic logic problems:",
+					" 1) Route Planning - enumeration",
+					" 2) Relationships - association",
+					" 3) Zebra Puzzle - symbolic constraint satisfaction",
+					" 4) Sudoku - numeric constraint satisfaction",
+					" 5) List Handling - recursion",
+					" 6) KB testing / develpment"
 				]
 			},
 			"name": "TextViewDetail",
@@ -35,7 +34,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Route Planning Example"
+				"text": "1) Route Planning Example"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -163,7 +162,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Relationships"
+				"text": "2) Relationships"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -336,7 +335,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Zebra Puzzle"
+				"text": "3) Zebra Puzzle"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -532,7 +531,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Sudoku"
+				"text": "4) Sudoku"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -638,7 +637,7 @@
 		},
 		{
 			"attributes": {
-				"text": "List Handling"
+				"text": "5) List Handling"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -727,7 +726,7 @@
 		},
 		{
 			"attributes": {
-				"text": "KB Testing"
+				"text": "6) KB Testing / Development"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
