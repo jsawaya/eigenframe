@@ -111,11 +111,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select EigenFrame File')",
-					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedPath', '')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999701)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select EigenFrame File');",
+					"eigenFragment.setCacheString('WorkingDirectory', 'git-repos/eigenframe');",
+					"eigenFragment.setCacheString('SelectedPath', '');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999701);"
 				],
 				"type": "JavaScript"
 			},
@@ -149,10 +149,10 @@
 											{
 												"attributes": {
 													"ssh_script_list": [
-														"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-														"var selected_file = eigenFragment.getCacheString('SelectedFile')",
-														"var git_filepath = eigenFragment.concatPaths(selected_path, selected_file)",
-														"'cd ~/git-repos/eigenframe ; git diff master:' + git_filepath + ' -- ' + git_filepath "
+														"var selected_path = eigenFragment.getCacheString('SelectedPath');",
+														"var selected_file = eigenFragment.getCacheString('SelectedFile');",
+														"var git_filepath = eigenFragment.concatPaths(selected_path, selected_file);",
+														"'cd ~/git-repos/eigenframe ; git diff master:' + git_filepath + ' -- ' + git_filepath;"
 													],
 													"text_size": "10"
 												},
@@ -190,10 +190,10 @@
 											{
 												"attributes": {
 													"ssh_script_list": [
-														"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-														"var selected_file = eigenFragment.getCacheString('SelectedFile')",
-														"var git_filepath = eigenFragment.concatPaths(selected_path, selected_file)",
-														"'cd ~/git-repos/eigenframe ; git restore ' + git_filepath "
+														"var selected_path = eigenFragment.getCacheString('SelectedPath');",
+														"var selected_file = eigenFragment.getCacheString('SelectedFile');",
+														"var git_filepath = eigenFragment.concatPaths(selected_path, selected_file);",
+														"'cd ~/git-repos/eigenframe ; git restore ' + git_filepath;"
 													],
 													"text_size": "10"
 												},

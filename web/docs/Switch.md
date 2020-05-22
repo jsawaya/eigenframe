@@ -46,7 +46,7 @@ Example:
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
+          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300));"
         ]
       }
     }

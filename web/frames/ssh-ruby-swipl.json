@@ -226,10 +226,10 @@
 												],
 												"text_size": "10",
 												"x-ssh_script_list": [
-													"swipl_path = 'swipl-lib/swipl.pl' ",
-													"swipl_goal = 'sibling(X,Y)' ",
-													"cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;' ",
-													"cmd+'ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
+													"swipl_path = 'swipl-lib/swipl.pl' ;",
+													"swipl_goal = 'sibling(X,Y)' ;",
+													"cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;' ;",
+													"cmd+'ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  ';"
 												]
 											},
 											"name": "TextViewDetail",
@@ -746,11 +746,11 @@
 		},
 		{
 			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select a Prolog KB File')",
-				"eigenFragment.setCacheString('WorkingDirectory', '')",
-				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/swipl-lib')",
-				"eigenFragment.setCacheString('SelectedFile', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999719)"
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select a Prolog KB File');",
+				"eigenFragment.setCacheString('WorkingDirectory', '');",
+				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/swipl-lib');",
+				"eigenFragment.setCacheString('SelectedFile', '');",
+				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999719);"
 			],
 			"type": "JavaScript"
 		},

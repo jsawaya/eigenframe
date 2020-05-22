@@ -52,7 +52,7 @@ Example:
   "on_click": {
     "type": "JavaScript",
     "script_list": [
-      "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewState(200))"
+      "eigenActivity.showToast('eigenFragment.getViewState(200): '+eigenFragment.getViewState(200));"
     ]
   }
 }

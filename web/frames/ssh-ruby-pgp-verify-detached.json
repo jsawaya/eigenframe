@@ -25,11 +25,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File (that has Detached Signature)')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999718)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File (that has Detached Signature)');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999718);"
 				],
 				"type": "JavaScript"
 			},
@@ -71,11 +71,11 @@
 						"type": "Clone"
 					},
 					"ssh_script_list": [
-						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var original_file = eigenFragment.getViewState(targetVid)",
-						"var sig_file = original_file+'.sig'",
-						"dir + 'ruby ssh-gpg-verify-detached.rb ' + sig_file + ' ' + original_file "
+						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ;",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+						"var original_file = eigenFragment.getViewState(targetVid);",
+						"var sig_file = original_file+'.sig';",
+						"dir + 'ruby ssh-gpg-verify-detached.rb ' + sig_file + ' ' + original_file ;"
 					],
 					"type": "SecureShell"
 				},

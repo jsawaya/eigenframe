@@ -25,11 +25,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999723)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote File');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999723);"
 				],
 				"type": "JavaScript"
 			},
@@ -70,18 +70,18 @@
 								],
 								"id": 999099,
 								"title_script_list": [
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-									"var filename = eigenFragment.getViewState(targetVid)",
-									"'Remote File: ' + filename"
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+									"var filename = eigenFragment.getViewState(targetVid);",
+									"'Remote File: ' + filename;"
 								]
 							},
 							"name": "PopupScreenDefault",
 							"type": "Clone"
 						},
 						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'get ' + filename + ' EditText:999000'"
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+							"var filename = eigenFragment.getViewState(targetVid);",
+							"'get ' + filename + ' EditText:999000';"
 						],
 						"type": "SecureFtp"
 					},

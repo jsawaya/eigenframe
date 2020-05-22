@@ -43,7 +43,7 @@ Example:
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500))"
+          "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500));"
         ]
       }
     }

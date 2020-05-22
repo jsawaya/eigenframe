@@ -273,64 +273,6 @@ read_eigenframe_files_test(Spec) :-
 	length(List_all, N_all),
   format(" Length2: ~w~n", [N_all]).
 
-/*
-	each_clone_parse(Spec, List, List2),
-	each_clone_parse(Spec, List2, List3),
-	each_clone_parse(Spec, List3, List4),
-	each_clone_parse(Spec, List4, List5),
-	each_clone_parse(Spec, List5, List6),
-	each_clone_parse(Spec, List6, List7),
-	each_clone_parse(Spec, List7, List8),
-	each_clone_parse(Spec, List8, List9),
-	each_clone_parse(Spec, List9, List10),
-	each_clone_parse(Spec, List10, List11),
-  format(" List of nested cloned objects:~n", []),
-	each_write_type(List11),
-	length(List, N),
-  format(" Length: ~w~n", [N]),
-	length(List2, N2),
-  format(" Length2: ~w~n", [N2]),
-	length(List3, N3),
-  format(" Length3: ~w~n", [N3]),
-	length(List4, N4),
-  format(" Length4: ~w~n", [N4]),
-	length(List5, N5),
-  format(" Length5: ~w~n", [N5]),
-	length(List6, N6),
-  format(" Length6: ~w~n", [N6]),
-	length(List7, N7),
-  format(" Length7: ~w~n", [N7]),
-	length(List8, N8),
-  format(" Length8: ~w~n", [N8]),
-	length(List9, N9),
-  format(" Length9: ~w~n", [N9]),
-	length(List10, N10),
-  format(" Length10: ~w~n", [N10]),
-	length(List11, N11),
-  format(" Length11: ~w~n", [N11]).
-*/
-/*
-write_type: TextView
-write_type: TextView
-write_type: LinearLayout
-write_type: Clone
- Write Define-name: TextViewDetail
- Write Clone: _136484{font:font/droid-sans-mono/DroidSansMono.ttf,gravity:left,layout_width:match_parent,ssh_script_list:[var targetVid = eigenFragment.getIntegerVariable('TargetViewId'),var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ,swipl_path = eigenFragment.getViewState(targetVid),swipl_goal = eigenFragment.getViewState(976000) ,'cd '+dir+'; ruby ssh_swipl.rb "'+swipl_path+'" "'+swipl_goal+'"  '],text_color: #ffffff,text_size:10,type:TextView}
-write_type: TextView
- List of nested cloned objects:
- Length: 818
- Length2: 519
- Length3: 221
- Length4: 176
- Length5: 95
- Length6: 28
- Length7: 17
- Length8: 10
- Length9: 3
- Length10: 1
- Length11: 0
-*/
-
 % ----------------------------------------------------
 
 select_frame_url("https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/ssh-apache.json").

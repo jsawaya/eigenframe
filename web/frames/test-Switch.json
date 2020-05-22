@@ -25,7 +25,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
+          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300));"
         ],
         "type": "JavaScript"
       },
@@ -45,7 +45,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300))"
+          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(300));"
         ],
         "type": "JavaScript"
       },
@@ -75,7 +75,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(301))"
+          "eigenActivity.showToast('Switch getViewState: '+eigenFragment.getViewState(301));"
         ],
         "type": "JavaScript"
       },
