@@ -1,4 +1,4 @@
-
+%-----------------------------------------------
 
 eigenframe_types(Types) :-
 Types = 
@@ -31,10 +31,53 @@ Types =
 	'ToastMessage',
 	'ToggleButton',
 	'UrlRequest',
-	'Variable',
 	'VerticalLine',
 	'WebView'
 ].
+
+%-----------------------------------------------
+
+%eigen_type(?Type, ?IsAction, ?IsLayout).
+% 1) Type is one of the implemented EigenFrame types.
+% 2) Layout:
+% 		layout_null :- parent layout is not applicable
+% 		layout_req :- parent layout is required
+% 		layout_opt :- parent layout is optional, and may use parent layout
+% 3) Input_sources: [url, sftp(directory), ssh, text, option_list, component, component_list, defined_name]
+
+eigen_type('EigenFrame', 			layout_null, [tab_list, script]). 	% creates new app, with new set of fragments
+eigen_type('EigenFragment',		layout_null, [url_script]).	  % runs fragment/tab with implicit parent linearlayout
+eigen_type('PopupScreen', 		layout_null, [component_list, url_script]).		% begin a new screen with implicit parent linearlayout
+eigen_type('AlertDialog', 		layout_null, [positive_option, neutral_option, negative_option]).		% popup alert with upto 3 options
+eigen_type('PopupHtmlView', 	layout_null, [url_script, ssh_script]).		% popup html view
+eigen_type('PopupTextView', 	layout_null, [url_script, sftp_script, ssh]).		% popup text view
+eigen_type('SelectDialog', 		layout_null, [option_list]).		% popup alert with option_list
+eigen_type('ToastMessage', 		layout_null, [message_script]).		% popup message(text)
+eigen_type('Define', 					layout_null, [component]).		% define a cached eigenframe template
+eigen_type('JavaScript', 			layout_null, [script]).		% execute javascript
+
+eigen_type('SecureFtp', 			layout_opt, [sftp_script]).		% execute sftp async-request, is_eigen_response 
+eigen_type('SecureShell', 		layout_opt, [ssh_script]).		% execute ssh async-request, is_eigen_response
+eigen_type('UrlRequest', 			layout_opt, [url_script]).		% execute url async-request, is_eigen_response
+eigen_type('ActionList', 			layout_opt, [component_list]).		% execute list of actions
+eigen_type('Clone', 					layout_opt, [defined_name]). % produce component/action from defined name
+
+eigen_type('LinearLayout', 		layout_req, [component_list]). 		% begin a new vertical or horizontal layout
+eigen_type('TextView', 				layout_req, [text_script, url_script, sftp_script, ssh_script]).		% UI component - async-request
+eigen_type('HtmlView', 				layout_req, [url_script, ssh_script]).		% UI component - async-request
+eigen_type('ImageView', 			layout_req, [url_script]).		% UI component - async-request
+eigen_type('EditText', 				layout_req, [text_script, url_script, sftp_script, ssh_script]).		% UI component - async-request
+eigen_type('WebView', 				layout_req, [url_script]).		% UI component - async-request
+eigen_type('Button', 					layout_req, [text_script]). 		% UI component, with on_click action
+eigen_type('CheckBox', 				layout_req, [text_script]).		% UI component, with on_click action
+eigen_type('Switch', 					layout_req, [text_script]).		% UI component, with on_click action
+eigen_type('ToggleButton', 		layout_req, [text_script]).		% UI component, with on_click action
+eigen_type('ListView', 				layout_req, [option_list, sftp_script]). 		% UI component, may include an item-layout
+eigen_type('RadioButton', 		layout_req, [option_list]).		% UI component, with on_click action
+eigen_type('Spinner', 				layout_req, [option_list]).		% UI component, with on_click action
+eigen_type('HorizontalLine',	layout_req, []).		% UI component
+eigen_type('VerticalLine', 		layout_req, []).		% UI component
+
 
 %-----------------------------------------------
 
@@ -277,13 +320,6 @@ nominal_UrlRequest(Data, Url, Is_eigen_response, On_complete) :-
   	is_eigen_response: Is_eigen_response,
   	on_complete: On_complete
 	}.
-
-%nominal_Variable(Data, Define_name, Attributes) :-
-%	Data = _{
-%  	type: 'Variable',
-%  	name: Define_name,
-%  	attributes: Attributes
-%	}.
 
 nominal_VerticalLine(Data, Size, Color) :-
 	Data = _{

@@ -1,8 +1,3 @@
-verbose_format(Spec, Format, X) :- 
-	is_member('Verbose',Spec),
- 	format(Format, [X]).
-verbose_format(_, _, _).
-
 %-----------------------------------------------
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -327,14 +322,6 @@ parse_eigenframe(Spec, Data, List) :-
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
-	select_eigenframe_type('Variable', Spec, Data, List),
-	parse_eigenframe_name_sources(Spec, Data),
-	parse_eigenframe_id_sources(Spec, Data),
-	parse_eigenframe_method(Spec, Data,_),
-	parse_eigenframe_class(Spec, Data,_),
-	!.
-
-parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('VerticalLine', Spec, Data, List),
 	parse_eigenframe_size(Spec, Data,_),
 	parse_eigenframe_color(Spec, Data,_),
@@ -356,6 +343,13 @@ parse_eigenframe(Spec, Data, List) :-
 	format(" **************** Undefined Data: ~w~n", [Data]).
 
 parse_eigenframe(_, _, _).
+
+% -------------------------------------
+
+verbose_format(Spec, Format, X) :- 
+	is_member('Verbose',Spec),
+ 	format(Format, [X]).
+verbose_format(_, _, _).
 
 % -------------------------------------
 

@@ -68,8 +68,6 @@ Action type | Description
 [UrlRequest](./web/docs/UrlRequest.md) | url request
 [SecureShell](./web/docs/SecureShell.md) | ssh connection 
 [SecureFtp](./web/docs/SecureFtp.md) | sftp commands 
-[Variable](./web/docs/Variable.md) | dynamic variable values: boolean, integer, long, string  
-Cache | dynamic cache files, String | BinaryArray (not implemented yet)
 [ActionList](./web/docs/ActionList.md) | calls a sequence of actions 
 [Define](./web/docs/Define.md) | define a reusable cached component 
 [Clone](./web/docs/Clone.md) | clone creates a new instance of a defined reusable cached component 
