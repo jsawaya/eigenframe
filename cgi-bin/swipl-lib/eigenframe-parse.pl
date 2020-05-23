@@ -9,19 +9,22 @@ parse_eigenframe(Spec, Data, List) :-
 	select_eigenframe_type('EigenFrame', Spec, Data, List),
 	parse_eigenframe_is_secure_window(Spec, Data,_),
 	parse_eigenframe_script_sources(Spec, Data),
-	parse_eigenframe_list(Spec, Data.get(tab_list), List).
+	parse_eigenframe_list(Spec, Data.get(tab_list), List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('EigenFragment', Spec, Data, List),
 	parse_eigenframe_name_sources(Spec, Data), 
 	parse_eigenframe_icon_name(Spec, Data,_),
-	parse_eigenframe_eigenfragment_url(Spec, Data, List).
+	parse_eigenframe_eigenfragment_url(Spec, Data, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('ActionList', Spec, Data, List),
 	parse_eigenframe_comment(Spec, Data,_),
 	parse_eigenframe_component_list(Spec, Data, List),
-	parse_eigenframe_on_complete(Spec, Data, List).
+	parse_eigenframe_on_complete(Spec, Data, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('AlertDialog', Spec, Data, List),
@@ -29,12 +32,14 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_alert_dialog_positive(Spec, Data,_, List),
 	parse_eigenframe_alert_dialog_negative(Spec, Data,_, List),
-	parse_eigenframe_alert_dialog_neutral(Spec, Data,_, List).
+	parse_eigenframe_alert_dialog_neutral(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Button', Spec, Data, List),
 	parse_eigenframe_text_sources(Spec, Data),
-	parse_eigenframe_on_click(Spec, Data,_, List).
+	parse_eigenframe_on_click(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('CheckBox', Spec, Data, List),
@@ -48,19 +53,22 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List).
+	parse_eigenframe_on_click(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Clone', Spec, Data, List),
 	parse_eigenframe_name(Spec, Data, _),
-	parse_eigenframe_attributes(Spec, Data).
+	parse_eigenframe_attributes(Spec, Data),
+	!.
 
 % Note: Define component is rarely a complete parsable eigenframe type.
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Define', Spec, Data, List),
 	parse_eigenframe_name(Spec, Data, Define_name),
 	Component = Data.get(component),
-	define_component(Define_name, Component).
+	define_component(Define_name, Component),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('EditText', Spec, Data, List),
@@ -81,12 +89,14 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_background_color(Spec, Data,_),
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
-	parse_eigenframe_margin(Spec, Data,_).
+	parse_eigenframe_margin(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('HorizontalLine', Spec, Data, List),
 	parse_eigenframe_size(Spec, Data,_),
-	parse_eigenframe_color(Spec, Data,_).
+	parse_eigenframe_color(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('HtmlView', Spec, Data, List),
@@ -100,7 +110,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_background_color(Spec, Data,_),
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
-	parse_eigenframe_margin(Spec, Data,_).
+	parse_eigenframe_margin(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('ImageView', Spec, Data, List),
@@ -113,13 +124,15 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_background_color(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List).
+	parse_eigenframe_on_click(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('JavaScript', Spec, Data, List),
 	parse_eigenframe_comment(Spec, Data, _),
 	parse_eigenframe_id_sources(Spec, Data),
-	parse_eigenframe_script_sources(Spec, Data).
+	parse_eigenframe_script_sources(Spec, Data),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('LinearLayout', Spec, Data, List),
@@ -128,7 +141,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_layout_height(Spec, Data,_),
 	parse_eigenframe_orientation(Spec, Data,_),
 	parse_eigenframe_gravity(Spec, Data,_),
-	parse_eigenframe_component_list(Spec, Data, List).
+	parse_eigenframe_component_list(Spec, Data, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('ListView', Spec, Data, List),
@@ -142,7 +156,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_background_color(Spec, Data,_),
 	parse_eigenframe_item_layout(Spec, Data,_),
 	parse_eigenframe_checked_option(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List).
+	parse_eigenframe_on_click(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('PopupHtmlView', Spec, Data, List),
@@ -155,7 +170,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_background_color(Spec, Data,_),
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
-	parse_eigenframe_margin(Spec, Data,_).
+	parse_eigenframe_margin(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('PopupScreen', Spec, Data, List),
@@ -169,7 +185,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_margin(Spec, Data,_),
 	parse_eigenframe_url_sources(Spec, Data),
 	parse_eigenframe_id_sources(Spec, Data),
-	parse_eigenframe_component_list(Spec, Data, List).
+	parse_eigenframe_component_list(Spec, Data, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('PopupTextView', Spec, Data, List),
@@ -187,7 +204,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_font(Spec, Data,_),
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
-	parse_eigenframe_margin(Spec, Data,_).
+	parse_eigenframe_margin(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('RadioButton', Spec, Data, List),
@@ -198,7 +216,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_layout_width(Spec, Data,_),
 	parse_eigenframe_layout_height(Spec, Data,_),
 	parse_eigenframe_background_color(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List).
+	parse_eigenframe_on_click(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('SecureFtp', Spec, Data, List),
@@ -212,7 +231,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_ssh_sources(Spec, Data),
 	parse_eigenframe_id_sources(Spec, Data),
 	parse_eigenframe_is_eigen_response(Spec, Data,_),
-	parse_eigenframe_on_complete(Spec, Data, List).
+	parse_eigenframe_on_complete(Spec, Data, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('SelectDialog', Spec, Data, List),
@@ -221,7 +241,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_title_sources(Spec, Data),
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_checked_option(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List).
+	parse_eigenframe_on_click(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Spinner', Spec, Data, List),
@@ -236,7 +257,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List).
+	parse_eigenframe_on_click(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Switch', Spec, Data, List),
@@ -251,7 +273,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List).
+	parse_eigenframe_on_click(Spec, Data,_, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('TextView', Spec, Data, List),
@@ -269,11 +292,13 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_margin(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_text_color(Spec, Data,_),
-	parse_eigenframe_text_size(Spec, Data,_).
+	parse_eigenframe_text_size(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('ToastMessage', Spec, Data, List),
-	parse_eigenframe_message_script(Spec, Data).
+	parse_eigenframe_message_script(Spec, Data),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('ToggleButton', Spec, Data, List),
@@ -289,7 +314,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_margin(Spec, Data,_),
 	parse_eigenframe_on_click(Spec, Data,_, List),
 	parse_eigenframe_padding(Spec, Data,_),
-	parse_eigenframe_text_color(Spec, Data,_).
+	parse_eigenframe_text_color(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('UrlRequest', Spec, Data, List),
@@ -297,19 +323,22 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_parameter_list(Spec, Data,_),
 	parse_eigenframe_id_sources(Spec, Data),
 	parse_eigenframe_is_eigen_response(Spec, Data,_),
-	parse_eigenframe_on_complete(Spec, Data, List).
+	parse_eigenframe_on_complete(Spec, Data, List),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Variable', Spec, Data, List),
 	parse_eigenframe_name_sources(Spec, Data),
 	parse_eigenframe_id_sources(Spec, Data),
 	parse_eigenframe_method(Spec, Data,_),
-	parse_eigenframe_class(Spec, Data,_).
+	parse_eigenframe_class(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('VerticalLine', Spec, Data, List),
 	parse_eigenframe_size(Spec, Data,_),
-	parse_eigenframe_color(Spec, Data,_).
+	parse_eigenframe_color(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('WebView', Spec, Data, List),
@@ -318,7 +347,8 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_title_sources(Spec, Data),
 	parse_eigenframe_layout_width(Spec, Data,_),
 	parse_eigenframe_layout_height(Spec, Data,_),
-	parse_eigenframe_is_javascript_enabled(Spec, Data,_).
+	parse_eigenframe_is_javascript_enabled(Spec, Data,_),
+	!.
 
 parse_eigenframe(Spec, Data, List) :- 
 	is_member('Undefined',Spec),
@@ -344,11 +374,15 @@ parse_eigenframe_list(Spec, [H|T], List) :-
 %	format(" ******** parse_eigenframe END: ~n"),
   parse_eigenframe_list(Spec, T, List).
 
+% -------------------------------------
+
 parse_eigenframe_component_list(Spec, Data, List) :- 
 	X = Data.get(component_list),
 	verbose_format(Spec, " component_list: ~w~n", X),
 	parse_eigenframe_list(Spec, X, List).
 parse_eigenframe_component_list(_, _, _). 
+
+% -------------------------------------
 
 parse_eigenframe_component(Spec, Data, List) :- 
 	X = Data.get(component),
@@ -356,11 +390,16 @@ parse_eigenframe_component(Spec, Data, List) :-
 	parse_eigenframe(Spec, X, List).
 parse_eigenframe_component(_, _, _). 
 
+% -------------------------------------
+
 parse_eigenframe_eigenfragment_url(Spec, Data, List) :- 
 	URL = Data.get(url),
 	verbose_format(Spec, " url: ~w~n", URL),
 	read_json_url(URL, Frame),
 	parse_eigenframe(Spec, Frame, List).
+parse_eigenframe_eigenfragment_url(_, _, _). /* allow missing eigenfragment url */
+
+% -------------------------------------
 
 parse_eigenframe_url_expand(Spec, Data, List) :- 
 	URL = Data.get(url),
@@ -372,17 +411,20 @@ parse_eigenframe_url_expand(Spec, Data, List) :-
 	parse_eigenframe(Spec, Frame, List).
 parse_eigenframe_url_expand(_, _, _). 
 
+% -------------------------------------
+
 parse_eigenframe_on_click(Spec, Data, X, List) :- 
 	X = Data.get(on_click),
 	verbose_format(Spec, " on_click: ~w~n", X),
 	parse_eigenframe(Spec, X, List).
 parse_eigenframe_on_click(_, _, _, _).
 
+% -------------------------------------
+
 parse_eigenframe_on_complete(Spec, Data, List) :- 
 	X = Data.get(on_complete),
 	verbose_format(Spec, " on_complete: ~w~n", X),
 	parse_eigenframe(Spec, X, List).
-
 parse_eigenframe_on_complete(_, _, _).
 
 %-----------------------------------------------

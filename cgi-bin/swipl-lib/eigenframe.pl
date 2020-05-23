@@ -16,20 +16,15 @@
 :- initialization(start_eigenframe).
 
 start_eigenframe :- 
-	open_eigenframe_types,
-	open_eigenframe_parse,
+	directory_eigenframe_cgibin_swipllib(Dir),
+	eigenframe_ensure_loaded(Dir, 'eigenframe-types.pl'),
+	eigenframe_ensure_loaded(Dir, 'eigenframe-parse.pl'),
+	eigenframe_ensure_loaded(Dir, 'eigenframe-search.pl'),
 	load_frames,
 	load_apps.
 
-open_eigenframe_types :-
-	directory_eigenframe_cgibin_swipllib(Dir),
-	directory_file_path(Dir, 'eigenframe-types.pl', FPath),
-	format(" ensure_loaded: ~w~n", [FPath]),
-	ensure_loaded(FPath).
-
-open_eigenframe_parse :-
-	directory_eigenframe_cgibin_swipllib(Dir),
-	directory_file_path(Dir, 'eigenframe-parse.pl', FPath),
+eigenframe_ensure_loaded(Dir, FName) :-
+	directory_file_path(Dir, FName, FPath),
 	format(" ensure_loaded: ~w~n", [FPath]),
 	ensure_loaded(FPath).
 
@@ -160,53 +155,6 @@ save_json_file(FPath, Data) :-
 	open(FPath, write, Stream), 
 	json_write(Stream, Data, [tag(json), value_string_as(atom)]),
 	close(Stream).
-
-% ----------------------------------------------------
-
-app_data(FName, Data) :-
-	directory_eigenframe_web_apps(Dir),
-	directory_file_path(Dir, FName, FPath),
-	read_json_file(FPath, Data).
-
-frame_data(FName, Data) :-
-	directory_eigenframe_web_frames(Dir),
-	directory_file_path(Dir, FName, FPath),
-	read_json_file(FPath, Data).
-
-% Read json into prolog dict structure (sorts attributes), and parse_eigenframe. 
-read_eigenframe_file_test(Spec, FName) :-
-	directory_eigenframe_web_frames(Dir),
-	directory_file_path(Dir, FName, FPath),
-	read_json_file(FPath, Data), 
-	parse_eigenframe(Spec, Data, List),
-	each_write_type(List),
-	length(List, N),
-  format(" Length: ~w~n", [N]).
-
-read_frame_url_test(Spec) :-
-	select_frame_url(URL), 
-	read_json_url(URL, Data), 
-	parse_eigenframe(Spec, Data, List),
-	each_write_type(List),
-	length(List, N),
-  format(" Length: ~w~n", [N]).
-
-read_app_url_test(Spec) :-
-	select_app_url(URL), 
-	read_json_url(URL, Data), 
-	parse_eigenframe(Spec, Data, List),
-	each_write_type(List),
-	length(List, N),
-  format(" Length: ~w~n", [N]).
-
-read_app2_url_test(Spec) :-
-	select_app2_url(URL), 
-	read_json_url(URL, Data), 
-	parse_eigenframe(Spec, Data, List),
-	each_write_type(List),
-	length(List, N),
-  format(" Length: ~w~n", [N]).
-
 
 % ----------------------------------------------------
 
@@ -345,98 +293,51 @@ organize_eigenframe_files(Dir, [File|T]) :-
 */
 % ----------------------------------------------------
 
-% Here are examples to search for a given EigenFrame type
-%search_eigenframe_type_test('WebView'),false.
-%search_eigenframe_type_test('PopupTextView'),false.
-search_eigenframe_type_test(Type) :-
-	dyn_json_file_data(FPath, Data), 
-	search_eigenframe_type(FPath, Data, Type).
+app_data(FName, Data) :-
+	directory_eigenframe_web_apps(Dir),
+	directory_file_path(Dir, FName, FPath),
+	read_json_file(FPath, Data).
 
-search_eigenframe_type_test(FPath, Type) :-
-	dyn_json_file_data(FPath, Data), 
-	search_eigenframe_type(FPath, Data, Type).
+frame_data(FName, Data) :-
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, FName, FPath),
+	read_json_file(FPath, Data).
 
-% ----------------------------------------------------
+% Read json into prolog dict structure (sorts attributes), and parse_eigenframe. 
+read_eigenframe_file_test(Spec, FName) :-
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, FName, FPath),
+	read_json_file(FPath, Data), 
+	parse_eigenframe(Spec, Data, List),
+	each_write_type(List),
+	length(List, N),
+  format(" Length: ~w~n", [N]),
+	!.
 
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	X = Data.get(component),
-	search_eigenframe_type(FPath, X, Type).
+read_frame_url_test(Spec) :-
+	select_frame_url(URL), 
+	read_json_url(URL, Data), 
+	parse_eigenframe(Spec, Data, List),
+	each_write_type(List),
+	length(List, N),
+  format(" Length: ~w~n", [N]),
+	!.
 
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	X = Data.get(on_click),
-	search_eigenframe_type(FPath, X, Type).
+read_app_url_test(Spec) :-
+	select_app_url(URL), 
+	read_json_url(URL, Data), 
+	parse_eigenframe(Spec, Data, List),
+	each_write_type(List),
+	length(List, N),
+  format(" Length: ~w~n", [N]),
+	!.
 
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	X = Data.get(on_complete),
-	search_eigenframe_type(FPath, X, Type).
-
-% 'ListView' == Type
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	X = Data.get(item_layout), 
-	search_eigenframe_type(FPath, X, Type).
-
-% 'AlertDialog' == Type, positive
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	Y = Data.get(positive),
-	X = Y.get(on_click),
-	search_eigenframe_type(FPath, X, Type).
-
-% 'AlertDialog' == Type, negative
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	Y = Data.get(negative),
-	X = Y.get(on_click),
-	search_eigenframe_type(FPath, X, Type).
-
-% 'AlertDialog' == Type, neutral
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	Y = Data.get(neutral),
-	X = Y.get(on_click),
-	search_eigenframe_type(FPath, X, Type).
-
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	X = Data.get(component_list),
-	search_eigenframe_list(FPath, X, Type).
-
-% 'EigenFrame' == Type
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	X = Data.get(tab_list), 
-	search_eigenframe_list(FPath, X, Type).
-
-% all the frame types come here 
-% if the type is the one we are looking for -- write data
-%search_eigenframe_type(FPath, +Data, +Type)
-search_eigenframe_type(FPath, Data, Type) :- 
-	Type == Data.get(type),
-  write(',\n{ "filepath": "'), 	write(FPath),	write('", "data": '), 	
-	show_json(Data),
-  writeln("}").
-
-% ----------------------------------------------------
-
-% +FPath is passed into recursion - constant 
-% +H|T is the recursion list of components 
-% +Type is the type of component we are searching for
-search_eigenframe_list(_, [], _).
-search_eigenframe_list(FPath, [H|T], Type) :-
-	search_eigenframe_type(FPath, H, Type);true,
-  search_eigenframe_list(FPath, T, Type).
-
-% ----------------------------------------------------
-
-proc_list(Term, Result) :-
-    Term =.. [Proc, X],               % Assumes terms have just one argument
-    member(Proc, [listing]),         % True only on recognized terms
-    proc_list(X, R1),                 % Recursively process embedded term
-    ProcCall =.. [Proc, R1, Result],  % Construct a calling term with Result
-    call(ProcCall), !.
-proc_list(X, X).
+read_app2_url_test(Spec) :-
+	select_app2_url(URL), 
+	read_json_url(URL, Data), 
+	parse_eigenframe(Spec, Data, List),
+	each_write_type(List),
+	length(List, N),
+  format(" Length: ~w~n", [N]),
+	!.
 
