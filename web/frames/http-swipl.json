@@ -256,16 +256,47 @@
 		},
 		{
 			"attributes": {
-				"text": "EigenFrame Prolog Command"
+				"text": "EigenFrame Prolog Console"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
 		},
 		{
 			"attributes": {
-				"text": "CLI (via http-post) to call predicates from eigenframe-http, eigenframe-parse, eigenframe-types, etc."
+				"text": "EigenFrame Prolog Console (via http-post) to call predicates from eigenframe-http, eigenframe-parse, eigenframe-types, etc."
 			},
 			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "listview."
+				},
+				"background_color": "#654321",
+				"on_click": {
+					"icon": {
+						"name": "listview."
+					},
+					"on_click": {
+						"script_list": [
+							"var editText = (android.widget.EditText)eigenFragment.viewMap.get(16608);",
+							"editText.getText().insert(editText.getSelectionStart(), 'fizzbuzz');"
+						],
+						"comment": "eigenActivity.showToast('editText: ' + editText.)",
+						"type": "JavaScript"
+					},
+					"option_list": [
+						" 0. insert textview"
+					],
+					"title": "Select eigen component:",
+					"type": "SelectDialog"
+				},
+				"text": "Select URL",
+				"text_color": "#ffffff"
+			},
+			"name": "ButtonDefault",
 			"type": "Clone"
 		},
 		{
