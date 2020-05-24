@@ -77,7 +77,7 @@
 											"attributes": {
 												"abort": 2000,
 												"ssh": "sh -c \"swipl /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib/eigenframe-http.pl --http=8000\" &",
-												"text_size": "10"
+												"text_size": "14"
 											},
 											"name": "TextViewDetail",
 											"type": "Clone"
@@ -211,7 +211,7 @@
 			"layout_height": "wrap_content",
 			"layout_width": "match_parent",
 			"text_color": "#ffffff",
-			"text_size": "14",
+			"text_size": "20",
 			"type": "EditText"
 		},
 		{
@@ -229,7 +229,7 @@
 										{
 											"attributes": {
 												"url_script": "''+eigenFragment.getViewState(999112)",
-												"text_size": "10"
+												"text_size": "14"
 											},
 											"name": "TextViewDetail",
 											"type": "Clone"
@@ -274,7 +274,7 @@
 			"layout_width": "match_parent",
 			"text": "nominal_TextView(D,'test',14),show_json(D)",
 			"text_color": "#ffffff",
-			"text_size": "14",
+			"text_size": "20",
 			"type": "EditText"
 		},
 		{
@@ -411,7 +411,7 @@
 										{
 											"attributes": {
 												"url": "http://localhost:8000/search?type=EditText",
-												"text_size": "10"
+												"text_size": "14"
 											},
 											"name": "TextViewDetail",
 											"type": "Clone"
