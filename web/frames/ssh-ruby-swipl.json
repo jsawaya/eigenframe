@@ -17,12 +17,11 @@
 					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. ",
 					"",
 					"Some classic logic problems:",
-					" 1) Route Planning - enumeration",
-					" 2) Relationships - association",
-					" 3) Zebra Puzzle - symbolic constraint satisfaction",
-					" 4) Sudoku - numeric constraint satisfaction",
-					" 5) List Handling - recursion",
-					" 6) KB testing / develpment"
+					" 1) List Handling - simple recursion",
+					" 2) Route Planning - enumerating alternatives",
+					" 3) Relationships - inferred associations",
+					" 4) Zebra Puzzle - symbolic constraint satisfaction",
+					" 5) Sudoku - integer constraint satisfaction"
 				]
 			},
 			"name": "TextViewDetail",
@@ -34,7 +33,96 @@
 		},
 		{
 			"attributes": {
-				"text": "1) Route Planning Example"
+				"text": "1) List Handling"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/list.pl"
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog Source: list.pl"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Prolog Source: list.pl"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/list.pl' 'nrev([a,b,c,d,e], Y), write(Y)' "
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Example: list.pl // nrev([a,b,c,d,e], Y) -- find an instance"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "2) Route Planning Example"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -162,7 +250,7 @@
 		},
 		{
 			"attributes": {
-				"text": "2) Relationships"
+				"text": "3) Relationships"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -335,7 +423,7 @@
 		},
 		{
 			"attributes": {
-				"text": "3) Zebra Puzzle"
+				"text": "4) Zebra Puzzle"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -531,7 +619,7 @@
 		},
 		{
 			"attributes": {
-				"text": "4) Sudoku"
+				"text": "5) Sudoku"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -631,144 +719,6 @@
 					"type": "Clone"
 				},
 				"text": "Example: sudoku.pl // problem(1, Rows), sudoku(Rows), write(Rows) -- find an instance"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"text": "5) List Handling"
-			},
-			"name": "TextViewLabel",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"cat swipl-lib/list.pl"
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog Source: list.pl"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Prolog Source: list.pl"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/list.pl' 'nrev([a,b,c,d,e], Y), write(Y)' "
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Example: list.pl // nrev([a,b,c,d,e], Y) -- find an instance"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"name": "HorizontalLine",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"text": "6) KB Testing / Development"
-			},
-			"name": "TextViewLabel",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"text_list": [
-					"Execute Prolog Knowlege-base File. ",
-					"Instructions:",
-					" 1) Select a prolog knowlege-base file",
-					" 2) Specify a prolog proposition (goal)",
-					" 3) Execute the prolog inference engine"
-				]
-			},
-			"name": "TextViewDetail",
-			"type": "Clone"
-		},
-		{
-			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select a Prolog KB File');",
-				"eigenFragment.setCacheString('WorkingDirectory', '');",
-				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/swipl-lib');",
-				"eigenFragment.setCacheString('SelectedFile', '');",
-				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999719);"
-			],
-			"type": "JavaScript"
-		},
-		{
-			"name": "SelectFilePathRemote",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"name": "GetRemoteFilePopupScreenEditProlog",
-					"type": "Clone"
-				},
-				"text": "Edit/Execute Remote Prolog KB File"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"

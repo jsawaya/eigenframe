@@ -31,6 +31,25 @@
 			"type": "Clone"
 		},
 		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"title": "Prolog Inference Engine Console",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-ruby-swipl-console.json'"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Prolog Inference Engine Console"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
 			"name": "HorizontalLine",
 			"type": "Clone"
 		},
