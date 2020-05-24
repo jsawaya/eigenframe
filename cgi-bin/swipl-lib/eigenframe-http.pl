@@ -215,7 +215,7 @@ handle_app(_Request) :-
 handle_layout(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	eigen_textview(Data1, 'this is a test', 14),
-	eigen_linearlayout(Data, 'vertical', true, [Data1]),
+	eigen_layout(Data, [Data1], 'vertical', true),
 	show_json(Data).
 
 % ----------------------------------------------------

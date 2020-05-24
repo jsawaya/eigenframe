@@ -142,16 +142,16 @@ add_eigenfragment_to_list(Data, Tab_list) :-
 
 %-----------------------------------------------
 
-eigen_linearlayout(Data, Orientation, Scrollable, Component_list) :-
+eigen_layout(Data, Component_list, Orientation, Scrollable) :-
 	Data = _{
   	type: 'LinearLayout',
   	orientation: Orientation,
 		scrollable: Scrollable,
   	component_list: Component_list
 	}.
-	
+
 eigen_layout(Data, Component_list) :-
-	eigen_linearlayout(Data, 'vertical', true, Component_list).
+	eigen_layout(Data, Component_list, 'vertical', true).
 
 eigen_textview(Data, Text, Text_size) :-
 	Data = _{
