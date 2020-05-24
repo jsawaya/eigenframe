@@ -281,8 +281,8 @@
 					},
 					"on_click": {
 						"script_list": [
-							"var editText = eigenFragment.viewMap.get(16608);",
-							"eigenActivity.showToast('editText: ' + editText);"
+							"var editText = eigenFragment.viewMap;",
+							"eigenActivity.showToast('editText: ' + eigenFragment.viewMap);"
 						],
 						"comment_list": [
 							"eigenActivity.showToast('editText: ' + editText.)"
