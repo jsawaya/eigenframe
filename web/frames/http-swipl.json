@@ -313,7 +313,7 @@
 				"parameter_list": [
 					{
 						"name": "dbug",
-						"value": true
+						"value": false
 					},
 					{
 						"name": "g",
@@ -334,32 +334,7 @@
 				"name": "open_browser."
 			},
 			"on_click": {
-				"id": 16605,
 				"is_eigen_response": "true",
-				"on_complete": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:16605"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Execute Prolog Command (via http-post/prolog)"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
 				"parameter_list": [
 					{
 						"name": "dbug",
