@@ -281,9 +281,8 @@
 					},
 					"on_click": {
 						"script_list": [
-							"var editText = (android.widget.EditText)eigenFragment.viewMap.get(16608);",
-							"eigenActivity.showToast('editText: ' + editText);",
-							"editText.getText().insert(editText.getSelectionStart(), 'fizzbuzz');"
+							"var editText = eigenFragment.viewMap.get(16608);",
+							"eigenActivity.showToast('editText: ' + editText);"
 						],
 						"comment_list": [
 							"eigenActivity.showToast('editText: ' + editText.)"
