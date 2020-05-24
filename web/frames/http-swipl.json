@@ -305,7 +305,7 @@
 								"type": "Clone"
 							}
 						],
-						"title": "Execute Prolog Command (via http-post/prolog)"
+						"title": "Execute/Debug Prolog Command (via http-post/prolog)"
 					},
 					"name": "PopupScreenDefault",
 					"type": "Clone"
@@ -313,7 +313,7 @@
 				"parameter_list": [
 					{
 						"name": "dbug",
-						"value": false
+						"value": true
 					},
 					{
 						"name": "g",
@@ -323,57 +323,7 @@
 				"type": "UrlRequest",
 				"url": "http://localhost:8000/prolog"
 			},
-			"text": "Execute Prolog Command",
-			"text_color": "#ffffff",
-			"type": "Button"
-		},
-		{
-			"background_color": "#654321",
-			"icon": {
-				"location": "top",
-				"name": "open_browser."
-			},
-			"on_click": {
-				"id": 16605,
-				"is_eigen_response": "false",
-				"on_complete": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:16605"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Execute Prolog Command (via http-post/prolog)"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"parameter_list": [
-					{
-						"name": "dbug",
-						"value": false
-					},
-					{
-						"name": "g",
-						"value_script": "'' + eigenFragment.getViewState(16608)"
-					}
-				],
-				"type": "UrlRequest",
-				"url": "http://localhost:8000/prolog"
-			},
-			"text": "Execute Prolog - PopupScreen",
+			"text": "Execute/Debug Prolog Command",
 			"text_color": "#ffffff",
 			"type": "Button"
 		},
