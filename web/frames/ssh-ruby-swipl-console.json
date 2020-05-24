@@ -6,7 +6,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Prolog Knowlege-Base Inference Engine"
+				"text": "Prolog Inference Engine"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -26,7 +26,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Prolog KB Testing / Development"
+				"text": "Prolog Knowlege-Base Console"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -34,8 +34,7 @@
 		{
 			"attributes": {
 				"text_list": [
-					"Prolog Knowlege-Base Console. ",
-					"Instructions:",
+					"Console Instructions:",
 					" 1) Select a prolog knowlege-base file",
 					" 2) Specify a prolog proposition (goal)",
 					" 3) Execute the prolog inference engine"
