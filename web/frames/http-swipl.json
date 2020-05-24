@@ -334,15 +334,36 @@
 				"name": "open_browser."
 			},
 			"on_click": {
-				"is_eigen_response": "true",
+				"id": 16605,
+				"is_eigen_response": "false",
+				"on_complete": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"url": "file:///data/user/0/com.sawaya.eigenframe/files/UrlRequest:16605"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Execute Prolog Command (via http-post/prolog)"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
 				"parameter_list": [
 					{
 						"name": "dbug",
 						"value": false
-					},
-					{
-						"name": "mime",
-						"value": "json"
 					},
 					{
 						"name": "g",
@@ -352,7 +373,47 @@
 				"type": "UrlRequest",
 				"url": "http://localhost:8000/prolog"
 			},
-			"text": "Execute Prolog Command\nReturn Dynamic EigenFrame",
+			"text": "Execute Prolog - PopupScreen",
+			"text_color": "#ffffff",
+			"type": "Button"
+		},
+		{
+			"background_color": "#654321",
+			"icon": {
+				"location": "top",
+				"name": "open_browser."
+			},
+			"layout_height": "wrap_content",
+			"layout_width": "wrap_content",
+			"on_click": {
+				"attributes": {
+					"component_list": [
+						{
+							"is_eigen_response": "true",
+							"parameter_list": [
+								{
+									"name": "dbug",
+									"value": false
+								},
+								{
+									"name": "mime",
+									"value": "json"
+								},
+								{
+									"name": "g",
+									"value_script": "'' + eigenFragment.getViewState(16608)"
+								}
+							],
+							"type": "UrlRequest",
+							"url": "http://localhost:8000/prolog"
+						}
+					],
+					"title": "Dynamic Prolog EigenFrame"
+				},
+				"name": "PopupScreenDefault",
+				"type": "Clone"
+			},
+			"text": "Dynamic Prolog EigenFrame",
 			"text_color": "#ffffff",
 			"type": "Button"
 		},

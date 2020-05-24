@@ -177,12 +177,12 @@ handle_prolog(Request) :-
 			mime(Mime, [optional(true),default(text)])
 		]),
 	(
-		Mime == 'text',
+		Mime == text,
 		format('Content-type: text/plain~n~n', [])
 		;true
 	),
 	(
-		Mime == 'json',
+		Mime == json,
 		format('Content-type: application/json; charset=UTF-8~n~n', [])
 		;true
 	),
