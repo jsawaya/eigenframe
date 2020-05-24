@@ -186,7 +186,7 @@ each_clone_parse(_Spec, [], _List2).
 each_clone_parse(Spec, [Data|T], List2) :- 
 	write_type(Data),
 	(
-		nominal_Clone(Data, Define_name, Attributes), 
+		eigen_clone(Data, Define_name, Attributes), 
 		define_component(Define_name, Component),
 		format(' Write Define-name: ~w~n', [Define_name]),
 %		format(' Write Component: ~w~n', [Component]),

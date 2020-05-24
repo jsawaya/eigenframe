@@ -81,7 +81,14 @@ eigen_type('VerticalLine', 		layout_req, []).		% UI component
 
 %-----------------------------------------------
 
-nominal_EigenFragment(Data, Tab_name, Icon_name, Url) :-
+eigenframe_app(Data, Is_secure_window, Tab_list) :-
+	Data = _{
+		type:'EigenFrame',
+		is_secure_window: Is_secure_window,
+		tab_list: Tab_list	
+	}.
+
+eigenfragment(Data, Tab_name, Icon_name, Url) :-
 	Data = _{
   	type: 'EigenFragment',
   	name: Tab_name,
@@ -89,27 +96,15 @@ nominal_EigenFragment(Data, Tab_name, Icon_name, Url) :-
   	url: Url
 	}.
 
-nominal_EigenFrame(Data, Is_secure_window, Tab_list) :-
-	Data = _{
-		type:'EigenFrame',
-		is_secure_window: Is_secure_window,
-		tab_list: Tab_list	
-	}.
-
 create_app_test(Data_frame) :-
-	nominal_EigenFragment(Data1, 'prolog', 'info.', 'http://localhost:8000/frame?file=playlist.json'),
-	nominal_EigenFragment(Data2, 'textview', 'info.', 'http://localhost:8000/frame?file=test-TextView.json'),
-	nominal_EigenFrame(Data_frame, false, [Data1, Data2]),
+	eigenfragment(Data1, 'prolog', 'info.', 'http://localhost:8000/frame?file=playlist.json'),
+	eigenfragment(Data2, 'textview', 'info.', 'http://localhost:8000/frame?file=test-TextView.json'),
+	eigenframe_app(Data_frame, false, [Data1, Data2]),
 	show_json(Data_frame).
-
-%	directory_eigenframe_web_apps(Dir),
-%	format(" = app dir: ~w~n", [Dir]),
-%	directory_file_path(Dir, 'app1.json', FPath),
-%	save_json_file(FPath, Data_frame).
 
 %-----------------------------------------------
 
-nominal_Define(Data, Define_name, Component) :-
+eigen_define(Data, Define_name, Component) :-
 	Data = _{
   	type: 'Define',
   	name: Define_name,
@@ -118,13 +113,13 @@ nominal_Define(Data, Define_name, Component) :-
 
 %-----------------------------------------------
 
-nominal_Clone(Data, Define_name, []) :-
+eigen_clone(Data, Define_name, []) :-
 	Data = _{
   	type: 'Clone',
   	name: Define_name
 	}.
 
-nominal_Clone(Data, Define_name, Attributes) :-
+eigen_clone(Data, Define_name, Attributes) :-
 	Data = _{
   	type: 'Clone',
   	name: Define_name,
@@ -133,7 +128,7 @@ nominal_Clone(Data, Define_name, Attributes) :-
 
 % - this clause requires attributes, which may not be true 
 % - and it can not create a new instance, only parse	
-% nominal_Clone(Data, Define_name, Attributes) :-
+% eigen_clone(Data, Define_name, Attributes) :-
 %		'Clone' == Data.get(type),
 %		Define_name = Data.get(name),
 %		Attributes = Data.get(attributes),
@@ -147,7 +142,7 @@ add_eigenfragment_to_list(Data, Tab_list) :-
 
 %-----------------------------------------------
 
-nominal_LinearLayout(Data, Orientation, Scrollable, Component_list) :-
+eigen_linearlayout(Data, Orientation, Scrollable, Component_list) :-
 	Data = _{
   	type: 'LinearLayout',
   	orientation: Orientation,
@@ -155,7 +150,7 @@ nominal_LinearLayout(Data, Orientation, Scrollable, Component_list) :-
   	component_list: Component_list
 	}.
 
-nominal_TextView(Data, Text, Text_size) :-
+eigen_textview(Data, Text, Text_size) :-
 	Data = _{
   	type: 'TextView',
   	text: Text,
@@ -163,34 +158,34 @@ nominal_TextView(Data, Text, Text_size) :-
 		text_color: '#ffffff'
 	}.
 
-nominal_ActionList(Data, Component_list, On_complete) :-
+eigen_actionlist(Data, Component_list, On_complete) :-
 	Data = _{
   	type: 'ActionList',
   	component_list: Component_list,
   	on_complete: On_complete
 	}.
 
-nominal_AlertDialog(Data, Title) :-
+eigen_alertdialog(Data, Title) :-
 	Data = _{
   	type: 'AlertDialog',
   	title: Title
 	}.
 
-nominal_Button(Data, Text,On_click) :-
+eigen_button(Data, Text,On_click) :-
 	Data = _{
   	type: 'Button',
   	text: Text,
   	on_click: On_click
 	}.
 
-nominal_CheckBox(Data, Text, On_click) :-
+eigen_checkbox(Data, Text, On_click) :-
 	Data = _{
   	type: 'CheckBox',
   	text: Text,
   	on_click: On_click
 	}.
 
-nominal_EditText(Data, Text, Text_size) :-
+eigen_edittext(Data, Text, Text_size) :-
 	Data = _{
   	type: 'EditText',
   	text: Text,
@@ -198,20 +193,20 @@ nominal_EditText(Data, Text, Text_size) :-
 		text_color: '#ffffff'
 	}.
 
-nominal_HorizontalLine(Data, Size, Color) :-
+eigen_horizontalline(Data, Size, Color) :-
 	Data = _{
   	type: 'HorizontalLine',
   	size: Size,
   	color: Color
 	}.
 
-nominal_HtmlView(Data, Html) :-
+eigen_htmlview(Data, Html) :-
 	Data = _{
   	type: 'HtmlView',
   	html: Html
 	}.
 
-nominal_ImageView(Data, Image_url, Rotation, On_click) :-
+eigen_imageview(Data, Image_url, Rotation, On_click) :-
 	Data = _{
   	type: 'ImageView',
   	image_url: Image_url,
@@ -219,27 +214,27 @@ nominal_ImageView(Data, Image_url, Rotation, On_click) :-
   	on_click: On_click
 	}.
 
-nominal_JavaScript(Data, Script) :-
+eigen_javascript(Data, Script) :-
 	Data = _{
   	type: 'JavaScript',
   	script: Script
 	}.
 
-nominal_ListView(Data, Option_list, On_click) :-
+eigen_listview(Data, Option_list, On_click) :-
 	Data = _{
   	type: 'ListView',
   	option_list: Option_list,
   	on_click: On_click
 	}.
 
-nominal_PopupHtmlView(Data, Title, Html) :-
+eigen_popuphtmlview(Data, Title, Html) :-
 	Data = _{
   	type: 'PopupHtmlView',
   	title: Title,
   	html: Html
 	}.
 
-nominal_PopupScreen(Data, Title, Url) :-
+eigen_popupscreen(Data, Title, Url) :-
 	Data = _{
   	type: 'PopupScreen',
   	title: Title,
@@ -248,7 +243,7 @@ nominal_PopupScreen(Data, Title, Url) :-
 		layout_height: 'match_parent'
 	}.
 
-nominal_PopupTextView(Data, Text, Text_size) :-
+eigen_popuptextview(Data, Text, Text_size) :-
 	Data = _{
   	type: 'PopupTextView',
   	text: Text,
@@ -256,14 +251,14 @@ nominal_PopupTextView(Data, Text, Text_size) :-
 		text_color: '#ffffff'
 	}.
 
-nominal_RadioButton(Data, Option_list, On_click) :-
+eigen_radiobutton(Data, Option_list, On_click) :-
 	Data = _{
   	type: 'RadioButton',
   	option_list: Option_list,
   	on_click: On_click
 	}.
 
-nominal_SecureFtp(Data, Sftp, Is_eigen_response, On_complete) :-
+eigen_secureftp(Data, Sftp, Is_eigen_response, On_complete) :-
 	Data = _{
   	type: 'SecureFtp',
   	sftp: Sftp,
@@ -271,7 +266,7 @@ nominal_SecureFtp(Data, Sftp, Is_eigen_response, On_complete) :-
   	on_complete: On_complete
 	}.
 
-nominal_SecureShell(Data, Ssh, Is_eigen_response, On_complete) :-
+eigen_secureshell(Data, Ssh, Is_eigen_response, On_complete) :-
 	Data = _{
   	type: 'SecureShell',
   	ssh: Ssh,
@@ -279,41 +274,41 @@ nominal_SecureShell(Data, Ssh, Is_eigen_response, On_complete) :-
   	on_complete: On_complete
 	}.
 
-nominal_SelectDialog(Data, Option_list, On_click) :-
+eigen_selectdialog(Data, Option_list, On_click) :-
 	Data = _{
   	type: 'SelectDialog',
   	option_list: Option_list,
   	on_click: On_click
 	}.
 
-nominal_Spinner(Data, Option_list, On_click) :-
+eigen_spinner(Data, Option_list, On_click) :-
 	Data = _{
   	type: 'Spinner',
   	option_list: Option_list,
   	on_click: On_click
 	}.
 
-nominal_Switch(Data, Text, On_click) :-
+eigen_switch(Data, Text, On_click) :-
 	Data = _{
   	type: 'Switch',
   	text: Text,
   	on_click: On_click
 	}.
 
-nominal_ToastMessage(Data, Message) :-
+eigen_toastmessage(Data, Message) :-
 	Data = _{
   	type: 'ToastMessage',
   	message: Message
 	}.
 
-nominal_ToggleButton(Data, Text, On_click) :-
+eigen_togglebutton(Data, Text, On_click) :-
 	Data = _{
   	type: 'ToggleButton',
   	text: Text,
   	on_click: On_click
 	}.
 
-nominal_UrlRequest(Data, Url, Is_eigen_response, On_complete) :-
+eigen_urlrequest(Data, Url, Is_eigen_response, On_complete) :-
 	Data = _{
   	type: 'UrlRequest',
   	url: Url,
@@ -321,14 +316,14 @@ nominal_UrlRequest(Data, Url, Is_eigen_response, On_complete) :-
   	on_complete: On_complete
 	}.
 
-nominal_VerticalLine(Data, Size, Color) :-
+eigen_verticalline(Data, Size, Color) :-
 	Data = _{
   	type: 'VerticalLine',
   	size: Size,
   	color: Color
 	}.
 
-nominal_WebView(Data, Title, Url) :-
+eigen_webview(Data, Title, Url) :-
 	Data = _{
   	type: 'WebView',
   	title: Title,

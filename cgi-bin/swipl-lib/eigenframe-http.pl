@@ -164,11 +164,11 @@ handle_proxy(Request) :-
 
 % ----------------------------------------------------
 % http://localhost:8000/prolog
-% http://localhost:8000/prolog?g=nominal_TextView(D,'tst',14),show_json(D)
-% http://localhost:8000/prolog?dbug=true&g=nominal_TextView(D,'tst',14),show_json(D)
-% http://localhost:8000/prolog?mime=text&dbug=true&g=nominal_TextView(D,'tst',14),show_json(D)
-% http://localhost:8000/prolog?mime=text&g=nominal_TextView(D,%27tst%27,14),show_json(D)
-% http://localhost:8000/prolog?mime=json&g=nominal_TextView(D,%27tst%27,14),show_json(D)
+% http://localhost:8000/prolog?g=eigen_textview(D,'tst',14),show_json(D)
+% http://localhost:8000/prolog?dbug=true&g=eigen_textview(D,'tst',14),show_json(D)
+% http://localhost:8000/prolog?mime=text&dbug=true&g=eigen_textview(D,'tst',14),show_json(D)
+% http://localhost:8000/prolog?mime=text&g=eigen_textview(D,%27tst%27,14),show_json(D)
+% http://localhost:8000/prolog?mime=json&g=eigen_textview(D,%27tst%27,14),show_json(D)
 
 handle_prolog(Request) :-
 	http_parameters(Request,
@@ -203,10 +203,10 @@ handle_prolog(Request) :-
 % create simple app
 handle_app(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
-	nominal_EigenFragment(Data1, 'Dynamic', 'ic_launcher_round.', 'http://localhost:8000/frame?file=define-clones.json'),
-	nominal_EigenFragment(Data2, 'About', 'info.', 'http://localhost:8000/frame?file=about.json'),
-	nominal_EigenFragment(Data3, 'Layout', 'ic_launcher_round.', 'http://localhost:8000/layout'),
-	nominal_EigenFrame(Data,false,[Data1,Data2,Data3]),
+	eigenfragment(Data1, 'Dynamic', 'ic_launcher_round.', 'http://localhost:8000/frame?file=define-clones.json'),
+	eigenfragment(Data2, 'About', 'info.', 'http://localhost:8000/frame?file=about.json'),
+	eigenfragment(Data3, 'Layout', 'ic_launcher_round.', 'http://localhost:8000/layout'),
+	eigenframe_app(Data,false,[Data1,Data2,Data3]),
 	show_json(Data).
 
 % ----------------------------------------------------
@@ -214,8 +214,8 @@ handle_app(_Request) :-
 % create simple layout
 handle_layout(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
-	nominal_TextView(Data1, 'this is a test', 14),
-	nominal_LinearLayout(Data, 'vertical', true, [Data1]),
+	eigen_textview(Data1, 'this is a test', 14),
+	eigen_linearlayout(Data, 'vertical', true, [Data1]),
 	show_json(Data).
 
 % ----------------------------------------------------
