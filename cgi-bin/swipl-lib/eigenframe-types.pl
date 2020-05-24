@@ -149,6 +149,9 @@ eigen_linearlayout(Data, Orientation, Scrollable, Component_list) :-
 		scrollable: Scrollable,
   	component_list: Component_list
 	}.
+	
+eigen_layout(Data, Component_list) :-
+	eigen_linearlayout(Data, 'vertical', true, Component_list).
 
 eigen_textview(Data, Text, Text_size) :-
 	Data = _{
