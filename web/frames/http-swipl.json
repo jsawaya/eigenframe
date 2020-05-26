@@ -283,15 +283,15 @@
 						"script_list": [
 							"var pl = '' + eigenFragment.getViewState(16608);",
 							"var delim = ',';",
-							"if (pl == '') delim = '.';",
+							"if (pl == '') delim = 'show_json(L0).';",
 							"var position = eigenFragment.getOptionPosition();",
+							"pl = delim + pl;",
 							"if (position == 0) pl = 'eigen_layout(L0, [ ], \"vertical\", true)' + pl ;",
 							"if (position == 1) pl = 'eigen_textview(T0, \"text\", 16)' + pl ;",
 							"if (position == 2) pl = 'eigen_edittext(E0, \"text\", 16)' + pl ;",
 							"if (position == 3) pl = 'eigen_button(B0, \"button\", _)' + pl ;",
-							"if (position == 4) pl = 'eigen_checkbox(C0, \"checkbox\", _)' + pl ;",
-							"if (position == 5) pl = 'eigen_actionlist(A0, [ ], _)' + pl ;",
-							"pl += delim;",
+							"if (position == 4) pl = 'eigen_checkbox(C0, \"checkbox\", _{})' + pl ;",
+							"if (position == 5) pl = 'eigen_actionlist(A0, [ ], _{})' + pl ;",
 							"eigenFragment.setViewState(16608, pl);"
 						],
 						"type": "JavaScript"
