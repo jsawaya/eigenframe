@@ -135,10 +135,10 @@ eigen_clone(Data, Define_name, Attributes) :-
 
 %-----------------------------------------------
 
-add_eigenfragment_to_list(Data, Tab_list) :- 
-	'EigenFragment' == Data.get(type),
-	member(Data, Tab_list),
-	format(" = added eigenfragment~n", []).
+%add_eigenfragment_to_list(Data, Tab_list) :- 
+%	'EigenFragment' == Data.get(type),
+%	member(Data, Tab_list),
+%	format(" = added eigenfragment~n", []).
 
 %-----------------------------------------------
 

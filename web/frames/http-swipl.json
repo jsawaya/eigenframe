@@ -281,21 +281,33 @@
 					},
 					"on_click": {
 						"script_list": [
-							"var editText = eigenFragment.viewMap;",
-							"eigenActivity.showToast('editText: ' + eigenFragment.viewMap);"
-						],
-						"comment_list": [
-							"eigenActivity.showToast('editText: ' + editText.)"
+							"var pl = '' + eigenFragment.getViewState(16608);",
+							"var delim = ',';",
+							"if (pl == '') delim = '.';",
+							"var position = eigenFragment.getOptionPosition();",
+							"if (position == 0) pl += 'eigen_layout(Layout, [ ], 'vertical', true)' ;",
+							"if (position == 1) pl += 'eigen_textview(Textview, 'text', 16)' ;",
+							"if (position == 2) pl += 'eigen_edittext(Textview, 'text', 16)' ;",
+							"if (position == 3) pl += 'eigen_button(Button, 'button', _)' ;",
+							"if (position == 4) pl += 'eigen_checkbox(Checkbox, 'checkbox', _)' ;",
+							"if (position == 5) pl += 'eigen_actionlist(Actionlist, [ ], _)' ;",
+							"pl += delim;",
+							"eigenFragment.setViewState(16608, pl);"
 						],
 						"type": "JavaScript"
 					},
 					"option_list": [
-						" 0. insert textview"
+						" 0. insert layout (vertical,scrollable)",
+						" 1. insert textview",
+						" 2. insert edittext",
+						" 3. insert button (text,on_click)",
+						" 4. insert button (text,on_click)",
+						" 5. insert actionlist (component_list,on_complete)"
 					],
-					"title": "Select eigen component:",
+					"title": "Select eigen-component:",
 					"type": "SelectDialog"
 				},
-				"text": "Select URL",
+				"text": "Insert eigen-component",
 				"text_color": "#ffffff"
 			},
 			"name": "ButtonDefault",
