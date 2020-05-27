@@ -80,6 +80,10 @@
     {
       "layout_height": "100",
       "layout_width": "match_parent",
+      "on_click": {
+        "script": "eigenActivity.showToast('image click bash_full_colored_light.jpg')",
+        "type": "JavaScript"
+      },
       "type": "ImageView",
       "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/bash_full_colored_light.jpg'"
     },
@@ -90,16 +94,10 @@
     {
       "layout_height": "100",
       "layout_width": "match_parent",
-      "type": "ImageView",
-      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/bash_monochrome_dark.svg'"
-    },
-    {
-      "name": "HorizontalLine",
-      "type": "Clone"
-    },
-    {
-      "layout_height": "100",
-      "layout_width": "match_parent",
+      "on_click": {
+        "script": "eigenActivity.showToast('image click bash_monochrome_light.jpg')",
+        "type": "JavaScript"
+      },
       "type": "ImageView",
       "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/bash_monochrome_light.jpg'"
     },
@@ -110,18 +108,12 @@
     {
       "layout_height": "100",
       "layout_width": "match_parent",
+      "on_click": {
+        "script": "eigenActivity.showToast('image click bash_monochrome_light.png')",
+        "type": "JavaScript"
+      },
       "type": "ImageView",
       "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/bash_monochrome_light.png'"
-    },
-    {
-      "name": "HorizontalLine",
-      "type": "Clone"
-    },
-    {
-      "layout_height": "100",
-      "layout_width": "match_parent",
-      "type": "ImageView",
-      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/bash_monochrome_light.svg'"
     },
     {
       "name": "HorizontalLine",
