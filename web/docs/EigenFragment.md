@@ -34,11 +34,6 @@ Example:
     },
     {
       "type": "EigenFragment",
-      "name": "Readme",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/eigenframe-readme.json"
-    },
-    {
-      "type": "EigenFragment",
       "name": "About",
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
     }

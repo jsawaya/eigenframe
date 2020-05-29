@@ -453,11 +453,21 @@
       "type": "Clone"
     },
     {
-      "attributes": {
-        "icon": {
-          "location": "top",
-          "name": "play."
+      "layout_height": "100",
+      "layout_width": "match_parent",
+      "on_click": {
+        "attributes": {
+          "title": "Shell",
+          "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
         },
+        "name": "PopupScreenDefault",
+        "type": "Clone"
+      },
+      "type": "ImageView",
+      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/bash_monochrome_light.png'"
+    },
+    {
+      "attributes": {
         "on_click": {
           "attributes": {
             "title": "Shell",
