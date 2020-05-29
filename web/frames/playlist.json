@@ -258,6 +258,20 @@
       "type": "Clone"
     },
     {
+      "layout_height": "100",
+      "layout_width": "match_parent",
+      "on_click": {
+        "attributes": {
+          "title": "Shell",
+          "url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-settings.json'"
+        },
+        "name": "PopupScreenDefault",
+        "type": "Clone"
+      },
+      "type": "ImageView",
+      "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/ssh-256.png'"
+    },
+    {
       "attributes": {
         "icon": {
           "location": "top",
