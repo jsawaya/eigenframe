@@ -161,21 +161,6 @@
 		},
 		{
 			"attributes": {
-				"on_click": {
-					"attributes": {
-						"title": "JavaScript Support",
-						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/script-cmd.json'"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "JavaScript Support"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
 				"icon": {
 					"location": "top",
 					"name": "edit."
