@@ -16,12 +16,12 @@
 				"text_list": [
 					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. ",
 					"",
-					"Some classic logic problems:",
-					" 1) List Handling - simple recursion",
-					" 2) Route Planning - enumerating alternatives",
-					" 3) Relationships - inferred associations",
-					" 4) Zebra Puzzle - symbolic constraint satisfaction",
-					" 5) Sudoku - integer constraint satisfaction"
+					"Some basic logic problems:",
+					" 1) List Handling - recursion",
+					" 2) Relationships - inferred associations",
+					" 3) Shortest Path - networks and graph theory",
+					" 4) Zebra Puzzle  - symbolic constraint satisfaction",
+					" 5) Sudoku Puzzle - integer constraint satisfaction"
 				]
 			},
 			"name": "TextViewDetail",
@@ -122,224 +122,7 @@
 		},
 		{
 			"attributes": {
-				"text": "2) Route Planning Example"
-			},
-			"name": "TextViewLabel",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"cat swipl-lib/routes.pl"
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog Source: routes.pl"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Prolog Source: routes.pl"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/routes.pl' 'route(nottinghill_gate,maida_vale,X)' "
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Example: routes.pl // route(nottinghill_gate,maida_vale,X) -- find one instance"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/routes.pl' 'route(nottinghill_gate,maida_vale,X), false' "
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Example: routes.pl // route(nottinghill_gate,maida_vale,X), false -- find all instances"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"name": "HorizontalLine",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"text": "2) Graph Theory - Shortest Path"
-			},
-			"name": "TextViewLabel",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"cat swipl-lib/shortest-path.pl"
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog Source: shortest-path.pl"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Prolog Source: shortest-path.pl"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/shortest-path.pl' 'shortest(1,5,Path,Length),writeln(Path),writeln(Length),false' "
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Example: shortest-path.pl // shortest(1,5,Path,Length) -- find one instance"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"name": "HorizontalLine",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"text": "3) Relationships"
+				"text": "2) Relationships"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -379,51 +162,6 @@
 					"type": "Clone"
 				},
 				"text": "Prolog Source: swipl.pl"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/swipl.pl' 'sibling(X,Y)' "
-												],
-												"text_size": "10",
-												"x-ssh_script_list": [
-													"swipl_path = 'swipl-lib/swipl.pl' ;",
-													"swipl_goal = 'sibling(X,Y)' ;",
-													"cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;' ;",
-													"cmd+'ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  ';"
-												]
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Example: swipl.pl // sibling(X,Y) -- find an instance"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
@@ -502,6 +240,95 @@
 					"type": "Clone"
 				},
 				"text": "Example: swipl.pl // ancestor(A,B) -- find all instances"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "3) Shortest Path"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/shortest-path.pl"
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog Source: shortest-path.pl"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Prolog Source: shortest-path.pl"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/shortest-path.pl' 'shortest(1,5,Path,Length),writeln(Path),writeln(Length)' "
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Example: shortest-path.pl // shortest(1,5,Path,Length) -- find one instance"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
@@ -615,7 +442,7 @@
 					"name": "PopupScreenDefault",
 					"type": "Clone"
 				},
-				"text": "Example: ein-riddle.pl // zebra_owner(Owner) -- find instance"
+				"text": "Example: ein-riddle.pl // zebra_owner(Owner) -- find an instance"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
