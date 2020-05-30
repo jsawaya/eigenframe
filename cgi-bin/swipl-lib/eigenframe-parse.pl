@@ -356,8 +356,8 @@ verbose_format(_, _, _).
 select_eigenframe_type(Type, Spec, Data, List) :- 
 	is_member(Type, Spec),
 	Type == Data.get(type),
-	member(Data, List),
-	verbose_format(Spec, "= select_eigenframe_type: ~w~n", Type).
+	member(Data, List).
+%	verbose_format(Spec, " type: ~w~n", Type).
 
 % -------------------------------------
 

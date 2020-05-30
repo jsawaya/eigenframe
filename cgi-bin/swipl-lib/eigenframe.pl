@@ -133,6 +133,11 @@ each_write([H|T]) :-
 % ----------------------------------------------------
 
 write_type(Data) :- 
+	( 
+		FPath = Data.get(fpath), 
+		format('fpath: ~w~n', [FPath])
+	; true
+	),
 	Type = Data.get(type), 
 	format('write_type: ~w~n', [Type]).
 
@@ -162,7 +167,8 @@ read_eigenframe_files(Spec, Dir, [File|T], List) :-
 	directory_file_path(Dir, File, FPath),
 	(
 		exists_file(FPath),
-		read_json_file(FPath, Data), 
+		read_json_file(FPath, Data0), 
+		Data = Data0.put('fpath', FPath),
 		parse_eigenframe(Spec, Data, List),
 	  format(" Read FilePath: ~w~n", [FPath])
 		;true
