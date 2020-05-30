@@ -33,7 +33,7 @@ parse_eigenframe(Spec, Data, List) :-
 parse_eigenframe(Spec, Data, List) :- 
 	select_eigenframe_type('Button', Spec, Data, List),
 	parse_eigenframe_text_sources(Spec, Data),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -48,7 +48,7 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -119,7 +119,7 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_background_color(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -151,7 +151,7 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_background_color(Spec, Data,_),
 	parse_eigenframe_item_layout(Spec, Data,_),
 	parse_eigenframe_checked_option(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -211,7 +211,7 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_layout_width(Spec, Data,_),
 	parse_eigenframe_layout_height(Spec, Data,_),
 	parse_eigenframe_background_color(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -236,7 +236,7 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_title_sources(Spec, Data),
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_checked_option(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -252,7 +252,7 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -268,7 +268,7 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_icon(Spec, Data,_),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
@@ -307,7 +307,7 @@ parse_eigenframe(Spec, Data, List) :-
 	parse_eigenframe_layout_height(Spec, Data,_),
 	parse_eigenframe_layout_width(Spec, Data,_),
 	parse_eigenframe_margin(Spec, Data,_),
-	parse_eigenframe_on_click(Spec, Data,_, List),
+	parse_eigenframe_on_click(Spec, Data, _, List),
 	parse_eigenframe_padding(Spec, Data,_),
 	parse_eigenframe_text_color(Spec, Data,_),
 	!.
@@ -338,9 +338,9 @@ parse_eigenframe(Spec, Data, List) :-
 	!.
 
 parse_eigenframe(Spec, Data, List) :- 
+	format(" = Undefined Data: ~w~n", [Data]),
 	is_member('Undefined',Spec),
- 	member(Data, List),
-	format(" **************** Undefined Data: ~w~n", [Data]).
+ 	member(Data, List).
 
 parse_eigenframe(_, _, _).
 
@@ -357,7 +357,7 @@ select_eigenframe_type(Type, Spec, Data, List) :-
 	is_member(Type, Spec),
 	Type == Data.get(type),
 	member(Data, List),
-	verbose_format(Spec, "= Select eigenframe type: ~w~n", Type).
+	verbose_format(Spec, "= select_eigenframe_type: ~w~n", Type).
 
 % -------------------------------------
 

@@ -127,15 +127,14 @@ each_show_json([H|T]) :-
 
 each_write([]).
 each_write([H|T]) :- 
-	format('~n = ~w~n', [H]),
+	format(' ~w~n', [H]),
 	each_write(T).
+
+% ----------------------------------------------------
 
 write_type(Data) :- 
 	Type = Data.get(type), 
 	format('write_type: ~w~n', [Type]).
-
-
-% ----------------------------------------------------
 
 each_write_type([]).
 each_write_type([H|T]) :- 
@@ -165,7 +164,7 @@ read_eigenframe_files(Spec, Dir, [File|T], List) :-
 		exists_file(FPath),
 		read_json_file(FPath, Data), 
 		parse_eigenframe(Spec, Data, List),
-	  format(" Read EigenFrame FilePath: ~w~n", [FPath])
+	  format(" Read FilePath: ~w~n", [FPath])
 		;true
 	),
 	read_eigenframe_files(Spec, Dir, T, List).
@@ -219,7 +218,8 @@ read_eigenframe_files_test(Spec) :-
 	each_member(List, List_all),
 	recurse_each_clone_parse(Spec, List, _, List_all),
 	length(List_all, N_all),
-  format(" Length2: ~w~n", [N_all]).
+  format(" List Length: ~w~n", [N_all]),
+	!.
 
 % ----------------------------------------------------
 

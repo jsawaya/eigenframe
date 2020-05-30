@@ -78,6 +78,9 @@ eigen_type('Spinner', 				layout_req, [option_list]).		% UI component, with on_c
 eigen_type('HorizontalLine',	layout_req, []).		% UI component
 eigen_type('VerticalLine', 		layout_req, []).		% UI component
 
+eigen_types(Bag) :-	
+%	setof(Type,Y^Z^p(Type,Y,Z),Bag).
+	setof(Type,Y^Z^eigen_type(Type,Y,Z),Bag).
 
 %-----------------------------------------------
 
