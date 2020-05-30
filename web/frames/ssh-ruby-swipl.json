@@ -256,6 +256,12 @@
 			"type": "Clone"
 		},
 		{
+			"layout_height": "300",
+			"layout_width": "match_parent",
+			"type": "ImageView",
+			"url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/shortest-path.png'"
+		},
+		{
 			"attributes": {
 				"icon": {
 					"location": "top",
