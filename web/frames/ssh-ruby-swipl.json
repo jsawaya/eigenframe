@@ -250,6 +250,134 @@
 		},
 		{
 			"attributes": {
+				"text": "2) Graph Theory - Shortest Path"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/shortest-path.pl"
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog Source: shortest-path.pl"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Prolog Source: shortest-path.pl"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/shortest-path.pl' 'shortest(1,5,Path,Length),writeln(Path),writeln(Length)' "
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Example: shortest-path.pl // shortest(1,5,Path,Length) -- find one instance"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/routes.pl' 'route(nottinghill_gate,maida_vale,X), false' "
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Example: routes.pl // route(nottinghill_gate,maida_vale,X), false -- find all instances"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
 				"text": "3) Relationships"
 			},
 			"name": "TextViewLabel",

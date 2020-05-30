@@ -442,42 +442,6 @@
 			"type": "Clone"
 		},
 		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"url": "http://localhost:8000/search?type=EditText",
-												"text_size": "14"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Search EigenFrame Files for Type=EditText"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Search EigenFrame Files for Type=EditText"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
 			"name": "HorizontalLine",
 			"type": "Clone"
 		}
