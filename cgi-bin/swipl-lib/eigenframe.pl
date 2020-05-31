@@ -32,8 +32,15 @@ load_frames :-
 	directory_eigenframe_web_frames(Dir),
 	write("Read Directory: "), writeln(Dir),
 	directory_files(Dir, E), 
-	sort(E,Entries), 
-	read_filenames(Dir, Entries).
+%	sort(E,Entries), 
+%	read_filenames(Dir, Entries),
+	eigen_types(Spec), 
+	read_eigenframe_files(Spec, Dir, E, List),
+	each_member(List, List_all),
+	recurse_each_clone_parse(Spec, List, _, List_all),
+	length(List_all, N_all),
+  format(" List Length: ~w~n", [N_all]),
+	!.
 
 load_apps :-
 	directory_eigenframe_web_apps(Dir),
@@ -91,7 +98,7 @@ read_filenames(Dir, [File|T]) :-
 		exists_file(FPath),
 %	  write(" Read FilePath: "), 	writeln(FPath),
 		read_json_file(FPath, _)
-		;true
+	;	true
 	),
 	read_filenames(Dir, T).
 
@@ -104,7 +111,6 @@ read_json_file(FPath, Data) :-
 
 % create dynamic assertion
 read_json_file(FPath, Data) :-
-%  write(" Read from filepath: "), 	writeln(FPath),
 	open(FPath, read, Stream), 
 	json_read_dict(Stream, Data, [tag(json), value_string_as(atom)]),
 	close(Stream),
@@ -125,6 +131,8 @@ each_show_json([H|T]) :-
 	show_json(H),
 	each_show_json(T).
 
+% ----------------------------------------------------
+
 each_write([]).
 each_write([H|T]) :- 
 	format(' ~w~n', [H]),
@@ -132,19 +140,19 @@ each_write([H|T]) :-
 
 % ----------------------------------------------------
 
-write_type(Data) :- 
+write_data_type(Data) :- 
 	( 
 		FPath = Data.get(fpath), 
 		format('fpath: ~w~n', [FPath])
 	; true
 	),
 	Type = Data.get(type), 
-	format('write_type: ~w~n', [Type]).
+	format('write_data_type: ~w~n', [Type]).
 
-each_write_type([]).
-each_write_type([H|T]) :- 
-	write_type(H),
-	each_write_type(T).
+each_write_data_type([]).
+each_write_data_type([H|T]) :- 
+	write_data_type(H),
+	each_write_data_type(T).
 
 % ----------------------------------------------------
 % is_member(+Element, +List) -- element is member of list?
@@ -189,15 +197,15 @@ define_component(Define_name, Component) :-
 
 each_clone_parse(_Spec, [], _List2).
 each_clone_parse(Spec, [Data|T], List2) :- 
-	write_type(Data),
+	write_data_type(Data),
 	(
 		eigen_clone(Data, Define_name, Attributes), 
 		define_component(Define_name, Component),
-		format(' Write Define-name: ~w~n', [Define_name]),
-%		format(' Write Component: ~w~n', [Component]),
-%		format(' Write Attributes: ~w~n', [Attributes]),
+		format(' clone_define_name: ~w~n', [Define_name]),
+		format(' clone_attributes: ~w~n', [Attributes]),
+%		format(' define_component: ~w~n', [Component]),
 		Clone = Component.put(Attributes),
-%		format(' Write Clone: ~w~n', [Clone]),
+%		format(' clone_define_instantiation: ~w~n', [Clone]),
 		member(Clone, List2),
 		parse_eigenframe(Spec, Clone, List2)
 		;true
@@ -217,7 +225,7 @@ recurse_each_clone_parse(Spec, List, List2, List_all) :-
 	each_member(List2, List_all),
 	recurse_each_clone_parse(Spec, List2, _, List_all).
 
-read_eigenframe_files_test(Spec) :- 
+eigenframe_files_component_list(Spec, List_all) :- 
 	directory_eigenframe_web_frames(Dir), 
 	directory_files(Dir, E), 
 	read_eigenframe_files(Spec, Dir, E, List),
@@ -260,7 +268,7 @@ app_url_parse(Spec) :-
 	select_app_url(URL), 
 	read_json_url(URL, Data), 
 	parse_eigenframe(Spec, Data, List),
-%	each_write_type(List),
+%	each_write_data_type(List),
 %	length(List, N),
 % format(" Length: ~w~n", [N]).
 	each_member(List, List_all),
@@ -310,30 +318,34 @@ frame_data(FName, Data) :-
 	read_json_file(FPath, Data).
 
 % Read json into prolog dict structure (sorts attributes), and parse_eigenframe. 
-read_eigenframe_file_test(Spec, FName) :-
+eigenframe_file_component_list(Spec, FName) :-
 	directory_eigenframe_web_frames(Dir),
 	directory_file_path(Dir, FName, FPath),
 	read_json_file(FPath, Data), 
 	parse_eigenframe(Spec, Data, List),
-	each_write_type(List),
-	length(List, N),
-  format(" Length: ~w~n", [N]),
+	recurse_each_clone_parse(Spec, List, _, List_all),
+	length(List_all, N_all),
+  format(" List Length: ~w~n", [N_all]),
 	!.
 
-read_frame_url_test(Spec) :-
+eigenframe_url_component_list(Spec) :-
 	select_frame_url(URL), 
 	read_json_url(URL, Data), 
 	parse_eigenframe(Spec, Data, List),
-	each_write_type(List),
-	length(List, N),
-  format(" Length: ~w~n", [N]),
+	recurse_each_clone_parse(Spec, List, _, List_all),
+	length(List_all, N_all),
+  format(" List Length: ~w~n", [N_all]),
 	!.
+%	each_write_data_type(List),
+%	length(List, N),
+%  format(" Length: ~w~n", [N]),
+%	!.
 
 read_app_url_test(Spec) :-
 	select_app_url(URL), 
 	read_json_url(URL, Data), 
 	parse_eigenframe(Spec, Data, List),
-	each_write_type(List),
+	each_write_data_type(List),
 	length(List, N),
   format(" Length: ~w~n", [N]),
 	!.
@@ -342,7 +354,7 @@ read_app2_url_test(Spec) :-
 	select_app2_url(URL), 
 	read_json_url(URL, Data), 
 	parse_eigenframe(Spec, Data, List),
-	each_write_type(List),
+	each_write_data_type(List),
 	length(List, N),
   format(" Length: ~w~n", [N]),
 	!.

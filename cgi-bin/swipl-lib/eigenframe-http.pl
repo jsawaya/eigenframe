@@ -25,6 +25,9 @@
 
 :- http_handler('/proxy', handle_proxy, []).
 
+:- http_handler('/parse_file', handle_parse_file, []).
+:- http_handler('/parse_url', handle_parse_url, []).
+
 :- http_handler('/app', handle_app, []).
 :- http_handler('/layout', handle_layout, []).
 
@@ -134,7 +137,7 @@ handle_parse(Request) :-
 	read_json_file(FPath, Data), 
 	eigenframe_types(Spec),
 	parse_eigenframe(['Verbose'|Spec], Data, List),
-	each_write_type(List),
+	each_write_data_type(List),
 	length(List, N),
 	format(" Length: ~w~n", [N]).
 
@@ -160,6 +163,46 @@ handle_proxy(Request) :-
 		]),
 	read_json_url(Url, Data), 
 	reply_json_dict(Data).
+
+
+% ----------------------------------------------------
+% http://localhost:8000/parse_file?file=define-clones.json
+% http://localhost:8000/parse_file?file=playlist.json
+
+handle_parse_file(Request) :-
+	http_parameters(Request,
+  	[	file(File, [ optional(false) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	directory_eigenframe_web_frames(Dir),
+	writeln("Directory: "), writeln(Dir),
+	directory_file_path(Dir, File, FPath),
+	exists_file(FPath),
+  write(" FilePath: "), writeln(FPath),
+	read_json_file(FPath, Data), 
+	eigen_types(Spec), 
+	parse_eigenframe(Spec, Data, List),
+	recurse_each_clone_parse(Spec, List, _, List_all),
+	length(List_all, N_all),
+  format(" List Length: ~w~n", [N_all]),
+	!.
+
+% ----------------------------------------------------
+% http://localhost:8000/parse_url?url=https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/define-clones.json
+% http://localhost:8000/parse_url?url=https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/playlist.json
+
+handle_parse_url(Request) :-
+	http_parameters(Request,
+  	[	url(Url, [ optional(false) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	read_json_url(Url, Data), 
+	eigen_types(Spec), 
+	parse_eigenframe(Spec, Data, List),
+	recurse_each_clone_parse(Spec, List, _, List_all),
+	length(List_all, N_all),
+  format(" List Length: ~w~n", [N_all]),
+	!.
 
 
 % ----------------------------------------------------
