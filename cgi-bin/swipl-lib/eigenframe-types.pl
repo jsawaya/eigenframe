@@ -47,6 +47,7 @@ Types =
 
 eigen_type('EigenFrame', 			layout_null, [tab_list, script]). 	% creates new app, with new set of fragments
 eigen_type('EigenFragment',		layout_null, [url_script]).	  % runs fragment/tab with implicit parent linearlayout
+
 eigen_type('PopupScreen', 		layout_null, [component_list, url_script]).		% begin a new screen with implicit parent linearlayout
 eigen_type('AlertDialog', 		layout_null, [positive_option, neutral_option, negative_option]).		% popup alert with upto 3 options
 eigen_type('PopupHtmlView', 	layout_null, [url_script, ssh_script]).		% popup html view

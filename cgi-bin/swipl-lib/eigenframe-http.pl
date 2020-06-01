@@ -19,24 +19,25 @@
 
 %:- set_setting(http:logfile, 'my_log_file.log').
 
-:- http_handler('/hi', say_hi, []).
-:- http_handler('/time', handle_time_request, []).
-:- http_handler('/parms', handle_parms, []).
+:- http_handler('/halt', handle_halt, []).
 
 :- http_handler('/proxy', handle_proxy, []).
 
+:- http_handler('/file', handle_frame, []).
+:- http_handler('/type_search', handle_type_search, []).
+
+:- http_handler('/parse_file_shallow', handle_parse_file_shallow, []).
 :- http_handler('/parse_file', handle_parse_file, []).
 :- http_handler('/parse_url', handle_parse_url, []).
 
-:- http_handler('/app', handle_app, []).
-:- http_handler('/layout', handle_layout, []).
-
 :- http_handler('/prolog', handle_prolog, []).
 
-:- http_handler('/frame', handle_frame, []).
-:- http_handler('/search', handle_search, []).
-:- http_handler('/parse', handle_parse, []).
-:- http_handler('/halt', handle_halt, []).
+:- http_handler('/dyn_app', handle_dyn_app, []).
+:- http_handler('/dyn_layout', handle_dyn_layout, []).
+
+:- http_handler('/parms', handle_parms, []).
+:- http_handler('/time', handle_time_request, []).
+:- http_handler('/hi', say_hi, []).
 
 %:- http_handler('/files', handle_files, []).
 %:- http_handler('/api', handle_api, []).
@@ -107,42 +108,6 @@ handle_halt(_Request) :-
 %	reply_json_dict(Solution).
 
 % ----------------------------------------------------
-% search for instances of a given type
-% search is limited to static references, and non-clones
-% http://localhost:8000/search?type=PopupHtmlView
-% http://localhost:8000/search?type=EditText
-handle_search(Request) :-
-	http_parameters(Request,
-  	[	type(Type, [ optional(true) ]) 
-		]),
-	format('Content-type: application/json; charset=UTF-8~n~n', []),
-	write('{"type": "'), write(Type), write('", "found": [ {}'), 
-	search_eigenframe_type_test(Type),false;write("]}"),
-	true.
-
-% ----------------------------------------------------
-% parse a given static file in web/frames/*
-% http://localhost:8000/parse?file=define-clones.json
-% http://localhost:8000/parse?file=playlist.json
-handle_parse(Request) :-
-	http_parameters(Request,
-  	[	file(File, [ optional(false) ]) 
-		]),
-	format('Content-type: text/plain~n~n', []),
-	directory_eigenframe_web_frames(Dir),
-	writeln("Directory: "), writeln(Dir),
-	directory_file_path(Dir, File, FPath),
-	exists_file(FPath),
-  write(" FilePath: "), writeln(FPath),
-	read_json_file(FPath, Data), 
-	eigenframe_types(Spec),
-	parse_eigenframe(['Verbose'|Spec], Data, List),
-	each_write_data_type(List),
-	length(List, N),
-	format(" Length: ~w~n", [N]).
-
-
-% ----------------------------------------------------
 % http://localhost:8000/files
 %handle_files(_Request) :-
 %	format('Content-type: text/plain~n~n', []),
@@ -162,8 +127,57 @@ handle_proxy(Request) :-
   	[	url(Url, [ optional(false) ]) 
 		]),
 	read_json_url(Url, Data), 
-	reply_json_dict(Data).
+	reply_json_dict(Data),
+	!.
 
+% ----------------------------------------------------
+% http://localhost:8000/frame?file=test-TextView.json
+% show json frame given file
+handle_frame(Request) :-
+	http_parameters(Request,
+  	[	file(FName, [ optional(true) ]) 
+		]),
+	directory_eigenframe_web_frames(Dir),
+	directory_file_path(Dir, FName, FPath),
+	read_json_file(FPath, Data), 
+	reply_json_dict(Data),
+	!.
+
+% ----------------------------------------------------
+% search for instances of a given type
+% search is limited to static references, and non-clones
+% http://localhost:8000/search?type=PopupHtmlView
+% http://localhost:8000/search?type=EditText
+handle_type_search(Request) :-
+	http_parameters(Request,
+  	[	type(Type, [ optional(true) ]) 
+		]),
+	format('Content-type: application/json; charset=UTF-8~n~n', []),
+	write('{"type": "'), write(Type), write('", "found": [ {}'), 
+	search_eigenframe_type_test(Type),false;write("]}"),
+	true.
+
+% ----------------------------------------------------
+% parse a given static file in web/frames/*
+% http://localhost:8000/parse_frame?file=define-clones.json
+% http://localhost:8000/parse_frame?file=playlist.json
+handle_parse_file_shallow(Request) :-
+	http_parameters(Request,
+  	[	file(File, [ optional(false) ]) 
+		]),
+	format('Content-type: text/plain~n~n', []),
+	directory_eigenframe_web_frames(Dir),
+	writeln("Directory: "), writeln(Dir),
+	directory_file_path(Dir, File, FPath),
+	exists_file(FPath),
+  write(" FilePath: "), writeln(FPath),
+	read_json_file(FPath, Data), 
+	eigen_types(Spec), 
+	parse_eigenframe(['Verbose'|Spec], Data, List),
+	each_write_data_type(List),
+	length(List, N),
+	format(" Length: ~w~n", [N]),
+	!.
 
 % ----------------------------------------------------
 % http://localhost:8000/parse_file?file=define-clones.json
@@ -184,7 +198,7 @@ handle_parse_file(Request) :-
 	parse_eigenframe(Spec, Data, List),
 	recurse_each_clone_parse(Spec, List, _, List_all),
 	length(List_all, N_all),
-  format(" List Length: ~w~n", [N_all]),
+  format(" Length: ~w~n", [N_all]),
 	!.
 
 % ----------------------------------------------------
@@ -201,9 +215,8 @@ handle_parse_url(Request) :-
 	parse_eigenframe(Spec, Data, List),
 	recurse_each_clone_parse(Spec, List, _, List_all),
 	length(List_all, N_all),
-  format(" List Length: ~w~n", [N_all]),
+  format(" Length: ~w~n", [N_all]),
 	!.
-
 
 % ----------------------------------------------------
 % http://localhost:8000/prolog
@@ -242,45 +255,24 @@ handle_prolog(Request) :-
 %	call(Term).
 
 % ----------------------------------------------------
-% http://localhost:8000/app
-% create simple app
-handle_app(_Request) :-
+% http://localhost:8000/dyn_app
+% create simple dynamic app
+handle_dyn_app(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	eigenfragment(Data1, 'Dynamic', 'ic_launcher_round.', 'http://localhost:8000/frame?file=define-clones.json'),
 	eigenfragment(Data2, 'About', 'info.', 'http://localhost:8000/frame?file=about.json'),
-	eigenfragment(Data3, 'Layout', 'ic_launcher_round.', 'http://localhost:8000/layout'),
+	eigenfragment(Data3, 'Layout', 'ic_launcher_round.', 'http://localhost:8000/dyn_layout'),
 	eigenframe_app(Data,false,[Data1,Data2,Data3]),
 	show_json(Data).
 
 % ----------------------------------------------------
 % http://localhost:8000/layout
 % create simple layout
-handle_layout(_Request) :-
+handle_dyn_layout(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	eigen_textview(Data1, 'this is a test', 14),
 	eigen_layout(Data, [Data1], 'vertical', true),
 	show_json(Data).
-
-% ----------------------------------------------------
-% http://localhost:8000/frame?file=test-TextView.json
-% show json frame given file
-handle_frame(Request) :-
-	http_parameters(Request,
-  	[	file(FName, [ optional(true) ]) 
-		]),
-	directory_eigenframe_web_frames(Dir),
-	directory_file_path(Dir, FName, FPath),
-	read_json_file(FPath, Data), 
-	reply_json_dict(Data).
-
-/*
-handle(Request) :-
-	http_parameters(Request,
-  	[	title(Title, [ optional(true) ]),
-			name(Name,   [ length >= 2 ]),
-			age(Age,     [ between(0, 150) ])
-		]),
-*/
 
 % ----------------------------------------------------
 handle_parms(Request) :-
