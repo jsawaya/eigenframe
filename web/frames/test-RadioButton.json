@@ -25,7 +25,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500))"
+          "eigenActivity.showToast('RadioButton getViewState: '+eigenFragment.getViewState(500));"
         ],
         "type": "JavaScript"
       },
@@ -43,7 +43,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(500))"
+          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(500));"
         ],
         "type": "JavaScript"
       },
@@ -72,7 +72,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(510))"
+          "eigenActivity.showToast('getViewState: '+eigenFragment.getViewState(510));"
         ],
         "type": "JavaScript"
       },

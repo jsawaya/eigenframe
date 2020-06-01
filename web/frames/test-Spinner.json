@@ -25,7 +25,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(600))"
+          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(600));"
         ],
         "type": "JavaScript"
       },
@@ -42,7 +42,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(600))"
+          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(600));"
         ],
         "type": "JavaScript"
       },
@@ -71,7 +71,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(610))"
+          "eigenActivity.showToast('Spinner getViewState: '+eigenFragment.getViewState(610));"
         ],
         "type": "JavaScript"
       },

@@ -22,10 +22,10 @@
 		},
 		{
 			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local File')",
-				"eigenFragment.setCacheString('SelectedPathLocal', '')",
-				"eigenFragment.setCacheString('SelectedFileLocal', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
+				"eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local File');",
+				"eigenFragment.setCacheString('SelectedPathLocal', '');",
+				"eigenFragment.setCacheString('SelectedFileLocal', '');",
+				"eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724);"
 			],
 			"type": "JavaScript"
 		},
@@ -110,11 +110,11 @@
 												},
 												"on_click": {
 													"script_list": [
-														"var filename1 = eigenFragment.getCacheFilePath('EditText:999010') ",
-														"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ",
-														"var filename2 = eigenFragment.getViewState(targetVid2) ",
-														"eigenFragment.copyFile(filename1, filename2)",
-														"eigenFragment.closePopupScreen(999099)"
+														"var filename1 = eigenFragment.getCacheFilePath('EditText:999010');",
+														"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2');",
+														"var filename2 = eigenFragment.getViewState(targetVid2);",
+														"eigenFragment.copyFile(filename1, filename2);",
+														"eigenFragment.closePopupScreen(999099);"
 													],
 													"type": "JavaScript"
 												},
@@ -144,9 +144,9 @@
 						],
 						"id": 999099,
 						"title_script_list": [
-							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-							"var filename = eigenFragment.getViewState(targetVid2)",
-							"'Local File: ' + filename"
+							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2');",
+							"var filename = eigenFragment.getViewState(targetVid2);",
+							"'Local File: ' + filename;"
 						]
 					},
 					"name": "PopupScreenDefault",

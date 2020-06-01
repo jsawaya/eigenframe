@@ -28,10 +28,10 @@
 				},
 				"on_click": {
 					"script_list": [
-						"var drawingFilePath = eigenFragment.getCacheString('DrawingFilePath')",
-						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
-						"eigenActivity.showToast('Current Drawing: '+ drawingFilePath )",
-						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
+						"var drawingFilePath = eigenFragment.getCacheString('DrawingFilePath');",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath);",
+						"eigenActivity.showToast('Current Drawing: '+ drawingFilePath );",
+						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath);"
 					],
 					"type": "JavaScript"
 				},
@@ -48,10 +48,10 @@
 				},
 				"on_click": {
 					"script_list": [
-						"var drawingFilePath = ''",
-						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
-						"eigenActivity.showToast('New Drawing: '+ drawingFilePath )",
-						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
+						"var drawingFilePath = '';",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath);",
+						"eigenActivity.showToast('New Drawing: '+ drawingFilePath );",
+						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath);"
 					],
 					"type": "JavaScript"
 				},
@@ -79,10 +79,10 @@
 				"is_eigen_response": "false",
 				"on_complete": {
 					"script_list": [
-						"var drawingFilePath = eigenFragment.getCacheFilePath('UrlRequest:801') ",
-						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)",
-						"eigenActivity.showToast('Current Drawing: '+ drawingFilePath )",
-						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath)"
+						"var drawingFilePath = eigenFragment.getCacheFilePath('UrlRequest:801');",
+						"drawingFilePath = eigenActivity.editDrawing(drawingFilePath);",
+						"eigenActivity.showToast('Current Drawing: '+ drawingFilePath );",
+						"eigenFragment.setCacheString('DrawingFilePath', drawingFilePath);"
 					],
 					"type": "JavaScript"
 				},
@@ -122,10 +122,10 @@
 		},
 		{
 			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local Drawing File')",
-				"eigenFragment.setCacheString('SelectedPathLocal', 'files')",
-				"eigenFragment.setCacheString('SelectedFileLocal', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724)"
+				"eigenFragment.setCacheString('SelectFilePromptLocal', 0, 'Select Local Drawing File');",
+				"eigenFragment.setCacheString('SelectedPathLocal', 'files');",
+				"eigenFragment.setCacheString('SelectedFileLocal', '');",
+				"eigenFragment.setIntegerVariable('TargetViewId2', 0, 999724);"
 			],
 			"type": "JavaScript"
 		},
@@ -210,11 +210,11 @@
 												},
 												"on_click": {
 													"script_list": [
-														"var filename1 = eigenFragment.getCacheFilePath('EditText:999010') ",
-														"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2') ",
-														"var filename2 = eigenFragment.getViewState(targetVid2) ",
-														"eigenFragment.copyFile(filename1, filename2)",
-														"eigenFragment.closePopupScreen(999099)"
+														"var filename1 = eigenFragment.getCacheFilePath('EditText:999010');",
+														"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2');",
+														"var filename2 = eigenFragment.getViewState(targetVid2);",
+														"eigenFragment.copyFile(filename1, filename2);",
+														"eigenFragment.closePopupScreen(999099);"
 													],
 													"type": "JavaScript"
 												},
@@ -244,9 +244,9 @@
 						],
 						"id": 999099,
 						"title_script_list": [
-							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-							"var filename = eigenFragment.getViewState(targetVid2)",
-							"'Local File: ' + filename"
+							"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2');",
+							"var filename = eigenFragment.getViewState(targetVid2);",
+							"'Local File: ' + filename;"
 						]
 					},
 					"name": "PopupScreenDefault",
@@ -265,10 +265,10 @@
 				},
 				"on_click": {
 					"script_list": [
-						"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2')",
-						"var filename = eigenFragment.getViewState(targetVid2)",
-						"eigenActivity.editDrawing(filename)",
-						"eigenFragment.setCacheString('DrawingFilePath', filename)"
+						"var targetVid2 = eigenFragment.getIntegerVariable('TargetViewId2');",
+						"var filename = eigenFragment.getViewState(targetVid2);",
+						"eigenActivity.editDrawing(filename);",
+						"eigenFragment.setCacheString('DrawingFilePath', filename);"
 					],
 					"type": "JavaScript"
 				},
@@ -286,11 +286,11 @@
 		},
 		{
 			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Drawing File')",
-				"eigenFragment.setCacheString('WorkingDirectory', '')",
-				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/draw')",
-				"eigenFragment.setCacheString('SelectedFile', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999725)"
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Drawing File');",
+				"eigenFragment.setCacheString('WorkingDirectory', '');",
+				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/draw');",
+				"eigenFragment.setCacheString('SelectedFile', '');",
+				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999725);"
 			],
 			"type": "JavaScript"
 		},
@@ -307,16 +307,16 @@
 				"on_click": {
 					"on_complete": {
 						"script_list": [
-							"var drawingFilePath = eigenFragment.getCacheFilePath('RemoteDrawingFileCopy')",
-							"drawingFilePath = eigenActivity.editDrawing(drawingFilePath)"
+							"var drawingFilePath = eigenFragment.getCacheFilePath('RemoteDrawingFileCopy');",
+							"drawingFilePath = eigenActivity.editDrawing(drawingFilePath);"
 						],
 						"type": "JavaScript"
 					},
 					"sftp_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var filename = eigenFragment.getViewState(targetVid)",
-						"eigenActivity.showToast('load filename: '+filename )",
-						"'get ' + filename + ' RemoteDrawingFileCopy'"
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+						"var filename = eigenFragment.getViewState(targetVid);",
+						"eigenActivity.showToast('load filename: '+filename );",
+						"'get ' + filename + ' RemoteDrawingFileCopy';"
 					],
 					"type": "SecureFtp"
 				},
@@ -333,10 +333,10 @@
 				},
 				"on_click": {
 					"sftp_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var filename = eigenFragment.getViewState(targetVid)",
-						"eigenActivity.showToast('save filename: '+filename )",
-						"'put RemoteDrawingFileCopy ' + filename "
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+						"var filename = eigenFragment.getViewState(targetVid);",
+						"eigenActivity.showToast('save filename: '+filename );",
+						"'put RemoteDrawingFileCopy ' + filename;"
 					],
 					"type": "SecureFtp"
 				},

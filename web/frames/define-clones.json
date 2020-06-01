@@ -7,10 +7,10 @@
 				" - set cache string (GithubBranch), initialized or left unchanged "
 			],
 			"script_list": [
-				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString())",
-				"eigenFragment.setCacheString('GithubBranch', github_branch)",
-				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/'",
-				"eigenFragment.setCacheString('RootUrl', root_url)"
+				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
+				"eigenFragment.setCacheString('GithubBranch', github_branch);",
+				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
+				"eigenFragment.setCacheString('RootUrl', root_url);"
 			],
 			"type": "JavaScript"
 		},
@@ -148,15 +148,15 @@
 					"on_click": {
 						"on_complete": {
 							"script_list": [
-								"eigenFragment.clearCacheFile('EditText:999000')",
-								"eigenFragment.closePopupScreen(999099)"
+								"eigenFragment.clearCacheFile('EditText:999000');",
+								"eigenFragment.closePopupScreen(999099);"
 							],
 							"type": "JavaScript"
 						},
 						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'put EditText:999000 ' + filename"
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+							"var filename = eigenFragment.getViewState(targetVid);",
+							"'put EditText:999000 ' + filename;"
 						],
 						"type": "SecureFtp"
 					},
@@ -202,8 +202,8 @@
 										},
 										{
 											"script_list": [
-												"var initial_value = eigenFragment.getCacheString('EditText:976000')",
-												"if (!initial_value) eigenFragment.setViewState('EditText:976000', 'goal(X)')"
+												"var initial_value = eigenFragment.getCacheString('EditText:976000');",
+												"if (!initial_value) eigenFragment.setViewState('EditText:976000', 'goal(X)');"
 											],
 											"x-type": "JavaScript"
 										},
@@ -222,11 +222,11 @@
 																		{
 																			"attributes": {
 																				"ssh_script_list": [
-																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-																					"swipl_path = eigenFragment.getViewState(targetVid)",
-																					"swipl_goal = eigenFragment.getViewState(976000) ",
-																					"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
+																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin';",
+																					"swipl_path = eigenFragment.getViewState(targetVid);",
+																					"swipl_goal = eigenFragment.getViewState(976000) ;",
+																					"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\" ';"
 																				],
 																				"text_size": "10"
 																			},
@@ -265,18 +265,18 @@
 						],
 						"id": 999099,
 						"title_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'Remote File: ' + filename"
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+							"var filename = eigenFragment.getViewState(targetVid);",
+							"'Remote File: ' + filename;"
 						]
 					},
 					"name": "PopupScreenDefault",
 					"type": "Clone"
 				},
 				"sftp_script_list": [
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-					"var filename = eigenFragment.getViewState(targetVid)",
-					"'get ' + filename + ' EditText:999000'"
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+					"var filename = eigenFragment.getViewState(targetVid);",
+					"'get ' + filename + ' EditText:999000';"
 				],
 				"type": "SecureFtp"
 			},
@@ -290,14 +290,14 @@
 		{
 			"component": {
 				"script_list": [
-					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000')",
-					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '')",
-					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '')",
-					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '')",
-					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path)",
-					"eigenFragment.setCacheString('FullPath', full_path)",
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-					"eigenFragment.setViewState(targetVid, full_path)"
+					"var home_dir = eigenFragment.getCacheString('SecureFtp:411000');",
+					"var work_dir = eigenFragment.getCacheString('WorkingDirectory', 0, '');",
+					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '');",
+					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '');",
+					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path);",
+					"eigenFragment.setCacheString('FullPath', full_path);",
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+					"eigenFragment.setViewState(targetVid, full_path);"
 				],
 				"type": "JavaScript"
 			},
@@ -346,8 +346,8 @@
 										},
 										{
 											"script_list": [
-												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,true)",
-												"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true)"
+												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,true);",
+												"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true);"
 											],
 											"type": "JavaScript"
 										},
@@ -473,13 +473,13 @@
 		{
 			"component": {
 				"script_list": [
-					"var home_dir0 = '/storage/emulated/0/Android/data/com.sawaya.eigenframe' ",
-					"var home_dir = '/data/data/com.sawaya.eigenframe' ",
-					"var selected_path = eigenFragment.getCacheString('SelectedPathLocal', 0, '')",
-					"var full_path = eigenFragment.concatPaths(home_dir, selected_path)",
-					"eigenFragment.setCacheString('FullPathLocal', full_path)",
-					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId2')",
-					"eigenFragment.setViewState(targetVid, full_path)"
+					"var home_dir0 = '/storage/emulated/0/Android/data/com.sawaya.eigenframe' ;",
+					"var home_dir = '/data/data/com.sawaya.eigenframe' ;",
+					"var selected_path = eigenFragment.getCacheString('SelectedPathLocal', 0, '');",
+					"var full_path = eigenFragment.concatPaths(home_dir, selected_path);",
+					"eigenFragment.setCacheString('FullPathLocal', full_path);",
+					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId2');",
+					"eigenFragment.setViewState(targetVid, full_path);"
 				],
 				"type": "JavaScript"
 			},

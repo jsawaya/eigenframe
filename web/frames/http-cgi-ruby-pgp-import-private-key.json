@@ -29,11 +29,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Private Key File')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999704)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Private Key File');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/pubkeys');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999704);"
 				],
 				"type": "JavaScript"
 			},
@@ -84,15 +84,15 @@
 						{
 							"name": "keyfile",
 							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var keyfile = eigenFragment.getViewState(targetVid)",
-								"'' + keyfile"
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+								"var keyfile = eigenFragment.getViewState(targetVid);",
+								"'' + keyfile;"
 							]
 						},
 						{
 							"name": "password",
 							"value_script_list": [
-								"'' + eigenFragment.getViewState(6606)"
+								"'' + eigenFragment.getViewState(6606);"
 							]
 						},
 						{

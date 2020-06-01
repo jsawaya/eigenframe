@@ -25,11 +25,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to be Signed')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999706)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to be Signed');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999706);"
 				],
 				"type": "JavaScript"
 			},
@@ -107,21 +107,21 @@
 						{
 							"name": "keyfile",
 							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var keyfile = eigenFragment.getViewState(targetVid)",
-								"'' + keyfile"
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+								"var keyfile = eigenFragment.getViewState(targetVid);",
+								"'' + keyfile;"
 							]
 						},
 						{
 							"name": "keyid",
 							"value_script_list": [
-								"'' + eigenFragment.getViewState(6607)"
+								"'' + eigenFragment.getViewState(6607);"
 							]
 						},
 						{
 							"name": "password",
 							"value_script_list": [
-								"'' + eigenFragment.getViewState(6606)"
+								"'' + eigenFragment.getViewState(6606);"
 							]
 						},
 						{

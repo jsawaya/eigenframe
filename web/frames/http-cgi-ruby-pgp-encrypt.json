@@ -25,11 +25,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to Encrypt')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999703)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to Encrypt');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999703);"
 				],
 				"type": "JavaScript"
 			},
@@ -119,21 +119,21 @@
 						{
 							"name": "targetfile",
 							"value_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var targetfile = eigenFragment.getViewState(targetVid)",
-								"'' + targetfile"
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+								"var targetfile = eigenFragment.getViewState(targetVid);",
+								"'' + targetfile;"
 							]
 						},
 						{
 							"name": "keyid",
 							"value_script_list": [
-								"'' + eigenFragment.getViewState(6607)"
+								"'' + eigenFragment.getViewState(6607);"
 							]
 						},
 						{
 							"name": "format",
 							"value_script_list": [
-								"'' + eigenFragment.getViewState(6608)"
+								"'' + eigenFragment.getViewState(6608);"
 							]
 						},
 						{

@@ -36,11 +36,6 @@ Example:
       "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/define-clones.json"
     },
     {
-      "name": "Readme",
-      "type": "EigenFragment",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/eigenframe-readme.json"
-    },
-    {
       "name": "About",
       "type": "EigenFragment",
       "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"

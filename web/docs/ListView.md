@@ -49,9 +49,9 @@ Example:
       "on_click": {
         "type": "JavaScript",
         "script_list": [
-          "var pos = eigenFragment.getOptionPosition()",
-          "var opt = eigenFragment.getOptionLabel()",
-          "eigenActivity.showToast('ListView row selected: '+ pos + ': ' + opt)"
+          "var pos = eigenFragment.getOptionPosition();",
+          "var opt = eigenFragment.getOptionLabel();",
+          "eigenActivity.showToast('ListView row selected: '+ pos + ': ' + opt);"
         ]
       },
       "item_layout": {
@@ -66,7 +66,7 @@ Example:
             "layout_width": "wrap_content",
             "layout_height": "wrap_content",
             "text_script_list": [
-              "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
+              "eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel();"
             ],
             "text_color": "#ffffff",
             "background_color": "#123456",
@@ -85,9 +85,9 @@ Example:
             "on_click": {
               "type": "JavaScript",
               "script_list": [
-                "var pos = eigenFragment.getOptionPosition()",
-                "var opt = eigenFragment.getOptionLabel()",
-                "eigenActivity.showToast('Button selected: '+ pos + ': ' + opt)"
+                "var pos = eigenFragment.getOptionPosition();",
+                "var opt = eigenFragment.getOptionLabel();",
+                "eigenActivity.showToast('Button selected: '+ pos + ': ' + opt);"
               ]
             }
           }

@@ -21,8 +21,6 @@ event schema:
 
 Related:
 [Define](Define.md) 
-[Variable](Variable.md) 
-[Cache](Cache.md) 
 [JavaScript](JavaScript.md) 
 [UrlRequest](UrlRequest.md) 
 [SecureShell](SecureShell.md) 

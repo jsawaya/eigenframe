@@ -38,11 +38,11 @@
 		},
 		{
 			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Prolog File (kb)')",
-				"eigenFragment.setCacheString('WorkingDirectory', '')",
-				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/swipl-lib')",
-				"eigenFragment.setCacheString('SelectedFile', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999708)"
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Prolog File (kb)');",
+				"eigenFragment.setCacheString('WorkingDirectory', '');",
+				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/swipl-lib');",
+				"eigenFragment.setCacheString('SelectedFile', '');",
+				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999708);"
 			],
 			"type": "JavaScript"
 		},
@@ -104,11 +104,11 @@
 										{
 											"attributes": {
 												"ssh_script_list": [
-													"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-													"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-													"swipl_path = eigenFragment.getViewState(targetVid)",
-													"swipl_goal = eigenFragment.getViewState(7602) ",
-													"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
+													"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+													"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ;",
+													"swipl_path = eigenFragment.getViewState(targetVid);",
+													"swipl_goal = eigenFragment.getViewState(7602) ;",
+													"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\" ';"
 												],
 												"text_size": "10"
 											},
@@ -331,13 +331,7 @@
 													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
 													"ruby ssh_swipl.rb 'swipl-lib/swipl.pl' 'sibling(X,Y)' "
 												],
-												"text_size": "10",
-												"x-ssh_script_list": [
-													"swipl_path = 'swipl-lib/swipl.pl' ",
-													"swipl_goal = 'sibling(X,Y)' ",
-													"cmd = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin;' ",
-													"cmd+'ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\"  '"
-												]
+												"text_size": "10"
 											},
 											"name": "TextViewDetail",
 											"type": "Clone"

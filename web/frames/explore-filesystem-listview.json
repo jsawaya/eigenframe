@@ -33,10 +33,10 @@
 							{
 								"comment": "find the parent directory of the SelectedPath",
 								"script_list": [
-									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"selected_path = eigenFragment.parentPath(selected_path)",
-									"eigenFragment.setCacheString('SelectedPath', selected_path)",
-									"eigenFragment.setCacheString('SelectedFile', '')"
+									"var selected_path = eigenFragment.getCacheString('SelectedPath');",
+									"selected_path = eigenFragment.parentPath(selected_path);",
+									"eigenFragment.setCacheString('SelectedPath', selected_path);",
+									"eigenFragment.setCacheString('SelectedFile', '');"
 								],
 								"type": "JavaScript"
 							},
@@ -76,8 +76,8 @@
 							{
 								"comment": "selected directory, not file",
 								"script_list": [
-									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"eigenFragment.setCacheString('SelectedFile', '')"
+									"var selected_path = eigenFragment.getCacheString('SelectedPath');",
+									"eigenFragment.setCacheString('SelectedFile', '');"
 								],
 								"type": "JavaScript"
 							},
@@ -88,8 +88,8 @@
 							{
 								"comment": "selected directory - not file",
 								"script_list": [
-									"eigenFragment.closePopupWindow()",
-									"eigenFragment.closePopupScreen(991005)"
+									"eigenFragment.closePopupWindow();",
+									"eigenFragment.closePopupScreen(991005);"
 								],
 								"type": "JavaScript"
 							}
@@ -174,11 +174,11 @@
 							{
 								"comment": "selected directory, append to selected path",
 								"script_list": [
-									"var selected_dir = eigenFragment.getOptionLabel()",
-									"var selected_path = eigenFragment.getCacheString('SelectedPath')",
-									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir)",
-									"eigenFragment.setCacheString('SelectedPath', selected_path)",
-									"eigenFragment.setCacheString('SelectedFile', '')"
+									"var selected_dir = eigenFragment.getOptionLabel();",
+									"var selected_path = eigenFragment.getCacheString('SelectedPath');",
+									"selected_path = eigenFragment.concatPaths(selected_path, selected_dir);",
+									"eigenFragment.setCacheString('SelectedPath', selected_path);",
+									"eigenFragment.setCacheString('SelectedFile', '');"
 								],
 								"type": "JavaScript"
 							},
@@ -240,14 +240,14 @@
 									"full_path += selected_file"
 								],
 								"script_list": [
-									"var selected_file = eigenFragment.getOptionLabel()",
-									"eigenFragment.setCacheString('SelectedFile', selected_file)",
-									"var full_path = eigenFragment.getCacheString('FullPath')",
-									"var full_path_file = eigenFragment.concatPaths(full_path, selected_file)",
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-									"eigenFragment.setViewState(targetVid, full_path_file)",
-									"eigenFragment.closePopupScreen(991005)",
-									"eigenFragment.closePopupWindow()"
+									"var selected_file = eigenFragment.getOptionLabel();",
+									"eigenFragment.setCacheString('SelectedFile', selected_file);",
+									"var full_path = eigenFragment.getCacheString('FullPath');",
+									"var full_path_file = eigenFragment.concatPaths(full_path, selected_file);",
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+									"eigenFragment.setViewState(targetVid, full_path_file);",
+									"eigenFragment.closePopupScreen(991005);",
+									"eigenFragment.closePopupWindow();"
 								],
 								"type": "JavaScript"
 							}

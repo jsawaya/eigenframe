@@ -280,13 +280,14 @@
 			},
 			{
 				"attributes": {
+					"background_color": "#225522",
 					"icon": {
 						"location": "top",
 						"name": "open_browser."
 					},
 					"on_click": {
 						"script_list": [
-							"eigenActivity.launch('http://localhost:8080/apps/app_localhost_gallery.json')"
+							"eigenActivity.launch('http://localhost:8080/apps/app_localhost_gallery.json');"
 						],
 						"type": "JavaScript"
 					},

@@ -25,8 +25,6 @@ Notes: Any asynchronous actions that may be called (url, ssh, ftp) are not neces
 
 Related:
 [Define](Define.md) 
-[Variable](Variable.md) 
-[Cache](Cache.md) 
 [JavaScript](JavaScript.md) 
 [UrlRequest](UrlRequest.md) 
 [SecureShell](SecureShell.md) 

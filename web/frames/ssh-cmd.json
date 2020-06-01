@@ -25,11 +25,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Shell File')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999720)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Shell File');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999720);"
 				],
 				"type": "JavaScript"
 			},
@@ -70,9 +70,9 @@
 																					{
 																						"attributes": {
 																							"ssh_script_list": [
-																								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																								"var filename = eigenFragment.getViewState(targetVid)",
-																								"'cd /data/data/com.termux/files/home; /usr/bin/sh -s < '+filename "
+																								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+																								"var filename = eigenFragment.getViewState(targetVid);",
+																								"'cd /data/data/com.termux/files/home; /usr/bin/sh -s < '+filename;"
 																							],
 																							"text_size": "10"
 																						},
@@ -91,9 +91,9 @@
 																"type": "Clone"
 															},
 															"sftp_script_list": [
-																"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																"var filename = eigenFragment.getViewState(targetVid)",
-																"'put EditText:999000 ' + filename"
+																"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+																"var filename = eigenFragment.getViewState(targetVid);",
+																"'put EditText:999000 ' + filename;"
 															],
 															"type": "SecureFtp"
 														},
@@ -136,11 +136,11 @@
 																				{
 																					"attributes": {
 																						"ssh_script_list": [
-																							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																							"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-																							"shellfilepath = eigenFragment.getViewState(targetVid)",
-																							"shellargs = eigenFragment.getViewState(976002) ",
-																							"'cd '+dir+'; /usr/bin/sh -s < '+shellfilepath + ' ' + shellargs"
+																							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+																							"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin';",
+																							"shellfilepath = eigenFragment.getViewState(targetVid);",
+																							"shellargs = eigenFragment.getViewState(976002);",
+																							"'cd '+dir+'; /usr/bin/sh -s < '+shellfilepath + ' ' + shellargs;"
 																						],
 																						"text_size": "10"
 																					},
@@ -179,18 +179,18 @@
 								],
 								"id": 999099,
 								"title_script_list": [
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-									"var filename = eigenFragment.getViewState(targetVid)",
-									"'Remote File: ' + filename"
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+									"var filename = eigenFragment.getViewState(targetVid);",
+									"'Remote File: ' + filename;"
 								]
 							},
 							"name": "PopupScreenDefault",
 							"type": "Clone"
 						},
 						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'get ' + filename + ' EditText:999000'"
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+							"var filename = eigenFragment.getViewState(targetVid);",
+							"'get ' + filename + ' EditText:999000';"
 						],
 						"type": "SecureFtp"
 					},

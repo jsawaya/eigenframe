@@ -156,9 +156,9 @@
 						"component_list": [
 							{
 								"script_list": [
-									"eigenFragment.setCacheString('WorkingDirectory', '')",
-									"eigenFragment.setCacheString('SelectedPath', '')",
-									"eigenFragment.setCacheString('SelectedFile', '')"
+									"eigenFragment.setCacheString('WorkingDirectory', '');",
+									"eigenFragment.setCacheString('SelectedPath', '');",
+									"eigenFragment.setCacheString('SelectedFile', '');"
 								],
 								"type": "JavaScript"
 							},

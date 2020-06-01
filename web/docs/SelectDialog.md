@@ -34,7 +34,7 @@ Example:
   "on_click": {
     "type": "JavaScript",
     "script_list": [
-      "eigenActivity.showToast('SelectDialog: option: '+eigenFragment.getOptionLabel() + ', position: '+eigenFragment.getOptionPosition() )"
+      "eigenActivity.showToast('SelectDialog: option: '+eigenFragment.getOptionLabel() + ', position: '+eigenFragment.getOptionPosition() );"
     ]
   }
 }

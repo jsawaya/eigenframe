@@ -84,9 +84,9 @@ Example:
 {
   "type": "JavaScript",
   "script_list": [
-    "var selected_path = 'Hello World')",
-    "eigenActivity.showToast('SelectedPath: '+ selected_path)",
-    "java.lang.System.out.println('SelectedPath: '+selected_path)"
+    "var selected_path = 'Hello World');",
+    "eigenActivity.showToast('SelectedPath: '+ selected_path);",
+    "java.lang.System.out.println('SelectedPath: '+selected_path);"
   ]
 }
 ```
@@ -96,9 +96,9 @@ Example:
 {
   "type": "JavaScript",
   "script_list": [
-    "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
-    "eigenActivity.showToast('Local File Cache Status: ' + x1 )",
-    "eigenFragment.closePopupScreen(999099)"
+    "var x1 = eigenFragment.clearCacheFile('EditText:999000');",
+    "eigenActivity.showToast('Local File Cache Status: ' + x1 );",
+    "eigenFragment.closePopupScreen(999099);"
   ]
 }
 ```
