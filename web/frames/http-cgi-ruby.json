@@ -5,11 +5,11 @@
 		"component_list": [
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Directory')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/ruby-lib')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999709)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Directory');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/ruby-lib');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999709);"
 				],
 				"type": "JavaScript"
 			},

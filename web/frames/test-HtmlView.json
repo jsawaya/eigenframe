@@ -11,7 +11,7 @@
     {
       "gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
       "html": "example-links: <hr/> google.com<p/> https://en.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP <p/>internal-icon: <img src='play.jpg'>",
-      "icon-x": {
+      "icon": {
         "location": "left",
         "name": "info.jpg"
       },

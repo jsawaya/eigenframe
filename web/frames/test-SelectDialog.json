@@ -29,7 +29,7 @@
         "id": 111,
         "on_click": {
           "script_list": [
-            "eigenActivity.showToast('SelectDialog: option: '+eigenFragment.getOptionLabel() + ', position: '+eigenFragment.getOptionPosition() )"
+            "eigenActivity.showToast('SelectDialog: option: '+eigenFragment.getOptionLabel() + ', position: '+eigenFragment.getOptionPosition() );"
           ],
           "type": "JavaScript"
         },

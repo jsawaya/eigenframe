@@ -25,11 +25,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to be Signed')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999717)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File to be Signed');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999717);"
 				],
 				"type": "JavaScript"
 			},
@@ -102,12 +102,12 @@
 						"type": "Clone"
 					},
 					"ssh_script_list": [
-						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ",
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var input_file = eigenFragment.getViewState(targetVid)",
-						"var keyid = eigenFragment.getViewState(6607)",
-						"var password = eigenFragment.getViewState(6606)",
-						"dir + 'ruby ssh-gpg-sign-detached.rb '  + input_file + ' ' + keyid + ' \"' + password + '\"'"
+						"var dir = 'cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin; ' ;",
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+						"var input_file = eigenFragment.getViewState(targetVid);",
+						"var keyid = eigenFragment.getViewState(6607);",
+						"var password = eigenFragment.getViewState(6606);",
+						"dir + 'ruby ssh-gpg-sign-detached.rb '  + input_file + ' ' + keyid + ' \"' + password + '\"';"
 					],
 					"type": "SecureShell"
 				},

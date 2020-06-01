@@ -5,8 +5,6 @@
 * message | message_script 
 
 Related:
-[Variable](Variable.md) 
-[Cache](Cache.md) 
 [ActionList](ActionList.md) 
 [SecureShell](SecureShell.md) 
 [JavaScript](JavaScript.md) 

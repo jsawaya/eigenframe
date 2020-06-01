@@ -25,11 +25,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Ruby File')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999721)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Ruby File');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999721);"
 				],
 				"type": "JavaScript"
 			},
@@ -88,11 +88,11 @@
 																				{
 																					"attributes": {
 																						"ssh_script_list": [
-																							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																							"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-																							"rubyfilepath = eigenFragment.getViewState(targetVid)",
-																							"rubyargs = eigenFragment.getViewState(976001) ",
-																							"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+																							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+																							"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ;",
+																							"rubyfilepath = eigenFragment.getViewState(targetVid);",
+																							"rubyargs = eigenFragment.getViewState(976001) ;",
+																							"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs;"
 																						],
 																						"text_size": "10"
 																					},
@@ -129,11 +129,11 @@
 																			{
 																				"is_eigen_response": "true",
 																				"ssh_script_list": [
-																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ",
-																					"rubyfilepath = eigenFragment.getViewState(targetVid)",
-																					"rubyargs = eigenFragment.getViewState(976001) ",
-																					"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs"
+																					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+																					"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin' ;",
+																					"rubyfilepath = eigenFragment.getViewState(targetVid);",
+																					"rubyargs = eigenFragment.getViewState(976001) ;",
+																					"'cd '+dir+'; ruby ' + rubyfilepath + ' ' + rubyargs;"
 																				],
 																				"type": "SecureShell"
 																			}
@@ -178,18 +178,18 @@
 								],
 								"id": 999099,
 								"title_script_list": [
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-									"var filename = eigenFragment.getViewState(targetVid)",
-									"'Remote File: ' + filename"
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+									"var filename = eigenFragment.getViewState(targetVid);",
+									"'Remote File: ' + filename;"
 								]
 							},
 							"name": "PopupScreenDefault",
 							"type": "Clone"
 						},
 						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'get ' + filename + ' EditText:999000'"
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+							"var filename = eigenFragment.getViewState(targetVid);",
+							"'get ' + filename + ' EditText:999000';"
 						],
 						"type": "SecureFtp"
 					},

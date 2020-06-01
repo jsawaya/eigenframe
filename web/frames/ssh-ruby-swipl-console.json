@@ -1,0 +1,85 @@
+{
+	"component_list": [
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "Prolog Inference Engine"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text_list": [
+					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. ",
+				]
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "Prolog Knowlege-Base Console"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text_list": [
+					"Console Instructions:",
+					" 1) Select a prolog knowlege-base file",
+					" 2) Specify a prolog proposition (goal)",
+					" 3) Execute the prolog inference engine"
+				]
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"script_list": [
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select a Prolog KB File');",
+				"eigenFragment.setCacheString('WorkingDirectory', '');",
+				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/cgi-bin/swipl-lib');",
+				"eigenFragment.setCacheString('SelectedFile', '');",
+				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999719);"
+			],
+			"type": "JavaScript"
+		},
+		{
+			"name": "SelectFilePathRemote",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"name": "GetRemoteFilePopupScreenEditProlog",
+					"type": "Clone"
+				},
+				"text": "Edit/Consult Prolog Knowledge-Base"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		}
+	],
+	"gravity": "center_horizontal",
+	"layout_width": "match_parent",
+	"orientation": "vertical",
+	"scrollable": "true",
+	"type": "LinearLayout"
+}

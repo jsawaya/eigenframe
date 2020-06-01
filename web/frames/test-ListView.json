@@ -23,7 +23,7 @@
 			"layout_width": "match_parent",
 			"on_click": {
 				"script_list": [
-					"eigenActivity.showToast('ListView getViewState: '+eigenFragment.getViewState(700))"
+					"eigenActivity.showToast('ListView getViewState: '+eigenFragment.getViewState(700));"
 				],
 				"type": "JavaScript"
 			},
@@ -49,9 +49,9 @@
 						},
 						"on_click": {
 							"script_list": [
-								"var pos = eigenFragment.getOptionPosition()",
-								"var opt = eigenFragment.getOptionLabel()",
-								"eigenActivity.showToast('Button selected: '+ pos + ': ' + opt)"
+								"var pos = eigenFragment.getOptionPosition();",
+								"var opt = eigenFragment.getOptionLabel();",
+								"eigenActivity.showToast('Button selected: '+ pos + ': ' + opt);"
 							],
 							"type": "JavaScript"
 						},
@@ -63,7 +63,7 @@
 						},
 						"text_color": "#ffffff",
 						"text_script_list": [
-							"eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel()"
+							"eigenFragment.getOptionPosition() + ': ' + eigenFragment.getOptionLabel();"
 						],
 						"type": "Button"
 					}
@@ -78,9 +78,9 @@
 			"layout_width": "match_parent",
 			"on_click": {
 				"script_list": [
-					"var pos = eigenFragment.getOptionPosition()",
-					"var opt = eigenFragment.getOptionLabel()",
-					"eigenActivity.showToast('ListView row selected: '+ pos + ': ' + opt)"
+					"var pos = eigenFragment.getOptionPosition();",
+					"var opt = eigenFragment.getOptionLabel();",
+					"eigenActivity.showToast('ListView row selected: '+ pos + ': ' + opt);"
 				],
 				"type": "JavaScript"
 			},

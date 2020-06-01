@@ -32,7 +32,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100))"
+          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(100));"
         ],
         "type": "JavaScript"
       },
@@ -55,7 +55,7 @@
       "layout_width": "match_parent",
       "on_click": {
         "script_list": [
-          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101))"
+          "eigenActivity.showToast('EditText getViewState: '+eigenFragment.getViewState(101));"
         ],
         "type": "JavaScript"
       },

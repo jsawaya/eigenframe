@@ -28,8 +28,8 @@
 				},
 				"on_click": {
 					"script_list": [
-						"var jpg_filename = eigenActivity.captureCameraImage()",
-						"eigenFragment.setCacheString('CameraImage', jpg_filename)"
+						"var jpg_filename = eigenActivity.captureCameraImage();",
+						"eigenFragment.setCacheString('CameraImage', jpg_filename);"
 					],
 					"type": "JavaScript"
 				},
@@ -61,8 +61,8 @@
 											"rotation": 90,
 											"type": "ImageView",
 											"url_script_list": [
-												"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
-												"'file://'+jpg_filename"
+												"var jpg_filename = eigenFragment.getCacheString('CameraImage');",
+												"'file://'+jpg_filename;"
 											]
 										}
 									]
@@ -72,8 +72,8 @@
 							}
 						],
 						"title_script_list": [
-							"var jpg_filename = eigenFragment.getCacheString('CameraImage')",
-							"'Camera Image: '+jpg_filename"
+							"var jpg_filename = eigenFragment.getCacheString('CameraImage');",
+							"'Camera Image: '+jpg_filename;"
 						]
 					},
 					"name": "PopupScreenDefault",
@@ -90,11 +90,11 @@
 		},
 		{
 			"script_list": [
-				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Image File')",
-				"eigenFragment.setCacheString('WorkingDirectory', '')",
-				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/screenshots')",
-				"eigenFragment.setCacheString('SelectedFile', '')",
-				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999711)"
+				"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote Image File');",
+				"eigenFragment.setCacheString('WorkingDirectory', '');",
+				"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/screenshots');",
+				"eigenFragment.setCacheString('SelectedFile', '');",
+				"eigenFragment.setIntegerVariable('TargetViewId', 0, 999711);"
 			],
 			"type": "JavaScript"
 		},
@@ -133,18 +133,18 @@
 								}
 							],
 							"title_script_list": [
-								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-								"var filename = eigenFragment.getViewState(targetVid)",
-								"'Remote Image: '+filename"
+								"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+								"var filename = eigenFragment.getViewState(targetVid);",
+								"'Remote Image: '+filename;"
 							]
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
 					},
 					"sftp_script_list": [
-						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-						"var filename = eigenFragment.getViewState(targetVid)",
-						"'get ' + filename + ' ImageView.png'"
+						"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+						"var filename = eigenFragment.getViewState(targetVid);",
+						"'get ' + filename + ' ImageView.png';"
 					],
 					"type": "SecureFtp"
 				},

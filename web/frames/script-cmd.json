@@ -26,8 +26,8 @@
       "layout_width": "wrap_content",
       "on_click": {
         "script_list": [
-          "x = 8*5",
-          "eigenActivity.showToast('var x: '+x)"
+          "x = 8*5;",
+          "eigenActivity.showToast('var x: '+x);"
         ],
         "type": "JavaScript"
       },

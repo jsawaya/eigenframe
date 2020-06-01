@@ -25,11 +25,11 @@
 			},
 			{
 				"script_list": [
-					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote EigenFrame')",
-					"eigenFragment.setCacheString('WorkingDirectory', '')",
-					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/frames')",
-					"eigenFragment.setCacheString('SelectedFile', '')",
-					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999722)"
+					"eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select Remote EigenFrame');",
+					"eigenFragment.setCacheString('WorkingDirectory', '');",
+					"eigenFragment.setCacheString('SelectedPath', 'git-repos/eigenframe/web/frames');",
+					"eigenFragment.setCacheString('SelectedFile', '');",
+					"eigenFragment.setIntegerVariable('TargetViewId', 0, 999722);"
 				],
 				"type": "JavaScript"
 			},
@@ -67,9 +67,9 @@
 																		{
 																			"is_eigen_response": "true",
 																			"ssh_script_list": [
-																				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																				"var filename = eigenFragment.getViewState(targetVid)",
-																				"'cd /data/data/com.termux/files/home; cat '+filename "
+																				"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+																				"var filename = eigenFragment.getViewState(targetVid);",
+																				"'cd /data/data/com.termux/files/home; cat '+filename;"
 																			],
 																			"type": "SecureShell"
 																		}
@@ -80,9 +80,9 @@
 																"type": "Clone"
 															},
 															"sftp_script_list": [
-																"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-																"var filename = eigenFragment.getViewState(targetVid)",
-																"'put EditText:999000 ' + filename"
+																"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+																"var filename = eigenFragment.getViewState(targetVid);",
+																"'put EditText:999000 ' + filename;"
 															],
 															"type": "SecureFtp"
 														},
@@ -107,18 +107,18 @@
 								],
 								"id": 999099,
 								"title_script_list": [
-									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-									"var filename = eigenFragment.getViewState(targetVid)",
-									"'Remote File: ' + filename"
+									"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+									"var filename = eigenFragment.getViewState(targetVid);",
+									"'Remote File: ' + filename;"
 								]
 							},
 							"name": "PopupScreenDefault",
 							"type": "Clone"
 						},
 						"sftp_script_list": [
-							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId')",
-							"var filename = eigenFragment.getViewState(targetVid)",
-							"'get ' + filename + ' EditText:999000'"
+							"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+							"var filename = eigenFragment.getViewState(targetVid);",
+							"'get ' + filename + ' EditText:999000';"
 						],
 						"type": "SecureFtp"
 					},
