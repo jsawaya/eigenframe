@@ -259,10 +259,8 @@ handle_prolog(Request) :-
 % create simple dynamic app
 handle_dyn_app(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
-	eigenfragment(Data1, 'Dynamic', 'ic_launcher_round.', 'http://localhost:8000/frame?file=define-clones.json'),
-	eigenfragment(Data2, 'About', 'info.', 'http://localhost:8000/frame?file=about.json'),
-	eigenfragment(Data3, 'Layout', 'ic_launcher_round.', 'http://localhost:8000/dyn_layout'),
-	eigenframe_app(Data,false,[Data1,Data2,Data3]),
+	eigenfragment(Data3, 'Dynamic', 'ic_launcher_round.', 'http://localhost:8000/dyn_layout'),
+	eigenframe_app(Data,false,[Data3]),
 	show_json(Data).
 
 % ----------------------------------------------------
