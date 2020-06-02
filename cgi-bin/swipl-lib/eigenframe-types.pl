@@ -58,7 +58,7 @@ eigenframe_app(Data, Is_secure_window, Script, Tab_list) :-
 	Data = _{
 		type:'EigenFrame',
 		is_secure_window: Is_secure_window,
-		script: Script
+		script: Script,
 		tab_list: Tab_list	
 	}.
 
@@ -101,20 +101,6 @@ eigen_clone(Data, Define_name, Attributes) :-
   	name: Define_name,
   	attributes: Attributes
 	}.
-
-% - this clause requires attributes, which may not be true 
-% - and it can not create a new instance, only parse	
-% eigen_clone(Data, Define_name, Attributes) :-
-%		'Clone' == Data.get(type),
-%		Define_name = Data.get(name),
-%		Attributes = Data.get(attributes),
-
-%-----------------------------------------------
-
-%add_eigenfragment_to_list(Data, Tab_list) :- 
-%	'EigenFragment' == Data.get(type),
-%	member(Data, Tab_list),
-%	format(" = added eigenfragment~n", []).
 
 %-----------------------------------------------
 

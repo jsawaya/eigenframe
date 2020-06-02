@@ -153,7 +153,7 @@ handle_type_search(Request) :-
   	[	type(Type, [ optional(true) ]) 
 		]),
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
-	write('{"type": "'), write(Type), write('", "found": [ {}'), 
+	format('{"type": "~w", "found": [ {} ', [Type]),
 	search_eigenframe_type_test(Type),false;write("]}"),
 	true.
 
