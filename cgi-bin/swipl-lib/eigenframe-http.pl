@@ -260,7 +260,7 @@ handle_prolog(Request) :-
 handle_dyn_app(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	eigenfragment(Data3, 'Dynamic', 'ic_launcher_round.', 'http://localhost:8000/dyn_layout'),
-	eigenframe_app(Data,false,[Data3]),
+	eigenframe_app(Data,false,[],[Data3]),
 	show_json(Data).
 
 % ----------------------------------------------------
