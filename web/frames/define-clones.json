@@ -346,8 +346,8 @@
 										},
 										{
 											"script_list": [
-												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,true);",
-												"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true);"
+												"eigenActivity.setBooleanVariable('IsShowWorkingDirectory',0,true);",
+												"eigenActivity.setBooleanVariable('IsShowCurrentFilename',0,true);"
 											],
 											"type": "JavaScript"
 										},

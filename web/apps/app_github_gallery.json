@@ -1,11 +1,10 @@
 {
   "type": "EigenFrame",
-  "delimiter": ";",
   "script_list": [
-    "var github_branch = eigenActivity.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString())",
-    "eigenActivity.setCacheString('GithubBranch', github_branch)",
-    "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/' ",
-    "eigenActivity.setCacheString('RootUrl', root_url)"
+    "var github_branch = eigenActivity.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
+    "eigenActivity.setCacheString('GithubBranch', github_branch);",
+    "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
+    "eigenActivity.setCacheString('RootUrl', root_url);"
   ],
   "is_secure_window": "false",
   "tab_list": [

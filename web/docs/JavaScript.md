@@ -11,12 +11,12 @@ One of the following:
  * (script_script_list is not supported)
 
 ### eigenFragment methods:
-public void copyFile(String filename1, String filename2)
-public void renameFile(String filename1, String filename2)
-public void deleteFile(String filename1)
-
 void eigenFragment.closePopupScreen(int screenId)
 void eigenFragment.closePopupWindow()
+
+//public void copyFile(String filename1, String filename2)
+//public void renameFile(String filename1, String filename2)
+//public void deleteFile(String filename1)
 
 boolean eigenFragment.setViewState(int viewId, String value)
 String eigenFragment.getViewState()
@@ -50,14 +50,15 @@ boolean eigenFragment.getOptionBoolean(String optionName, boolean init)
 Object eigenFragment.getOption(String optionName)
 
 String eigenFragment.getVariableName(String type, int id)
+
 String eigenFragment.getStringVariable(String type, int id, String initialValue)
 int eigenFragment.getIntegerVariable(String type, int id, int initialValue)
 long eigenFragment.getLongVariable(String type, int id, long initialValue)
 boolean eigenFragment.getBooleanVariable(String type, int id, boolean initialValue)
+
 void eigenFragment.setStringVariable(String type, int id, String initialValue)
 void eigenFragment.setIntegerVariable(String type, int id, int initialValue)
 void eigenFragment.setLongVariable(String type, int id, long initialValue)
-void eigenFragment.setBooleanVariable(String type, int id, boolean initialValue)
 
 ### eigenActivity methods:
 void eigenActivity.showToast(String message)
@@ -67,6 +68,40 @@ void eigenActivity.finish()
 String eigenActivity.getString(com.sawaya.R.string.change_log)
 void eigenActivity.enableOrientationEventListener(boolean isEnabled)
 void eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
+
+public void eigenActivity.copyFile(String filename1, String filename2)
+public void eigenActivity.renameFile(String filename1, String filename2)
+public void eigenActivity.deleteFile(String filename1)
+
+String eigenActivity.getCacheFilePath(String filename)
+String eigenActivity.getCacheString(String type, int id, String initValue)
+String eigenActivity.getCacheString(String filename)
+byte[] eigenActivity.getCacheByteArray(String filename)
+
+void eigenActivity.setCacheString(String type, int id, String initialValue)
+void eigenActivity.setCacheString(String filename, String initialValue)
+
+String eigenActivity.clearCacheFile(String filename)
+
+String eigenActivity.concatPaths(String rootPath, String relativePath)
+String eigenActivity.concatPaths(String homePath, String workPath, String relativePath)
+String eigenActivity.concatCachePaths(String rootPathCache, String relativePathCache)
+
+String eigenActivity.getVariableName(String type, int id)
+
+String eigenActivity.getStringVariable(String type, int id, String initialValue)
+int eigenActivity.getIntegerVariable(String type, int id, int initialValue)
+long eigenActivity.getLongVariable(String type, int id, long initialValue)
+boolean eigenActivity.getBooleanVariable(String type, int id, boolean initialValue)
+
+void eigenActivity.setStringVariable(String type, int id, String initialValue)
+void eigenActivity.setIntegerVariable(String type, int id, int initialValue)
+void eigenActivity.setLongVariable(String type, int id, long initialValue)
+void eigenActivity.setBooleanVariable(String type, int id, boolean initialValue)
+
+
+
 
         
 Related:
