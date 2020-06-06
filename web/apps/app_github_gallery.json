@@ -127,6 +127,12 @@
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-PopupScreen.json'"
+    },
+    {
+      "name": "SimulationView",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-SimulationView.json'"
     }
   ]
 }
