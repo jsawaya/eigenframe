@@ -401,6 +401,58 @@
 				"type": "Clone"
 			},
 			{
+				"attributes": {
+					"icon": {
+						"location": "top",
+						"name": "cloud_download."
+					},
+					"on_click": {
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"component_list": [
+											{
+												"attributes": {
+													"ssh_list": [
+														"cd ~/git-repos/eigenframe",
+														"echo //git fetch --all",
+														"git fetch --all",
+														"echo //git reset HEAD",
+														"git reset HEAD",
+														"echo //git checkout 1.4",
+														"git checkout 1.4",
+														"echo //git branch --set-upstream-to=origin/1.4",
+														"git branch --set-upstream-to=origin/1.4",
+														"echo //git merge 1.4",
+														"git merge 1.4",
+														"echo //enable execution of cgi-bin files",
+														"cd ~/git-repos/eigenframe/cgi-bin",
+														"chmod 755 *.sh",
+														"chmod 755 *.rb"
+													],
+													"text_size": "10"
+												},
+												"name": "TextViewDetail",
+												"type": "Clone"
+											}
+										]
+									},
+									"name": "LayoutVerticalScrollable",
+									"type": "Clone"
+								}
+							],
+							"title": "Pull from GitHub EigenFrame 1.4 branch"
+						},
+						"name": "PopupScreenDefault",
+						"type": "Clone"
+					},
+					"text": "Pull from GitHub EigenFrame 1.4 branch"
+				},
+				"name": "ButtonDefault",
+				"type": "Clone"
+			},
+			{
 				"name": "HorizontalLine",
 				"type": "Clone"
 			},
