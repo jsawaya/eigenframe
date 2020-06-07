@@ -1,42 +1,5 @@
 %-----------------------------------------------
 
-eigenframe_types(Types) :-
-Types = 
-[
-	'EigenFrame',
-	'EigenFragment',
-	'ActionList',
-	'AlertDialog',
-	'Button',
-	'CheckBox',
-	'Clone',
-	'Define',
-	'EditText',
-	'HorizontalLine',
-	'HtmlView',
-	'ImageView',
-	'JavaScript',
-	'LinearLayout',
-	'ListView',
-	'PopupHtmlView',
-	'PopupScreen',
-	'PopupTextView',
-	'RadioButton',
-	'SecureFtp',
-	'SecureShell',
-	'SelectDialog',
-	'Spinner',
-	'Switch',
-	'TextView',
-	'ToastMessage',
-	'ToggleButton',
-	'UrlRequest',
-	'VerticalLine',
-	'WebView'
-].
-
-%-----------------------------------------------
-
 %eigen_type(?Type, ?IsAction, ?IsLayout).
 % 1) Type is one of the implemented EigenFrame types.
 % 2) Layout:
@@ -80,17 +43,26 @@ eigen_type('HorizontalLine',	layout_req, []).		% UI component
 eigen_type('VerticalLine', 		layout_req, []).		% UI component
 
 eigen_types(Bag) :-	
-%	setof(Type,Y^Z^p(Type,Y,Z),Bag).
 	setof(Type,Y^Z^eigen_type(Type,Y,Z),Bag).
 
 %-----------------------------------------------
 
-eigenframe_app(Data, Is_secure_window, Tab_list) :-
+eigenframe_app(Data, Is_secure_window, [], Tab_list) :-
 	Data = _{
 		type:'EigenFrame',
 		is_secure_window: Is_secure_window,
 		tab_list: Tab_list	
 	}.
+
+eigenframe_app(Data, Is_secure_window, Script, Tab_list) :-
+	Data = _{
+		type:'EigenFrame',
+		is_secure_window: Is_secure_window,
+		script: Script,
+		tab_list: Tab_list	
+	}.
+
+%-----------------------------------------------
 
 eigenfragment(Data, Tab_name, Icon_name, Url) :-
 	Data = _{
@@ -103,7 +75,7 @@ eigenfragment(Data, Tab_name, Icon_name, Url) :-
 create_app_test(Data_frame) :-
 	eigenfragment(Data1, 'prolog', 'info.', 'http://localhost:8000/frame?file=playlist.json'),
 	eigenfragment(Data2, 'textview', 'info.', 'http://localhost:8000/frame?file=test-TextView.json'),
-	eigenframe_app(Data_frame, false, [Data1, Data2]),
+	eigenframe_app(Data_frame, false, [], [Data1, Data2]),
 	show_json(Data_frame).
 
 %-----------------------------------------------
@@ -130,20 +102,6 @@ eigen_clone(Data, Define_name, Attributes) :-
   	attributes: Attributes
 	}.
 
-% - this clause requires attributes, which may not be true 
-% - and it can not create a new instance, only parse	
-% eigen_clone(Data, Define_name, Attributes) :-
-%		'Clone' == Data.get(type),
-%		Define_name = Data.get(name),
-%		Attributes = Data.get(attributes),
-
-%-----------------------------------------------
-
-%add_eigenfragment_to_list(Data, Tab_list) :- 
-%	'EigenFragment' == Data.get(type),
-%	member(Data, Tab_list),
-%	format(" = added eigenfragment~n", []).
-
 %-----------------------------------------------
 
 eigen_layout(Data, Component_list, Orientation, Scrollable) :-
@@ -157,13 +115,7 @@ eigen_layout(Data, Component_list, Orientation, Scrollable) :-
 eigen_layout(Data, Component_list) :-
 	eigen_layout(Data, Component_list, 'vertical', true).
 
-eigen_textview(Data, Text, Text_size) :-
-	Data = _{
-  	type: 'TextView',
-  	text: Text,
-  	text_size: Text_size,
-		text_color: '#ffffff'
-	}.
+%-----------------------------------------------
 
 eigen_actionlist(Data, Component_list, On_complete) :-
 	Data = _{
@@ -300,6 +252,14 @@ eigen_switch(Data, Text, On_click) :-
   	type: 'Switch',
   	text: Text,
   	on_click: On_click
+	}.
+
+eigen_textview(Data, Text, Text_size) :-
+	Data = _{
+  	type: 'TextView',
+  	text: Text,
+  	text_size: Text_size,
+		text_color: '#ffffff'
 	}.
 
 eigen_toastmessage(Data, Message) :-

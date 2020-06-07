@@ -1,0 +1,14 @@
+{
+  "component_list": [
+    {
+      "layout_height": "match_parent",
+      "layout_width": "match_parent",
+      "type": "SimulationView"
+    }
+  ],
+  "gravity": "center_horizontal",
+  "layout_height": "match_parent",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "type": "LinearLayout"
+}

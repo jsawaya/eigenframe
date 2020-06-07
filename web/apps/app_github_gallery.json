@@ -1,10 +1,10 @@
 {
   "type": "EigenFrame",
   "script_list": [
-    "var github_branch = eigenFragment.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
-    "eigenFragment.setCacheString('GithubBranch', github_branch);",
+    "var github_branch = eigenActivity.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
+    "eigenActivity.setCacheString('GithubBranch', github_branch);",
     "var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
-    "eigenFragment.setCacheString('RootUrl', root_url);"
+    "eigenActivity.setCacheString('RootUrl', root_url);"
   ],
   "is_secure_window": "false",
   "tab_list": [
@@ -127,6 +127,12 @@
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-PopupScreen.json'"
+    },
+    {
+      "name": "SimulationView",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-SimulationView.json'"
     }
   ]
 }
