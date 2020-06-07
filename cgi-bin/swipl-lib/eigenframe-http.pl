@@ -186,14 +186,14 @@ handle_parse_file_shallow(Request) :-
 % http://localhost:8000/load_frames
 % http://localhost:8000/load_apps
 
-handle_load_frames(Request) :-
+handle_load_frames(_Request) :-
 	format('Content-type: text/plain~n~n', []),
 	load_frames,
 	!.
 
-handle_load_apps(Request) :-
+handle_load_apps(_Request) :-
 	format('Content-type: text/plain~n~n', []),
-	load_apps.
+	load_apps,
 	!.
 
 % ----------------------------------------------------
