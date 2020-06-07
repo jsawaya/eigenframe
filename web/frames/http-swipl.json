@@ -75,7 +75,7 @@
 									"component_list": [
 										{
 											"attributes": {
-												"abort": 2000,
+												"abort": 10000,
 												"ssh": "sh -c \"swipl /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin/swipl-lib/eigenframe-http.pl --http=8000\" &",
 												"text_size": "14"
 											},
