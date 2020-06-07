@@ -19,9 +19,7 @@ start_eigenframe :-
 	directory_eigenframe_cgibin_swipllib(Dir),
 	eigenframe_ensure_loaded(Dir, 'eigenframe-types.pl'),
 	eigenframe_ensure_loaded(Dir, 'eigenframe-parse.pl'),
-	eigenframe_ensure_loaded(Dir, 'eigenframe-search.pl'),
-	load_frames,
-	load_apps.
+	eigenframe_ensure_loaded(Dir, 'eigenframe-search.pl').
 
 eigenframe_ensure_loaded(Dir, FName) :-
 	directory_file_path(Dir, FName, FPath),
