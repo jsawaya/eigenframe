@@ -12,13 +12,13 @@
 		{
 			"type": "EigenFragment",
 			"name_script": "'v'+eigenActivity.getGithubBranchString()",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/define-clones.json'",
+			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/define-clones.json'",
 			"icon_name": "ic_launcher_round."
 		},
 		{
 			"type": "EigenFragment",
 			"name": "About",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/about.json'",
+			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/about.json'",
 			"icon_name": "info."
 		}
 	]
