@@ -382,7 +382,7 @@
 				"type": "Clone"
 			},
 			{
-				"background_color": "#123456",
+				"background_color": "#225522",
 				"layout_height": "wrap_content",
 				"layout_width": "wrap_content",
 				"margin": {
@@ -401,6 +401,52 @@
 				"text": "Start ruby webrick service",
 				"text_color": "#ffffff",
 				"type": "Button"
+			},
+			{
+				"background_color": "#552222",
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"title": "Use url to exit webrick process",
+					"type": "PopupTextView",
+					"url": "http://localhost:1234/exit"
+				},
+				"text": "Use url to exit webrick process",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"background_color": "#552222",
+				"layout_height": "wrap_content",
+				"layout_width": "wrap_content",
+				"margin": {
+					"bottom": 10,
+					"left": 10,
+					"right": 10,
+					"top": 10
+				},
+				"on_click": {
+					"font": "font/droid-sans-mono/DroidSansMono.ttf",
+					"ssh_list": [
+						"pkill ruby",
+						"ps -eo cmd"
+					],
+					"title": "use ssh to stop any ruby process",
+					"type": "PopupTextView"
+				},
+				"text": "Use ssh to stop any ruby process",
+				"text_color": "#ffffff",
+				"type": "Button"
+			},
+			{
+				"name": "HorizontalLine",
+				"type": "Clone"
 			},
 			{
 				"background_color": "#123456",
@@ -486,48 +532,6 @@
 					"type": "PopupTextView"
 				},
 				"text": "Show ruby webrick output",
-				"text_color": "#ffffff",
-				"type": "Button"
-			},
-			{
-				"background_color": "#123456",
-				"layout_height": "wrap_content",
-				"layout_width": "wrap_content",
-				"margin": {
-					"bottom": 10,
-					"left": 10,
-					"right": 10,
-					"top": 10
-				},
-				"on_click": {
-					"title": "Use url to exit webrick process",
-					"type": "PopupTextView",
-					"url": "http://localhost:1234/exit"
-				},
-				"text": "Use url to exit webrick process",
-				"text_color": "#ffffff",
-				"type": "Button"
-			},
-			{
-				"background_color": "#123456",
-				"layout_height": "wrap_content",
-				"layout_width": "wrap_content",
-				"margin": {
-					"bottom": 10,
-					"left": 10,
-					"right": 10,
-					"top": 10
-				},
-				"on_click": {
-					"font": "font/droid-sans-mono/DroidSansMono.ttf",
-					"ssh_list": [
-						"pkill ruby",
-						"ps -eo cmd"
-					],
-					"title": "use ssh to stop any ruby process",
-					"type": "PopupTextView"
-				},
-				"text": "Use ssh to stop any ruby process",
 				"text_color": "#ffffff",
 				"type": "Button"
 			}
