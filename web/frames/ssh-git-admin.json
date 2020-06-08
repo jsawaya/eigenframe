@@ -114,7 +114,7 @@
 					"type": "Clone"
 				},
 				"type": "ImageView",
-				"url_script": "eigenFragment.getCacheString('RootUrl')+'res/icon/black/ic_cloud_download_black_24dp.png'"
+				"url_script": "eigenFragment.getCacheString('RootUrl')+'res/icon/white/ic_cloud_download_white_24dp.png'"
 			},
 			{
 				"attributes": {
