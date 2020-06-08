@@ -76,6 +76,47 @@
 				"type": "Clone"
 			},
 			{
+				"layout_height": "100",
+				"layout_width": "match_parent",
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd ~/git-repos/eigenframe",
+													"echo //git stash",
+													"git stash",
+													"echo //git pull",
+													"git pull",
+													"cd ~/git-repos/eigenframe/cgi-bin",
+													"chmod 755 *.sh",
+													"chmod 755 *.rb",
+													"git status"
+												],
+												"text_size": "12"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Pull from EigenFrame GitHub"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"type": "ImageView",
+				"url_script": "eigenFragment.getCacheString('RootUrl')+'res/icon/black/ic_cloud_download_black_24dp.png'"
+			},
+			{
 				"attributes": {
 					"icon": {
 						"location": "top",
