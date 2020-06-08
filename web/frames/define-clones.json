@@ -6,13 +6,13 @@
 				" - get cache string (GithubBranch), if empty then initialize to '' ",
 				" - set cache string (GithubBranch), initialized or left unchanged "
 			],
-			"script_list": [
+			"x-script_list": [
 				"var github_branch = eigenActivity.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
 				"eigenActivity.setCacheString('GithubBranch', github_branch);",
 				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
 				"eigenActivity.setCacheString('RootUrl', root_url);"
 			],
-			"type": "JavaScript"
+			"x-type": "JavaScript"
 		},
 		{
 			"component": {
