@@ -629,7 +629,7 @@
 				"type": "Clone"
 			},
 			"type": "ImageView",
-			"url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/gnupg.jpg'"
+			"url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/logo-gnupg-light-purple-bg.png'"
 		},
 		{
 			"attributes": {
