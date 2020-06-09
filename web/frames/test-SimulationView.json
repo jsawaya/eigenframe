@@ -4,6 +4,7 @@
       "layout_height": "match_parent",
       "layout_width": "match_parent",
       "type": "SimulationView",
+      "particle_count": "50",
       "url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/wood.jpg'"
     }
   ],
