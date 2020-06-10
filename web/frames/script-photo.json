@@ -58,7 +58,7 @@
 												"script": "eigenActivity.showToast('image click eigenframe')",
 												"type": "JavaScript"
 											},
-											"rotation": 90,
+											"rotation": -90,
 											"type": "ZoomImageView",
 											"url_script_list": [
 												"var jpg_filename = eigenFragment.getCacheString('CameraImage');",
