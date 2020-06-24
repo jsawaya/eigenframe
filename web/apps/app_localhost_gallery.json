@@ -8,9 +8,10 @@
     "eigenActivity.setCacheString('RootUrl', root_url);"
   ],
   "is_secure_window": "false",
+  "is_wake_lock": "true",
   "tab_list": [
     {
-			"name_script": "'v'+eigenActivity.getGithubBranchString()",
+      "name_script": "'v'+eigenActivity.getGithubBranchString()",
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/define-clones.json'",
       "icon_name": "ic_launcher_round.",
       "type": "EigenFragment"
@@ -128,6 +129,12 @@
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url": "http://localhost:8080/frames/test-PopupScreen.json"
+    },
+    {
+      "name": "SimulationView",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "http://localhost:8080/frames/test-SimulationView.json'"
     }
   ]
 }
