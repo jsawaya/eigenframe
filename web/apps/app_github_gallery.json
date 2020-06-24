@@ -8,6 +8,7 @@
     "eigenActivity.setCacheString('RootUrl', root_url);"
   ],
   "is_secure_window": "false",
+  "is_wake_lock": "true",
   "tab_list": [
     {
       "name_script": "'v'+eigenActivity.getGithubBranchString()",

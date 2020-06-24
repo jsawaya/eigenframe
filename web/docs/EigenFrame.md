@@ -38,6 +38,7 @@ Example:
 		"eigenActivity.setCacheString('RootUrl', root_url);"
 	],
 	"is_secure_window": "false",
+	"is_wake_lock": "false",
 	"tab_list": [
 		{
 			"type": "EigenFragment",
