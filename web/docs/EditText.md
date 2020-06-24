@@ -4,16 +4,17 @@
 * type = "EditText"
 * is_password = true | false (default)
 * is_single_line = true | false (default)
+* max_length, max_length_script
 * filter: [filter attribute](EditText-filter.md)
-* text | text_script
-* url
-* ssh / is_toast = true | false
-* sftp
-* id = define unique view id, 
-  puts contents into cache TextView:{id} 
+* input source:
+  - text | text_script
+  - url
+  - ssh 
+  - sftp
+* id = define unique view id, puts contents into cache EditText:{id} 
 
 * text_color
-* text_size
+* text_size, text_size_script
 * font: [font attribute](font.md)
 * layout_width
 * layout_height

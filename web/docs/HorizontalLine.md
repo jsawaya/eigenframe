@@ -2,7 +2,7 @@
 ## schema pattern
 
 * type = "HorizontalLine"
-* size = line width
+* size, size_script = line width
 * color
 
 

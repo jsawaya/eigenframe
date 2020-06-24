@@ -11,7 +11,7 @@
 * on_click action script
 
 ListView support for dynamic lists:
-* checked_option
+* checked_option, checked_option_script
 * option_list
 
 ListView support for file lists:

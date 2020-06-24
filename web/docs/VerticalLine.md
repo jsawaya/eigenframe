@@ -2,7 +2,7 @@
 ## schema pattern
 
 * type = "VerticalLine"
-* size = line width
+* size, size_script = line width
 * color
 
 Related:

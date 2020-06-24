@@ -3,7 +3,7 @@
 
 * type = "RadioButton"
 * option_list
-* checked_option = 0 ... n 
+* checked_option, checked_option_script = 0 ... n 
 * id = define unique id to store the view-state
 * layout_width
 * layout_height

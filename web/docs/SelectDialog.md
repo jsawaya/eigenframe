@@ -5,7 +5,7 @@
 * id : view id used get viewState
 * "title": text string appears at top of popup dialog
 * "icon": {"name"} icon appears adjacent to title (on left, by default)
-* checked_option
+* checked_option, checked_option_script
 * option_list
 * on_click : action script event listener
 

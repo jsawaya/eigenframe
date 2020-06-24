@@ -2,11 +2,9 @@
 ## schema pattern
 
 * type = "ImageView"
-* url
-* rotation [-270, -180, -90, 0, 90, 180, 270]
-* id = define unique view id, 
-  puts contents into cache ImageView:{id} 
-
+* url, url_script or url_script_list
+* rotation, rotation_script [-270, -180, -90, 0, 90, 180, 270]
+* id = define unique view id, puts contents into cache ImageView:{id} 
 * layout_width
 * layout_height
 * gravity
@@ -23,7 +21,7 @@ Related:
 [ToggleButton](ToggleButton.md) 
 [RadioButton](RadioButton.md) 
 [Spinner](Spinner.md) 
-
+[ZoomImageView](ZoomImageView.md) 
 
 Example:
 ```json

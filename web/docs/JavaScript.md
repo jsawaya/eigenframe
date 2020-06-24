@@ -8,8 +8,8 @@ One of the following:
  * script - a javascript string to evaluate.
  * script_list - a list of javascript script strings to evaluate.
 		- delimiter - after each line of a script_list (or <tag>_script_list) append ";"
- * script_script - a script that produces the script to evaluate (see example).
- * (script_script_list is not supported)
+ * script_script - is a meta-script that produces a script to evaluate (see example).
+ * (note: script_script_list is not supported)
 
 ## Methods in eigenActivity:
 
@@ -109,14 +109,15 @@ Example:
 }
 ```
 
-Example:
+Example - set script_list delimiter:
 ```json
 {
-  "type": "JavaScript",
+	"type": "JavaScript",
+	"delimiter": ";",
   "script_list": [
-    "var x1 = eigenFragment.clearCacheFile('EditText:999000');",
-    "eigenActivity.showToast('Local File Cache Status: ' + x1 );",
-    "eigenFragment.closePopupScreen(999099);"
+    "var x1 = eigenFragment.clearCacheFile('EditText:999000')",
+    "eigenActivity.showToast('Local File Cache Status: ' + x1 )",
+    "eigenFragment.closePopupScreen(999099)"
   ]
 }
 ```

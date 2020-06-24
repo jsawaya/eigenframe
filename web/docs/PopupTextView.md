@@ -3,10 +3,13 @@
 
 * type = "PopupTextView"
 * title = heading on title bar
-* text | text_script
-* url
-* ssh / is_toast = true | false
-* sftp
+* input source:
+  - text | text_script
+  - url
+  - ssh 
+    * is_toast = true | false, 
+    * abort, abort_script: number of milli-seconds before a forced exit - required for ssh scripts that do not return synchronously, e.g. starting http service.
+  - sftp
 
 * text_color
 * text_size

@@ -79,7 +79,7 @@
 					"name": "PopupScreenDefault",
 					"type": "Clone"
 				},
-				"text": "View Photo"
+				"text": "Show Camera Image with Zoom Image View"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
@@ -148,7 +148,7 @@
 					],
 					"type": "SecureFtp"
 				},
-				"text": "Show Remote Image File (via sftp)"
+				"text": "Show Remote Image File (via sftp) with Zoom Image View"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"

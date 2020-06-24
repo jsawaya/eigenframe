@@ -1,9 +1,9 @@
 # ![Alt](web/res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame
 ## Github Framework for Dynamic App Specification Deployment, Rendering & Execution
 
-EigenFrame starts with a url request, but instead of getting a simple web page, EigenFrame parses specifications (represented in JSON format) to dynamically build an openly programmable application that includes Android user-interface components, and provides access to certain device sensors and hardware.
+EigenFrame v1.4 starts with a url request, but instead of producing a simple web page, EigenFrame parses specifications (in JSON format) to dynamically build an openly programmable application that includes Android user-interface components, scripts and provides access to certain device sensors and hardware.
 
-More than just a web-browser, EigenFrame has an embedded javascript interpreter with access to Android classes, methods and properties, and a secure-shell client capability to interface with a local Termux app (through openssh) to integrate your own application scripts, in *whatever* language/tool you choose (bash, git, ruby, perl, python, prolog, gpg ...). In contrast, web-browsers only have limited scripting access to the host mobile device, from inside a browser window.
+More than just a web-browser, EigenFrame has an embedded javascript interpreter with access to Android classes, methods and properties, and a secure-shell client capability to interface with a local Termux app (through openssh) to integrate your own application scripts, in *whatever* language/tool you choose (bash, git, ruby, perl, python, prolog, gpg ...). In contrast, web-browsers have only limited scripting access to the host mobile device, from inside a browser window.
 
 EigenFrame also provides asynchronous url, ssh, and sftp requests, so you can use cloud-based services, or local Termux services (like: Apache2/CGI, Ruby Webrick, and SWI-Prolog) to generate dynamic EigenFrame components at runtime.
 
@@ -42,7 +42,9 @@ Component type | Description
 [TextView](./web/docs/TextView.md)  | shows plain text, with built-in fonts 
 [HtmlView](./web/docs/HtmlView.md)  | shows simple html, internal-icons, and simple web-links 
 [WebView](./web/docs/WebView.md)  | shows elaborate html, and url web-page  - javascript capable 
-[ImageView](./web/docs/ImageView.md)  | shows image or external-icons 
+[ImageView](./web/docs/ImageView.md)  | shows image or external-icons
+[ZoomImageView](./web/docs/ZoomImageView.md)  | shows image or external-icons, with interactive zoom/pan 
+[SimulationView](./web/docs/SimulationView.md)  | shows a background image with an interactive tilt-plane (more to come) 
 [EditText](./web/docs/EditText.md) | a string value, with an editable text area for state value 
 [CheckBox](./web/docs/CheckBox.md) | a small box with or without a check mark, with integer value [0, 1] 
 [Spinner](./web/docs/Spinner.md) | a popup multiple-choice option-list, and a selection index 
@@ -50,7 +52,7 @@ Component type | Description
 [ToggleButton](./web/docs/ToggleButton.md) | bi-modal button label with an integer state value [0, 1] 
 [RadioButton](./web/docs/RadioButton.md) | a multiple-choice option-list, and a selected index 
 [HorizontalLine](./web/docs/HorizontalLine.md) | a horizontal line <hr/> to separate components in vertical LinearLayout 
-[VerticalLine](./web/docs/VerticalLine.md) | a vertical line to separate components in horizontal LinearLayout 
+[VerticalLine](./web/docs/VerticalLine.md) | a vertical line | to separate components in horizontal LinearLayout 
 [LinearLayout](./web/docs/LinearLayout.md)  | layouts may be nested components, within another layout 
 [ListView](./web/docs/ListView.md) | a complex/dynamic multiple-choice option-list, with runtime row layout and define items from cached file 
 
