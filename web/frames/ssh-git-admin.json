@@ -17,7 +17,9 @@
 			{
 				"attributes": {
 					"text_list": [
-						"Click [Pull from EigenFrame GitHub] to get the latest updates"
+						"Initial setup: Click [change git branch to v1.4]",
+						"Pull latest updates: Click [cloud download icon]",
+						"Check status of current branch: Click [git status]"
 					]
 				},
 				"name": "TextViewDetail",
@@ -39,16 +41,22 @@
 												"attributes": {
 													"ssh_list": [
 														"cd ~/git-repos/eigenframe",
-														"echo //git stash",
-														"git stash",
-														"echo //git pull",
-														"git pull",
+														"echo //git fetch --all",
+														"git fetch --all",
+														"echo //git reset HEAD",
+														"git reset HEAD",
+														"echo //git checkout 1.4",
+														"git checkout 1.4",
+														"echo //git branch --set-upstream-to=origin/1.4",
+														"git branch --set-upstream-to=origin/1.4",
+														"echo //git merge 1.4",
+														"git merge 1.4",
+														"echo //enable execution of cgi-bin files",
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
-														"chmod 755 *.rb",
-														"git status"
+														"chmod 755 *.rb"
 													],
-													"text_size": "10"
+													"text_size": "12"
 												},
 												"name": "TextViewDetail",
 												"type": "Clone"
@@ -59,15 +67,56 @@
 									"type": "Clone"
 								}
 							],
-							"title": "Pull from EigenFrame GitHub"
+							"title": "change git branch to v1.4"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
 					},
-					"text": "Pull from EigenFrame GitHub"
+					"text": "change git branch to v1.4"
 				},
 				"name": "ButtonDefault",
 				"type": "Clone"
+			},
+			{
+				"layout_height": "100",
+				"layout_width": "match_parent",
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd ~/git-repos/eigenframe",
+													"echo //git stash",
+													"git stash",
+													"echo //git pull",
+													"git pull",
+													"cd ~/git-repos/eigenframe/cgi-bin",
+													"chmod 755 *.sh",
+													"chmod 755 *.rb",
+													"git status"
+												],
+												"text_size": "12"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Pull from EigenFrame GitHub"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"type": "ImageView",
+				"url_script": "eigenFragment.getCacheString('RootUrl')+'res/icon/white/ic_cloud_download_white_24dp.png'"
 			},
 			{
 				"attributes": {
@@ -84,7 +133,7 @@
 											{
 												"attributes": {
 													"ssh": "cd ~/git-repos/eigenframe ; git status",
-													"text_size": "10"
+													"text_size": "12"
 												},
 												"name": "TextViewDetail",
 												"type": "Clone"

@@ -18,7 +18,10 @@ As an sample, the home-url may return the following EigenFrame app specification
 
 * type: "EigenFrame", the top-level application specification 
 * is_secure_window: [true | false], true disables screen snapshots and android task-manager screen view
+* is_wake_lock: [true | false], true keeps screen on - e.g. SimulationView
 * tab_list: sequence of EigenFragment components
+* script, script_list: initialization script in eigenActivity context (eigenFragment context is not applicable).
+
 
 Related:
 [EigenFragment](EigenFragment.md) 
@@ -26,20 +29,28 @@ Related:
 Example:
 ```json
 {
-  "type": "EigenFrame",
-  "is_secure_window": "true",
-  "tab_list": [
-    {
-      "icon_name": "ic_launcher_round.",
-      "name": "Startup",
-      "type": "EigenFragment",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/define-clones.json"
-    },
-    {
-      "name": "About",
-      "type": "EigenFragment",
-      "url": "file:///storage/emulated/0/Android/data/com.sawaya.eigenframe/files/about.json"
-    }
-  ]
+	"type": "EigenFrame",
+	"script_list": [
+		"var github_branch = eigenActivity.getGithubBranchString();",
+		"eigenActivity.showToast('Github Branch: '+github_branch);",
+		"eigenActivity.setCacheString('GithubBranch', github_branch);",
+		"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
+		"eigenActivity.setCacheString('RootUrl', root_url);"
+	],
+	"is_secure_window": "false",
+	"tab_list": [
+		{
+			"type": "EigenFragment",
+			"name_script": "'v'+eigenActivity.getGithubBranchString()",
+			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/define-clones.json'",
+			"icon_name": "ic_launcher_round."
+		},
+		{
+			"type": "EigenFragment",
+			"name": "About",
+			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/about.json'",
+			"icon_name": "info."
+		}
+	]
 }
 ```

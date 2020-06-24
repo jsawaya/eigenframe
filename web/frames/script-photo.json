@@ -58,8 +58,8 @@
 												"script": "eigenActivity.showToast('image click eigenframe')",
 												"type": "JavaScript"
 											},
-											"rotation": 90,
-											"type": "ImageView",
+											"rotation": -90,
+											"type": "ZoomImageView",
 											"url_script_list": [
 												"var jpg_filename = eigenFragment.getCacheString('CameraImage');",
 												"'file://'+jpg_filename;"
@@ -79,7 +79,7 @@
 					"name": "PopupScreenDefault",
 					"type": "Clone"
 				},
-				"text": "View Photo"
+				"text": "Show Camera Image with Zoom Image View"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
@@ -123,7 +123,7 @@
 													"script": "eigenActivity.showToast('image click eigenframe')",
 													"type": "JavaScript"
 												},
-												"type": "ImageView",
+												"type": "ZoomImageView",
 												"url_script": "'file://'+ eigenFragment.getCacheFilePath('ImageView.png')"
 											}
 										]
@@ -148,7 +148,7 @@
 					],
 					"type": "SecureFtp"
 				},
-				"text": "Show Remote Image File (via sftp)"
+				"text": "Show Remote Image File (via sftp) with Zoom Image View"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"

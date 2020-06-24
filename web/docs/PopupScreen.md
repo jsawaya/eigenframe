@@ -10,7 +10,7 @@ The contents of the screen are sourced synchronously from the component_list, or
    - screen id only needs to be unique with respect to other popup-screens, it does not need to unique with respect to all other view ids
 * background_color
 * title | title_script
-* text_size
+* text_size, text_size_script
 * text_color
 * gravity
 * icon 

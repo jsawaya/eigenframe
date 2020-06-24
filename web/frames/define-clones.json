@@ -6,13 +6,13 @@
 				" - get cache string (GithubBranch), if empty then initialize to '' ",
 				" - set cache string (GithubBranch), initialized or left unchanged "
 			],
-			"script_list": [
-				"var github_branch = eigenFragment.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
-				"eigenFragment.setCacheString('GithubBranch', github_branch);",
+			"x-script_list": [
+				"var github_branch = eigenActivity.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
+				"eigenActivity.setCacheString('GithubBranch', github_branch);",
 				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
-				"eigenFragment.setCacheString('RootUrl', root_url);"
+				"eigenActivity.setCacheString('RootUrl', root_url);"
 			],
-			"type": "JavaScript"
+			"x-type": "JavaScript"
 		},
 		{
 			"component": {
@@ -284,7 +284,7 @@
 			"type": "Define"
 		},
 		{
-			"script": "eigenFragment.setCacheString('SelectFilePrompt', 0, 'Select File...')",
+			"script": "eigenActivity.setCacheString('SelectFilePrompt', 0, 'Select File...')",
 			"type": "JavaScript"
 		},
 		{
@@ -295,7 +295,7 @@
 					"var selected_path = eigenFragment.getCacheString('SelectedPath', 0, '');",
 					"var selected_file = eigenFragment.getCacheString('SelectedFile', 0, '');",
 					"var full_path = eigenFragment.concatPaths(home_dir, work_dir, selected_path);",
-					"eigenFragment.setCacheString('FullPath', full_path);",
+					"eigenActivity.setCacheString('FullPath', full_path);",
 					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
 					"eigenFragment.setViewState(targetVid, full_path);"
 				],
@@ -346,8 +346,8 @@
 										},
 										{
 											"script_list": [
-												"eigenFragment.setBooleanVariable('IsShowWorkingDirectory',0,true);",
-												"eigenFragment.setBooleanVariable('IsShowCurrentFilename',0,true);"
+												"eigenActivity.setBooleanVariable('IsShowWorkingDirectory',0,true);",
+												"eigenActivity.setBooleanVariable('IsShowCurrentFilename',0,true);"
 											],
 											"type": "JavaScript"
 										},
@@ -477,7 +477,7 @@
 					"var home_dir = '/data/data/com.sawaya.eigenframe' ;",
 					"var selected_path = eigenFragment.getCacheString('SelectedPathLocal', 0, '');",
 					"var full_path = eigenFragment.concatPaths(home_dir, selected_path);",
-					"eigenFragment.setCacheString('FullPathLocal', full_path);",
+					"eigenActivity.setCacheString('FullPathLocal', full_path);",
 					"var targetVid = eigenFragment.getIntegerVariable('TargetViewId2');",
 					"eigenFragment.setViewState(targetVid, full_path);"
 				],

@@ -5,13 +5,15 @@
 * input source:
   - text | text_script
   - url
-  - ssh / is_toast = true | false
+  - ssh 
+    * is_toast = true | false, 
+    * abort, abort_script: number of milli-seconds before a forced exit - required for ssh scripts that do not return synchronously, e.g. starting http service.
   - sftp
 * id = define unique view id, 
   puts contents into cache TextView:{id} 
 
 * text_color
-* text_size
+* text_size, text_size_script
 * font: [font attribute](./font.md)
 * layout_width
 * layout_height

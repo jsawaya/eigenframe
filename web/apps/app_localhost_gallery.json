@@ -1,7 +1,26 @@
 {
   "type": "EigenFrame",
+  "script_list": [
+    "var github_branch = eigenActivity.getGithubBranchString();",
+    "eigenActivity.showToast('Github Branch: '+github_branch);",
+    "eigenActivity.setCacheString('GithubBranch', github_branch);",
+    "var root_url = 'http://localhost:8080/';",
+    "eigenActivity.setCacheString('RootUrl', root_url);"
+  ],
   "is_secure_window": "false",
   "tab_list": [
+    {
+			"name_script": "'v'+eigenActivity.getGithubBranchString()",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/define-clones.json'",
+      "icon_name": "ic_launcher_round.",
+      "type": "EigenFragment"
+    },
+    {
+      "name": "About",
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/about.json'",
+      "icon_name": "info.",
+      "type": "EigenFragment"
+    },
     {
       "name": "Button",
       "type": "EigenFragment",

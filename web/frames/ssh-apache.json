@@ -318,11 +318,21 @@
 				"type": "Clone"
 			},
 			{
-				"attributes": {
-					"icon": {
-						"location": "top",
-						"name": "open_browser."
+				"layout_height": "100",
+				"layout_width": "match_parent",
+				"on_click": {
+					"attributes": {
+						"title": "OpenPGP Cryptography",
+						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/http-cgi-ruby-pgp.json'"
 					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"type": "ImageView",
+				"url_script": "eigenFragment.getCacheString('RootUrl')+'res/images/logo-gnupg-light-purple-bg.png'"
+			},
+			{
+				"attributes": {
 					"on_click": {
 						"attributes": {
 							"title": "OpenPGP Cryptography",

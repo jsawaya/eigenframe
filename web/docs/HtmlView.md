@@ -4,9 +4,8 @@
 * type = "HtmlView"
 * html
 * url
-* id = define unique view id, 
-  puts contents into cache HtmlView:{id} 
-
+* id = define unique view id, puts contents into cache HtmlView:{id} 
+* text_size, text_size_script
 * text_color
 * layout_width
 * layout_height

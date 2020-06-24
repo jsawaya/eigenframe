@@ -26,6 +26,9 @@
 :- http_handler('/file', handle_frame, []).
 :- http_handler('/type_search', handle_type_search, []).
 
+:- http_handler('/load_frames', handle_load_frames, []).
+:- http_handler('/load_apps', handle_load_apps, []).
+
 :- http_handler('/parse_file_shallow', handle_parse_file_shallow, []).
 :- http_handler('/parse_file', handle_parse_file, []).
 :- http_handler('/parse_url', handle_parse_url, []).
@@ -153,7 +156,7 @@ handle_type_search(Request) :-
   	[	type(Type, [ optional(true) ]) 
 		]),
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
-	write('{"type": "'), write(Type), write('", "found": [ {}'), 
+	format('{"type": "~w", "found": [ {} ', [Type]),
 	search_eigenframe_type_test(Type),false;write("]}"),
 	true.
 
@@ -177,6 +180,20 @@ handle_parse_file_shallow(Request) :-
 	each_write_data_type(List),
 	length(List, N),
 	format(" Length: ~w~n", [N]),
+	!.
+
+% ----------------------------------------------------
+% http://localhost:8000/load_frames
+% http://localhost:8000/load_apps
+
+handle_load_frames(_Request) :-
+	format('Content-type: text/plain~n~n', []),
+	load_frames,
+	!.
+
+handle_load_apps(_Request) :-
+	format('Content-type: text/plain~n~n', []),
+	load_apps,
 	!.
 
 % ----------------------------------------------------
@@ -260,7 +277,7 @@ handle_prolog(Request) :-
 handle_dyn_app(_Request) :-
 	format('Content-type: application/json; charset=UTF-8~n~n', []),
 	eigenfragment(Data3, 'Dynamic', 'ic_launcher_round.', 'http://localhost:8000/dyn_layout'),
-	eigenframe_app(Data,false,[Data3]),
+	eigenframe_app(Data,false,[],[Data3]),
 	show_json(Data).
 
 % ----------------------------------------------------
