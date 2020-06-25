@@ -17,7 +17,7 @@
 					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. ",
 					"",
 					"Some basic logic problems:",
-					" 1) List Handling - recursion",
+					" 1) Relationships - inferred association",
 					" 2) Relationships - inferred association",
 					" 3) Shortest Path - networks and graphs",
 					" 4) Zebra Puzzle  - symbolic constraints",
@@ -33,96 +33,7 @@
 		},
 		{
 			"attributes": {
-				"text": "1) List Handling"
-			},
-			"name": "TextViewLabel",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"cat swipl-lib/list.pl"
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog Source: list.pl"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Prolog Source: list.pl"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/list.pl' 'nrev([a,b,c,d,e], Y), write(Y)' "
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Example: list.pl // nrev([a,b,c,d,e], Y) -- find an instance"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"name": "HorizontalLine",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"text": "2) Relationships"
+				"text": "1) Relationships"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -240,6 +151,95 @@
 					"type": "Clone"
 				},
 				"text": "Example: swipl.pl // ancestor(A,B) -- find all instances"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "2) Constraint Logic Programming over Finite Domains"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/clpfd-examples.pl"
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog Source: clpfd-examples.pl"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Prolog Source: clpfd-examples.pl"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/clpfd-examples.pl' 'test_clpfd1(X,Y),format(\"X: ~w~nY: ~w~n\", [X, Y]),!.' "
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Example: clpfd-examples.pl // test_clpfd1(X,Y), false"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
