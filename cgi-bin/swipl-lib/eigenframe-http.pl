@@ -206,7 +206,7 @@ handle_parse_file(Request) :-
 		]),
 	format('Content-type: text/plain~n~n', []),
 	directory_eigenframe_web_frames(Dir),
-	writeln("Directory: "), writeln(Dir).
+	writeln("Directory: "), writeln(Dir),
 	directory_file_path(Dir, File, FPath),
 	exists_file(FPath),
   write(" FilePath: "), writeln(FPath),
