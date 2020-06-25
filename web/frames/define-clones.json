@@ -169,6 +169,38 @@
 			"type": "Define"
 		},
 		{
+			"attributes": {
+				"component_list": [
+					{
+						"attributes": {
+							"component_list": [
+								{
+									"attributes": {
+										"ssh_script_list": [
+											"var targetVid = eigenFragment.getIntegerVariable('TargetViewId');",
+											"var dir = '/data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin';",
+											"swipl_path = eigenFragment.getViewState(targetVid);",
+											"swipl_goal = eigenFragment.getViewState(976000) ;",
+											"'cd '+dir+'; ruby ssh_swipl.rb \"'+swipl_path+'\" \"'+swipl_goal+'\" ';"
+										],
+										"text_size": "10"
+									},
+									"name": "TextViewDetail",
+									"type": "Clone"
+								}
+							]
+						},
+						"name": "LayoutVerticalScrollable",
+						"type": "Clone"
+					}
+				],
+				"title": "Prolog"
+			},
+			"comment": "TODO replace inline below with this clone",
+			"name": "PopupScreenProlog",
+			"type": "Define"
+		},
+		{
 			"component": {
 				"on_complete": {
 					"attributes": {
