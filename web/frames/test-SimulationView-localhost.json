@@ -5,7 +5,7 @@
       "layout_width": "match_parent",
       "type": "SimulationView",
       "particle_count": "50",
-      "url": "http://localhost:8080/web/res/images/wood.jpg"
+      "url": "http://localhost:8080/res/images/wood.jpg"
     }
   ],
   "gravity": "center_horizontal",
