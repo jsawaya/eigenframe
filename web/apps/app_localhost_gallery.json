@@ -134,7 +134,7 @@
       "name": "SimulationView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "http://localhost:8080/frames/test-SimulationView.json'"
+      "url": "http://localhost:8080/frames/test-SimulationView-localhost.json'"
     }
   ]
 }
