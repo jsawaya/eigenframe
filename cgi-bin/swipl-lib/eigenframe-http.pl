@@ -207,16 +207,16 @@ handle_parse_file(Request) :-
 	format('Content-type: text/plain~n~n', []),
 	directory_eigenframe_web_frames(Dir),
 	writeln("Directory: "), writeln(Dir).
-%	directory_file_path(Dir, File, FPath),
-%	exists_file(FPath),
-%  write(" FilePath: "), writeln(FPath),
-%	read_json_file(FPath, Data), 
-%	eigen_types(Spec), 
-%	parse_eigenframe(Spec, Data, List),
-%	recurse_each_clone_parse(Spec, List, _, List_all),
-%	length(List_all, N_all),
-%  format(" Length: ~w~n", [N_all]),
-%	!.
+	directory_file_path(Dir, File, FPath),
+	exists_file(FPath),
+  write(" FilePath: "), writeln(FPath),
+	read_json_file(FPath, Data), 
+	eigen_types(Spec), 
+	parse_eigenframe(Spec, Data, List),
+	recurse_each_clone_parse(Spec, List, _, List_all),
+	length(List_all, N_all),
+  format(" Length: ~w~n", [N_all]),
+	!.
 
 % ----------------------------------------------------
 % http://localhost:8000/parse_url?url=https://raw.githubusercontent.com/jsawaya/eigenframe/1.3/web/frames/define-clones.json
