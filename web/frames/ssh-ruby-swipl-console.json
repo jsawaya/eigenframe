@@ -14,7 +14,7 @@
 		{
 			"attributes": {
 				"text_list": [
-					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. ",
+					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. "
 				]
 			},
 			"name": "TextViewDetail",
