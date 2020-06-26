@@ -6,7 +6,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Prolog Applications"
+				"text": "Prolog Examples"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -14,15 +14,15 @@
 		{
 			"attributes": {
 				"text_list": [
-					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. ",
+					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred (deduced) using a knowledge-base of facts and rules. ",
 					"",
-					"Some applications:",
-					" 1) Association - reasoning and inference",
+					"Some examples:",
+					" 1) Association - deduction",
 					" 2) Shortest Path - networks and graphs",
 					" 3) Constraint Logic Programming (over Finite Domains)",
 					" 4) Zebra Puzzle  - symbolic constraints",
 					" 5) Sudoku Puzzle - integer constraints",
-					" 6) Linear Programming - optimization"
+					" 6) Optimization - linear programming"
 				]
 			},
 			"name": "TextViewDetail",
@@ -34,7 +34,7 @@
 		},
 		{
 			"attributes": {
-				"text": "1) Relationships"
+				"text": "1) Association - deduction"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
