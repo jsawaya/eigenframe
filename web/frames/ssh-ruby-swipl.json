@@ -6,7 +6,7 @@
 		},
 		{
 			"attributes": {
-				"text": "Prolog - Classic Examples"
+				"text": "Prolog Applications"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -16,12 +16,13 @@
 				"text_list": [
 					"Prolog (Programming in Logic) a programming language based on predicate calculus to evaluate if a certain proposition (goal) can be inferred using a knowledge-base of facts and rules. ",
 					"",
-					"Some basic logic problems:",
-					" 1) Relationships - inferred association",
-					" 2) Relationships - inferred association",
-					" 3) Shortest Path - networks and graphs",
+					"Some applications:",
+					" 1) Association - reasoning and inference",
+					" 2) Shortest Path - networks and graphs",
+					" 3) Constraint Logic Programming (over Finite Domains)",
 					" 4) Zebra Puzzle  - symbolic constraints",
-					" 5) Sudoku Puzzle - integer constraints"
+					" 5) Sudoku Puzzle - integer constraints",
+					" 6) Linear Programming - optimization"
 				]
 			},
 			"name": "TextViewDetail",
@@ -161,96 +162,7 @@
 		},
 		{
 			"attributes": {
-				"text": "2) Constraint Logic Programming over Finite Domains"
-			},
-			"name": "TextViewLabel",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"cat swipl-lib/clpfd-examples.pl"
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog Source: clpfd-examples.pl"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Prolog Source: clpfd-examples.pl"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"icon": {
-					"location": "top",
-					"name": "open_browser."
-				},
-				"on_click": {
-					"attributes": {
-						"component_list": [
-							{
-								"attributes": {
-									"component_list": [
-										{
-											"attributes": {
-												"ssh_list": [
-													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
-													"ruby ssh_swipl.rb 'swipl-lib/clpfd-examples.pl' 'test_clpfd1(X,Y),writeln(X),writeln(Y),!.' "
-												],
-												"text_size": "10"
-											},
-											"name": "TextViewDetail",
-											"type": "Clone"
-										}
-									]
-								},
-								"name": "LayoutVerticalScrollable",
-								"type": "Clone"
-							}
-						],
-						"title": "Prolog"
-					},
-					"name": "PopupScreenDefault",
-					"type": "Clone"
-				},
-				"text": "Example: clpfd-examples.pl // test_clpfd1(X,Y), false"
-			},
-			"name": "ButtonDefault",
-			"type": "Clone"
-		},
-		{
-			"name": "HorizontalLine",
-			"type": "Clone"
-		},
-		{
-			"attributes": {
-				"text": "3) Shortest Path"
+				"text": "2) Shortest Path"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
@@ -335,6 +247,95 @@
 					"type": "Clone"
 				},
 				"text": "Example: shortest-path.pl // shortest(1,5,Path,Length) -- find one instance"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "3) Constraint Logic Programming over Finite Domains"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/clpfd-examples.pl"
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog Source: clpfd-examples.pl"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Prolog Source: clpfd-examples.pl"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/clpfd-examples.pl' 'test_clpfd1(X,Y),writeln(X),writeln(Y),!.' "
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Example: clpfd-examples.pl // test_clpfd1(X,Y), false"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
@@ -641,6 +642,103 @@
 					"type": "Clone"
 				},
 				"text": "Example: sudoku.pl // problem(1, Rows), sudoku(Rows), write(Rows) -- find an instance"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"name": "HorizontalLine",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text": "6) Linear Programming - optimization"
+			},
+			"name": "TextViewLabel",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"text_list": [
+					"Linear Programming via Simplex Method"
+				]
+			},
+			"name": "TextViewDetail",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"cat swipl-lib/simplex.pl"
+												],
+												"text_size": "10"
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog Source: simplex.pl"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Prolog Source: simplex.pl"
+			},
+			"name": "ButtonDefault",
+			"type": "Clone"
+		},
+		{
+			"attributes": {
+				"icon": {
+					"location": "top",
+					"name": "open_browser."
+				},
+				"on_click": {
+					"attributes": {
+						"component_list": [
+							{
+								"attributes": {
+									"component_list": [
+										{
+											"attributes": {
+												"ssh_list": [
+													"cd /data/data/com.termux/files/home/git-repos/eigenframe/cgi-bin",
+													"ruby ssh_swipl.rb 'swipl-lib/simplex.pl' 'solv1(X1, X2),writeln(X1),writeln(X2)' "
+												]
+											},
+											"name": "TextViewDetail",
+											"type": "Clone"
+										}
+									]
+								},
+								"name": "LayoutVerticalScrollable",
+								"type": "Clone"
+							}
+						],
+						"title": "Prolog"
+					},
+					"name": "PopupScreenDefault",
+					"type": "Clone"
+				},
+				"text": "Example: simplex.pl // solv1(X1, X2)"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
