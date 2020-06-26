@@ -16,19 +16,7 @@
     },
     {
       "gravity": "left",
-      "x-html_list": [
-        "<h1><font color=\"#8aec81\">Documentation: <\/font><\/h1>",
-        "<h4>GitHub README:<\/h4> https://github.com/jsawaya/eigenframe/blob/master/README.md",
-        "<h4>Initial Setup:<\/h4> https://github.com/jsawaya/eigenframe/blob/master/web/docs/initial-setup.md",
-        "<h4>Privacy Policy:<\/h4> https://github.com/jsawaya/eigenframe/blob/master/web/docs/privacy-policy.md",
-        "<h4>Design Components:<\/h4> https://github.com/jsawaya/eigenframe/blob/master/web/docs/"
-      ],
-      "html_script_list": [
-        "var github_branch = eigenActivity.getGithubBranchString();",
-        "html = '<h1><font color=\"#8aec81\">Documentation: <\/font><\/h1>' ",
-        "html += '<h4>GitHub README:<\/h4> https://github.com/jsawaya/eigenframe/blob/' + github_branch + '/README.md'",
-        "html"
-      ],
+      "html_script": "'<h4>GitHub README:<\/h4> https://github.com/jsawaya/eigenframe/blob/' + eigenActivity.getGithubBranchString() + '/README.md'",
       "layout_width": "match_parent",
       "text_color": "#ffffff",
       "type": "HtmlView"
