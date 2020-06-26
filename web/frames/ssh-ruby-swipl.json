@@ -776,7 +776,7 @@
 					"name": "PopupScreenDefault",
 					"type": "Clone"
 				},
-				"text": "Example: simplex.pl // solv12(X1, X2)"
+				"text": "Example: simplex.pl // solv2(X1, X2)"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"

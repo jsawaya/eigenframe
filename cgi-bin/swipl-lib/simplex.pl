@@ -96,7 +96,7 @@ solv6_constraints -->
 
 solv6(X1, X2) :- 
   gen_state(S0),
-  solv5_constraints(S0, S),
+  solv6_constraints(S0, S),
 	variable_value(S, x(1), X1),             
 	variable_value(S, x(2), X2).
 
