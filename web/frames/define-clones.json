@@ -1,20 +1,6 @@
 {
 	"component_list": [
 		{
-			"comment": [
-				"Initialize cache (GithubBranch)",
-				" - get cache string (GithubBranch), if empty then initialize to '' ",
-				" - set cache string (GithubBranch), initialized or left unchanged "
-			],
-			"x-script_list": [
-				"var github_branch = eigenActivity.getCacheString('GithubBranch', 0, eigenActivity.getGithubBranchString());",
-				"eigenActivity.setCacheString('GithubBranch', github_branch);",
-				"var root_url = 'https://raw.githubusercontent.com/jsawaya/eigenframe/'+github_branch+'/web/';",
-				"eigenActivity.setCacheString('RootUrl', root_url);"
-			],
-			"x-type": "JavaScript"
-		},
-		{
 			"component": {
 				"color": "#666666",
 				"size": 3,
@@ -231,13 +217,6 @@
 											"text": "undefined",
 											"text_color": "#ffffff",
 											"type": "EditText"
-										},
-										{
-											"script_list": [
-												"var initial_value = eigenFragment.getCacheString('EditText:976000');",
-												"if (!initial_value) eigenFragment.setViewState('EditText:976000', 'goal(X)');"
-											],
-											"x-type": "JavaScript"
 										},
 										{
 											"attributes": {

@@ -18,8 +18,7 @@
 			"text": "/data/data/com.sawaya.eigenframe",
 			"text_color": "#ffffff",
 			"text_size": "20",
-			"type": "TextView",
-			"x-text": "/storage/emulated/0/Android/data/com.sawaya.eigenframe"
+			"type": "TextView"
 		},
 		{
 			"name": "HorizontalLine",

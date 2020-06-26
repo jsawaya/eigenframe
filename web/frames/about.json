@@ -11,14 +11,6 @@
       "layout_height": "wrap_content",
       "layout_width": "match_parent",
       "text_color": "#ffffff",
-      "type": "HtmlView",
-      "x_text_size": "14"
-    },
-    {
-      "gravity": "left",
-      "html_script": "'<h4>GitHub README:<\/h4> https://github.com/jsawaya/eigenframe/blob/' + eigenActivity.getGithubBranchString() + '/README.md'",
-      "layout_width": "match_parent",
-      "text_color": "#ffffff",
       "type": "HtmlView"
     },
     {
@@ -138,7 +130,6 @@
         "on_click": {
           "attributes": {
             "title": "Screen Orientation",
-            "x-url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/orientation-settings.json",
             "url_script_list": [
               "var github_branch = eigenActivity.getGithubBranchString();",
               "'https://raw.githubusercontent.com/jsawaya/eigenframe/' + github_branch + '/web/frames/orientation-settings.json'"
