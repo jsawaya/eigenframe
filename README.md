@@ -1,7 +1,7 @@
 # ![Alt](web/res/icon/mipmap-mdpi/ic_launcher_round.png "eigenframe") EigenFrame
 ## Github Framework for Dynamic App Specification Deployment, Rendering & Execution
 
-EigenFrame v1.4 starts with a url request, but instead of producing a simple web page, EigenFrame parses specifications (in JSON format) to dynamically build an openly programmable application that includes Android user-interface components, scripts and provides access to certain device sensors and hardware.
+EigenFrame v1.5 starts with a url request, but instead of producing a simple web page, EigenFrame parses specifications (in JSON format) to dynamically build an openly programmable application that includes Android user-interface components, scripts and provides access to certain device sensors and hardware.
 
 More than just a web-browser, EigenFrame has an embedded javascript interpreter with access to Android classes, methods and properties, and a secure-shell client capability to interface with a local Termux app (through openssh) to integrate your own application scripts, in *whatever* language/tool you choose (bash, git, ruby, perl, python, prolog, gpg ...). In contrast, web-browsers have only limited scripting access to the host mobile device, from inside a browser window.
 

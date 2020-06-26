@@ -13,7 +13,7 @@ One of the following:
 
 ## Methods in eigenActivity:
 
- * String eigenActivity.getGithubBranchString() // e.g. returns "1.4"
+ * String eigenActivity.getGithubBranchString()
  * String eigenActivity.getString(com.sawaya.R.string.eula)
  * void eigenActivity.addShortcut(String shortcut, String url_string)
  * void eigenActivity.enableOrientationEventListener(boolean isEnabled)

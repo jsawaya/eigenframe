@@ -17,7 +17,7 @@
 			{
 				"attributes": {
 					"text_list": [
-						"Initial setup: Click [change git branch to v1.4]",
+						"Initial setup: Click [change git branch to v1.5]",
 						"Pull latest updates: Click [cloud download icon]",
 						"Check status of current branch: Click [git status]"
 					]
@@ -45,12 +45,12 @@
 														"git fetch --all",
 														"echo //git reset HEAD",
 														"git reset HEAD",
-														"echo //git checkout 1.4",
-														"git checkout 1.4",
-														"echo //git branch --set-upstream-to=origin/1.4",
-														"git branch --set-upstream-to=origin/1.4",
-														"echo //git merge 1.4",
-														"git merge 1.4",
+														"echo //git checkout 1.5",
+														"git checkout 1.5",
+														"echo //git branch --set-upstream-to=origin/1.5",
+														"git branch --set-upstream-to=origin/1.5",
+														"echo //git merge 1.5",
+														"git merge 1.5",
 														"echo //enable execution of cgi-bin files",
 														"cd ~/git-repos/eigenframe/cgi-bin",
 														"chmod 755 *.sh",
@@ -67,12 +67,12 @@
 									"type": "Clone"
 								}
 							],
-							"title": "change git branch to v1.4"
+							"title": "change git branch to v1.5"
 						},
 						"name": "PopupScreenDefault",
 						"type": "Clone"
 					},
-					"text": "change git branch to v1.4"
+					"text": "change git branch to v1.5"
 				},
 				"name": "ButtonDefault",
 				"type": "Clone"
