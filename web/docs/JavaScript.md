@@ -13,6 +13,7 @@ One of the following:
 
 ## Methods in eigenActivity:
 
+ * String eigenActivity.getGithubBranchString() // e.g. returns "1.4"
  * String eigenActivity.getString(com.sawaya.R.string.eula)
  * void eigenActivity.addShortcut(String shortcut, String url_string)
  * void eigenActivity.enableOrientationEventListener(boolean isEnabled)
@@ -20,7 +21,34 @@ One of the following:
  * void eigenActivity.launch(String url_string)
  * void eigenActivity.setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
  * void eigenActivity.showToast(String message)
+ * String eigenActivity.editDrawing(String drawingFilePath) // returns drawingFilePath
+ * String eigenActivity.captureCameraImage() // returns jpg_filename
 
+### Methods in both eigenActivity and eigenFragment:
+
+ * boolean eigenActivity.getBooleanVariable(String type, int id, boolean initialValue)
+ * byte[] eigenActivity.getCacheByteArray(String filename)
+ * int eigenActivity.getIntegerVariable(String type, int id, int initialValue)
+ * long eigenActivity.getLongVariable(String type, int id, long initialValue)
+ * public void eigenActivity.copyFile(String filename1, String filename2)
+ * public void eigenActivity.deleteFile(String filename1)
+ * public void eigenActivity.renameFile(String filename1, String filename2)
+ * String eigenActivity.clearCacheFile(String filename)
+ * String eigenActivity.concatCachePaths(String rootPathCache, String relativePathCache)
+ * String eigenActivity.concatPaths(String homePath, String workPath, String relativePath)
+ * String eigenActivity.concatPaths(String rootPath, String relativePath)
+ * String eigenActivity.getCacheFilePath(String filename)
+ * String eigenActivity.getCacheString(String filename)
+ * String eigenActivity.getCacheString(String type, int id, String initValue)
+ * String eigenActivity.getStringVariable(String type, int id, String initialValue)
+ * String eigenActivity.getVariableName(String type, int id)
+ * void eigenActivity.setBooleanVariable(String type, int id, boolean initialValue)
+ * void eigenActivity.setCacheString(String filename, String initialValue)
+ * void eigenActivity.setCacheString(String type, int id, String initialValue)
+ * void eigenActivity.setIntegerVariable(String type, int id, int initialValue)
+ * void eigenActivity.setLongVariable(String type, int id, long initialValue)
+ * void eigenActivity.setStringVariable(String type, int id, String initialValue)
+       
 ### Methods in eigenFragment:
 
  * boolean eigenFragment.appendPath(int viewId1, String optionLabel)
@@ -41,53 +69,6 @@ One of the following:
  * void eigenFragment.closePopupWindow()
  * void eigenFragment.setOptionList(int listViewId, int secureFtpViewId)
 
-### Methods in both eigenActivity and eigenFragment:
-
- * boolean eigenActivity.getBooleanVariable(String type, int id, boolean initialValue)
- * boolean eigenFragment.getBooleanVariable(String type, int id, boolean initialValue)
- * byte[] eigenActivity.getCacheByteArray(String filename)
- * byte[] eigenFragment.getCacheByteArray(String filename)
- * int eigenActivity.getIntegerVariable(String type, int id, int initialValue)
- * int eigenFragment.getIntegerVariable(String type, int id, int initialValue)
- * long eigenActivity.getLongVariable(String type, int id, long initialValue)
- * long eigenFragment.getLongVariable(String type, int id, long initialValue)
- * public void eigenActivity.copyFile(String filename1, String filename2)
- * public void eigenActivity.deleteFile(String filename1)
- * public void eigenActivity.renameFile(String filename1, String filename2)
- * public void eigenFragment.copyFile(String filename1, String filename2)
- * public void eigenFragment.deleteFile(String filename1)
- * public void eigenFragment.renameFile(String filename1, String filename2)
- * String eigenActivity.clearCacheFile(String filename)
- * String eigenActivity.concatCachePaths(String rootPathCache, String relativePathCache)
- * String eigenActivity.concatPaths(String homePath, String workPath, String relativePath)
- * String eigenActivity.concatPaths(String rootPath, String relativePath)
- * String eigenActivity.getCacheFilePath(String filename)
- * String eigenActivity.getCacheString(String filename)
- * String eigenActivity.getCacheString(String type, int id, String initValue)
- * String eigenActivity.getStringVariable(String type, int id, String initialValue)
- * String eigenActivity.getVariableName(String type, int id)
- * String eigenFragment.clearCacheFile(String filename)
- * String eigenFragment.concatCachePaths(String rootPathCache, String relativePathCache)
- * String eigenFragment.concatPaths(String homePath, String workPath, String relativePath)
- * String eigenFragment.concatPaths(String rootPath, String relativePath)
- * String eigenFragment.getCacheFilePath(String filename)
- * String eigenFragment.getCacheString(String filename)
- * String eigenFragment.getCacheString(String type, int id, String initValue)
- * String eigenFragment.getStringVariable(String type, int id, String initialValue)
- * String eigenFragment.getVariableName(String type, int id)
- * void eigenActivity.setBooleanVariable(String type, int id, boolean initialValue)
- * void eigenActivity.setCacheString(String filename, String initialValue)
- * void eigenActivity.setCacheString(String type, int id, String initialValue)
- * void eigenActivity.setIntegerVariable(String type, int id, int initialValue)
- * void eigenActivity.setLongVariable(String type, int id, long initialValue)
- * void eigenActivity.setStringVariable(String type, int id, String initialValue)
- * void eigenFragment.setBooleanVariable(String type, int id, boolean initialValue)
- * void eigenFragment.setCacheString(String filename, String initialValue)
- * void eigenFragment.setCacheString(String type, int id, String initialValue)
- * void eigenFragment.setIntegerVariable(String type, int id, int initialValue)
- * void eigenFragment.setLongVariable(String type, int id, long initialValue)
- * void eigenFragment.setStringVariable(String type, int id, String initialValue)
-       
 Related:
 [PopupTextView](PopupTextView.md) 
 [PopupScreen](PopupScreen.md) 
