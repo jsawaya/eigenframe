@@ -100,7 +100,7 @@ Example:
   "on_complete": {
     "type": "UrlRequest",
     "is_eigen_response": true,
-    "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
+    "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/1.4/web/frames/playlist.json"
   }
 }
 ```

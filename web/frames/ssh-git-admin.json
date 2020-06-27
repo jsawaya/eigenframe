@@ -178,7 +178,7 @@
 			},
 			{
 				"attributes": {
-					"text": "Check differences between selected file and master: "
+					"text": "Check differences between selected file and github repository: "
 				},
 				"name": "TextViewLabel",
 				"type": "Clone"

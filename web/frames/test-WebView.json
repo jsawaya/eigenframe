@@ -21,7 +21,7 @@
           "layout_height": "wrap_content",
           "layout_width": "match_parent",
           "type": "WebView",
-          "url": "https://github.com/jsawaya/eigenframe/blob/master/README.md"
+          "url": "https://github.com/jsawaya/eigenframe/blob/{BRANCH}/README.md"
         }
       ],
       "gravity": "center_horizontal",

@@ -53,7 +53,7 @@ Example:
 {
     "type": "UrlRequest",
     "is_eigen_response": true,
-    "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/master/web/frames/playlist.json"
+    "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/frames/playlist.json"
 }
 ```
 
