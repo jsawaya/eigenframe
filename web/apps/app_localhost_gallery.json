@@ -135,6 +135,12 @@
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
       "url": "http://localhost:8080/frames/test-SimulationView-localhost.json"
+    },
+    {
+      "name": "DrawingView",
+      "type": "EigenFragment",
+      "icon_name": "ic_launcher_round.",
+      "url": "http://localhost:8080/frames/test-DrawingView.json"
     }
   ]
 }

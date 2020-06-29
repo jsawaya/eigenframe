@@ -1,0 +1,32 @@
+{
+  "component_list": [
+    {
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "text": "Test DrawingView",
+      "text_color": "#ffffff",
+      "text_size": "14",
+      "type": "TextView"
+    },
+    {
+      "name": "HorizontalLine",
+      "type": "Clone"
+    },
+    {
+      "layout_height": "match_parent",
+      "layout_width": "match_parent",
+      "type": "DrawingView",
+      "file": "/data/data/com.sawaya.eigenframe/files/UrlRequest:801"
+    },
+    {
+      "name": "HorizontalLine",
+      "type": "Clone"
+    }
+  ],
+  "gravity": "center_horizontal",
+  "layout_height": "wrap_content",
+  "layout_width": "match_parent",
+  "orientation": "vertical",
+  "scrollable": "true",
+  "type": "LinearLayout"
+}
