@@ -60,15 +60,8 @@
 			"layout_width": "match_parent",
 			"orientation": "horizontal",
 			"type": "LinearLayout"
-		}
- 
- 
- 
- 
-
- 
- 
-    {
+		},
+		{
 			"id": 987,
 			"layout_height": "match_parent",
 			"layout_width": "match_parent",
