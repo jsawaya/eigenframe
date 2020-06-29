@@ -17,9 +17,8 @@
       "layout_height": "wrap_content",
       "layout_width": "match_parent",
       "on_click": {
-        "script_list": [
-          "eigenFragment.setDrawViewPaint(987, android.graphics.Color.CYAN, 1.0);"
-        ],
+        "x-script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.CYAN, 1.0);",
+        "script": "eigenFragment.setDrawViewPaint(987, parse_int('0xff00ff'), 1.0);",
         "type": "JavaScript"
       },
       "text": "Edit",
