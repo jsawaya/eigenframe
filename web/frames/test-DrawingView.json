@@ -13,6 +13,21 @@
       "type": "Clone"
     },
     {
+      "background_color": "#ff00ff",
+      "layout_height": "wrap_content",
+      "layout_width": "match_parent",
+      "on_click": {
+        "script_list": [
+          "eigenFragment.setDrawView(987);"
+        ],
+        "type": "JavaScript"
+      },
+      "text": "Edit",
+      "text_color": "#ffffff",
+      "type": "Button"
+    },
+    {
+      "id": 987,
       "layout_height": "match_parent",
       "layout_width": "match_parent",
       "type": "DrawingView",
