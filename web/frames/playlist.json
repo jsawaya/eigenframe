@@ -444,14 +444,14 @@
 		},
 		{
 			"attributes": {
-				"text": "Execute Remote Shell File"
+				"text": "Execute Remote Bash Shell File"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
 		},
 		{
 			"attributes": {
-				"text": "Click [Shell] to view, edit and execute remote shell (bash) file"
+				"text": "Click [Bash Shell] to view, edit and execute remote shell (bash) file"
 			},
 			"name": "TextViewDetail",
 			"type": "Clone"
@@ -461,7 +461,7 @@
 			"layout_width": "match_parent",
 			"on_click": {
 				"attributes": {
-					"title": "Shell",
+					"title": "Bash Shell",
 					"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
 				},
 				"name": "PopupScreenDefault",
@@ -474,13 +474,13 @@
 			"attributes": {
 				"on_click": {
 					"attributes": {
-						"title": "Shell",
+						"title": "Bash Shell",
 						"url_script": "eigenFragment.getCacheString('RootUrl')+'frames/ssh-cmd.json'"
 					},
 					"name": "PopupScreenDefault",
 					"type": "Clone"
 				},
-				"text": "Shell"
+				"text": "Bash Shell"
 			},
 			"name": "ButtonDefault",
 			"type": "Clone"
@@ -491,14 +491,14 @@
 		},
 		{
 			"attributes": {
-				"text": "Render Static EigenFrame File"
+				"text": "Render Static EigenFrame JSON File"
 			},
 			"name": "TextViewLabel",
 			"type": "Clone"
 		},
 		{
 			"attributes": {
-				"text": "Click [EigenFrame] to view, edit and render EigenFrame File"
+				"text": "Click [EigenFrame] to view, edit and render EigenFrame JSON File"
 			},
 			"name": "TextViewDetail",
 			"type": "Clone"
