@@ -17,7 +17,7 @@
       "layout_width": "match_parent",
       "type": "DrawingView",
       "x-file": "/data/data/com.sawaya.eigenframe/files/UrlRequest:801",
-      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.draw"
+      "url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.json"
     },
     {
       "name": "HorizontalLine",
