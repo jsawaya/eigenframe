@@ -48,7 +48,7 @@
 					"background_color": "#ff00ff",
 					"on_click": {
 						"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.CYAN, 1.0);",
-						"x-script": "eigenFragment.setDrawViewPaint(987, parseInt(\"0xff00ff\"), 2.0)",
+						"x-script": "eigenFragment.setDrawViewPaint(987, -parseInt(\"0xff00ff\"), 2.0)",
 						"type": "JavaScript"
 					},
 					"text": "Edit",
