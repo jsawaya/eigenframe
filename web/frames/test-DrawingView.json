@@ -37,7 +37,7 @@
 				{
 					"background_color": "#ff00ff",
 					"on_click": {
-						"script": "eigenActivity.showToast('0xff00ff: '+parseInt('0xff00ff'))",
+						"script": "eigenActivity.showToast('0xff00ff: '+parseInt(Number('0xff00ff'),10))",
 						"type": "JavaScript"
 					},
 					"text": "0xff00ff",
@@ -47,7 +47,7 @@
 				{
 					"background_color": "#ff00ff",
 					"on_click": {
-						"script": "eigenFragment.setDrawViewPaint(987, -parseInt('0xff00ff'), 4.0)",
+						"script": "eigenFragment.setDrawViewPaint(987, parseInt(Number('0xff00ff'),10), 4.0)",
 						"type": "JavaScript"
 					},
 					"text": "Edit",
