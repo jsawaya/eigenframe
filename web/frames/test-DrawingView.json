@@ -78,6 +78,5 @@
 	"layout_height": "wrap_content",
 	"layout_width": "match_parent",
 	"orientation": "vertical",
-	"scrollable": "true",
 	"type": "LinearLayout"
 }
