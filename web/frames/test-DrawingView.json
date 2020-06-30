@@ -1,9 +1,14 @@
 {
 	"component_list": [
 		{
+			"gravity": "CENTER_HORIZONTAL, CENTER_VERTICAL",
+			"icon": {
+				"location": "top",
+				"name": "ic_launcher_round."
+			},
 			"layout_height": "wrap_content",
 			"layout_width": "match_parent",
-			"text": "Test DrawingView",
+			"text": "Test DrawView",
 			"text_color": "#ffffff",
 			"text_size": "14",
 			"type": "TextView"
@@ -13,65 +18,109 @@
 			"type": "Clone"
 		},
 		{
-			"component_list": [
-				{
-					"background_color": "#ff00ff",
-					"on_click": {
-						"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.CYAN, 1.0);",
-						"type": "JavaScript"
-					},
-					"text": "CYAN",
-					"text_color": "#ffffff",
-					"type": "Button"
-				},
-				{
-					"background_color": "#ff00ff",
-					"on_click": {
-						"script": "eigenActivity.showToast('android.graphics.Color.CYAN: '+android.graphics.Color.CYAN)",
-						"type": "JavaScript"
-					},
-					"text": "CYAN toast",
-					"text_color": "#ffffff",
-					"type": "Button"
-				},
-				{
-					"background_color": "#ff00ff",
-					"on_click": {
-						"script": "eigenActivity.showToast('0xff00ff: '+ (-parseInt('0xff0001')))",
-						"type": "JavaScript"
-					},
-					"text": "0xff00ff",
-					"text_color": "#ffffff",
-					"type": "Button"
-				},
-				{
-					"background_color": "#ff00ff",
-					"on_click": {
-						"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.GREEN, 4.0)",
-						"type": "JavaScript"
-					},
-					"text": "Edit",
-					"text_color": "#ffffff",
-					"type": "Button"
-				}
-			],
+			"background_color": "#654321",
 			"layout_height": "wrap_content",
-			"layout_width": "match_parent",
-			"orientation": "horizontal",
-			"type": "LinearLayout"
-		},
-		{
-			"id": 987,
-			"layout_height": "match_parent",
-			"layout_width": "match_parent",
-			"type": "DrawingView",
-			"image_url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/res/images/wood.jpg",
-			"x-file": "/data/data/com.sawaya.eigenframe/files/UrlRequest:801",
-			"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.json"
-		},
-		{
-			"name": "HorizontalLine",
-			"type": "Clone"
+			"layout_width": "wrap_content",
+			"on_click": {
+				"background_color": "#111111",
+				"component_list": [
+					{
+						"component_list": [
+							{
+								"layout_height": "wrap_content",
+								"layout_width": "match_parent",
+								"text": "Test DrawingView",
+								"text_color": "#ffffff",
+								"text_size": "14",
+								"type": "TextView"
+							},
+							{
+								"name": "HorizontalLine",
+								"type": "Clone"
+							},
+							{
+								"component_list": [
+									{
+										"background_color": "#ff00ff",
+										"on_click": {
+											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.CYAN, 1.0);",
+											"type": "JavaScript"
+										},
+										"text": "CYAN",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#ff00ff",
+										"on_click": {
+											"script": "eigenActivity.showToast('android.graphics.Color.CYAN: '+android.graphics.Color.CYAN)",
+											"type": "JavaScript"
+										},
+										"text": "CYAN toast",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#ff00ff",
+										"on_click": {
+											"script": "eigenActivity.showToast('0xff00ff: '+ (-parseInt('0xff0001')))",
+											"type": "JavaScript"
+										},
+										"text": "0xff00ff",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#ff00ff",
+										"on_click": {
+											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.GREEN, 4.0)",
+											"type": "JavaScript"
+										},
+										"text": "Edit",
+										"text_color": "#ffffff",
+										"type": "Button"
+									}
+								],
+								"layout_height": "wrap_content",
+								"layout_width": "match_parent",
+								"orientation": "horizontal",
+								"type": "LinearLayout"
+							},
+							{
+								"id": 987,
+								"layout_height": "match_parent",
+								"layout_width": "match_parent",
+								"type": "DrawingView",
+								"image_url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/res/images/wood.jpg",
+								"x-file": "/data/data/com.sawaya.eigenframe/files/UrlRequest:801",
+								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.json"
+							},
+							{
+								"name": "HorizontalLine",
+								"type": "Clone"
+							}
+						],
+						"gravity": "center_horizontal",
+						"layout_height": "wrap_content",
+						"layout_width": "match_parent",
+						"orientation": "vertical",
+						"type": "LinearLayout"
+					}
+				],
+				"icon": {
+					"location": "left",
+					"name": "info."
+				},
+				"layout_height": "wrap_content",
+				"layout_width": "match_parent",
+				"text_color": "#ffffff",
+				"text_size": "14",
+				"title": "PopupScreen with DrawView",
+				"type": "PopupScreen"
+			},
+			"text": "PopupScreen with DrawView",
+			"text_color": "#ffffff",
+			"type": "Button"
 		}
 	],
 	"gravity": "center_horizontal",
