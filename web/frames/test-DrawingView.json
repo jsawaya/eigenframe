@@ -73,7 +73,7 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
-											"script": "com.sawaya.eigenframe.setDrawViewUndo(987)",
+											"script": "eigenframe.setDrawViewUndo(987)",
 											"type": "JavaScript"
 										},
 										"text": "Undo",
@@ -83,7 +83,7 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
-											"script": "com.sawaya.eigenframe.setDrawViewRedo(987)",
+											"script": "com.sawaya.eigenframe.EigenJavaScript.setDrawViewRedo(987)",
 											"type": "JavaScript"
 										},
 										"text": "Redo",
