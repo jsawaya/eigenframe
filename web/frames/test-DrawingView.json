@@ -104,6 +104,7 @@
 								"type": "DrawingView",
 								"image_url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/res/images/wood.jpg",
 								"x-file": "/data/data/com.sawaya.eigenframe/files/UrlRequest:801",
+								"file": "/data/data/com.sawaya.eigenframe/files/DrawingView1:987",
 								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.json"
 							},
 							{
