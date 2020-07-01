@@ -41,42 +41,52 @@
 							{
 								"component_list": [
 									{
-										"background_color": "#ff00ff",
+										"background_color": "#ff0000",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.CYAN, 1.0);",
+											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.RED, 1.0);",
 											"type": "JavaScript"
 										},
-										"text": "CYAN",
+										"text": "Red",
 										"text_color": "#ffffff",
 										"type": "Button"
 									},
 									{
-										"background_color": "#ff00ff",
-										"on_click": {
-											"script": "eigenActivity.showToast('android.graphics.Color.CYAN: '+android.graphics.Color.CYAN)",
-											"type": "JavaScript"
-										},
-										"text": "CYAN toast",
-										"text_color": "#ffffff",
-										"type": "Button"
-									},
-									{
-										"background_color": "#ff00ff",
-										"on_click": {
-											"script": "eigenActivity.showToast('0xff00ff: '+ (-parseInt('0xff0001')))",
-											"type": "JavaScript"
-										},
-										"text": "0xff00ff",
-										"text_color": "#ffffff",
-										"type": "Button"
-									},
-									{
-										"background_color": "#ff00ff",
+										"background_color": "#00ff00",
 										"on_click": {
 											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.GREEN, 4.0)",
 											"type": "JavaScript"
 										},
-										"text": "Edit",
+										"text": "Green",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#0000ff",
+										"on_click": {
+											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.BLUE, 4.0)",
+											"type": "JavaScript"
+										},
+										"text": "Blue",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#654321",
+										"on_click": {
+											"script": "com.sawaya.eigenframe.setDrawViewUndo(987)",
+											"type": "JavaScript"
+										},
+										"text": "Undo",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#654321",
+										"on_click": {
+											"script": "com.sawaya.eigenframe.setDrawViewRedo(987)",
+											"type": "JavaScript"
+										},
+										"text": "Redo",
 										"text_color": "#ffffff",
 										"type": "Button"
 									}
