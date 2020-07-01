@@ -73,7 +73,7 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
-											"script": "eigenframe.setDrawViewUndo(987)",
+											"script": "eigenFragment.setDrawViewUndo(987)",
 											"type": "JavaScript"
 										},
 										"text": "Undo",
