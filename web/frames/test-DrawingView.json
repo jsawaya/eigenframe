@@ -89,6 +89,26 @@
 										"text": "Redo",
 										"text_color": "#ffffff",
 										"type": "Button"
+									},
+									{
+										"background_color": "#654321",
+										"on_click": {
+											"script": "eigenFragment.setDrawViewSave(987)",
+											"type": "JavaScript"
+										},
+										"text": "Save",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#654321",
+										"on_click": {
+											"script": "eigenFragment.setDrawViewClear(987)",
+											"type": "JavaScript"
+										},
+										"text": "Clear",
+										"text_color": "#ffffff",
+										"type": "Button"
 									}
 								],
 								"layout_height": "wrap_content",
