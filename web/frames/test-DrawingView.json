@@ -90,6 +90,7 @@
 								"id": 987,
 								"layout_height": "match_parent",
 								"layout_width": "match_parent",
+								"rotation": "90",
 								"type": "DrawingView",
 								"image_url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/res/images/wood.jpg",
 								"x-file": "/data/data/com.sawaya.eigenframe/files/UrlRequest:801",
