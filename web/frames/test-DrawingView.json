@@ -83,7 +83,7 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
-											"script": "com.sawaya.eigenframe.EigenJavaScript.setDrawViewRedo(987)",
+											"script": "eigenFragment.setDrawViewRedo(987)",
 											"type": "JavaScript"
 										},
 										"text": "Redo",
