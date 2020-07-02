@@ -87,7 +87,7 @@
 					"type": "JavaScript"
 				},
 				"type": "UrlRequest",
-				"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.draw"
+				"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.json"
 			},
 			"text": "Show Sample Drawing From Github",
 			"text_color": "#ffffff",
