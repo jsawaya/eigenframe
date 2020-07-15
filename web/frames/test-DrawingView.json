@@ -28,8 +28,8 @@
 						"component_list": [
 							{
 								"layout_height": "wrap_content",
-								"layout_width": "match_parent",
-								"text": "Test DrawingView",
+								"layout_width": "wrap_content",
+								"text": "DrawingView",
 								"text_color": "#ffffff",
 								"text_size": "14",
 								"type": "TextView"
@@ -76,8 +76,10 @@
 											"script": "eigenFragment.setDrawViewUndo(987)",
 											"type": "JavaScript"
 										},
-										"text": "Undo",
-										"text_color": "#ffffff",
+										"icon": {
+											"location": "top",
+											"name": "undo."
+										},
 										"type": "Button"
 									},
 									{
@@ -86,8 +88,10 @@
 											"script": "eigenFragment.setDrawViewRedo(987)",
 											"type": "JavaScript"
 										},
-										"text": "Redo",
-										"text_color": "#ffffff",
+										"icon": {
+											"location": "top",
+											"name": "redo."
+										},
 										"type": "Button"
 									},
 									{
