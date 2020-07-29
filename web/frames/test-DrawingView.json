@@ -53,7 +53,7 @@
 									{
 										"background_color": "#00ff00",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.GREEN, 4.0)",
+											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.GREEN, 1.0)",
 											"type": "JavaScript"
 										},
 										"text": "Green",
@@ -63,7 +63,7 @@
 									{
 										"background_color": "#0000ff",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.BLUE, 4.0)",
+											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.BLUE, 1.0)",
 											"type": "JavaScript"
 										},
 										"text": "Blue",
