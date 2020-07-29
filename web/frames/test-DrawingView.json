@@ -107,6 +107,16 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
+											"script": "eigenFragment.openDrawing(987)",
+											"type": "JavaScript"
+										},
+										"text": "Open",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#654321",
+										"on_click": {
 											"script": "eigenFragment.setDrawViewClear(987)",
 											"type": "JavaScript"
 										},
