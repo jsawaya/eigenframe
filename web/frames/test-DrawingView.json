@@ -80,7 +80,7 @@
 											"location": "left",
 											"name": "undo."
 										},
-										"type": "ImageView"
+										"type": "Button"
 									},
 									{
 										"background_color": "#654321",
@@ -92,7 +92,7 @@
 											"location": "left",
 											"name": "redo."
 										},
-										"type": "ImageView"
+										"type": "Button"
 									},
 									{
 										"background_color": "#654321",
