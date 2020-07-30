@@ -77,10 +77,10 @@
 											"type": "JavaScript"
 										},
 										"icon": {
-											"location": "top",
+											"location": "left",
 											"name": "undo."
 										},
-										"type": "Button"
+										"type": "ImageView"
 									},
 									{
 										"background_color": "#654321",
@@ -89,9 +89,19 @@
 											"type": "JavaScript"
 										},
 										"icon": {
-											"location": "top",
+											"location": "left",
 											"name": "redo."
 										},
+										"type": "ImageView"
+									},
+									{
+										"background_color": "#654321",
+										"on_click": {
+											"script": "eigenFragment.drawingClear(987)",
+											"type": "JavaScript"
+										},
+										"text": "Clear",
+										"text_color": "#ffffff",
 										"type": "Button"
 									},
 									{
