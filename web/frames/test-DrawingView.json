@@ -63,7 +63,7 @@
 									{
 										"background_color": "#0000ff",
 										"on_click": {
-											"script": "eigenFragment.drawingPaint(987, android.graphics.Color.BLUE, 1.0)",
+											"script": "eigenFragment.drawingPaint(987, 0x0000FF, 1.0)",
 											"type": "JavaScript"
 										},
 										"text": "Blue",
