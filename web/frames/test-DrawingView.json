@@ -43,7 +43,7 @@
 									{
 										"background_color": "#ff0000",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.RED, 1.0);",
+											"script": "eigenFragment.drawingPaint(987, android.graphics.Color.RED, 1.0);",
 											"type": "JavaScript"
 										},
 										"text": "Red",
@@ -53,7 +53,7 @@
 									{
 										"background_color": "#00ff00",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.GREEN, 1.0)",
+											"script": "eigenFragment.drawingPaint(987, android.graphics.Color.GREEN, 1.0)",
 											"type": "JavaScript"
 										},
 										"text": "Green",
@@ -63,7 +63,7 @@
 									{
 										"background_color": "#0000ff",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewPaint(987, android.graphics.Color.BLUE, 1.0)",
+											"script": "eigenFragment.drawingPaint(987, android.graphics.Color.BLUE, 1.0)",
 											"type": "JavaScript"
 										},
 										"text": "Blue",
@@ -73,7 +73,7 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewUndo(987)",
+											"script": "eigenFragment.drawingUndo(987)",
 											"type": "JavaScript"
 										},
 										"icon": {
@@ -85,7 +85,7 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewRedo(987)",
+											"script": "eigenFragment.drawingRedo(987)",
 											"type": "JavaScript"
 										},
 										"icon": {
@@ -97,17 +97,7 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewSave(987)",
-											"type": "JavaScript"
-										},
-										"text": "Save",
-										"text_color": "#ffffff",
-										"type": "Button"
-									},
-									{
-										"background_color": "#654321",
-										"on_click": {
-											"script": "eigenFragment.openDrawing(987)",
+											"script": "eigenFragment.drawingOpen(987)",
 											"type": "JavaScript"
 										},
 										"text": "Open",
@@ -117,10 +107,23 @@
 									{
 										"background_color": "#654321",
 										"on_click": {
-											"script": "eigenFragment.setDrawViewClear(987)",
+											"script": "eigenFragment.drawingSave(987)",
 											"type": "JavaScript"
 										},
-										"text": "Clear",
+										"text": "Save",
+										"text_color": "#ffffff",
+										"type": "Button"
+									},
+									{
+										"background_color": "#654321",
+										"on_click": {
+											"script_list": [
+												"eigenFragment.drawingClear(987)",
+												"eigenFragment.drawingUrlRequest(987)"
+											],
+											"type": "JavaScript"
+										},
+										"text": "Reset",
 										"text_color": "#ffffff",
 										"type": "Button"
 									}
