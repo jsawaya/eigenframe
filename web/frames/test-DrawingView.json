@@ -118,8 +118,8 @@
 										"background_color": "#654321",
 										"on_click": {
 											"script_list": [
-												"eigenFragment.drawingClear(987)",
-												"eigenFragment.drawingUrlRequest(987)"
+												"eigenFragment.drawingClear(987);",
+												"eigenFragment.drawingUrlRequest(987);"
 											],
 											"type": "JavaScript"
 										},
