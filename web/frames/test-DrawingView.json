@@ -44,7 +44,8 @@
 										"background_color": "#ff0000",
 										"on_click": {
 											"x-script": "eigenFragment.drawingPaint(987, android.graphics.Color.RED, 1.0)",
-											"script": "eigenFragment.drawingPaint(987, 0xFF0000, 1.0)",
+											"xx-script": "eigenFragment.drawingPaint(987, 0xFF0000, 1.0)",
+											"script": "eigenFragment.drawingPaint(987, '#55ff0000', 1.0)",
 											"type": "JavaScript"
 										},
 										"text": "Red",
@@ -55,7 +56,8 @@
 										"background_color": "#5500ff00",
 										"on_click": {
 											"x-script": "eigenFragment.drawingPaint(987, android.graphics.Color.GREEN, 1.0)",
-											"script": "eigenFragment.drawingPaint(987, 0x5500FF00, 4.0)",
+											"xx-script": "eigenFragment.drawingPaint(987, 0x5500FF00, 4.0)",
+											"script": "eigenFragment.drawingPaint(987, '#5500FF00', 1.0)",
 											"type": "JavaScript"
 										},
 										"text": "Green",
@@ -66,7 +68,8 @@
 										"background_color": "#0000ff",
 										"on_click": {
 											"x-script": "eigenFragment.drawingPaint(987, android.graphics.Color.BLUE, 1.0)",
-											"script": "eigenFragment.drawingPaint(987, 0x0000FF, 1.0)",
+											"xx-script": "eigenFragment.drawingPaint(987, 0x0000FF, 1.0)",
+											"script": "eigenFragment.drawingPaint(987, '#550000FF', 1.0)",
 											"type": "JavaScript"
 										},
 										"text": "Blue",
