@@ -8,13 +8,8 @@
       "y": 0.24637681245803833
     },
     {
-      "a": 910,
-      "c": "#5500FF00",
-      "w": 4
-    },
-    {
       "a": 920,
-      "text": "this is a test",
+      "text": " this is a test",
       "font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
       "size": 48,
       "color": "#FF123456",
