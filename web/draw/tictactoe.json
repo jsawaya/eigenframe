@@ -10,10 +10,10 @@
     {
       "a": 920,
       "text": " this is a test",
-      "font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
+      "font": "font/roboto/Roboto-Regular.ttf",
+      "x-font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
       "size": 48,
-      "color": "#FF123456",
-      "width": 4
+      "color": "#FF123456"
     },
     {
       "a": 2,
