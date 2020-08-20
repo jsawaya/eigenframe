@@ -3,9 +3,9 @@
   "version": 2,
   "event_list": [
     {
-      "a": 0,
-      "x": 0.38055557012557983,
-      "y": 0.24637681245803833
+      "a": 910,
+      "c": "#555555",
+      "w": 8
     },
     {
       "a": 920,
@@ -14,6 +14,11 @@
       "x-font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
       "size": 48,
       "color": "#FF123456"
+    },
+    {
+      "a": 0,
+      "x": 0.38055557012557983,
+      "y": 0.24637681245803833
     },
     {
       "a": 2,
@@ -89,6 +94,14 @@
       "a": 1,
       "x": 0.3787037134170532,
       "y": 0.5568562150001526
+    },
+    {
+      "a": 920,
+      "text": " there is a test2",
+      "font": "font/roboto/Roboto-Regular.ttf",
+      "x-font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
+      "size": 48,
+      "color": "#FF123456"
     },
     {
       "a": 0,
