@@ -8,14 +8,6 @@
       "w": 8
     },
     {
-      "a": 920,
-      "text": " this is a test",
-      "font": "font/roboto/Roboto-Regular.ttf",
-      "x-font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
-      "size": 48,
-      "color": "#FF123456"
-    },
-    {
       "a": 0,
       "x": 0.38055557012557983,
       "y": 0.24637681245803833
@@ -187,6 +179,14 @@
       "a": 1,
       "x": 0.6212962865829468,
       "y": 0.5423634052276611
+    },
+    {
+      "a": 920,
+      "text": " this is a test",
+      "font": "font/roboto/Roboto-Regular.ttf",
+      "x-font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
+      "size": 48,
+      "color": "#FF123456"
     },
     {
       "a": 0,
