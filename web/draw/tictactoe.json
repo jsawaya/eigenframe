@@ -89,10 +89,10 @@
     },
     {
       "a": 920,
-      "text": " there is a test2",
+      "text": " There is MAXIMUM test3",
       "font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
-      "size": 48,
-      "color": "#FF654321"
+      "size": 52,
+      "color": "#FFFFFF"
     },
     {
       "a": 0,
@@ -183,9 +183,8 @@
       "a": 920,
       "text": " this is a test",
       "font": "font/roboto/Roboto-Regular.ttf",
-      "x-font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
       "size": 48,
-      "color": "#FF123456"
+      "color": "#FF999999"
     },
     {
       "a": 0,
