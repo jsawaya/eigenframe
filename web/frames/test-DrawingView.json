@@ -78,6 +78,31 @@
 									},
 									{
 										"background_color": "#654321",
+										"checked": "false",
+										"id": 988,
+										"layout_height": "wrap_content",
+										"layout_width": "match_parent",
+										"margin": {
+											"bottom": 10,
+											"left": 10,
+											"right": 10,
+											"top": 10
+										},
+										"on_click": {
+											"script_list": [
+												"var isQuickDraw = (1 == eigenFragment.getViewState(988));",
+												"eigenActivity.showToast('QuickDraw: '+isQuickDraw);",
+												"eigenFragment.drawingQuickDraw(987, isQuickDraw);"
+											],
+											"type": "JavaScript"
+										},
+										"text_color": "#ffffff",
+										"text_off": "Complete Draw",
+										"text_on": "Quick Draw",
+										"type": "ToggleButton"
+									},
+									{
+										"background_color": "#654321",
 										"on_click": {
 											"script": "eigenFragment.drawingUndo(987)",
 											"type": "JavaScript"
