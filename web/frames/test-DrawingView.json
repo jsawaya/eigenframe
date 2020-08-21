@@ -74,8 +74,6 @@
 										"background_color": "#654321",
 										"checked": "false",
 										"id": 988,
-										"layout_height": "wrap_content",
-										"layout_width": "match_parent",
 										"on_click": {
 											"script_list": [
 												"var isQuickDraw = (1 == eigenFragment.getViewState(988));",
