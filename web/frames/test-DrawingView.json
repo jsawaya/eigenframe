@@ -20,7 +20,7 @@
 		{
 			"background_color": "#654321",
 			"layout_height": "wrap_content",
-			"layout_width": "wrap_content",
+			"layout_width": "match_parent",
 			"on_click": {
 				"background_color": "#111111",
 				"component_list": [
@@ -28,7 +28,7 @@
 						"component_list": [
 							{
 								"layout_height": "wrap_content",
-								"layout_width": "wrap_content",
+								"layout_width": "match_parent",
 								"text": "DrawingView",
 								"text_color": "#ffffff",
 								"text_size": "14",
@@ -74,6 +74,8 @@
 										"background_color": "#654321",
 										"checked": "false",
 										"id": 988,
+										"layout_height": "wrap_content",
+										"layout_width": "match_parent",
 										"on_click": {
 											"script_list": [
 												"var isQuickDraw = (1 == eigenFragment.getViewState(988));",
@@ -177,7 +179,7 @@
 						],
 						"gravity": "center_horizontal",
 						"layout_height": "wrap_content",
-						"layout_width": "wrap_content",
+						"layout_width": "match_parent",
 						"orientation": "vertical",
 						"type": "LinearLayout"
 					}
