@@ -43,8 +43,6 @@
 									{
 										"background_color": "#55ff0000",
 										"on_click": {
-											"x-script": "eigenFragment.drawingPaint(987, android.graphics.Color.RED, 4.0)",
-											"xx-script": "eigenFragment.drawingPaint(987, 0xFF0000, 4.0)",
 											"script": "eigenFragment.drawingPaint(987, '#55ff0000', 4.0)",
 											"type": "JavaScript"
 										},
@@ -55,8 +53,6 @@
 									{
 										"background_color": "#5500ff00",
 										"on_click": {
-											"x-script": "eigenFragment.drawingPaint(987, android.graphics.Color.GREEN, 4.0)",
-											"xx-script": "eigenFragment.drawingPaint(987, 0x5500FF00, 4.0)",
 											"script": "eigenFragment.drawingPaint(987, '#5500FF00', 4.0)",
 											"type": "JavaScript"
 										},
@@ -67,8 +63,6 @@
 									{
 										"background_color": "#550000ff",
 										"on_click": {
-											"x-script": "eigenFragment.drawingPaint(987, android.graphics.Color.BLUE, 4.0)",
-											"xx-script": "eigenFragment.drawingPaint(987, 0x0000FF, 4.0)",
 											"script": "eigenFragment.drawingPaint(987, '#550000FF', 4.0)",
 											"type": "JavaScript"
 										},
@@ -80,14 +74,6 @@
 										"background_color": "#654321",
 										"checked": "false",
 										"id": 988,
-										"layout_height": "wrap_content",
-										"layout_width": "match_parent",
-										"margin": {
-											"bottom": 10,
-											"left": 10,
-											"right": 10,
-											"top": 10
-										},
 										"on_click": {
 											"script_list": [
 												"var isQuickDraw = (1 == eigenFragment.getViewState(988));",
@@ -170,7 +156,7 @@
 									}
 								],
 								"layout_height": "wrap_content",
-								"layout_width": "match_parent",
+								"layout_width": "wrap_content",
 								"orientation": "horizontal",
 								"type": "LinearLayout"
 							},
@@ -191,7 +177,7 @@
 						],
 						"gravity": "center_horizontal",
 						"layout_height": "wrap_content",
-						"layout_width": "match_parent",
+						"layout_width": "wrap_content",
 						"orientation": "vertical",
 						"type": "LinearLayout"
 					}
