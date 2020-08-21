@@ -90,10 +90,9 @@
     {
       "a": 920,
       "text": " there is a test2",
-      "font": "font/roboto/Roboto-Regular.ttf",
-      "x-font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
+      "font": "font/open-sans/OpenSans-SemiboldItalic.ttf",
       "size": 48,
-      "color": "#FF123456"
+      "color": "#FF654321"
     },
     {
       "a": 0,
