@@ -72,23 +72,6 @@
 									},
 									{
 										"background_color": "#654321",
-										"checked": "false",
-										"id": 988,
-										"on_click": {
-											"script_list": [
-												"var isQuickDraw = (1 == eigenFragment.getViewState(988));",
-												"eigenActivity.showToast('QuickDraw: '+isQuickDraw);",
-												"eigenFragment.drawingQuickDraw(987, isQuickDraw);"
-											],
-											"type": "JavaScript"
-										},
-										"text_color": "#ffffff",
-										"text_off": "Complete Draw",
-										"text_on": "Quick Draw",
-										"type": "ToggleButton"
-									},
-									{
-										"background_color": "#654321",
 										"on_click": {
 											"script": "eigenFragment.drawingUndo(987)",
 											"type": "JavaScript"
@@ -159,6 +142,23 @@
 								"layout_width": "match_parent",
 								"orientation": "horizontal",
 								"type": "LinearLayout"
+							},
+							{
+								"background_color": "#654321",
+								"checked": "false",
+								"id": 988,
+								"on_click": {
+									"script_list": [
+										"var isQuickDraw = (1 == eigenFragment.getViewState(988));",
+										"eigenActivity.showToast('QuickDraw: '+isQuickDraw);",
+										"eigenFragment.drawingQuickDraw(987, isQuickDraw);"
+									],
+									"type": "JavaScript"
+								},
+								"text_color": "#ffffff",
+								"text_off": "Complete Draw",
+								"text_on": "Quick Draw",
+								"type": "ToggleButton"
 							},
 							{
 								"id": 987,
