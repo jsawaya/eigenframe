@@ -4,7 +4,7 @@
     {
       "action": "PAINT",
       "c": "#CE2B37",
-      "w": 8
+      "w": 2
     },
     {
       "action": "CIRCLE",
@@ -306,6 +306,11 @@
       "font": "font\/roboto\/Roboto-Regular.ttf",
       "size": 48,
       "color": "#FF999999"
+    },
+    {
+      "action": "PAINT",
+      "c": "#E2CB37",
+      "w": 8
     },
     {
       "action": "DOWN",
