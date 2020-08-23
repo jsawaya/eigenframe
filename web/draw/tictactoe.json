@@ -10,6 +10,7 @@
       "action": "CIRCLE",
       "x0": 0.30000001192092896,
       "y0": 0.30000001192092896,
+      "style": "FILL",
       "rad": 40
     },
     {
@@ -30,6 +31,7 @@
       "action": "CIRCLE",
       "x0": 0.10000001192092896,
       "y0": 0.60000001192092896,
+      "style": "FILL",
       "rad": 50
     },
     {
@@ -49,11 +51,16 @@
       "style": "FILL"
     },
     {
+      "action": "PAINT",
+      "c": "#CE372B",
+      "w": 8
+    },
+    {
       "action": "CIRCLE",
       "x0": 0.5,
       "y0": 0.20000000298023224,
       "rad": 40,
-      "style": "FILL_AND_STROKE"
+      "style": "FILL"
     },
     {
       "action": "CIRCLE",
