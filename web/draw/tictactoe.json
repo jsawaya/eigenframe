@@ -3,7 +3,7 @@
   "event_list": [
     {
       "action": "PAINT",
-      "c": "#FFFFFF",
+      "c": "#CE2B37",
       "w": 8
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "action": "PAINT",
-      "c": "#00FF00",
+      "c": "#37CE2B",
       "w": 2
     },
     {
