@@ -146,10 +146,10 @@
 							{
 								"background_color": "#654321",
 								"checked": "false",
-								"id": 988,
+								"x-id": 988,
 								"on_click": {
 									"script_list": [
-										"var isQuickDraw = (1 == eigenFragment.getViewState(988));",
+										"var isQuickDraw = (1 == eigenFragment.getViewState());",
 										"eigenActivity.showToast('QuickDraw: '+isQuickDraw);",
 										"eigenFragment.drawingQuickDraw(987, isQuickDraw);"
 									],
