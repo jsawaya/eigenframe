@@ -2,6 +2,18 @@
   "type": "DRAW",
   "event_list": [
     {
+      "action": "BITMAP",
+      "image_name": "apache_logo.",
+      "x0": 0.6,
+      "y0": 0.5
+    },
+    {
+      "action": "BITMAP",
+      "image_name": "apache_logo.",
+      "x0": 0.5,
+      "y0": 0.6
+    },
+    {
       "action": "PAINT",
       "c": "#CE2B37",
       "w": 2
@@ -2041,16 +2053,6 @@
       "action": "UP",
       "x": 0.8119791746139526,
       "y": 0.6600000262260437
-    },
-    {
-      "action": "BITMAP",
-      "x0": 0.6000000238418579,
-      "y0": 0.5
-    },
-    {
-      "action": "BITMAP",
-      "x0": 0.05000000238418579,
-      "y0": 0.9
     }
   ]
 }
