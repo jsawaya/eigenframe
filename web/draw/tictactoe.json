@@ -12,7 +12,9 @@
       "action": "bitmap",
       "image_name": "apache_logo.",
       "x0": 0.5,
-      "y0": 0.6000000238418579
+      "y0": 0.6000000238418579,
+      "dx": 100,
+      "dy": 100
     },
     {
       "action": "paint",
