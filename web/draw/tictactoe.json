@@ -4,6 +4,7 @@
     {
       "action": "bitmap",
       "image_url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/res/images/wood.jpg",
+      "is_background": true,
       "x0": 0,
       "y0": 0
     },
