@@ -166,9 +166,8 @@
 								"layout_width": "match_parent",
 								"rotation": "90",
 								"type": "DrawingView",
-								"image_url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/res/images/wood.jpg",
 								"file": "/data/data/com.sawaya.eigenframe/files/DrawingView:987",
-								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.json"
+								"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/tictactoe.json?_={TIME}"
 							},
 							{
 								"name": "HorizontalLine",
