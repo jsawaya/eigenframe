@@ -13,8 +13,8 @@
       "image_name": "apache_logo.",
       "x0": 0.5,
       "y0": 0.6000000238418579,
-      "sx": 200,
-      "sy": 50
+      "sx": 400,
+      "sy": 150
     },
     {
       "action": "paint",
