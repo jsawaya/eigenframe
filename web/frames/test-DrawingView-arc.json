@@ -20,11 +20,26 @@
 						"type": "Clone"
 					},
 					{
+						"background_color": "#654321",
+						"on_click": {
+							"script_list": [
+								"eigenFragment.drawingClear(987);",
+								"eigenFragment.drawingUrlRequest(987);"
+							],
+							"type": "JavaScript"
+						},
+						"text": "Reset",
+						"text_color": "#ffffff",
+						"type": "Button"
+					},
+					{
+						"id": 987,
 						"layout_height": "match_parent",
 						"layout_width": "match_parent",
 						"rotation": "90",
 						"type": "DrawingView",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/test-arc.json"
+						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/test-arc.json",
+						"file": "/data/data/com.sawaya.eigenframe/files/DrawingView:987"
 					},
 					{
 						"name": "HorizontalLine",
