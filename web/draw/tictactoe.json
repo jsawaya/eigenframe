@@ -26,7 +26,8 @@
       "x0": 0.30000001192092896,
       "y0": 0.30000001192092896,
       "rad": 40,
-      "style": "fill"
+      "style": "fill",
+      "shade": "radial"
     },
     {
       "action": "rect",
@@ -47,7 +48,8 @@
       "x0": 0.10000000894069672,
       "y0": 0.6000000238418579,
       "rad": 50,
-      "style": "fill"
+      "style": "fill",
+      "shade": "sweep"
     },
     {
       "action": "rect",
