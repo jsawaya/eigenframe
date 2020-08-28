@@ -97,6 +97,57 @@
 			"is_center": false,
 			"style": "fill",
 			"shade": "sweep"
+		},
+		{
+			"action": "paint",
+			"c": "#37CEFF",
+			"w": 4
+		},
+		{
+			"action": "arc",
+			"x0": 0.1,
+			"y0": 0.1,
+			"x1": 0.2,
+			"y1": 0.2,
+			"ang0": 48,
+			"ang1": 180,
+			"is_center": true,
+			"style": "stroke"
+		},
+		{
+			"action": "arc",
+			"x0": 0.1,
+			"y0": 0.2,
+			"x1": 0.2,
+			"y1": 0.3,
+			"ang0": 48,
+			"ang1": 180,
+			"is_center": true,
+			"style": "fill"
+		},
+		{
+			"action": "arc",
+			"x0": 0.1,
+			"y0": 0.3,
+			"x1": 0.2,
+			"y1": 0.4,
+			"ang0": 48,
+			"ang1": 180,
+			"is_center": true,
+			"style": "fill",
+			"shade": "radial"
+		},
+		{
+			"action": "arc",
+			"x0": 0.1,
+			"y0": 0.4,
+			"x1": 0.2,
+			"y1": 0.5,
+			"ang0": 48,
+			"ang1": 180,
+			"is_center": true,
+			"style": "fill",
+			"shade": "sweep"
 		}
 	]
 }
