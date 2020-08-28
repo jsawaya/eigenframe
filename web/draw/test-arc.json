@@ -1,0 +1,66 @@
+{
+	"type": "draw",
+	"event_list": [
+		{
+			"action": "paint",
+			"c": "#CE372B",
+			"w": 8
+		},
+		{
+			"action": "arc",
+			"x0": 0.1,
+			"y0": 0.1,
+			"x1": 0.2,
+			"y1": 0.2,
+			"ang0": 0,
+			"ang1": 45,
+			"is_center": true,
+			"style": "stroke"
+		},
+		{
+			"action": "paint",
+			"c": "#37CE2B",
+			"w": 2
+		},
+		{
+			"action": "arc",
+			"x0": 0.1,
+			"y0": 0.2,
+			"x1": 0.2,
+			"y1": 0.3,
+			"ang0": 0,
+			"ang1": 45,
+			"is_center": true,
+			"style": "fill"
+		},
+		{
+			"action": "paint",
+			"c": "#CE2B37",
+			"w": 2
+		},
+		{
+			"action": "arc",
+			"x0": 0.1,
+			"y0": 0.3,
+			"x1": 0.2,
+			"y1": 0.4,
+			"ang0": 0,
+			"ang1": 45,
+			"is_center": true,
+			"style": "fill",
+			"shade": "radial"
+		},
+		{
+			"action": "arc",
+			"x0": 0.1,
+			"y0": 0.4,
+			"x1": 0.2,
+			"y1": 0.5,
+			"ang0": 0,
+			"ang1": 45,
+			"is_center": true,
+			"style": "fill",
+			"shade": "sweep"
+		}
+	]
+}
