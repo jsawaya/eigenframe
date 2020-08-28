@@ -40,17 +40,6 @@
 			"style": "stroke"
 		},
 		{
-			"action": "arc",
-			"x0": 0.3,
-			"y0": 0.2,
-			"x1": 0.4,
-			"y1": 0.3,
-			"ang0": 0,
-			"ang1": 45,
-			"is_center": false,
-			"style": "fill"
-		},
-		{
 			"action": "paint",
 			"c": "#37CEFF",
 			"w": 4
@@ -68,14 +57,14 @@
 		},
 		{
 			"action": "arc",
-			"x0": 0.3,
-			"y0": 0.1,
-			"x1": 0.4,
-			"y1": 0.2,
+			"x0": 0.1,
+			"y0": 0.2,
+			"x1": 0.2,
+			"y1": 0.3,
 			"ang0": 50,
 			"ang1": 180,
-			"is_center": false,
-			"style": "stroke"
+			"is_center": true,
+			"style": "fill"
 		}
 	]
 }
