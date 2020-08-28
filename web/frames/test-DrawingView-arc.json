@@ -10,7 +10,7 @@
 					{
 						"layout_height": "wrap_content",
 						"layout_width": "match_parent",
-						"text": "DrawingView",
+						"text": "DrawingView test-arc.json",
 						"text_color": "#ffffff",
 						"text_size": "14",
 						"type": "TextView"
@@ -20,134 +20,10 @@
 						"type": "Clone"
 					},
 					{
-						"component_list": [
-							{
-								"background_color": "#55ff0000",
-								"on_click": {
-									"script": "eigenFragment.drawingPaint(987, '#55ff0000', 4.0)",
-									"type": "JavaScript"
-								},
-								"text": "Red",
-								"text_color": "#ffffff",
-								"type": "Button"
-							},
-							{
-								"background_color": "#5500ff00",
-								"on_click": {
-									"script": "eigenFragment.drawingPaint(987, '#5500FF00', 4.0)",
-									"type": "JavaScript"
-								},
-								"text": "Green",
-								"text_color": "#ffffff",
-								"type": "Button"
-							},
-							{
-								"background_color": "#550000ff",
-								"on_click": {
-									"script": "eigenFragment.drawingPaint(987, '#550000FF', 4.0)",
-									"type": "JavaScript"
-								},
-								"text": "Blue",
-								"text_color": "#ffffff",
-								"type": "Button"
-							},
-							{
-								"background_color": "#654321",
-								"on_click": {
-									"script": "eigenFragment.drawingUndo(987)",
-									"type": "JavaScript"
-								},
-								"icon": {
-									"location": "left",
-									"name": "undo."
-								},
-								"type": "Button"
-							},
-							{
-								"background_color": "#654321",
-								"on_click": {
-									"script": "eigenFragment.drawingRedo(987)",
-									"type": "JavaScript"
-								},
-								"icon": {
-									"location": "left",
-									"name": "redo."
-								},
-								"type": "Button"
-							},
-							{
-								"background_color": "#654321",
-								"on_click": {
-									"script": "eigenFragment.drawingClear(987)",
-									"type": "JavaScript"
-								},
-								"text": "Clear",
-								"text_color": "#ffffff",
-								"type": "Button"
-							},
-							{
-								"background_color": "#654321",
-								"on_click": {
-									"script": "eigenFragment.drawingOpen(987)",
-									"type": "JavaScript"
-								},
-								"text": "Open",
-								"text_color": "#ffffff",
-								"type": "Button"
-							},
-							{
-								"background_color": "#654321",
-								"on_click": {
-									"script": "eigenFragment.drawingSave(987)",
-									"type": "JavaScript"
-								},
-								"text": "Save",
-								"text_color": "#ffffff",
-								"type": "Button"
-							},
-							{
-								"background_color": "#654321",
-								"on_click": {
-									"script_list": [
-										"eigenFragment.drawingClear(987);",
-										"eigenFragment.drawingUrlRequest(987);"
-									],
-									"type": "JavaScript"
-								},
-								"text": "Reset",
-								"text_color": "#ffffff",
-								"type": "Button"
-							}
-						],
-						"layout_height": "wrap_content",
-						"layout_width": "match_parent",
-						"orientation": "horizontal",
-						"type": "LinearLayout"
-					},
-					{
-						"background_color": "#654321",
-						"checked": "false",
-						"x-id": 988,
-						"on_click": {
-							"script_list": [
-								"var isQuickDraw = (1 == eigenFragment.getViewState());",
-								"eigenActivity.showToast('QuickDraw: '+isQuickDraw);",
-								"eigenFragment.drawingQuickDraw(987, isQuickDraw);"
-							],
-							"type": "JavaScript"
-						},
-						"text_color": "#ffffff",
-						"text_off": "Complete Draw",
-						"text_on": "Quick Draw",
-						"type": "ToggleButton"
-					},
-					{
-						"id": 987,
 						"layout_height": "match_parent",
 						"layout_width": "match_parent",
 						"rotation": "90",
 						"type": "DrawingView",
-						"file": "/data/data/com.sawaya.eigenframe/files/DrawingView:987",
 						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/test-arc.json"
 					},
 					{
