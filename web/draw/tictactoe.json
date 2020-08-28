@@ -137,13 +137,51 @@
     },
     {
       "action": "arc",
+      "x0": 0.4,
+      "y0": 0.4,
+      "x1": 0.800000011920929,
+      "y1": 0.800000011920929,
+      "ang0": 0,
+      "ang1": 45,
+      "is_center": false,
+      "style": "stroke",
+      "shade": "radial"
+    },
+    {
+      "action": "arc",
+      "x0": 0.3,
+      "y0": 0.3,
+      "x1": 0.700000011920929,
+      "y1": 0.700000011920929,
+      "ang0": 0,
+      "ang1": 45,
+      "is_center": true,
+      "style": "stroke",
+      "shade": "sweep"
+    },
+    {
+      "action": "arc",
       "x0": 0.5,
       "y0": 0.5,
       "x1": 0.800000011920929,
       "y1": 0.800000011920929,
       "ang0": 0,
       "ang1": 45,
-      "is_center": false
+      "is_center": false,
+      "style": "fill",
+      "shade": "radial"
+    },
+    {
+      "action": "arc",
+      "x0": 0.6,
+      "y0": 0.6,
+      "x1": 0.700000011920929,
+      "y1": 0.700000011920929,
+      "ang0": 0,
+      "ang1": 45,
+      "is_center": true,
+      "style": "fill",
+      "shade": "sweep"
     },
     {
       "action": "down",
