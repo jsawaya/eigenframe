@@ -21,6 +21,11 @@
 			"type": "UrlRequest",
 			"is_eigen_response": true,
 			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-DrawingView-tictactoe.json'"
+		},
+		{
+			"type": "UrlRequest",
+			"is_eigen_response": true,
+			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-DrawingView-arc.json'"
 		}
 	],
 	"gravity": "center_horizontal",
