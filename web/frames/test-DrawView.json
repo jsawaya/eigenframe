@@ -20,12 +20,12 @@
 		{
 			"type": "UrlRequest",
 			"is_eigen_response": true,
-			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-DrawingView-tictactoe.json'"
+			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-DrawView-tictactoe.json'"
 		},
 		{
 			"type": "UrlRequest",
 			"is_eigen_response": true,
-			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-DrawingView-arc.json'"
+			"url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-DrawView-arc.json'"
 		}
 	],
 	"gravity": "center_horizontal",

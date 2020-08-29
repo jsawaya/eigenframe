@@ -137,10 +137,10 @@
       "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-SimulationView.json'"
     },
     {
-      "name": "DrawingView",
+      "name": "DrawView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-DrawingView.json'"
+      "url_script": "eigenActivity.getCacheString('RootUrl')+'frames/test-DrawView.json'"
     }
   ]
 }

@@ -137,10 +137,10 @@
       "url": "http://localhost:8080/frames/test-SimulationView-localhost.json"
     },
     {
-      "name": "DrawingView",
+      "name": "DrawView",
       "type": "EigenFragment",
       "icon_name": "ic_launcher_round.",
-      "url": "http://localhost:8080/frames/test-DrawingView.json"
+      "url": "http://localhost:8080/frames/test-DrawView.json"
     }
   ]
 }

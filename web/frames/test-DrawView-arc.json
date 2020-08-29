@@ -10,7 +10,7 @@
 					{
 						"layout_height": "wrap_content",
 						"layout_width": "match_parent",
-						"text": "DrawingView test-arc.json",
+						"text": "DrawView test-arc.json",
 						"text_color": "#ffffff",
 						"text_size": "14",
 						"type": "TextView"
@@ -24,7 +24,7 @@
 						"layout_width": "match_parent",
 						"rotation": "90",
 						"is_touch_enabled": false,
-						"type": "DrawingView",
+						"type": "DrawView",
 						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/test-arc.json"
 					},
 					{
