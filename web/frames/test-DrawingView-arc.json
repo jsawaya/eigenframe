@@ -23,8 +23,9 @@
 						"layout_height": "match_parent",
 						"layout_width": "match_parent",
 						"rotation": "90",
+						"is_touch_enabled": false,
 						"type": "DrawingView",
-						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/test-arc.json",
+						"url": "https://raw.githubusercontent.com/jsawaya/eigenframe/{BRANCH}/web/draw/test-arc.json"
 					},
 					{
 						"name": "HorizontalLine",
