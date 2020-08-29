@@ -13,7 +13,7 @@
 			"x1": 0.2,
 			"y1": 0.2,
 			"ang0": 0,
-			"ang1": 45,
+			"ang1": -45,
 			"is_center": true,
 			"style": "stroke"
 		},
@@ -24,7 +24,7 @@
 			"x1": 0.2,
 			"y1": 0.3,
 			"ang0": 0,
-			"ang1": 45,
+			"ang1": -45,
 			"is_center": true,
 			"style": "fill"
 		},
@@ -35,7 +35,7 @@
 			"x1": 0.4,
 			"y1": 0.2,
 			"ang0": 0,
-			"ang1": 45,
+			"ang1": -45,
 			"is_center": false,
 			"style": "stroke"
 		},
